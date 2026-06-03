@@ -1,6 +1,6 @@
 ## Iex
 
-FIX Xml dictionaries for Iex. Each `.xml` file in this directory is a self-contained QuickFIX dictionary describing a specific FIX dialect and version.
+Omi FIX Dictionaries for Iex. Each `.xml` file in this directory is a self-contained QuickFIX dictionary describing a specific FIX dialect and version.
 
 ## Dictionaries
 

@@ -1,6 +1,6 @@
 ## ElectronX
 
-FIX Xml dictionaries for ElectronX. Each `.xml` file in this directory is a self-contained QuickFIX dictionary describing a specific FIX dialect and version.
+Omi FIX Dictionaries for ElectronX. Each `.xml` file in this directory is a self-contained QuickFIX dictionary describing a specific FIX dialect and version.
 
 ## Dictionaries
 
