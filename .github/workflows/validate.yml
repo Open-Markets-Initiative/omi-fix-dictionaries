@@ -1,0 +1,19 @@
+name: Validate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Validate Dictionaries
+        run: python3 -c "import glob,sys,xml.etree.ElementTree as ET; files=sorted(glob.glob('**/*.xml',recursive=True)); bad=[f for f in files if ET.parse(f).getroot().tag!='fix']; [print('INVALID',f) for f in bad]; print('Validated',len(files)-len(bad),'of',len(files),'QuickFIX dictionaries'); sys.exit(1 if bad else 0)"
+
+
