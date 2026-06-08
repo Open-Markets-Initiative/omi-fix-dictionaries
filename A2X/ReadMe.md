@@ -1,14 +1,14 @@
-[![Iex](https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Images/Logo.png)](https://www.iexexchange.io)
+[![A2X](https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/A2X/Images/Logo.png)](https://www.a2x.co.za)
 
 
-## Investors Exchange
+## A2X Markets
 
-| Division | [Protocol][Omi.Iex.Protocol.Definitions] | [Encoding][Omi.Encoding.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Testing][Omi.Glossary.Testing] | [Documentation][Omi.Iex.Specifications] | Dictionary |
+| Division | [Protocol][Omi.A2X.Protocol.Definitions] | [Encoding][Omi.Encoding.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Testing][Omi.Glossary.Testing] | [Documentation][Omi.A2X.Specifications] | Dictionary |
 | --- | --- | --- | --- | ---: | --- | --- | --- | --- |
-| [IexEquities][IexEquities] | [OrderEntry][Iex.IexEquities.OrderEntry] | [Fix][Omi.Encoding.Fix] | v2.91 | 11/18/2022 | [Active][Omi.Glossary.Status.Active] | [Untested][Omi.Glossary.Testing.Untested] | [pdf][Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf] | [Iex.IexEquities.OrderEntry.Fix.v2.91](Iex.IexEquities.OrderEntry.Fix.v2.91.xml) |
+| [Equities][Equities] | [OrderEntry][A2X.Equities.OrderEntry] | [Fix][Omi.Encoding.Fix] | v2.0 | 5/24/2023 | [Active][Omi.Glossary.Status.Active] | [Untested][Omi.Glossary.Testing.Untested] | [url][A2X.Equities.OrderEntry.Fix.v2.0.Url] - [pdf][A2X.Equities.OrderEntry.Fix.v2.0.Pdf] | [A2X.Equities.OrderEntry.Fix.v2.0](A2X.Equities.OrderEntry.Fix.v2.0.xml) |
 
 
-Iex: [website](https://www.iexexchange.io "Go to Investors Exchange")
+A2X: [website](https://www.a2x.co.za "Go to A2X Markets")
 
 
 [Omi.Glossary.Status]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Protocol Deployment Status"
@@ -23,11 +23,12 @@ Iex: [website](https://www.iexexchange.io "Go to Investors Exchange")
 [Omi.Glossary.Testing.Beta]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Testing.md "Testing Status: Protocol has not been tested and structure is speculative"
 [Omi.Glossary.Testing.Untested]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Testing.md "Testing Status: Protocol has not been tested on live data"
 [Omi.Encoding.Definitions]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Protocols/ReadMe.md "Encoding Directory"
-[Omi.Iex.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Protocols "Iex Protocol Directory"
-[Omi.Iex.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Specifications "Iex Specifications Directory"
+[Omi.A2X.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/A2X/Protocols "A2X Protocol Directory"
+[Omi.A2X.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/A2X/Specifications "A2X Specifications Directory"
 [Omi.Encoding.Fix]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Protocols/Fix.md "Fix Encoding"
-[IexEquities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Protocols/IexEquities "Iex IexEquities"
-[Iex.IexEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Protocols/IexEquities/OrderEntry.md ""
+[Equities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/A2X/Protocols/Equities "A2X Equities"
+[A2X.Equities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/A2X/Protocols/Equities/OrderEntry.md "Order Entry"
 
-[Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Specifications/Iex/Fix/Iex.Fix.v2.91.pdf " 2.91 Pdf"
-[Iex.IexEquities.OrderEntry.Fix.v2.91]: Iex.IexEquities.OrderEntry.Fix.v2.91.xml "Iex.IexEquities.OrderEntry.Fix.v2.91 FIX Dictionary"
+[A2X.Equities.OrderEntry.Fix.v2.0.Url]: https://www.a2x.co.za/?page_id=531 "A2X Markets 2.0 Url"
+[A2X.Equities.OrderEntry.Fix.v2.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/A2X/Specifications/Fix/A2X.Equities.OrderEntry.Fix.v2.0.pdf "A2X Markets 2.0 Pdf"
+[A2X.Equities.OrderEntry.Fix.v2.0]: A2X.Equities.OrderEntry.Fix.v2.0.xml "A2X.Equities.OrderEntry.Fix.v2.0 FIX Dictionary"

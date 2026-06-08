@@ -29,7 +29,7 @@ For a list of Omi projects: [Omi Projects](https://github.com/Open-Markets-Initi
 For details of Omi rules and regulations: [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory")
 ## Dictionaries
 
-Dictionaries by exchange: ElectronX, Iex
+Dictionaries by exchange: [A2X][A2X.Directory], [ElectronX][ElectronX.Directory], [Iex][Iex.Directory], [Nasdaq][Nasdaq.Directory]
 
 ## Disclaimer
 
@@ -37,3 +37,8 @@ Any similarities between existing people, places and/or protocols is purely inci
 
 Enjoy.
 
+
+[A2X.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/A2X "A2X Markets"
+[ElectronX.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/ElectronX "ElectronX Markets"
+[Iex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Iex ""
+[Nasdaq.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Nasdaq "National Association of Securities Dealers Automated Quotations (Nasdaq)"

@@ -1,4 +1,4 @@
-<fix major="1" minor="0" servicepack="0" type="FIX">
+<fix major="1" minor="0" servicepack="0" type="Order Entry">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
