@@ -3,9 +3,9 @@
 
 ## Investors Exchange
 
-| Division | [Protocol][Omi.Iex.Protocol.Definitions] | [Encoding][Omi.Encoding.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Testing][Omi.Glossary.Testing] | [Documentation][Omi.Iex.Specifications] | Dictionary |
-| --- | --- | --- | --- | ---: | --- | --- | --- | --- |
-| [IexEquities][IexEquities] | [OrderEntry][Iex.IexEquities.OrderEntry] | [Fix][Omi.Encoding.Fix] | v2.91 | 11/18/2022 | [Active][Omi.Glossary.Status.Active] | [Untested][Omi.Glossary.Testing.Untested] | [pdf][Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf] | [Iex.IexEquities.OrderEntry.Fix.v2.91](Iex.IexEquities.OrderEntry.Fix.v2.91.xml) |
+| Division | [Protocol][Omi.Iex.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Iex.Specifications] |
+| --- | --- | --- | ---: | --- | --- |
+| [IexEquities][IexEquities] | [OrderEntry][Iex.IexEquities.OrderEntry] | [v2.91](Iex.IexEquities.OrderEntry.Fix.v2.91.xml) | 11/18/2022 | [Active][Omi.Glossary.Status.Active] | [pdf][Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf] |
 
 
 Iex: [website](https://www.iexexchange.io "Go to Investors Exchange")
@@ -17,17 +17,9 @@ Iex: [website](https://www.iexexchange.io "Go to Investors Exchange")
 [Omi.Glossary.Status.Future]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Protocol is not yet deployed to an active production environment"
 [Omi.Glossary.Status.Unknown]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Protocol deployment status is unknown"
 [Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
-[Omi.Glossary.Testing]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Testing.md "Protocol Testing Status"
-[Omi.Glossary.Testing.Verified]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Testing.md "Testing Status: Protocol has been tested on live data"
-[Omi.Glossary.Testing.Incomplete]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Testing.md "Testing Status: Protocol has been tested on live data but contains known issues"
-[Omi.Glossary.Testing.Beta]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Testing.md "Testing Status: Protocol has not been tested and structure is speculative"
-[Omi.Glossary.Testing.Untested]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Testing.md "Testing Status: Protocol has not been tested on live data"
-[Omi.Encoding.Definitions]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Protocols/ReadMe.md "Encoding Directory"
 [Omi.Iex.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Protocols "Iex Protocol Directory"
 [Omi.Iex.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Specifications "Iex Specifications Directory"
-[Omi.Encoding.Fix]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Protocols/Fix.md "Fix Encoding"
 [IexEquities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Protocols/IexEquities "Iex IexEquities"
 [Iex.IexEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Protocols/IexEquities/OrderEntry.md ""
 
 [Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Specifications/Iex/Fix/Iex.Fix.v2.91.pdf " 2.91 Pdf"
-[Iex.IexEquities.OrderEntry.Fix.v2.91]: Iex.IexEquities.OrderEntry.Fix.v2.91.xml "Iex.IexEquities.OrderEntry.Fix.v2.91 FIX Dictionary"
