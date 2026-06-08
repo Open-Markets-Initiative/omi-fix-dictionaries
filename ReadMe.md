@@ -1,5 +1,7 @@
 # Omi FIX Dictionaries
 
+[![Validate](https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/actions/workflows/validate.yml/badge.svg)](https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/actions/workflows/validate.yml)
+
 Omi FIX Dictionaries are QuickFIX-style dictionary XML files describing FIX session and application messages, fields, and value enumerations for each supported FIX dialect.
 
 For more information on QuickFIX: [QuickFIX](https://quickfixengine.org "QuickFIX Open Source FIX Engine")
