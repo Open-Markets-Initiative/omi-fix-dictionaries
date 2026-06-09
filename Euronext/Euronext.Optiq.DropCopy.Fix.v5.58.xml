@@ -1,0 +1,450 @@
+<fix major="5" minor="58" servicepack="0" type="Drop Copy">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="OnBehalfOfCompID" required="N" />
+    <field name="DeliverToCompID" required="N" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="SendingTime" required="Y" />
+    <field name="OrigSendingTime" required="N" />
+    <field name="LastMsgSeqNumProcessed" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="HeartBtInt" required="Y" />
+      <field name="EncryptMethod" required="Y" />
+      <field name="OEPartitionID" required="Y" />
+      <field name="LogicalAccessID" required="Y" />
+      <field name="NextExpectedMsgSeqNum" required="Y" />
+      <field name="QueueingIndicator" required="Y" />
+      <field name="DefaultApplVerID" required="Y" />
+      <field name="SoftwareProvider" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="NewSeqNo" required="Y" />
+      <field name="GapFillFlag" required="N" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="SessionStatus" required="Y" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="ClientMessageSendingTime" required="N" />
+      <field name="OEGINFromMember" required="N" />
+      <field name="OEGOUTToME" required="N" />
+      <field name="BookINTime" required="Y" />
+      <field name="BookOUTTime" required="N" />
+      <field name="OEGINFromME" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="SecurityID" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
+      <field name="20020" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OrderPriority" required="N" />
+      <field name="DarkExecutionInstruction" required="N" />
+      <field name="Price" required="N" />
+      <field name="NumOfCompetitor" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="151" required="Y" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecType" required="Y" />
+      <field name="StopPx" required="N" />
+      <field name="DisplayQty" required="N" />
+      <field name="TriggeredStopTimeInForce" required="N" />
+      <field name="QuoteReqID" required="N" />
+      <field name="RFQAnswerIndicator" required="N" />
+      <field name="RFQConfirmationIndicator" required="N" />
+      <field name="ConditionalOrderFlag" required="N" />
+      <field name="NoPartyIDs" required="Y" />
+      <field name="PartyID" required="Y" />
+      <field name="PartyIDSource" required="Y" />
+      <field name="PartyRole" required="Y" />
+      <field name="PartyRoleQualifier" required="N" />
+      <field name="OrderOrigination" required="N" />
+      <field name="NoOrderAttribute" required="N" />
+      <field name="OrderAttributeType" required="N" />
+      <field name="OrderAttributeVal" required="N" />
+      <field name="LastCapacity" required="Y" />
+      <field name="MinQty" required="N" />
+      <field name="AckPhase" required="Y" />
+      <field name="AckQualifiers" required="Y" />
+      <field name="OEPartitionID" required="Y" />
+      <field name="LogicalAccessID" required="Y" />
+      <field name="ExpireDate" required="N" />
+      <field name="CumQty" required="Y" />
+      <field name="TradingSessionID" required="N" />
+      <field name="OrdType" required="Y" />
+      <field name="TimeInForce" required="Y" />
+      <field name="NoSides" required="Y" />
+      <field name="Side" required="N" />
+      <field name="ClearingInstruction" required="N" />
+      <field name="Account" required="N" />
+      <field name="AccountCode" required="Y" />
+      <field name="LPRole" required="N" />
+      <field name="TechnicalOrdType" required="N" />
+      <field name="NoNestedPartyIDs" required="N" />
+      <field name="NestedPartyID" required="N" />
+      <field name="NestedPartyIDSou" required="N" />
+      <field name="NestedPartyRole" required="N" />
+      <field name="NestedPartyRoleQualifier" required="N" />
+      <field name="ExpireTime" required="N" />
+      <field name="STPAggressorIndicator" required="N" />
+      <field name="DisclosedQtyRandIndicator" required="N" />
+      <field name="CancelOnDisconn" required="Y" />
+      <field name="PegOffsetValue" required="N" />
+      <field name="OrderTolerablePrice" required="N" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="KillReason" required="N" />
+      <field name="ErrorCode" required="Y" />
+      <field name="60" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="LastQty" required="Y" />
+      <field name="TradeType" required="N" />
+      <field name="ExecPhase" required="Y" />
+      <field name="TradeQualifier" required="Y" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoRegulatoryTrad" required="N" />
+      <field name="RegulatoryTradeID" required="N" />
+      <field name="RegulatoryTradeI" required="N" />
+      <field name="RegulatoryLegRefID" required="N" />
+      <field name="EvaluatedPrice" required="N" />
+      <field name="MessagePriceNotation" required="N" />
+      <field name="FinalSecurityID" required="N" />
+      <field name="FinalExecID" required="N" />
+      <field name="LISTransactionID" required="N" />
+      <field name="NoLegs" required="N" />
+      <field name="LegSymbol" required="Y" />
+      <field name="LegSecurityID" required="N" />
+      <field name="LegSecurityIDSource" required="N" />
+      <field name="LegLastPx" required="N" />
+      <field name="LegLastQty" required="N" />
+      <field name="LegSide" required="N" />
+      <field name="LegExecID" required="N" />
+      <field name="ParentExecID" required="N" />
+      <field name="ParentSecurityID" required="N" />
+      <field name="19" required="N" />
+    </message>
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
+      <field name="ClientMessageSendingTime" required="N" />
+      <field name="OEGINFromMember" required="N" />
+      <field name="OEGOUTToME" required="N" />
+      <field name="BookINTime" required="N" />
+      <field name="BookOUTTime" required="N" />
+      <field name="OEGINFromME" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="SecurityIDSource" required="N" />
+      <field name="EMM" required="N" />
+      <field name="OrderID" required="N" />
+      <field name="ErrorCode" required="Y" />
+      <field name="434" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="AckQualifiers" required="Y" />
+      <field name="OEPartitionID" required="N" />
+      <field name="LogicalAccessID" required="N" />
+    </message>
+    <message name="TradeCaptureReportAck" msgtype="AR" msgcat="app">
+      <field name="571" required="Y" />
+      <field name="TradeID" required="Y" />
+      <field name="TrdRptStatus" required="Y" />
+      <field name="828" required="Y" />
+      <field name="SecurityID" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
+      <field name="20020" required="Y" />
+      <field name="MICofSecondaryListing" required="N" />
+      <field name="PreMatchingIndicator" required="N" />
+      <field name="TransacTime" required="N" />
+      <field name="TrdRegPublicationReason" required="N" />
+      <field name="NoSides" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="AccountCode" required="Y" />
+      <field name="LastCapacity" required="Y" />
+      <field name="Quantity" required="N" />
+      <field name="Price" required="N" />
+      <field name="NoPartyIDs" required="Y" />
+      <field name="PartyID" required="Y" />
+      <field name="PartyIDSource" required="Y" />
+      <field name="PartyRole" required="Y" />
+      <field name="PartyRoleQualifier" required="Y" />
+      <field name="NestedPartyID" required="N" />
+      <field name="NestedPartyID" required="N" />
+      <field name="NestedPartyIDSource" required="N" />
+      <field name="NestedPartyRole" required="N" />
+      <field name="NestedPartyRoleQualifier" required="N" />
+      <field name="PreviousDayFlag" required="N" />
+      <field name="MiscFeeAmt" required="N" />
+      <field name="CentralisationDate" required="N" />
+      <field name="CCPID" required="N" />
+      <field name="NoRegulatoryTrad" required="N" />
+      <field name="RegulatoryTradeID" required="N" />
+      <field name="RegulatoryTradeI" required="N" />
+      <field name="SettlPeriod" required="N" />
+      <field name="SettlementFlag" required="N" />
+      <field name="GuaranteeFlag" required="N" />
+      <field name="TradePriceCondition" required="N" />
+      <field name="GrossTradeAmt" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="String" />
+    <field number="7" name="BeginSeqNo" type="SeqNum" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="14" name="CumQty" type="Qty" />
+    <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="17" name="ExecID" type="String" />
+    <field number="19" name="19" type="String" />
+    <field number="22" name="SecurityIDSource" type="String">
+      <value enum="8" description="Symbol Index" />
+    </field>
+    <field number="29" name="LastCapacity" type="Char">
+      <value enum="7" description="Dealing on own account (DEAL)" />
+    </field>
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastQty" type="Qty" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="36" name="NewSeqNo" type="SeqNum" />
+    <field number="37" name="OrderID" type="String" />
+    <field number="38" name="OrderQty" type="Qty" />
+    <field number="39" name="OrdStatus" type="Char">
+      <value enum="0" description="New" />
+      <value enum="8" description="Rejected" />
+    </field>
+    <field number="40" name="OrdType" type="Char">
+      <value enum="1" description="Market" />
+    </field>
+    <field number="41" name="OrigClOrdID" type="String" />
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="44" name="Price" type="Price" />
+    <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="48" name="SecurityID" type="String" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="53" name="Quantity" type="Qty" />
+    <field number="54" name="Side" type="Char" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="59" name="TimeInForce" type="Char">
+      <value enum="0" description="Day" />
+    </field>
+    <field number="60" name="60" type="UTCTimestamp" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="98" name="EncryptMethod" type="Int" />
+    <field number="99" name="StopPx" type="Price" />
+    <field number="108" name="HeartBtInt" type="Int" />
+    <field number="110" name="MinQty" type="Qty" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
+    <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="126" name="ExpireTime" type="UTCTimestamp" />
+    <field number="128" name="DeliverToCompID" type="String" />
+    <field number="131" name="QuoteReqID" type="String" />
+    <field number="137" name="MiscFeeAmt" type="Amt" />
+    <field number="150" name="ExecType" type="Char">
+      <value enum="0" description="New" />
+    </field>
+    <field number="151" name="151" type="Qty" />
+    <field number="211" name="PegOffsetValue" type="Int" />
+    <field number="336" name="TradingSessionID" type="String">
+      <value enum="101" description="Session 1 102 = Session 2 103 = Session 3 104 = Session 4 205 = Session 1 and Session 3 313 = Session 1, 3 and Session 4 123 = All Sessions, deprecated (no more used on Optiq)" />
+    </field>
+    <field number="369" name="LastMsgSeqNumProcessed" type="SeqNum" />
+    <field number="371" name="RefTagID" type="Int" />
+    <field number="372" name="RefMsgType" type="String" />
+    <field number="373" name="SessionRejectReason" type="Int" />
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="381" name="GrossTradeAmt" type="Amt" />
+    <field number="432" name="ExpireDate" type="LocalMktDate" />
+    <field number="434" name="434" type="Char" />
+    <field number="447" name="PartyIDSource" type="Char">
+      <value enum="D" description="Proprietary / Custom code" />
+      <value enum="P" description="Short code identifier" />
+    </field>
+    <field number="448" name="PartyID" type="String" />
+    <field number="452" name="PartyRole" type="Int">
+      <value enum="17" description="Contra Broker" />
+      <value enum="3" description="Client ID 12 = Executing Trader 999 = Not Applicable" />
+    </field>
+    <field number="453" name="NoPartyIDs" type="String" />
+    <field number="524" name="NestedPartyID" type="String" />
+    <field number="525" name="NestedPartyIDSou" type="Char">
+      <value enum="P" description="Short code identifier" />
+    </field>
+    <field number="538" name="NestedPartyRole" type="Int">
+      <value enum="122" description="Investment decision maker" />
+      <value enum="4" description="Clearing Firm 17 = Contra Firm 122 = Investment decision maker" />
+    </field>
+    <field number="539" name="NoNestedPartyIDs" type="String" />
+    <field number="552" name="NoSides" type="String" />
+    <field number="555" name="NoLegs" type="String" />
+    <field number="571" name="571" type="String" />
+    <field number="577" name="ClearingInstruction" type="Int">
+      <value enum="0" description="Process normally (formerly Systematic posting)" />
+    </field>
+    <field number="600" name="LegSymbol" type="String" />
+    <field number="602" name="LegSecurityID" type="String" />
+    <field number="603" name="LegSecurityIDSource" type="String">
+      <value enum="8" description="Symbol Index" />
+    </field>
+    <field number="624" name="LegSide" type="Char">
+      <value enum="1" description="Buy 2 = Sell" />
+    </field>
+    <field number="637" name="LegLastPx" type="Price" />
+    <field number="789" name="NextExpectedMsgSeqNum" type="SeqNum" />
+    <field number="828" name="828" type="Int" />
+    <field number="939" name="TrdRptStatus" type="Int">
+      <value enum="18" description="Pre-Matched" />
+    </field>
+    <field number="1003" name="TradeID" type="String" />
+    <field number="1137" name="DefaultApplVerID" type="String" />
+    <field number="1138" name="DisplayQty" type="Qty" />
+    <field number="1409" name="SessionStatus" type="Int" />
+    <field number="1418" name="LegLastQty" type="Qty" />
+    <field number="1724" name="OrderOrigination" type="Int">
+      <value enum="5" description="Order received from a direct access or" />
+    </field>
+    <field number="1839" name="TradePriceCondition" type="Int">
+      <value enum="15" description="Non-price forming trade (NPFT) 101 = Plain Vanilla Trade 102 = Trade Not Contributing to Price Discovery Process 103 = Dark Trade (for future use)" />
+    </field>
+    <field number="1893" name="LegExecID" type="String" />
+    <field number="1903" name="RegulatoryTradeID" type="String" />
+    <field number="1906" name="RegulatoryTradeI" type="Int">
+      <value enum="5" description="TVTIC" />
+    </field>
+    <field number="1907" name="NoRegulatoryTrad" type="String" />
+    <field number="1913" name="NumOfCompetitor" type="Int" />
+    <field number="2104" name="CCPID" type="Char">
+      <value enum="0" description="No CCP" />
+    </field>
+    <field number="2376" name="PartyRoleQualifier" type="Int">
+      <value enum="22" description="Algorithm 23 = Firm or legal entity 24 = Natural person 99 = Not Applicable" />
+      <value enum="23" description="Firm or legal entity" />
+    </field>
+    <field number="2384" name="NestedPartyRoleQualifier" type="Int">
+      <value enum="22" description="Algorithm 24 = Natural person 99 = Not Applicable" />
+      <value enum="3" description="General clearing member 4 = Individual clearing member 22 = Algorithm 24 = Natural person" />
+    </field>
+    <field number="2411" name="RegulatoryLegRefID" type="Int" />
+    <field number="2593" name="NoOrderAttribute" type="String" />
+    <field number="2594" name="OrderAttributeType" type="Int">
+      <value enum="0" description="Aggregated order" />
+    </field>
+    <field number="2595" name="OrderAttributeVal" type="String">
+      <value enum="Y" description="Yes Y = Yes" />
+    </field>
+    <field number="2670" name="TrdRegPublicationReason" type="Int">
+      <value enum="0" description="NLIQ" />
+    </field>
+    <field number="5979" name="OEGINFromMember" type="UTCTimestamp" />
+    <field number="6399" name="AccountCode" type="Int">
+      <value enum="1" description="Client" />
+    </field>
+    <field number="7764" name="OEGOUTToME" type="UTCTimestamp" />
+    <field number="7765" name="OEGINFromME" type="UTCTimestamp" />
+    <field number="9941" name="TechnicalOrdType" type="Char">
+      <value enum="1" description="Index trading arbitrage" />
+    </field>
+    <field number="9952" name="PreviousDayFlag" type="Boolean">
+      <value enum="0" description="False 1 = True" />
+    </field>
+    <field number="9955" name="ErrorCode" type="Int" />
+    <field number="9970" name="SettlementFlag" type="Char">
+      <value enum="0" description="False 1 = True" />
+    </field>
+    <field number="9971" name="GuaranteeFlag" type="Char">
+      <value enum="1" description="Cleared but not Guaranteed 2 = Cleared and Guaranteed" />
+    </field>
+    <field number="10042" name="PreMatchingIndicator" type="Int">
+      <value enum="2" description="Pre-matched for the next fixing 3 = Pre-matched for the second next fixing 4 = Pre-matched for the third next fixing 5 = Pre-matched for the fourth next fixing 6 = Pre-matched for the fifth next fixing" />
+    </field>
+    <field number="10055" name="SettlPeriod" type="Int" />
+    <field number="20020" name="20020" type="Int" />
+    <field number="20021" name="LPRole" type="Int">
+      <value enum="1" description="Liquidity Provider or Market Maker 3 = Retail Liquidity Provider [C] 12 = RFQ Liquidity Provider [C]" />
+    </field>
+    <field number="20052" name="DarkExecutionInstruction" type="MultipleCharValue" />
+    <field number="20175" name="TriggeredStopTimeInForce" type="Char">
+      <value enum="0" description="Day" />
+    </field>
+    <field number="21002" name="BookINTime" type="UTCTimestamp" />
+    <field number="21003" name="BookOUTTime" type="UTCTimestamp" />
+    <field number="21004" name="OrderPriority" type="Int" />
+    <field number="21005" name="ClientMessageSendingTime" type="UTCTimestamp" />
+    <field number="21010" name="TradeType" type="Int">
+      <value enum="1" description="Conventional Trade (Cash and Derivatives)" />
+    </field>
+    <field number="21013" name="AckPhase" type="Char">
+      <value enum="1" description="Continuous Trading Phase" />
+    </field>
+    <field number="21014" name="AckQualifiers" type="MultipleCharValue">
+      <value enum="0" description="Dark Indicator" />
+    </field>
+    <field number="21015" name="STPAggressorIndicator" type="Int">
+      <value enum="0" description="Cancel resting order [C]" />
+    </field>
+    <field number="21016" name="DisclosedQtyRandIndicator" type="Int">
+      <value enum="0" description="No 1 = Yes 0 = No" />
+    </field>
+    <field number="21018" name="CancelOnDisconn" type="Int">
+      <value enum="0" description="Per Default Configuration" />
+    </field>
+    <field number="21019" name="OEPartitionID" type="Int" />
+    <field number="21020" name="QueueingIndicator" type="Int" />
+    <field number="21021" name="LogicalAccessID" type="Int" />
+    <field number="21023" name="ExecPhase" type="Char">
+      <value enum="1" description="Continuous Trading Phase" />
+    </field>
+    <field number="21037" name="RFQAnswerIndicator" type="Int">
+      <value enum="0" description="No 1 = Yes" />
+    </field>
+    <field number="21038" name="RFQConfirmationIndicator" type="Int">
+      <value enum="0" description="No 1 = Yes" />
+    </field>
+    <field number="21050" name="SoftwareProvider" type="String" />
+    <field number="21065" name="MICofSecondaryListing" type="String" />
+    <field number="21068" name="CentralisationDate" type="String" />
+    <field number="21080" name="TradeQualifier" type="MultipleCharValue">
+      <value enum="0" description="Uncrossing Trade" />
+    </field>
+    <field number="21085" name="LISTransactionID" type="String" />
+    <field number="21093" name="ParentSecurityID" type="String" />
+    <field number="21094" name="ParentExecID" type="String" />
+    <field number="21800" name="ConditionalOrderFlag" type="Int">
+      <value enum="0" description="Firm (default) 1 = Conditional" />
+    </field>
+    <field number="21802" name="EvaluatedPrice" type="Price" />
+    <field number="21803" name="MessagePriceNotation" type="String" />
+    <field number="21805" name="FinalSecurityID" type="String" />
+    <field number="21806" name="FinalExecID" type="String" />
+    <field number="21807" name="KillReason" type="Char" />
+    <field number="21822" name="OrderTolerablePrice" type="Price" />
+  </fields>
+</fix>

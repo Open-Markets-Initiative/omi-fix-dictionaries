@@ -15,9 +15,6 @@ For QuickFIX dictionary documentation: [QuickFIX Dictionary](https://quickfixeng
 QuickFIX is the long-standing open source FIX engine that defines the dictionary XML shape these files emit. The project is organized as a multi-repository GitHub organization, with the original C++ engine (`quickfix`), the Java port (`quickfixj`), and additional language ports each maintained as their own repository under the same umbrella.
 
 Browse all QuickFIX repositories: [QuickFIX on GitHub](https://github.com/quickfix "QuickFIX GitHub Organization")
-
-Each implementation reads the same dictionary schema — `<fix>`/`<header>`/`<trailer>`/`<messages>`/`<components>`/`<fields>` with `name`, `tag`, `type`, `required`, and `enum`/`value` attributes — so a dictionary published here can be consumed by any QuickFIX engine in its supported language.
-
 ## Development
 
 This entire repository is source generated — including the words you are reading right now. To suggest updates, please open an issue describing the change and link the authoritative FIX specification. Time permitting, we will update the upstream models and regenerate.
@@ -31,7 +28,7 @@ For a list of Omi projects: [Omi Projects](https://github.com/Open-Markets-Initi
 For details of Omi rules and regulations: [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory")
 ## Dictionaries
 
-Dictionaries by exchange: [A2X][A2X.Directory], [ElectronX][ElectronX.Directory], [Iex][Iex.Directory], [Nasdaq][Nasdaq.Directory]
+Dictionaries by exchange: [A2X][A2X.Directory], [ElectronX][ElectronX.Directory], [Euronext][Euronext.Directory], [Iex][Iex.Directory], [Nasdaq][Nasdaq.Directory]
 
 ## Disclaimer
 
@@ -42,5 +39,6 @@ Enjoy.
 
 [A2X.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/A2X "A2X Markets"
 [ElectronX.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/ElectronX "ElectronX Markets"
+[Euronext.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Euronext "Euronext"
 [Iex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Iex ""
 [Nasdaq.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Nasdaq "National Association of Securities Dealers Automated Quotations (Nasdaq)"
