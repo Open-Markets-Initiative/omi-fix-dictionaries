@@ -28,7 +28,7 @@ For a list of Omi projects: [Omi Projects](https://github.com/Open-Markets-Initi
 For details of Omi rules and regulations: [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory")
 ## Dictionaries
 
-Dictionaries by exchange: [A2X][A2X.Directory], [ElectronX][ElectronX.Directory], [Euronext][Euronext.Directory], [Iex][Iex.Directory], [Nasdaq][Nasdaq.Directory]
+Dictionaries by exchange: [A2X][A2X.Directory], [Cboe][Cboe.Directory], [ElectronX][ElectronX.Directory], [Euronext][Euronext.Directory], [Iex][Iex.Directory], [Nasdaq][Nasdaq.Directory]
 
 ## Disclaimer
 
@@ -38,6 +38,7 @@ Enjoy.
 
 
 [A2X.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/A2X "A2X Markets"
+[Cboe.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Cboe "Cboe Global Markets"
 [ElectronX.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/ElectronX "ElectronX Markets"
 [Euronext.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Euronext "Euronext"
 [Iex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Iex ""

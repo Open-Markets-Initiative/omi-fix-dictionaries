@@ -1,0 +1,139 @@
+<fix major="1" minor="1" servicepack="0" type="Drop Copy">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="SendingTime" required="Y" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Test Request" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="Resend Request" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+      <field name="NewSeqNo" required="Y" />
+      <field name="GapFillFlag" required="N" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="Username" required="N" />
+      <field name="Password" required="N" />
+      <field name="ResetSeqNumFlag" required="N" />
+    </message>
+    <message name="Execution Report" msgtype="8" msgcat="app">
+      <field name="Account" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecTransType" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="Price" required="Y" />
+      <field name="TimeInForce" required="Y" />
+      <field name="Currency" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="SettlementDate" required="Y" />
+      <field name="TradeDate" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
+      <field name="SecurityID" required="Y" />
+      <field name="ExecBroker" required="Y" />
+      <field name="LeavesQty" required="Y" />
+      <field name="CumQty" required="Y" />
+      <field name="ExecType" required="Y" />
+      <field name="AvgPx" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="LastShares" required="Y" />
+      <field name="Text" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="AccountID" required="Y" />
+      <field name="SessionID" required="Y" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="String" />
+    <field number="6" name="AvgPx" type="Price" />
+    <field number="7" name="BeginSeqNo" type="SeqNum" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="14" name="CumQty" type="Qty" />
+    <field number="15" name="Currency" type="Currency" />
+    <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="17" name="ExecID" type="String" />
+    <field number="20" name="ExecTransType" type="char" />
+    <field number="22" name="SecurityIDSource" type="String" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="36" name="NewSeqNo" type="SeqNum" />
+    <field number="37" name="OrderID" type="String" />
+    <field number="38" name="OrderQty" type="Qty" />
+    <field number="39" name="OrdStatus" type="char">
+      <value enum="2" description="Filled" />
+    </field>
+    <field number="40" name="OrdType" type="char" />
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="44" name="Price" type="Price" />
+    <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="48" name="SecurityID" type="String" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="54" name="Side" type="char">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+    </field>
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="59" name="TimeInForce" type="char" />
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="64" name="SettlementDate" type="LocalMktDate" />
+    <field number="75" name="TradeDate" type="LocalMktDate" />
+    <field number="76" name="ExecBroker" type="String">
+      <value enum="Y" description="Indicates aggressive trade (Liquidity Consumers Only)" />
+      <value enum="N" description="Indicates passive trade (Liquidity Providers Only)" />
+      <value enum="CBOEUST" description="Otherwise (manually entered trade)" />
+    </field>
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="98" name="EncryptMethod" type="int" />
+    <field number="108" name="HeartBtInt" type="int" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
+    <field number="150" name="ExecType" type="char">
+      <value enum="F" description="Trade" />
+    </field>
+    <field number="151" name="LeavesQty" type="Qty" />
+    <field number="553" name="Username" type="String" />
+    <field number="554" name="Password" type="String" />
+    <field number="6997" name="AccountID" type="String" />
+    <field number="6998" name="SessionID" type="String" />
+  </fields>
+</fix>

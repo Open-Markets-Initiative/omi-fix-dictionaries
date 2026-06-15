@@ -1,0 +1,133 @@
+<fix major="1" minor="0" servicepack="0" type="Purge">
+  <header />
+  <trailer>
+    <field name="10" required="N" />
+  </trailer>
+  <messages>
+    <message name="Purge Request" msgtype="F" msgcat="app">
+      <field name="PossResend" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="OnBehalfOfCompID" required="N" />
+      <field name="" required="N" />
+      <field name="" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="OrderID" required="N" />
+    </message>
+    <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
+      <field name="ExecTransType" required="N" />
+      <field name="ExecType" required="N" />
+      <field name="" required="N" />
+      <field name="" required="N" />
+    </message>
+    <message name="Purge Reject" msgtype="9" msgcat="app">
+      <field name="OrdStatus" required="N" />
+      <field name="CxlRejResponseTo" required="N" />
+      <field name="CxlRejReason" required="N" />
+      <field name="Text" required="N" />
+      <field name="" required="N" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="MaxFloor" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="Y" />
+      <field name="TimeInForce" required="N" />
+      <field name="ExpireTime" required="N" />
+      <field name="ExecInst" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="PegDifference" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="ExecTransType" required="Y" />
+      <field name="OrderId" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="ExecType" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="ExecTransType" required="Y" />
+      <field name="OrderId" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="ExecType" required="Y" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="10" name="10" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="18" name="ExecInst" type="MultipleValueString">
+      <value enum="M" description="Midpoint (peg to PBBO Midpoint)" />
+      <value enum="P" description="Market Peg (peg Buy [Sell] to TSE Offer [Bid]" />
+    </field>
+    <field number="20" name="ExecTransType" type="char">
+      <value enum="0" description="New" />
+      <value enum="3" description="Status. Used to provide peg suspensions (" />
+      <value enum="1" description="Trade Cancel" />
+    </field>
+    <field number="37" name="OrderID" type="String" />
+    <field number="38" name="OrderQty" type="Qty" />
+    <field number="39" name="OrdStatus" type="char">
+      <value enum="0" description="New" />
+      <value enum="2" description="Filled" />
+      <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
+      <value enum="B" description="Calculated" />
+      <value enum="9" description="Suspended" />
+    </field>
+    <field number="40" name="OrdType" type="char">
+      <value enum="1" description="Market" />
+      <value enum="2" description="Limit" />
+      <value enum="P" description="Peg" />
+    </field>
+    <field number="44" name="Price" type="Price" />
+    <field number="54" name="Side" type="char">
+      <value enum="1" description="Buy" />
+      <value enum="5" description="Sell Short (client affirms ability to borrow)" />
+    </field>
+    <field number="55" name="Symbol" type="String" />
+    <field number="58" name="Text" type="String">
+      <value enum="A" description="Admin" />
+      <value enum="D" description="Duplicate identifier (e.g., Cl Ord ID)" />
+      <value enum="H" description="Halted" />
+      <value enum="K" description="Order rate threshold exceeded" />
+      <value enum="M" description="Order size exceeded" />
+      <value enum="O" description="Cl Ord ID doesn’t match a known order" />
+      <value enum="T" description="Fill would trade through the NBBO" />
+      <value enum="V" description="Would wash" />
+      <value enum="W" description="Add liquidity only order would remove" />
+      <value enum="Z" description="Unforeseen reason" />
+      <value enum="r" description="Reserve reload" />
+      <value enum="y" description="Order received by Cboe during replay" />
+    </field>
+    <field number="59" name="TimeInForce" type="char">
+      <value enum="0" description="DAY (default)" />
+    </field>
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="102" name="CxlRejReason" type="int">
+      <value enum="0" description="Too late to cancel." />
+      <value enum="3" description="Already pending cancel or pending replace." />
+      <value enum="2" description="Broker Option" />
+    </field>
+    <field number="111" name="MaxFloor" type="Qty" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
+    <field number="126" name="ExpireTime" type="UTCTimestamp" />
+    <field number="150" name="ExecType" type="char">
+      <value enum="0" description="New (acknowledgement of new order)" />
+      <value enum="2" description="Fill" />
+      <value enum="5" description="Replaced" />
+      <value enum="9" description="Suspended" />
+      <value enum="M" description="Mass Cancel Complete" />
+      <value enum="D" description="Restated" />
+    </field>
+    <field number="211" name="PegDifference" type="String" />
+    <field number="434" name="CxlRejResponseTo" type="char">
+      <value enum="1" description="Cancel" />
+    </field>
+    <field number="7700" name="" type="String">
+      <value enum="A" description="No filtering by trading firm is performed." />
+    </field>
+  </fields>
+</fix>

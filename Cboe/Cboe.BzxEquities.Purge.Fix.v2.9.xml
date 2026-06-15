@@ -1,0 +1,96 @@
+<fix major="2" minor="9" servicepack="0" type="Purge">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="SenderSubID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="TargetSubID" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="SendingTime" required="Y" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Purge Request" msgtype="F" msgcat="app">
+      <field name="PossResend" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="MassCancelInst" required="Y" />
+      <field name="MassCancelID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SymbolSfx" required="N" />
+      <field name="" required="N" />
+    </message>
+    <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
+      <field name="SendingTime" required="N" />
+      <field name="ExecTransType" required="N" />
+      <field name="ExecType" required="N" />
+      <field name="MassCancelID" required="N" />
+    </message>
+    <message name="Purge Reject" msgtype="9" msgcat="app">
+      <field name="OrdStatus" required="N" />
+      <field name="CxlRejResponseTo" required="N" />
+      <field name="CxlRejReason" required="N" />
+      <field name="Text" required="N" />
+      <field name="MassCancelID" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="20" name="ExecTransType" type="char">
+      <value enum="0" description="New" />
+      <value enum="1" description="Trade Cancel" />
+      <value enum="3" description="Status" />
+    </field>
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="39" name="OrdStatus" type="char">
+      <value enum="0" description="New" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="A" description="Pending Ack" />
+      <value enum="8" description="Rejected" />
+    </field>
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="50" name="SenderSubID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="57" name="TargetSubID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="65" name="SymbolSfx" type="String" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="102" name="CxlRejReason" type="int">
+      <value enum="0" description="Too late to cancel." />
+      <value enum="3" description="Already pending cancel or pending replace." />
+      <value enum="2" description="Broker Option" />
+    </field>
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
+    <field number="150" name="ExecType" type="char">
+      <value enum="0" description="New (acknowledgment of new order)" />
+      <value enum="2" description="Fill" />
+      <value enum="4" description="Canceled" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="D" description="Restated" />
+      <value enum="M" description="Mass Cancel Complete" />
+    </field>
+    <field number="434" name="CxlRejResponseTo" type="char">
+      <value enum="1" description="Cancel" />
+    </field>
+    <field number="7695" name="MassCancelID" type="String" />
+    <field number="7700" name="MassCancelInst" type="String">
+      <value enum="A" description="No filtering by MPID is performed." />
+    </field>
+    <field number="25017" name="" type="String" />
+  </fields>
+</fix>

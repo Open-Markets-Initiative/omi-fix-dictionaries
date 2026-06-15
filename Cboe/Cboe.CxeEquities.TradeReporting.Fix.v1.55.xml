@@ -1,0 +1,268 @@
+<fix major="1" minor="55" servicepack="0" type="Trade Reporting">
+  <header>
+    <field name="BeginString" required="N" />
+    <field name="BodyLength" required="N" />
+    <field name="MsgType" required="N" />
+    <field name="MsgSeqNum" required="N" />
+    <field name="PossDupFlag" required="N" />
+    <field name="SenderCompID" required="N" />
+    <field name="SendingTime" required="N" />
+    <field name="TargetCompID" required="N" />
+    <field name="TargetSubID" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+    <field name="DeliverToCompID" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="N" />
+  </trailer>
+  <messages>
+    <message name="Trade Capture Report" msgtype="AE" msgcat="app">
+      <field name="Currency" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="LastMkt" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="LastQty" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="TradeDate" required="N" />
+      <field name="ExecType" required="N" />
+      <field name="SecurityExchange" required="N" />
+      <field name="GrossTradeAmt" required="N" />
+      <field name="TradeReportTransType" required="N" />
+      <field name="TradeReportID" required="N" />
+      <field name="MatchType" required="N" />
+      <field name="TrdType" required="N" />
+      <field name="SecondaryTrdType" required="N" />
+      <field name="TradeReportType" required="N" />
+      <field name="TradeID" required="N" />
+      <field name="TradeHandlingInstr" required="N" />
+      <field name="TradePublishIndicator" required="N" />
+      <field name="VenueType" required="N" />
+      <field name="NoTradePriceConditions" required="N" />
+      <field name="TradePriceCondition" required="N" />
+      <field name="IntraFirmTradeIndicator" required="N" />
+      <field name="ExecMethod" required="N" />
+      <field name="AlgorithmicTradeIndicator" required="N" />
+      <field name="TertiaryTrdType" required="N" />
+      <field name="MultiJurisdictionReportingIndica" required="N" />
+      <field name="TrdRegPublication Reasons" required="N" />
+      <group name="NoSides" required="N">
+        <field name="Side" required="N" />
+        <field name="Account" required="N" />
+        <field name="PartyIDSource" required="N" />
+        <field name="PartyRole" required="N" />
+        <field name="NoPartyIDs" required="N" />
+        <field name="PartyID" required="N" />
+        <field name="OrderCapacity" required="N" />
+        <field name="TradingSessionSubID" required="N" />
+      </group>
+      <field name="TrdSubType" required="N" />
+      <field name="TradePriceCondition" required="N" />
+      <field name="TrdRegPublication Reasons" required="N" />
+    </message>
+    <message name="Quote" msgtype="S" msgcat="app">
+      <field name="QuoteID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="SecurityExchange" required="N" />
+      <field name="BidPx" required="N" />
+      <field name="OfferPx" required="N" />
+      <field name="BidSize" required="N" />
+      <field name="OfferSize" required="N" />
+      <field name="Currency" required="N" />
+    </message>
+    <message name="QuoteCancel" msgtype="Z" msgcat="app">
+      <field name="QuoteID" required="N" />
+      <field name="QuoteCancelType" required="N" />
+      <group name="NoQuoteEntries" required="N">
+        <field name="Symbol" required="N" />
+        <field name="SecurityID" required="N" />
+        <field name="IDSource" required="N" />
+        <field name="SecurityExchange" required="N" />
+        <field name="Currency" required="N" />
+      </group>
+    </message>
+    <message name="Trade Capture Report Ack" msgtype="AR" msgcat="app">
+      <field name="Currency" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="LastMkt" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="LastQty" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="Text" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="TradeDate" required="N" />
+      <field name="ExecType" required="N" />
+      <field name="SecurityExchange" required="N" />
+      <field name="GrossTradeAmt" required="N" />
+      <field name="TradeReportTransType" required="N" />
+      <field name="TradeReportID" required="N" />
+      <field name="TradeReportRefID" required="N" />
+      <field name="MatchType" required="N" />
+      <field name="TrdType" required="N" />
+      <field name="TrdSubType" required="N" />
+      <field name="SecondaryTrdType" required="N" />
+      <field name="TradeReportType" required="N" />
+      <field name="TrdRptStatus" required="N" />
+      <field name="TradeID" required="N" />
+      <field name="TradeHandlingInstr" required="N" />
+      <field name="TradePublishIndicator" required="N" />
+      <field name="VenueType" required="N" />
+      <field name="NoTradePriceConditions" required="N" />
+      <field name="IntraFirmTradeIndicator" required="N" />
+      <field name="ExecMethod" required="N" />
+      <field name="AlgorithmicTradeIndicator" required="N" />
+      <field name="TertiaryTrdType" required="N" />
+      <field name="MultiJurisdictionReportingIndica" required="N" />
+      <field name="TrdRegPublicationReasons" required="N" />
+      <field name="NoSides" required="N" />
+      <field name="OrigCompID" required="N" />
+      <field name="OrigSubID" required="N" />
+    </message>
+    <message name="Quote Status Report" msgtype="AI" msgcat="app">
+      <field name="QuoteID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="SecurityExchange" required="N" />
+      <field name="Currency" required="N" />
+      <field name="BidPx" required="N" />
+      <field name="OfferPx" required="N" />
+      <field name="BidSize" required="N" />
+      <field name="OfferSize" required="N" />
+      <field name="QuoteStatus" required="N" />
+      <field name="Text" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="String" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="15" name="Currency" type="Currency" />
+    <field number="22" name="IDSource" type="String">
+      <value enum="4" description="ISIN" />
+    </field>
+    <field number="30" name="LastMkt" type="String" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastQty" type="Qty" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="48" name="SecurityID" type="String" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="54" name="Side" type="char">
+      <value enum="1" description="Buy" />
+      <value enum="8" description="Cross" />
+    </field>
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="57" name="TargetSubID" type="String" />
+    <field number="58" name="Text" type="String">
+      <value enum="A" description="Admin (Refer to p. 27 for details)" />
+      <value enum="H" description="Halted" />
+      <value enum="Z" description="Unforseen Reason" />
+      <value enum="o" description="Max Open Trade Count Exceeded" />
+    </field>
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="75" name="TradeDate" type="UTCTimestamp" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="117" name="QuoteID" type="String" />
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
+    <field number="128" name="DeliverToCompID" type="String" />
+    <field number="132" name="BidPx" type="Price" />
+    <field number="133" name="OfferPx" type="Price" />
+    <field number="134" name="BidSize" type="String" />
+    <field number="135" name="OfferSize" type="String" />
+    <field number="150" name="ExecType" type="char">
+      <value enum="F" description="Trade" />
+    </field>
+    <field number="207" name="SecurityExchange" type="Exchange" />
+    <field number="295" name="NoQuoteEntries" type="NumInGroup" />
+    <field number="297" name="QuoteStatus" type="String" />
+    <field number="298" name="QuoteCancelType" type="String">
+      <value enum="1" description="Cancel for Symbol" />
+    </field>
+    <field number="381" name="GrossTradeAmt" type="String" />
+    <field number="447" name="PartyIDSource" type="String" />
+    <field number="448" name="PartyID" type="String" />
+    <field number="452" name="PartyRole" type="String" />
+    <field number="453" name="NoPartyIDs" type="NumInGroup" />
+    <field number="487" name="TradeReportTransType" type="String">
+      <value enum="0" description="New" />
+      <value enum="2" description="Replace" />
+    </field>
+    <field number="528" name="OrderCapacity" type="String">
+      <value enum="A" description="Agency" />
+      <value enum="R" description="Riskless" />
+    </field>
+    <field number="552" name="NoSides" type="NumInGroup" />
+    <field number="571" name="TradeReportID" type="String" />
+    <field number="572" name="TradeReportRefID" type="String" />
+    <field number="574" name="MatchType" type="String">
+      <value enum="1" description="Trade Reporting (Off-Exchange)" />
+      <value enum="9" description="Trade Reporting (Systematic Internalizer)" />
+    </field>
+    <field number="625" name="TradingSessionSubID" type="String">
+      <value enum="2" description="Scheduled Opening Auction" />
+      <value enum="6" description="Scheduled Intraday Auction" />
+      <value enum="9" description="Unscheduled Auction" />
+      <value enum="5" description="Post Trading" />
+    </field>
+    <field number="828" name="TrdType" type="String">
+      <value enum="0" description="Regular Trade (when none of the following applies)" />
+      <value enum="62" description="Dark Trade" />
+    </field>
+    <field number="829" name="TrdSubType" type="String" />
+    <field number="855" name="SecondaryTrdType" type="String">
+      <value enum="61" description="RFMDGive-up Trade(MMTLevel3.13field‘Give-up’,GIVE)" />
+    </field>
+    <field number="856" name="TradeReportType" type="String" />
+    <field number="939" name="TrdRptStatus" type="String" />
+    <field number="1003" name="TradeID" type="String" />
+    <field number="1123" name="TradeHandlingInstr" type="String" />
+    <field number="1390" name="TradePublishIndicator" type="String">
+      <value enum="0" description="Do Not Publish" />
+      <value enum="2" description="Deferred Publication" />
+    </field>
+    <field number="1430" name="VenueType" type="String">
+      <value enum="B" description="Central Limit Order Book" />
+      <value enum="D" description="Dark Order Book" />
+      <value enum="A" description="Periodic Auctions" />
+      <value enum="H" description="Hybrid Market" />
+    </field>
+    <field number="1838" name="NoTradePriceConditions" type="Price" />
+    <field number="1839" name="TradePriceCondition" type="Price">
+      <value enum="17" description="Price is Pending (PNDG)" />
+    </field>
+    <field number="2373" name="IntraFirmTradeIndicator" type="String">
+      <value enum="N" description="Not an intra-group transaction (default)" />
+    </field>
+    <field number="2405" name="ExecMethod" type="String">
+      <value enum="0" description="Unspecified (default)" />
+      <value enum="2" description="Automated" />
+    </field>
+    <field number="2667" name="AlgorithmicTradeIndicator" type="String">
+      <value enum="0" description="No algorithm was involved (the default)." />
+    </field>
+    <field number="2896" name="TertiaryTrdType" type="String">
+      <value enum="61" description="RFMDGive-up Trade(MMTLevel3.13field‘Give-up’,GIVE)" />
+    </field>
+    <field number="2963" name="MultiJurisdictionReportingIndica" type="String">
+      <value enum="1" description="This trade is reported in multiple jurisdictions." />
+    </field>
+    <field number="8013" name="TrdRegPublication Reasons" type="String">
+      <value enum="0" description="Negotiated Trade in Liquid Instrument (for MTF only) (NLIQ)" />
+      <value enum="3" description="Reference Price (Dark Book) (for MTF only) (RFPT)" />
+      <value enum="7" description="Deferral for Illiquid Instrument (for RTS2 only) (ILQD)" />
+    </field>
+    <field number="9688" name="OrigCompID" type="String" />
+    <field number="9689" name="OrigSubID" type="String" />
+  </fields>
+</fix>

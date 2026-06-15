@@ -1,0 +1,156 @@
+<fix major="2" minor="9" servicepack="0" type="Drop Copy">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="SenderSubID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="TargetSubID" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="SendingTime" required="Y" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Execution Report" msgtype="8" msgcat="app">
+      <field name="ExecTransType" required="Y" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="ExtendedExecInst" required="N" />
+      <field name="ExecType" required="Y" />
+      <field name="ExecRestatementReason" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="OrderId" required="Y" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OrdRejReason" required="N" />
+      <field name="Account" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="SymbolSfx" required="N" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="MaxFloor" required="N" />
+      <field name="Price" required="N" />
+      <field name="DisplayRange" required="N" />
+      <field name="DiscretionAmount" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="ExpireTime" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="ClearingAccount" required="N" />
+      <field name="LastShares" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="LeavesQty" required="Y" />
+      <field name="CumQty" required="Y" />
+      <field name="StopPx" required="N" />
+      <field name="AvgPx" required="Y" />
+      <field name="SecondaryOrderID" required="N" />
+      <field name="FeeCode" required="N" />
+      <field name="AccessFee (effective 02/02/26)" required="N" />
+      <field name="WorkingPrice" required="N" />
+      <field name="InitialDisplayPrice" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="String" />
+    <field number="6" name="AvgPx" type="Price" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="14" name="CumQty" type="Qty" />
+    <field number="17" name="ExecID" type="String" />
+    <field number="18" name="ExecInst" type="MultipleValueString">
+      <value enum="f" description="Intermarket Sweep (Directed or Cboe)" />
+      <value enum="Q" description="Market Maker Peg (see below)" />
+      <value enum="U" description="Supplemental Peg Order" />
+      <value enum="d" description="Midpoint Discretionary Order" />
+      <value enum="o" description="Listing Market Opening (for ROOC strategy only)" />
+    </field>
+    <field number="20" name="ExecTransType" type="char">
+      <value enum="0" description="New" />
+      <value enum="1" description="Trade Cancel" />
+      <value enum="3" description="Status" />
+    </field>
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="37" name="OrderId" type="String" />
+    <field number="38" name="OrderQty" type="Qty" />
+    <field number="39" name="OrdStatus" type="char">
+      <value enum="0" description="New" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="A" description="Pending Ack" />
+      <value enum="8" description="Rejected" />
+    </field>
+    <field number="41" name="OrigClOrdID" type="String" />
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="44" name="Price" type="Price" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="50" name="SenderSubID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="54" name="Side" type="char">
+      <value enum="1" description="Buy" />
+      <value enum="5" description="Sell Short (client affirms ability to borrow)" />
+    </field>
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="57" name="TargetSubID" type="String" />
+    <field number="59" name="TimeInForce" type="char">
+      <value enum="1" description="GTC (Allowed, but treated same as Day)" />
+      <value enum="3" description="IOC (Portion not filled immediately is cancelled.)" />
+      <value enum="5" description="GTX (Early Trading Session until end of Post-Market Session)" />
+      <value enum="R" description="RHO (Regular Hours/Session Only)" />
+    </field>
+    <field number="65" name="SymbolSfx" type="String" />
+    <field number="99" name="StopPx" type="Price" />
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Exchange option" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="5" description="Unknown order" />
+      <value enum="8" description="Stale order" />
+    </field>
+    <field number="111" name="MaxFloor" type="Qty" />
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
+    <field number="126" name="ExpireTime" type="UTCTimestamp" />
+    <field number="150" name="ExecType" type="char">
+      <value enum="0" description="New (acknowledgment of new order)" />
+      <value enum="2" description="Fill" />
+      <value enum="4" description="Canceled" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="D" description="Restated" />
+      <value enum="M" description="Mass Cancel Complete" />
+    </field>
+    <field number="151" name="LeavesQty" type="Qty" />
+    <field number="198" name="SecondaryOrderID" type="String" />
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="3" description="Repricing of Peg Order" />
+      <value enum="5" description="Reduction of Ord Qtydue to SWP or MTP Decrement" />
+      <value enum="C" description="Cboe Market Close (CMC)" />
+    </field>
+    <field number="382" name="NoContraBrokers" type="NumInGroup" />
+    <field number="439" name="ClearingFirm" type="String" />
+    <field number="440" name="ClearingAccount" type="String" />
+    <field number="8020" name="DisplayRange" type="String" />
+    <field number="9416" name="ExtendedExecInst" type="String">
+      <value enum="N" description="None" />
+      <value enum="P" description="Retail Order (Price Improvement Only)" />
+      <value enum="9416" description="P, R or T. EDGX:" />
+    </field>
+    <field number="9621" name="AccessFee (effective 02/02/26)" type="String" />
+    <field number="9622" name="DiscretionAmount" type="String" />
+    <field number="9690" name="WorkingPrice" type="Price" />
+    <field number="9691" name="InitialDisplayPrice" type="Price" />
+    <field number="9882" name="FeeCode" type="String" />
+  </fields>
+</fix>
