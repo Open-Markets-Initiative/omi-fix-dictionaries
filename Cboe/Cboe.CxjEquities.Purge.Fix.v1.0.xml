@@ -1,30 +1,25 @@
 <fix major="1" minor="0" servicepack="0" type="Purge">
   <header />
   <trailer>
-    <field name="10" required="N" />
+    <field name="CheckSum" required="N" />
   </trailer>
   <messages>
     <message name="Purge Request" msgtype="F" msgcat="app">
       <field name="PossResend" required="N" />
       <field name="TransactTime" required="N" />
       <field name="OnBehalfOfCompID" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
       <field name="Symbol" required="N" />
       <field name="OrderID" required="N" />
     </message>
     <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
       <field name="ExecTransType" required="N" />
       <field name="ExecType" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
     </message>
     <message name="Purge Reject" msgtype="9" msgcat="app">
       <field name="OrdStatus" required="N" />
       <field name="CxlRejResponseTo" required="N" />
       <field name="CxlRejReason" required="N" />
       <field name="Text" required="N" />
-      <field name="" required="N" />
       <field name="Side" required="Y" />
       <field name="OrderQty" required="Y" />
       <field name="MaxFloor" required="Y" />
@@ -33,29 +28,17 @@
       <field name="TimeInForce" required="N" />
       <field name="ExpireTime" required="N" />
       <field name="ExecInst" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="TimeInForce" required="N" />
       <field name="PegDifference" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="ExecTransType" required="Y" />
-      <field name="OrderId" required="Y" />
-      <field name="OrdStatus" required="Y" />
-      <field name="TransactTime" required="Y" />
-      <field name="ExecType" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="ExecTransType" required="Y" />
-      <field name="OrderId" required="Y" />
-      <field name="OrdStatus" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="ExecType" required="Y" />
     </message>
   </messages>
   <components />
   <fields>
-    <field number="10" name="10" type="String" />
+    <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />
     <field number="18" name="ExecInst" type="MultipleValueString">
       <value enum="M" description="Midpoint (peg to PBBO Midpoint)" />
@@ -125,9 +108,6 @@
     <field number="211" name="PegDifference" type="String" />
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Cancel" />
-    </field>
-    <field number="7700" name="" type="String">
-      <value enum="A" description="No filtering by trading firm is performed." />
     </field>
   </fields>
 </fix>

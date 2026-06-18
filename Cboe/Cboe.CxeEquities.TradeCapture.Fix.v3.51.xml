@@ -28,8 +28,8 @@
       <field name="SecurityID" required="N" />
       <field name="Symbol" required="N" />
       <field name="TransactTime" required="N" />
-      <field name="SettlType" required="N" />
-      <field name="SettlDate" required="N" />
+      <field name="SettlmntTyp" required="N" />
+      <field name="FutSettDate" required="N" />
       <field name="TradeDate" required="N" />
       <field name="SettlCurrency" required="N" />
       <field name="ExecType" required="N" />
@@ -58,7 +58,7 @@
       <field name="TradePriceCondition" required="N" />
       <field name="IntraFirmTradeIndicator" required="N" />
       <field name="ExecMethod" required="N" />
-      <field name="AlgorithmicTrade Indicator" required="N" />
+      <field name="AlgorithmicTradeIndicator" required="N" />
       <field name="TertiaryTrdType" required="N" />
       <field name="Tolerance" required="N" />
       <group name="NoSides" required="N">
@@ -83,8 +83,8 @@
       <field name="Symbol" required="N" />
       <field name="Text" required="N" />
       <field name="TransactTime" required="N" />
-      <field name="SettlType" required="N" />
-      <field name="SettlDate" required="N" />
+      <field name="SettlmntTyp" required="N" />
+      <field name="FutSettDate" required="N" />
       <field name="TradeDate" required="N" />
       <field name="ExecType" required="N" />
       <field name="SecurityExchange" required="N" />
@@ -136,8 +136,8 @@
       <field name="Symbol" required="N" />
       <field name="Text" required="N" />
       <field name="TransactTime" required="N" />
-      <field name="SettlType" required="N" />
-      <field name="SettlDate" required="N" />
+      <field name="SettlmntTyp" required="N" />
+      <field name="FutSettDate" required="N" />
       <field name="TradeDate" required="N" />
       <field name="ExecType" required="N" />
       <field name="SecurityExchange" required="N" />
@@ -165,12 +165,12 @@
       <field name="AlgorithmicTradeIndica" required="N" />
       <field name="TertiaryTrdType" required="N" />
       <field name="TradePriceCondition" required="N" />
-      <field name="TrdRegPublication Reasons" required="N" />
+      <field name="TrdRegPublicationReasons" required="N" />
       <field name="RptTime" required="N" />
       <field name="OrigCompID" required="N" />
       <field name="OrigSubID" required="N" />
       <field name="NoSides" required="N" />
-      <field name="TradingVenueReg TradeId" required="N" />
+      <field name="TradingVenueRegTradeID" required="N" />
       <field name="SideExecID" required="N" />
       <field name="CentralCounterparty" required="N" />
       <field name="FeeCode" required="N" />
@@ -228,10 +228,8 @@
       <value enum="o" description="Max Open Trade Count Exceeded" />
     </field>
     <field number="60" name="TransactTime" type="UTCTimestamp" />
-    <field number="63" name="SettlType" type="String">
-      <value enum="0" description="Regular (default)" />
-    </field>
-    <field number="64" name="SettlDate" type="UTCTimestamp" />
+    <field number="63" name="SettlmntTyp" type="String" />
+    <field number="64" name="FutSettDate" type="UTCTimestamp" />
     <field number="75" name="TradeDate" type="UTCTimestamp" />
     <field number="97" name="PossResend" type="Boolean" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
@@ -329,7 +327,7 @@
       <value enum="0" description="Unspecified (default)" />
       <value enum="2" description="Automated" />
     </field>
-    <field number="2667" name="AlgorithmicTrade Indicator" type="String">
+    <field number="2667" name="AlgorithmicTradeIndicator" type="String">
       <value enum="0" description="No algorithm was involved (the default)." />
     </field>
     <field number="2896" name="TertiaryTrdType" type="String">
@@ -340,12 +338,12 @@
       <value enum="EMCF" description="Cboe Clear" />
       <value enum="XCLR" description="SIX x-clear" />
     </field>
-    <field number="8013" name="TrdRegPublication Reasons" type="String">
+    <field number="8013" name="TrdRegPublicationReasons" type="String">
       <value enum="3" description="Reference Price (Dark Book) (RFPT)" />
       <value enum="0" description="Negotiated Trade in Liquid Instrument (NLIQ)" />
       <value enum="6" description="Deferral for Large in Scale (LRGS)" />
     </field>
-    <field number="8016" name="TradingVenueReg TradeId" type="String" />
+    <field number="8016" name="TradingVenueRegTradeID" type="String" />
     <field number="9128" name="Tolerance" type="String" />
     <field number="9688" name="OrigCompID" type="String" />
     <field number="9689" name="OrigSubID" type="String" />

@@ -23,7 +23,6 @@
       <field name="MassCancelID" required="N" />
       <field name="Symbol" required="N" />
       <field name="SymbolSfx" required="N" />
-      <field name="" required="N" />
     </message>
     <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
       <field name="SendingTime" required="N" />
@@ -91,6 +90,5 @@
     <field number="7700" name="MassCancelInst" type="String">
       <value enum="A" description="No filtering by MPID is performed." />
     </field>
-    <field number="25017" name="" type="String" />
   </fields>
 </fix>

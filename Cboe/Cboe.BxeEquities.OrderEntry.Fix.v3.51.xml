@@ -30,7 +30,7 @@
       <field name="OrderQty" required="N" />
       <field name="OrdType" required="N" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="SecurityID" required="N" />
       <field name="Side" required="N" />
       <field name="Symbol" required="N" />
@@ -44,7 +44,7 @@
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="OrderOrigination" required="N" />
-      <field name="PreventParticipant Match" required="N" />
+      <field name="PreventParticipantMatch" required="N" />
       <field name="OrderAttributeTypes" required="N" />
       <field name="RoutingInst" required="N" />
       <field name="ExtExecInst" required="N" />
@@ -119,8 +119,8 @@
       <field name="Text" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="TransactTime" required="N" />
-      <field name="SettlType" required="N" />
-      <field name="SettlDate" required="N" />
+      <field name="SettlmntTyp" required="N" />
+      <field name="FutSettDate" required="N" />
       <field name="OrdRejReason" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="ExpireTime" required="N" />
@@ -129,22 +129,22 @@
       <field name="SecondaryOrderID" required="N" />
       <field name="SecurityExchange" required="N" />
       <field name="ContraBroker" required="N" />
-      <field name="ExecRestatement Reason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
       <field name="NoContraBrokers" required="N" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="SettlPrice" required="N" />
       <field name="OrderOrigination" required="N" />
       <field name="CentralCounterparty" required="N" />
-      <field name="TrdRegPublication Reasons" required="N" />
+      <field name="TrdRegPublicationReasons" required="N" />
       <field name="PartyID" required="N" />
       <field name="PartyIDSource" required="N" />
       <field name="PartyRole" required="N" />
       <field name="PartyRoleQualifier" required="N" />
       <field name="OrderAttributeTypes" required="N" />
-      <field name="TradingVenueReg TradeId" required="N" />
+      <field name="TradingVenueRegTradeID" required="N" />
       <field name="ExtExecInst" required="N" />
-      <field name="TradeLiquidity Indicator" required="N" />
+      <field name="TradeLiquidityIndicator" required="N" />
       <field name="FeeCode" required="N" />
     </message>
     <message name="Cancel Reject" msgtype="9" msgcat="app">
@@ -173,16 +173,16 @@
       <field name="Side" required="N" />
       <field name="Symbol" required="N" />
       <field name="TransactTime" required="N" />
-      <field name="SettlType" required="N" />
-      <field name="SettlDate" required="N" />
+      <field name="SettlmntTyp" required="N" />
+      <field name="FutSettDate" required="N" />
       <field name="SecurityExchange" required="N" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="SettlPrice" required="N" />
       <field name="CorrectedSize" required="N" />
-      <field name="TradingVenueReg TradeId" required="N" />
+      <field name="TradingVenueRegTradeID" required="N" />
       <field name="CorrectedPrice" required="N" />
-      <field name="TradeLiquidity Indicator" required="N" />
+      <field name="TradeLiquidityIndicator" required="N" />
     </message>
   </messages>
   <components />
@@ -234,10 +234,7 @@
     <field number="42" name="OrigTime" type="UTCTimestamp" />
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
-    <field number="47" name="OrderCapacity" type="char">
-      <value enum="A" description="Agency (maps to ’AOTC’)" />
-      <value enum="R" description="Riskless (maps to ’MTCH’)" />
-    </field>
+    <field number="47" name="Rule80A" type="char" />
     <field number="48" name="SecurityID" type="String" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="52" name="SendingTime" type="UTCTimestamp" />
@@ -272,10 +269,8 @@
       <value enum="6" description="GTD (expires at specified Expire Time for a specific day)" />
     </field>
     <field number="60" name="TransactTime" type="UTCTimestamp" />
-    <field number="63" name="SettlType" type="String">
-      <value enum="0" description="Regular (default)" />
-    </field>
-    <field number="64" name="SettlDate" type="UTCTimestamp" />
+    <field number="63" name="SettlmntTyp" type="String" />
+    <field number="64" name="FutSettDate" type="UTCTimestamp" />
     <field number="97" name="PossResend" type="Boolean" />
     <field number="102" name="CxlRejReason" type="int">
       <value enum="0" description="Too Late to Cancel" />
@@ -308,7 +303,7 @@
     <field number="207" name="SecurityExchange" type="Exchange" />
     <field number="211" name="PegDifference" type="String" />
     <field number="375" name="ContraBroker" type="String" />
-    <field number="378" name="ExecRestatement Reason" type="String">
+    <field number="378" name="ExecRestatementReason" type="String">
       <value enum="5" description="Partial decline of Order Qty" />
     </field>
     <field number="382" name="NoContraBrokers" type="NumInGroup" />
@@ -344,18 +339,18 @@
       <value enum="EMCF" description="Cboe Clear" />
       <value enum="XCLR" description="SIX x-clear" />
     </field>
-    <field number="7928" name="PreventParticipant Match" type="String">
+    <field number="7928" name="PreventParticipantMatch" type="String">
       <value enum="N" description="Cancel Newest" />
       <value enum="B" description="Cancel Both" />
       <value enum="M" description="Prevent Match at Trading Firm Level" />
     </field>
-    <field number="8013" name="TrdRegPublication Reasons" type="String">
+    <field number="8013" name="TrdRegPublicationReasons" type="String">
       <value enum="3" description="Reference Price (Dark Book) (RFPT)" />
       <value enum="0" description="Negotiated Trade in Liquid Instrument (NLIQ)" />
       <value enum="6" description="Deferral for Large in Scale (LRGS)" />
     </field>
     <field number="8015" name="OrderAttributeTypes" type="String" />
-    <field number="8016" name="TradingVenueReg TradeId" type="String" />
+    <field number="8016" name="TradingVenueRegTradeID" type="String" />
     <field number="9303" name="RoutingInst" type="String">
       <value enum="B" description="Cboe Only (default)" />
       <value enum="U" description="Dark Sweep (interbook)" />
@@ -378,7 +373,7 @@
     <field number="9620" name="CorrectedPrice" type="Price" />
     <field number="9688" name="OrigCompID" type="String" />
     <field number="9689" name="OrigSubID" type="String" />
-    <field number="9730" name="TradeLiquidity Indicator" type="String">
+    <field number="9730" name="TradeLiquidityIndicator" type="String">
       <value enum="A" description="Added Liquidity" />
       <value enum="C" description="Auction" />
       <value enum="P" description="Periodic Auction" />

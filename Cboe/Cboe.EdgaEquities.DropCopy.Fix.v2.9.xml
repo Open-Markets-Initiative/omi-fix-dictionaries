@@ -25,7 +25,7 @@
       <field name="ExecRestatementReason" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="N" />
-      <field name="OrderId" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="NoContraBrokers" required="N" />
       <field name="ContraBroker" required="N" />
       <field name="OrdStatus" required="Y" />
@@ -51,7 +51,7 @@
       <field name="AvgPx" required="Y" />
       <field name="SecondaryOrderID" required="N" />
       <field name="FeeCode" required="N" />
-      <field name="AccessFee (effective 02/02/26)" required="N" />
+      <field name="AccessFee" required="N" />
       <field name="WorkingPrice" required="N" />
       <field name="InitialDisplayPrice" required="N" />
     </message>
@@ -82,7 +82,7 @@
     <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
-    <field number="37" name="OrderId" type="String" />
+    <field number="37" name="OrderID" type="String" />
     <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="char">
       <value enum="0" description="New" />
@@ -147,7 +147,7 @@
       <value enum="P" description="Retail Order (Price Improvement Only)" />
       <value enum="9416" description="P, R or T. EDGX:" />
     </field>
-    <field number="9621" name="AccessFee (effective 02/02/26)" type="String" />
+    <field number="9621" name="AccessFee" type="String" />
     <field number="9622" name="DiscretionAmount" type="String" />
     <field number="9690" name="WorkingPrice" type="Price" />
     <field number="9691" name="InitialDisplayPrice" type="Price" />

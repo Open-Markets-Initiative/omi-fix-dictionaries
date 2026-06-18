@@ -29,7 +29,7 @@
       <field name="HandlInst" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
-      <field name="GroupId" required="N" />
+      <field name="GroupID" required="N" />
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="Y" />
       <field name="Price" required="N" />
@@ -93,7 +93,7 @@
       <field name="ClientID" required="Y" />
       <field name="Symbol" required="N" />
       <field name="Side" required="N" />
-      <field name="GroupId" required="N" />
+      <field name="GroupID" required="N" />
       <field name="ClOrdID" required="Y" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
@@ -105,7 +105,7 @@
       <field name="OrdStatus" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
-      <field name="GroupId" required="N" />
+      <field name="GroupID" required="N" />
       <field name="OrderQty" required="Y" />
       <field name="LastShares" required="Y" />
       <field name="LastPx" required="Y" />
@@ -152,7 +152,7 @@
       <field name="ClientID" required="Y" />
       <field name="Symbol" required="N" />
       <field name="Side" required="N" />
-      <field name="GroupId" required="N" />
+      <field name="GroupID" required="N" />
       <field name="ClOrdID" required="Y" />
     </message>
   </messages>
@@ -373,7 +373,7 @@
       <value enum="R" description="Retail designated order" />
       <value enum="N" description="Not a retail designated order (default)" />
     </field>
-    <field number="20107" name="GroupId" type="Int" />
+    <field number="20107" name="GroupID" type="Int" />
     <field number="21002" name="LocateBroker" type="String" />
     <field number="22202" name="PurgeRequestType" type="Int">
       <value enum="1" description="Cancel orders" />

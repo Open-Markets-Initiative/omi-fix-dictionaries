@@ -47,7 +47,7 @@
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="Y" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="TimeInForce" required="N" />
@@ -84,7 +84,7 @@
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="Y" />
       <field name="OrigClOrdID" required="Y" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="TimeInForce" required="N" />
@@ -96,7 +96,7 @@
       <field name="ExtendedExecInst" required="N" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
-      <field name="AvgPrice" required="N" />
+      <field name="AvgPx" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="CumQty" required="N" />
       <field name="ExecID" required="N" />
@@ -113,7 +113,7 @@
       <field name="OrigClOrdID" required="N" />
       <field name="OrigTime" required="N" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="TimeInForce" required="N" />
@@ -173,7 +173,7 @@
   <components />
   <fields>
     <field number="1" name="Account" type="String" />
-    <field number="6" name="AvgPrice" type="Price" />
+    <field number="6" name="AvgPx" type="Price" />
     <field number="7" name="BeginSeqNo" type="SeqNum" />
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
@@ -249,11 +249,7 @@
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
     <field number="45" name="RefSeqNum" type="SeqNum" />
-    <field number="47" name="OrderCapacity" type="Char">
-      <value enum="A" description="AGENCY" />
-      <value enum="P" description="PRINCIPAL" />
-      <value enum="R" description="Riskless principal" />
-    </field>
+    <field number="47" name="Rule80A" type="Char" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="52" name="SendingTime" type="UTCTimestamp" />
     <field number="54" name="Side" type="Char">

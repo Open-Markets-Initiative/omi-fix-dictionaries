@@ -60,7 +60,7 @@
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
+        <field name="IDSource" required="N" />
         <field name="Product" required="N" />
         <field name="SecurityType" required="N" />
         <field name="ContractMultiplier" required="N" />
@@ -83,7 +83,7 @@
       </group>
     </message>
     <message name="MarketDataSnapshotFullRefresh" msgtype="W" msgcat="app">
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="SecurityID" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="SecurityType" required="Y" />
@@ -103,7 +103,7 @@
         <field name="TradingSessionID" required="N" />
         <field name="Symbol" required="N" />
         <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
+        <field name="IDSource" required="N" />
         <field name="SecurityType" required="N" />
         <field name="SecurityGroup" required="N" />
       </group>
@@ -127,7 +127,7 @@
         <field name="TradingSessionID" required="N" />
         <field name="Symbol" required="N" />
         <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
+        <field name="IDSource" required="N" />
         <field name="SecurityType" required="N" />
         <field name="SecurityGroup" required="N" />
       </group>
@@ -142,7 +142,7 @@
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
+        <field name="IDSource" required="N" />
         <field name="Product" required="N" />
         <field name="SecurityType" required="N" />
         <field name="ContractMultiplier" required="N" />
@@ -173,9 +173,7 @@
     <field number="10" name="CheckSum" type="String" />
     <field number="15" name="Currency" type="Currency" />
     <field number="16" name="EndSeqNo" type="SeqNum" />
-    <field number="22" name="SecurityIDSource" type="Int">
-      <value enum="8" description="Exchange Symbol" />
-    </field>
+    <field number="22" name="IDSource" type="Int" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />

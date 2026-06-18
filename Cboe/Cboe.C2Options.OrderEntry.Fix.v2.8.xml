@@ -11,9 +11,9 @@
     <field name="PossDupFlag" required="N" />
     <field name="SendingTime" required="Y" />
     <field name="OrigSendingTime" required="N" />
-    <field name="OnBehalfOfCompId" required="N" />
+    <field name="OnBehalfOfCompID" required="N" />
     <field name="OnBehalfOfSubID" required="N" />
-    <field name="DeliverToCompId" required="N" />
+    <field name="DeliverToCompID" required="N" />
     <field name="DeliverToSubID" required="N" />
   </header>
   <trailer>
@@ -21,7 +21,7 @@
   </trailer>
   <messages>
     <message name="Logon and Carried Order Restatement" msgtype="A" msgcat="admin">
-      <field name="HeartbeatInterval" required="Y" />
+      <field name="HeartBtInt" required="Y" />
     </message>
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
@@ -50,10 +50,10 @@
     <message name="New Order Single" msgtype="D" msgcat="app">
       <field name="PossResend" required="N" />
       <field name="Account" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="OpenClose" required="Y" />
       <field name="SecurityType" required="Y" />
-      <field name="MaturityMonth" required="N" />
+      <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
       <field name="PutOrCall" required="N" />
       <field name="StrikePrice" required="N" />
@@ -97,7 +97,7 @@
       <field name="FLEXAuctionDuration" required="N" />
       <field name="FLEXHedgeExecInst" required="N" />
       <field name="FLEXPreFacilPrice" required="N" />
-      <field name="TerminalOperatorId" required="N" />
+      <field name="TerminalOperatorID" required="N" />
       <field name="AdditionalClientInfo" required="N" />
       <field name="ReferencePrice" required="N" />
     </message>
@@ -105,7 +105,7 @@
       <field name="PossResend" required="N" />
       <field name="Account" required="N" />
       <field name="ClearingOptionalData" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="SecurityType" required="Y" />
       <field name="Side" required="Y" />
@@ -161,12 +161,12 @@
       <field name="CrossOnBehalfOfID" required="N" />
       <field name="EquityLegShortSell" required="N" />
       <field name="FloorDestination" required="N" />
-      <field name="TerminalOperatorId" required="N" />
+      <field name="TerminalOperatorID" required="N" />
       <field name="AdditionalClientInfo" required="N" />
       <field name="ReferencePrice" required="N" />
     </message>
     <message name="Security Definition Request" msgtype="c" msgcat="app">
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="SecurityType" required="Y" />
       <field name="PriceType" required="N" />
@@ -186,11 +186,11 @@
       <field name="PossResend" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="Symbol" required="N" />
       <field name="OpenClose" required="N" />
-      <field name="MaturityMonth" required="N" />
+      <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
       <field name="PutOrCall" required="N" />
       <field name="StrikePrice" required="N" />
@@ -202,13 +202,13 @@
     <message name="Order Cancel/Replace Request" msgtype="G" msgcat="app">
       <field name="PossResend" required="N" />
       <field name="Account" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="Symbol" required="N" />
       <field name="OpenClose" required="N" />
-      <field name="MaturityMonth" required="N" />
+      <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
       <field name="PutOrCall" required="N" />
       <field name="StrikePrice" required="N" />
@@ -234,7 +234,7 @@
       <field name="ClOrdID" required="N" />
       <field name="TradeDate" required="N" />
       <field name="OrigClOrdID" required="N" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="NoContraBrokers" required="N" />
       <field name="ContraBroker" required="N" />
       <field name="ContraTrader" required="N" />
@@ -268,7 +268,7 @@
         <field name="LegDelta" required="N" />
       </group>
       <field name="OpenClose" required="N" />
-      <field name="MaturityMonth" required="N" />
+      <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
       <field name="PutOrCall" required="N" />
       <field name="StrikePrice" required="N" />
@@ -319,8 +319,8 @@
       <field name="Floor" required="N" />
       <field name="SenderLocationID" required="N" />
       <field name="PriceType" required="N" />
-      <field name="InitialClientOrderId" required="N" />
-      <field name="TerminalOperatorId" required="N" />
+      <field name="InitialClientOrderID" required="N" />
+      <field name="TerminalOperatorID" required="N" />
       <field name="AdditionalClientInfo" required="N" />
       <field name="Delta" required="N" />
       <field name="LegDelta" required="N" />
@@ -328,17 +328,17 @@
       <field name="FloorDestination" required="N" />
       <field name="FloorTradeTime" required="N" />
       <field name="EquityExDestination" required="N" />
-      <field name="OccId" required="N" />
+      <field name="OccID" required="N" />
     </message>
     <message name="Cancel Reject" msgtype="9" msgcat="app">
       <field name="ClOrdID" required="N" />
       <field name="OrigClOrdID" required="N" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="OrdStatus" required="N" />
       <field name="Account" required="N" />
       <field name="CxlRejResponseTo" required="N" />
       <field name="CxlRejReason" required="N" />
-      <field name="Free" required="N" />
+      <field name="Text" required="N" />
       <field name="MassCancelID" required="N" />
       <field name="ClearingOptionalData" required="N" />
     </message>
@@ -346,19 +346,19 @@
       <field name="ExecTransType" required="N" />
       <field name="ExecID" required="N" />
       <field name="ExecRefID" required="N" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="Symbol" required="N" />
       <field name="OpenClose" required="N" />
-      <field name="Copied" required="N" />
+      <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
       <field name="PutOrCall" required="N" />
       <field name="StrikePrice" required="N" />
       <field name="Side" required="N" />
       <field name="TradeLiquidityIndicator" required="N" />
-      <field name="DeliverToCompId" required="N" />
+      <field name="DeliverToCompID" required="N" />
       <field name="ClearingFirm" required="N" />
-      <field name="Copied" required="N" />
+      <field name="ClearingAccount" required="N" />
       <field name="CorrectedStrikePrice" required="N" />
       <field name="CorrectedPrice" required="N" />
       <field name="Only" required="N" />
@@ -366,7 +366,7 @@
       <field name="LastPx" required="N" />
       <field name="OrigTime" required="N" />
       <field name="TransactTime" required="N" />
-      <field name="InitialClientOrderId" required="N" />
+      <field name="InitialClientOrderID" required="N" />
       <field name="SecurityType" required="N" />
       <field name="ClosingPrice" required="N" />
       <field name="ClearingOptionalData" required="N" />
@@ -380,7 +380,7 @@
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
-    <field number="11" name="ClOrdId" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
     <field number="14" name="CumQty" type="Qty" />
     <field number="16" name="EndSeqNo" type="SeqNum" />
     <field number="17" name="ExecID" type="String" />
@@ -400,7 +400,7 @@
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />
-    <field number="37" name="OrderId" type="String" />
+    <field number="37" name="OrderID" type="String" />
     <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="char">
       <value enum="0" description="New" />
@@ -468,17 +468,17 @@
       <value enum="5" description="Unknown order" />
       <value enum="8" description="Stale order" />
     </field>
-    <field number="108" name="HeartbeatInterval" type="int" />
+    <field number="108" name="HeartBtInt" type="int" />
     <field number="109" name="ClientID" type="String" />
     <field number="110" name="MinQty" type="Qty" />
     <field number="111" name="MaxFloor" type="Qty" />
     <field number="112" name="TestReqID" type="String" />
-    <field number="115" name="OnBehalfOfCompId" type="String" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="116" name="OnBehalfOfSubID" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
     <field number="123" name="GapFillFlag" type="Boolean" />
     <field number="126" name="ExpireTime" type="UTCTimestamp" />
-    <field number="128" name="DeliverToCompId" type="String" />
+    <field number="128" name="DeliverToCompID" type="String" />
     <field number="129" name="DeliverToSubID" type="String" />
     <field number="142" name="SenderLocationID" type="String">
       <value enum="F" description="Floor" />
@@ -497,7 +497,7 @@
       <value enum="MLEG" description="Multileg" />
     </field>
     <field number="198" name="SecondaryOrderID" type="String" />
-    <field number="200" name="MaturityMonth" type="MonthYear" />
+    <field number="200" name="MaturityMonthYear" type="MonthYear" />
     <field number="201" name="PutOrCall" type="int">
       <value enum="0" description="Put" />
     </field>
@@ -672,8 +672,8 @@
     <field number="22018" name="TiedHedge" type="String">
       <value enum="N" description="No (Default)" />
     </field>
-    <field number="22020" name="InitialClientOrderId" type="String" />
-    <field number="22021" name="TerminalOperatorId" type="String" />
+    <field number="22020" name="InitialClientOrderID" type="String" />
+    <field number="22021" name="TerminalOperatorID" type="String" />
     <field number="22022" name="AdditionalClientInfo" type="String" />
     <field number="22023" name="Delta" type="String" />
     <field number="22024" name="LegDelta" type="String" />
@@ -688,7 +688,7 @@
     </field>
     <field number="22624" name="EquityLegShortSell" type="String" />
     <field number="25018" name="CorrectedStrikePrice" type="Price" />
-    <field number="25019" name="OccId" type="String">
+    <field number="25019" name="OccID" type="String">
       <value enum="L" description="Fixed limit price" />
     </field>
   </fields>

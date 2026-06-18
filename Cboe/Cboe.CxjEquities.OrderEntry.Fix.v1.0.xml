@@ -1,20 +1,20 @@
 <fix major="1" minor="0" servicepack="0" type="Order Entry">
   <header />
   <trailer>
-    <field name="10" required="N" />
+    <field name="CheckSum" required="N" />
   </trailer>
   <messages>
     <message name="New Order Single" msgtype="D" msgcat="app">
       <field name="PossResend" required="N" />
       <field name="Account" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
-      <field name="HandInst" required="Y" />
+      <field name="HandlInst" required="Y" />
       <field name="IDSource" required="N" />
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="Y" />
       <field name="Price" required="Y" />
-      <field name="OrderCapacity" required="Y" />
+      <field name="Rule80A" required="Y" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="TimeInForce" required="N" />
@@ -44,14 +44,14 @@
     </message>
     <message name="Order Cancel/Replace Request" msgtype="G" msgcat="app">
       <field name="PossResend" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="N" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="Side" required="N" />
       <field name="Symbol" required="N" />
       <field name="TimeInForce" required="N" />
@@ -76,13 +76,13 @@
       <field name="LastPx" required="N" />
       <field name="LastMkt" required="N" />
       <field name="LastShares" required="N" />
-      <field name="OrderId" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="OrderQty" required="Y" />
       <field name="OrdStatus" required="Y" />
       <field name="OrdType" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="Text" required="N" />
@@ -122,7 +122,7 @@
     <message name="Cancel Reject" msgtype="9" msgcat="app">
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
-      <field name="OrderId" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="OrdStatus" required="Y" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Text" required="N" />
@@ -136,7 +136,7 @@
       <field name="ExecTransType" required="Y" />
       <field name="LastPx" required="Y" />
       <field name="LastShares" required="Y" />
-      <field name="OrderId" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="OrigTime" required="Y" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
@@ -157,8 +157,8 @@
   <fields>
     <field number="1" name="Account" type="String" />
     <field number="6" name="AvgPx" type="Price" />
-    <field number="10" name="10" type="String" />
-    <field number="11" name="ClOrdId" type="String" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
     <field number="14" name="CumQty" type="Qty" />
     <field number="17" name="ExecID" type="String" />
     <field number="18" name="ExecInst" type="MultipleValueString">
@@ -171,9 +171,7 @@
       <value enum="3" description="Status. Used to provide peg suspensions (" />
       <value enum="1" description="Trade Cancel" />
     </field>
-    <field number="21" name="HandInst" type="char">
-      <value enum="1" description="Automated execution order, private, no Broker intervention" />
-    </field>
+    <field number="21" name="HandlInst" type="char" />
     <field number="22" name="IDSource" type="String">
       <value enum="3" description="QUICK (default)" />
     </field>
@@ -202,9 +200,7 @@
     <field number="41" name="OrigClOrdID" type="String" />
     <field number="42" name="OrigTime" type="UTCTimestamp" />
     <field number="44" name="Price" type="Price" />
-    <field number="47" name="OrderCapacity" type="char">
-      <value enum="A" description="Agency" />
-    </field>
+    <field number="47" name="Rule80A" type="char" />
     <field number="54" name="Side" type="char">
       <value enum="1" description="Buy" />
       <value enum="5" description="Sell Short (client affirms ability to borrow)" />

@@ -52,7 +52,7 @@
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="Y" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="SecurityID" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="N" />
@@ -84,7 +84,7 @@
       <field name="OrdType" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="SecurityID" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
@@ -111,7 +111,7 @@
       <field name="OrdType" required="Y" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="SecurityID" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="N" />
@@ -160,7 +160,7 @@
     </message>
     <message name="TradeCaptureReportAck" msgtype="AR" msgcat="app">
       <field name="Currency" required="N" />
-      <field name="TrdMatchID" required="N" />
+      <field name="ExecID" required="N" />
       <field name="IDSource" required="N" />
       <field name="LastPx" required="Y" />
       <field name="LastShares" required="Y" />
@@ -236,10 +236,7 @@
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
     <field number="45" name="RefSeqNum" type="SeqNum" />
-    <field number="47" name="OrderCapacity" type="Char">
-      <value enum="A" description="Agency" />
-      <value enum="P" description="Principal" />
-    </field>
+    <field number="47" name="Rule80A" type="Char" />
     <field number="48" name="SecurityID" type="String" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="52" name="SendingTime" type="UTCTimestamp" />
@@ -295,6 +292,10 @@
     <field number="434" name="CxlRejResponseTo" type="Char">
       <value enum="1" description="Order Cancel Request" />
       <value enum="2" description="Order Cancel/Replace Request" />
+    </field>
+    <field number="528" name="OrderCapacity" type="Char">
+      <value enum="A" description="Agency" />
+      <value enum="P" description="Principal" />
     </field>
     <field number="552" name="NoSides" type="NumInGroup" />
     <field number="571" name="TradeReportID" type="String" />

@@ -11,7 +11,7 @@
     <field name="PossDupFlag" required="N" />
     <field name="SendingTime" required="Y" />
     <field name="OrigSendingTime" required="N" />
-    <field name="OnBehalfOfCompId" required="Y" />
+    <field name="OnBehalfOfCompID" required="Y" />
   </header>
   <trailer>
     <field name="CheckSum" required="Y" />
@@ -25,7 +25,6 @@
       <field name="CumQty" required="Y" />
       <field name="Currency" required="Y" />
       <field name="ExecID" required="Y" />
-      <field name="ExecTransType" required="Y" />
       <field name="LastPx" required="Y" />
       <field name="LastShares" required="Y" />
       <field name="OrderID" required="Y" />
@@ -142,7 +141,7 @@
       <value enum="0" description="Exchange option" />
       <value enum="2" description="Exchange closed" />
     </field>
-    <field number="115" name="OnBehalfOfCompId" type="String" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
     <field number="150" name="ExecType" type="char">
       <value enum="0" description="New (acknowledgement of new order)" />

@@ -1,7 +1,7 @@
 <fix major="1" minor="0" servicepack="0" type="Drop Copy">
   <header />
   <trailer>
-    <field name="10" required="N" />
+    <field name="CheckSum" required="N" />
   </trailer>
   <messages>
     <message name="Execution Report" msgtype="8" msgcat="app">
@@ -17,13 +17,13 @@
       <field name="LastPx" required="N" />
       <field name="LastMkt" required="N" />
       <field name="LastShares" required="N" />
-      <field name="OrderId" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="OrderQty" required="Y" />
       <field name="OrdStatus" required="Y" />
       <field name="OrdType" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="Text" required="N" />
@@ -65,7 +65,7 @@
   <fields>
     <field number="1" name="Account" type="String" />
     <field number="6" name="AvgPx" type="Price" />
-    <field number="10" name="10" type="String" />
+    <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />
     <field number="14" name="CumQty" type="Qty" />
     <field number="17" name="ExecID" type="String" />
@@ -88,7 +88,7 @@
     <field number="30" name="LastMkt" type="String" />
     <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
-    <field number="37" name="OrderId" type="String" />
+    <field number="37" name="OrderID" type="String" />
     <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="char">
       <value enum="0" description="New" />
@@ -105,9 +105,7 @@
     </field>
     <field number="41" name="OrigClOrdID" type="String" />
     <field number="44" name="Price" type="Price" />
-    <field number="47" name="OrderCapacity" type="char">
-      <value enum="A" description="Agency" />
-    </field>
+    <field number="47" name="Rule80A" type="char" />
     <field number="54" name="Side" type="char">
       <value enum="1" description="Buy" />
       <value enum="5" description="Sell Short (client affirms ability to borrow)" />

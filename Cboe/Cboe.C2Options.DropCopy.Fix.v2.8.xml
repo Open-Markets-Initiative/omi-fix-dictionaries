@@ -11,9 +11,9 @@
     <field name="PossDupFlag" required="N" />
     <field name="SendingTime" required="Y" />
     <field name="OrigSendingTime" required="N" />
-    <field name="OnBehalfOfCompId" required="N" />
+    <field name="OnBehalfOfCompID" required="N" />
     <field name="OnBehalfOfSubID" required="N" />
-    <field name="DeliverToCompId" required="N" />
+    <field name="DeliverToCompID" required="N" />
     <field name="DeliverToSubID" required="N" />
   </header>
   <trailer>
@@ -33,7 +33,7 @@
       <field name="ClOrdID" required="N" />
       <field name="TradeDate" required="N" />
       <field name="OrigClOrdID" required="N" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="NoContraBrokers" required="N" />
       <field name="ContraBroker" required="N" />
       <field name="ContraTrader" required="N" />
@@ -67,7 +67,7 @@
         <field name="LegDelta" required="N" />
       </group>
       <field name="OpenClose" required="N" />
-      <field name="MaturityMonth" required="N" />
+      <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
       <field name="PutOrCall" required="N" />
       <field name="StrikePrice" required="N" />
@@ -118,8 +118,8 @@
       <field name="Floor" required="N" />
       <field name="SenderLocationID" required="N" />
       <field name="PriceType" required="N" />
-      <field name="InitialClientOrderId" required="N" />
-      <field name="TerminalOperatorId" required="N" />
+      <field name="InitialClientOrderID" required="N" />
+      <field name="TerminalOperatorID" required="N" />
       <field name="AdditionalClientInfo" required="N" />
       <field name="Delta" required="N" />
       <field name="LegDelta" required="N" />
@@ -127,7 +127,7 @@
       <field name="FloorDestination" required="N" />
       <field name="FloorTradeTime" required="N" />
       <field name="EquityExDestination" required="N" />
-      <field name="OccId" required="N" />
+      <field name="OccID" required="N" />
     </message>
     <message name="Trade Cancel/Correct FIX Drop Clearing Edit" msgtype="UCC" msgcat="app">
       <field name="ExecTransType" required="N" />
@@ -145,16 +145,16 @@
       <field name="PartySubID" required="N" />
       <field name="ClearingOptionalData" required="N" />
       <field name="AllocClOrdID" required="N" />
-      <field name="Capacity" required="N" />
-      <field name="OrderId" required="N" />
+      <field name="Rule80A" required="N" />
+      <field name="OrderID" required="N" />
       <field name="Symbol" required="N" />
-      <field name="MaturityMonth" required="N" />
+      <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
       <field name="PutOrCall" required="N" />
       <field name="StrikePrice" required="N" />
       <field name="Side" required="N" />
       <field name="TradeLiquidityIndicator" required="N" />
-      <field name="DeliverToCompId" required="N" />
+      <field name="DeliverToCompID" required="N" />
       <field name="LastShares" required="N" />
       <field name="LastPx" required="N" />
       <field name="OrigTime" required="N" />
@@ -165,7 +165,7 @@
       <field name="ExecRefID" required="N" />
     </message>
     <message name="Security Definition" msgtype="d" msgcat="app">
-      <field name="ClOrdIDfrom" required="N" />
+      <field name="ClOrdID" required="N" />
       <field name="SecurityType" required="N" />
       <field name="Account" required="N" />
       <field name="Symbol" required="N" />
@@ -210,7 +210,7 @@
     <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
-    <field number="37" name="OrderId" type="String" />
+    <field number="37" name="OrderID" type="String" />
     <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="char">
       <value enum="0" description="New" />
@@ -262,11 +262,11 @@
     </field>
     <field number="105" name="WaveNo" type="String" />
     <field number="111" name="MaxFloor" type="Qty" />
-    <field number="115" name="OnBehalfOfCompId" type="String" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="116" name="OnBehalfOfSubID" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
     <field number="126" name="ExpireTime" type="UTCTimestamp" />
-    <field number="128" name="DeliverToCompId" type="String" />
+    <field number="128" name="DeliverToCompID" type="String" />
     <field number="129" name="DeliverToSubID" type="String" />
     <field number="142" name="SenderLocationID" type="String">
       <value enum="F" description="Floor" />
@@ -285,7 +285,7 @@
       <value enum="MLEG" description="Multileg" />
     </field>
     <field number="198" name="SecondaryOrderID" type="String" />
-    <field number="200" name="MaturityMonth" type="MonthYear" />
+    <field number="200" name="MaturityMonthYear" type="MonthYear" />
     <field number="201" name="PutOrCall" type="int">
       <value enum="0" description="Put" />
     </field>
@@ -417,8 +417,8 @@
       <value enum="S" description="SRT Securities via NYSE Chicago" />
     </field>
     <field number="22017" name="SessionEligibility" type="String" />
-    <field number="22020" name="InitialClientOrderId" type="String" />
-    <field number="22021" name="TerminalOperatorId" type="String" />
+    <field number="22020" name="InitialClientOrderID" type="String" />
+    <field number="22021" name="TerminalOperatorID" type="String" />
     <field number="22022" name="AdditionalClientInfo" type="String" />
     <field number="22023" name="Delta" type="String" />
     <field number="22024" name="LegDelta" type="String" />
@@ -429,7 +429,7 @@
     <field number="25007" name="AllocExecRefID" type="String" />
     <field number="25008" name="AllocClearingFirm" type="String" />
     <field number="25009" name="AllocClOrdID" type="String" />
-    <field number="25019" name="OccId" type="String">
+    <field number="25019" name="OccID" type="String">
       <value enum="L" description="Fixed limit price" />
     </field>
   </fields>

@@ -11,7 +11,7 @@
     <field name="PossDupFlag" required="N" />
     <field name="SendingTime" required="Y" />
     <field name="OrigSendingTime" required="N" />
-    <field name="OnBehalfOfCompId" required="Y" />
+    <field name="OnBehalfOfCompID" required="Y" />
   </header>
   <trailer>
     <field name="CheckSum" required="Y" />
@@ -19,10 +19,10 @@
   <messages>
     <message name="New Order Single" msgtype="D" msgcat="app">
       <field name="Account" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
       <field name="HandlInst" required="N" />
-      <field name="IOIid* (MATCHNow only)" required="N" />
+      <field name="IOIID" required="N" />
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="Y" />
       <field name="Price" required="N" />
@@ -35,7 +35,7 @@
       <field name="FutSettDate" required="N" />
       <field name="StopPx" required="N" />
       <field name="ExDestination" required="N" />
-      <field name="MinQty (MATCHNow only)" required="N" />
+      <field name="MinQty" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="ExpireTime" required="N" />
       <field name="PegDifference" required="N" />
@@ -64,7 +64,7 @@
       <field name="NoTradeFeat" required="N" />
       <field name="NoTradeKey" required="N" />
       <field name="ShortMarkingExempt" required="N" />
-      <field name="ConditionalFlag (MATCHNow only)" required="N" />
+      <field name="ConditionalFlag" required="N" />
       <field name="LEICustomerAccount" required="N" />
       <field name="LEIAlgorithmID" required="N" />
       <field name="CustomerLEI" required="N" />
@@ -98,28 +98,22 @@
       <field name="CustomerLEI" required="N" />
       <field name="BrokerLEI" required="N" />
       <field name="Account" required="N" />
-      <field name="Quantity" required="N" />
+      <field name="OrderQty" required="N" />
       <field name="OrdType" required="N" />
       <field name="Price" required="N" />
-      <field name="TIF" required="N" />
+      <field name="TimeInForce" required="N" />
       <field name="StopPx" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="ExpireTime" required="N" />
       <field name="ExpireDate" required="N" />
-      <field name="LEIOrderOrigination" required="N" />
-      <field name="LEIRoutingArrangementIndicator" required="N" />
       <field name="UMIRAccountType" required="N" />
-      <field name="LEICustomerAccount" required="N" />
-      <field name="LEIAlgorithmID" required="N" />
-      <field name="CustomerLEI" required="N" />
-      <field name="BrokerLEI" required="N" />
     </message>
     <message name="Order Cancel/Replace Request" msgtype="G" msgcat="app">
       <field name="Account" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
       <field name="HandlInst" required="N" />
-      <field name="IOIid" required="N" />
+      <field name="IOIID" required="N" />
       <field name="OrderID" required="N" />
       <field name="OrderQty" required="N" />
       <field name="OrdType" required="N" />
@@ -143,7 +137,7 @@
       <field name="UMIRAccountType" required="N" />
       <field name="UMIRUserID" required="N" />
       <field name="BasketTrade" required="N" />
-      <field name="Program Trade" required="N" />
+      <field name="ProgramTrade" required="N" />
       <field name="Jitney" required="N" />
       <field name="Anonymous" required="N" />
       <field name="UMIRRegulationID" required="N" />
@@ -171,7 +165,7 @@
       <field name="ExecID" required="Y" />
       <field name="ExecInst" required="N" />
       <field name="ExecTransType" required="Y" />
-      <field name="HandInst" required="N" />
+      <field name="HandlInst" required="N" />
       <field name="LastPx" required="N" />
       <field name="LastShares" required="N" />
       <field name="OrderID" required="Y" />
@@ -185,14 +179,14 @@
       <field name="Text" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="TransactTime" required="Y" />
-      <field name="SettlmtTyp" required="N" />
+      <field name="SettlmntTyp" required="N" />
       <field name="FutSettDate" required="N" />
       <field name="TradeDate" required="N" />
-      <field name="ExecBroker (MATCHNow only)" required="N" />
+      <field name="ExecBroker" required="N" />
       <field name="StopPx" required="N" />
       <field name="ExDestination" required="N" />
       <field name="OrdRejReason" required="N" />
-      <field name="ClientID (MATCHNow only)" required="N" />
+      <field name="ClientID" required="N" />
       <field name="MinQty" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="ExpireTime" required="N" />
@@ -246,7 +240,7 @@
       <field name="CxlRejResponseTo" required="Y" />
     </message>
     <message name="Trade Cancel/Correct" msgtype="UCC" msgcat="app">
-      <field name="Account (Cboe Canada NEO only)" required="N" />
+      <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="ExecID" required="Y" />
       <field name="ExecRefID" required="Y" />
@@ -258,17 +252,13 @@
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="TransactTime" required="Y" />
-      <field name="SymbolSfx (MATCHNow only)" required="Y" />
+      <field name="SymbolSfx" required="Y" />
       <field name="LastLiquidityInd" required="Y" />
-      <field name="CorrectedSize (Cboe Canada NEO only)" required="N" />
-      <field name="UMIRUserID (Cboe Canada NEO only)" required="Y" />
       <field name="CorrectedPrice" required="N" />
       <field name="FeeCode" required="N" />
-      <field name="FixCorrectedFutSettlDate (Cboe Canada NEO only)" required="N" />
-      <field name="FixCorrectedSettlementType (Cboe Canada NEO only)" required="N" />
     </message>
     <message name="Cross Order Entry" msgtype="D" msgcat="app">
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="OrderQty" required="Y" />
       <field name="Price" required="Y" />
       <field name="Side" required="Y" />
@@ -315,7 +305,6 @@
       <field name="CumQty" required="Y" />
       <field name="Currency" required="Y" />
       <field name="ExecID" required="Y" />
-      <field name="ExecTransType" required="Y" />
       <field name="LastPx" required="Y" />
       <field name="LastShares" required="Y" />
       <field name="OrderID" required="Y" />
@@ -364,7 +353,7 @@
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
-    <field number="11" name="ClOrdId" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
     <field number="14" name="CumQty" type="Qty" />
     <field number="15" name="Currency" type="Currency">
       <value enum="USD" description="United States Dollar" />
@@ -385,7 +374,7 @@
       <value enum="1" description="Direct Action Order (DAO)" />
       <value enum="6" description="Protect and Reprice" />
     </field>
-    <field number="23" name="IOIid* (MATCHNow only)" type="String" />
+    <field number="23" name="IOIID" type="String" />
     <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
@@ -445,9 +434,9 @@
       <value enum="11" description="Non-Net" />
     </field>
     <field number="64" name="FutSettDate" type="UTCTimestamp" />
-    <field number="65" name="SymbolSfx (MATCHNow only)" type="String" />
+    <field number="65" name="SymbolSfx" type="String" />
     <field number="75" name="TradeDate" type="UTCTimestamp" />
-    <field number="76" name="ExecBroker (MATCHNow only)" type="String" />
+    <field number="76" name="ExecBroker" type="String" />
     <field number="99" name="StopPx" type="Price" />
     <field number="100" name="ExDestination" type="Exchange">
       <value enum="C" description="Cboe Canada Crossing Market" />
@@ -460,10 +449,10 @@
       <value enum="0" description="Exchange option" />
       <value enum="2" description="Exchange closed" />
     </field>
-    <field number="109" name="ClientID (MATCHNow only)" type="String" />
-    <field number="110" name="MinQty (MATCHNow only)" type="Qty" />
+    <field number="109" name="ClientID" type="String" />
+    <field number="110" name="MinQty" type="Qty" />
     <field number="111" name="MaxFloor" type="Qty" />
-    <field number="115" name="OnBehalfOfCompId" type="String" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
     <field number="126" name="ExpireTime" type="UTCTimestamp" />
     <field number="150" name="ExecType" type="char">
@@ -495,7 +484,6 @@
       <value enum="7" description="Order execution only service" />
     </field>
     <field number="2883" name="LEIRoutingArrangementIndicator" type="String" />
-    <field number="6655" name="CorrectedSize (Cboe Canada NEO only)" type="String" />
     <field number="6750" name="UMIRAccountType" type="String">
       <value enum="IN" description="Inventory" />
       <value enum="CL" description="Client" />
@@ -547,7 +535,7 @@
       <value enum="1" description="Broker Preferencing" />
     </field>
     <field number="7733" name="SelfTrade" type="String" />
-    <field number="8002" name="ConditionalFlag (MATCHNow only)" type="String">
+    <field number="8002" name="ConditionalFlag" type="String">
       <value enum="0" description="Conditional Order (DAY and GTD only)" />
     </field>
     <field number="8005" name="ConditionalStatus" type="String">
@@ -586,7 +574,5 @@
     <field number="20211" name="BuyRoutingArrangement" type="String" />
     <field number="20212" name="SellRoutingArrangement" type="String" />
     <field number="22009" name="TrueMinQty" type="Qty" />
-    <field number="25021" name="FixCorrectedFutSettlDate (Cboe Canada NEO only)" type="UTCTimestamp" />
-    <field number="25022" name="FixCorrectedSettlementType (Cboe Canada NEO only)" type="String" />
   </fields>
 </fix>

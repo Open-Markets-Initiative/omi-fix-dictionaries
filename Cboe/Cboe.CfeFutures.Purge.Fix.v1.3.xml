@@ -13,7 +13,7 @@
     <field name="OrigSendingTime" required="N" />
     <field name="OnBehalfOfCompID" required="N" />
     <field name="OnBehalfOfSubID" required="N" />
-    <field name="DeliverToCompId" required="N" />
+    <field name="DeliverToCompID" required="N" />
     <field name="DeliverToSubID" required="N" />
   </header>
   <trailer>
@@ -26,8 +26,6 @@
       <field name="MassCancelInst" required="Y" />
       <field name="MassCancelID" required="N" />
       <field name="Symbol" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
     </message>
     <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
       <field name="SendingTime" required="N" />
@@ -82,7 +80,7 @@
     <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="116" name="OnBehalfOfSubID" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
-    <field number="128" name="DeliverToCompId" type="String" />
+    <field number="128" name="DeliverToCompID" type="String" />
     <field number="129" name="DeliverToSubID" type="String" />
     <field number="150" name="ExecType" type="char">
       <value enum="0" description="New (acknowledgement of new order)" />
@@ -93,10 +91,6 @@
     </field>
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Cancel" />
-    </field>
-    <field number="1028" name="" type="String">
-      <value enum="1" description="Accept As-Is (legs were not modified)" />
-      <value enum="Y" description="Manual order entry" />
     </field>
     <field number="7695" name="MassCancelID" type="String" />
     <field number="7700" name="MassCancelInst" type="String">

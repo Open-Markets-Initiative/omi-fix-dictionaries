@@ -22,7 +22,7 @@
       <field name="IDSource" required="N" />
       <field name="LastMkt" required="N" />
       <field name="LastPx" required="N" />
-      <field name="LastQty" required="N" />
+      <field name="LastShares" required="N" />
       <field name="SecurityID" required="N" />
       <field name="Symbol" required="N" />
       <field name="TransactTime" required="N" />
@@ -47,7 +47,7 @@
       <field name="AlgorithmicTradeIndicator" required="N" />
       <field name="TertiaryTrdType" required="N" />
       <field name="MultiJurisdictionReportingIndica" required="N" />
-      <field name="TrdRegPublication Reasons" required="N" />
+      <field name="TrdRegPublicationReasons" required="N" />
       <group name="NoSides" required="N">
         <field name="Side" required="N" />
         <field name="Account" required="N" />
@@ -59,8 +59,6 @@
         <field name="TradingSessionSubID" required="N" />
       </group>
       <field name="TrdSubType" required="N" />
-      <field name="TradePriceCondition" required="N" />
-      <field name="TrdRegPublication Reasons" required="N" />
     </message>
     <message name="Quote" msgtype="S" msgcat="app">
       <field name="QuoteID" required="N" />
@@ -90,7 +88,7 @@
       <field name="IDSource" required="N" />
       <field name="LastMkt" required="N" />
       <field name="LastPx" required="N" />
-      <field name="LastQty" required="N" />
+      <field name="LastShares" required="N" />
       <field name="SecurityID" required="N" />
       <field name="Symbol" required="N" />
       <field name="Text" required="N" />
@@ -150,7 +148,7 @@
     </field>
     <field number="30" name="LastMkt" type="String" />
     <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastQty" type="Qty" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="43" name="PossDupFlag" type="Boolean" />
@@ -257,7 +255,7 @@
     <field number="2963" name="MultiJurisdictionReportingIndica" type="String">
       <value enum="1" description="This trade is reported in multiple jurisdictions." />
     </field>
-    <field number="8013" name="TrdRegPublication Reasons" type="String">
+    <field number="8013" name="TrdRegPublicationReasons" type="String">
       <value enum="0" description="Negotiated Trade in Liquid Instrument (for MTF only) (NLIQ)" />
       <value enum="3" description="Reference Price (Dark Book) (for MTF only) (RFPT)" />
       <value enum="7" description="Deferral for Illiquid Instrument (for RTS2 only) (ILQD)" />

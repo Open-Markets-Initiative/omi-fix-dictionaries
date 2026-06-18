@@ -19,7 +19,7 @@
     <message name="New Order Single" msgtype="D" msgcat="app">
       <field name="PossResend" required="N" />
       <field name="Account" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="SymbolSfx" required="N" />
@@ -34,7 +34,7 @@
       <field name="DiscretionAmount" required="N" />
       <field name="PegDifference" required="N" />
       <field name="MinQty" required="N" />
-      <field name="OrderCapacity" required="Y" />
+      <field name="Rule80A" required="Y" />
       <field name="TimeInForce" required="N" />
       <field name="ExpireTime" required="N" />
       <field name="ExecInst" required="N" />
@@ -42,7 +42,7 @@
       <field name="DisplayIndicator" required="N" />
       <field name="PreventMemberMatch" required="N" />
       <field name="RoutingInst" required="N" />
-      <field name="RouteDelivery Method" required="N" />
+      <field name="RouteDeliveryMethod" required="N" />
       <field name="RoutStrategy" required="N" />
       <field name="ExDestination" required="N" />
       <field name="CrossTradeFlag" required="N" />
@@ -60,7 +60,7 @@
       <field name="PossResend" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="N" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="TransactTime" required="N" />
       <field name="Symbol" required="N" />
       <field name="SymbolSfx" required="N" />
@@ -70,9 +70,9 @@
     <message name="Order Cancel/Replace Request" msgtype="G" msgcat="app">
       <field name="PossResend" required="N" />
       <field name="Account" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="Symbol" required="N" />
       <field name="SymbolSfx" required="N" />
@@ -95,7 +95,7 @@
       <field name="ExecRestatementReason" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="N" />
-      <field name="OrderId" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="NoContraBrokers" required="N" />
       <field name="ContraBroker" required="N" />
       <field name="OrdStatus" required="Y" />
@@ -122,14 +122,14 @@
       <field name="SecondaryOrderID" required="N" />
       <field name="TradeLiquidityIndicator" required="Y" />
       <field name="FeeCode" required="N" />
-      <field name="AccessFee (effective 02/02/26)" required="N" />
+      <field name="AccessFee" required="N" />
       <field name="WorkingPrice" required="N" />
       <field name="InitialDisplayPrice" required="N" />
     </message>
     <message name="Cancel Reject" msgtype="9" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
-      <field name="OrderId" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="OrdStatus" required="Y" />
       <field name="Account" required="N" />
       <field name="CxlRejResponseTo" required="Y" />
@@ -140,7 +140,7 @@
       <field name="ExecTransType" required="Y" />
       <field name="ExecID" required="Y" />
       <field name="ExecRefID" required="Y" />
-      <field name="OrderId" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="SymbolSfx" required="Y" />
@@ -163,7 +163,7 @@
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
-    <field number="11" name="ClOrdId" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
     <field number="14" name="CumQty" type="Qty" />
     <field number="17" name="ExecID" type="String" />
     <field number="18" name="ExecInst" type="MultipleValueString">
@@ -183,7 +183,7 @@
     <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
-    <field number="37" name="OrderId" type="String" />
+    <field number="37" name="OrderID" type="String" />
     <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="char">
       <value enum="0" description="New" />
@@ -201,10 +201,7 @@
     <field number="42" name="OrigTime" type="UTCTimestamp" />
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
-    <field number="47" name="OrderCapacity" type="char">
-      <value enum="A" description="Agency" />
-      <value enum="R" description="Riskless Principal" />
-    </field>
+    <field number="47" name="Rule80A" type="char" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="50" name="SenderSubID" type="String" />
     <field number="52" name="SendingTime" type="UTCTimestamp" />
@@ -285,8 +282,11 @@
       <value enum="B" description="Book Only (not routable, will remove from local book)" />
       <value enum="L" description="Route to displayed markets only" />
     </field>
-    <field number="9350" name="RouteDelivery Method" type="String" />
-    <field number="9355" name="CrossTradeFlag" type="String" />
+    <field number="9350" name="RouteDeliveryMethod" type="String" />
+    <field number="9355" name="CrossTradeFlag" type="String">
+      <value enum="0" description="None (to override port setting as necessary)" />
+      <value enum="2" description="Periodic Auction Eligible" />
+    </field>
     <field number="9400" name="RoutStrategy" type="String">
       <value enum="ALLB" description="Book + IOC Other Cboe Exchanges" />
       <value enum="ROUX" description="Book + Street" />
@@ -308,7 +308,7 @@
       <value enum="N" description="Leave original order alone." />
     </field>
     <field number="9620" name="CorrectedPrice" type="Price" />
-    <field number="9621" name="AccessFee (effective 02/02/26)" type="String" />
+    <field number="9621" name="AccessFee" type="String" />
     <field number="9622" name="DiscretionAmount" type="String" />
     <field number="9690" name="WorkingPrice" type="Price" />
     <field number="9691" name="InitialDisplayPrice" type="Price" />

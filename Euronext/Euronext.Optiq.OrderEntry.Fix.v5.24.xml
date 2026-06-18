@@ -55,7 +55,7 @@
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="Price" required="N" />
       <field name="OrderQty" required="Y" />
@@ -73,7 +73,7 @@
       <field name="DisclosedQtyRandIndicator" required="N" />
       <field name="CancelOnDisconnectionIndicator" required="Y" />
       <field name="PegPriceType" required="N" />
-      <field name="PegOffsetValue" required="N" />
+      <field name="PegDifference" required="N" />
       <field name="DarkExecutionInstruction" required="N" />
       <field name="OrderOrigination" required="N" />
       <field name="NoOrderAttribut" required="N" />
@@ -122,7 +122,7 @@
       <field name="ClOrdID" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="N" />
       <field name="OrderID" required="Y" />
       <field name="OrdStatus" required="Y" />
@@ -131,7 +131,7 @@
       <field name="Price" required="N" />
       <field name="OrderQty" required="N" />
       <field name="LastPx" required="N" />
-      <field name="LastQty" required="N" />
+      <field name="LastShares" required="N" />
       <field name="LeavesQty" required="Y" />
       <field name="ExecID" required="Y" />
       <field name="ParentExecID" required="N" />
@@ -214,7 +214,7 @@
       <field name="DisclosedQtyRandIndicator" required="N" />
       <field name="CancelOnDisconnectionIndicator" required="N" />
       <field name="PegPriceType" required="N" />
-      <field name="PegOffsetValue" required="N" />
+      <field name="PegDifference" required="N" />
       <field name="ErrorCode" required="N" />
       <field name="CollarRejType" required="N" />
       <field name="BreachedCollarPrice" required="N" />
@@ -239,7 +239,6 @@
       <field name="PartyRoleQuali" required="Y" />
       <field name="NoNestedParty" required="N" />
       <field name="NestedPartyID" required="N" />
-      <field name="NestedPartyID" required="N" />
       <field name="NestedPartyRole" required="N" />
       <field name="NestedPartyRoleQualifier" required="N" />
       <field name="Account" required="N" />
@@ -251,7 +250,7 @@
       <field name="NoQuoteEntrie" required="Y" />
       <field name="QuoteEntryID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSou" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="BidSize" required="N" />
       <field name="BidPx" required="N" />
@@ -282,7 +281,7 @@
       <field name="BidQuoteID" required="N" />
       <field name="OfferQuoteID" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="BidErrorCode" required="N" />
       <field name="OfferErrorCode" required="N" />
@@ -292,7 +291,7 @@
     <message name="OrderCancelRequest" msgtype="F" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="OrderID" required="N" />
       <field name="OrigClOrdID" required="N" />
@@ -314,7 +313,7 @@
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="OrderID" required="N" />
       <field name="OrigClOrdID" required="N" />
@@ -339,7 +338,7 @@
       <field name="DisclosedQtyRandIndicator" required="N" />
       <field name="CancelOnDisconnectionIndicator" required="Y" />
       <field name="PegPriceType" required="N" />
-      <field name="PegOffsetValue" required="N" />
+      <field name="PegDifference" required="N" />
       <field name="DarkExecutionInstruction" required="N" />
       <field name="OrderOrigination" required="N" />
       <field name="NoOrderAttribut" required="N" />
@@ -373,7 +372,7 @@
       <field name="OEGINFromME" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
+      <field name="IDSource" required="N" />
       <field name="EMM" required="N" />
       <field name="OrderID" required="N" />
       <field name="ErrorCode" required="N" />
@@ -394,7 +393,7 @@
       <field name="OEGINFromME" required="N" />
       <field name="RequestID" required="N" />
       <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
+      <field name="IDSource" required="N" />
       <field name="EMM" required="Y" />
       <field name="RefMsgType" required="N" />
       <field name="ErrorCode" required="N" />
@@ -405,7 +404,7 @@
       <field name="OrderID" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="NoPartyIDs" required="Y" />
       <field name="PartyID" required="Y" />
       <field name="PartyIDSource" required="Y" />
@@ -422,7 +421,7 @@
     <message name="OwnershipRequestAck" msgtype="U29" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="OrderID" required="N" />
       <field name="OEPartitionID" required="N" />
       <field name="LogicalAccessID" required="N" />
@@ -433,7 +432,7 @@
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="Side" required="N" />
       <field name="OrderQty" required="Y" />
@@ -458,11 +457,11 @@
       <field name="Text" required="N" />
       <field name="NoRelatedSym" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSour" required="Y" />
+      <field name="IDSource" required="Y" />
     </message>
     <message name="AskForQuote" msgtype="UL" msgcat="app">
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="AFQReason" required="Y" />
     </message>
@@ -478,14 +477,13 @@
       <field name="RiskFamily" required="N" />
       <field name="NoInstrumentSco" required="N" />
       <field name="InstrumentScopeS" required="N" />
-      <field name="InstrumentScopeS" required="N" />
       <field name="OrderSizeLimit" required="N" />
       <field name="OrderAmountLimit" required="N" />
     </message>
     <message name="PriceInput" msgtype="UI" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="NoPartyIDs" required="Y" />
       <field name="PartyID" required="Y" />
       <field name="PartyIDSource" required="Y" />
@@ -501,7 +499,7 @@
     <message name="LiquidityProviderCommand" msgtype="UZ" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="NoPartyIDs" required="Y" />
       <field name="PartyID" required="Y" />
       <field name="PartyIDSource" required="Y" />
@@ -515,7 +513,7 @@
     </message>
     <message name="OrderMassStatusRequest" msgtype="AF" msgcat="app">
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="OrderID" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="NoPartyIDs" required="Y" />
@@ -537,7 +535,7 @@
       <field name="MassCancelRequestType" required="Y" />
       <field name="ClassID" required="N" />
       <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
+      <field name="IDSource" required="N" />
       <field name="NoPartyIDs" required="Y" />
       <field name="PartyID" required="Y" />
       <field name="PartyIDSource" required="Y" />
@@ -565,7 +563,7 @@
       <field name="TotalAffectedOrders" required="Y" />
       <field name="ClassID" required="N" />
       <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
+      <field name="IDSource" required="N" />
       <field name="EMM" required="N" />
       <field name="Side" required="N" />
       <field name="OEPartitionID" required="N" />
@@ -590,7 +588,7 @@
       <field name="OEGOUTToME" required="N" />
       <field name="QuoteReqID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="OrderQty" required="Y" />
       <field name="Side" required="N" />
@@ -605,7 +603,7 @@
       <field name="OEGINFromME" required="N" />
       <field name="OEGOUTToME" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="QuoteReqID" required="Y" />
       <field name="PotentialMatchingPrice" required="N" />
@@ -619,7 +617,7 @@
       <field name="OEGINFromME" required="N" />
       <field name="OEGOUTToME" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="QuoteReqID" required="Y" />
       <field name="PotentialMatchingQuantity" required="Y" />
@@ -627,14 +625,14 @@
     </message>
     <message name="RequestForExecution" msgtype="UM" msgcat="app">
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
     </message>
     <message name="SecurityDefinitionRequest" msgtype="c" msgcat="app">
       <field name="SecurityReqID" required="Y" />
       <field name="SecurityRequestType" required="Y" />
       <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
+      <field name="IDSource" required="N" />
       <field name="SecurityType" required="Y" />
       <field name="SecuritySubType" required="Y" />
       <field name="NoLegs" required="Y" />
@@ -658,13 +656,13 @@
       <field name="OEGINFromME" required="N" />
       <field name="SecurityReqID" required="N" />
       <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="ErrorCode" required="N" />
     </message>
     <message name="NewWholesaleOrder" msgtype="U64" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="WholesaleTradeType" required="Y" />
       <field name="LISTransactionID" required="N" />
       <field name="SecurityType" required="N" />
@@ -686,7 +684,6 @@
       <field name="NoLegs" required="Y" />
       <field name="LegSymbol" required="Y" />
       <field name="LegSecurityID" required="Y" />
-      <field name="603" required="N" />
       <field name="LegSecurityType" required="Y" />
       <field name="LegLastTradingDate" required="N" />
       <field name="LegPutOrCall" required="N" />
@@ -697,7 +694,6 @@
       <field name="BidNonExecClID" required="N" />
       <field name="OfferNonExecClID" required="N" />
       <field name="LegStrikePrice" required="N" />
-      <field name="2109" required="N" />
       <field name="NoSides" required="N" />
       <field name="Side" required="Y" />
       <field name="ClearingInstruction" required="N" />
@@ -726,7 +722,7 @@
       <field name="OEGOUTToME" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="WholesaleTradeType" required="Y" />
       <field name="LISTransactionID" required="N" />
       <field name="SecurityType" required="N" />
@@ -764,12 +760,11 @@
       <field name="NestedPartyRoleQualifier" required="N" />
       <field name="NoNestedOrderAttributes" required="N" />
       <field name="NestedOrderAttributeType" required="N" />
-      <field name="2108" required="N" />
     </message>
     <message name="RequestForImpliedExecution" msgtype="U66" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="OrderID" required="Y" />
       <field name="NoPartyIDs" required="Y" />
@@ -790,7 +785,7 @@
     <message name="CrossOrder" msgtype="U67" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="Price" required="Y" />
       <field name="OrderQty" required="Y" />
@@ -813,11 +808,9 @@
       <field name="Text" required="N" />
       <field name="Account" required="N" />
       <field name="AccountCode" required="Y" />
-      <field name="9941" required="N" />
       <field name="PostingAction" required="N" />
       <field name="LastCapacity" required="Y" />
       <field name="LongClientID" required="N" />
-      <field name="555" required="N" />
       <field name="LegSymbol" required="N" />
       <field name="LegSecurityID" required="N" />
       <field name="LegSecurityIDS" required="N" />
@@ -827,12 +820,11 @@
       <field name="NestedPartyID" required="N" />
       <field name="NestedPartyIDS" required="N" />
       <field name="NestedPartyRole" required="N" />
-      <field name="NestedPartyRole" required="N" />
     </message>
     <message name="ERGCommand" msgtype="U68" msgcat="app">
       <field name="RequestID" required="Y" />
       <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
+      <field name="IDSource" required="N" />
       <field name="EMM" required="N" />
       <field name="ERGActionType" required="Y" />
       <field name="TargetFirmID" required="Y" />
@@ -858,7 +850,7 @@
       <field name="TargetClientshortCode" required="N" />
       <field name="TargetLogicalAccessID" required="N" />
       <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
+      <field name="IDSource" required="N" />
       <field name="EMM" required="N" />
       <field name="Purge" required="N" />
       <field name="OSLFlag" required="N" />
@@ -893,7 +885,7 @@
       <field name="TargetClientShortCode" required="N" />
       <field name="TargetLogicalAccessID" required="N" />
       <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
+      <field name="IDSource" required="N" />
       <field name="EMM" required="N" />
       <field name="ERGStatus" required="N" />
       <field name="OSLFlag" required="N" />
@@ -905,7 +897,7 @@
       <field name="ResynchronizationID" required="Y" />
       <field name="NoRelatedSym" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
     </message>
     <message name="SynchronizationTime" msgtype="U51" msgcat="app">
@@ -913,7 +905,7 @@
       <field name="LastBookInTime" required="Y" />
     </message>
     <message name="ClearBook" msgtype="U75" msgcat="app">
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="SecurityID" required="Y" />
       <field name="EMM" required="Y" />
     </message>
@@ -924,12 +916,12 @@
       <field name="OEGOUTToME" required="N" />
       <field name="QuoteReqID" required="Y" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="NoRFQCounterparts" required="N" />
       <field name="OrderOrigination" required="N" />
       <field name="Price" required="N" />
-      <field name="LastQty" required="N" />
+      <field name="LastShares" required="N" />
       <field name="DarkExecutionInstruction" required="N" />
       <field name="MinQty" required="N" />
     </message>
@@ -938,7 +930,7 @@
       <field name="IOITransType" required="Y" />
       <field name="IOIRefID" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="Side" required="Y" />
       <field name="OrderQty" required="N" />
@@ -960,7 +952,7 @@
       <field name="IOIType" required="Y" />
       <field name="IOIRefID" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="N" />
       <field name="Side" required="N" />
       <field name="OrderQty" required="N" />
@@ -975,14 +967,14 @@
       <field name="TradeReportType" required="N" />
       <field name="TrdType" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="Y" />
       <field name="NoRegulatoryTradeIDs" required="N" />
       <field name="RegulatoryTradeID" required="N" />
       <field name="RegulatoryTradeIDType" required="N" />
       <field name="NoSides" required="N" />
       <field name="Side" required="N" />
-      <field name="1" required="N" />
+      <field name="Account" required="N" />
       <field name="AccountCode" required="N" />
       <field name="LastCapacity" required="N" />
       <field name="Text" required="N" />
@@ -1020,7 +1012,7 @@
       <field name="TrdRptStatus" required="N" />
       <field name="TrdType" required="N" />
       <field name="SecurityID" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="EMM" required="N" />
       <field name="NoRegulatoryTradeIDs" required="N" />
       <field name="RegulatoryTradeID" required="N" />
@@ -1034,7 +1026,7 @@
       <field name="Account" required="N" />
       <field name="AccountCode" required="N" />
       <field name="LastCapacity" required="N" />
-      <field name="58" required="N" />
+      <field name="Text" required="N" />
       <field name="PrincipalCode" required="N" />
       <field name="Quantity" required="N" />
       <field name="Price" required="N" />
@@ -1062,17 +1054,17 @@
       <field name="CentralisationDate" required="N" />
     </message>
     <message name="FundPriceInput" msgtype="U44" msgcat="app">
-      <field name="11" required="Y" />
-      <field name="SecurityIDSource" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="IDSource" required="Y" />
       <field name="SecurityID" required="Y" />
       <field name="EMM" required="Y" />
       <field name="Price" required="Y" />
       <field name="ByPassControlFlag" required="N" />
     </message>
     <message name="FundPriceInputAck" msgtype="U45" msgcat="app">
-      <field name="11" required="Y" />
-      <field name="SecurityIDSourc" required="Y" />
-      <field name="48" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="IDSource" required="Y" />
+      <field name="SecurityID" required="Y" />
       <field name="EMM" required="N" />
       <field name="Price" required="Y" />
       <field name="ByPassControlFlag" required="N" />
@@ -1090,9 +1082,7 @@
     <field number="16" name="EndSeqNo" type="SeqNum" />
     <field number="17" name="ExecID" type="String" />
     <field number="19" name="ExecRefID" type="String" />
-    <field number="22" name="SecurityIDSource" type="String">
-      <value enum="8" description="Symbol Index" />
-    </field>
+    <field number="22" name="IDSource" type="String" />
     <field number="23" name="IOIID" type="String" />
     <field number="25" name="IOIQltyInd" type="Char">
       <value enum="H" description="High" />
@@ -1117,7 +1107,7 @@
       <value enum="9" description="Any other capacity (AOTC)" />
     </field>
     <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastQty" type="Qty" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String">
       <value enum="0" description="Heartbeat" />
@@ -1306,7 +1296,7 @@
     </field>
     <field number="151" name="LeavesQty" type="Qty" />
     <field number="167" name="SecurityType" type="String" />
-    <field number="211" name="PegOffsetValue" type="Int" />
+    <field number="211" name="PegDifference" type="Int" />
     <field number="215" name="NoRoutingIDS" type="String" />
     <field number="216" name="RoutingTypes" type="Int">
       <value enum="2" description="Target List" />

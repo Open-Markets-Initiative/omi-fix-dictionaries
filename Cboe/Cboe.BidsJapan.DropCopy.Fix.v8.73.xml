@@ -12,7 +12,7 @@
     <field name="TargetSubID" required="N" />
     <field name="PossResend" required="N" />
     <field name="OnBehalfOfCompID" required="N" />
-    <field name="" required="N" />
+    <field name="OnBehalfOfSubID" required="N" />
     <field name="OrigSendingTime" required="N" />
     <field name="DeliverToCompID" required="N" />
   </header>
@@ -21,12 +21,106 @@
   </trailer>
   <messages>
     <message name="Execution Report" msgtype="8" msgcat="app">
-      <field name="ExecTransType" required="N" />
-      <field name="LastCapacity" required="N" />
-      <field name="Rule80A" required="N" />
-      <field name="CashMargin" required="N" />
+      <field name="Account" required="Y" />
+      <field name="AvgPx" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="Currency" required="N" />
+      <field name="CumQty" required="Y" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="ExecRefID" required="N" />
+      <field name="ExecTransType" required="Y" />
+      <field name="IDSource" required="N" />
+      <field name="LastMkt" required="N" />
+      <field name="LastPx" required="Y" />
+      <field name="LastShares" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Price" required="Y" />
+      <field name="Rule80A" required="Y" />
+      <field name="SecurityID" required="N" />
+      <field name="Side" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="Text" required="N" />
+      <field name="TimeInForce" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="SymbolSfx" required="N" />
+      <field name="ExecBroker" required="Y" />
+      <field name="ClientID" required="Y" />
+      <field name="MinQty" required="Y" />
+      <field name="LocateReqd" required="N" />
+      <field name="ExpireTime" required="N" />
+      <field name="ExecType" required="Y" />
+      <field name="LeavesQty" required="Y" />
+      <field name="EffectiveTime" required="Y" />
+      <field name="SecurityExchange" required="N" />
+      <field name="PegDifference" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="DiscretionInst" required="N" />
+      <field name="DiscretionOffset" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="PartyID" required="N" />
+      <field name="PartyIDSource" required="N" />
+      <field name="PartyRole" required="N" />
+      <field name="OrderCapacity" required="Y" />
+      <field name="TrdRegTimestamp" required="N" />
+      <field name="BookingType" required="Y" />
       <field name="LastLiquidityInd" required="N" />
+      <field name="RegulatoryTradeID" required="N" />
+      <field name="RegulatoryTradeIDType" required="N" />
+      <field name="NoRegulatoryTradeIDs" required="N" />
+      <field name="LocateBroker" required="N" />
+      <field name="LocateIdentifier" required="N" />
+      <field name="BIDSPriceProtection" required="N" />
+      <field name="TradingVenueRegulatoryTradeID" required="N" />
+      <field name="BIDSTradeID" required="N" />
+      <field name="BIDSReportingType" required="Y" />
+      <field name="BIDSUniqueClOrdID" required="N" />
+      <field name="BIDSSponsoredTraderName" required="N" />
+      <field name="BIDSCentralCounterparty" required="N" />
+      <field name="TargetContraFirm" required="N" />
+      <field name="BIDSAEFirm" required="N" />
+      <field name="BIDSAEVolume" required="N" />
+      <field name="BIDSAEBookingType" required="N" />
+      <field name="BIDSAEFilledVolume" required="N" />
+      <field name="PartyIDOrderOriginationFirm" required="N" />
+      <field name="LEI_OrderOrigination" required="N" />
+      <field name="LEI_RoutingArrangementIndicator" required="N" />
+      <field name="UMIRRegulationID" required="N" />
+      <field name="PrincipalTrade" required="N" />
+      <field name="WashTradeIndicator" required="N" />
+      <field name="ProgramTrade" required="N" />
+      <field name="Anonymous" required="N" />
+      <field name="RegulationID" required="N" />
+      <field name="NoTradeFeat" required="N" />
       <field name="NoTradeKey" required="N" />
+      <field name="ShortMarkingExempt" required="N" />
+      <field name="BIDSOriginatingBroker" required="N" />
+      <field name="BIDSExecBroker" required="N" />
+      <field name="BIDSContraExecBroker" required="N" />
+      <field name="FeeCode" required="N" />
+      <field name="PrintFeeCode" required="N" />
+      <field name="LEI_CustomerAccount" required="N" />
+      <field name="LEI_AlgorithmID" required="N" />
+      <field name="CustomerLEI" required="N" />
+      <field name="BrokerLEI" required="N" />
+      <field name="TraderID" required="Y" />
+      <field name="LastCapacity" required="N" />
+      <field name="ClientCrossRef" required="N" />
+      <field name="ShortSellNakedQty" required="N" />
+      <field name="ShortSellCoveredQty" required="N" />
+      <field name="ShortSellLongQty" required="N" />
+      <field name="TransactID" required="N" />
+      <field name="OriginOfTrans" required="N" />
+      <field name="IntermediaryID" required="N" />
+      <field name="DirectedWholesaleIndic" required="N" />
+      <field name="RemoveCrossingFromClearing" required="N" />
+      <field name="OrderRestrictions" required="N" />
+      <field name="CrossType" required="N" />
+      <field name="CashMargin" required="N" />
       <field name="BIDSNBBPrice" required="N" />
       <field name="BIDSNBOPrice" required="N" />
       <field name="BIDSNBBOTimestamp" required="N" />
@@ -36,115 +130,9 @@
       <field name="ToSTNeTExecutionID" required="N" />
       <field name="ToSTNeTTransactTime" required="N" />
       <field name="NoSelfTrade" required="N" />
-      <field name="OrderRestrictions" required="N" />
-      <field name="FeeCode" required="N" />
-      <field name="Account" required="N" />
-      <field name="AvgPx" required="N" />
-      <field name="ClOrdID" required="N" />
-      <field name="CumQty" required="N" />
-      <field name="Currency" required="N" />
-      <field name="ExecID" required="N" />
-      <field name="ExecInst" required="N" />
-      <field name="" required="N" />
-      <field name="ExecTransType" required="N" />
-      <field name="IDSource" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="LastShares" required="N" />
-      <field name="OrderID" required="N" />
-      <field name="OrderQty" required="N" />
-      <field name="OrdStatus" required="N" />
-      <field name="OrdType" required="N" />
-      <field name="OrigClOrdID" required="N" />
-      <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
-      <field name="SecurityID" required="N" />
-      <field name="Side" required="N" />
-      <field name="Symbol" required="N" />
-      <field name="Text" required="N" />
-      <field name="TimeInForce" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="MinQty" required="N" />
-      <field name="" required="N" />
-      <field name="ExpireTime" required="N" />
-      <field name="ExecType" required="N" />
-      <field name="LeavesQty" required="N" />
-      <field name="" required="N" />
-      <field name="SecurityExchange" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="ClearingFirm" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="LastLiquidityInd" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="LocateBroker" required="N" />
-      <field name="LocateIdentifier" required="N" />
-      <field name="UMIRRegulationID" required="N" />
-      <field name="PrincipalTrade" required="N" />
-      <field name="WashTradeIndicator" required="N" />
-      <field name="ClientCrossRef" required="N" />
-      <field name="ShortSellNakedQty" required="N" />
-      <field name="ShortSellCoveredQty" required="N" />
-      <field name="ShortSellLongQty" required="N" />
-      <field name="TransactID" required="N" />
-      <field name="ProgramTrade" required="N" />
-      <field name="Anonymous" required="N" />
-      <field name="RegulationID" required="N" />
-      <field name="NoTradeFeat" required="N" />
-      <field name="" required="N" />
-      <field name="ShortMarkingExempt" required="N" />
-      <field name="TradingVenueRegulator yTradeID" required="N" />
-      <field name="BIDSPriceProtection" required="N" />
-      <field name="BIDSNBBPrice" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="8052" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="8086" required="N" />
-      <field name="BIDSAEFilledVolume" required="N" />
-      <field name="BIDSExecBroker" required="N" />
-      <field name="BIDSContraExecBroker" required="N" />
-      <field name="OrderClassification" required="N" />
-      <field name="ToSTNeTOrderID" required="N" />
-      <field name="ToSTNeTExecutionID" required="N" />
-      <field name="ToSTNeTTransactTime" required="N" />
-      <field name="OriginOfTrans" required="N" />
-      <field name="IntermediaryID" required="N" />
-      <field name="DirectedWholesaleIndic" required="N" />
-      <field name="NoSelfTrade" required="N" />
-      <field name="RemoveCrossingFromCl earing" required="N" />
-      <field name="OrderRestrictions" required="N" />
-      <field name="CrossType" required="N" />
-      <field name="TradeLiquidityIndicator" required="N" />
-      <field name="FeeCode" required="N" />
-      <field name="PrintFeeCode" required="N" />
-      <field name="LEI_CustomerAccount" required="N" />
-      <field name="LEI_AlgorithmID" required="N" />
-      <field name="CustomerLEI" required="N" />
-      <field name="BrokerLEI" required="N" />
-      <field name="" required="N" />
-      <field name="TraderID" required="N" />
+      <field name="NoPartyIDs" required="N" />
+      <field name="SenderTime" required="N" />
+      <field name="NoBIDSAllotmentEntities" required="N" />
     </message>
   </messages>
   <components />
@@ -159,6 +147,7 @@
     <field number="15" name="Currency" type="Currency" />
     <field number="17" name="ExecID" type="String" />
     <field number="18" name="ExecInst" type="MultipleValueString" />
+    <field number="19" name="ExecRefID" type="String" />
     <field number="20" name="ExecTransType" type="char">
       <value enum="0" description="New" />
     </field>
@@ -168,13 +157,18 @@
     <field number="29" name="LastCapacity" type="String">
       <value enum="1" description="Agent" />
       <value enum="3" description="Cross as principal" />
+      <value enum="5" description="Mixed" />
     </field>
+    <field number="30" name="LastMkt" type="String" />
     <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
-    <field number="38" name="OrderQty" type="Qty" />
+    <field number="38" name="OrderQty" type="Qty">
+      <value enum="1" description="Minimum" />
+      <value enum="1999999999" description="Maximum" />
+    </field>
     <field number="39" name="OrdStatus" type="char">
       <value enum="0" description="New" />
       <value enum="2" description="Filled" />
@@ -182,45 +176,40 @@
     </field>
     <field number="40" name="OrdType" type="char">
       <value enum="1" description="Market" />
-      <value enum="P" description="Pegged (requires Exec Inst) Execution Report" />
+      <value enum="P" description="Pegged (requires Exec Inst)" />
     </field>
     <field number="41" name="OrigClOrdID" type="String" />
     <field number="43" name="PossDupFlag" type="Boolean" />
-    <field number="44" name="Price" type="Price" />
-    <field number="47" name="Rule80A" type="char">
-      <value enum="A" description="Agency single order •" />
+    <field number="44" name="Price" type="Price">
+      <value enum="0001" description="Minimum" />
+      <value enum="999999" description="Maximum" />
     </field>
+    <field number="47" name="Rule80A" type="char" />
     <field number="48" name="SecurityID" type="String" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="50" name="SenderSubID" type="String" />
     <field number="52" name="SendingTime" type="UTCTimestamp" />
     <field number="54" name="Side" type="char">
-      <value enum="1" description="Buy" />
-      <value enum="5" description="Sell Short Execution Report" />
+      <value enum="1" description="Buy," />
+      <value enum="5" description="Sell Short are currently supported" />
     </field>
     <field number="55" name="Symbol" type="String" />
     <field number="56" name="TargetCompID" type="String" />
     <field number="57" name="TargetSubID" type="String" />
     <field number="58" name="Text" type="String" />
     <field number="59" name="TimeInForce" type="char">
-      <value enum="0" description="Day Order (default if field not specified)" />
+      <value enum="0" description="Day Order" />
+      <value enum="6" description="GTD – Good til Date (requires use of Expire Time (tag 126)" />
     </field>
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="65" name="SymbolSfx" type="String" />
+    <field number="76" name="ExecBroker" type="String" />
     <field number="97" name="PossResend" type="Boolean" />
+    <field number="109" name="ClientID" type="String" />
     <field number="110" name="MinQty" type="Qty" />
+    <field number="114" name="LocateReqd" type="String" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
-    <field number="116" name="" type="String">
-      <value enum="1" description="Agent" />
-      <value enum="3" description="Cross as principal" />
-      <value enum="5" description="Mixed (Australia only)" />
-      <value enum="0" description="Related to displayed price – Price (tag 44) Execution Report" />
-      <value enum="N" description="Legal Entity Identifier (ISO 17442) LEI Execution Report" />
-      <value enum="13" description="Order Origination Firm Execution Report" />
-      <value enum="A" description="Agency" />
-      <value enum="I" description="Individual" />
-      <value enum="R" description="Riskless Principal" />
-      <value enum="M" description="Mixed Capacity Execution Report" />
-      <value enum="7" description="Order execution only service Canada only. Execution Report" />
-    </field>
+    <field number="116" name="OnBehalfOfSubID" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
     <field number="126" name="ExpireTime" type="UTCTimestamp" />
     <field number="128" name="DeliverToCompID" type="String" />
@@ -230,17 +219,40 @@
       <value enum="5" description="Replace" />
     </field>
     <field number="151" name="LeavesQty" type="Qty" />
+    <field number="168" name="EffectiveTime" type="UTCTimestamp" />
     <field number="207" name="SecurityExchange" type="Exchange" />
+    <field number="211" name="PegDifference" type="String" />
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="388" name="DiscretionInst" type="String" />
+    <field number="389" name="DiscretionOffset" type="String" />
     <field number="439" name="ClearingFirm" type="String" />
-    <field number="544" name="CashMargin" type="String" />
-    <field number="851" name="LastLiquidityInd" type="int">
-      <value enum="1" description="Added Liquidity" />
-      <value enum="8" description="As a result of conditional order execution" />
-      <value enum="3" description="Liquidity routed out" />
+    <field number="447" name="PartyIDSource" type="String">
+      <value enum="N" description="Legal Entity Identifier (ISO 17442) LEI" />
     </field>
+    <field number="448" name="PartyID" type="String" />
+    <field number="452" name="PartyRole" type="String">
+      <value enum="13" description="Order Origination Firm" />
+    </field>
+    <field number="453" name="NoPartyIDs" type="NumInGroup" />
+    <field number="528" name="OrderCapacity" type="String" />
+    <field number="544" name="CashMargin" type="String" />
+    <field number="769" name="TrdRegTimestamp" type="UTCTimestamp" />
+    <field number="775" name="BookingType" type="String">
+      <value enum="0" description="Cash/Regular" />
+    </field>
+    <field number="851" name="LastLiquidityInd" type="int" />
+    <field number="1724" name="LEI_OrderOrigination" type="String" />
+    <field number="1903" name="RegulatoryTradeID" type="String" />
+    <field number="1906" name="RegulatoryTradeIDType" type="String">
+      <value enum="5" description="Trading venue transaction identification" />
+    </field>
+    <field number="1907" name="NoRegulatoryTradeIDs" type="NumInGroup" />
+    <field number="2883" name="LEI_RoutingArrangementIndicator" type="String" />
     <field number="5700" name="LocateBroker" type="String" />
     <field number="5701" name="LocateIdentifier" type="String" />
-    <field number="6763" name="UMIRRegulationID" type="String" />
+    <field number="6763" name="UMIRRegulationID" type="String">
+      <value enum="SS" description="Significant Shareholder" />
+    </field>
     <field number="6776" name="PrincipalTrade" type="String" />
     <field number="6777" name="WashTradeIndicator" type="String" />
     <field number="6802" name="ClientCrossRef" type="String" />
@@ -254,14 +266,26 @@
     <field number="7713" name="NoTradeFeat" type="NumInGroup" />
     <field number="7714" name="NoTradeKey" type="NumInGroup" />
     <field number="7729" name="ShortMarkingExempt" type="String" />
-    <field number="8016" name="TradingVenueRegulator yTradeID" type="String" />
+    <field number="8016" name="TradingVenueRegulatoryTradeID" type="String" />
     <field number="8017" name="BIDSPriceProtection" type="Price" />
     <field number="8019" name="BIDSNBBPrice" type="Price" />
     <field number="8020" name="BIDSNBOPrice" type="Price" />
     <field number="8021" name="BIDSNBBOTimestamp" type="UTCTimestamp" />
+    <field number="8026" name="BIDSTradeID" type="String" />
     <field number="8031" name="PrimaryLastPx" type="Price" />
-    <field number="8052" name="8052" type="String" />
-    <field number="8086" name="8086" type="String" />
+    <field number="8052" name="BIDSReportingType" type="String" />
+    <field number="8063" name="BIDSUniqueClOrdID" type="String" />
+    <field number="8067" name="BIDSSponsoredTraderName" type="String" />
+    <field number="8069" name="BIDSCentralCounterparty" type="String" />
+    <field number="8070" name="TargetContraFirm" type="String" />
+    <field number="8071" name="SenderTime" type="UTCTimestamp" />
+    <field number="8073" name="BIDSOriginatingBroker" type="String" />
+    <field number="8080" name="NoBIDSAllotmentEntities" type="NumInGroup" />
+    <field number="8082" name="BIDSAEFirm" type="String" />
+    <field number="8086" name="BIDSAEVolume" type="String" />
+    <field number="8088" name="BIDSAEBookingType" type="String">
+      <value enum="0" description="Cash/Regular" />
+    </field>
     <field number="8089" name="BIDSAEFilledVolume" type="String" />
     <field number="8090" name="BIDSExecBroker" type="String" />
     <field number="8091" name="BIDSContraExecBroker" type="String" />
@@ -277,18 +301,18 @@
     <field number="8139" name="IntermediaryID" type="String" />
     <field number="8140" name="DirectedWholesaleIndic" type="String" />
     <field number="8174" name="NoSelfTrade" type="NumInGroup" />
-    <field number="8177" name="RemoveCrossingFromCl earing" type="String" />
+    <field number="8177" name="RemoveCrossingFromClearing" type="String" />
     <field number="8182" name="OrderRestrictions" type="String">
       <value enum="I" description="Override broker preference default setting" />
     </field>
     <field number="8183" name="CrossType" type="String" />
-    <field number="9730" name="TradeLiquidityIndicator" type="String" />
     <field number="9882" name="FeeCode" type="String" />
     <field number="9883" name="PrintFeeCode" type="String" />
     <field number="18025" name="LEI_CustomerAccount" type="String" />
     <field number="18026" name="LEI_AlgorithmID" type="String" />
     <field number="18027" name="CustomerLEI" type="String" />
     <field number="18028" name="BrokerLEI" type="String" />
+    <field number="20013" name="PartyIDOrderOriginationFirm" type="String" />
     <field number="22010" name="TraderID" type="String" />
   </fields>
 </fix>

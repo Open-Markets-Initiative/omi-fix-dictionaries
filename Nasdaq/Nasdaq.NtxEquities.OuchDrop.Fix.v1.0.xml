@@ -53,7 +53,7 @@
       <field name="TradeDate" required="N" />
       <field name="TransactTime" required="N" />
       <field name="LiquidityFlag" required="N" />
-      <field name="LastExchange" required="N" />
+      <field name="LastMkt" required="N" />
       <field name="CustomerType" required="N" />
       <field name="IntraDayIndicativePrice" required="N" />
     </message>
@@ -79,12 +79,7 @@
       <value enum="1" description="Agency" />
       <value enum="4" description="Principal" />
     </field>
-    <field number="30" name="LastExchange" type="Char">
-      <value enum="&quot; &quot;" description="Not provided" />
-      <value enum="Q" description="Nasdaq" />
-      <value enum="B" description="Nasdaq BX" />
-      <value enum="X" description="Nasdaq PSX" />
-    </field>
+    <field number="30" name="LastMkt" type="Char" />
     <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />

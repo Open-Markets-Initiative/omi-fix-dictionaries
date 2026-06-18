@@ -12,7 +12,7 @@
     <field name="TargetSubID" required="N" />
     <field name="PossResend" required="N" />
     <field name="OnBehalfOfCompID" required="N" />
-    <field name="" required="N" />
+    <field name="OnBehalfOfSubID" required="N" />
     <field name="OrigSendingTime" required="N" />
     <field name="DeliverToCompID" required="N" />
   </header>
@@ -21,15 +21,13 @@
   </trailer>
   <messages>
     <message name="New Order Single" msgtype="D" msgcat="app">
-      <field name="Report the state of a firm order previously submitted to the BIDS Trading" required="N" />
-      <field name="Report the rejection of a firm order cancel request or Cancel and Replace request" required="N" />
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="Currency" required="N" />
       <field name="ExecInst" required="N" />
       <field name="HandlInst" required="N" />
       <field name="IDSource" required="N" />
-      <field name="IOIid" required="N" />
+      <field name="IOIID" required="N" />
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="Y" />
       <field name="Price" required="N" />
@@ -62,6 +60,8 @@
       <field name="LocateBroker" required="N" />
       <field name="LocateIdentifier" required="N" />
       <field name="PartyIDOrderOriginationFirm" required="N" />
+      <field name="BeginString" required="N" />
+      <field name="BodyLength" required="N" />
       <field name="MsgType" required="N" />
       <field name="SenderCompID" required="N" />
       <field name="TargetCompID" required="N" />
@@ -79,37 +79,37 @@
       <field name="OrderID" required="N" />
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="Y" />
-      <field name="OrigClOrd ID" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
       <field name="Price" required="N" />
       <field name="Rule80A" required="N" />
       <field name="SecurityID" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="Text" required="N" />
-      <field name="TimeInFor ce" required="N" />
-      <field name="TransactTi me" required="Y" />
-      <field name="SettlmntT yp" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="SettlmntTyp" required="N" />
       <field name="SymbolSfx" required="N" />
-      <field name="ExecBroke r" required="N" />
-      <field name="ExDestina tion" required="N" />
+      <field name="ExecBroker" required="N" />
+      <field name="ExDestination" required="N" />
       <field name="MinQty" required="N" />
-      <field name="LocateReq d" required="N" />
-      <field name="ExpireTim e" required="N" />
-      <field name="SecurityEx change" required="N" />
-      <field name="PegDiffere nce" required="N" />
-      <field name="Complianc eID" required="N" />
-      <field name="Discretion Inst" required="N" />
-      <field name="Discretion Offset" required="N" />
-      <field name="ClearingFi rm" required="N" />
+      <field name="LocateReqd" required="N" />
+      <field name="ExpireTime" required="N" />
+      <field name="SecurityExchange" required="N" />
+      <field name="PegDifference" required="N" />
+      <field name="ComplianceID" required="N" />
+      <field name="DiscretionInst" required="N" />
+      <field name="DiscretionOffset" required="N" />
+      <field name="ClearingFirm" required="N" />
       <field name="PartyID" required="N" />
-      <field name="PartyIDSo urce" required="N" />
+      <field name="PartyIDSource" required="N" />
       <field name="PartyRole" required="N" />
-      <field name="OrderCapa city" required="N" />
-      <field name="BookingTy pe" required="N" />
-      <field name="ShortSale Exemptio nReason" required="N" />
-      <field name="LocateBro ker" required="N" />
-      <field name="LocateIde ntifier" required="N" />
-      <field name="PartyIDOr" required="N" />
+      <field name="OrderCapacity" required="N" />
+      <field name="BookingType" required="N" />
+      <field name="ShortSaleExemptionReason" required="N" />
+      <field name="LocateBroker" required="N" />
+      <field name="LocateIdentifier" required="N" />
+      <field name="PartyIDOrderOriginationFirm" required="N" />
     </message>
     <message name="Order Cancel Request" msgtype="F" msgcat="app">
       <field name="Account" required="N" />
@@ -182,7 +182,7 @@
       <field name="TrdRegTimestamp" required="N" />
       <field name="BookingType" required="N" />
       <field name="LastLiquidityInd" required="N" />
-      <field name="1688" required="N" />
+      <field name="ShortSaleExemptionReason" required="N" />
       <field name="RegulatoryTradeID" required="N" />
       <field name="RegulatoryTradeIDType" required="N" />
       <field name="NoRegulatoryTradeIDs" required="N" />
@@ -191,9 +191,9 @@
       <field name="TrdRegPublicationType" required="N" />
     </message>
     <message name="Order Cancel Reject" msgtype="9" msgcat="app">
-      <field name="2670" required="N" />
+      <field name="TrdRegPublicationReason" required="N" />
       <field name="LocateBroker" required="N" />
-      <field name="Locate Indicator" required="N" />
+      <field name="LocateIdentifier" required="N" />
       <field name="TrdRegPublicationReasons" required="N" />
       <field name="TradingVenueRegulatoryTradeID" required="N" />
       <field name="PartyIDExecutingFirm" required="N" />
@@ -232,7 +232,7 @@
       <value enum="3" description="Manual order, best execution" />
     </field>
     <field number="22" name="IDSource" type="String" />
-    <field number="23" name="IOIid" type="String" />
+    <field number="23" name="IOIID" type="String" />
     <field number="29" name="LastCapacity" type="String">
       <value enum="1" description="Agent" />
       <value enum="4" description="Principal" />
@@ -243,7 +243,10 @@
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
-    <field number="38" name="OrderQty" type="Qty" />
+    <field number="38" name="OrderQty" type="Qty">
+      <value enum="1" description="Minimum" />
+      <value enum="1999999999" description="Maximum" />
+    </field>
     <field number="39" name="OrdStatus" type="char">
       <value enum="0" description="New" />
       <value enum="2" description="Filled" />
@@ -255,9 +258,12 @@
       <value enum="1" description="Market" />
       <value enum="P" description="Pegged (requires Exec Inst)" />
     </field>
-    <field number="41" name="OrigClOrd ID" type="String" />
+    <field number="41" name="OrigClOrdID" type="String" />
     <field number="43" name="PossDupFlag" type="Boolean" />
-    <field number="44" name="Price" type="Price" />
+    <field number="44" name="Price" type="Price">
+      <value enum="0001" description="Minimum" />
+      <value enum="999999" description="Maximum" />
+    </field>
     <field number="47" name="Rule80A" type="char" />
     <field number="48" name="SecurityID" type="String" />
     <field number="49" name="SenderCompID" type="String" />
@@ -301,7 +307,7 @@
       <value enum="Y" description="Indicates the broker is responsible for locating the stock" />
     </field>
     <field number="115" name="OnBehalfOfCompID" type="String" />
-    <field number="116" name="" type="String" />
+    <field number="116" name="OnBehalfOfSubID" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
     <field number="126" name="ExpireTime" type="UTCTimestamp" />
     <field number="128" name="DeliverToCompID" type="String" />
@@ -354,7 +360,7 @@
     <field number="2524" name="TradeReportingIndicator" type="String" />
     <field number="2668" name="NoTrdRegPublications" type="NumInGroup" />
     <field number="2669" name="TrdRegPublicationType" type="String" />
-    <field number="2670" name="2670" type="String" />
+    <field number="2670" name="TrdRegPublicationReason" type="String" />
     <field number="5700" name="LocateBroker" type="String" />
     <field number="5701" name="LocateIdentifier" type="String" />
     <field number="8013" name="TrdRegPublicationReasons" type="String" />

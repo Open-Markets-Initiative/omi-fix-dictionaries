@@ -11,9 +11,9 @@
     <field name="PossDupFlag" required="N" />
     <field name="SendingTime" required="Y" />
     <field name="OrigSendingTime" required="N" />
-    <field name="OnBehalfOfCompId" required="N" />
+    <field name="OnBehalfOfCompID" required="N" />
     <field name="OnBehalfOfSubID" required="N" />
-    <field name="DeliverToCompId" required="N" />
+    <field name="DeliverToCompID" required="N" />
     <field name="DeliverToSubID" required="N" />
   </header>
   <trailer>
@@ -46,7 +46,7 @@
       <field name="MassCancelID" required="N" />
     </message>
     <message name="Purge Notification" msgtype="8" msgcat="app">
-      <field name="DeliverToCompId" required="N" />
+      <field name="DeliverToCompID" required="N" />
       <field name="SendingTime" required="N" />
       <field name="TransactTime" required="N" />
       <field name="ExecType" required="N" />
@@ -92,10 +92,10 @@
       <value enum="0" description="Too late to cancel." />
       <value enum="2" description="Broker Option." />
     </field>
-    <field number="115" name="OnBehalfOfCompId" type="String" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="116" name="OnBehalfOfSubID" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
-    <field number="128" name="DeliverToCompId" type="String" />
+    <field number="128" name="DeliverToCompID" type="String" />
     <field number="129" name="DeliverToSubID" type="String" />
     <field number="150" name="ExecType" type="char">
       <value enum="0" description="New (acknowledgment of new order)" />

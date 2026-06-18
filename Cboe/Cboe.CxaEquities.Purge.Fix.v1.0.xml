@@ -8,29 +8,26 @@
     <field name="TargetCompID" required="Y" />
   </header>
   <trailer>
-    <field name="10" required="N" />
+    <field name="CheckSum" required="N" />
   </trailer>
   <messages>
     <message name="Purge Request" msgtype="F" msgcat="app">
       <field name="PossResend" required="N" />
       <field name="TransactTime" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
       <field name="Symbol" required="N" />
-      <field name="" required="N" />
       <field name="OrderID" required="N" />
     </message>
     <message name="Amend Request" msgtype="G" msgcat="app">
       <field name="PossResend" required="N" />
       <field name="Account" required="N" />
-      <field name="ClOrdId" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="OrderQty" required="Y" />
       <field name="OrdType" required="N" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Price" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="Side" required="N" />
       <field name="Symbol" required="N" />
       <field name="TimeInForce" required="N" />
@@ -60,15 +57,12 @@
     <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
       <field name="ExecTransType" required="N" />
       <field name="ExecType" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
     </message>
     <message name="Purge Reject" msgtype="9" msgcat="app">
       <field name="OrdStatus" required="N" />
       <field name="CxlRejResponseTo" required="N" />
       <field name="CxlRejReason" required="N" />
       <field name="Text" required="N" />
-      <field name="" required="N" />
     </message>
     <message name="Amend Acknowledgement" msgtype="8" msgcat="app">
       <field name="AvgPx" required="N" />
@@ -90,12 +84,7 @@
       <field name="ExecType" required="N" />
       <field name="LeavesQty" required="N" />
       <field name="SecondaryOrderID" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
+      <field name="ExpireDate" required="N" />
       <field name="ExecutingFirm" required="N" />
     </message>
     <message name="Amend Reject" msgtype="9" msgcat="app">
@@ -112,17 +101,12 @@
       <field name="Price" required="Y" />
       <field name="TimeInForce" required="N" />
       <field name="ExpireTime" required="N" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="TimeInForce" required="Y" />
       <field name="MinQty" required="N" />
-      <field name="MaxFloor" required="Y" />
       <field name="Undisclosed" required="N" />
       <field name="MEQSE" required="N" />
       <field name="BrokerPreferencing" required="N" />
       <field name="CumQty" required="Y" />
       <field name="ExecID" required="Y" />
-      <field name="OrdType" required="Y" />
       <field name="LastMkt" required="Y" />
       <field name="LastPx" required="Y" />
       <field name="LastShares" required="Y" />
@@ -136,8 +120,8 @@
     <field number="6" name="AvgPx" type="Price" />
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
-    <field number="10" name="10" type="String" />
-    <field number="11" name="ClOrdId" type="String" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
     <field number="14" name="CumQty" type="Qty" />
     <field number="17" name="ExecID" type="String" />
     <field number="18" name="ExecInst" type="MultipleValueString">
@@ -174,10 +158,7 @@
     </field>
     <field number="41" name="OrigClOrdID" type="String" />
     <field number="44" name="Price" type="Price" />
-    <field number="47" name="OrderCapacity" type="char">
-      <value enum="A" description="Agency" />
-      <value enum="X" description="Mixed" />
-    </field>
+    <field number="47" name="Rule80A" type="char" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="50" name="SenderSubID" type="String" />
     <field number="54" name="Side" type="char">
@@ -232,10 +213,6 @@
     <field number="6803" name="ShortSellNakedQty" type="Qty" />
     <field number="6804" name="ShortSellCoveredQty" type="Qty" />
     <field number="6805" name="ShortSellLongQty" type="Qty" />
-    <field number="7700" name="" type="String">
-      <value enum="0" description="New" />
-      <value enum="A" description="No filtering by PID is performed." />
-    </field>
     <field number="7713" name="NoTradeFeat" type="NumInGroup" />
     <field number="7714" name="NoTradeKey" type="NumInGroup" />
     <field number="8081" name="MEQSE" type="String">

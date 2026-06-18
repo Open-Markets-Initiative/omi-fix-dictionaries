@@ -13,7 +13,7 @@
     <field name="OrigSendingTime" required="N" />
     <field name="OnBehalfOfCompID" required="N" />
     <field name="OnBehalfOfSubID" required="N" />
-    <field name="DeliverToCompId" required="N" />
+    <field name="DeliverToCompID" required="N" />
     <field name="DeliverToSubID" required="N" />
   </header>
   <trailer>
@@ -33,7 +33,7 @@
       <field name="TrdType" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="OrigClOrdID" required="N" />
-      <field name="OrderId" required="N" />
+      <field name="OrderID" required="N" />
       <field name="NoContraBrokers" required="N" />
       <field name="ContraBroker" required="N" />
       <field name="OrdStatus" required="N" />
@@ -42,13 +42,13 @@
       <field name="TimeInForce" required="N" />
       <field name="ExpireTime" required="N" />
       <field name="MinQty" required="N" />
-      <field name="CMTANumber" required="N" />
+      <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="Symbol" required="N" />
-      <field name="MaturityMonth" required="N" />
+      <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
       <field name="SecurityDesc" required="N" />
-      <field name="SecurityID(Futures only)" required="N" />
+      <field name="SecurityID" required="N" />
       <field name="SenderLocationID" required="N" />
       <field name="SecurityType" required="N" />
       <field name="Side" required="N" />
@@ -71,16 +71,9 @@
       <field name="OrigSubID" required="N" />
       <field name="TransactTime" required="N" />
       <field name="Text" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
       <field name="CTICode" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="Rule80A" required="N" />
       <field name="OpenClose" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
-      <field name="" required="N" />
       <field name="CustOrderHandlingInst" required="N" />
     </message>
   </messages>
@@ -105,7 +98,7 @@
     <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
-    <field number="37" name="OrderId" type="String" />
+    <field number="37" name="OrderID" type="String" />
     <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="char">
       <value enum="0" description="New" />
@@ -117,10 +110,8 @@
     <field number="41" name="OrigClOrdID" type="String" />
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
-    <field number="47" name="OrderCapacity" type="char">
-      <value enum="C" description="Customer" />
-    </field>
-    <field number="48" name="SecurityID(Futures only)" type="String" />
+    <field number="47" name="Rule80A" type="char" />
+    <field number="48" name="SecurityID" type="String" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="50" name="SenderSubID" type="String" />
     <field number="52" name="SendingTime" type="UTCTimestamp" />
@@ -153,7 +144,7 @@
     <field number="116" name="OnBehalfOfSubID" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
     <field number="126" name="ExpireTime" type="UTCTimestamp" />
-    <field number="128" name="DeliverToCompId" type="String" />
+    <field number="128" name="DeliverToCompID" type="String" />
     <field number="129" name="DeliverToSubID" type="String" />
     <field number="142" name="SenderLocationID" type="String" />
     <field number="150" name="ExecType" type="char">
@@ -170,7 +161,7 @@
       <value enum="MLO" description="Multi-leg/Spread instrument" />
     </field>
     <field number="198" name="SecondaryOrderID" type="String" />
-    <field number="200" name="MaturityMonth" type="MonthYear" />
+    <field number="200" name="MaturityMonthYear" type="MonthYear" />
     <field number="205" name="MaturityDay" type="int" />
     <field number="375" name="ContraBroker" type="String" />
     <field number="378" name="ExecRestatementReason" type="String">
@@ -180,7 +171,7 @@
     <field number="424" name="DayOrderQty" type="Qty" />
     <field number="425" name="DayCumQty" type="Qty" />
     <field number="426" name="DayAvgPx" type="Price" />
-    <field number="439" name="CMTANumber" type="String" />
+    <field number="439" name="ClearingFirm" type="String" />
     <field number="440" name="ClearingAccount" type="String" />
     <field number="442" name="MultilegReportingType" type="String">
       <value enum="1" description="Simple instrument execution" />
@@ -194,10 +185,6 @@
       <value enum="W" description="Desk (high touch)" />
       <value enum="C" description="Vendor-provided platform, billed by Executing Broker" />
       <value enum="D" description="Other, including other-provided screen" />
-    </field>
-    <field number="7695" name="" type="String">
-      <value enum="1" description="Accept As-Is (legs were not modified)" />
-      <value enum="Y" description="Manual order entry" />
     </field>
     <field number="9617" name="ModifySequence" type="String" />
     <field number="9688" name="OrigCompID" type="String" />
