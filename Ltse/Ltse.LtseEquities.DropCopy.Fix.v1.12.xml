@@ -1,0 +1,131 @@
+<fix major="1" minor="12" servicepack="0" type="Drop Copy">
+  <header>
+    <field name="BeginString" required="N" />
+    <field name="BodyLength" required="N" />
+    <field name="MsgType" required="N" />
+    <field name="SenderCompID" required="N" />
+    <field name="TargetCompID" required="N" />
+    <field name="MsgSeqNum" required="N" />
+    <field name="SendingTime" required="N" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="N" />
+  </trailer>
+  <messages>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="N" />
+      <field name="HeartBtInt" required="N" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="DefaultApplVerID" required="Y" />
+      <field name="DefaultCstmApplVerID" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="N" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="N" />
+      <field name="EndSeqNo" required="N" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="N" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="ExecID" required="N" />
+      <field name="ExecType" required="N" />
+      <field name="OrdStatus" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SymbolSfx" required="N" />
+      <field name="Side" required="N" />
+      <field name="OrdType" required="N" />
+      <field name="LastShares" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="LeavesQty" required="N" />
+      <field name="CumQty" required="N" />
+      <field name="AvgPx" required="N" />
+      <field name="Price" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="TrdMatchID" required="Y" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="ExecRefID" required="Y" />
+      <field name="TimeInForce" required="N" />
+      <field name="OrderCapacity" required="Y" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="DisplayQty" required="N" />
+      <field name="LocateReqd" required="N" />
+      <field name="Account" required="N" />
+      <field name="NoPartyIDs" required="Y" />
+      <field name="PartyIDSource" required="Y" />
+      <field name="CancelReason" required="Y" />
+      <field name="ExecRestatementReason" required="Y" />
+    </message>
+    <message name="Order Cancel Rejected" msgtype="9" msgcat="app">
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="OrdStatus" required="N" />
+      <field name="CxlRejResponseTo" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="7" name="BeginSeqNo" type="SeqNum" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="36" name="NewSeqNo" type="SeqNum" />
+    <field number="37" name="OrderID" type="String" />
+    <field number="39" name="OrdStatus" type="char">
+      <value enum="1" description="Partially" />
+      <value enum="2" description="Filled" />
+      <value enum="0" description="New" />
+      <value enum="4" description="Canceled" />
+      <value enum="C" description="Expired" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
+      <value enum="A" description="Pending New" />
+      <value enum="E" description="Pending Replace" />
+    </field>
+    <field number="41" name="OrigClOrdID" type="String" />
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="98" name="EncryptMethod" type="int" />
+    <field number="108" name="HeartBtInt" type="int" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
+    <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
+    <field number="371" name="RefTagID" type="String" />
+    <field number="372" name="RefMsgType" type="String" />
+    <field number="434" name="CxlRejResponseTo" type="char" />
+    <field number="1137" name="DefaultApplVerID" type="String" />
+    <field number="1408" name="DefaultCstmApplVerID" type="String" />
+  </fields>
+</fix>
