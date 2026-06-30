@@ -241,7 +241,6 @@
       <field name="NWTPrice" required="N" />
       <field name="CrossSurrender" required="N" />
       <field name="Account" required="N" />
-      <field name="OrigClOrdID" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="OrderID" required="N" />
       <field name="ExecID" required="Y" />
@@ -249,8 +248,6 @@
       <field name="ExecTransType" required="Y" />
       <field name="ExecType" required="Y" />
       <field name="OrdStatus" required="Y" />
-      <field name="OrdRejReason" required="N" />
-      <field name="Text" required="N" />
       <field name="SecurityType" required="Y" />
       <field name="MaturityMonthYear" required="Y" />
       <field name="MaturityDay" required="Y" />
@@ -271,14 +268,21 @@
       <field name="StopPx" required="N" />
       <field name="OrderQty" required="Y" />
       <field name="LeavesQty" required="Y" />
-      <field name="LastShares" required="N" />
-      <field name="LastPx" required="N" />
       <field name="AvgPx" required="Y" />
       <field name="CumQty" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="LegRefID" required="N" />
       <field name="MultiLegReportingType" required="N" />
       <field name="ClearingAccount" required="N" />
+      <field name="LastShares" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRefID" required="N" />
     </message>
     <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
       <field name="TargetSubID" required="Y" />
@@ -327,8 +331,6 @@
       <value enum="2" description="Automated Execution Order, Public, Broker Intervention OK" />
       <value enum="3" description="Manually Executed" />
     </field>
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -397,20 +399,6 @@
       <value enum="1" description="Unknown Order" />
       <value enum="2" description="Broker Option" />
       <value enum="3" description="Order Already in Pending Cancel Status" />
-    </field>
-    <field number="103" name="OrdRejReason" type="Int">
-      <value enum="0" description="Broker Option" />
-      <value enum="1" description="Unknown Symbol" />
-      <value enum="2" description="Exchange Closed" />
-      <value enum="3" description="Order Exceeds Limit" />
-      <value enum="4" description="Too Late to Enter" />
-      <value enum="5" description="Unknown Order" />
-      <value enum="6" description="Duplicate Order (e.g. duplicate ClOrdID)" />
-      <value enum="7" description="Duplicate of a Verbally Communicated Order" />
-      <value enum="8" description="Stale Order" />
-      <value enum="16" description="Buy MKT Order Cancelled Due to No Offer" />
-      <value enum="17" description="MKT Invalid During LULD" />
-      <value enum="18" description="Suspend" />
     </field>
     <field number="108" name="HeartBtInt" type="Int" />
     <field number="109" name="ClientID" type="String" />

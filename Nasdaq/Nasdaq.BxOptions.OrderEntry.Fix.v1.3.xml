@@ -105,16 +105,12 @@
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
       <field name="OrderQty" required="Y" />
-      <field name="LastShares" required="Y" />
-      <field name="LastPx" required="Y" />
       <field name="LeavesQty" required="Y" />
       <field name="CumQty" required="Y" />
       <field name="AvgPx" required="Y" />
-      <field name="ExecRefID" required="N" />
       <field name="Account" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="Price" required="N" />
-      <field name="OrigClOrdID" required="N" />
       <field name="ExecInst" required="N" />
       <field name="DisplayInst" required="N" />
       <field name="TradeDate" required="N" />
@@ -122,7 +118,6 @@
       <field name="OrdType" required="N" />
       <field name="TransactTime" required="N" />
       <field name="Rule80A" required="N" />
-      <field name="Text" required="N" />
       <field name="LiquidityFlag" required="N" />
       <field name="OpenClose" required="Y" />
       <field name="SecurityType" required="Y" />
@@ -132,6 +127,15 @@
       <field name="PutOrCall" required="Y" />
       <field name="StrikePrice" required="Y" />
       <field name="ClearingAccount" required="N" />
+      <field name="LastShares" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRefID" required="N" />
     </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="OrderID" required="Y" />
@@ -173,7 +177,6 @@
       <value enum="f" description="InterMarket Sweep Order (ISO)" />
       <value enum="G" description="All Or None (AON)" />
     </field>
-    <field number="19" name="ExecRefID" type="String" />
     <field number="20" name="ExecTransType" type="Char">
       <value enum="0" description="New" />
       <value enum="1" description="Cancel" />
@@ -182,8 +185,6 @@
     <field number="21" name="HandlInst" type="Char">
       <value enum="1" description="Automated Execution, Private, No Broker Intervention" />
     </field>
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />

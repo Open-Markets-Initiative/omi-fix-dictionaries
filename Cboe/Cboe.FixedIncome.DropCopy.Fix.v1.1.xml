@@ -44,7 +44,7 @@
     <message name="Logout" msgtype="5" msgcat="admin">
       <field name="Text" required="N" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="ExecID" required="Y" />
@@ -67,12 +67,17 @@
       <field name="CumQty" required="Y" />
       <field name="ExecType" required="Y" />
       <field name="AvgPx" required="Y" />
-      <field name="LastPx" required="Y" />
-      <field name="LastShares" required="Y" />
-      <field name="Text" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="AccountID" required="Y" />
       <field name="SessionID" required="Y" />
+      <field name="LastShares" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
     </message>
   </messages>
   <components />
@@ -93,8 +98,6 @@
       <value enum="3" description="Status" />
     </field>
     <field number="22" name="IDSource" type="String" />
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />

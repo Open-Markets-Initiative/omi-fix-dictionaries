@@ -104,13 +104,10 @@
       <field name="ExecRefID" required="N" />
       <field name="ExecTransType" required="N" />
       <field name="LastMkt" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="LastShares" required="N" />
       <field name="OrderID" required="Y" />
       <field name="OrderQty" required="N" />
       <field name="OrdStatus" required="Y" />
       <field name="OrdType" required="N" />
-      <field name="OrigClOrdID" required="N" />
       <field name="OrigTime" required="N" />
       <field name="Price" required="N" />
       <field name="Rule80A" required="N" />
@@ -118,7 +115,6 @@
       <field name="Symbol" required="Y" />
       <field name="TimeInForce" required="N" />
       <field name="TransactTime" required="Y" />
-      <field name="OrdRejReason" required="N" />
       <field name="ClientID" required="N" />
       <field name="OnBehalfOfCompID" required="N" />
       <field name="ExpireTime" required="N" />
@@ -129,15 +125,20 @@
       <field name="Account" required="N" />
       <field name="SymbolSfx" required="N" />
       <field name="SecondaryOrderID" required="N" />
-      <field name="ContraBroker" required="N" />
-      <field name="ExecRestatementReason" required="N" />
-      <field name="NoContraBrokers" required="N" />
-      <field name="LastLiquidityInd" required="N" />
       <field name="AntiInternalizationQualifiersAIQID" required="N" />
       <field name="ExtendedExecInst" required="N" />
       <field name="EffectiveLimitPrice" required="N" />
       <field name="TradeLiquidityIndicator" required="N" />
       <field name="FeeCode" required="N" />
+      <field name="LastShares" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
     </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="ClOrdID" required="Y" />
@@ -280,14 +281,6 @@
       <value enum="2" description="Exchange option" />
       <value enum="3" description="Already pending cancel or pending replace" />
     </field>
-    <field number="103" name="OrdRejReason" type="Int">
-      <value enum="0" description="Broker option" />
-      <value enum="1" description="Unknown symbol" />
-      <value enum="2" description="Exchange closed" />
-      <value enum="3" description="Order exceeds limit" />
-      <value enum="4" description="Too late to enter" />
-      <value enum="5" description="Unknown order" />
-    </field>
     <field number="108" name="HeartBtInt" type="Int" />
     <field number="109" name="ClientID" type="String" />
     <field number="110" name="MinQty" type="Qty" />
@@ -334,21 +327,10 @@
       <value enum="11" description="Invalid msgtype" />
     </field>
     <field number="375" name="ContraBroker" type="String" />
-    <field number="378" name="ExecRestatementReason" type="Int">
-      <value enum="3" description="Repricing of order" />
-      <value enum="4" description="State change" />
-    </field>
     <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="434" name="CxlRejResponseTo" type="Char">
       <value enum="1" description="Order cancel request" />
       <value enum="2" description="Order cancel replace request" />
-    </field>
-    <field number="851" name="LastLiquidityInd" type="Int">
-      <value enum="1" description="Added liquidity" />
-      <value enum="2" description="Removed liquidity" />
-      <value enum="3" description="ROUTED" />
-      <value enum="4" description="AUCTION" />
-      <value enum="9" description="Removed liquidity on recheck" />
     </field>
     <field number="7928" name="AntiInternalizationQualifiersAIQID" type="String" />
     <field number="8020" name="DisplayRange" type="Qty" />

@@ -289,24 +289,19 @@
       <field name="ExecRefID" required="N" />
       <field name="ExecTransType" required="Y" />
       <field name="LastMkt" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="LastShares" required="N" />
       <field name="OrderID" required="Y" />
       <field name="OrderQty" required="Y" />
       <field name="OrdStatus" required="Y" />
       <field name="OrdType" required="N" />
-      <field name="OrigClOrdID" required="N" />
       <field name="Price" required="N" />
       <field name="SecurityID" required="Y" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
-      <field name="Text" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="ExecBroker" required="N" />
       <field name="OpenClose" required="Y" />
       <field name="StopPx" required="N" />
-      <field name="OrdRejReason" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="ExecType" required="Y" />
       <field name="LeavesQty" required="Y" />
@@ -333,6 +328,15 @@
       <field name="SpecialOrdType" required="N" />
       <field name="LiquidityIndicator" required="N" />
       <field name="BranchSeqNbr" required="N" />
+      <field name="LastShares" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
     </message>
     <message name="Allocation" msgtype="J" msgcat="app">
       <field name="IDSource" required="N" />
@@ -433,8 +437,6 @@
       <value enum="8" description="Exchange Symbol" />
     </field>
     <field number="30" name="LastMkt" type="String" />
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -512,18 +514,6 @@
     <field number="99" name="StopPx" type="Price" />
     <field number="100" name="ExDestination" type="String" />
     <field number="102" name="CxlRejReason" type="Int" />
-    <field number="103" name="OrdRejReason" type="Int">
-      <value enum="0" description="Broker / Exchange Option" />
-      <value enum="1" description="Unknown Symbol" />
-      <value enum="2" description="Exchange Closed" />
-      <value enum="3" description="Order Exceeds Limit" />
-      <value enum="4" description="Too Late to Enter" />
-      <value enum="5" description="Unknown Order" />
-      <value enum="6" description="Duplicate Order (e.g. duplicate ClOrdID)" />
-      <value enum="11" description="Unsupported Order Characteristic" />
-      <value enum="13" description="Incorrect Quantity" />
-      <value enum="99" description="Other" />
-    </field>
     <field number="108" name="HeartBtInt" type="Int" />
     <field number="110" name="MinQty" type="Qty" />
     <field number="111" name="MaxFloor" type="Qty" />

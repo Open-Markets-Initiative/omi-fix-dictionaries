@@ -20,30 +20,23 @@
     <field name="CheckSum" required="Y" />
   </trailer>
   <messages>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="SendingTime" required="N" />
       <field name="ExecTransType" required="N" />
       <field name="MultilegReportingType" required="N" />
       <field name="ExecID" required="N" />
-      <field name="ExecRefID" required="N" />
       <field name="SecondaryExecID" required="N" />
       <field name="ExecInst" required="N" />
       <field name="ExecType" required="N" />
-      <field name="ExecRestatementReason" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="TradeDate" required="N" />
-      <field name="OrigClOrdID" required="N" />
       <field name="OrderID" required="N" />
-      <field name="NoContraBrokers" required="N" />
-      <field name="ContraBroker" required="N" />
-      <field name="ContraTrader" required="N" />
       <field name="OrdStatus" required="N" />
       <field name="Number" required="N" />
       <field name="AffectedOrigClOrdID" required="N" />
       <field name="CrossID" required="N" />
       <field name="CrossType" required="N" />
       <field name="CrossPrioritization" required="N" />
-      <field name="OrdRejReason" required="N" />
       <field name="LegRefID" required="N" />
       <field name="Account" required="N" />
       <field name="Symbol" required="N" />
@@ -55,17 +48,6 @@
       <field name="ORS" required="N" />
       <field name="ComboOrder" required="N" />
       <field name="Compression" required="N" />
-      <group name="NoLegs" required="N">
-        <field name="LegRefID" required="Y" />
-        <field name="LegSymbol" required="Y" />
-        <field name="LegMaturityDate" required="N" />
-        <field name="LegStrikePrice" required="N" />
-        <field name="LegRatioQty" required="Y" />
-        <field name="LegSide" required="Y" />
-        <field name="LegPrice" required="N" />
-        <field name="LegPositionEffect" required="Y" />
-        <field name="LegDelta" required="N" />
-      </group>
       <field name="OpenClose" required="N" />
       <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
@@ -91,7 +73,6 @@
       <field name="AvgPx" required="N" />
       <field name="For" required="N" />
       <field name="StopPx" required="N" />
-      <field name="SecondaryOrderID" required="N" />
       <field name="ContraCapacity" required="N" />
       <field name="TradeLiquidityIndicator" required="N" />
       <field name="FeeCode" required="N" />
@@ -107,8 +88,6 @@
       <field name="TargetPartyID" required="N" />
       <field name="Text" required="N" />
       <field name="SubreasonText" required="N" />
-      <field name="MassCancelID" required="N" />
-      <field name="CancelledOrderCount" required="N" />
       <field name="AuctionID" required="N" />
       <field name="CrossExclusionIndicator" required="N" />
       <field name="Routing" required="N" />
@@ -128,6 +107,17 @@
       <field name="FloorTradeTime" required="N" />
       <field name="EquityExDestination" required="N" />
       <field name="OccID" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="ContraTrader" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="SecondaryOrderID" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
+      <field name="ExecRefID" required="N" />
+      <field name="MassCancelID" required="N" />
+      <field name="CancelledOrderCount" required="N" />
+      <field name="MatchingUnit" required="N" />
     </message>
     <message name="Trade Cancel/Correct FIX Drop Clearing Edit" msgtype="UCC" msgcat="app">
       <field name="ExecTransType" required="N" />
@@ -221,7 +211,6 @@
       <value enum="8" description="Rejected" />
       <value enum="B" description="Calculated(C1 only) used for FLEX restatements" />
     </field>
-    <field number="41" name="OrigClOrdID" type="String" />
     <field number="42" name="OrigTime" type="UTCTimestamp" />
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
@@ -257,12 +246,6 @@
     </field>
     <field number="80" name="Contracts" type="String" />
     <field number="99" name="StopPx" type="Price" />
-    <field number="103" name="OrdRejReason" type="int">
-      <value enum="0" description="Broker option" />
-      <value enum="2" description="Exchange closed" />
-      <value enum="5" description="Unknown order" />
-      <value enum="8" description="Stale order" />
-    </field>
     <field number="105" name="WaveNo" type="String" />
     <field number="111" name="MaxFloor" type="Qty" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
@@ -287,7 +270,6 @@
       <value enum="OPT" description="Options" />
       <value enum="MLEG" description="Multileg" />
     </field>
-    <field number="198" name="SecondaryOrderID" type="String" />
     <field number="200" name="MaturityMonthYear" type="MonthYear" />
     <field number="201" name="PutOrCall" type="int">
       <value enum="0" description="Put" />
@@ -299,15 +281,6 @@
     <field number="323" name="SecurityResponseType" type="String">
       <value enum="1" description="Accept As-Is (legs were not modified)" />
     </field>
-    <field number="337" name="ContraTrader" type="String" />
-    <field number="375" name="ContraBroker" type="String" />
-    <field number="378" name="ExecRestatementReason" type="String">
-      <value enum="1" description="GTC/GTD Restatement" />
-      <value enum="4" description="State Ch" />
-      <value enum="6" description="Price Sliding Reprice" />
-      <value enum="8" description="Reduction of Ord Qty due to Equity Leg Reject .(C1 only)" />
-    </field>
-    <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="423" name="PriceType" type="Price">
       <value enum="0" description="Fixed cabinet trade price" />
       <value enum="D" description="FLEX DAC" />
@@ -372,8 +345,6 @@
       <value enum="N" description="Away Market Maker" />
       <value enum="J" description="Joint Back Office" />
     </field>
-    <field number="7695" name="MassCancelID" type="String" />
-    <field number="7696" name="CancelledOrderCount" type="String" />
     <field number="7933" name="Routing" type="String" />
     <field number="8020" name="DisplayRange" type="String" />
     <field number="8641" name="NoOfSecurities" type="NumInGroup" />

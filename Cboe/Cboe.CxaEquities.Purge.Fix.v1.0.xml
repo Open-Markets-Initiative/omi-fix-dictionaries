@@ -54,22 +54,13 @@
       <field name="DisplayIndicator" required="N" />
       <field name="CancelOrigOnReject" required="N" />
     </message>
-    <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="ExecTransType" required="N" />
       <field name="ExecType" required="N" />
-    </message>
-    <message name="Purge Reject" msgtype="9" msgcat="app">
-      <field name="OrdStatus" required="N" />
-      <field name="CxlRejResponseTo" required="N" />
-      <field name="CxlRejReason" required="N" />
-      <field name="Text" required="N" />
-    </message>
-    <message name="Amend Acknowledgement" msgtype="8" msgcat="app">
       <field name="AvgPx" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="CumQty" required="N" />
       <field name="ExecInst" required="N" />
-      <field name="ExecTransType" required="N" />
       <field name="OrderID" required="N" />
       <field name="OrdStatus" required="N" />
       <field name="OrderQty" required="N" />
@@ -81,11 +72,15 @@
       <field name="TransactTime" required="N" />
       <field name="MinQty" required="N" />
       <field name="MaxFloor" required="N" />
-      <field name="ExecType" required="N" />
       <field name="LeavesQty" required="N" />
       <field name="SecondaryOrderID" required="N" />
-      <field name="ExpireDate" required="N" />
       <field name="ExecutingFirm" required="N" />
+    </message>
+    <message name="Purge Reject" msgtype="9" msgcat="app">
+      <field name="OrdStatus" required="N" />
+      <field name="CxlRejResponseTo" required="N" />
+      <field name="CxlRejReason" required="N" />
+      <field name="Text" required="N" />
     </message>
     <message name="Amend Reject" msgtype="9" msgcat="app">
       <field name="ClOrdID" required="N" />
@@ -117,7 +112,6 @@
   <components />
   <fields>
     <field number="1" name="Account" type="String" />
-    <field number="6" name="AvgPx" type="Price" />
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
@@ -199,7 +193,6 @@
       <value enum="D" description="Restated" />
     </field>
     <field number="151" name="LeavesQty" type="Qty" />
-    <field number="198" name="SecondaryOrderID" type="String" />
     <field number="432" name="ExpireDate" type="UTCTimestamp" />
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Cancel" />
@@ -232,6 +225,5 @@
     <field number="9619" name="CancelOrigOnReject" type="String">
       <value enum="N" description="Leave original order alone." />
     </field>
-    <field number="9730" name="ExecutingFirm" type="String" />
   </fields>
 </fix>

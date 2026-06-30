@@ -31,12 +31,17 @@
       <field name="CustomGroupID" required="N" />
       <field name="MatchingUnit" required="N" />
     </message>
-    <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="SendingTime" required="N" />
-      <field name="ExecTransType" required="N" />
       <field name="ExecType" required="N" />
       <field name="MassCancelID" required="N" />
       <field name="CancelledOrderCount" required="N" />
+      <field name="ExecTransType" required="N" />
+      <field name="DeliverToCompID" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="Matching" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="LockOut" required="N" />
     </message>
     <message name="Purge Reject" msgtype="9" msgcat="app">
       <field name="OrdStatus" required="N" />
@@ -45,30 +50,12 @@
       <field name="Text" required="N" />
       <field name="MassCancelID" required="N" />
     </message>
-    <message name="Purge Notification" msgtype="8" msgcat="app">
-      <field name="DeliverToCompID" required="N" />
-      <field name="SendingTime" required="N" />
-      <field name="TransactTime" required="N" />
-      <field name="ExecType" required="N" />
-      <field name="MassCancelID" required="N" />
-      <field name="CancelledOrderCount" required="N" />
-      <field name="Matching" required="N" />
-      <field name="Symbol" required="N" />
-      <field name="LockOut" required="N" />
-    </message>
   </messages>
   <components />
   <fields>
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
-    <field number="20" name="ExecTransType" type="char">
-      <value enum="0" description="New 97" />
-      <value enum="1" description="Trade Cancel" />
-      <value enum="5" description="Clearing Edit" />
-      <value enum="6" description="Clearing Edit Allocation" />
-      <value enum="3" description="Status" />
-    </field>
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="39" name="OrdStatus" type="char">
@@ -110,9 +97,6 @@
     </field>
     <field number="7695" name="MassCancelID" type="String" />
     <field number="7696" name="CancelledOrderCount" type="String" />
-    <field number="7697" name="LockOut" type="String">
-      <value enum="Y" description="Lockout" />
-    </field>
     <field number="7698" name="CustomGroupIDCnt" type="String" />
     <field number="7699" name="CustomGroupID" type="String" />
     <field number="7700" name="MassCancelInst" type="String" />

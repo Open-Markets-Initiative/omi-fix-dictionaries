@@ -106,8 +106,6 @@
       <field name="Side" required="Y" />
       <field name="GroupID" required="N" />
       <field name="OrderQty" required="Y" />
-      <field name="LastShares" required="Y" />
-      <field name="LastPx" required="Y" />
       <field name="LeavesQty" required="Y" />
       <field name="CumQty" required="Y" />
       <field name="AvgPx" required="Y" />
@@ -116,7 +114,6 @@
       <field name="ClOrdID" required="N" />
       <field name="Price" required="N" />
       <field name="PegDifference" required="N" />
-      <field name="OrigClOrdID" required="N" />
       <field name="ClientID" required="N" />
       <field name="ExecInst" required="N" />
       <field name="DisplayInst" required="N" />
@@ -125,14 +122,20 @@
       <field name="OrdType" required="N" />
       <field name="TransactTime" required="N" />
       <field name="Rule80A" required="N" />
-      <field name="Text" required="N" />
       <field name="LiquidityFlag" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="CustomerType" required="N" />
       <field name="IntradayIndicativePrice" required="N" />
-      <field name="ContraBroker" required="N" />
       <field name="NoContraBroker" required="N" />
       <field name="ExtendedReasonCode" required="N" />
+      <field name="LastShares" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
       <field name="ExecRestatementReason" required="N" />
     </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
@@ -187,8 +190,6 @@
     <field number="21" name="HandlInst" type="Char">
       <value enum="1" description="Automated Execution, Private, No Broker Intervention" />
     </field>
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -273,29 +274,6 @@
     </field>
     <field number="151" name="LeavesQty" type="Qty" />
     <field number="211" name="PegDifference" type="Float" />
-    <field number="375" name="ContraBroker" type="String">
-      <value enum="ARCX" description="Routed to NYSE Arca" />
-      <value enum="XASE" description="Routed to NYSE American" />
-      <value enum="XNYS" description="Routed to NYSE" />
-      <value enum="XCIS" description="Routed to NYSE National" />
-      <value enum="XCHI" description="Routed to NYSE Chicago" />
-      <value enum="BATS" description="Routed to BATS" />
-      <value enum="BATY" description="Routed to BATS Y" />
-      <value enum="EDGA" description="Routed to EDGA" />
-      <value enum="EDGX" description="Routed to EDGX" />
-      <value enum="offX" description="Routed to non-Reg NMS protected venue" />
-      <value enum="IEXG" description="Routed to IEX" />
-      <value enum="XBOS" description="Routed to Nasdaq BX" />
-      <value enum="XNAS" description="Routed to Nasdaq Stock Market" />
-      <value enum="XPSX" description="Routed to Nasdaq PSX" />
-      <value enum="LTSE" description="Routed to Long Term Stock Exchange" />
-      <value enum="MEMX" description="Routed to Members Exchange" />
-      <value enum="EPRL" description="Routed to MIAX PEARL Equities" />
-      <value enum="24EQ" description="Routed to 24 Exchange" />
-    </field>
-    <field number="378" name="ExecRestatementReason" type="Int">
-      <value enum="5" description="Partial Decline of OrderQty" />
-    </field>
     <field number="382" name="NoContraBroker" type="Int" />
     <field number="434" name="CxlRejResponseTo" type="Int">
       <value enum="1" description="Order Cancel Request" />

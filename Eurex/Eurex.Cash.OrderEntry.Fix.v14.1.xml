@@ -1,4 +1,4 @@
-<fix major="14" minor="1" servicepack="0" type="Fix Low Frequency">
+<fix major="14" minor="1" servicepack="0" type="Order Entry">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -38,24 +38,12 @@
       <field name="OrderQty" required="Y" />
       <field name="CrossRequestID" required="Y" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
-      <group name="Parties" required="N" />
-      <component name="Instrument" required="Y" />
-      <component name="PegInstructions" required="N" />
-      <group name="MtchgInst" required="N">
-        <field name="MatchInst" required="Y" />
-        <field name="MatchInstCrossID" required="Y" />
-      </group>
-      <component name="DisplayInstruction" required="N" />
-      <group name="OrderEventGrp" required="N">
-        <field name="OrderEventType" required="N" />
-      </group>
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="ClOrdID" required="N" />
       <field name="Currency" required="N" />
       <field name="CumQty" required="Y" />
       <field name="ExecID" required="Y" />
       <field name="ExecInst" required="N" />
-      <field name="LastPx" required="N" />
       <field name="LastShares" required="N" />
       <field name="OrderID" required="Y" />
       <field name="OrderQty" required="Y" />
@@ -63,7 +51,6 @@
       <field name="OrdStatus" required="Y" />
       <field name="OrdType" required="N" />
       <field name="MidPointType" required="N" />
-      <field name="OrigClOrdID" required="N" />
       <field name="Price" required="N" />
       <field name="Side" required="Y" />
       <field name="FreeText1" required="N" />
@@ -73,9 +60,7 @@
       <field name="LeavesQty" required="Y" />
       <field name="BrokerInternalizationID" required="N" />
       <field name="TradingSessionID" required="N" />
-      <field name="ExecRestatementReason" required="N" />
       <field name="ExpireDate" required="N" />
-      <field name="SecondaryExecID" required="N" />
       <field name="MatchType" required="N" />
       <field name="TradingSessionSubID" required="N" />
       <field name="LastLiquidityInd" required="N" />
@@ -91,6 +76,15 @@
       <field name="UTransactTime" required="N" />
       <field name="OrderIDSfx" required="N" />
       <field name="TradeAtCloseOptIn" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="TradeID" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="SecondaryExecID" required="N" />
     </message>
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
@@ -700,69 +694,6 @@
       <value enum="18" description="Invalid/Unsupported Application Version" />
       <value enum="99" description="Other" />
     </field>
-    <field number="378" name="ExecRestatementReason" type="int">
-      <value enum="0" description="GT corporate action" />
-      <value enum="1" description="GT renewal / restatement (no corporate action, order book restatement)" />
-      <value enum="8" description="Exchange Option" />
-      <value enum="100" description="Unknown Order State" />
-      <value enum="101" description="Order Added" />
-      <value enum="102" description="Order Replaced" />
-      <value enum="103" description="Order Canceled" />
-      <value enum="105" description="Immediate or Cancel Order Canceled" />
-      <value enum="107" description="FOK Order canceled" />
-      <value enum="108" description="Book Order executed" />
-      <value enum="114" description="Order has been changed to IOC" />
-      <value enum="117" description="Member has been disabled" />
-      <value enum="122" description="Instrument State Change" />
-      <value enum="135" description="Market Order Triggered" />
-      <value enum="138" description="Pending New" />
-      <value enum="139" description="Pending Replace" />
-      <value enum="141" description="Pending New Applied" />
-      <value enum="142" description="Pending Replace Applied" />
-      <value enum="146" description="End od Day Processing" />
-      <value enum="148" description="Order Expiration Intraday" />
-      <value enum="149" description="Closing Auction Only Order Activated" />
-      <value enum="150" description="Closing Auction Only Order Inactivated" />
-      <value enum="151" description="OAO Order activated" />
-      <value enum="152" description="OAO Order inactivated" />
-      <value enum="153" description="AAO Order activated" />
-      <value enum="154" description="AAO Order inactivated" />
-      <value enum="155" description="Order Refreshed" />
-      <value enum="159" description="Intraday Auction Order has been activated" />
-      <value enum="160" description="Intraday Auction Order has been inactivated" />
-      <value enum="164" description="One-cancels-the-other Order Triggered" />
-      <value enum="172" description="Stop Order Triggered" />
-      <value enum="181" description="Ownership Changed" />
-      <value enum="197" description="Order Cancellation Pending" />
-      <value enum="199" description="Pending Cancellation Applied" />
-      <value enum="205" description="Midpoint Sweep order changed to regular order" />
-      <value enum="212" description="Book Or Cancel Order Canceled" />
-      <value enum="213" description="Trailing Stop Update" />
-      <value enum="231" description="Invalid SMP Instruction ID" />
-      <value enum="237" description="Exceeds maximum quantity" />
-      <value enum="238" description="Invalid Limit Price" />
-      <value enum="241" description="User does not exist" />
-      <value enum="242" description="Session does not exist" />
-      <value enum="243" description="Invalid Stop Price" />
-      <value enum="245" description="Instrument does not exist" />
-      <value enum="246" description="Busines Unit Risk Event" />
-      <value enum="261" description="Panic Cancel" />
-      <value enum="292" description="Divident Payment" />
-      <value enum="294" description="Last Trading Day" />
-      <value enum="295" description="Trading Parameter Change" />
-      <value enum="296" description="Currency Change" />
-      <value enum="297" description="Product Assignment Change / Special Event" />
-      <value enum="298" description="Reference Price Change" />
-      <value enum="300" description="Tick Rule Change" />
-      <value enum="302" description="Market Order uncrossing" />
-      <value enum="316" description="Quote Request Solution Order Expiry" />
-      <value enum="340" description="CLIP execution after improvement period" />
-      <value enum="342" description="CLIP Cancellation" />
-      <value enum="343" description="CLIP Request deleted by arrangement time out" />
-      <value enum="344" description="CLIP Request deleted by arrangement validation" />
-      <value enum="346" description="Cross order added" />
-      <value enum="347" description="Cross order cancelled" />
-    </field>
     <field number="379" name="BusinessRejectRefID" type="String" />
     <field number="380" name="BusinessRejectReason" type="int">
       <value enum="0" description="Other" />
@@ -811,7 +742,6 @@
       <value enum="4" description="ISIN" />
     </field>
     <field number="483" name="TransBkdTime" type="String" />
-    <field number="527" name="SecondaryExecID" type="int" />
     <field number="534" name="AffectedOrdersGrp" type="NumInGroup" />
     <field number="535" name="AffectedOrderID" type="String" />
     <field number="552" name="TrdCapRptSideGrp" type="NumInGroup" />
@@ -1043,12 +973,6 @@
       <value enum="0" description="Queue inbound" />
       <value enum="2" description="Reject" />
       <value enum="4" description="Warning" />
-    </field>
-    <field number="1795" name="OrderEventGrp" type="NumInGroup" />
-    <field number="1796" name="OrderEventType" type="int">
-      <value enum="100" description="Status after locked Stock - Pending requests discarded" />
-      <value enum="101" description="Status after locked Stock - Pending request executed" />
-      <value enum="102" description="Status after locked Stock - Pending request rejected" />
     </field>
     <field number="1815" name="TradingCapacity" type="int">
       <value enum="1" description="Customer (Agency)" />

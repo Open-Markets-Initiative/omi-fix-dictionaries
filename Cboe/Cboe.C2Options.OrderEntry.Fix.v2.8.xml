@@ -221,30 +221,23 @@
       <field name="CancelOrigOnReject" required="N" />
       <field name="RoutingFirmID" required="N" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="SendingTime" required="N" />
       <field name="ExecTransType" required="N" />
       <field name="MultilegReportingType" required="N" />
       <field name="ExecID" required="N" />
-      <field name="ExecRefID" required="N" />
       <field name="SecondaryExecID" required="N" />
       <field name="ExecInst" required="N" />
       <field name="ExecType" required="N" />
-      <field name="ExecRestatementReason" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="TradeDate" required="N" />
-      <field name="OrigClOrdID" required="N" />
       <field name="OrderID" required="N" />
-      <field name="NoContraBrokers" required="N" />
-      <field name="ContraBroker" required="N" />
-      <field name="ContraTrader" required="N" />
       <field name="OrdStatus" required="N" />
       <field name="Number" required="N" />
       <field name="AffectedOrigClOrdID" required="N" />
       <field name="CrossID" required="N" />
       <field name="CrossType" required="N" />
       <field name="CrossPrioritization" required="N" />
-      <field name="OrdRejReason" required="N" />
       <field name="LegRefID" required="N" />
       <field name="Account" required="N" />
       <field name="Symbol" required="N" />
@@ -256,17 +249,6 @@
       <field name="ORS" required="N" />
       <field name="ComboOrder" required="N" />
       <field name="Compression" required="N" />
-      <group name="NoLegs" required="N">
-        <field name="LegRefID" required="Y" />
-        <field name="LegSymbol" required="Y" />
-        <field name="LegMaturityDate" required="N" />
-        <field name="LegStrikePrice" required="N" />
-        <field name="LegRatioQty" required="Y" />
-        <field name="LegSide" required="Y" />
-        <field name="LegPrice" required="N" />
-        <field name="LegPositionEffect" required="Y" />
-        <field name="LegDelta" required="N" />
-      </group>
       <field name="OpenClose" required="N" />
       <field name="MaturityMonthYear" required="N" />
       <field name="MaturityDay" required="N" />
@@ -292,7 +274,6 @@
       <field name="AvgPx" required="N" />
       <field name="For" required="N" />
       <field name="StopPx" required="N" />
-      <field name="SecondaryOrderID" required="N" />
       <field name="ContraCapacity" required="N" />
       <field name="TradeLiquidityIndicator" required="N" />
       <field name="FeeCode" required="N" />
@@ -308,8 +289,6 @@
       <field name="TargetPartyID" required="N" />
       <field name="Text" required="N" />
       <field name="SubreasonText" required="N" />
-      <field name="MassCancelID" required="N" />
-      <field name="CancelledOrderCount" required="N" />
       <field name="AuctionID" required="N" />
       <field name="CrossExclusionIndicator" required="N" />
       <field name="Routing" required="N" />
@@ -329,6 +308,17 @@
       <field name="FloorTradeTime" required="N" />
       <field name="EquityExDestination" required="N" />
       <field name="OccID" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="ContraTrader" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="SecondaryOrderID" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
+      <field name="ExecRefID" required="N" />
+      <field name="MassCancelID" required="N" />
+      <field name="CancelledOrderCount" required="N" />
+      <field name="MatchingUnit" required="N" />
     </message>
     <message name="Cancel Reject" msgtype="9" msgcat="app">
       <field name="ClOrdID" required="N" />
@@ -462,12 +452,6 @@
       <value enum="0" description="Too late to cancel." />
       <value enum="2" description="Broker Option." />
     </field>
-    <field number="103" name="OrdRejReason" type="int">
-      <value enum="0" description="Broker option" />
-      <value enum="2" description="Exchange closed" />
-      <value enum="5" description="Unknown order" />
-      <value enum="8" description="Stale order" />
-    </field>
     <field number="108" name="HeartBtInt" type="int" />
     <field number="109" name="ClientID" type="String" />
     <field number="110" name="MinQty" type="Qty" />
@@ -496,7 +480,6 @@
       <value enum="OPT" description="Options" />
       <value enum="MLEG" description="Multileg" />
     </field>
-    <field number="198" name="SecondaryOrderID" type="String" />
     <field number="200" name="MaturityMonthYear" type="MonthYear" />
     <field number="201" name="PutOrCall" type="int">
       <value enum="0" description="Put" />
@@ -505,17 +488,9 @@
     <field number="205" name="MaturityDay" type="int">
       <value enum="1" description="Call" />
     </field>
-    <field number="337" name="ContraTrader" type="String" />
     <field number="371" name="RefTagID" type="String" />
     <field number="372" name="RefMsgType" type="String" />
     <field number="373" name="SessionRejectReason" type="int" />
-    <field number="375" name="ContraBroker" type="String" />
-    <field number="378" name="ExecRestatementReason" type="String">
-      <value enum="1" description="GTC/GTD Restatement" />
-      <value enum="4" description="State Ch" />
-      <value enum="6" description="Price Sliding Reprice" />
-    </field>
-    <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="423" name="PriceType" type="Price">
       <value enum="0" description="Fixed cabinet trade price" />
       <value enum="D" description="FLEX DAC" />
@@ -588,7 +563,6 @@
       <value enum="J" description="Joint Back Office" />
     </field>
     <field number="7695" name="MassCancelID" type="String" />
-    <field number="7696" name="CancelledOrderCount" type="String" />
     <field number="7699" name="CustomGroupID" type="String" />
     <field number="7700" name="MassCancelInst" type="String" />
     <field number="7928" name="PreventMatch" type="String">

@@ -30,13 +30,10 @@
       <field name="ExecTransType" required="Y" />
       <field name="ExecType" required="Y" />
       <field name="OrdStatus" required="Y" />
-      <field name="ExecRestatementReason" required="N" />
       <field name="ClientID" required="N" />
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
       <field name="OrderQty" required="Y" />
-      <field name="LastShares" required="Y" />
-      <field name="LastPx" required="Y" />
       <field name="LeavesQty" required="N" />
       <field name="CumQty" required="Y" />
       <field name="AvgPx" required="Y" />
@@ -48,13 +45,21 @@
       <field name="LastCapacity" required="N" />
       <field name="ExecBroker" required="N" />
       <field name="TimeInForce" required="N" />
-      <field name="Text" required="N" />
       <field name="TradeDate" required="N" />
       <field name="TransactTime" required="N" />
       <field name="LiquidityFlag" required="N" />
       <field name="DisplayInst" required="N" />
       <field name="CustomerType" required="N" />
       <field name="IntraDayIndicativePrice" required="N" />
+      <field name="LastShares" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
     </message>
   </messages>
   <components />
@@ -78,8 +83,6 @@
       <value enum="3" description="Cross as Principal" />
       <value enum="4" description="Principal" />
     </field>
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -117,7 +120,6 @@
     <field number="55" name="Symbol" type="String" />
     <field number="56" name="TargetCompID" type="String" />
     <field number="57" name="TargetSubID" type="String" />
-    <field number="58" name="Text" type="String" />
     <field number="59" name="TimeInForce" type="Char">
       <value enum="0" description="Day" />
       <value enum="2" description="At the Opening" />
@@ -150,9 +152,6 @@
       <value enum="D" description="Restated" />
     </field>
     <field number="151" name="LeavesQty" type="Qty" />
-    <field number="378" name="ExecRestatementReason" type="Int">
-      <value enum="5" description="Partial decline of OrderQty" />
-    </field>
     <field number="9140" name="DisplayInst" type="Char">
       <value enum="Y" description="Anonymous Price to Comply" />
       <value enum="N" description="Non-Displayed" />

@@ -63,7 +63,7 @@
       <field name="NoTradeKey" required="N" />
       <field name="CancelOrigOnReject" required="N" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="Account" required="N" />
       <field name="AvgPx" required="Y" />
       <field name="ClOrdID" required="Y" />
@@ -73,19 +73,14 @@
       <field name="ExecTransType" required="Y" />
       <field name="IDSource" required="Y" />
       <field name="LastCapacity" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="LastMkt" required="N" />
-      <field name="LastShares" required="N" />
       <field name="OrderID" required="Y" />
       <field name="OrderQty" required="Y" />
       <field name="OrdStatus" required="Y" />
       <field name="OrdType" required="N" />
-      <field name="OrigClOrdID" required="N" />
       <field name="Price" required="N" />
       <field name="Rule80A" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
-      <field name="Text" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="ExecBroker" required="N" />
@@ -96,7 +91,6 @@
       <field name="ExecType" required="Y" />
       <field name="LeavesQty" required="Y" />
       <field name="SecondaryOrderID" required="N" />
-      <field name="ExecRestatementReason" required="N" />
       <field name="CashMargin" required="N" />
       <field name="RiskGroupID" required="N" />
       <field name="NoTradeFeat" required="N" />
@@ -118,6 +112,16 @@
       <field name="WorkingPrice" required="N" />
       <field name="TradeLiquidityIndicator" required="Y" />
       <field name="FeeCode" required="N" />
+      <field name="LastShares" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="LastMkt" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="ExecRefID" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
     </message>
     <message name="Cancel Reject" msgtype="9" msgcat="app">
       <field name="Account" required="N" />
@@ -179,7 +183,6 @@
       <value enum="1" description="Agent" />
       <value enum="3" description="Cross as principal" />
     </field>
-    <field number="30" name="LastMkt" type="String" />
     <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
     <field number="37" name="OrderID" type="String" />
@@ -253,9 +256,6 @@
     </field>
     <field number="340" name="TradeSesStatus" type="String">
       <value enum="2" description="Open" />
-    </field>
-    <field number="378" name="ExecRestatementReason" type="String">
-      <value enum="C" description="Confirmed price for VWAP trade" />
     </field>
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Cancel" />

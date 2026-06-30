@@ -5,8 +5,8 @@
 
 | Division | [Protocol][Omi.Eurex.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Eurex.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [Cash][Cash] | [FixLf][Eurex.Cash.FixLf] | [v14.1](Eurex.Cash.FixLf.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.Cash.FixLf.Fix.v14.1.Url] - [pdf][Eurex.Cash.FixLf.Fix.v14.1.Pdf] |
-| [Derivatives][Derivatives] | [FixLf][Eurex.Derivatives.FixLf] | [v14.1](Eurex.Derivatives.FixLf.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.Derivatives.FixLf.Fix.v14.1.Url] - [pdf][Eurex.Derivatives.FixLf.Fix.v14.1.Pdf] |
+| [Cash][Cash] | [OrderEntry][Eurex.Cash.OrderEntry] | [v14.1](Eurex.Cash.OrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.Cash.OrderEntry.Fix.v14.1.Url] - [pdf][Eurex.Cash.OrderEntry.Fix.v14.1.Pdf] |
+| [Derivatives][Derivatives] | [OrderEntry][Eurex.Derivatives.OrderEntry] | [v14.1](Eurex.Derivatives.OrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.Derivatives.OrderEntry.Fix.v14.1.Url] - [pdf][Eurex.Derivatives.OrderEntry.Fix.v14.1.Pdf] |
 
 
 Eurex: [website](https://www.eurex.com "Go to Eurex Exchange")
@@ -22,10 +22,10 @@ Eurex: [website](https://www.eurex.com "Go to Eurex Exchange")
 [Omi.Eurex.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Eurex/Specifications "Eurex Specifications Directory"
 [Derivatives]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Eurex/Protocols/Derivatives "Eurex Derivatives"
 [Cash]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Eurex/Protocols/Cash "Eurex Cash"
-[Eurex.Derivatives.FixLf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Protocols/Derivatives/FixLf.md "Fix Low Frequency"
-[Eurex.Cash.FixLf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Protocols/Cash/FixLf.md "Fix Low Frequency"
+[Eurex.Derivatives.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Protocols/Derivatives/OrderEntry.md "Order Entry"
+[Eurex.Cash.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Protocols/Cash/OrderEntry.md "Order Entry"
 
-[Eurex.Cash.FixLf.Fix.v14.1.Url]: https://www.eurex.com/ex-en/support/initiatives "Eurex Exchange 14.1 Url"
-[Eurex.Cash.FixLf.Fix.v14.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/14.1/Fix/T7_R.14.1_FIX_LF_Cash_Message_Reference_Version_1.pdf "Eurex Exchange 14.1 Pdf"
-[Eurex.Derivatives.FixLf.Fix.v14.1.Url]: https://www.eurex.com/ex-en/support/initiatives "Eurex Exchange 14.1 Url"
-[Eurex.Derivatives.FixLf.Fix.v14.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/14.1/Fix/T7_R.14.1_FIX_LF_Derivatives_Message_Reference_Version_1.pdf "Eurex Exchange 14.1 Pdf"
+[Eurex.Cash.OrderEntry.Fix.v14.1.Url]: https://www.eurex.com/ex-en/support/initiatives "Eurex Exchange 14.1 Url"
+[Eurex.Cash.OrderEntry.Fix.v14.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/14.1/Fix/T7_R.14.1_FIX_LF_Cash_Message_Reference_Version_1.pdf "Eurex Exchange 14.1 Pdf"
+[Eurex.Derivatives.OrderEntry.Fix.v14.1.Url]: https://www.eurex.com/ex-en/support/initiatives "Eurex Exchange 14.1 Url"
+[Eurex.Derivatives.OrderEntry.Fix.v14.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/14.1/Fix/T7_R.14.1_FIX_LF_Derivatives_Message_Reference_Version_1.pdf "Eurex Exchange 14.1 Pdf"

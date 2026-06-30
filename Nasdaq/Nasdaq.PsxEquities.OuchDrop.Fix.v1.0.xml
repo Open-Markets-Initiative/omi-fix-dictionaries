@@ -25,7 +25,6 @@
       <field name="SenderSubID" required="Y" />
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
-      <field name="OrigClOrdID" required="N" />
       <field name="OrderID" required="Y" />
       <field name="ExecID" required="Y" />
       <field name="ExecTransType" required="Y" />
@@ -35,8 +34,6 @@
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
       <field name="OrderQty" required="Y" />
-      <field name="LastShares" required="Y" />
-      <field name="LastPx" required="Y" />
       <field name="LeavesQty" required="N" />
       <field name="CumQty" required="Y" />
       <field name="AvgPx" required="Y" />
@@ -49,13 +46,21 @@
       <field name="ExecInst" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="ExecRefID" required="N" />
-      <field name="Text" required="N" />
       <field name="TradeDate" required="N" />
       <field name="TransactTime" required="N" />
       <field name="LiquidityFlag" required="N" />
       <field name="LastMkt" required="N" />
       <field name="CustomerType" required="N" />
       <field name="IntraDayIndicativePrice" required="N" />
+      <field name="LastShares" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
     </message>
   </messages>
   <components />
@@ -80,8 +85,6 @@
       <value enum="4" description="Principal" />
     </field>
     <field number="30" name="LastMkt" type="Char" />
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -98,7 +101,6 @@
       <value enum="2" description="Limit" />
       <value enum="3" description="Cross" />
     </field>
-    <field number="41" name="OrigClOrdID" type="String" />
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
     <field number="47" name="Rule80A" type="Char">
@@ -118,7 +120,6 @@
     <field number="55" name="Symbol" type="String" />
     <field number="56" name="TargetCompID" type="String" />
     <field number="57" name="TargetSubID" type="String" />
-    <field number="58" name="Text" type="String" />
     <field number="59" name="TimeInForce" type="Char">
       <value enum="0" description="Day" />
       <value enum="2" description="At the Opening" />
