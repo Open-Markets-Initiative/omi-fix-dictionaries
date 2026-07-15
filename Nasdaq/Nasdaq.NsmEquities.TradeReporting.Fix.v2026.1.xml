@@ -1,0 +1,329 @@
+<fix major="2026" minor="1" servicepack="0" type="FIX">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="SenderCompID" required="Y" />
+    <field name="SenderSubID" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="TargetSubID" required="Y" />
+    <field name="SecureDataLen" required="N" />
+    <field name="SecureData" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OnBehalfOfCompID" required="N" />
+    <field name="OnBehalfOfSubID" required="N" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="RawDataLength" required="N" />
+      <field name="RawData" required="N" />
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+    </message>
+    <message name="Test Request" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="Resend Request" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+      <field name="NewSeqNum" required="Y" />
+      <field name="GapFillFlag" required="N" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="Text" required="N" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+    </message>
+    <message name="Trade Capture Report" msgtype="8" msgcat="app">
+      <field name="AvgPx" required="Y" />
+      <field name="ClOrdID" required="N" />
+      <field name="CumQty" required="Y" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecTransType" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="TransactTime" required="N" />
+      <field name="SymbolSfx" required="N" />
+      <field name="TradeDate" required="N" />
+      <field name="ProcessCode" required="N" />
+      <field name="SecurityDesc" required="N" />
+      <field name="ExecType" required="Y" />
+      <field name="LeavesQty" required="Y" />
+      <field name="MDMkt" required="N" />
+      <field name="TradeCondition" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="PriceType" required="N" />
+      <field name="ClearingAccount" required="N" />
+      <field name="SecondaryExecID" required="N" />
+      <field name="OrderCapacity" required="N" />
+      <field name="TradeReportID" required="N" />
+      <field name="ClearingInstruction" required="N" />
+      <field name="ReversalIndicator" required="N" />
+      <field name="TrdSubType" required="Y" />
+      <field name="PublishTrdIndicator" required="N" />
+      <field name="ShortSaleReason" required="N" />
+      <field name="SecondaryTrdType" required="N" />
+      <field name="TradeReportType" required="N" />
+      <field name="TrdMatchID" required="N" />
+      <field name="AsOfIndicator" required="N" />
+      <field name="Memo" required="N" />
+      <field name="RelatedMarketCenter" required="N" />
+      <field name="AdvertisementInstruction" required="N" />
+      <field name="ClearingPrice" required="N" />
+      <field name="ReportingGUID" required="N" />
+      <field name="NonReportingGUID" required="N" />
+      <field name="OverrideFlag" required="N" />
+      <field name="ContraBranchSeqNbr" required="N" />
+      <field name="ContraTradePA" required="N" />
+      <field name="ContraClearingAcct" required="N" />
+      <field name="OrigControlDate" required="N" />
+      <field name="TradeModifier4Time" required="N" />
+      <field name="ShortSaleIndicator" required="N" />
+      <field name="RefReportingFacility" required="N" />
+      <field name="TradeModifier2Time" required="N" />
+      <field name="TradeReportRefID" required="N" />
+      <field name="PartyRole" required="N" />
+      <field name="BranchSeqNbr" required="N" />
+      <field name="Text" required="N" />
+      <field name="ClientID" required="N" />
+      <field name="SecondaryTradeReportRefID" required="N" />
+      <field name="TrdRptStatus" required="N" />
+      <field name="RegFeeFlag" required="N" />
+      <field name="LockedIn" required="N" />
+      <field name="LockedInStatus" required="N" />
+      <field name="BreakIndicator" required="N" />
+      <field name="ClearingBroker" required="N" />
+      <field name="IntroBrokerInd" required="N" />
+      <field name="ExecBrokerInd" required="N" />
+      <field name="ClearBrokerInd" required="N" />
+      <field name="ResponsibilityInd" required="N" />
+      <field name="TradeRepAvailInd" required="N" />
+      <field name="MajorClearingInd" required="N" />
+      <field name="Reserved" required="N" />
+      <field name="InhibitTradeIndicator" required="N" />
+      <field name="HeldTradeStartTime" required="N" />
+      <field name="AllowInhibitActionTime" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="6" name="AvgPx" type="Price" />
+    <field number="7" name="BeginSeqNo" type="SeqNum" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="14" name="CumQty" type="Qty" />
+    <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="17" name="ExecID" type="String" />
+    <field number="20" name="ExecTransType" type="Char" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="36" name="NewSeqNum" type="SeqNum" />
+    <field number="37" name="OrderID" type="String" />
+    <field number="39" name="OrdStatus" type="Char" />
+    <field number="43" name="PossDupFlag" type="String">
+      <value enum="Y" description="Possible duplicate" />
+      <value enum="N" description="Original transmission" />
+    </field>
+    <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="50" name="SenderSubID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="54" name="Side" type="Char">
+      <value enum="1" description="buy" />
+      <value enum="2" description="sell" />
+    </field>
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="57" name="TargetSubID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="65" name="SymbolSfx" type="String" />
+    <field number="75" name="TradeDate" type="LocalMktDate" />
+    <field number="81" name="ProcessCode" type="String">
+      <value enum="0" description="regular (default)" />
+      <value enum="3" description="FINRA Step-out trade***" />
+      <value enum="Q" description="Nasdaq Step-Out" />
+      <value enum="7" description="Special trade" />
+      <value enum="8" description="Special and Step-out trade***" />
+      <value enum="F" description="Nasdaq Sales Fee Transfer" />
+      <value enum="2" description="FINRA Step-in trade***" />
+      <value enum="A" description="FINRA Special and step-in trade***" />
+      <value enum="B" description="FINRA Step-out trade with fees***" />
+      <value enum="C" description="FINRA Special and Step-out trade with fees***" />
+      <value enum="D" description="FINRA Position Transfer" />
+      <value enum="M" description="Clearing Only/Non Regulatory*" />
+      <value enum="N" description="Special and Clearing Only/Non Regulatory*" />
+      <value enum="O" description="Clearing Copy**" />
+    </field>
+    <field number="90" name="SecureDataLen" type="String" />
+    <field number="91" name="SecureData" type="String" />
+    <field number="95" name="RawDataLength" type="Length" />
+    <field number="96" name="RawData" type="data" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="98" name="EncryptMethod" type="Int" />
+    <field number="107" name="SecurityDesc" type="String">
+      <value enum="N" description="Nasdaq Global Select or Nasdaq Global" />
+      <value enum="R" description="Nasdaq Capital Market" />
+      <value enum="C" description="CQS" />
+    </field>
+    <field number="108" name="HeartBtInt" type="Int" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
+    <field number="116" name="OnBehalfOfSubID" type="String" />
+    <field number="122" name="OrigSendingTime" type="String" />
+    <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="150" name="ExecType" type="Char" />
+    <field number="151" name="LeavesQty" type="Qty" />
+    <field number="275" name="MDMkt" type="String">
+      <value enum="Q" description="Nasdaq Exchange function" />
+    </field>
+    <field number="277" name="TradeCondition" type="String">
+      <value enum="0" description="regular (1 Day Settlement) (effective 5/28/24)" />
+      <value enum="C" description="Cash (Same Day)" />
+      <value enum="L" description="Seller's Option Trade Through Exempt Modifier (Byte 2)" />
+      <value enum="2" description="FINRA Self Help Indicator" />
+      <value enum="3" description="Intermarket Sweep Outbound" />
+      <value enum="4" description="Derivatively Priced" />
+      <value enum="6" description="Intermarket Sweep Inbound" />
+      <value enum="7" description="Qualified Contingent Trade" />
+      <value enum="8" description="FINRA Subpenny Indicator" />
+      <value enum="19" description="Error Correction" />
+      <value enum="20" description="Print Protection Extended Hours &amp; Late Modifier (Byte 3)" />
+    </field>
+    <field number="371" name="RefTagID" type="Int" />
+    <field number="372" name="RefMsgType" type="String" />
+    <field number="373" name="SessionRejectReason" type="Int">
+      <value enum="0" description="Invalid tag number" />
+      <value enum="1" description="Required tag missing" />
+      <value enum="2" description="Tag not defined for this message type" />
+      <value enum="3" description="Undefined Tag" />
+      <value enum="4" description="Tag specified without a value" />
+      <value enum="5" description="Value is incorrect (out of range) for this tag" />
+      <value enum="6" description="Incorrect data format for value" />
+      <value enum="7" description="Decryption problem" />
+      <value enum="8" description="Signature problem" />
+      <value enum="9" description="CompID problem" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
+    </field>
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="423" name="PriceType" type="String">
+      <value enum="98" description="Decimal Unit Price" />
+      <value enum="99" description="Contract Amount" />
+    </field>
+    <field number="440" name="ClearingAccount" type="String" />
+    <field number="527" name="SecondaryExecID" type="String" />
+    <field number="528" name="OrderCapacity" type="Char">
+      <value enum="P" description="principal" />
+      <value enum="A" description="agent" />
+      <value enum="R" description="Riskless Principal" />
+    </field>
+    <field number="571" name="TradeReportID" type="String" />
+    <field number="572" name="TradeReportRefID" type="String" />
+    <field number="577" name="ClearingInstruction" type="String">
+      <value enum="0" description="FINRA clear*" />
+      <value enum="10" description="FINRA AGU Lock-in*" />
+      <value enum="11" description="QSR clear*" />
+      <value enum="97" description="no clear" />
+      <value enum="98" description="QSR no clear*" />
+      <value enum="92" description="Nasdaq QSR for clearing*" />
+      <value enum="93" description="Nasdaq AGU for clearing*" />
+      <value enum="94" description="AGU Clearing, non-risk eligible" />
+      <value enum="95" description="No Clear, Risk Update only*" />
+      <value enum="99" description="ext" />
+    </field>
+    <field number="700" name="ReversalIndicator" type="String">
+      <value enum="N" description="Not a reversal (default)" />
+      <value enum="Y" description="reversal reported through ACT" />
+      <value enum="K" description="reversal reported through ACT" />
+    </field>
+    <field number="829" name="TrdSubType" type="String">
+      <value enum="0" description="No Trade Through Exemption" />
+      <value enum="1" description="Trade Through Exemption" />
+    </field>
+    <field number="852" name="PublishTrdIndicator" type="String">
+      <value enum="Y" description="Report to Tape (default)" />
+      <value enum="N" description="Do Not Report to Tape If tag" />
+      <value enum="277" description="16, 17, or 18, then tag 852 must = N" />
+      <value enum="452" description="17) are required to have" />
+    </field>
+    <field number="853" name="ShortSaleReason" type="String">
+      <value enum="0" description="Dealer Sold Short" />
+      <value enum="2" description="Selling Customer Sold Short" />
+      <value enum="4" description="Contra Side Sold Short" />
+      <value enum="1" description="Dealer Sold Short Exempt" />
+      <value enum="3" description="Selling Customer Sold Short Exempt" />
+    </field>
+    <field number="855" name="SecondaryTrdType" type="String" />
+    <field number="856" name="TradeReportType" type="String">
+      <value enum="2" description="accept When specifying a break, the only valid value is:" />
+      <value enum="3" description="decline When specifying an error, the only valid value is:" />
+      <value enum="8" description="error See Appendix A: Message Flow Scenarios" />
+    </field>
+    <field number="880" name="TrdMatchID" type="String" />
+    <field number="5080" name="AsOfIndicator" type="String">
+      <value enum="Y" description="As-of (T+1 to T+n)" />
+      <value enum="N" description="Original (T-day entry)" />
+    </field>
+    <field number="5149" name="Memo" type="String" />
+    <field number="9277" name="RelatedMarketCenter" type="String">
+      <value enum="A" description="NYSE American" />
+      <value enum="B" description="Nasdaq BXTexas" />
+      <value enum="C" description="NYSE National" />
+      <value enum="E" description="MEMX LLC (MEMX)" />
+      <value enum="F" description="Foreign Market" />
+      <value enum="G" description="Cboe BYX Exchange" />
+      <value enum="H" description="Cboe BZX Exchange" />
+      <value enum="I" description="Nasdaq ISE" />
+    </field>
+    <field number="9278" name="AdvertisementInstruction" type="String" />
+    <field number="9822" name="ClearingPrice" type="String" />
+    <field number="9825" name="ReportingGUID" type="String" />
+    <field number="9826" name="NonReportingGUID" type="String" />
+    <field number="9854" name="OverrideFlag" type="String">
+      <value enum="Y" description="Override" />
+      <value enum="N" description="No override" />
+    </field>
+    <field number="9860" name="ContraBranchSeqNbr" type="String" />
+    <field number="9862" name="ContraTradePA" type="String">
+      <value enum="P" description="Principal" />
+      <value enum="A" description="agent" />
+      <value enum="R" description="Riskless Principal" />
+    </field>
+    <field number="9863" name="ContraClearingAcct" type="String" />
+    <field number="22012" name="OrigControlDate" type="String" />
+    <field number="22018" name="TradeModifier4Time" type="String" />
+    <field number="22024" name="ShortSaleIndicator" type="String">
+      <value enum="S" description="Sold Short" />
+      <value enum="E" description="Sold Short Exempt" />
+    </field>
+    <field number="22029" name="RefReportingFacility" type="String">
+      <value enum="A" description="ADF" />
+      <value enum="B" description="FINRA/Nasdaq TRF Chicago" />
+      <value enum="Q" description="FINRA/Nasdaq TRF Carteret" />
+      <value enum="N" description="FINRA/NYSE TRF" />
+    </field>
+    <field number="22033" name="TradeModifier2Time" type="String" />
+  </fields>
+</fix>
