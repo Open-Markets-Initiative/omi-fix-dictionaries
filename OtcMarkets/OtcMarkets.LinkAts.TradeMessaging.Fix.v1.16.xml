@@ -1,0 +1,276 @@
+<fix major="1" minor="16" servicepack="0" type="Trade Messaging">
+  <header>
+    <field name="BeginString" required="N" />
+    <field name="BodyLength" required="N" />
+    <field name="ClOrdID" required="N" />
+    <field name="MsgSeqNum" required="N" />
+    <field name="MsgType" required="N" />
+    <field name="OrderID" required="N" />
+    <field name="SenderCompID" required="N" />
+    <field name="SendingTime" required="N" />
+    <field name="TargetCompID" required="N" />
+    <field name="OnBehalfOfCompID" required="N" />
+    <field name="OnBehalfOfSubID" required="N" />
+    <field name="DeliverToCompID" required="N" />
+    <field name="DeliverToSubID" required="N" />
+  </header>
+  <trailer />
+  <messages>
+    <message name="New Trade" msgtype="D" msgcat="app">
+      <field name="MsgType" required="Y" />
+      <field name="SenderCompID" required="Y" />
+      <field name="TargetCompID" required="Y" />
+      <field name="OnBehalfOfCompID" required="Y" />
+      <field name="OnBehalfOfSubID" required="Y" />
+      <field name="DeliverToCompID" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SymbolSfx" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="OrdType" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="Price" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="Duration" required="N" />
+      <field name="SolicitedFlag" required="N" />
+      <field name="OrderCapacity" required="N" />
+      <field name="PingECN" required="N" />
+      <field name="BFMMFlag" required="N" />
+      <field name="DeliverToSubID" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="CounterOrdID" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="QAPRate" required="Y" />
+      <field name="LiabilityFlag" required="Y" />
+      <field name="OrderQueuePosition" required="Y" />
+      <field name="RestrictToRoundLots" required="N" />
+      <field name="MaxOrderID" required="N" />
+      <field name="CounterPartyOrderCapacity" required="N" />
+      <field name="InsBidRcvd" required="N" />
+      <field name="InsAskRcvd" required="N" />
+      <field name="InsBidSizeRcvd" required="N" />
+      <field name="InsAskSizeRcvd" required="N" />
+      <field name="ReceiverBid" required="N" />
+      <field name="ReceiverAsk" required="N" />
+      <field name="ReceiverBidSize" required="N" />
+      <field name="ReceiverAskSize" required="N" />
+    </message>
+    <message name="Cancel Trade" msgtype="F" msgcat="app">
+      <field name="MsgType" required="Y" />
+      <field name="SenderCompID" required="Y" />
+      <field name="TargetCompID" required="Y" />
+      <field name="OnBehalfOfCompID" required="Y" />
+      <field name="OnBehalfOfSubID" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="MAXOrderID" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SymbolSfx" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="IDSource" required="N" />
+    </message>
+    <message name="Execution Report" msgtype="8" msgcat="app">
+      <field name="MsgType" required="Y" />
+      <field name="SenderCompID" required="Y" />
+      <field name="TargetCompID" required="Y" />
+      <field name="OnBehalfOfCompID" required="N" />
+      <field name="OnBehalfOfSubID" required="N" />
+      <field name="DeliverToCompID" required="Y" />
+      <field name="DeliverToSubID" required="Y" />
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="ExecType" required="Y" />
+      <field name="CounterOrdID" required="N" />
+      <field name="OrdStatus" required="N" />
+      <field name="LeavesQty" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="ResultCode" required="N" />
+      <field name="Text" required="N" />
+      <field name="LiabilityFlag" required="N" />
+      <field name="OrderQueuePosition" required="N" />
+      <field name="QAPRate" required="N" />
+      <field name="MaxOrderID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SymbolSfx" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="ExecID" required="N" />
+      <field name="Side" required="Y" />
+      <field name="LastShares" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="SolicitedFlag" required="N" />
+      <field name="OrderCapacity" required="N" />
+      <field name="Anonymous" required="N" />
+      <field name="QAPWaived" required="N" />
+      <field name="BFMMFlag" required="N" />
+      <field name="OrderInitiatorFlag" required="Y" />
+      <field name="CounterPartySide" required="N" />
+      <field name="Price" required="Y" />
+      <field name="QAPAmount" required="Y" />
+      <field name="CumQty" required="Y" />
+      <field name="ReportToExch" required="Y" />
+      <field name="CounterPartyOrderCapacity" required="N" />
+      <field name="OATSReported" required="Y" />
+      <field name="MAXCumQty" required="Y" />
+      <field name="InsBidRcvd" required="N" />
+      <field name="InsAskRcvd" required="N" />
+      <field name="InsBidSizeRcvd" required="N" />
+      <field name="InsAskSizeRcvd" required="N" />
+      <field name="ReceiverBid" required="N" />
+      <field name="ReceiverAsk" required="N" />
+      <field name="ReceiverBidSize" required="N" />
+      <field name="ReceiverAskSize" required="N" />
+      <field name="FillerBid" required="N" />
+      <field name="FillerAsk" required="N" />
+      <field name="FillerBidSize" required="N" />
+      <field name="FillerAskSize" required="N" />
+      <field name="InsBidEx" required="N" />
+      <field name="InsAskEx" required="N" />
+      <field name="InsBidSizeEx" required="N" />
+      <field name="InsAskSizeEx" required="N" />
+      <field name="MAXOrderID" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="Duration" required="N" />
+      <field name="CounterState" required="N" />
+    </message>
+    <message name="Cancel Rejected" msgtype="9" msgcat="app">
+      <field name="MsgType" required="Y" />
+      <field name="SenderCompID" required="Y" />
+      <field name="TargetCompID" required="Y" />
+      <field name="OnBehalfOfCompID" required="N" />
+      <field name="OnBehalfOfSubID" required="N" />
+      <field name="DeliverToCompID" required="Y" />
+      <field name="DeliverToSubID" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="N" />
+      <field name="CounterOrdID" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="ResultCode" required="Y" />
+      <field name="Text" required="Y" />
+    </message>
+    <message name="Fill Decline Counter Or Replace Rejected" msgtype="Q" msgcat="app">
+      <field name="MsgType" required="Y" />
+      <field name="SenderCompID" required="Y" />
+      <field name="TargetCompID" required="Y" />
+      <field name="OnBehalfOfCompID" required="N" />
+      <field name="OnBehalfOfSubID" required="N" />
+      <field name="DeliverToCompID" required="Y" />
+      <field name="DeliverToSubID" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="N" />
+      <field name="CounterOrdID" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="ResultCode" required="Y" />
+      <field name="Text" required="Y" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="18" name="ExecInst" type="MultipleValueString">
+      <value enum="f" description="BXI (see chapter 2.2.12)" />
+      <value enum="G" description="All or none (AON)" />
+      <value enum="N" description="Non-negotiable (cannot be countered)" />
+      <value enum="b" description="Strict Limit (no price improvement allowed)" />
+      <value enum="s" description="Saturate on Expiration" />
+      <value enum="Z" description="Auto Cancel" />
+      <value enum="F" description="Fractional Share Trade Messages Accepted" />
+      <value enum="g" description="No Partial (only execute if all shares requested are available)" />
+    </field>
+    <field number="22" name="IDSource" type="String" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="37" name="OrderID" type="String" />
+    <field number="38" name="OrderQty" type="Qty" />
+    <field number="39" name="OrdStatus" type="Char">
+      <value enum="0" description="New (message is live without any fills)" />
+      <value enum="4" description="Cancelled" />
+      <value enum="5" description="Replaced (message is live)" />
+      <value enum="8" description="Rejected" />
+      <value enum="C" description="Expired" />
+      <value enum="S" description="Countered (message is live)" />
+    </field>
+    <field number="40" name="OrdType" type="Char">
+      <value enum="2" description="Limit" />
+    </field>
+    <field number="44" name="Price" type="Price" />
+    <field number="48" name="SecurityID" type="String" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="54" name="Side" type="Char">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+      <value enum="5" description="Sell short" />
+    </field>
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="59" name="TimeInForce" type="Char">
+      <value enum="3" description="Immediate or Cancel (IOC, message has expire time, either specified or default, but will cancel immediately following a partial execution)" />
+    </field>
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="65" name="SymbolSfx" type="String" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
+    <field number="116" name="OnBehalfOfSubID" type="String" />
+    <field number="128" name="DeliverToCompID" type="String" />
+    <field number="129" name="DeliverToSubID" type="String" />
+    <field number="150" name="ExecType" type="Char">
+      <value enum="0" description="New" />
+      <value enum="4" description="Cancel" />
+      <value enum="5" description="Replaced" />
+      <value enum="8" description="Reject" />
+      <value enum="C" description="Expires / Times out" />
+      <value enum="S" description="Countered" />
+      <value enum="1" description="Drop Copy Partial Fill" />
+      <value enum="2" description="Drop Copy Fill" />
+    </field>
+    <field number="151" name="LeavesQty" type="Qty" />
+    <field number="9377" name="SolicitedFlag" type="String">
+      <value enum="Y" description="Order is solicited - Default" />
+      <value enum="N" description="Order is not solicited" />
+    </field>
+    <field number="9528" name="OrderCapacity" type="String">
+      <value enum="A" description="Agency" />
+      <value enum="P" description="Principal - Default" />
+      <value enum="R" description="Riskless Principal" />
+    </field>
+    <field number="9547" name="LiabilityFlag" type="String">
+      <value enum="Y" description="matches or is better" />
+      <value enum="N" description="does not match or is worse" />
+    </field>
+    <field number="9548" name="ResultCode" type="String" />
+    <field number="9549" name="RestrictToRoundLots" type="String">
+      <value enum="N" description="executions of odd lots allowed - Default" />
+      <value enum="Y" description="only executions of round lots are allowed" />
+    </field>
+    <field number="9551" name="OrderQueuePosition" type="String" />
+    <field number="9552" name="CounterOrdID" type="String" />
+    <field number="9559" name="Duration" type="String" />
+    <field number="9561" name="InsBidRcvd" type="String" />
+    <field number="9562" name="InsAskRcvd" type="String" />
+    <field number="9563" name="InsBidSizeRcvd" type="String" />
+    <field number="9564" name="InsAskSizeRcvd" type="String" />
+    <field number="9565" name="ReceiverBid" type="String" />
+    <field number="9566" name="ReceiverAsk" type="String" />
+    <field number="9567" name="ReceiverBidSize" type="String" />
+    <field number="9568" name="ReceiverAskSize" type="String" />
+    <field number="9580" name="MaxOrderID" type="String" />
+    <field number="9593" name="CounterPartyOrderCapacity" type="String" />
+    <field number="9600" name="PingECN" type="String">
+      <value enum="L" description="Ping at Trade Msg Limit Price" />
+      <value enum="M" description="Ping at CBBO Midpoint" />
+    </field>
+    <field number="9665" name="QAPRate" type="String" />
+    <field number="9710" name="BFMMFlag" type="String">
+      <value enum="Y" description="Supports the bona fide market making exception" />
+      <value enum="N" description="Does not support the bona fide market making exception - Default" />
+    </field>
+  </fields>
+</fix>
