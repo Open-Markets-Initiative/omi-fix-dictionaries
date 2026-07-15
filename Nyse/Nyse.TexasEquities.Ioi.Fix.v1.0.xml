@@ -1,0 +1,112 @@
+<fix major="1" minor="0" servicepack="0" type="NYSE Pillar Gateway">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="SenderCompID" required="Y" />
+    <field name="SenderSubID" required="N" />
+    <field name="SendingTime" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="Username" required="Y" />
+      <field name="Password" required="Y" />
+      <field name="Text" required="N" />
+      <field name="NextExpectedMsgSeqNum" required="Y" />
+      <field name="SessionStatus" required="N" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="Test Request" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Resend Request" msgtype="2" msgcat="admin" />
+    <message name="Sequence Reset" msgtype="4" msgcat="admin" />
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="Text" required="N" />
+      <field name="NextExpectedMsgSeqNum" required="Y" />
+    </message>
+    <message name="Indication Of Interest" msgtype="6" msgcat="app">
+      <field name="IOIQty" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SymbolSfx" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Int" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="27" name="IOIQty" type="Qty" />
+    <field number="34" name="MsgSeqNum" type="Int" />
+    <field number="35" name="MsgType" type="String">
+      <value enum="A" description="Logon" />
+      <value enum="0" description="Heartbeat" />
+      <value enum="1" description="Test Request" />
+      <value enum="2" description="Resend Request" />
+      <value enum="3" description="Session Layer Reject" />
+      <value enum="4" description="Sequence Reset" />
+      <value enum="5" description="Logout" />
+      <value enum="6" description="Indication of Interest" />
+    </field>
+    <field number="43" name="PossDupFlag" type="Boolean">
+      <value enum="Y" description="Yes" />
+      <value enum="N" description="No" />
+    </field>
+    <field number="45" name="RefSeqNum" type="Int" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="50" name="SenderSubID" type="String" />
+    <field number="52" name="SendingTime" type="String" />
+    <field number="54" name="Side" type="Char">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+    </field>
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="65" name="SymbolSfx" type="String" />
+    <field number="98" name="EncryptMethod" type="Int" />
+    <field number="108" name="HeartBtInt" type="Int" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="122" name="OrigSendingTime" type="String" />
+    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
+    <field number="371" name="RefTagID" type="Int" />
+    <field number="372" name="RefMsgType" type="String" />
+    <field number="373" name="SessionRejectReason" type="Int">
+      <value enum="0" description="Invalid Tag Number" />
+      <value enum="1" description="Required Tag Missing" />
+      <value enum="2" description="Tag Not Defined For This Message Type" />
+      <value enum="3" description="Undefined Tag" />
+      <value enum="4" description="Tag specified without a value" />
+      <value enum="5" description="Value is incorrect (out of range) for this tag" />
+      <value enum="6" description="Incorrect data format for value" />
+      <value enum="7" description="Decryption problem" />
+      <value enum="8" description="Signature problem" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
+      <value enum="13" description="Tag Appears More than Once" />
+      <value enum="14" description="Tag specified out of required order" />
+      <value enum="99" description="Other" />
+    </field>
+    <field number="553" name="Username" type="String" />
+    <field number="554" name="Password" type="String" />
+    <field number="789" name="NextExpectedMsgSeqNum" type="Int" />
+    <field number="1409" name="SessionStatus" type="Int" />
+  </fields>
+</fix>
