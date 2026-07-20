@@ -1,0 +1,182 @@
+<fix major="1" minor="8" servicepack="0" type="Drop Copy">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="DefaultApplVerID" required="Y" />
+      <field name="DefaultCstmApplVerID" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Resend Request" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="Test Request" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="Order Cancel Reject" msgtype="9" msgcat="app">
+      <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="CxlRejResponseTo" required="Y" />
+      <field name="CxlRejReason" required="Y" />
+    </message>
+    <message name="Execution Report" msgtype="8" msgcat="app">
+      <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecType" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OptionsSecurityID" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="MaturityDate" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="LeavesQty" required="Y" />
+      <field name="CumQty" required="Y" />
+      <field name="Price" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="ListSeqNo" required="Y" />
+      <field name="LastShares" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="TradingCapacity" required="Y" />
+      <field name="PositionEffect" required="N" />
+      <field name="TrdMatchID" required="Y" />
+      <field name="LastLiquidityInd" required="Y" />
+      <field name="LastMkt" required="Y" />
+      <field name="Account" required="Y" />
+      <field name="ContraTradingCapacity" required="Y" />
+      <field name="SecurityType" required="Y" />
+      <field name="NoPartyIDs" required="Y" />
+      <field name="ExecRefID" required="Y" />
+      <field name="AvgPx" required="Y" />
+      <field name="TimeInForce" required="Y" />
+      <field name="RepriceFrequency" required="N" />
+      <field name="RepriceBehavior" required="N" />
+      <field name="ExecInst" required="Y" />
+      <field name="MatchTradePreventionType" required="N" />
+      <field name="MTPGroupID" required="N" />
+      <field name="CancelGroupID" required="N" />
+      <field name="RiskGroupID" required="N" />
+      <field name="OrdRejReason" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="OrigListSeqNo" required="Y" />
+      <field name="CancelReason" required="Y" />
+      <field name="ExecRestatementReason" required="Y" />
+      <field name="ExtendedRestatementReason" required="N" />
+    </message>
+    <message name="Allocation Instruction Alert" msgtype="BM" msgcat="app">
+      <field name="AllocID" required="Y" />
+      <field name="AllocType" required="Y" />
+      <field name="AllocTransType" required="Y" />
+      <field name="RefAllocID" required="N" />
+      <field name="AllocCancReplaceReason" required="N" />
+      <field name="Side" required="Y" />
+      <field name="OptionsSecurityID" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="MaturityDate" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="TradeDate" required="Y" />
+      <field name="NoExecs" required="Y" />
+      <field name="NoAllocs" required="Y" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="7" name="BeginSeqNo" type="SeqNum" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="14" name="CumQty" type="Qty" />
+    <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="17" name="ExecID" type="String" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="36" name="NewSeqNo" type="SeqNum" />
+    <field number="37" name="OrderID" type="String" />
+    <field number="38" name="OrderQty" type="Qty" />
+    <field number="39" name="OrdStatus" type="Char" />
+    <field number="41" name="OrigClOrdID" type="String" />
+    <field number="43" name="PossDupFlag" type="String" />
+    <field number="44" name="Price" type="Price" />
+    <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="54" name="Side" type="Char" />
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="70" name="AllocID" type="String" />
+    <field number="71" name="AllocTransType" type="String">
+      <value enum="0" description="New Replace existing trade with allocation. This is the first allocation on a tr" />
+      <value enum="1" description="Replace Replacing existing allocations with new allocations. This is any subsequ" />
+      <value enum="2" description="Cancel Canceling existing allocations. This is done by the exchange when the ori" />
+    </field>
+    <field number="72" name="RefAllocID" type="String" />
+    <field number="75" name="TradeDate" type="LocalMktDate" />
+    <field number="78" name="NoAllocs" type="String" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="98" name="EncryptMethod" type="Int" />
+    <field number="102" name="CxlRejReason" type="Int" />
+    <field number="108" name="HeartBtInt" type="Int" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="122" name="OrigSendingTime" type="String" />
+    <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="124" name="NoExecs" type="String" />
+    <field number="141" name="ResetSeqNumFlag" type="String" />
+    <field number="150" name="ExecType" type="Char" />
+    <field number="151" name="LeavesQty" type="Qty" />
+    <field number="201" name="PutOrCall" type="Int" />
+    <field number="202" name="StrikePrice" type="Price" />
+    <field number="371" name="RefTagID" type="Int" />
+    <field number="372" name="RefMsgType" type="String" />
+    <field number="434" name="CxlRejResponseTo" type="Char" />
+    <field number="541" name="MaturityDate" type="String" />
+    <field number="626" name="AllocType" type="String">
+      <value enum="100" description="PostTradeEdit The allocation was a post trade edit. (This is a custom value defi" />
+    </field>
+    <field number="796" name="AllocCancReplaceReason" type="String" />
+    <field number="1137" name="DefaultApplVerID" type="String" />
+    <field number="1408" name="DefaultCstmApplVerID" type="String" />
+    <field number="21035" name="OptionsSecurityID" type="String" />
+  </fields>
+</fix>

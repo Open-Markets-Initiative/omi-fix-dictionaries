@@ -5,22 +5,22 @@
 
 | Division | [Protocol][Omi.Nyse.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Nyse.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [AmexEquities][AmexEquities] | [Ioi][Nyse.AmexEquities.Ioi] | [v1.0](Nyse.AmexEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.AmexEquities.Ioi.Fix.v1.0.Pdf] |
-| [AmexEquities][AmexEquities] | [OrderEntry][Nyse.AmexEquities.OrderEntry] | [v5.15](Nyse.AmexEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.AmexEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.AmexEquities.OrderEntry.Fix.v5.15.Pdf] |
-| [AmexOptions][AmexOptions] | [FloorBroker][Nyse.AmexOptions.FloorBroker] | [v2.6](Nyse.AmexOptions.FloorBroker.Fix.v2.6.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.AmexOptions.FloorBroker.Fix.v2.6.Pdf] |
-| [AmexOptions][AmexOptions] | [OrderEntry][Nyse.AmexOptions.OrderEntry] | [v3.24](Nyse.AmexOptions.OrderEntry.Fix.v3.24.xml) | 3/9/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.AmexOptions.OrderEntry.Fix.v3.24.Url] - [pdf][Nyse.AmexOptions.OrderEntry.Fix.v3.24.Pdf] |
-| [ArcaEquities][ArcaEquities] | [Ioi][Nyse.ArcaEquities.Ioi] | [v1.0](Nyse.ArcaEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.ArcaEquities.Ioi.Fix.v1.0.Pdf] |
-| [ArcaEquities][ArcaEquities] | [OrderEntry][Nyse.ArcaEquities.OrderEntry] | [v5.15](Nyse.ArcaEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.ArcaEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.ArcaEquities.OrderEntry.Fix.v5.15.Pdf] |
-| [ArcaOptions][ArcaOptions] | [FloorBroker][Nyse.ArcaOptions.FloorBroker] | [v2.6](Nyse.ArcaOptions.FloorBroker.Fix.v2.6.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.ArcaOptions.FloorBroker.Fix.v2.6.Pdf] |
-| [ArcaOptions][ArcaOptions] | [OrderEntry][Nyse.ArcaOptions.OrderEntry] | [v3.24](Nyse.ArcaOptions.OrderEntry.Fix.v3.24.xml) | 3/9/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.ArcaOptions.OrderEntry.Fix.v3.24.Url] - [pdf][Nyse.ArcaOptions.OrderEntry.Fix.v3.24.Pdf] |
-| [NationalEquities][NationalEquities] | [Ioi][Nyse.NationalEquities.Ioi] | [v1.0](Nyse.NationalEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.NationalEquities.Ioi.Fix.v1.0.Pdf] |
-| [NationalEquities][NationalEquities] | [OrderEntry][Nyse.NationalEquities.OrderEntry] | [v5.15](Nyse.NationalEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.NationalEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.NationalEquities.OrderEntry.Fix.v5.15.Pdf] |
-| [NyseEquities][NyseEquities] | [Algo][Nyse.NyseEquities.Algo] | [v1.2](Nyse.NyseEquities.Algo.Fix.v1.2.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.NyseEquities.Algo.Fix.v1.2.Pdf] |
-| [NyseEquities][NyseEquities] | [FloorBroker][Nyse.NyseEquities.FloorBroker] | [v2.6](Nyse.NyseEquities.FloorBroker.Fix.v2.6.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.NyseEquities.FloorBroker.Fix.v2.6.Pdf] |
-| [NyseEquities][NyseEquities] | [Ioi][Nyse.NyseEquities.Ioi] | [v1.0](Nyse.NyseEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.NyseEquities.Ioi.Fix.v1.0.Pdf] |
-| [NyseEquities][NyseEquities] | [OrderEntry][Nyse.NyseEquities.OrderEntry] | [v5.15](Nyse.NyseEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.NyseEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.NyseEquities.OrderEntry.Fix.v5.15.Pdf] |
-| [TexasEquities][TexasEquities] | [Ioi][Nyse.TexasEquities.Ioi] | [v1.0](Nyse.TexasEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.TexasEquities.Ioi.Fix.v1.0.Pdf] |
-| [TexasEquities][TexasEquities] | [OrderEntry][Nyse.TexasEquities.OrderEntry] | [v5.15](Nyse.TexasEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.TexasEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.TexasEquities.OrderEntry.Fix.v5.15.Pdf] |
+| [AmexEquities][AmexEquities.Exchange] | [Ioi][Nyse.AmexEquities.Ioi] | [v1.0](Nyse.AmexEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.AmexEquities.Ioi.Fix.v1.0.Pdf] |
+| [AmexEquities][AmexEquities.Exchange] | [OrderEntry][Nyse.AmexEquities.OrderEntry] | [v5.15](Nyse.AmexEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.AmexEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.AmexEquities.OrderEntry.Fix.v5.15.Pdf] |
+| [AmexOptions][AmexOptions.Exchange] | [FloorBroker][Nyse.AmexOptions.FloorBroker] | [v2.6](Nyse.AmexOptions.FloorBroker.Fix.v2.6.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.AmexOptions.FloorBroker.Fix.v2.6.Pdf] |
+| [AmexOptions][AmexOptions.Exchange] | [OrderEntry][Nyse.AmexOptions.OrderEntry] | [v3.24](Nyse.AmexOptions.OrderEntry.Fix.v3.24.xml) | 3/9/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.AmexOptions.OrderEntry.Fix.v3.24.Url] - [pdf][Nyse.AmexOptions.OrderEntry.Fix.v3.24.Pdf] |
+| [ArcaEquities][ArcaEquities.Exchange] | [Ioi][Nyse.ArcaEquities.Ioi] | [v1.0](Nyse.ArcaEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.ArcaEquities.Ioi.Fix.v1.0.Pdf] |
+| [ArcaEquities][ArcaEquities.Exchange] | [OrderEntry][Nyse.ArcaEquities.OrderEntry] | [v5.15](Nyse.ArcaEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.ArcaEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.ArcaEquities.OrderEntry.Fix.v5.15.Pdf] |
+| [ArcaOptions][ArcaOptions.Exchange] | [FloorBroker][Nyse.ArcaOptions.FloorBroker] | [v2.6](Nyse.ArcaOptions.FloorBroker.Fix.v2.6.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.ArcaOptions.FloorBroker.Fix.v2.6.Pdf] |
+| [ArcaOptions][ArcaOptions.Exchange] | [OrderEntry][Nyse.ArcaOptions.OrderEntry] | [v3.24](Nyse.ArcaOptions.OrderEntry.Fix.v3.24.xml) | 3/9/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.ArcaOptions.OrderEntry.Fix.v3.24.Url] - [pdf][Nyse.ArcaOptions.OrderEntry.Fix.v3.24.Pdf] |
+| [NationalEquities][NationalEquities.Exchange] | [Ioi][Nyse.NationalEquities.Ioi] | [v1.0](Nyse.NationalEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.NationalEquities.Ioi.Fix.v1.0.Pdf] |
+| [NationalEquities][NationalEquities.Exchange] | [OrderEntry][Nyse.NationalEquities.OrderEntry] | [v5.15](Nyse.NationalEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.NationalEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.NationalEquities.OrderEntry.Fix.v5.15.Pdf] |
+| [NyseEquities][NyseEquities.Exchange] | [Algo][Nyse.NyseEquities.Algo] | [v1.2](Nyse.NyseEquities.Algo.Fix.v1.2.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.NyseEquities.Algo.Fix.v1.2.Pdf] |
+| [NyseEquities][NyseEquities.Exchange] | [FloorBroker][Nyse.NyseEquities.FloorBroker] | [v2.6](Nyse.NyseEquities.FloorBroker.Fix.v2.6.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.NyseEquities.FloorBroker.Fix.v2.6.Pdf] |
+| [NyseEquities][NyseEquities.Exchange] | [Ioi][Nyse.NyseEquities.Ioi] | [v1.0](Nyse.NyseEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.NyseEquities.Ioi.Fix.v1.0.Pdf] |
+| [NyseEquities][NyseEquities.Exchange] | [OrderEntry][Nyse.NyseEquities.OrderEntry] | [v5.15](Nyse.NyseEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.NyseEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.NyseEquities.OrderEntry.Fix.v5.15.Pdf] |
+| [TexasEquities][TexasEquities.Exchange] | [Ioi][Nyse.TexasEquities.Ioi] | [v1.0](Nyse.TexasEquities.Ioi.Fix.v1.0.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Nyse.TexasEquities.Ioi.Fix.v1.0.Pdf] |
+| [TexasEquities][TexasEquities.Exchange] | [OrderEntry][Nyse.TexasEquities.OrderEntry] | [v5.15](Nyse.TexasEquities.OrderEntry.Fix.v5.15.xml) | 3/27/2026 | [Active][Omi.Glossary.Status.Active] | [url][Nyse.TexasEquities.OrderEntry.Fix.v5.15.Url] - [pdf][Nyse.TexasEquities.OrderEntry.Fix.v5.15.Pdf] |
 
 
 Nyse: [website](https://www.nyse.com "Go to New York Stock Exchange")
@@ -34,13 +34,13 @@ Nyse: [website](https://www.nyse.com "Go to New York Stock Exchange")
 [Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
 [Omi.Nyse.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols "Nyse Protocol Directory"
 [Omi.Nyse.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Specifications "Nyse Specifications Directory"
-[NyseEquities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/NyseEquities "Nyse NyseEquities"
-[ArcaEquities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/ArcaEquities "Nyse ArcaEquities"
-[AmexEquities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/AmexEquities "Nyse AmexEquities"
-[NationalEquities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/NationalEquities "Nyse NationalEquities"
-[TexasEquities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/TexasEquities "Nyse TexasEquities"
-[ArcaOptions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/ArcaOptions "Nyse ArcaOptions"
-[AmexOptions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/AmexOptions "Nyse AmexOptions"
+[NyseEquities.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/NyseEquities "Nyse NyseEquities"
+[ArcaEquities.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/ArcaEquities "Nyse ArcaEquities"
+[AmexEquities.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/AmexEquities "Nyse AmexEquities"
+[NationalEquities.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/NationalEquities "Nyse NationalEquities"
+[TexasEquities.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/TexasEquities "Nyse TexasEquities"
+[ArcaOptions.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/ArcaOptions "Nyse ArcaOptions"
+[AmexOptions.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Nyse/Protocols/AmexOptions "Nyse AmexOptions"
 [Nyse.NyseEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Nyse/Protocols/NyseEquities/OrderEntry.md "Order Entry"
 [Nyse.ArcaEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Nyse/Protocols/ArcaEquities/OrderEntry.md "Order Entry"
 [Nyse.AmexEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Nyse/Protocols/AmexEquities/OrderEntry.md "Order Entry"

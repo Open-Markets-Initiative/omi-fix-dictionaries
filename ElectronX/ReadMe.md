@@ -5,8 +5,8 @@
 
 | Division | [Protocol][Omi.ElectronX.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.ElectronX.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [ElectricDerivatives][ElectricDerivatives] | [MarketData][ElectronX.ElectricDerivatives.MarketData] | [v4.0](ElectronX.ElectricDerivatives.MarketData.Fix.v4.0.xml) | 2/13/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][ElectronX.ElectricDerivatives.MarketData.Fix.v4.0.Pdf] |
-| [ElectricDerivatives][ElectricDerivatives] | [OrderEntry][ElectronX.ElectricDerivatives.OrderEntry] | [v4.0](ElectronX.ElectricDerivatives.OrderEntry.Fix.v4.0.xml) | 2/13/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][ElectronX.ElectricDerivatives.OrderEntry.Fix.v4.0.Pdf] |
+| [ElectricDerivatives][ElectricDerivatives.Exchange] | [MarketData][ElectronX.ElectricDerivatives.MarketData] | [v4.0](ElectronX.ElectricDerivatives.MarketData.Fix.v4.0.xml) | 2/13/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][ElectronX.ElectricDerivatives.MarketData.Fix.v4.0.Pdf] |
+| [ElectricDerivatives][ElectricDerivatives.Exchange] | [OrderEntry][ElectronX.ElectricDerivatives.OrderEntry] | [v4.0](ElectronX.ElectricDerivatives.OrderEntry.Fix.v4.0.xml) | 2/13/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][ElectronX.ElectricDerivatives.OrderEntry.Fix.v4.0.Pdf] |
 
 
 ElectronX: [website](https://www.electronx.com "Go to ElectronX Markets")
@@ -20,7 +20,7 @@ ElectronX: [website](https://www.electronx.com "Go to ElectronX Markets")
 [Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
 [Omi.ElectronX.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/ElectronX/Protocols "ElectronX Protocol Directory"
 [Omi.ElectronX.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/ElectronX/Specifications "ElectronX Specifications Directory"
-[ElectricDerivatives]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/ElectronX/Protocols/ElectricDerivatives "ElectronX ElectricDerivatives"
+[ElectricDerivatives.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/ElectronX/Protocols/ElectricDerivatives "ElectronX ElectricDerivatives"
 [ElectronX.ElectricDerivatives.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/ElectronX/Protocols/ElectricDerivatives/OrderEntry.md "Order Entry"
 [ElectronX.ElectricDerivatives.MarketData]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/ElectronX/Protocols/ElectricDerivatives/MarketData.md "Market Data"
 

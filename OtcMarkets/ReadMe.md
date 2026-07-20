@@ -5,11 +5,11 @@
 
 | Division | [Protocol][Omi.OtcMarkets.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.OtcMarkets.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [LinkAts][LinkAts] | [Quotation][OtcMarkets.LinkAts.Quotation] | [v1.7](OtcMarkets.LinkAts.Quotation.Fix.v1.7.xml) | 5/15/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkAts.Quotation.Fix.v1.7.Url] - [pdf][OtcMarkets.LinkAts.Quotation.Fix.v1.7.Pdf] |
-| [LinkAts][LinkAts] | [TradeMessaging][OtcMarkets.LinkAts.TradeMessaging] | [v1.16](OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.xml) | 5/15/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.Url] - [pdf][OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.Pdf] |
-| [LinkEcn][LinkEcn] | [OrderEntry][OtcMarkets.LinkEcn.OrderEntry] | [v1.3.31](OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.xml) | 6/3/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.Url] - [pdf][OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.Pdf] |
-| [LinkNqb][LinkNqb] | [OrderEntry][OtcMarkets.LinkNqb.OrderEntry] | [v1.18.1](OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.xml) | 6/3/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.Url] - [pdf][OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.Pdf] |
-| [MoonAts][MoonAts] | [OrderEntry][OtcMarkets.MoonAts.OrderEntry] | [v1.8.2](OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.xml) | 6/3/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.Url] - [pdf][OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.Pdf] |
+| [LinkAts][LinkAts.Ats] | [Quotation][OtcMarkets.LinkAts.Quotation] | [v1.7](OtcMarkets.LinkAts.Quotation.Fix.v1.7.xml) | 5/15/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkAts.Quotation.Fix.v1.7.Url] - [pdf][OtcMarkets.LinkAts.Quotation.Fix.v1.7.Pdf] |
+| [LinkAts][LinkAts.Ats] | [TradeMessaging][OtcMarkets.LinkAts.TradeMessaging] | [v1.16](OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.xml) | 5/15/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.Url] - [pdf][OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.Pdf] |
+| [LinkEcn][LinkEcn.Ats] | [OrderEntry][OtcMarkets.LinkEcn.OrderEntry] | [v1.3.31](OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.xml) | 6/3/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.Url] - [pdf][OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.Pdf] |
+| [LinkNqb][LinkNqb.Ats] | [OrderEntry][OtcMarkets.LinkNqb.OrderEntry] | [v1.18.1](OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.xml) | 6/3/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.Url] - [pdf][OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.Pdf] |
+| [MoonAts][MoonAts.Ats] | [OrderEntry][OtcMarkets.MoonAts.OrderEntry] | [v1.8.2](OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.xml) | 6/3/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.Url] - [pdf][OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.Pdf] |
 
 
 OtcMarkets: [website](https://www.otcmarkets.com "Go to OTC Markets Group")
@@ -23,10 +23,10 @@ OtcMarkets: [website](https://www.otcmarkets.com "Go to OTC Markets Group")
 [Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
 [Omi.OtcMarkets.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Protocols "OtcMarkets Protocol Directory"
 [Omi.OtcMarkets.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Specifications "OtcMarkets Specifications Directory"
-[MoonAts]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Protocols/MoonAts "OtcMarkets MoonAts"
-[LinkNqb]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Protocols/LinkNqb "OtcMarkets LinkNqb"
-[LinkEcn]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Protocols/LinkEcn "OtcMarkets LinkEcn"
-[LinkAts]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Protocols/LinkAts "OtcMarkets LinkAts"
+[MoonAts.Ats]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Protocols/MoonAts "OtcMarkets MoonAts"
+[LinkNqb.Ats]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Protocols/LinkNqb "OtcMarkets LinkNqb"
+[LinkEcn.Ats]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Protocols/LinkEcn "OtcMarkets LinkEcn"
+[LinkAts.Ats]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/OtcMarkets/Protocols/LinkAts "OtcMarkets LinkAts"
 [OtcMarkets.MoonAts.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/OtcMarkets/Protocols/MoonAts/OrderEntry.md "Order Entry"
 [OtcMarkets.LinkNqb.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/OtcMarkets/Protocols/LinkNqb/OrderEntry.md "Order Entry"
 [OtcMarkets.LinkEcn.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/OtcMarkets/Protocols/LinkEcn/OrderEntry.md "Order Entry"

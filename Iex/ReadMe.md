@@ -5,7 +5,7 @@
 
 | Division | [Protocol][Omi.Iex.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Iex.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [IexEquities][IexEquities] | [OrderEntry][Iex.IexEquities.OrderEntry] | [v2.91](Iex.IexEquities.OrderEntry.Fix.v2.91.xml) | 11/18/2022 | [Active][Omi.Glossary.Status.Active] | [pdf][Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf] |
+| [IexEquities][IexEquities.Exchange] | [OrderEntry][Iex.IexEquities.OrderEntry] | [v2.91](Iex.IexEquities.OrderEntry.Fix.v2.91.xml) | 11/18/2022 | [Active][Omi.Glossary.Status.Active] | [pdf][Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf] |
 
 
 Iex: [website](https://www.iexexchange.io "Go to Investors Exchange")
@@ -19,7 +19,7 @@ Iex: [website](https://www.iexexchange.io "Go to Investors Exchange")
 [Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
 [Omi.Iex.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Protocols "Iex Protocol Directory"
 [Omi.Iex.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Specifications "Iex Specifications Directory"
-[IexEquities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Protocols/IexEquities "Iex IexEquities"
+[IexEquities.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Iex/Protocols/IexEquities "Iex IexEquities"
 [Iex.IexEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Protocols/IexEquities/OrderEntry.md ""
 
-[Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Specifications/Iex/Fix/Iex.Fix.v2.91.pdf " 2.91 Pdf"
+[Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Specifications/Iex/Fix/Iex.Fix.v2.91.pdf "Investors Exchange 2.91 Pdf"

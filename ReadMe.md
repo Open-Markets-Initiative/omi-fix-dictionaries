@@ -28,7 +28,7 @@ For a list of Omi projects: [Omi Projects](https://github.com/Open-Markets-Initi
 For details of Omi rules and regulations: [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory")
 ## Dictionaries
 
-Dictionaries by exchange: [A2X][A2X.Directory], [Cboe][Cboe.Directory], [ElectronX][ElectronX.Directory], [Eurex][Eurex.Directory], [Euronext][Euronext.Directory], [Iex][Iex.Directory], [Ltse][Ltse.Directory], [Nasdaq][Nasdaq.Directory], [Nyse][Nyse.Directory], [OtcMarkets][OtcMarkets.Directory], [Txse][Txse.Directory]
+Dictionaries by exchange: [24X][24X.Directory], [A2X][A2X.Directory], [Aquis][Aquis.Directory], [Boats][Boats.Directory], [Cboe][Cboe.Directory], [ElectronX][ElectronX.Directory], [Eurex][Eurex.Directory], [Euronext][Euronext.Directory], [Iex][Iex.Directory], [Ltse][Ltse.Directory], [Memx][Memx.Directory], [Nasdaq][Nasdaq.Directory], [Nyse][Nyse.Directory], [OtcMarkets][OtcMarkets.Directory], [Txse][Txse.Directory]
 
 ## Disclaimer
 
@@ -37,13 +37,17 @@ Any similarities between existing people, places and/or protocols is purely inci
 Enjoy.
 
 
+[24X.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/24X "24 National Exchange"
 [A2X.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/A2X "A2X Markets"
-[Cboe.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Cboe "Cboe Global Markets"
+[Aquis.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Aquis "Aquis Exchange"
+[Boats.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Boats "Blue Ocean Technologies"
+[Cboe.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Cboe "Chicago Board Options Exchange"
 [ElectronX.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/ElectronX "ElectronX Markets"
 [Eurex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Eurex "Eurex Exchange"
 [Euronext.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Euronext "Euronext"
-[Iex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Iex ""
+[Iex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Iex "Investors Exchange"
 [Ltse.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Ltse "Long-Term Stock Exchange"
+[Memx.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Memx "The Members Exchange"
 [Nasdaq.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Nasdaq "National Association of Securities Dealers Automated Quotations (Nasdaq)"
 [Nyse.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Nyse "New York Stock Exchange"
 [OtcMarkets.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/OtcMarkets "OTC Markets Group"

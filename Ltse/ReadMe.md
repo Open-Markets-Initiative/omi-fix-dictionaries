@@ -5,8 +5,8 @@
 
 | Division | [Protocol][Omi.Ltse.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Ltse.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [LtseEquities][LtseEquities] | [DropCopy][Ltse.LtseEquities.DropCopy] | [v1.12](Ltse.LtseEquities.DropCopy.Fix.v1.12.xml) | 8/1/2024 | [Active][Omi.Glossary.Status.Active] | [url][Ltse.LtseEquities.DropCopy.Fix.v1.12.Url] - [pdf][Ltse.LtseEquities.DropCopy.Fix.v1.12.Pdf] |
-| [LtseEquities][LtseEquities] | [OrderEntry][Ltse.LtseEquities.OrderEntry] | [v1.12](Ltse.LtseEquities.OrderEntry.Fix.v1.12.xml) | 8/1/2024 | [Active][Omi.Glossary.Status.Active] | [url][Ltse.LtseEquities.OrderEntry.Fix.v1.12.Url] - [pdf][Ltse.LtseEquities.OrderEntry.Fix.v1.12.Pdf] |
+| [LtseEquities][LtseEquities.Exchange] | [DropCopy][Ltse.LtseEquities.DropCopy] | [v1.12](Ltse.LtseEquities.DropCopy.Fix.v1.12.xml) | 8/1/2024 | [Active][Omi.Glossary.Status.Active] | [url][Ltse.LtseEquities.DropCopy.Fix.v1.12.Url] - [pdf][Ltse.LtseEquities.DropCopy.Fix.v1.12.Pdf] |
+| [LtseEquities][LtseEquities.Exchange] | [OrderEntry][Ltse.LtseEquities.OrderEntry] | [v1.12](Ltse.LtseEquities.OrderEntry.Fix.v1.12.xml) | 8/1/2024 | [Active][Omi.Glossary.Status.Active] | [url][Ltse.LtseEquities.OrderEntry.Fix.v1.12.Url] - [pdf][Ltse.LtseEquities.OrderEntry.Fix.v1.12.Pdf] |
 
 
 Ltse: [website](https://ltse.com "Go to Long-Term Stock Exchange")
@@ -20,7 +20,7 @@ Ltse: [website](https://ltse.com "Go to Long-Term Stock Exchange")
 [Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
 [Omi.Ltse.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Ltse/Protocols "Ltse Protocol Directory"
 [Omi.Ltse.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Ltse/Specifications "Ltse Specifications Directory"
-[LtseEquities]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Ltse/Protocols/LtseEquities "Ltse LtseEquities"
+[LtseEquities.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Ltse/Protocols/LtseEquities "Ltse LtseEquities"
 [Ltse.LtseEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Ltse/Protocols/LtseEquities/OrderEntry.md "Order Entry"
 [Ltse.LtseEquities.DropCopy]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Ltse/Protocols/LtseEquities/DropCopy.md "Drop Copy"
 
