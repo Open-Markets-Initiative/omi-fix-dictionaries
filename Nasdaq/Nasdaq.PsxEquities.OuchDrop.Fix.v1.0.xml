@@ -85,6 +85,8 @@
       <value enum="4" description="Principal" />
     </field>
     <field number="30" name="LastMkt" type="Char" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -101,6 +103,7 @@
       <value enum="2" description="Limit" />
       <value enum="3" description="Cross" />
     </field>
+    <field number="41" name="OrigClOrdID" type="String" />
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
     <field number="47" name="Rule80A" type="Char">
@@ -120,6 +123,7 @@
     <field number="55" name="Symbol" type="String" />
     <field number="56" name="TargetCompID" type="String" />
     <field number="57" name="TargetSubID" type="String" />
+    <field number="58" name="Text" type="String" />
     <field number="59" name="TimeInForce" type="Char">
       <value enum="0" description="Day" />
       <value enum="2" description="At the Opening" />

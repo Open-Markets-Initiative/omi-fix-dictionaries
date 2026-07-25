@@ -87,16 +87,24 @@
   </messages>
   <components />
   <fields>
+    <field number="1" name="Account" type="String" />
+    <field number="6" name="AvgPx" type="Price" />
     <field number="7" name="BeginSeqNo" type="SeqNum" />
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />
+    <field number="14" name="CumQty" type="Qty" />
     <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="17" name="ExecID" type="String" />
+    <field number="19" name="ExecRefID" type="String" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />
     <field number="37" name="OrderID" type="String" />
+    <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="char">
       <value enum="1" description="Partially" />
       <value enum="2" description="Filled" />
@@ -108,24 +116,78 @@
       <value enum="A" description="Pending New" />
       <value enum="E" description="Pending Replace" />
     </field>
+    <field number="40" name="OrdType" type="char" />
     <field number="41" name="OrigClOrdID" type="String" />
     <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="44" name="Price" type="Price" />
     <field number="45" name="RefSeqNum" type="SeqNum" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="54" name="Side" type="char" />
+    <field number="55" name="Symbol" type="String" />
     <field number="56" name="TargetCompID" type="String" />
     <field number="58" name="Text" type="String" />
+    <field number="59" name="TimeInForce" type="char" />
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="65" name="SymbolSfx" type="String" />
     <field number="97" name="PossResend" type="Boolean" />
     <field number="98" name="EncryptMethod" type="int" />
     <field number="108" name="HeartBtInt" type="int" />
     <field number="112" name="TestReqID" type="String" />
+    <field number="114" name="LocateReqd" type="String" />
     <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
     <field number="123" name="GapFillFlag" type="Boolean" />
     <field number="141" name="ResetSeqNumFlag" type="Boolean" />
+    <field number="150" name="ExecType" type="char">
+      <value enum="F" description="Trade" />
+      <value enum="G" description="Trade Correct" />
+      <value enum="H" description="Trade Cancel" />
+      <value enum="0" description="New" />
+      <value enum="5" description="Replaced" />
+      <value enum="4" description="Canceled" />
+      <value enum="C" description="Expired" />
+      <value enum="D" description="Restated" />
+    </field>
+    <field number="151" name="LeavesQty" type="Qty" />
     <field number="371" name="RefTagID" type="String" />
     <field number="372" name="RefMsgType" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="3" description="Repricing Order" />
+      <value enum="5" description="Partial" />
+      <value enum="99" description="Other" />
+    </field>
     <field number="434" name="CxlRejResponseTo" type="char" />
+    <field number="447" name="PartyIDSource" type="String">
+      <value enum="C" description="Generally" />
+    </field>
+    <field number="453" name="NoPartyIDs" type="NumInGroup" />
+    <field number="528" name="OrderCapacity" type="String" />
+    <field number="851" name="LastLiquidityInd" type="int">
+      <value enum="1" description="Add Displayed Liquidity" />
+      <value enum="2" description="Removed Liquidity" />
+      <value enum="3" description="Liquidity Routed Out" />
+      <value enum="4" description="Cross" />
+      <value enum="51" description="Add Hidden" />
+      <value enum="52" description="Add Midpoint" />
+      <value enum="53" description="Add Nbbo Improve" />
+      <value enum="54" description="Add Nbbo Join" />
+    </field>
+    <field number="880" name="TrdMatchID" type="String" />
     <field number="1137" name="DefaultApplVerID" type="String" />
+    <field number="1138" name="DisplayQty" type="Qty" />
     <field number="1408" name="DefaultCstmApplVerID" type="String" />
+    <field number="21004" name="CancelReason" type="String">
+      <value enum="0" description="Other" />
+      <value enum="1" description="User Requested Cancel" />
+      <value enum="4" description="End Of Trading" />
+      <value enum="5" description="Limit Up Limit Down" />
+      <value enum="6" description="Halted" />
+      <value enum="7" description="Exchange Supervisory" />
+      <value enum="8" description="Order Expired" />
+      <value enum="9" description="Lock Or Cross Book" />
+      <value enum="10" description="Self Trade Prevention" />
+      <value enum="11" description="Insufficient Quotes" />
+      <value enum="12" description="Non Compliant Price" />
+    </field>
   </fields>
 </fix>

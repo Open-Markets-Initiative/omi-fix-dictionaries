@@ -182,6 +182,10 @@
       <value enum="f" description="Intermarket Sweep" />
       <value enum="h" description="External Routing Not Allowed" />
     </field>
+    <field number="19" name="ExecRefID" type="String" />
+    <field number="30" name="LastMkt" type="String" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />
@@ -236,6 +240,7 @@
       <value enum="18" description="Invalid Price Increment" />
       <value enum="99" description="Other" />
     </field>
+    <field number="103" name="OrdRejReason" type="int" />
     <field number="108" name="HeartBtInt" type="int" />
     <field number="110" name="MinQty" type="Qty" />
     <field number="112" name="TestReqID" type="String" />
@@ -262,6 +267,11 @@
     <field number="211" name="PegDifference" type="String" />
     <field number="371" name="RefTagID" type="String" />
     <field number="372" name="RefMsgType" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="3" description="Repricing Order" />
+      <value enum="5" description="Partial" />
+      <value enum="99" description="Other" />
+    </field>
     <field number="380" name="BusinessRejectReason" type="String" />
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Order Cancel Request" />
@@ -277,18 +287,34 @@
       <value enum="5" description="Retail" />
     </field>
     <field number="583" name="LnkID" type="String" />
+    <field number="851" name="LastLiquidityInd" type="int">
+      <value enum="1" description="Add Displayed Liquidity" />
+      <value enum="2" description="Removed Liquidity" />
+      <value enum="3" description="Liquidity Routed Out" />
+      <value enum="4" description="Cross" />
+      <value enum="51" description="Add Hidden" />
+      <value enum="52" description="Add Midpoint" />
+      <value enum="53" description="Add Nbbo Improve" />
+      <value enum="54" description="Add Nbbo Join" />
+      <value enum="60" description="Removed On Entry" />
+      <value enum="61" description="Immediate Midpoint Remove On Entry" />
+      <value enum="62" description="Add Displayed Price Improvement" />
+      <value enum="63" description="Add Hidden Price Improvement" />
+    </field>
+    <field number="880" name="TrdMatchID" type="String" />
     <field number="1084" name="DisplayMethod" type="String">
       <value enum="1" description="Initial" />
       <value enum="3" description="Randomize By Size" />
       <value enum="4" description="Undisclosed" />
     </field>
-    <field number="1087" name="DisplayMinIncr" type="String" />
+    <field number="1087" name="DisplayMinInc" type="String" />
     <field number="1094" name="PegPriceType" type="Price">
       <value enum="2" description="Mid Price Peg" />
       <value enum="5" description="Primary Peg" />
     </field>
     <field number="1137" name="DefaultApplVerID" type="String" />
     <field number="1138" name="DisplayQty" type="Qty" />
+    <field number="1151" name="SecurityGroup" type="String" />
     <field number="1408" name="DefaultCstmApplVerID" type="String" />
     <field number="2362" name="StpGroupID" type="String">
       <value enum="0" description="Prevents" />
@@ -296,12 +322,17 @@
       <value enum="2" description="Prevents" />
     </field>
     <field number="5700" name="LocateBroker" type="String" />
-    <field number="21001" name="SelfTradePreventionType" type="String">
-      <value enum="0" description="Cancel Newest" />
-      <value enum="1" description="Cancel Oldest" />
-      <value enum="2" description="Decrement And Cancel" />
-      <value enum="3" description="Cancel Both" />
-      <value enum="4" description="Cancel Smallest" />
+    <field number="21001" name="SelfTradePrevention" type="String" />
+    <field number="21004" name="CancelReason" type="String">
+      <value enum="0" description="Other" />
+      <value enum="1" description="User Requested Cancel" />
+      <value enum="4" description="End Of Trading" />
+      <value enum="5" description="Limit Up Limit Down" />
+      <value enum="6" description="Halted" />
+      <value enum="7" description="Exchange Supervisory" />
+      <value enum="8" description="Order Expired" />
+      <value enum="9" description="Lock Or Cross Book" />
+      <value enum="10" description="Self Trade Prevention" />
     </field>
     <field number="21005" name="RiskGroupID" type="String" />
     <field number="21006" name="ReserveReplenishTimeType" type="UTCTimestamp">
@@ -315,6 +346,11 @@
     <field number="21021" name="RepriceBehaviorType" type="Price">
       <value enum="1" description="Reprice Lock Cancel Cross" />
       <value enum="2" description="Reprice Lock Reprice Cross" />
+    </field>
+    <field number="21022" name="ExtendedRestatementReason" type="String">
+      <value enum="0" description="None" />
+      <value enum="1" description="Set NBBO" />
+      <value enum="2" description="Joined NBBO" />
     </field>
   </fields>
 </fix>

@@ -169,7 +169,6 @@
       <value enum="M" description="Midpoint (peg to PBBO Midpoint)" />
       <value enum="P" description="Market Peg (peg Buy [Sell] to TSE Offer [Bid]" />
     </field>
-    <field number="19" name="ExecRefID" type="String" />
     <field number="20" name="ExecTransType" type="char">
       <value enum="0" description="New" />
       <value enum="3" description="Status. Used to provide peg suspensions (" />
@@ -183,6 +182,7 @@
       <value enum="1" description="Agent" />
       <value enum="3" description="Cross as principal" />
     </field>
+    <field number="30" name="LastMkt" type="String" />
     <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
     <field number="37" name="OrderID" type="String" />
@@ -256,6 +256,9 @@
     </field>
     <field number="340" name="TradeSesStatus" type="String">
       <value enum="2" description="Open" />
+    </field>
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="C" description="Confirmed price for VWAP trade" />
     </field>
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Cancel" />

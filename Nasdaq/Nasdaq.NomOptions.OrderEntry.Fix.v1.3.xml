@@ -219,6 +219,7 @@
       <value enum="f" description="InterMarket Sweep Order (ISO)" />
       <value enum="G" description="All Or None (AON)" />
     </field>
+    <field number="19" name="ExecRefID" type="String" />
     <field number="20" name="ExecTransType" type="Char">
       <value enum="0" description="New" />
       <value enum="1" description="Cancel" />
@@ -227,6 +228,8 @@
     <field number="21" name="HandlInst" type="Char">
       <value enum="1" description="Automated Execution, Private, No Broker Intervention" />
     </field>
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />

@@ -98,6 +98,8 @@
       <value enum="3" description="Status" />
     </field>
     <field number="22" name="IDSource" type="String" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />

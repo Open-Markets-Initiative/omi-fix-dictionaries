@@ -277,6 +277,12 @@
       <value enum="3" description="Already Pending Cancel or Pending Replace" />
       <value enum="2" description="Broker Option" />
     </field>
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Broker Option" />
+      <value enum="2" description="Exchange Closed" />
+      <value enum="5" description="Unknown Order" />
+      <value enum="8" description="Stale Order" />
+    </field>
     <field number="110" name="MinQty" type="Qty" />
     <field number="111" name="MaxFloor" type="Qty" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
@@ -296,9 +302,11 @@
     <field number="198" name="SecondaryOrderID" type="String" />
     <field number="207" name="SecurityExchange" type="Exchange" />
     <field number="211" name="PegDifference" type="String" />
+    <field number="375" name="ContraBroker" type="String" />
     <field number="378" name="ExecRestatementReason" type="String">
       <value enum="5" description="Partial decline of Order Qty" />
     </field>
+    <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Cancel" />
     </field>

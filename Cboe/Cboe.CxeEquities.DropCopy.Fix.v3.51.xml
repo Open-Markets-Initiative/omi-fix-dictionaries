@@ -261,6 +261,7 @@
       <value enum="8" description="Rejected" />
       <value enum="E" description="Pending Replace" />
     </field>
+    <field number="41" name="OrigClOrdID" type="String" />
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
     <field number="48" name="SecurityID" type="String" />
@@ -301,6 +302,12 @@
     <field number="64" name="FutSettDate" type="UTCTimestamp" />
     <field number="75" name="TradeDate" type="UTCTimestamp" />
     <field number="97" name="PossResend" type="Boolean" />
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Broker Option" />
+      <value enum="2" description="Exchange Closed" />
+      <value enum="5" description="Unknown Order" />
+      <value enum="8" description="Stale Order" />
+    </field>
     <field number="111" name="MaxFloor" type="Qty" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="116" name="OnBehalfOfSubID" type="String" />
@@ -324,6 +331,7 @@
       <value enum="5" description="Partial decline of Order Qty" />
     </field>
     <field number="381" name="GrossTradeAmt" type="String" />
+    <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="439" name="ClearingFirm" type="String" />
     <field number="440" name="ClearingAccount" type="String" />
     <field number="447" name="PartyIDSource" type="String" />

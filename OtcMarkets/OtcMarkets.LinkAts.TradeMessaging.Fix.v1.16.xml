@@ -174,6 +174,8 @@
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
     <field number="11" name="ClOrdID" type="String" />
+    <field number="14" name="CumQty" type="Qty" />
+    <field number="17" name="ExecID" type="String" />
     <field number="18" name="ExecInst" type="MultipleValueString">
       <value enum="f" description="BXI (see chapter 2.2.12)" />
       <value enum="G" description="All or none (AON)" />
@@ -185,6 +187,8 @@
       <value enum="g" description="No Partial (only execute if all shares requested are available)" />
     </field>
     <field number="22" name="IDSource" type="String" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -217,6 +221,10 @@
     </field>
     <field number="60" name="TransactTime" type="UTCTimestamp" />
     <field number="65" name="SymbolSfx" type="String" />
+    <field number="113" name="ReportToExch" type="String">
+      <value enum="Y" description="receiver is the &quot;executing broker&quot;" />
+      <value enum="N" description="receiver is not the &quot;executing broker&quot;" />
+    </field>
     <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="116" name="OnBehalfOfSubID" type="String" />
     <field number="128" name="DeliverToCompID" type="String" />
@@ -252,6 +260,10 @@
     </field>
     <field number="9551" name="OrderQueuePosition" type="String" />
     <field number="9552" name="CounterOrdID" type="String" />
+    <field number="9553" name="CounterState" type="String">
+      <value enum="1" description="Receiver of message can now execute" />
+      <value enum="2" description="Receiver of message cannot execute" />
+    </field>
     <field number="9559" name="Duration" type="String" />
     <field number="9561" name="InsBidRcvd" type="String" />
     <field number="9562" name="InsAskRcvd" type="String" />
@@ -261,13 +273,44 @@
     <field number="9566" name="ReceiverAsk" type="String" />
     <field number="9567" name="ReceiverBidSize" type="String" />
     <field number="9568" name="ReceiverAskSize" type="String" />
+    <field number="9569" name="FillerBid" type="String" />
+    <field number="9570" name="FillerAsk" type="String" />
+    <field number="9571" name="FillerBidSize" type="String" />
+    <field number="9572" name="FillerAskSize" type="String" />
+    <field number="9573" name="InsBidEx" type="String" />
+    <field number="9574" name="InsAskEx" type="String" />
+    <field number="9575" name="InsBidSizeEx" type="String" />
+    <field number="9576" name="InsAskSizeEx" type="String" />
+    <field number="9577" name="OrderInitiatorFlag" type="String">
+      <value enum="Y" description="Receiver of message was the Initiator" />
+      <value enum="N" description="Receiver of message was the Respondent" />
+    </field>
     <field number="9580" name="MaxOrderID" type="String" />
+    <field number="9581" name="OATSReported" type="String">
+      <value enum="N" description="Receiver of Drop Copy should not report to OATS" />
+      <value enum="Y" description="Receiver of Drop Copy should report to OATS" />
+    </field>
+    <field number="9582" name="MAXCumQty" type="String" />
+    <field number="9583" name="Anonymous" type="String">
+      <value enum="Y" description="do not show identity of firm on Trade Data feed / do not forward trade to Volume Feed" />
+      <value enum="N" description="show identity of firm on Trade Data feed / forward trade to Volume Feed - Default" />
+    </field>
+    <field number="9592" name="CounterPartySide" type="String">
+      <value enum="1" description="Counter party bought" />
+      <value enum="2" description="Counter party sold" />
+      <value enum="5" description="Counter party sold short" />
+    </field>
     <field number="9593" name="CounterPartyOrderCapacity" type="String" />
     <field number="9600" name="PingECN" type="String">
       <value enum="L" description="Ping at Trade Msg Limit Price" />
       <value enum="M" description="Ping at CBBO Midpoint" />
     </field>
+    <field number="9664" name="QAPAmount" type="String" />
     <field number="9665" name="QAPRate" type="String" />
+    <field number="9666" name="QAPWaived" type="String">
+      <value enum="Y" description="Respondent waives QAP fee (not allowed when QAP is rebate)" />
+      <value enum="N" description="Respondent charges/gives rebate QAP - Default" />
+    </field>
     <field number="9710" name="BFMMFlag" type="String">
       <value enum="Y" description="Supports the bona fide market making exception" />
       <value enum="N" description="Does not support the bona fide market making exception - Default" />

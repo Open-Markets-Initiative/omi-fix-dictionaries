@@ -281,6 +281,14 @@
       <value enum="2" description="Exchange option" />
       <value enum="3" description="Already pending cancel or pending replace" />
     </field>
+    <field number="103" name="OrdRejReason" type="Int">
+      <value enum="0" description="Broker option" />
+      <value enum="1" description="Unknown symbol" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="3" description="Order exceeds limit" />
+      <value enum="4" description="Too late to enter" />
+      <value enum="5" description="Unknown order" />
+    </field>
     <field number="108" name="HeartBtInt" type="Int" />
     <field number="109" name="ClientID" type="String" />
     <field number="110" name="MinQty" type="Qty" />
@@ -327,10 +335,21 @@
       <value enum="11" description="Invalid msgtype" />
     </field>
     <field number="375" name="ContraBroker" type="String" />
+    <field number="378" name="ExecRestatementReason" type="Int">
+      <value enum="3" description="Repricing of order" />
+      <value enum="4" description="State change" />
+    </field>
     <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="434" name="CxlRejResponseTo" type="Char">
       <value enum="1" description="Order cancel request" />
       <value enum="2" description="Order cancel replace request" />
+    </field>
+    <field number="851" name="LastLiquidityInd" type="Int">
+      <value enum="1" description="Added liquidity" />
+      <value enum="2" description="Removed liquidity" />
+      <value enum="3" description="ROUTED" />
+      <value enum="4" description="AUCTION" />
+      <value enum="9" description="Removed liquidity on recheck" />
     </field>
     <field number="7928" name="AntiInternalizationQualifiersAIQID" type="String" />
     <field number="8020" name="DisplayRange" type="Qty" />

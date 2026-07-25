@@ -1115,6 +1115,7 @@
     <field number="14" name="CumQty" type="Qty" />
     <field number="16" name="EndSeqNo" type="SeqNum" />
     <field number="17" name="ExecID" type="String" />
+    <field number="19" name="ExecRefID" type="String" />
     <field number="22" name="IDSource" type="String" />
     <field number="23" name="IOIID" type="String" />
     <field number="25" name="IOIQltyInd" type="Char">
@@ -1139,6 +1140,7 @@
       <value enum="8" description="Matched principal (MTCH)" />
       <value enum="9" description="Any other capacity (AOTC)" />
     </field>
+    <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String">
@@ -1343,6 +1345,11 @@
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
       <value enum="9" description="CompID problem" />
+    </field>
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="378" name="ExecRestatementReason" type="Int">
+      <value enum="0" description="GT corporate action" />
+      <value enum="1" description="GT renewal / restatement (no corporate action)" />
     </field>
     <field number="381" name="GrossTradeAmt" type="Amt" />
     <field number="432" name="ExpireDate" type="LocalMktDate" />

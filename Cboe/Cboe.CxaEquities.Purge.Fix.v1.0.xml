@@ -112,6 +112,7 @@
   <components />
   <fields>
     <field number="1" name="Account" type="String" />
+    <field number="6" name="AvgPx" type="Price" />
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
@@ -193,6 +194,7 @@
       <value enum="D" description="Restated" />
     </field>
     <field number="151" name="LeavesQty" type="Qty" />
+    <field number="198" name="SecondaryOrderID" type="String" />
     <field number="432" name="ExpireDate" type="UTCTimestamp" />
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Cancel" />
@@ -225,5 +227,6 @@
     <field number="9619" name="CancelOrigOnReject" type="String">
       <value enum="N" description="Leave original order alone." />
     </field>
+    <field number="9730" name="ExecutingFirm" type="String" />
   </fields>
 </fix>

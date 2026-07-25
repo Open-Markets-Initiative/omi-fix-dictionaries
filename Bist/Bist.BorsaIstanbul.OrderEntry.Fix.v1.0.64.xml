@@ -736,6 +736,7 @@
   <components />
   <fields>
     <field number="1" name="Account" type="String" />
+    <field number="2" name="Matchedbysystemmanually" type="String" />
     <field number="3" name="ImmediateOrCancel" type="String" />
     <field number="4" name="FillorKill" type="String" />
     <field number="6" name="AvgPx" type="Price" />
@@ -747,11 +748,20 @@
     <field number="12" name="Commission" type="String" />
     <field number="13" name="CommType" type="String" />
     <field number="14" name="CumQty" type="Qty" />
+    <field number="15" name="Currency" type="Currency" />
     <field number="16" name="EndSeqNo" type="SeqNum" />
     <field number="17" name="ExecID" type="String" />
     <field number="18" name="ExecInst" type="MultipleCharValue" />
+    <field number="19" name="ExecRefID" type="String" />
+    <field number="20" name="ExecTransType" type="Char" />
     <field number="21" name="HandlInst" type="Char" />
     <field number="22" name="IDSource" type="String" />
+    <field number="23" name="IOIID" type="String" />
+    <field number="24" name="InternallyfromTM" type="String" />
+    <field number="25" name="Internallyfromaverage" type="String" />
+    <field number="26" name="Internallyfromstrip" type="String" />
+    <field number="27" name="Deltahedge" type="String" />
+    <field number="28" name="CLbundledeal" type="String" />
     <field number="30" name="LastMkt" type="Exchange" />
     <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
@@ -775,13 +785,14 @@
       <value enum="2" description="Limit" />
     </field>
     <field number="41" name="OrigClOrdID" type="String" />
+    <field number="42" name="Prioritycrossing" type="String" />
     <field number="43" name="PossDupFlag" type="String" />
     <field number="44" name="Price" type="Price" />
     <field number="45" name="RefSeqNum" type="SeqNum" />
     <field number="48" name="SecurityID" type="String" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="53" name="Quantity" type="String" />
+    <field number="53" name="Negotiateddealadvertisingboard" type="String" />
     <field number="54" name="Side" type="Char">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
@@ -800,6 +811,7 @@
       <value enum="S" description="Good till end of session (GTS)" />
     </field>
     <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="64" name="FutSettDate" type="LocalMktDate" />
     <field number="70" name="AllocID" type="String" />
     <field number="71" name="AllocTransType" type="String" />
     <field number="75" name="TradeDate" type="LocalMktDate" />
@@ -822,25 +834,42 @@
     <field number="88" name="AllocRejCode" type="String" />
     <field number="97" name="PossResend" type="Boolean" />
     <field number="98" name="EncryptMethod" type="Int" />
+    <field number="100" name="ExDestination" type="Exchange" />
+    <field number="101" name="deal_source_imp_normal" type="String" />
     <field number="102" name="CxlRejReason" type="Int">
       <value enum="0" description="Too late to cancel" />
       <value enum="1" description="Unknown Order" />
       <value enum="2" description="Broker / Exchange Option" />
       <value enum="6" description="Duplicate ClOrdID (11) received" />
     </field>
+    <field number="103" name="OrdRejReason" type="Int" />
+    <field number="104" name="deal_source_imp_combo_single" type="String" />
+    <field number="105" name="deal_source_imp_combo_mix" type="String" />
     <field number="108" name="HeartBtInt" type="Int" />
     <field number="110" name="MinQty" type="Qty" />
     <field number="111" name="MaxFloor" type="Qty" />
     <field number="112" name="TestReqID" type="String" />
+    <field number="113" name="deal_source_exp_counter_order" type="String" />
+    <field number="114" name="LocateReqd" type="String" />
+    <field number="115" name="OnBehalfOfCompID" type="String" />
+    <field number="116" name="OnBehalfOfSubID" type="String" />
     <field number="117" name="QuoteID" type="String" />
+    <field number="118" name="deal_source_trade_rep_no_settl" type="String" />
+    <field number="119" name="SettlCurrAmt" type="String" />
     <field number="122" name="OrigSendingTime" type="String" />
     <field number="123" name="GapFillFlag" type="Boolean" />
     <field number="124" name="NoExecs" type="String" />
+    <field number="128" name="DeliverToCompID" type="String" />
     <field number="131" name="QuoteReqID" type="String" />
     <field number="132" name="BidPx" type="String" />
     <field number="133" name="OfferPx" type="String" />
     <field number="134" name="BidSize" type="String" />
     <field number="135" name="OfferSize" type="String" />
+    <field number="136" name="Adjustmentwithoutprice" type="String" />
+    <field number="137" name="Adjustmentwithprice" type="String" />
+    <field number="138" name="DealexecutedatCTrade" type="String" />
+    <field number="139" name="Crossproductnetting" type="String" />
+    <field number="140" name="Committedtransactionreturn" type="String" />
     <field number="141" name="ResetSeqNumFlag" type="String" />
     <field number="146" name="NoRelatedSym" type="NumInGroup" />
     <field number="150" name="ExecType" type="Char">
@@ -899,6 +928,10 @@
       <value enum="16" description="Incorrect NumInGroup count for repeating group" />
       <value enum="99" description="Other" />
     </field>
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="4" description="Broker option" />
+      <value enum="8" description="Market (Exchange) option" />
+    </field>
     <field number="380" name="BusinessRejectReason" type="Int">
       <value enum="0" description="Other" />
       <value enum="1" description="Unknown ID" />
@@ -907,9 +940,11 @@
       <value enum="4" description="Application not available" />
       <value enum="5" description="Conditionally required field missing" />
     </field>
+    <field number="381" name="GrossTradeAmt" type="String" />
     <field number="386" name="NoTradingSessions" type="NumInGroup" />
     <field number="432" name="ExpireDate" type="String" />
     <field number="434" name="CxlRejResponseTo" type="Char" />
+    <field number="442" name="MultiLegReportingType" type="Char" />
     <field number="447" name="PartyIDSource" type="Char" />
     <field number="448" name="PartyID" type="String" />
     <field number="452" name="PartyRole" type="Int">
@@ -934,6 +969,10 @@
       <value enum="4" description="Reverse" />
       <value enum="0" description="New" />
     </field>
+    <field number="501" name="EQWSPAYPIYASASITOPTANSATISLAR" type="String" />
+    <field number="514" name="ELT0SONISLEMFIYATI" type="String" />
+    <field number="515" name="EQNSPAYPIYASASITSTAKASDISARIDA" type="String" />
+    <field number="516" name="ELT6SONISLEMFIYATI6" type="String" />
     <field number="523" name="PartySubID" type="String" />
     <field number="524" name="NestedPartyID" type="String" />
     <field number="525" name="NestedPartyIDSource" type="String" />
@@ -956,19 +995,59 @@
     <field number="553" name="Username" type="String" />
     <field number="554" name="Password" type="String" />
     <field number="555" name="NoLegs" type="NumInGroup" />
+    <field number="570" name="PreviouslyReported" type="Boolean" />
     <field number="571" name="TradeReportID" type="String" />
+    <field number="572" name="TradeReportRefID" type="String" />
+    <field number="573" name="MatchStatus" type="String">
+      <value enum="0" description="Compared, matched or affirmed" />
+      <value enum="1" description="Uncompared, unmatched or unaffirmed" />
+    </field>
     <field number="600" name="LegSymbol" type="String" />
     <field number="602" name="LegSecurityID" type="String" />
     <field number="603" name="LegSecurityIDSource" type="String" />
+    <field number="621" name="DIXFBIST30VISOZELEMIR" type="String" />
+    <field number="622" name="DIXOBIST30OPSIYONOZELEMIR" type="String" />
     <field number="623" name="LegRatioQty" type="String" />
     <field number="624" name="LegSide" type="String">
       <value enum="B" description="As Defined" />
       <value enum="C" description="Opposite" />
     </field>
     <field number="626" name="AllocType" type="String" />
+    <field number="628" name="DUSFUSDTRYVISOZELEMIR" type="String" />
+    <field number="629" name="DEUREURTRYVISOZELEMIR" type="String" />
+    <field number="630" name="DEUDEURUSDVISOZELEMIR" type="String" />
+    <field number="631" name="DUSOUSDTRYOPSIYONOZELEMIR" type="String" />
+    <field number="632" name="DXTRGRAMALTINVISOZELEMIR" type="String" />
+    <field number="633" name="DXUSONSALTINVISOZELEMIR" type="String" />
+    <field number="636" name="DNULOZELEMIRGIRISIYOK" type="String" />
     <field number="637" name="LegLastPx" type="String" />
+    <field number="638" name="DSASSASX10VISOZELEMIR" type="String" />
+    <field number="643" name="DONFTLREFVISOZELEMIR" type="String" />
+    <field number="645" name="DRUBRUBTRYVISOZELEMIR" type="String" />
+    <field number="647" name="DCNHCNHTRYVISOZELEMIR" type="String" />
     <field number="658" name="QuoteRequstRejectReason" type="String" />
+    <field number="678" name="DPUFFIZIKITESUSDTRYVISOZELEMIR" type="String" />
+    <field number="679" name="DPUOFIZIKITESUSDTRYOPSOZELEMIR" type="String" />
+    <field number="685" name="DGUDGBPUSDVISOZELEMIR" type="String" />
+    <field number="688" name="DXLBBISTLIKITBANKAVISOZELEMIR" type="String" />
+    <field number="689" name="DX10BISTBDLIKIT10VISOZELEMIR" type="String" />
+    <field number="700" name="DGUSONSGUMUSVISOZELEMIR" type="String" />
+    <field number="701" name="DFPIFIZIKITDIBSVISOZELEMIR" type="String" />
+    <field number="702" name="DXCUTONBAKIRVISOZELEMIR" type="String" />
+    <field number="703" name="DXPDONSPALLADIUMVISOZELEMIR" type="String" />
+    <field number="704" name="DXPTONSPLATINUMVISOZELEMIR" type="String" />
+    <field number="705" name="DXSDBISTSURDUR25VISOZELEMIR" type="String" />
+    <field number="706" name="DEFPAYVISOZELEMIR" type="String" />
+    <field number="707" name="DEOPAYOPSIYONOZELEMIR" type="String" />
     <field number="715" name="ClearingBusinessDate" type="String" />
+    <field number="730" name="SettlementPrice" type="String" />
+    <field number="751" name="TradeReportRejectReason" type="String">
+      <value enum="1" description="Invalid Party Information" />
+      <value enum="2" description="Unknown Instrument" />
+      <value enum="3" description="Unauthorized To Report Trades" />
+      <value enum="4" description="Invalid Trade Type" />
+      <value enum="99" description="Other" />
+    </field>
     <field number="755" name="AllocReportID" type="String" />
     <field number="756" name="NoNested2PartyIDs" type="String" />
     <field number="757" name="Nested2PartyID" type="String" />
@@ -979,10 +1058,30 @@
       <value enum="15" description="Give-Up" />
       <value enum="16" description="Take-Up" />
     </field>
+    <field number="797" name="CopyMsgIndicator" type="String" />
     <field number="802" name="NoPartySubIDs" type="String" />
     <field number="803" name="PartySubIDType" type="String" />
     <field number="809" name="NoUsernames" type="NumInGroup" />
+    <field number="812" name="FTR1BAPTRADEREPORTCLEARED" type="String" />
+    <field number="818" name="SecondaryTradeReportID" type="String" />
+    <field number="821" name="FTRCBAPTRCLEARED400M" type="String" />
     <field number="826" name="TradeAllocIndicator" type="String" />
+    <field number="828" name="TrdType" type="String" />
+    <field number="829" name="TrdSubType" type="String" />
+    <field number="831" name="FC1KBAPTRCLEARED1k" type="String" />
+    <field number="832" name="FC10BAPTRCLEARED10k" type="String" />
+    <field number="833" name="FC50BAPTRCLEARED50k" type="String" />
+    <field number="834" name="FCHKBAPTRCLEARED100k" type="String" />
+    <field number="835" name="FC1MBAPTRCLEARED1M" type="String" />
+    <field number="836" name="FCKABAPTRCLEARED100M" type="String" />
+    <field number="837" name="FCKXBAPTRCLEARED5m" type="String" />
+    <field number="838" name="FXACBAPTRCLEAREDGOLD" type="String" />
+    <field number="841" name="FN1KBAPTRNONCLEARED1k" type="String" />
+    <field number="842" name="FN10BAPTRNONCLEARED10k" type="String" />
+    <field number="843" name="FN50BAPTRNONCLEARED50k" type="String" />
+    <field number="844" name="FNHKBAPTRNONCLEARED100k" type="String" />
+    <field number="845" name="FN1MBAPTRNONCLEARED1M" type="String" />
+    <field number="848" name="FXANBAPTRNONCLEAREDGOLD" type="String" />
     <field number="855" name="SecondaryTrdType" type="String" />
     <field number="856" name="TradeReportType" type="String">
       <value enum="0" description="Submit" />
@@ -998,8 +1097,15 @@
       <value enum="102" description="End Date (NASDAQ Extension)" />
     </field>
     <field number="866" name="EventDate" type="String" />
-    <field number="880" name="TrdMatchID" type="NumInGroup" />
+    <field number="880" name="TrdMatchID" type="String" />
     <field number="881" name="SecondaryTradeReportRefID" type="NumInGroup" />
+    <field number="893" name="LastFragment" type="String">
+      <value enum="N" description="Not Last Message" />
+      <value enum="Y" description="Last Message" />
+    </field>
+    <field number="902" name="KSNOPMDTRCLEAREDOUT" type="String" />
+    <field number="903" name="KSSIBORSAICI" type="String" />
+    <field number="904" name="KSSOBORSADISI" type="String" />
     <field number="923" name="UserRequestID" type="String" />
     <field number="924" name="UserRequestType" type="String">
       <value enum="5" description="Suspend user" />
@@ -1048,6 +1154,7 @@
       <value enum="28" description="Custodian" />
       <value enum="83" description="Clearing Account" />
     </field>
+    <field number="1126" name="OrigTradeID" type="String" />
     <field number="1127" name="OrigSecondaryTradeID" type="String" />
     <field number="1137" name="DefaultApplVerID" type="String" />
     <field number="1147" name="UnitOfMeasureQuantity" type="String" />
@@ -1073,9 +1180,15 @@
     <field number="2305" name="AssetAttributeType" type="String" />
     <field number="2306" name="AssetAttributeValue" type="String" />
     <field number="20002" name="DaysToPwdExpiry" type="String" />
+    <field number="20007" name="CorrespondingPrice" type="String" />
+    <field number="20008" name="Consideration" type="String" />
     <field number="20009" name="OrderReference" type="String" />
     <field number="20013" name="PartyIDOrderOriginationFirm" type="String" />
     <field number="20014" name="ExternalTradeFeeType" type="String" />
+    <field number="20015" name="OptionPremiumAmt" type="String" />
+    <field number="20017" name="WithHoldingTax" type="String" />
+    <field number="20018" name="RepoInterestAmt" type="String" />
+    <field number="20034" name="ComboMatchID" type="String" />
     <field number="20199" name="OpenCloseIndicator" type="String">
       <value enum="0" description="Default for the account (default value)" />
       <value enum="1" description="Open" />
@@ -1086,7 +1199,104 @@
     <field number="21060" name="Fineness" type="String" />
     <field number="21061" name="FinenessNotation" type="String" />
     <field number="21062" name="MetalWeightConversionFactor" type="String" />
+    <field number="21100" name="LastUnderlyingPx" type="String" />
     <field number="21101" name="UnderlyingColPx" type="String" />
+    <field number="21102" name="DealNumber" type="String" />
+    <field number="21103" name="TradeReportState" type="String">
+      <value enum="0" description="None" />
+      <value enum="1" description="Unmatched" />
+      <value enum="2" description="Paired" />
+      <value enum="3" description="Matched" />
+      <value enum="4" description="Cancelled" />
+      <value enum="5" description="Rejected" />
+      <value enum="6" description="Novated" />
+      <value enum="7" description="Terminated" />
+      <value enum="8" description="Deleted" />
+    </field>
+    <field number="21104" name="TradeReportSubState" type="String">
+      <value enum="0" description="None" />
+      <value enum="1" description="Pending Cancel" />
+      <value enum="3" description="Pending Termination" />
+      <value enum="4" description="Netted to zero" />
+      <value enum="13" description="Pending Clearing Member Acceptance" />
+      <value enum="14" description="Rejected by Clearing Member" />
+      <value enum="15" description="Pending Clearinghouse Confirmation" />
+      <value enum="16" description="Pending Clearinghouse Auto Confirm" />
+      <value enum="17" description="Pending Clearing" />
+      <value enum="18" description="Cancelled by Counterpart" />
+      <value enum="19" description="Ongoing Clearinghouse Check" />
+      <value enum="20" description="Auto Take Up Check Ongoing" />
+      <value enum="21" description="Auto Take Up Rejected" />
+    </field>
+    <field number="21105" name="TradeReportInstrType" type="String">
+      <value enum="0" description="None" />
+      <value enum="1" description="Standard" />
+      <value enum="2" description="Tailormade" />
+      <value enum="3" description="Fixed Income" />
+      <value enum="4" description="Discount Security" />
+      <value enum="5" description="FRA" />
+      <value enum="6" description="IR Swap" />
+      <value enum="7" description="FX" />
+      <value enum="8" description="Cash" />
+      <value enum="9" description="Repo" />
+      <value enum="10" description="Agreement" />
+      <value enum="11" description="SSI" />
+      <value enum="12" description="Equity" />
+      <value enum="13" description="XCUR Swap" />
+    </field>
+    <field number="21106" name="TraderReportReason" type="String">
+      <value enum="0" description="None" />
+      <value enum="1" description="Counterparty has cancelled" />
+      <value enum="2" description="pending counterparty cancel" />
+      <value enum="3" description="counterparty has terminated" />
+      <value enum="4" description="pending counterparty termination" />
+      <value enum="5" description="Party Clearing Member" />
+      <value enum="6" description="Counterparty Clearing Member" />
+      <value enum="7" description="Party lacks collateral" />
+      <value enum="8" description="counterparty lacks collateral" />
+      <value enum="9" description="old account lacks collateral" />
+      <value enum="10" description="New account lacks collateral" />
+      <value enum="11" description="Both accounts are lacking collateral" />
+      <value enum="12" description="manually confirmed by clearing house" />
+      <value enum="13" description="manually rejected by clearing house" />
+      <value enum="14" description="Automatic end of day cleanup" />
+      <value enum="15" description="rejected by counterparty" />
+      <value enum="17" description="exposure exceeded and lacking collateral" />
+      <value enum="18" description="record update" />
+      <value enum="19" description="Confirmation Due on Termination Date" />
+      <value enum="20" description="Configuration Error" />
+      <value enum="21" description="Party Exposure Limit Exceeded" />
+      <value enum="22" description="Counterparty Exceeded Exposure Limit" />
+      <value enum="23" description="Member defined exposure limit exceeded" />
+      <value enum="24" description="Old Account Exposure Limit Exceeded" />
+      <value enum="25" description="New Account Exposure Limit Exceeded" />
+      <value enum="26" description="Both Accounts Exposure Limit Exceeded" />
+    </field>
+    <field number="21107" name="AuthorizationState" type="String">
+      <value enum="0" description="None" />
+      <value enum="1" description="Autorized" />
+      <value enum="2" description="Needed" />
+      <value enum="3" description="Not needed" />
+    </field>
+    <field number="21108" name="AffimationState" type="String">
+      <value enum="0" description="Not required" />
+      <value enum="1" description="Holding" />
+      <value enum="2" description="Affirmed by Party" />
+      <value enum="3" description="Automatically Affirmed" />
+      <value enum="4" description="Rejected" />
+      <value enum="5" description="Auto Limit Exceeded" />
+    </field>
+    <field number="21109" name="DeliveryUnit" type="String" />
+    <field number="21110" name="OrigClearingBusinessDate" type="String" />
+    <field number="21112" name="TradeCancelRequestReason" type="String">
+      <value enum="2" description="Invalid Quantity/Insufficient Balance" />
+      <value enum="3" description="Error in Price/Rate" />
+      <value enum="4" description="Error in Securities" />
+      <value enum="5" description="Reverse Trade" />
+      <value enum="6" description="Error in Value Date" />
+      <value enum="7" description="Error in Account Id" />
+    </field>
+    <field number="21113" name="DeferredPublicationTime" type="String" />
     <field number="21114" name="SMPLevel" type="String">
       <value enum="1" description="Within a member" />
       <value enum="2" description="Across members" />

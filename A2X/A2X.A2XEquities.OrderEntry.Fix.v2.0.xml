@@ -211,6 +211,7 @@
       <value enum="4" description="ISIN" />
       <value enum="5" description="RIC" />
     </field>
+    <field number="30" name="LastMkt" type="Exchange" />
     <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
@@ -278,9 +279,15 @@
       <value enum="F" description="Trade (Trade Capture Report Acknowledgement)" />
     </field>
     <field number="151" name="LeavesQty" type="Qty" />
+    <field number="198" name="SecondaryOrderID" type="String" />
     <field number="207" name="SecurityExchange" type="Exchange">
       <value enum="XJSE" description="JSE (Johannesburg)" />
       <value enum="4AXE" description="Cape Town Exchange" />
+    </field>
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="378" name="ExecRestatementReason" type="Int">
+      <value enum="4" description="Broker option - iceberg order has refreshed or MaC order has fully matched" />
+      <value enum="5" description="Partial reduction of order quantity (exchange initiated partial cancel) - MaC order has partially matched" />
     </field>
     <field number="434" name="CxlRejResponseTo" type="Char">
       <value enum="1" description="Order Cancel Request" />
@@ -301,6 +308,12 @@
       <value enum="2" description="Negotiated Benchmark Cross (NBC)" />
       <value enum="4" description="Matched Principal Trade (MP)" />
     </field>
+    <field number="851" name="LastLiquidityInd" type="Int">
+      <value enum="1" description="Added Liquidity" />
+      <value enum="2" description="Removed Liquidity" />
+      <value enum="4" description="Auction (for AoD and MaC trades)" />
+    </field>
+    <field number="880" name="TVTIC" type="String" />
     <field number="27010" name="OrderAttribute" type="Int">
       <value enum="0" description="Continuous Limit Order Book Regular Order (default)" />
       <value enum="1" description="Continuous Limit Order Book Post-Only Order" />

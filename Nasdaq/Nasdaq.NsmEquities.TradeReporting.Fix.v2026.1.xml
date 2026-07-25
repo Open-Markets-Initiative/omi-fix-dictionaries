@@ -188,6 +188,7 @@
       <value enum="C" description="CQS" />
     </field>
     <field number="108" name="HeartBtInt" type="Int" />
+    <field number="109" name="ClientID" type="String" />
     <field number="112" name="TestReqID" type="String" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="116" name="OnBehalfOfSubID" type="String" />
@@ -233,6 +234,10 @@
       <value enum="99" description="Contract Amount" />
     </field>
     <field number="440" name="ClearingAccount" type="String" />
+    <field number="452" name="PartyRole" type="Int">
+      <value enum="7" description="executing firm" />
+      <value enum="17" description="contra firm" />
+    </field>
     <field number="527" name="SecondaryExecID" type="String" />
     <field number="528" name="OrderCapacity" type="Char">
       <value enum="P" description="principal" />
@@ -282,6 +287,16 @@
       <value enum="8" description="error See Appendix A: Message Flow Scenarios" />
     </field>
     <field number="880" name="TrdMatchID" type="String" />
+    <field number="881" name="SecondaryTradeReportRefID" type="String" />
+    <field number="939" name="TrdRptStatus" type="String">
+      <value enum="92" description="M1 Matched (locked-in trade)" />
+      <value enum="94" description="contra party entered trade" />
+      <value enum="95" description="Locked-in trades from other Nasdaq systems or QSR trades" />
+      <value enum="97" description="Trades entered for Ticker only (no clearing only)" />
+      <value enum="98" description="Unanswered (executing party entry)" />
+      <value enum="Y" description="As-of (T+1 to T+n)" />
+      <value enum="N" description="Original (T-day entry)" />
+    </field>
     <field number="5080" name="AsOfIndicator" type="String">
       <value enum="Y" description="As-of (T+1 to T+n)" />
       <value enum="N" description="Original (T-day entry)" />
@@ -298,14 +313,62 @@
       <value enum="I" description="Nasdaq ISE" />
     </field>
     <field number="9278" name="AdvertisementInstruction" type="String" />
+    <field number="9807" name="RegFeeFlag" type="String" />
+    <field number="9819" name="InhibitTradeIndicator" type="String">
+      <value enum="B" description="buy side clearing firm inhibited the trade" />
+      <value enum="N" description="neither clearing firm has inhibited the trade" />
+      <value enum="S" description="sell side clearing firm inhibited the trade" />
+    </field>
+    <field number="9820" name="HeldTradeStartTime" type="String" />
+    <field number="9821" name="AllowInhibitActionTime" type="String" />
     <field number="9822" name="ClearingPrice" type="String" />
+    <field number="9824" name="ClearingBroker" type="String" />
     <field number="9825" name="ReportingGUID" type="String" />
     <field number="9826" name="NonReportingGUID" type="String" />
+    <field number="9830" name="IntroBrokerInd" type="String">
+      <value enum="A" description="Active" />
+      <value enum="S" description="Suspended" />
+    </field>
+    <field number="9831" name="ExecBrokerInd" type="String">
+      <value enum="A" description="Active" />
+      <value enum="S" description="Suspended" />
+    </field>
+    <field number="9832" name="ClearBrokerInd" type="String">
+      <value enum="A" description="Active" />
+      <value enum="S" description="Suspended" />
+    </field>
+    <field number="9833" name="ResponsibilityInd" type="String" />
+    <field number="9834" name="TradeRepAvailInd" type="String">
+      <value enum="A" description="Available" />
+      <value enum="E" description="Effective Tomorrow" />
+      <value enum="N" description="Not ready" />
+      <value enum="U" description="Unavailable for technical reasons" />
+    </field>
+    <field number="9835" name="MajorClearingInd" type="String">
+      <value enum="M" description="Major" />
+      <value enum="N" description="not a major arrangement" />
+    </field>
+    <field number="9836" name="Reserved" type="String" />
+    <field number="9847" name="LockedInStatus" type="String">
+      <value enum="L" description="Auto-locked trade" />
+    </field>
     <field number="9854" name="OverrideFlag" type="String">
       <value enum="Y" description="Override" />
       <value enum="N" description="No override" />
     </field>
+    <field number="9856" name="BreakIndicator" type="String">
+      <value enum="B" description="only buyer has broken" />
+      <value enum="S" description="only seller has broken" />
+      <value enum="X" description="both buyer and seller have broken" />
+      <value enum="L" description="broken through market center" />
+    </field>
+    <field number="9857" name="LockedIn" type="String">
+      <value enum="A" description="locked-in by acceptance, else sell control number" />
+      <value enum="L" description="denotes an auto locked in trade against the contra side" />
+      <value enum="Z" description="denotes a split locked in trade against the contra side" />
+    </field>
     <field number="9860" name="ContraBranchSeqNbr" type="String" />
+    <field number="9861" name="BranchSeqNbr" type="String" />
     <field number="9862" name="ContraTradePA" type="String">
       <value enum="P" description="Principal" />
       <value enum="A" description="agent" />

@@ -190,6 +190,8 @@
     <field number="21" name="HandlInst" type="Char">
       <value enum="1" description="Automated Execution, Private, No Broker Intervention" />
     </field>
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -274,6 +276,29 @@
     </field>
     <field number="151" name="LeavesQty" type="Qty" />
     <field number="211" name="PegDifference" type="Float" />
+    <field number="375" name="ContraBroker" type="String">
+      <value enum="ARCX" description="Routed to NYSE Arca" />
+      <value enum="XASE" description="Routed to NYSE American" />
+      <value enum="XNYS" description="Routed to NYSE" />
+      <value enum="XCIS" description="Routed to NYSE National" />
+      <value enum="XCHI" description="Routed to NYSE Chicago" />
+      <value enum="BATS" description="Routed to BATS" />
+      <value enum="BATY" description="Routed to BATS Y" />
+      <value enum="EDGA" description="Routed to EDGA" />
+      <value enum="EDGX" description="Routed to EDGX" />
+      <value enum="offX" description="Routed to non-Reg NMS protected venue" />
+      <value enum="IEXG" description="Routed to IEX" />
+      <value enum="XBOS" description="Routed to Nasdaq BX" />
+      <value enum="XNAS" description="Routed to Nasdaq Stock Market" />
+      <value enum="XPSX" description="Routed to Nasdaq PSX" />
+      <value enum="LTSE" description="Routed to Long Term Stock Exchange" />
+      <value enum="MEMX" description="Routed to Members Exchange" />
+      <value enum="EPRL" description="Routed to MIAX PEARL Equities" />
+      <value enum="24EQ" description="Routed to 24 Exchange" />
+    </field>
+    <field number="378" name="ExecRestatementReason" type="Int">
+      <value enum="5" description="Partial Decline of OrderQty" />
+    </field>
     <field number="382" name="NoContraBroker" type="Int" />
     <field number="434" name="CxlRejResponseTo" type="Int">
       <value enum="1" description="Order Cancel Request" />

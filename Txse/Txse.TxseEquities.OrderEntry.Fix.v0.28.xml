@@ -215,6 +215,8 @@
       <value enum="6" description="Indicates a Post Only order instruction." />
       <value enum="f" description="Indicates a Reg NMS Inter-market sweep order instruction." />
     </field>
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />
@@ -258,6 +260,7 @@
     </field>
     <field number="60" name="TransactTime" type="UTCTimestamp" />
     <field number="65" name="SymbolSfx" type="String" />
+    <field number="84" name="CxlQty" type="String" />
     <field number="98" name="EncryptMethod" type="Int">
       <value enum="0" description="No encryption. TXSE requires EncryptMethod to always be set to 0." />
       <value enum="1" description="Not supported. Do not send." />
@@ -297,12 +300,51 @@
       <value enum="202" description="Ordernotionalvalueexceedsthemaximum notional limit configured in port settings. (custom TXSE value)" />
       <value enum="203" description="Order modification not permitted. (cus- tom TXSE value)" />
     </field>
+    <field number="103" name="OrdRejReason" type="Int">
+      <value enum="1" description="Symbol ID is not valid for the current ses- sion." />
+      <value enum="5" description="Client Order Id is invalid." />
+      <value enum="6" description="Client Order Id has already been used for the current session on this port." />
+      <value enum="8" description="Attempt to modify, replace, or cancel an orderthathasalreadycanceledorfullyex- ecuted." />
+      <value enum="13" description="Invalid order quantity." />
+      <value enum="16" description="Invalid limit price." />
+      <value enum="18" description="Price does not conform to the minimum price variation (tick size)." />
+      <value enum="27" description="Ordernotionalvalueexceedsthemaximum notional limit configured in port settings. Value" />
+      <value enum="100" description="Invalidreferencepricetargetrelatedtothe order attributes. (custom TXSE value)" />
+      <value enum="101" description="Invalid'IsHidden'flagrelatedtotheorder attributes. (custom TXSE value)" />
+      <value enum="102" description="Invalid order type related to the order at- tributes. (custom TXSE value)" />
+      <value enum="103" description="Invalid side. (custom TXSE value)" />
+      <value enum="104" description="Invalid max floor quantity related to the order attributes. (custom TXSE value)" />
+      <value enum="105" description="Invalidmaximumreplenishquantityrange. (custom TXSE value)" />
+      <value enum="106" description="Invalid maximum replenish time range. (custom TXSE value)" />
+      <value enum="107" description="Invalid minimum quantity. (custom TXSE value)" />
+      <value enum="108" description="Invalid locate-required flag related to the order attributes. (custom TXSE value)" />
+      <value enum="109" description="Invalidtimeinforce. (customTXSEvalue)" />
+      <value enum="110" description="Invalid market participant identifier. (cus- tom TXSE value)" />
+      <value enum="111" description="Invalid 'Is Post Only' flag related to the order attributes. (custom TXSE value)" />
+      <value enum="112" description="Invalid expire time. (custom TXSE value)" />
+      <value enum="113" description="Not permitted during the current trading session. (custom TXSE value)" />
+      <value enum="114" description="Not permitted during the current trading status. (custom TXSE value)" />
+      <value enum="115" description="Not permitted during the current symbol status. (custom TXSE value)" />
+      <value enum="116" description="Invalid'IsISO'flagrelatedtotheorderat- tributes(ISO=IntermarketSweepOrder). (custom TXSE value)" />
+      <value enum="117" description="Trading is disabled for the MPID on this port based on port MPID settings config- uration. (custom TXSE value)" />
+      <value enum="118" description="Trading is restricted to test symbols only basedonportsettingsconfiguration. (cus- tom TXSE value)" />
+      <value enum="119" description="Trading is disabled for the specified order capacity based on port settings configura- tion. (custom TXSE value)" />
+      <value enum="120" description="ISO (Intermarket Sweep Order) trading is disabled based on port settings configura- tion. (custom TXSE value)" />
+      <value enum="121" description="Order quantity exceeds the maximum shares limit configured in port settings. (custom TXSE value)" />
+      <value enum="122" description="Limit price exceeds the maximum accept- able price for the Exchange. (custom TXSE value) Value" />
+      <value enum="123" description="Symbol is on the restricted list for this port/MPID based on port settings config- uration. (custom TXSE value)" />
+      <value enum="124" description="Order limit price is outside LULD (Limit Up-Limit Down) bands and port settings require rejection. (custom TXSE value)" />
+      <value enum="125" description="Auction-Only orders for the Open and Close cannot be cancelled, modified, or replaced once the Band Window begins. (custom TXSE value)" />
+      <value enum="126" description="Order property is incompatible with an auction-classed order. (custom TXSE value)" />
+    </field>
     <field number="108" name="HeartBtInt" type="Int" />
     <field number="109" name="ClientID" type="String" />
+    <field number="110" name="MinQty" type="Qty" />
     <field number="112" name="TestReqID" type="String" />
     <field number="114" name="LocateReqd" type="Boolean" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="126" name="ExpireTime" type="UTCTimestamp" />
     <field number="141" name="ResetSeqNumFlag" type="Boolean" />
     <field number="150" name="ExecType" type="Char">
       <value enum="0" description="New" />
@@ -317,6 +359,12 @@
     <field number="372" name="RefMsgType" type="String" />
     <field number="373" name="SessionRejectReason" type="Int">
       <value enum="6" description="A message could not be fully parsed with invalid or missing fields." />
+    </field>
+    <field number="378" name="ExecRestatementReason" type="Int">
+      <value enum="3" description="A reprice eligible order has been repriced to a new price." />
+      <value enum="5" description="Sent when Self Match Prevention decrements an order quantity." />
+      <value enum="100" description="A new displayed slice of a reserve order has been added to the displayed book. (custom TXSE value)" />
+      <value enum="101" description="Orders staged awaiting the result of the auction with un- filled residual have been reinstated into continuous book. (custom TXSE value)" />
     </field>
     <field number="434" name="CxlRejResponseTo" type="Char">
       <value enum="1" description="Order Cancel Request" />
@@ -336,9 +384,23 @@
       <value enum="100" description="(custom TXSE value) Request accepted; sweep in progress" />
       <value enum="101" description="(custom TXSE value) Sweep complete; see TotalAf- fectedOrders for count" />
     </field>
+    <field number="532" name="MassCancelRejectReason" type="String">
+      <value enum="100" description="(custom TXSE value)" />
+      <value enum="101" description="(custom TXSE value)" />
+      <value enum="102" description="(custom TXSE value)" />
+      <value enum="103" description="(custom TXSE value)" />
+      <value enum="113" description="(custom TXSE value)" />
+    </field>
+    <field number="533" name="TotalAffectedOrders" type="Int" />
     <field number="554" name="Password" type="String" />
     <field number="789" name="NextExpectedMsgSeqNum" type="String" />
+    <field number="851" name="LastLiquidityInd" type="Int">
+      <value enum="1" description="Added Liquidity." />
+      <value enum="2" description="Removed Liquidity." />
+      <value enum="4" description="Execution from an auction cross (any AuctionType)." />
+    </field>
     <field number="930" name="RefCompID" type="String" />
+    <field number="1087" name="DisplayMinIncr" type="String" />
     <field number="1137" name="DefaultApplVerID" type="String">
       <value enum="0" description="Not supported. Do not send." />
       <value enum="1" description="Not supported. Do not send." />
@@ -353,6 +415,8 @@
       <value enum="10" description="Not supported. Do not send." />
     </field>
     <field number="1138" name="DisplayQty" type="Qty" />
+    <field number="1369" name="MassActionReportID" type="String" />
+    <field number="2828" name="CurrentDisplayPrice" type="String" />
     <field number="2964" name="SelfMatchPreventionInstruction" type="String">
       <value enum="1" description="Cancels the incoming order. Keeps the resting order on the book." />
       <value enum="2" description="Cancels the resting order. Keeps the incoming order on the book." />
@@ -373,10 +437,39 @@
       <value enum="2" description="Match prevention applies to orders from the same Member within the same Member Group." />
       <value enum="3" description="Match prevention applies to orders from the same Member with the same MPID and Member Group." />
     </field>
+    <field number="8003" name="CancelReason" type="String">
+      <value enum="1" description="Cancel due to request by client." />
+      <value enum="2" description="Cancel due to time in force expiration." />
+      <value enum="3" description="Cancel due to inability to meet minimum quantity." />
+      <value enum="4" description="Canceled as order would violate Regu- lation NMS Rule 610(d) by creating a lockedorcrossedmarket,andpricesliding was either not selected or not applicable." />
+      <value enum="5" description="Reserve orders will be canceled when deemed marketable at another exchange either at new order entry or replenish- ment." />
+      <value enum="6" description="Cancel due to self-match prevention in- structions." />
+      <value enum="7" description="Replenishment canceled related to the Reserveorderbeingcanceledorreplaced." />
+      <value enum="8" description="Cancelduetoordertypee.g. MarketOr- ders do not rest." />
+      <value enum="9" description="Cancel due to client instruction on crossed markets." />
+      <value enum="10" description="Cancel due to a mass cancel request." />
+      <value enum="11" description="Canceledasorderwouldlockorcrossthe Exchange book, and price sliding was ei- ther not selected or not applicable." />
+      <value enum="12" description="Canceled as order would violate Regula- tionSHORule201bydisplayatorbelow the National Best Bid during a short sale pricetestrestriction,andpriceslidingwas either not selected or not applicable" />
+      <value enum="13" description="Canceled as order would violate LULD (Limit Up-Limit Down) price bands per SEC Rule 608, and price sliding was ei- ther not selected or not applicable." />
+      <value enum="14" description="Canceled as the order's limit price is now outside LULD (Limit Up-Limit Down) price bands after bands narrowed." />
+      <value enum="15" description="Cancel due to client disconnect from a port with cancel-on-disconnect instruc- tions. Value" />
+      <value enum="16" description="Auction order is canceled because the auction it was eligible for has concluded. Covers two cases: (a) the cross ran but did not fully fill this order - canceled at end of the post-cross auction-cance" />
+      <value enum="17" description="Pegged order canceled because its calcu- lated reference price moved beyond the order'slimitprice(thelimitpricecollared the peg)." />
+      <value enum="18" description="Canceled as the order is of odd lot size and could not be executed against the contra-side liquidity on the TXSE Book." />
+    </field>
     <field number="9000" name="LocateBroker" type="String" />
+    <field number="9001" name="MaxReplenishTimeRange" type="String" />
     <field number="9002" name="UserData" type="String" />
     <field number="9004" name="MemberGroup" type="String" />
     <field number="9005" name="CancelAtEntryIfCrossed" type="String" />
+    <field number="9008" name="RankPrice" type="String" />
     <field number="9009" name="ExcludeAuctionOrders" type="String" />
+    <field number="9730" name="TradeLiquidityIndicator" type="String">
+      <value enum="0" description="Removed hidden liquidity." />
+      <value enum="1" description="Removed displayed liquidity." />
+      <value enum="2" description="Added hidden liquidity." />
+      <value enum="3" description="Added displayed liquidity." />
+      <value enum="4" description="Execution from an auction cross." />
+    </field>
   </fields>
 </fix>

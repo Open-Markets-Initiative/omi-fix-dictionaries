@@ -28,7 +28,7 @@ For a list of Omi projects: [Omi Projects](https://github.com/Open-Markets-Initi
 For details of Omi rules and regulations: [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory")
 ## Dictionaries
 
-Dictionaries by exchange: [24X][24X.Directory], [A2X][A2X.Directory], [Aquis][Aquis.Directory], [Bist][Bist.Directory], [Boats][Boats.Directory], [Cboe][Cboe.Directory], [ElectronX][ElectronX.Directory], [Eurex][Eurex.Directory], [Euronext][Euronext.Directory], [Iex][Iex.Directory], [Ltse][Ltse.Directory], [Memx][Memx.Directory], [Nasdaq][Nasdaq.Directory], [Nyse][Nyse.Directory], [OtcMarkets][OtcMarkets.Directory], [Txse][Txse.Directory]
+Dictionaries by exchange: [24X][24X.Directory], [A2X][A2X.Directory], [Aquis][Aquis.Directory], [Bist][Bist.Directory], [Boats][Boats.Directory], [Cboe][Cboe.Directory], [Coinbase][Coinbase.Directory], [ElectronX][ElectronX.Directory], [Eurex][Eurex.Directory], [Euronext][Euronext.Directory], [Iex][Iex.Directory], [Ltse][Ltse.Directory], [Memx][Memx.Directory], [Nasdaq][Nasdaq.Directory], [Nyse][Nyse.Directory], [OtcMarkets][OtcMarkets.Directory], [Txse][Txse.Directory]
 
 ## Disclaimer
 
@@ -43,6 +43,7 @@ Enjoy.
 [Bist.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Bist "Borsa İstanbul A.Ş."
 [Boats.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Boats "Blue Ocean Technologies"
 [Cboe.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Cboe "Chicago Board Options Exchange"
+[Coinbase.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Coinbase "Coinbase"
 [ElectronX.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/ElectronX "ElectronX Markets"
 [Eurex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Eurex "Eurex Exchange"
 [Euronext.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Euronext "Euronext"

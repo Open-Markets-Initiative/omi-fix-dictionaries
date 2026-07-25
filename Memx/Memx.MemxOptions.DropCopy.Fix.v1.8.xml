@@ -120,6 +120,8 @@
   </messages>
   <components />
   <fields>
+    <field number="1" name="Account" type="String" />
+    <field number="6" name="AvgPx" type="Price" />
     <field number="7" name="BeginSeqNo" type="SeqNum" />
     <field number="8" name="BeginString" type="String" />
     <field number="9" name="BodyLength" type="Length" />
@@ -128,12 +130,18 @@
     <field number="14" name="CumQty" type="Qty" />
     <field number="16" name="EndSeqNo" type="SeqNum" />
     <field number="17" name="ExecID" type="String" />
+    <field number="18" name="ExecInst" type="MultipleCharValue" />
+    <field number="19" name="ExecRefID" type="String" />
+    <field number="30" name="LastMkt" type="Exchange" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />
     <field number="37" name="OrderID" type="String" />
     <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="Char" />
+    <field number="40" name="OrdType" type="Char" />
     <field number="41" name="OrigClOrdID" type="String" />
     <field number="43" name="PossDupFlag" type="String" />
     <field number="44" name="Price" type="Price" />
@@ -144,7 +152,9 @@
     <field number="55" name="Symbol" type="String" />
     <field number="56" name="TargetCompID" type="String" />
     <field number="58" name="Text" type="String" />
+    <field number="59" name="TimeInForce" type="Char" />
     <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="67" name="ListSeqNo" type="String" />
     <field number="70" name="AllocID" type="String" />
     <field number="71" name="AllocTransType" type="String">
       <value enum="0" description="New Replace existing trade with allocation. This is the first allocation on a tr" />
@@ -153,10 +163,12 @@
     </field>
     <field number="72" name="RefAllocID" type="String" />
     <field number="75" name="TradeDate" type="LocalMktDate" />
+    <field number="77" name="PositionEffect" type="Char" />
     <field number="78" name="NoAllocs" type="String" />
     <field number="97" name="PossResend" type="Boolean" />
     <field number="98" name="EncryptMethod" type="Int" />
     <field number="102" name="CxlRejReason" type="Int" />
+    <field number="103" name="OrdRejReason" type="Int" />
     <field number="108" name="HeartBtInt" type="Int" />
     <field number="112" name="TestReqID" type="String" />
     <field number="122" name="OrigSendingTime" type="String" />
@@ -165,18 +177,91 @@
     <field number="141" name="ResetSeqNumFlag" type="String" />
     <field number="150" name="ExecType" type="Char" />
     <field number="151" name="LeavesQty" type="Qty" />
+    <field number="167" name="SecurityType" type="String" />
     <field number="201" name="PutOrCall" type="Int" />
     <field number="202" name="StrikePrice" type="Price" />
     <field number="371" name="RefTagID" type="Int" />
     <field number="372" name="RefMsgType" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="3" description="OrderReprice The order's booking price was updated." />
+      <value enum="5" description="MatchTradePrevention The order quantity was reduced to prevent a wash trade." />
+      <value enum="99" description="Other More information is supplied in tag 21022 ExtendedExecRestatementReason." />
+      <value enum="100" description="PostTradeAllocation The order details were changed in post trade." />
+      <value enum="0" description="None No additional information." />
+      <value enum="4" description="MatchTrade-CancelOldest Restatement due to MatchTradePrevention - CancelOldest" />
+      <value enum="6" description="MatchTrade-CancelBoth Restatement due to MatchTradePrevention - CancelBoth" />
+    </field>
     <field number="434" name="CxlRejResponseTo" type="Char" />
+    <field number="453" name="NoPartyIDs" type="NumInGroup" />
     <field number="541" name="MaturityDate" type="String" />
     <field number="626" name="AllocType" type="String">
       <value enum="100" description="PostTradeEdit The allocation was a post trade edit. (This is a custom value defi" />
     </field>
     <field number="796" name="AllocCancReplaceReason" type="String" />
+    <field number="851" name="LastLiquidityInd" type="Int">
+      <value enum="1" description="Added The order added displayed liquidity to the Exchange book." />
+      <value enum="2" description="Removed The order removed liquidity from the Exchange book." />
+    </field>
+    <field number="880" name="TrdMatchID" type="String" />
     <field number="1137" name="DefaultApplVerID" type="String" />
     <field number="1408" name="DefaultCstmApplVerID" type="String" />
+    <field number="1815" name="TradingCapacity" type="String">
+      <value enum="1" description="Customer" />
+      <value enum="2" description="Professional Customer" />
+      <value enum="3" description="Broker Dealer" />
+      <value enum="4" description="Broker Dealer Customer" />
+      <value enum="5" description="Firm" />
+      <value enum="6" description="Market Maker" />
+      <value enum="7" description="Away Market Maker" />
+    </field>
+    <field number="2362" name="MTPGroupID" type="String">
+      <value enum="0" description="Firm Scope Prevents orders from the same firm trading with each other" />
+      <value enum="1" description="EFID Scope Prevents orders from the same EFID trading with each other" />
+      <value enum="2" description="Account Scope Prevents orders from the same account trading with each other" />
+    </field>
+    <field number="21000" name="CancelGroupID" type="String" />
+    <field number="21001" name="MatchTradePreventionType" type="String" />
+    <field number="21004" name="CancelReason" type="String">
+      <value enum="0" description="0 Other This order was canceled for some other" />
+      <value enum="1" description="UserRequestedCancel The client sent a OrderCancelRequest or OrderMassCancelReque" />
+      <value enum="5" description="ExecutionPriceCollar The price of the order fell outside execution price collar" />
+      <value enum="6" description="Halted The market on the order's security was halted." />
+      <value enum="7" description="ExchangeSupervisory Operational or supervisory actions taken by the Exchange res" />
+      <value enum="8" description="OrderExpired The order's supplied expiration time passed." />
+      <value enum="10" description="MatchTradePrevention This or another associated order's specified match trade pr" />
+      <value enum="13" description="ParticipantDisconnect The participant directed that their orders should be cance" />
+      <value enum="14" description="OrderNotBookable Order is not of bookable type (this may include market orders," />
+      <value enum="17" description="FirmDisabled Order was canceled because the firm was disabled" />
+      <value enum="18" description="EFIDDisabled Order was canceled because the EFID was disabled" />
+      <value enum="19" description="AccountDisabled Order was canceled because the Account was disabled" />
+      <value enum="22" description="QuoteUpdateRejectedOrigQuoteCanceled A quote update for an existing quote was re" />
+      <value enum="23" description="ActiveRiskBreach Canceled because an active risk rule was breached." />
+      <value enum="24" description="ManualRiskBreach Canceled because of a manual breach." />
+      <value enum="25" description="NumContractsExecutedExceedsThreshold The number of contracts executed exceeds fi" />
+      <value enum="26" description="NotionalValueOfExecutionsExceedsThres hold The notional value of the order viola" />
+      <value enum="27" description="CountOfExecutionsExceedsThreshold The count of contracts executed exceeds firm s" />
+      <value enum="28" description="OutstandingPercentageThresholdExceede d The number of contracts executed as a pe" />
+      <value enum="29" description="TripsThresholdExceeded The number of times a firm reaches the limits in: • NumCo" />
+      <value enum="30" description="GrossNotionalValueExceedsThreshold Order not allowed because it surpassed the gr" />
+      <value enum="31" description="NetNotionalValueExceedsThreshold Order not allowed because it surpassed the net" />
+      <value enum="32" description="DuplicateOrderThresholdExceeded Order not allowed because it surpassed the dupli" />
+      <value enum="33" description="OrderRateThresholdExceeded Order not allowed because it surpassed the order rate" />
+      <value enum="34" description="MarketOrderGrossNotionalValueExceeds Threshold Market Order not allowed because" />
+      <value enum="35" description="MarketOrderNetNotionalValueExceedsThr eshold Market Order not allowed because it" />
+      <value enum="36" description="MarketOrderNBBOWidthExceeded Market Order not allowed because it surpassed the m" />
+      <value enum="37" description="MarketOrderNoNationalBestBid Market Order not allowed because there was no natio" />
+      <value enum="38" description="MarketOrderNoNationalBestOffer Market Order not allowed because there was no nat" />
+      <value enum="39" description="DrillThroughPriceExceeded Order not allowed because it surpassed drill through p" />
+      <value enum="40" description="OrderWouldLockOrCross Order not allowed because it would lock or cross" />
+      <value enum="41" description="MassCancelRequest Cancel was the result of a mass cancel request" />
+      <value enum="42" description="LockedOrCrossedMarket Cancel was due to the order having a RepriceBehavior speci" />
+    </field>
+    <field number="21005" name="RiskGroupID" type="String" />
+    <field number="21020" name="RepriceFrequency" type="String" />
+    <field number="21021" name="RepriceBehavior" type="String" />
+    <field number="21022" name="ExtendedRestatementReason" type="String" />
+    <field number="21023" name="OrigListSeqNo" type="String" />
     <field number="21035" name="OptionsSecurityID" type="String" />
+    <field number="21036" name="ContraTradingCapacity" type="String" />
   </fields>
 </fix>

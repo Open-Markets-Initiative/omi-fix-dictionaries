@@ -128,12 +128,18 @@
     <field number="14" name="CumQty" type="Qty" />
     <field number="16" name="EndSeqNo" type="SeqNum" />
     <field number="17" name="ExecID" type="String" />
+    <field number="18" name="ExecInst" type="MultipleCharValue" />
+    <field number="19" name="ExecRefID" type="String" />
+    <field number="30" name="LastMkt" type="Exchange" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />
     <field number="37" name="OrderID" type="String" />
     <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="Char" />
+    <field number="40" name="OrdType" type="Char" />
     <field number="41" name="OrigClOrdID" type="String" />
     <field number="43" name="PossDupFlag" type="String" />
     <field number="44" name="Price" type="Price" />
@@ -144,30 +150,55 @@
     <field number="55" name="Symbol" type="String" />
     <field number="56" name="TargetCompID" type="String" />
     <field number="58" name="Text" type="String" />
+    <field number="59" name="TimeInForce" type="Char" />
     <field number="60" name="TransactTime" type="UTCTimestamp" />
     <field number="65" name="SymbolSfx" type="String" />
     <field number="75" name="TradeDate" type="LocalMktDate" />
     <field number="97" name="PossResend" type="Boolean" />
     <field number="98" name="EncryptMethod" type="Int" />
     <field number="102" name="CxlRejReason" type="Int" />
+    <field number="103" name="OrdRejReason" type="Int" />
     <field number="108" name="HeartBtInt" type="Int" />
+    <field number="110" name="MinQty" type="Qty" />
     <field number="112" name="TestReqID" type="String" />
+    <field number="114" name="LocateReqd" type="String" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
     <field number="122" name="OrigSendingTime" type="String" />
     <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="126" name="ExpireTime" type="UTCTimestamp" />
     <field number="141" name="ResetSeqNumFlag" type="String" />
     <field number="150" name="ExecType" type="Char" />
     <field number="151" name="LeavesQty" type="Qty" />
+    <field number="211" name="PegDifference" type="PriceOffset" />
     <field number="371" name="RefTagID" type="Int" />
     <field number="372" name="RefMsgType" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String" />
     <field number="434" name="CxlRejResponseTo" type="Char" />
     <field number="447" name="PartyIDSource" type="Char" />
     <field number="448" name="PartyID" type="String" />
     <field number="452" name="PartyRole" type="Int" />
     <field number="453" name="NoPartyIDs" type="NumInGroup" />
+    <field number="528" name="OrderCapacity" type="Char" />
+    <field number="582" name="CustOrderCapacity" type="String" />
     <field number="583" name="LnkID" type="String" />
+    <field number="851" name="LastLiquidityInd" type="Int" />
+    <field number="880" name="TrdMatchID" type="String" />
+    <field number="1084" name="DisplayMethod" type="String" />
+    <field number="1087" name="DisplayMinInc" type="String" />
+    <field number="1094" name="PegPriceType" type="Int" />
     <field number="1137" name="DefaultApplVerID" type="String" />
+    <field number="1138" name="DisplayQty" type="Qty" />
+    <field number="1151" name="SecurityGroup" type="String" />
     <field number="1408" name="DefaultCstmApplVerID" type="String" />
+    <field number="2362" name="StpGroupID" type="String" />
     <field number="5700" name="LocateBroker" type="String" />
+    <field number="9416" name="ExtendedExecInst" type="String" />
+    <field number="21001" name="SelfTradePrevention" type="String" />
+    <field number="21004" name="CancelReason" type="String" />
+    <field number="21005" name="RiskGroupID" type="String" />
+    <field number="21006" name="ReserveReplenishTimeType" type="String" />
+    <field number="21020" name="RepriceFrequencyType" type="String" />
+    <field number="21021" name="RepriceBehaviorType" type="String" />
+    <field number="21022" name="ExtendedRestatementReason" type="String" />
   </fields>
 </fix>

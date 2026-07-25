@@ -251,6 +251,12 @@
       <value enum="0" description="Too late to cancel." />
       <value enum="2" description="Broker Option." />
     </field>
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Broker option" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="5" description="Unknown order" />
+      <value enum="8" description="Stale order" />
+    </field>
     <field number="107" name="SecurityDesc" type="String" />
     <field number="110" name="MinQty" type="Qty" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
@@ -276,6 +282,11 @@
     <field number="198" name="SecondaryOrderID" type="String" />
     <field number="200" name="MaturityMonthYear" type="MonthYear" />
     <field number="205" name="MaturityDay" type="int" />
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="1" description="GTC and GTD Restatement" />
+    </field>
+    <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="424" name="DayOrderQty" type="Qty" />
     <field number="425" name="DayCumQty" type="Qty" />
     <field number="426" name="DayAvgPx" type="Price" />
@@ -284,7 +295,14 @@
     </field>
     <field number="439" name="ClearingFirm" type="String" />
     <field number="440" name="ClearingAccount" type="String" />
+    <field number="442" name="MultilegReportingType" type="String">
+      <value enum="1" description="Simple instrument execution" />
+      <value enum="3" description="Spread instrument execution." />
+    </field>
     <field number="527" name="SecondaryExecID" type="String" />
+    <field number="828" name="TrdType" type="String">
+      <value enum="1" description="Block Trade" />
+    </field>
     <field number="1028" name="ManualOrderIndicator" type="String">
       <value enum="Y" description="Manual order entry" />
     </field>

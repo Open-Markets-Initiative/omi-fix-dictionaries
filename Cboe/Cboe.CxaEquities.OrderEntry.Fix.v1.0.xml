@@ -233,6 +233,7 @@
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />
+    <field number="14" name="CumQty" type="Qty" />
     <field number="17" name="ExecID" type="String" />
     <field number="18" name="ExecInst" type="MultipleValueString">
       <value enum="M" description="Midpoint (peg to NBBO Midpoint)" />
@@ -244,6 +245,14 @@
       <value enum="0" description="New" />
       <value enum="3" description="Status. Used to provide order restatements (" />
       <value enum="1" description="Trade Cancel" />
+    </field>
+    <field number="29" name="LastCapacity" type="String">
+      <value enum="1" description="Agent" />
+      <value enum="3" description="Cross as Principal" />
+      <value enum="5" description="Mixed" />
+    </field>
+    <field number="30" name="LastMkt" type="String">
+      <value enum="CXAM" description="MOC" />
     </field>
     <field number="31" name="LastPx" type="Price" />
     <field number="32" name="LastShares" type="Qty" />
@@ -293,6 +302,12 @@
       <value enum="2" description="Broker Option" />
       <value enum="1" description="Unknown order" />
     </field>
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Exchange option" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="5" description="Unknown order" />
+      <value enum="8" description="Stale order" />
+    </field>
     <field number="109" name="ClientID" type="String" />
     <field number="110" name="MinQty" type="Qty" />
     <field number="111" name="MaxFloor" type="Qty" />
@@ -308,7 +323,14 @@
       <value enum="1" description="Partial Fill" />
       <value enum="D" description="Restated" />
     </field>
+    <field number="151" name="LeavesQty" type="Qty" />
+    <field number="198" name="SecondaryOrderID" type="String" />
     <field number="207" name="SecurityExchange" type="Exchange" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="4" description="Iceberg display size refreshed" />
+      <value enum="C" description="Confirmed closing price for MOC trade" />
+    </field>
+    <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="432" name="ExpireDate" type="UTCTimestamp" />
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Cancel" />
@@ -321,6 +343,7 @@
     <field number="552" name="NoSides" type="NumInGroup" />
     <field number="571" name="TradeReportID" type="String" />
     <field number="572" name="TradeReportRefID" type="String" />
+    <field number="639" name="PriceImprovement" type="Price" />
     <field number="856" name="TradeReportType" type="String" />
     <field number="939" name="TradeRptStatus" type="String" />
     <field number="1003" name="TradeID" type="String" />
@@ -337,6 +360,11 @@
     <field number="7699" name="RiskGroupID" type="String" />
     <field number="7713" name="NoTradeFeat" type="NumInGroup" />
     <field number="7714" name="NoTradeKey" type="NumInGroup" />
+    <field number="7903" name="PreventedTradePx" type="Price" />
+    <field number="7904" name="PreventedTradeQty" type="Qty" />
+    <field number="7905" name="PreventedTradeLiquidityIndicator" type="String">
+      <value enum="A" description="Added liquidity" />
+    </field>
     <field number="8081" name="MEQSE" type="String">
       <value enum="Y" description="Minimum Execution Quantity Single Execution (MEQSE)" />
     </field>
@@ -353,6 +381,12 @@
     <field number="8182" name="BrokerPreferencing" type="String">
       <value enum="Y" description="Use broker preferencing" />
     </field>
+    <field number="8183" name="CrossType" type="String">
+      <value enum="101" description="Trade was the result of a broker preferenced crossing" />
+    </field>
+    <field number="8184" name="BookingPurposeTrade" type="String">
+      <value enum="X" description="Booking Purpose trade." />
+    </field>
     <field number="9303" name="RoutingInst" type="String">
       <value enum="P" description="Post Only (never take liquidity)" />
     </field>
@@ -364,6 +398,7 @@
     <field number="9620" name="CorrectedPrice" type="Price" />
     <field number="9688" name="OrigCompID" type="String" />
     <field number="9689" name="OrigSubID" type="String" />
+    <field number="9690" name="WorkingPrice" type="Price" />
     <field number="9730" name="TradeLiquidityIndicator" type="String">
       <value enum="A" description="Trade Added Liquidity (" />
       <value enum="R" description="Trade Removed Liquidity (" />
@@ -371,6 +406,7 @@
       <value enum="I" description="Added Hidden Liquidity that was price improved" />
       <value enum="S" description="Added Liquidity NBBO Setter" />
     </field>
+    <field number="9862" name="ContraTradePA" type="String" />
     <field number="9882" name="FeeCode" type="String" />
   </fields>
 </fix>

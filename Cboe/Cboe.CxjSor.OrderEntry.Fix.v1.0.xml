@@ -116,9 +116,14 @@
     <field number="11" name="ClOrdID" type="String" />
     <field number="14" name="CumQty" type="Qty" />
     <field number="17" name="ExecID" type="String" />
+    <field number="19" name="ExecRefID" type="String">
+      <value enum="0" description="All other reasons" />
+    </field>
     <field number="20" name="ExecTransType" type="char">
       <value enum="0" description="New" />
     </field>
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="33" name="LinesOfText" type="String" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -161,6 +166,12 @@
     <field number="102" name="CxlRejReason" type="int">
       <value enum="0" description="Too late to cancel." />
       <value enum="2" description="Broker option." />
+    </field>
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Exchange option" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="5" description="Unknown order" />
+      <value enum="8" description="Stale order" />
     </field>
     <field number="148" name="Headline" type="String" />
     <field number="150" name="ExecType" type="char">

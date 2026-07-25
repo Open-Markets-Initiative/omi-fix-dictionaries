@@ -211,6 +211,7 @@
       <value enum="8" description="Rejected" />
       <value enum="B" description="Calculated(C1 only) used for FLEX restatements" />
     </field>
+    <field number="41" name="OrigClOrdID" type="String" />
     <field number="42" name="OrigTime" type="UTCTimestamp" />
     <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
@@ -246,6 +247,12 @@
     </field>
     <field number="80" name="Contracts" type="String" />
     <field number="99" name="StopPx" type="Price" />
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Broker option" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="5" description="Unknown order" />
+      <value enum="8" description="Stale order" />
+    </field>
     <field number="105" name="WaveNo" type="String" />
     <field number="111" name="MaxFloor" type="Qty" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
@@ -270,6 +277,7 @@
       <value enum="OPT" description="Options" />
       <value enum="MLEG" description="Multileg" />
     </field>
+    <field number="198" name="SecondaryOrderID" type="String" />
     <field number="200" name="MaturityMonthYear" type="MonthYear" />
     <field number="201" name="PutOrCall" type="int">
       <value enum="0" description="Put" />
@@ -281,6 +289,15 @@
     <field number="323" name="SecurityResponseType" type="String">
       <value enum="1" description="Accept As-Is (legs were not modified)" />
     </field>
+    <field number="337" name="ContraTrader" type="String" />
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="1" description="GTC/GTD Restatement" />
+      <value enum="4" description="State Ch" />
+      <value enum="6" description="Price Sliding Reprice" />
+      <value enum="8" description="Reduction of Ord Qty due to Equity Leg Reject .(C1 only)" />
+    </field>
+    <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="423" name="PriceType" type="Price">
       <value enum="0" description="Fixed cabinet trade price" />
       <value enum="D" description="FLEX DAC" />
@@ -345,6 +362,8 @@
       <value enum="N" description="Away Market Maker" />
       <value enum="J" description="Joint Back Office" />
     </field>
+    <field number="7695" name="MassCancelID" type="String" />
+    <field number="7696" name="CancelledOrderCount" type="String" />
     <field number="7933" name="Routing" type="String" />
     <field number="8020" name="DisplayRange" type="String" />
     <field number="8641" name="NoOfSecurities" type="NumInGroup" />

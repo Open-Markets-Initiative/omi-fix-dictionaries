@@ -597,6 +597,12 @@
       <value enum="0" description="Too late to cancel." />
       <value enum="2" description="Broker Option." />
     </field>
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Broker option" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="5" description="Unknown order" />
+      <value enum="8" description="Stale order" />
+    </field>
     <field number="108" name="HeartBtInt" type="int" />
     <field number="109" name="ClientID" type="String" />
     <field number="110" name="MinQty" type="Qty" />
@@ -625,6 +631,7 @@
       <value enum="OPT" description="Options" />
       <value enum="MLEG" description="Multileg" />
     </field>
+    <field number="198" name="SecondaryOrderID" type="String" />
     <field number="200" name="MaturityMonthYear" type="MonthYear" />
     <field number="201" name="PutOrCall" type="int">
       <value enum="0" description="Put" />
@@ -638,6 +645,13 @@
     <field number="372" name="RefMsgType" type="String" />
     <field number="373" name="SessionRejectReason" type="int" />
     <field number="375" name="ContraBroker" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="1" description="GTC/GTD Restatement" />
+      <value enum="4" description="State Ch" />
+      <value enum="6" description="Price Sliding Reprice" />
+      <value enum="8" description="Reduction of Ord Qty due to Equity Leg Reject .(C1 only)" />
+    </field>
+    <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="423" name="PriceType" type="Price">
       <value enum="0" description="Fixed cabinet trade price" />
       <value enum="D" description="FLEX DAC" />
@@ -711,6 +725,7 @@
       <value enum="J" description="Joint Back Office" />
     </field>
     <field number="7695" name="MassCancelID" type="String" />
+    <field number="7696" name="CancelledOrderCount" type="String" />
     <field number="7699" name="CustomGroupID" type="String" />
     <field number="7700" name="MassCancelInst" type="String" />
     <field number="7928" name="PreventMatch" type="String">

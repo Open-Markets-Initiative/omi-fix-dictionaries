@@ -240,6 +240,8 @@
       <value enum="4" description="Principal" />
     </field>
     <field number="30" name="LastMkt" type="String" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
@@ -296,6 +298,11 @@
     <field number="102" name="CxlRejReason" type="int">
       <value enum="0" description="Too late to cancel" />
       <value enum="2" description="Broker / Exchange Option" />
+    </field>
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Broker / Exchange option" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="6" description="Duplicate ID (e.g. dupe Cl Ord ID (11))" />
     </field>
     <field number="110" name="MinQty" type="Qty" />
     <field number="114" name="LocateReqd" type="String">

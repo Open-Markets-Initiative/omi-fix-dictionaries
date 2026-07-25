@@ -211,11 +211,14 @@
       <value enum="B" description="Reactive Trade Now" />
       <value enum="b" description="Reactive Trade Now opt-out" />
     </field>
+    <field number="19" name="ExecRefID" type="String" />
     <field number="20" name="ExecTransType" type="Char">
       <value enum="0" description="New" />
     </field>
     <field number="21" name="HandlInst" type="Char" />
     <field number="22" name="IDSource" type="String" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNum" type="SeqNum" />
@@ -253,6 +256,7 @@
       <value enum="40" description="2" />
     </field>
     <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="47" name="Rule80A" type="Char" />
     <field number="48" name="SecurityID" type="String" />
     <field number="49" name="SenderCompID" type="String" />
     <field number="50" name="SenderSubID" type="String" />
@@ -280,6 +284,7 @@
     </field>
     <field number="60" name="TransactTime" type="UTCTimestamp" />
     <field number="65" name="SymbolSfx" type="String" />
+    <field number="75" name="TradeDate" type="LocalMktDate" />
     <field number="76" name="ExecBroker" type="String" />
     <field number="90" name="SecureDataLen" type="String" />
     <field number="91" name="SecureData" type="String" />
@@ -298,7 +303,19 @@
       <value enum="2" description="Broker Option" />
       <value enum="3" description="Order already in Pending Cancel or Pending Replace status" />
     </field>
+    <field number="103" name="OrdRejReason" type="Int">
+      <value enum="0" description="Broker option" />
+      <value enum="1" description="Unknown symbol" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="3" description="Order exceeds limit" />
+      <value enum="4" description="Too late to enter" />
+      <value enum="5" description="Unknown Order" />
+      <value enum="6" description="Duplicate Order (e.g" />
+      <value enum="7" description="Duplicate of a verbally communicated order" />
+      <value enum="8" description="Stale Order" />
+    </field>
     <field number="108" name="HeartBtInt" type="Int" />
+    <field number="109" name="ClientID" type="String" />
     <field number="110" name="MinQty" type="Qty" />
     <field number="111" name="MaxFloor" type="Qty" />
     <field number="112" name="TestReqID" type="String" />
@@ -333,6 +350,9 @@
       <value enum="10" description="SendingTime accuracy problem" />
       <value enum="11" description="Invalid MsgType" />
     </field>
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String" />
+    <field number="382" name="NoContraBrokers" type="String" />
     <field number="388" name="DiscretionInst" type="String" />
     <field number="389" name="DiscretionOffset" type="String" />
     <field number="528" name="OrderCapacity" type="Char">
@@ -340,6 +360,12 @@
       <value enum="P" description="Principal" />
     </field>
     <field number="5149" name="Memo" type="String" />
+    <field number="9140" name="DisplayInst" type="String">
+      <value enum="Y" description="Anonymous-Price to Comply" />
+      <value enum="A" description="Attributable-Price to Display" />
+      <value enum="N" description="Non-Display" />
+      <value enum="I" description="Imbalance Only" />
+    </field>
     <field number="9211" name="SMAttribFlag" type="String">
       <value enum="Y" description="attributable - Price to Display (default)" />
       <value enum="N" description="anonynous - Price to Display" />
@@ -349,9 +375,14 @@
     </field>
     <field number="9212" name="SMAIQFlag" type="String" />
     <field number="9214" name="SMBnchdFlag" type="String" />
+    <field number="9231" name="TradeThruFlag" type="String" />
     <field number="9234" name="BlkOrdFlag" type="String" />
     <field number="9376" name="SMExecAlgorFlag" type="String">
       <value enum="I" description="imbalance only" />
     </field>
+    <field number="9730" name="LiqProvFlg" type="String" />
+    <field number="9870" name="ReserveSize" type="String" />
+    <field number="9872" name="DisplaySize" type="String" />
+    <field number="9882" name="LiquidityFlag" type="String" />
   </fields>
 </fix>

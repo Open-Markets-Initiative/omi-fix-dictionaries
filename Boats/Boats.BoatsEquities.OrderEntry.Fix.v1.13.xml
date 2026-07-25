@@ -160,6 +160,10 @@
     <field number="16" name="EndSeqNo" type="SeqNum" />
     <field number="17" name="ExecID" type="String" />
     <field number="18" name="ExecInst" type="MultipleCharValue" />
+    <field number="19" name="ExecRefID" type="String" />
+    <field number="30" name="LastMkt" type="Exchange" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
     <field number="34" name="MsgSeqNum" type="SeqNum" />
     <field number="35" name="MsgType" type="String" />
     <field number="36" name="NewSeqNo" type="SeqNum" />
@@ -184,6 +188,7 @@
     <field number="97" name="PossResend" type="Boolean" />
     <field number="98" name="EncryptMethod" type="Int" />
     <field number="102" name="CxlRejReason" type="Int" />
+    <field number="103" name="OrdRejReason" type="Int" />
     <field number="108" name="HeartBtInt" type="Int" />
     <field number="112" name="TestReqID" type="String" />
     <field number="114" name="LocateReqd" type="String" />
@@ -196,6 +201,10 @@
     <field number="151" name="LeavesQty" type="Qty" />
     <field number="371" name="RefTagID" type="Int" />
     <field number="372" name="RefMsgType" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="5" description="Partial decline of OrderQty (38)" />
+      <value enum="99" description="Other (When value is 99 (Other), see the ExtendedRestatementReason for more info" />
+    </field>
     <field number="380" name="BusinessRejectReason" type="Int" />
     <field number="434" name="CxlRejResponseTo" type="Char">
       <value enum="1" description="OrderCancelRequest" />
@@ -208,7 +217,20 @@
       <value enum="5" description="Retail Customer" />
     </field>
     <field number="583" name="LnkID" type="String" />
+    <field number="851" name="LastLiquidityInd" type="Int">
+      <value enum="1" description="AddDisplayedLiquidity" />
+      <value enum="2" description="RemovedLiquidity" />
+      <value enum="53" description="AddNbboImprove" />
+      <value enum="54" description="AddNbboJoin" />
+      <value enum="101" description="RetailAddDisplayedLiquidity" />
+      <value enum="102" description="RetailRemovedLiquidity" />
+      <value enum="153" description="RetailAddNbboImprove" />
+      <value enum="154" description="RetailAddNbboJoin" />
+      <value enum="160" description="RetailRemovedOnEntry" />
+    </field>
+    <field number="880" name="TrdMatchID" type="String" />
     <field number="1137" name="DefaultApplVerID" type="String" />
+    <field number="1151" name="SecurityGroup" type="String" />
     <field number="1408" name="DefaultCstmApplVerID" type="String" />
     <field number="2362" name="StpGroupID" type="String">
       <value enum="0" description="Prevents orders from the same firm trading with each other." />
@@ -216,7 +238,32 @@
       <value enum="2" description="Prevents orders from same SenderCompIDtrading with each other." />
     </field>
     <field number="5700" name="LocateBroker" type="String" />
-    <field number="21001" name="SelfTradePreventionType" type="String" />
+    <field number="21001" name="SelfTradePrevention" type="String" />
+    <field number="21004" name="CancelReason" type="String">
+      <value enum="0" description="Other" />
+      <value enum="1" description="UserRequestedCancel" />
+      <value enum="4" description="EndOfTrading" />
+      <value enum="5" description="LimitUpLimitDown" />
+      <value enum="6" description="Halted" />
+      <value enum="7" description="ExchangeSupervisory" />
+      <value enum="8" description="OrderExpired" />
+      <value enum="9" description="LockOrCrossBook" />
+      <value enum="10" description="SelfTradePrevention" />
+      <value enum="11" description="InsufficientQuotes" />
+      <value enum="12" description="NonCompliantPrice" />
+      <value enum="13" description="ParticipantDisconnect" />
+      <value enum="14" description="OrderNotBookable" />
+      <value enum="15" description="TradeProtectionLimits" />
+      <value enum="16" description="UnableToRoute" />
+      <value enum="17" description="FirmDisabled" />
+      <value enum="18" description="MPIDDisabled" />
+      <value enum="19" description="AccountDisabled" />
+      <value enum="20" description="NotionalExposureRiskBreached" />
+      <value enum="21" description="InvalidClOrdId" />
+      <value enum="2" description="JoinedNBBO" />
+      <value enum="3" description="SelfTradeCancelNewest" />
+    </field>
     <field number="21005" name="RiskGroupID" type="String" />
+    <field number="21022" name="ExtendedRestatementReason" type="String" />
   </fields>
 </fix>

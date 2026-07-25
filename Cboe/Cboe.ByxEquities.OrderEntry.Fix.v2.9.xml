@@ -233,6 +233,12 @@
       <value enum="3" description="Already pending cancel or pending replace." />
       <value enum="2" description="Broker Option" />
     </field>
+    <field number="103" name="OrdRejReason" type="int">
+      <value enum="0" description="Exchange option" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="5" description="Unknown order" />
+      <value enum="8" description="Stale order" />
+    </field>
     <field number="110" name="MinQty" type="Qty" />
     <field number="111" name="MaxFloor" type="Qty" />
     <field number="114" name="LocateReqd" type="String" />
@@ -247,7 +253,15 @@
       <value enum="M" description="Mass Cancel Complete" />
     </field>
     <field number="151" name="LeavesQty" type="Qty" />
+    <field number="198" name="SecondaryOrderID" type="String" />
     <field number="211" name="PegDifference" type="String" />
+    <field number="375" name="ContraBroker" type="String" />
+    <field number="378" name="ExecRestatementReason" type="String">
+      <value enum="3" description="Repricing of Peg Order" />
+      <value enum="5" description="Reduction of Ord Qtydue to SWP or MTP Decrement" />
+      <value enum="C" description="Cboe Market Close (CMC)" />
+    </field>
+    <field number="382" name="NoContraBrokers" type="NumInGroup" />
     <field number="434" name="CxlRejResponseTo" type="char">
       <value enum="1" description="Cancel" />
     </field>
