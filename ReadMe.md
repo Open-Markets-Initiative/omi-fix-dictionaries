@@ -26,9 +26,9 @@ This entire repository is source generated — including the words you are readi
 For a list of Omi projects: [Omi Projects](https://github.com/Open-Markets-Initiative/Directory/tree/main/Projects "Open Markets Initiative Projects")
 
 For details of Omi rules and regulations: [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory")
-## Dictionaries
+## Organizations
 
-Dictionaries by exchange: [24X][24X.Directory], [A2X][A2X.Directory], [Aquis][Aquis.Directory], [Bist][Bist.Directory], [Boats][Boats.Directory], [Box][Box.Directory], [Cboe][Cboe.Directory], [Coinbase][Coinbase.Directory], [ElectronX][ElectronX.Directory], [Eurex][Eurex.Directory], [Euronext][Euronext.Directory], [Hkex][Hkex.Directory], [Iex][Iex.Directory], [Ltse][Ltse.Directory], [Memx][Memx.Directory], [Miax][Miax.Directory], [Nasdaq][Nasdaq.Directory], [Nyse][Nyse.Directory], [Odx][Odx.Directory], [OtcMarkets][OtcMarkets.Directory], [Sgx][Sgx.Directory], [Txse][Txse.Directory]
+> [24X][24X.Directory] · [A2X][A2X.Directory] · [Aquis][Aquis.Directory] · [Bist][Bist.Directory] · [Boats][Boats.Directory] · [Box][Box.Directory] · [Cboe][Cboe.Directory] · [Coinbase][Coinbase.Directory] · [ElectronX][ElectronX.Directory] · [Eurex][Eurex.Directory] · [Euronext][Euronext.Directory] · [Hkex][Hkex.Directory] · [Iex][Iex.Directory] · [Ltse][Ltse.Directory] · [Memx][Memx.Directory] · [Miax][Miax.Directory] · [Nasdaq][Nasdaq.Directory] · [Nyse][Nyse.Directory] · [Odx][Odx.Directory] · [OtcMarkets][OtcMarkets.Directory] · [Sgx][Sgx.Directory] · [Txse][Txse.Directory]
 
 ## Disclaimer
 
