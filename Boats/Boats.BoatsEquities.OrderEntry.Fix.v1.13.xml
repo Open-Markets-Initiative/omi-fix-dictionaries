@@ -1,3 +1,36 @@
+<!--
+  Fix dictionary for: Boats OrderEntry Fix v1.13
+
+  Protocol:
+    Organization: Blue Ocean Technologies
+    Protocol: Order Entry
+    Encoding: Financial Information eXchange
+    Version: 1.13
+    Date: 2026-01-01
+    Specification: MEMO FIX v1.13 BOATS
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The Binary Data Compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  For full Omi information:
+    https://github.com/Open-Markets-Initiative/Directory
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
 <fix major="1" minor="13" servicepack="0" type="Order Entry">
   <header>
     <field name="BeginString" required="Y" />

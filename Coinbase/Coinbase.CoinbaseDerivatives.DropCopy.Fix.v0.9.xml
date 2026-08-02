@@ -1,3 +1,36 @@
+<!--
+  Fix dictionary for: Coinbase DropCopy Fix v0.9
+
+  Protocol:
+    Organization: Coinbase
+    Protocol: Drop Copy
+    Encoding: 
+    Version: 0.9
+    Date: 2026-06-16
+    Specification: Coinbase Derivatives Drop Copy API V0.09
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The Binary Data Compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  For full Omi information:
+    https://github.com/Open-Markets-Initiative/Directory
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
 <fix major="0" minor="9" servicepack="0" type="Drop Copy">
   <header>
     <field name="BeginString" required="Y" />
