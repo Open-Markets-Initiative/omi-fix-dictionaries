@@ -19,6 +19,10 @@ Browse all QuickFIX repositories: [QuickFIX on GitHub](https://github.com/quickf
 
 This entire repository is source generated — including the words you are reading right now. To suggest updates, please open an issue describing the change and link the authoritative FIX specification. Time permitting, we will update the upstream models and regenerate.
 
+| Protocol Count | Generated Lines |
+| --- | --- |
+| 162 | 91,280 |
+
 ## Open Markets Initiative
 
 [![Omi](https://github.com/Open-Markets-Initiative/Directory/blob/main/About/Images/Logo.png)](https://github.com/Open-Markets-Initiative/Directory)  The Open Markets Initiative (Omi) is a group of technologists dedicated to enhancing the stability of electronic financial markets using modern development methods.
