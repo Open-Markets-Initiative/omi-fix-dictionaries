@@ -1,0 +1,267 @@
+<!--
+  Fix dictionary for: Sgx ReferenceData Fix v0.8
+
+  Protocol:
+    Organization: Singapore Exchange
+    Protocol: Reference Data
+    Encoding: Financial Information eXchange
+    Version: 0.8
+    Date: 2018-11-09
+    Specification: GeniumFIX_Ref_Data_SGX_v08
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The Binary Data Compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  For full Omi information:
+    https://github.com/Open-Markets-Initiative/Directory
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="0" minor="8" servicepack="0" type="Reference Data">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="SenderSubID" required="N" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="Username" required="Y" />
+      <field name="Password" required="Y" />
+      <field name="NewPassword" required="N" />
+      <field name="DefaultApplVerID" required="Y" />
+      <field name="SessionStatus" required="N" />
+      <field name="DaysToPwdExpiry" required="N" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="SessionStatus" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="Resend Request" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Test Request" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Application Message Request" msgtype="BW" msgcat="app">
+      <field name="ApplReqID" required="Y" />
+      <field name="ApplReqType" required="Y" />
+      <group name="NoApplIDs" required="Y">
+        <field name="RefApplID" required="Y" />
+        <field name="ApplBegSeqNum" required="N" />
+        <field name="ApplEndSeqNum" required="N" />
+      </group>
+    </message>
+    <message name="Application Message Request Ack" msgtype="BX" msgcat="app">
+      <field name="ApplResponseID" required="Y" />
+      <field name="ApplReqID" required="N" />
+      <field name="ApplReqType" required="N" />
+      <field name="ApplResponseType" required="N" />
+      <group name="NoApplIDs" required="N">
+        <field name="RefApplID" required="Y" />
+        <field name="ApplBegSeqNum" required="N" />
+        <field name="ApplEndSeqNum" required="N" />
+      </group>
+      <field name="ApplResponseError" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Security Definition" msgtype="d" msgcat="app">
+      <field name="ApplID" required="N" />
+      <field name="ApplSeqNum" required="N" />
+      <field name="ApplLastSeqNum" required="N" />
+      <field name="ApplResendFlag" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="SecurityType" required="N" />
+      <field name="SecuritySubType" required="N" />
+      <field name="MaturityDate" required="N" />
+      <field name="IssueDate" required="N" />
+      <field name="ContractMultiplier" required="N" />
+      <field name="SecurityDesc" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="PutOrCall" required="N" />
+      <field name="MarketID" required="N" />
+      <field name="MarketSegmentID" required="N" />
+      <group name="NoUnderlyings" required="N">
+        <field name="UnderlyingSymbol" required="Y" />
+        <field name="UnderlyingCurrency" required="N" />
+      </group>
+    </message>
+    <message name="Security Definition Update Report" msgtype="BP" msgcat="app">
+      <field name="ApplID" required="N" />
+      <field name="ApplSeqNum" required="N" />
+      <field name="ApplLastSeqNum" required="N" />
+      <field name="ApplResendFlag" required="N" />
+      <field name="SecurityUpdateAction" required="Y" />
+      <field name="Symbol" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="SecurityType" required="N" />
+      <field name="ContractMultiplier" required="N" />
+      <field name="SecurityDesc" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="PutOrCall" required="N" />
+      <group name="NoUnderlyings" required="N">
+        <field name="UnderlyingSymbol" required="Y" />
+        <field name="UnderlyingCurrency" required="N" />
+      </group>
+    </message>
+    <message name="Market Definition" msgtype="BU" msgcat="app">
+      <field name="ApplID" required="N" />
+      <field name="ApplSeqNum" required="N" />
+      <field name="ApplLastSeqNum" required="N" />
+      <field name="ApplResendFlag" required="N" />
+      <field name="MarketReportID" required="Y" />
+      <field name="MarketID" required="Y" />
+      <field name="MarketSegmentID" required="N" />
+      <field name="MarketSegmentDesc" required="N" />
+    </message>
+    <message name="Trading Session List" msgtype="BJ" msgcat="app">
+      <field name="ApplID" required="N" />
+      <field name="ApplSeqNum" required="N" />
+      <field name="ApplLastSeqNum" required="N" />
+      <field name="ApplResendFlag" required="N" />
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+        <field name="TradingSessionDesc" required="N" />
+        <field name="TradSesStatus" required="N" />
+        <group name="NoOrdTypeRules" required="N">
+          <field name="OrdType" required="Y" />
+        </group>
+        <group name="NoTimeInForceRules" required="N">
+          <field name="TimeInForce" required="Y" />
+        </group>
+        <group name="NoMatchRules" required="N">
+          <field name="MatchAlgorithm" required="Y" />
+          <field name="MatchType" required="N" />
+          <field name="ExSessionStateNumber" required="N" />
+        </group>
+      </group>
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="7" name="BeginSeqNo" type="SeqNum" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="22" name="IDSource" type="String" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="36" name="NewSeqNo" type="SeqNum" />
+    <field number="40" name="OrdType" type="char" />
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="48" name="SecurityID" type="String" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="50" name="SenderSubID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="59" name="TimeInForce" type="char" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="98" name="EncryptMethod" type="Int" />
+    <field number="107" name="SecurityDesc" type="String" />
+    <field number="108" name="HeartBtInt" type="Int" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
+    <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
+    <field number="167" name="SecurityType" type="String" />
+    <field number="200" name="MaturityMonthYear" type="MonthYear" />
+    <field number="201" name="PutOrCall" type="Int" />
+    <field number="225" name="IssueDate" type="LocalMktDate" />
+    <field number="231" name="ContractMultiplier" type="float" />
+    <field number="311" name="UnderlyingSymbol" type="String" />
+    <field number="318" name="UnderlyingCurrency" type="Currency" />
+    <field number="336" name="TradingSessionID" type="String" />
+    <field number="340" name="TradSesStatus" type="Int" />
+    <field number="371" name="RefTagID" type="Int" />
+    <field number="372" name="RefMsgType" type="String" />
+    <field number="373" name="SessionRejectReason" type="Int" />
+    <field number="386" name="NoTradingSessions" type="NumInGroup" />
+    <field number="541" name="MaturityDate" type="LocalMktDate" />
+    <field number="553" name="Username" type="String" />
+    <field number="554" name="Password" type="String" />
+    <field number="574" name="MatchType" type="String" />
+    <field number="711" name="NoUnderlyings" type="NumInGroup" />
+    <field number="762" name="SecuritySubType" type="String" />
+    <field number="925" name="NewPassword" type="String" />
+    <field number="980" name="SecurityUpdateAction" type="char">
+      <value enum="A" description="Add" />
+      <value enum="D" description="Delete" />
+      <value enum="M" description="Modify" />
+    </field>
+    <field number="1137" name="DefaultApplVerID" type="String" />
+    <field number="1142" name="MatchAlgorithm" type="String" />
+    <field number="1180" name="ApplID" type="String" />
+    <field number="1181" name="ApplSeqNum" type="SeqNum" />
+    <field number="1182" name="ApplBegSeqNum" type="SeqNum" />
+    <field number="1183" name="ApplEndSeqNum" type="SeqNum" />
+    <field number="1235" name="NoMatchRules" type="NumInGroup" />
+    <field number="1237" name="NoOrdTypeRules" type="NumInGroup" />
+    <field number="1239" name="NoTimeInForceRules" type="NumInGroup" />
+    <field number="1301" name="MarketID" type="String" />
+    <field number="1310" name="MarketSegmentID" type="String" />
+    <field number="1326" name="TradingSessionDesc" type="String" />
+    <field number="1346" name="ApplReqID" type="String" />
+    <field number="1347" name="ApplReqType" type="Int" />
+    <field number="1348" name="ApplResponseType" type="Int" />
+    <field number="1350" name="ApplLastSeqNum" type="SeqNum" />
+    <field number="1351" name="NoApplIDs" type="NumInGroup" />
+    <field number="1352" name="ApplResendFlag" type="Boolean" />
+    <field number="1353" name="ApplResponseID" type="String" />
+    <field number="1354" name="ApplResponseError" type="Int" />
+    <field number="1355" name="RefApplID" type="String" />
+    <field number="1394" name="MarketReportID" type="String" />
+    <field number="1396" name="MarketSegmentDesc" type="String" />
+    <field number="1409" name="SessionStatus" type="Int" />
+    <field number="20002" name="DaysToPwdExpiry" type="Int" />
+    <field number="28032" name="ExSessionStateNumber" type="Int" />
+  </fields>
+</fix>
