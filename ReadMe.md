@@ -21,7 +21,7 @@ This entire repository is source generated — including the words you are readi
 
 | Protocol Count | Generated Lines |
 | --- | --- |
-| 164 | 91,848 |
+| 165 | 92,366 |
 
 ## Open Markets Initiative
 
@@ -32,7 +32,7 @@ For a list of Omi projects: [Omi Projects](https://github.com/Open-Markets-Initi
 For details of Omi rules and regulations: [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory")
 ## Organizations
 
-> [24X][24X.Directory] · [A2X][A2X.Directory] · [Aquis][Aquis.Directory] · [Bist][Bist.Directory] · [Boats][Boats.Directory] · [Box][Box.Directory] · [Cboe][Cboe.Directory] · [Coinbase][Coinbase.Directory] · [ElectronX][ElectronX.Directory] · [Eurex][Eurex.Directory] · [Euronext][Euronext.Directory] · [Hkex][Hkex.Directory] · [Iex][Iex.Directory] · [Ltse][Ltse.Directory] · [Memx][Memx.Directory] · [Miax][Miax.Directory] · [Nasdaq][Nasdaq.Directory] · [Nyse][Nyse.Directory] · [Odx][Odx.Directory] · [OtcMarkets][OtcMarkets.Directory] · [Sgx][Sgx.Directory] · [Txse][Txse.Directory]
+> [24X][24X.Directory] · [A2X][A2X.Directory] · [Aquis][Aquis.Directory] · [Asx][Asx.Directory] · [Bist][Bist.Directory] · [Boats][Boats.Directory] · [Box][Box.Directory] · [Cboe][Cboe.Directory] · [Coinbase][Coinbase.Directory] · [ElectronX][ElectronX.Directory] · [Eurex][Eurex.Directory] · [Euronext][Euronext.Directory] · [Hkex][Hkex.Directory] · [Iex][Iex.Directory] · [Ltse][Ltse.Directory] · [Memx][Memx.Directory] · [Miax][Miax.Directory] · [Nasdaq][Nasdaq.Directory] · [Nyse][Nyse.Directory] · [Odx][Odx.Directory] · [OtcMarkets][OtcMarkets.Directory] · [Sgx][Sgx.Directory] · [Txse][Txse.Directory]
 
 ## Disclaimer
 
@@ -44,6 +44,7 @@ Enjoy.
 [24X.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/24X "24 National Exchange"
 [A2X.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/A2X "A2X Markets"
 [Aquis.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Aquis "Aquis Exchange"
+[Asx.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Asx "Australian Securities Exchange"
 [Bist.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Bist "Borsa İstanbul A.Ş."
 [Boats.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Boats "Blue Ocean Technologies"
 [Box.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Box ""
