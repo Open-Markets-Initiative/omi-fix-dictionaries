@@ -138,7 +138,7 @@
       <field name="PegPriceType" required="N" />
       <field name="DisplayQty" required="N" />
       <field name="PartyIDOrderOriginationFirm" required="N" />
-      <field name="SupplimentaryInfo" required="N" />
+      <field name="SupplementaryInfo" required="N" />
       <field name="CustomerInfo" required="N" />
       <field name="OptOutOfClearing" required="N" />
       <field name="CrossingKey" required="N" />
@@ -182,7 +182,7 @@
       <field name="PartyIDOrderOriginationFirm" required="N" />
       <field name="MinQty" required="N" />
       <field name="OrderRestrictions" required="N" />
-      <field name="SupplimentaryInfo" required="N" />
+      <field name="SupplementaryInfo" required="N" />
       <field name="Account" required="N" />
       <field name="CustomerInfo" required="N" />
       <field name="LastCapacity" required="N" />
@@ -221,7 +221,7 @@
       <field name="ExDestination" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="ExpireDate" required="N" />
-      <field name="SupplimentaryInfo" required="N" />
+      <field name="SupplementaryInfo" required="N" />
       <field name="Account" required="N" />
       <field name="CustomerInfo" required="N" />
       <field name="PartyIDOrderOriginationFirm" required="N" />
@@ -332,7 +332,7 @@
       <field name="AliasName" required="N" />
       <field name="TradeCondition" required="N" />
       <field name="PartyIDOrderOriginationFirm" required="N" />
-      <field name="SupplimentaryInfo" required="N" />
+      <field name="SupplementaryInfo" required="N" />
       <field name="CustomerInfo" required="N" />
     </message>
     <message name="Trade Capture Report Ack" msgtype="AR" msgcat="app">
@@ -501,7 +501,7 @@
     <field number="1464" name="TargetPartyRole" type="Int" />
     <field number="1607" name="SecurityRejectReason" type="Int" />
     <field number="20013" name="PartyIDOrderOriginationFirm" type="Boolean" />
-    <field number="24100" name="SupplimentaryInfo" type="String" />
+    <field number="24100" name="SupplementaryInfo" type="String" />
     <field number="24101" name="CustomerInfo" type="String" />
     <field number="24102" name="TradeReportInfo" type="String" />
     <field number="24103" name="BasisOfQuotationList" type="String" />
