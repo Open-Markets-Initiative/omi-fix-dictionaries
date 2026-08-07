@@ -5,6 +5,9 @@
 
 | Division | [Protocol][Omi.Asx.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Asx.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
+| [AsxDerivatives][AsxDerivatives.Exchange] | [DropCopy][Asx.AsxDerivatives.DropCopy] | [v1.1](Asx.AsxDerivatives.DropCopy.Fix.v1.1.xml) | 1/1/2023 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxDerivatives.DropCopy.Fix.v1.1.Pdf] |
+| [AsxDerivatives][AsxDerivatives.Exchange] | [MarketData][Asx.AsxDerivatives.MarketData] | [v2.02](Asx.AsxDerivatives.MarketData.Fix.v2.02.xml) | 1/1/2023 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxDerivatives.MarketData.Fix.v2.02.Pdf] |
+| [AsxDerivatives][AsxDerivatives.Exchange] | [OrderEntry][Asx.AsxDerivatives.OrderEntry] | [v2.05](Asx.AsxDerivatives.OrderEntry.Fix.v2.05.xml) | 1/1/2023 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxDerivatives.OrderEntry.Fix.v2.05.Pdf] |
 | [AsxSecurities][AsxSecurities.Exchange] | [DropCopy][Asx.AsxSecurities.DropCopy] | [v1.1](Asx.AsxSecurities.DropCopy.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxSecurities.DropCopy.Fix.v1.1.Pdf] |
 | [AsxSecurities][AsxSecurities.Exchange] | [OrderEntry][Asx.AsxSecurities.OrderEntry] | [v1.1](Asx.AsxSecurities.OrderEntry.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxSecurities.OrderEntry.Fix.v1.1.Pdf] |
 
@@ -21,8 +24,15 @@ Asx: [website](https://www.asx.com.au "Go to Australian Securities Exchange")
 [Omi.Asx.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Asx/Protocols "Asx Protocol Directory"
 [Omi.Asx.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Asx/Specifications "Asx Specifications Directory"
 [AsxSecurities.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Asx/Protocols/AsxSecurities "Asx AsxSecurities"
+[AsxDerivatives.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Asx/Protocols/AsxDerivatives "Asx AsxDerivatives"
 [Asx.AsxSecurities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Protocols/AsxSecurities/OrderEntry.md "Order Entry"
 [Asx.AsxSecurities.DropCopy]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Protocols/AsxSecurities/DropCopy.md "Drop Copy"
+[Asx.AsxDerivatives.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Protocols/AsxDerivatives/OrderEntry.md "Order Entry"
+[Asx.AsxDerivatives.DropCopy]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Protocols/AsxDerivatives/DropCopy.md "Drop Copy"
+[Asx.AsxDerivatives.MarketData]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Protocols/AsxDerivatives/MarketData.md "Market Data"
 
+[Asx.AsxDerivatives.DropCopy.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Specifications/Ntp/Asx.AsxDerivatives.DropCopy.Fix.v1.1.pdf "Australian Securities Exchange 1.1 Pdf"
+[Asx.AsxDerivatives.MarketData.Fix.v2.02.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Specifications/Ntp/Asx.AsxDerivatives.MarketData.Fix.v2.02.pdf "Australian Securities Exchange 2.02 Pdf"
+[Asx.AsxDerivatives.OrderEntry.Fix.v2.05.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Specifications/Ntp/Asx.AsxDerivatives.OrderEntry.Fix.v2.05.pdf "Australian Securities Exchange 2.05 Pdf"
 [Asx.AsxSecurities.DropCopy.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Specifications/Trade/Asx.AsxSecurities.DropCopy.Fix.v1.1.pdf "Australian Securities Exchange 1.1 Pdf"
 [Asx.AsxSecurities.OrderEntry.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Asx/Specifications/Trade/Asx.AsxSecurities.OrderEntry.Fix.v1.1.pdf "Australian Securities Exchange 1.1 Pdf"
