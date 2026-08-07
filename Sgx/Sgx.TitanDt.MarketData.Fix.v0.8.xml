@@ -118,7 +118,6 @@
       <field name="MDBookType" required="N" />
       <field name="MDSubBookType" required="N" />
       <group name="NoMDEntries" required="Y">
-        <field name="MDUpdateAction" required="N" />
         <field name="MDEntryType" required="Y" />
         <field name="MDSubBookType" required="N" />
         <field name="Symbol" required="N" />
@@ -136,7 +135,7 @@
       <field name="ApplLastSeqNum" required="N" />
       <field name="ApplResendFlag" required="N" />
       <field name="MDBookType" required="N" />
-      <group name="NoMDEntries" required="Y">
+      <group name="NoMDEntriesIncremental" required="Y">
         <field name="MDUpdateAction" required="N" />
         <field name="MDEntryType" required="Y" />
         <field name="MDSubBookType" required="N" />
@@ -177,7 +176,6 @@
       <field name="IDSource" required="N" />
       <field name="ExParentInstrument" required="N" />
       <group name="NoMDEntries" required="Y">
-        <field name="MDUpdateAction" required="N" />
         <field name="MDEntryType" required="Y" />
         <field name="MDSubBookType" required="N" />
         <field name="Symbol" required="N" />
