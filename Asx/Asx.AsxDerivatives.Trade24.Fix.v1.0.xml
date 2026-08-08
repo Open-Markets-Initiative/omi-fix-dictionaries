@@ -1,0 +1,340 @@
+<!--
+  Fix dictionary for: Asx Trade24 Fix v1.0
+
+  Protocol:
+    Organization: Australian Securities Exchange
+    Protocol: Trade24
+    Encoding: Financial Information eXchange
+    Version: 1.0
+    Date: 2023-01-01
+    Specification: asx-trade24-developer-guide-fix-spec
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The protocol compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  For full Omi information:
+    https://github.com/Open-Markets-Initiative/Directory
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="1" minor="0" servicepack="0" type="Trade24">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="HeartBtInt" required="Y" />
+      <field name="RawDataLength" required="N" />
+      <field name="RawData" required="N" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Test Request" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="Resend Request" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="User Message" msgtype="U" msgcat="app">
+      <field name="UserMsgCat" required="Y" />
+      <field name="ExDestination" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="Currency" required="N" />
+      <field name="FOBIndicator" required="N" />
+      <field name="Text" required="N" />
+      <field name="LastMessage" required="N" />
+      <field name="InstrmntIndicator" required="N" />
+      <field name="MonthYear" required="N" />
+      <field name="TickIncrement" required="N" />
+      <field name="UnderlyingFut" required="N" />
+      <field name="FractionalIndicator" required="N" />
+      <field name="ReferenceNo" required="N" />
+      <field name="FilterType" required="N" />
+      <field name="InterSpreadsFlag" required="N" />
+      <field name="InterSprdRatio" required="N" />
+      <field name="OptionsStrikeP" required="N" />
+      <field name="MarketStatus" required="N" />
+      <field name="SettlementPrice" required="N" />
+      <field name="Volatility" required="N" />
+      <field name="OpenPrice" required="N" />
+      <field name="ClosePrice" required="N" />
+      <field name="HighTradePrice" required="N" />
+      <field name="LowTradePrice" required="N" />
+      <field name="AskPrice" required="N" />
+      <field name="AskVolume" required="N" />
+      <field name="BidPrice" required="N" />
+      <field name="BidVolume" required="N" />
+      <field name="LastTradedPrice" required="N" />
+      <field name="LastTradedVolume" required="N" />
+      <field name="TotalTradedVolume" required="N" />
+      <field name="InterimSettlement" required="N" />
+      <field name="LastBuyer" required="N" />
+      <field name="LastSeller" required="N" />
+      <field name="ImpliedPrice25" required="N" />
+      <field name="UserMsgCatReq" required="N" />
+      <field name="SendMsgType" required="N" />
+      <field name="SendMsgUserID" required="N" />
+      <field name="SendMsgText" required="N" />
+      <field name="QuoteVolume" required="N" />
+      <field name="QuoteFirm" required="N" />
+    </message>
+    <message name="New Order Single" msgtype="D" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="Account" required="N" />
+      <field name="ExDestination" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="ProcessCode" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="SharedAccount" required="N" />
+      <field name="SharedOrderIndicator" required="N" />
+      <field name="Text" required="N" />
+      <field name="ExpireTime" required="N" />
+      <group name="NoLegs" required="N">
+        <field name="LegPrice" required="Y" />
+        <field name="LegVolumeRatio" required="N" />
+        <field name="LegSide" required="N" />
+      </group>
+    </message>
+    <message name="Order Cancel Replace Request" msgtype="G" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderID" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="Account" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="OrdType" required="N" />
+      <field name="ExpireTime" required="N" />
+      <field name="ProcessCode" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="Text" required="N" />
+      <field name="Price" required="N" />
+    </message>
+    <message name="Order Cancel Request" msgtype="F" msgcat="app">
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="CxlType" required="N" />
+      <field name="Account" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="Side" required="Y" />
+    </message>
+    <message name="Execution Report" msgtype="8" msgcat="app">
+      <field name="OrderID" required="Y" />
+      <field name="ExecID" required="Y" />
+      <field name="ClOrdID" required="N" />
+      <field name="ExecTransType" required="N" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OrdRejReason" required="N" />
+      <field name="Side" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="Account" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="OrdType" required="N" />
+      <field name="Price" required="N" />
+      <field name="LastShares" required="N" />
+      <field name="CumQty" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="Text" required="N" />
+      <field name="SharedTradeIndicator" required="N" />
+      <field name="UserMsgCat" required="N" />
+      <field name="ReferenceNo" required="N" />
+      <field name="FilterType" required="N" />
+      <field name="ExDestination" required="N" />
+      <field name="InterSpreadsFlag" required="N" />
+      <field name="Enable" required="N" />
+      <field name="InstrmntIndicator" required="N" />
+      <field name="MonthYear" required="N" />
+      <field name="OptionsStrikeP" required="N" />
+      <field name="ChangeStatusOf" required="N" />
+      <field name="MarketStatus" required="N" />
+      <field name="LowTradePrice" required="N" />
+      <field name="HighTradePrice" required="N" />
+      <field name="SettlementPrice" required="N" />
+      <field name="OpenPrice" required="N" />
+      <field name="ClosePrice" required="N" />
+      <field name="AskPrice" required="N" />
+      <field name="AskVolume" required="N" />
+      <field name="BidPrice" required="N" />
+      <field name="BidVolume" required="N" />
+      <field name="ImpliedPrice25" required="N" />
+      <field name="LastTradedPrice" required="N" />
+      <field name="LastTradedVolume" required="N" />
+      <field name="LastBuyer" required="N" />
+      <field name="LastSeller" required="N" />
+      <field name="TotalTradedVolume" required="N" />
+      <field name="Volatility" required="N" />
+      <field name="InterimSettlement" required="N" />
+      <field name="CustomVolume" required="N" />
+      <group name="NoLegs" required="N">
+        <field name="LegPrice" required="Y" />
+        <field name="LegVolumeRatio" required="N" />
+        <field name="LegSide" required="N" />
+      </group>
+      <group name="NoAskLevels" required="N">
+        <field name="AskFirm" required="Y" />
+        <field name="AskVol" required="N" />
+      </group>
+      <group name="NoBidLevels" required="N">
+        <field name="BidFirm" required="Y" />
+        <field name="BidVol" required="N" />
+      </group>
+    </message>
+    <message name="Order Cancel Reject" msgtype="9" msgcat="app">
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="CxlRejReason" required="N" />
+      <field name="Text" required="N" />
+      <field name="UserMsgCat" required="N" />
+      <field name="ReferenceNo" required="N" />
+      <field name="ExecID" required="N" />
+      <field name="Side" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="Account" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="String" />
+    <field number="7" name="BeginSeqNo" type="SeqNum" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="14" name="CumQty" type="Qty" />
+    <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="17" name="ExecID" type="String" />
+    <field number="18" name="ExecInst" type="MultipleValueString" />
+    <field number="20" name="ExecTransType" type="char" />
+    <field number="32" name="LastShares" type="Qty" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="36" name="NewSeqNo" type="SeqNum" />
+    <field number="37" name="OrderID" type="String" />
+    <field number="38" name="OrderQty" type="Qty" />
+    <field number="39" name="OrdStatus" type="char" />
+    <field number="40" name="OrdType" type="char" />
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="44" name="Price" type="Price" />
+    <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="54" name="Side" type="char">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+    </field>
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="81" name="ProcessCode" type="char" />
+    <field number="95" name="RawDataLength" type="Length" />
+    <field number="96" name="RawData" type="String" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="100" name="ExDestination" type="Exchange" />
+    <field number="102" name="CxlRejReason" type="Int" />
+    <field number="103" name="OrdRejReason" type="Int" />
+    <field number="108" name="HeartBtInt" type="Int" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
+    <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="125" name="CxlType" type="char" />
+    <field number="126" name="ExpireTime" type="UTCTimestamp" />
+    <field number="5001" name="UserMsgCat" type="Int" />
+    <field number="5002" name="InstrmntIndicator" type="char" />
+    <field number="5003" name="LastMessage" type="Boolean" />
+    <field number="5004" name="Currency" type="Currency" />
+    <field number="5005" name="TickIncrement" type="Price" />
+    <field number="5009" name="MonthYear" type="MonthYear" />
+    <field number="5010" name="UnderlyingFut" type="String" />
+    <field number="5011" name="LastTradedVolume" type="Qty" />
+    <field number="5012" name="ChangeStatusOf" type="char" />
+    <field number="5013" name="OptionsStrikeP" type="Price" />
+    <field number="5014" name="MarketStatus" type="char" />
+    <field number="5015" name="LowTradePrice" type="Price" />
+    <field number="5016" name="HighTradePrice" type="Price" />
+    <field number="5017" name="SettlementPrice" type="Price" />
+    <field number="5018" name="Volatility" type="float" />
+    <field number="5019" name="OpenPrice" type="Price" />
+    <field number="5020" name="ClosePrice" type="Price" />
+    <field number="5021" name="FOBIndicator" type="char" />
+    <field number="5022" name="AskPrice" type="Price" />
+    <field number="5023" name="AskVolume" type="Qty" />
+    <field number="5024" name="BidPrice" type="Price" />
+    <field number="5025" name="BidVolume" type="Qty" />
+    <field number="5026" name="LastTradedPrice" type="Price" />
+    <field number="5028" name="InterSprdRatio" type="float" />
+    <field number="5029" name="SharedOrderIndicator" type="char" />
+    <field number="5030" name="SharedAccount" type="String" />
+    <field number="5031" name="LastBuyer" type="String" />
+    <field number="5032" name="LastSeller" type="String" />
+    <field number="5033" name="FilterType" type="char" />
+    <field number="5034" name="InterSpreadsFlag" type="Boolean" />
+    <field number="5035" name="Enable" type="Boolean" />
+    <field number="5036" name="ReferenceNo" type="String" />
+    <field number="5037" name="CustomVolume" type="Qty" />
+    <field number="5038" name="NoLegs" type="NumInGroup" />
+    <field number="5039" name="LegPrice" type="Price" />
+    <field number="5040" name="LegVolumeRatio" type="float" />
+    <field number="5041" name="LegSide" type="char" />
+    <field number="5042" name="NoAskLevels" type="NumInGroup" />
+    <field number="5043" name="AskFirm" type="String" />
+    <field number="5044" name="AskVol" type="Qty" />
+    <field number="5045" name="NoBidLevels" type="NumInGroup" />
+    <field number="5046" name="BidFirm" type="String" />
+    <field number="5047" name="BidVol" type="Qty" />
+    <field number="5048" name="SendMsgType" type="char" />
+    <field number="5049" name="SendMsgUserID" type="String" />
+    <field number="5050" name="SendMsgText" type="String" />
+    <field number="5051" name="QuoteVolume" type="Qty" />
+    <field number="5052" name="QuoteFirm" type="String" />
+    <field number="5053" name="UserMsgCatReq" type="Int" />
+    <field number="5054" name="FractionalIndicator" type="char" />
+    <field number="5055" name="TotalTradedVolume" type="Qty" />
+    <field number="5056" name="InterimSettlement" type="Price" />
+    <field number="5057" name="ImpliedPrice25" type="Price" />
+    <field number="5059" name="SharedTradeIndicator" type="char" />
+  </fields>
+</fix>

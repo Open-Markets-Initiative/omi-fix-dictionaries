@@ -1,0 +1,208 @@
+<!--
+  Fix dictionary for: Asx SignalB Fix v1.0
+
+  Protocol:
+    Organization: Australian Securities Exchange
+    Protocol: Signal B
+    Encoding: Financial Information eXchange
+    Version: 1.0
+    Date: 2023-01-01
+    Specification: signal-b-fix-specification-manual
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The protocol compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  For full Omi information:
+    https://github.com/Open-Markets-Initiative/Directory
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="1" minor="0" servicepack="0" type="Signal B">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+    <field name="ApplVerID" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="HeartBtInt" required="Y" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="NextExpectedMsgSeqNum" required="N" />
+      <field name="Username" required="N" />
+      <field name="Password" required="N" />
+      <field name="NewPassword" required="N" />
+      <field name="SessionStatus" required="N" />
+      <field name="DefaultApplVerID" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Resend Request" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="SessionStatus" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Trade Capture Report Request" msgtype="AD" msgcat="app">
+      <field name="TradeRequestID" required="Y" />
+      <field name="TradeRequestType" required="Y" />
+      <group name="NoDates" required="N">
+        <field name="TradeDate" required="Y" />
+      </group>
+    </message>
+    <message name="Trade Capture Report Request Ack" msgtype="AQ" msgcat="app">
+      <field name="TradeRequestID" required="Y" />
+      <field name="TradeRequestType" required="Y" />
+      <field name="TradeRequestResult" required="N" />
+      <field name="TradeRequestStatus" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Trade Capture Report" msgtype="AE" msgcat="app">
+      <field name="TradeReportTransType" required="N" />
+      <field name="OrigTradeDate" required="N" />
+      <field name="TrdConditionCode" required="N" />
+      <field name="CorporateActionCode" required="N" />
+      <field name="TrdMatchID" required="N" />
+      <field name="TradeID" required="Y" />
+      <field name="TradeDate" required="Y" />
+      <field name="FutSettDate" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="LastShares" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="GrossTradeAmt" required="N" />
+      <field name="Currency" required="N" />
+      <field name="AsOfIndicator" required="N" />
+      <field name="SecurityType" required="N" />
+      <field name="SecuritySubType" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="CFICode" required="N" />
+      <field name="MarketID" required="N" />
+      <field name="Issuer" required="N" />
+      <group name="NoSides" required="Y">
+        <field name="Side" required="Y" />
+        <group name="NoPartyIDs" required="N">
+          <field name="PartyID" required="Y" />
+          <field name="PartyIDSource" required="N" />
+          <field name="PartyRole" required="N" />
+        </group>
+        <field name="Account" required="N" />
+        <field name="ClOrdID" required="N" />
+        <group name="NoClearingInstructions" required="N">
+          <field name="ClearingInstruction" required="Y" />
+        </group>
+      </group>
+    </message>
+    <message name="Business Message Reject" msgtype="j" msgcat="app">
+      <field name="RefSeqNum" required="N" />
+      <field name="RefMsgType" required="Y" />
+      <field name="BusinessRejectReason" required="Y" />
+      <field name="Text" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="String" />
+    <field number="7" name="BeginSeqNo" type="SeqNum" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="11" name="ClOrdID" type="String" />
+    <field number="15" name="Currency" type="Currency" />
+    <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="22" name="IDSource" type="String" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="32" name="LastShares" type="Qty" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="36" name="NewSeqNo" type="SeqNum" />
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="48" name="SecurityID" type="String" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="54" name="Side" type="char">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+    </field>
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="60" name="TransactTime" type="UTCTimestamp" />
+    <field number="64" name="FutSettDate" type="LocalMktDate" />
+    <field number="75" name="TradeDate" type="LocalMktDate" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="106" name="Issuer" type="String" />
+    <field number="108" name="HeartBtInt" type="Int" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
+    <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
+    <field number="167" name="SecurityType" type="String" />
+    <field number="372" name="RefMsgType" type="String" />
+    <field number="380" name="BusinessRejectReason" type="Int" />
+    <field number="381" name="GrossTradeAmt" type="Amt" />
+    <field number="447" name="PartyIDSource" type="char" />
+    <field number="448" name="PartyID" type="String" />
+    <field number="452" name="PartyRole" type="Int" />
+    <field number="453" name="NoPartyIDs" type="NumInGroup" />
+    <field number="461" name="CFICode" type="String" />
+    <field number="487" name="TradeReportTransType" type="Int" />
+    <field number="552" name="NoSides" type="NumInGroup" />
+    <field number="553" name="Username" type="String" />
+    <field number="554" name="Password" type="String" />
+    <field number="568" name="TradeRequestID" type="String" />
+    <field number="569" name="TradeRequestType" type="Int" />
+    <field number="576" name="NoClearingInstructions" type="NumInGroup" />
+    <field number="577" name="ClearingInstruction" type="Int" />
+    <field number="580" name="NoDates" type="NumInGroup" />
+    <field number="749" name="TradeRequestResult" type="Int" />
+    <field number="750" name="TradeRequestStatus" type="Int" />
+    <field number="762" name="SecuritySubType" type="String" />
+    <field number="789" name="NextExpectedMsgSeqNum" type="SeqNum" />
+    <field number="880" name="TrdMatchID" type="String" />
+    <field number="925" name="NewPassword" type="String" />
+    <field number="1003" name="TradeID" type="String" />
+    <field number="1015" name="AsOfIndicator" type="char" />
+    <field number="1125" name="OrigTradeDate" type="LocalMktDate" />
+    <field number="1128" name="ApplVerID" type="String" />
+    <field number="1137" name="DefaultApplVerID" type="String" />
+    <field number="1301" name="MarketID" type="String" />
+    <field number="1409" name="SessionStatus" type="Int" />
+    <field number="20003" name="TrdConditionCode" type="String" />
+    <field number="20007" name="CorporateActionCode" type="String" />
+  </fields>
+</fix>

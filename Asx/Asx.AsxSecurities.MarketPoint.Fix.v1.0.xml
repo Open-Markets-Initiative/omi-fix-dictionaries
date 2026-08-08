@@ -1,0 +1,244 @@
+<!--
+  Fix dictionary for: Asx MarketPoint Fix v1.0
+
+  Protocol:
+    Organization: Australian Securities Exchange
+    Protocol: Market Point
+    Encoding: Financial Information eXchange
+    Version: 1.0
+    Date: 2023-01-01
+    Specification: marketpoint_fix_implementation_manual
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The protocol compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  For full Omi information:
+    https://github.com/Open-Markets-Initiative/Directory
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="1" minor="0" servicepack="0" type="Market Point">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+    <field name="LastMsgSeqNumProcessed" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="Username" required="N" />
+      <field name="Password" required="N" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Test Request" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="Resend Request" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="User Request" msgtype="BE" msgcat="app">
+      <field name="UserRequestID" required="Y" />
+      <field name="UserRequestType" required="Y" />
+      <field name="Username" required="Y" />
+      <field name="Password" required="N" />
+      <field name="NewPassword" required="N" />
+    </message>
+    <message name="User Response" msgtype="BF" msgcat="app">
+      <field name="UserRequestID" required="Y" />
+      <field name="Username" required="Y" />
+      <field name="UserStatus" required="Y" />
+      <field name="UserStatusText" required="N" />
+      <field name="DaysTillPasswordExpiry" required="N" />
+    </message>
+    <message name="Market Data Request" msgtype="V" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <field name="SubscriptionRequestType" required="Y" />
+      <field name="MarketDepth" required="Y" />
+      <field name="MDUpdateType" required="N" />
+      <field name="AggregatedBook" required="N" />
+      <field name="UndisclosedQtyIndicator" required="N" />
+      <field name="MDQuoteType" required="N" />
+      <group name="NoMDEntryTypes" required="Y">
+        <field name="MDEntryType" required="Y" />
+      </group>
+      <group name="NoRelatedSym" required="Y">
+        <field name="Symbol" required="Y" />
+      </group>
+    </message>
+    <message name="Market Data Snapshot Full Refresh" msgtype="W" msgcat="app">
+      <field name="MDReqID" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="TotalVolumeTraded" required="N" />
+      <group name="NoMDEntries" required="Y">
+        <field name="MDEntryType" required="Y" />
+        <field name="MDEntryID" required="N" />
+        <field name="MDEntryPx" required="N" />
+        <field name="MDEntrySize" required="N" />
+        <field name="MDEntryPositionNo" required="N" />
+        <field name="NumberOfOrders" required="N" />
+        <field name="Symbol" required="N" />
+        <field name="UndisclosedQtyIndicator" required="N" />
+      </group>
+    </message>
+    <message name="Market Data Incremental Refresh" msgtype="X" msgcat="app">
+      <field name="MDReqID" required="N" />
+      <group name="NoMDEntries" required="Y">
+        <field name="MDEntryType" required="Y" />
+        <field name="MDEntryID" required="N" />
+        <field name="MDEntryPx" required="N" />
+        <field name="MDEntrySize" required="N" />
+        <field name="MDEntryPositionNo" required="N" />
+        <field name="NumberOfOrders" required="N" />
+        <field name="Symbol" required="N" />
+        <field name="UndisclosedQtyIndicator" required="N" />
+      </group>
+    </message>
+    <message name="Market Data Request Reject" msgtype="Y" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <field name="MDReqRejReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Security Status Request" msgtype="e" msgcat="app">
+      <field name="SecurityStatusReqID" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SubscriptionRequestType" required="N" />
+      <field name="MDQuoteType" required="N" />
+    </message>
+    <message name="Security Status" msgtype="f" msgcat="app">
+      <field name="SecurityStatusReqID" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityTradingStatus" required="N" />
+      <field name="CorporateAction" required="N" />
+      <field name="HighPx" required="N" />
+      <field name="LowPx" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="Trading Session Status Request" msgtype="g" msgcat="app">
+      <field name="TradSesReqID" required="Y" />
+      <field name="SubscriptionRequestType" required="N" />
+    </message>
+    <message name="Trading Session Status" msgtype="h" msgcat="app">
+      <field name="TradSesReqID" required="N" />
+      <field name="TradingSessionID" required="Y" />
+      <field name="TradSesMode" required="N" />
+      <field name="TradSesStatus" required="Y" />
+      <field name="UnsolicitedIndicator" required="N" />
+      <field name="Text" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="7" name="BeginSeqNo" type="SeqNum" />
+    <field number="8" name="BeginString" type="String" />
+    <field number="9" name="BodyLength" type="Length" />
+    <field number="10" name="CheckSum" type="String" />
+    <field number="16" name="EndSeqNo" type="SeqNum" />
+    <field number="31" name="LastPx" type="Price" />
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
+    <field number="36" name="NewSeqNo" type="SeqNum" />
+    <field number="43" name="PossDupFlag" type="Boolean" />
+    <field number="45" name="RefSeqNum" type="SeqNum" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
+    <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="58" name="Text" type="String" />
+    <field number="97" name="PossResend" type="Boolean" />
+    <field number="98" name="EncryptMethod" type="Int" />
+    <field number="108" name="HeartBtInt" type="Int" />
+    <field number="112" name="TestReqID" type="String" />
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
+    <field number="123" name="GapFillFlag" type="Boolean" />
+    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
+    <field number="146" name="NoRelatedSym" type="NumInGroup" />
+    <field number="262" name="MDReqID" type="String" />
+    <field number="263" name="SubscriptionRequestType" type="char">
+      <value enum="0" description="Snapshot" />
+      <value enum="1" description="Snapshot and Updates (Subscribe)" />
+      <value enum="2" description="Disable previous Snapshot and Updates (Unsubscribe)" />
+    </field>
+    <field number="264" name="MarketDepth" type="Int" />
+    <field number="265" name="MDUpdateType" type="Int" />
+    <field number="266" name="AggregatedBook" type="Boolean" />
+    <field number="267" name="NoMDEntryTypes" type="NumInGroup" />
+    <field number="268" name="NoMDEntries" type="NumInGroup" />
+    <field number="269" name="MDEntryType" type="char" />
+    <field number="270" name="MDEntryPx" type="Price" />
+    <field number="271" name="MDEntrySize" type="Qty" />
+    <field number="278" name="MDEntryID" type="String" />
+    <field number="281" name="MDReqRejReason" type="char" />
+    <field number="290" name="MDEntryPositionNo" type="Int" />
+    <field number="292" name="CorporateAction" type="MultipleValueString" />
+    <field number="324" name="SecurityStatusReqID" type="String" />
+    <field number="325" name="UnsolicitedIndicator" type="Boolean" />
+    <field number="326" name="SecurityTradingStatus" type="Int" />
+    <field number="332" name="HighPx" type="Price" />
+    <field number="333" name="LowPx" type="Price" />
+    <field number="335" name="TradSesReqID" type="String" />
+    <field number="336" name="TradingSessionID" type="String" />
+    <field number="339" name="TradSesMode" type="Int" />
+    <field number="340" name="TradSesStatus" type="Int" />
+    <field number="346" name="NumberOfOrders" type="Int" />
+    <field number="369" name="LastMsgSeqNumProcessed" type="SeqNum" />
+    <field number="371" name="RefTagID" type="Int" />
+    <field number="372" name="RefMsgType" type="String" />
+    <field number="373" name="SessionRejectReason" type="Int" />
+    <field number="387" name="TotalVolumeTraded" type="Qty" />
+    <field number="553" name="Username" type="String" />
+    <field number="554" name="Password" type="String" />
+    <field number="923" name="UserRequestID" type="String" />
+    <field number="924" name="UserRequestType" type="Int" />
+    <field number="925" name="NewPassword" type="String" />
+    <field number="926" name="UserStatus" type="Int" />
+    <field number="927" name="UserStatusText" type="String" />
+    <field number="1070" name="MDQuoteType" type="Int" />
+    <field number="7954" name="DaysTillPasswordExpiry" type="Int" />
+    <field number="7956" name="UndisclosedQtyIndicator" type="Boolean" />
+  </fields>
+</fix>
