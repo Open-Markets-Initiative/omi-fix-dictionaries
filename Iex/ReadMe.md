@@ -25,6 +25,6 @@ Iex: [website](https://www.iexexchange.io "Go to Investors Exchange")
 [Iex.IexEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Protocols/IexEquities/OrderEntry.md ""
 [Iex.IexOptions.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Protocols/IexOptions/OrderEntry.md "Order Entry"
 
-[Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Specifications/IexEquities/Iex.IexEquities.OrderEntry.Fix.v2.91.pdf "Investors Exchange 2.91 Pdf"
+[Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Specifications/IexEquities/OrderEntry/Iex.IexEquities.OrderEntry.Fix.v2.91.pdf "Investors Exchange 2.91 Pdf"
 [Iex.IexOptions.OrderEntry.Fix.v1.01.Url]: https://www.iexexchange.io/options "Investors Exchange 1.01 Url"
-[Iex.IexOptions.OrderEntry.Fix.v1.01.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Specifications/IexOptions/Iex.IexOptions.OrderEntry.Fix.v1.01.pdf "Investors Exchange 1.01 Pdf"
+[Iex.IexOptions.OrderEntry.Fix.v1.01.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Iex/Specifications/IexOptions/OrderEntry/Iex.IexOptions.OrderEntry.Fix.v1.01.pdf "Investors Exchange 1.01 Pdf"
