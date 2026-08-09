@@ -5,7 +5,7 @@
 
 | Division | [Protocol][Omi.Taifex.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Taifex.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [Derivatives][Derivatives.Exchange] | [OrderEntry][Taifex.Derivatives.OrderEntry] | [v3.1.2](Taifex.Derivatives.OrderEntry.Fix.v3.1.2.xml) | 1/1/2024 | [Active][Omi.Glossary.Status.Active] | [pdf][Taifex.Derivatives.OrderEntry.Fix.v3.1.2.Pdf] |
+| [TaifexDerivatives][TaifexDerivatives.Exchange] | [OrderEntry][Taifex.TaifexDerivatives.OrderEntry] | [v3.1.2](Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.xml) | 1/1/2024 | [Active][Omi.Glossary.Status.Active] | [pdf][Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.Pdf] |
 
 
 Taifex: [website](https://www.taifex.com.tw "Go to Taiwan Futures Exchange")
@@ -19,7 +19,7 @@ Taifex: [website](https://www.taifex.com.tw "Go to Taiwan Futures Exchange")
 [Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
 [Omi.Taifex.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Taifex/Protocols "Taifex Protocol Directory"
 [Omi.Taifex.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Taifex/Specifications "Taifex Specifications Directory"
-[Derivatives.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Taifex/Protocols/Derivatives "Taifex Derivatives"
-[Taifex.Derivatives.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Taifex/Protocols/Derivatives/OrderEntry.md "Order Entry"
+[TaifexDerivatives.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Taifex/Protocols/TaifexDerivatives "Taifex TaifexDerivatives"
+[Taifex.TaifexDerivatives.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Taifex/Protocols/TaifexDerivatives/OrderEntry.md "Order Entry"
 
-[Taifex.Derivatives.OrderEntry.Fix.v3.1.2.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Taifex/Specifications/Taifex.Derivatives.OrderEntry.Fix.v3.1.2.pdf "Taiwan Futures Exchange 3.1.2 Pdf"
+[Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Taifex/Specifications/Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.pdf "Taiwan Futures Exchange 3.1.2 Pdf"
