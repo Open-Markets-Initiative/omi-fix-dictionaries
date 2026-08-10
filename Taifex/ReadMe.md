@@ -22,4 +22,4 @@ Taifex: [website](https://www.taifex.com.tw "Go to Taiwan Futures Exchange")
 [TaifexDerivatives.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Taifex/Protocols/TaifexDerivatives "Taifex TaifexDerivatives"
 [Taifex.TaifexDerivatives.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Taifex/Protocols/TaifexDerivatives/OrderEntry.md "Order Entry"
 
-[Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Taifex/Specifications/Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.pdf "Taiwan Futures Exchange 3.1.2 Pdf"
+[Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Taifex/Specifications/FIX/Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.pdf "Taiwan Futures Exchange 3.1.2 Pdf"
