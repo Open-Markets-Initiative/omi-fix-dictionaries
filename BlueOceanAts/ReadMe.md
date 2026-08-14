@@ -7,6 +7,7 @@
 | --- | --- | --- | ---: | --- | --- |
 | [BlueEquities][BlueEquities.Ats] | [DropCopy][BlueOceanAts.BlueEquities.DropCopy] | [v1.13.1](BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.xml) | 5/7/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.Pdf] |
 | [BlueEquities][BlueEquities.Ats] | [OrderEntry][BlueOceanAts.BlueEquities.OrderEntry] | [v1.13](BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.Pdf] |
+| [BlueEquities][BlueEquities.Ats] | [TopOfBook][BlueOceanAts.BlueEquities.TopOfBook] | [v2.0.1](BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.Pdf] |
 
 
 BlueOceanAts: [website](https://blueocean-tech.io/ "Go to Blue Ocean Technologies")
@@ -23,6 +24,8 @@ BlueOceanAts: [website](https://blueocean-tech.io/ "Go to Blue Ocean Technologie
 [BlueEquities.Ats]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/BlueOceanAts/Protocols/BlueEquities "BlueOceanAts BlueEquities"
 [BlueOceanAts.BlueEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/BlueOceanAts/Protocols/BlueEquities/OrderEntry.md "Order Entry"
 [BlueOceanAts.BlueEquities.DropCopy]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/BlueOceanAts/Protocols/BlueEquities/DropCopy.md "Drop Copy"
+[BlueOceanAts.BlueEquities.TopOfBook]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/BlueOceanAts/Protocols/BlueEquities/TopOfBook.md "Top Of Book"
 
 [BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/BlueOceanAts/Specifications/BlueEquities/DropCopy/BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.pdf "Blue Ocean Technologies 1.13.1 Pdf"
 [BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/BlueOceanAts/Specifications/BlueEquities/OrderEntry/BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.pdf "Blue Ocean Technologies 1.13 Pdf"
+[BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/BlueOceanAts/Specifications/BlueEquities/TopOfBook/BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.pdf "Blue Ocean Technologies 2.0.1 Pdf"
