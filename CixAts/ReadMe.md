@@ -23,4 +23,4 @@ CixAts: [website](https://www.thecix.ca "Go to CIX Trading Inc.")
 [CixAts.CixAspen.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/CixAts/Protocols/CixAspen/OrderEntry.md "Order Entry"
 
 [CixAts.CixAspen.OrderEntry.Fix.v1.4.Url]: https://www.thecix.ca/company/resources "CIX Trading Inc. 1.4 Url"
-[CixAts.CixAspen.OrderEntry.Fix.v1.4.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/CixAts/Specifications/CixAts/OrderEntry/CIX%20ATS1%20FIX%204.2%20Order%20Entry%20Specification%20v1.4-2.pdf "CIX Trading Inc. 1.4 Pdf"
+[CixAts.CixAspen.OrderEntry.Fix.v1.4.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/CixAts/Specifications/CixAspen/OrderEntry/CixAts.CixAspen.OrderEntry.Fix.v1.4.pdf "CIX Trading Inc. 1.4 Pdf"
