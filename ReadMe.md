@@ -42,6 +42,15 @@ For details of Omi rules and regulations: [Omi Directory](https://github.com/Ope
 
 > [CixAts CixAspen][CixAspen.Platform] · [Euronext Optiq][Optiq.Platform] · [Eurex T7][T7.Platform] · [Sgx TitanDt][TitanDt.Platform] · [Sgx TitanOtc][TitanOtc.Platform]
 
+## Related Definitions
+
+The Open Markets Initiative provides protocol definitions in several formats:
+
+- [Kaitai Struct Definitions][Kaitai.Definitions.Repository] — cross language binary parsers with the kaitai struct compiler
+- [DFDL Definitions][Dfdl.Definitions.Repository] — declarative DFDL schemas for cross language parsing
+- [P4 Definitions][P4.Definitions.Repository] — P4 programs for software and hardware data planes
+- [Spicy Definitions][Spicy.Definitions.Repository] — declarative Spicy grammars for the spicy toolchain and the zeek network security monitor
+- [Xml Specifications][Xml.Specifications.Repository] — the universal xml binary specifications every Omi output compiles from
 ## Disclaimer
 
 Any similarities between existing people, places and/or protocols is purely incidental.
@@ -141,3 +150,9 @@ Enjoy.
 [TitanDt.Platform]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Sgx/Protocols/TitanDt "Sgx TitanDt"
 [TitanOtc.Platform]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Sgx/Protocols/TitanOtc "Sgx TitanOtc"
 [TxseEquities.Exchange]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Txse/Protocols/TxseEquities "Txse TxseEquities"
+
+[Kaitai.Definitions.Repository]: https://github.com/Open-Markets-Initiative/omi-kaitai-struct-definitions "Omi Kaitai Struct Definitions"
+[Dfdl.Definitions.Repository]: https://github.com/Open-Markets-Initiative/omi-dfdl-definitions "Omi DFDL Definitions"
+[P4.Definitions.Repository]: https://github.com/Open-Markets-Initiative/omi-p4-definitions "Omi P4 Definitions"
+[Spicy.Definitions.Repository]: https://github.com/Open-Markets-Initiative/omi-spicy-definitions "Omi Spicy Definitions"
+[Xml.Specifications.Repository]: https://github.com/Open-Markets-Initiative/omi-xml-specifications "Omi Xml Specifications"
