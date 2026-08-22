@@ -224,7 +224,9 @@
     <field number="1" name="Account" type="String" />
     <field number="6" name="AvgPx" type="Price" />
     <field number="7" name="BeginSeqNo" type="SeqNum" />
-    <field number="8" name="BeginString" type="String" />
+    <field number="8" name="BeginString" type="String">
+      <value enum="FIX.4.2" description="FIX 4.2" />
+    </field>
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />

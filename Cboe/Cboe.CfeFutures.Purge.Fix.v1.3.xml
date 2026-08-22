@@ -61,7 +61,6 @@
       <field name="Symbol" required="N" />
     </message>
     <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
-      <field name="SendingTime" required="N" />
       <field name="ExecTransType" required="N" />
       <field name="ExecType" required="N" />
       <field name="MassCancelID" required="N" />
@@ -76,7 +75,9 @@
   </messages>
   <components />
   <fields>
-    <field number="8" name="BeginString" type="String" />
+    <field number="8" name="BeginString" type="String">
+      <value enum="FIX.4.2" description="FIX 4.2" />
+    </field>
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="20" name="ExecTransType" type="char">

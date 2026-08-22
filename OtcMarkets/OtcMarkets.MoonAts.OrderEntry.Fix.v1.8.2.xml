@@ -50,7 +50,6 @@
   </trailer>
   <messages>
     <message name="New Order Single" msgtype="D" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
@@ -72,7 +71,6 @@
       <field name="Anonymous" required="N" />
     </message>
     <message name="Order Cancel Request" msgtype="F" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
@@ -93,7 +91,6 @@
       <field name="Anonymous" required="N" />
     </message>
     <message name="Order Cancel Replace Request" msgtype="G" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
       <field name="OrderID" required="N" />
@@ -107,7 +104,6 @@
       <field name="SymbolSfx" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="MaxFloor" required="N" />
-      <field name="OnBehalfOfSubID" required="N" />
       <field name="NoTradingSessions" required="N" />
       <field name="TradingSessionID" required="N" />
       <field name="LocateBroker" required="N" />
@@ -116,7 +112,6 @@
       <field name="Anonymous" required="N" />
     </message>
     <message name="Execution Report" msgtype="8" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="Account" required="N" />
       <field name="AvgPx" required="Y" />
       <field name="ClOrdID" required="Y" />
@@ -148,7 +143,6 @@
       <field name="ClosingPrice" required="N" />
     </message>
     <message name="Order Cancel Reject" msgtype="9" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="ClOrdID" required="N" />
       <field name="OrderID" required="Y" />
       <field name="OrdStatus" required="Y" />
@@ -163,7 +157,9 @@
   <fields>
     <field number="1" name="Account" type="String" />
     <field number="6" name="AvgPx" type="Price" />
-    <field number="8" name="BeginString" type="String" />
+    <field number="8" name="BeginString" type="String">
+      <value enum="FIX.4.2" description="FIX 4.2" />
+    </field>
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />

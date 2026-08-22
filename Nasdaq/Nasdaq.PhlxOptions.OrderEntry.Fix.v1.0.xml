@@ -318,7 +318,6 @@
       <field name="ExecRefID" required="N" />
     </message>
     <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
-      <field name="TargetSubID" required="Y" />
       <field name="OrderID" required="Y" />
       <field name="RequestType" required="Y" />
       <field name="Response" required="Y" />

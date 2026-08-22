@@ -48,11 +48,9 @@
   </trailer>
   <messages>
     <message name="Heartbeat" msgtype="0" msgcat="admin">
-      <field name="MsgType" required="Y" />
       <field name="TestReqID" required="N" />
     </message>
     <message name="Logon" msgtype="A" msgcat="admin">
-      <field name="MsgType" required="Y" />
       <field name="NextExpectedMsgSeqNum" required="Y" />
       <field name="Password" required="Y" />
       <field name="EncryptMethod" required="N" />
@@ -61,26 +59,21 @@
       <field name="DefaultApplVerID" required="N" />
     </message>
     <message name="Logout" msgtype="5" msgcat="admin">
-      <field name="MsgType" required="Y" />
       <field name="Text" required="N" />
     </message>
     <message name="Reject" msgtype="3" msgcat="admin">
-      <field name="MsgType" required="Y" />
       <field name="RefSeqNum" required="Y" />
       <field name="RefMsgType" required="N" />
       <field name="SessionRejectReason" required="N" />
     </message>
     <message name="Sequence Reset" msgtype="4" msgcat="admin">
-      <field name="MsgType" required="Y" />
       <field name="GapFillFlag" required="Y" />
       <field name="NewSeqNo" required="Y" />
     </message>
     <message name="Test Request" msgtype="1" msgcat="admin">
-      <field name="MsgType" required="Y" />
       <field name="TestReqID" required="Y" />
     </message>
     <message name="New Order Single" msgtype="D" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="OrdType" required="Y" />
       <field name="ClOrdID" required="Y" />
@@ -109,7 +102,6 @@
       <field name="ExpireTime" required="N" />
     </message>
     <message name="Order Cancel Request" msgtype="F" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
@@ -119,7 +111,6 @@
       <field name="OrderQty" required="N" />
     </message>
     <message name="Order Replace Request" msgtype="G" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
@@ -140,7 +131,6 @@
       <field name="DisplayQty" required="N" />
     </message>
     <message name="Order Mass Cancel Request" msgtype="q" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="MassCancelRequestType" required="Y" />
@@ -151,7 +141,6 @@
       <field name="ExcludeAuctionOrders" required="N" />
     </message>
     <message name="Execution Report" msgtype="8" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="ExecType" required="Y" />
       <field name="OrdStatus" required="Y" />
@@ -163,7 +152,6 @@
       <field name="ClientID" required="Y" />
       <field name="LeavesQty" required="Y" />
       <field name="CumQty" required="Y" />
-      <field name="OnBehalfOfCompID" required="N" />
       <field name="OrdType" required="Y" />
       <field name="OrderID" required="Y" />
       <field name="LocateReqd" required="Y" />
@@ -198,7 +186,6 @@
       <field name="TradeLiquidityIndicator" required="Y" />
     </message>
     <message name="Order Cancel Reject" msgtype="9" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="CxlRejResponseTo" required="Y" />
       <field name="OrdStatus" required="Y" />
@@ -206,7 +193,6 @@
       <field name="OrigClOrdID" required="Y" />
       <field name="OrderID" required="N" />
       <field name="CxlRejReason" required="Y" />
-      <field name="OnBehalfOfCompID" required="N" />
       <field name="Side" required="Y" />
       <field name="LocateReqd" required="Y" />
       <field name="LocateBroker" required="N" />
@@ -221,11 +207,9 @@
       <field name="DisplayQty" required="N" />
     </message>
     <message name="Order Mass Cancel Report" msgtype="r" msgcat="app">
-      <field name="MsgType" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="MassCancelResponse" required="Y" />
-      <field name="OnBehalfOfCompID" required="N" />
       <field name="MassActionReportID" required="Y" />
       <field name="MassCancelRequestType" required="Y" />
       <field name="ClientID" required="N" />

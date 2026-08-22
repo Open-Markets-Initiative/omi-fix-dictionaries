@@ -33,7 +33,7 @@
 -->
 <fix major="3" minor="51" servicepack="0" type="Purge">
   <header>
-    <field name="BeginString" required="N" />
+    <field name="BeginString" required="Y" />
     <field name="BodyLength" required="N" />
     <field name="MsgType" required="N" />
     <field name="MsgSeqNum" required="N" />
@@ -54,7 +54,6 @@
   </trailer>
   <messages>
     <message name="Purge Request" msgtype="F" msgcat="app">
-      <field name="PossResend" required="N" />
       <field name="TransactTime" required="N" />
       <field name="MassCancelInst" required="N" />
       <field name="MassCancelID" required="N" />
@@ -82,7 +81,10 @@
   </messages>
   <components />
   <fields>
-    <field number="8" name="BeginString" type="String" />
+    <field number="8" name="BeginString" type="String">
+      <value enum="FIX.4.2" description="FIX 4.2" />
+      <value enum="FIX.4.4" description="FIX 4.4" />
+    </field>
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="15" name="Currency" type="Currency" />

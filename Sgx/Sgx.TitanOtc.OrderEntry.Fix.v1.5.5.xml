@@ -478,7 +478,9 @@
   <components />
   <fields>
     <field number="1" name="Account" type="String" />
-    <field number="8" name="BeginString" type="String" />
+    <field number="8" name="BeginString" type="String">
+      <value enum="FIXT.1.1" description="FIXT 1.1" />
+    </field>
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />
@@ -559,7 +561,7 @@
     <field number="487" name="TradeReportTransType" type="Int" />
     <field number="523" name="PartySubID" type="String" />
     <field number="527" name="SecondaryExecID" type="String" />
-    <field number="530" name="MassCancelRequestType" type="char" />
+    <field number="530" name="MassCancelRequestType" type="Int" />
     <field number="531" name="MassCancelResponse" type="Int">
       <value enum="0" description="Cancel request rejected" />
     </field>

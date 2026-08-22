@@ -33,7 +33,7 @@
 -->
 <fix major="1" minor="12" servicepack="0" type="Order Entry">
   <header>
-    <field name="BeginString" required="N" />
+    <field name="BeginString" required="Y" />
     <field name="BodyLength" required="N" />
     <field name="MsgType" required="N" />
     <field name="SenderCompID" required="N" />
@@ -203,7 +203,9 @@
   <fields>
     <field number="6" name="AvgPx" type="Price" />
     <field number="7" name="BeginSeqNo" type="SeqNum" />
-    <field number="8" name="BeginString" type="String" />
+    <field number="8" name="BeginString" type="String">
+      <value enum="FIXT.1.1" description="FIXT 1.1" />
+    </field>
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />

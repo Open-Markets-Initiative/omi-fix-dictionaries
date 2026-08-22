@@ -48,11 +48,6 @@
   <trailer />
   <messages>
     <message name="Quote" msgtype="S" msgcat="app">
-      <field name="MsgType" required="Y" />
-      <field name="SenderCompID" required="Y" />
-      <field name="TargetCompID" required="Y" />
-      <field name="OnBehalfOfCompID" required="Y" />
-      <field name="OnBehalfOfSubID" required="Y" />
       <field name="MsgRefID" required="N" />
       <field name="UpdateType" required="Y" />
       <field name="Symbol" required="N" />
@@ -78,11 +73,6 @@
       <field name="AutoCancelEOD" required="N" />
     </message>
     <message name="Quote Cancel" msgtype="Z" msgcat="app">
-      <field name="MsgType" required="Y" />
-      <field name="SenderCompID" required="Y" />
-      <field name="TargetCompID" required="Y" />
-      <field name="OnBehalfOfCompID" required="Y" />
-      <field name="OnBehalfOfSubID" required="Y" />
       <field name="MsgRefID" required="N" />
       <field name="Symbol" required="N" />
       <field name="SymbolSfx" required="N" />
@@ -90,20 +80,10 @@
       <field name="IDSource" required="N" />
     </message>
     <message name="Trader State" msgtype="OT" msgcat="app">
-      <field name="MsgType" required="Y" />
-      <field name="SenderCompID" required="Y" />
-      <field name="TargetCompID" required="Y" />
-      <field name="OnBehalfOfCompID" required="Y" />
-      <field name="OnBehalfOfSubID" required="Y" />
       <field name="MsgRefID" required="N" />
       <field name="OpenCloseState" required="Y" />
     </message>
     <message name="Quote Acknowledgement" msgtype="b" msgcat="app">
-      <field name="MsgType" required="Y" />
-      <field name="SenderCompID" required="Y" />
-      <field name="TargetCompID" required="Y" />
-      <field name="DeliverToCompID" required="Y" />
-      <field name="DeliverToSubID" required="Y" />
       <field name="MsgRefID" required="Y" />
       <field name="Symbol" required="N" />
       <field name="SymbolSfx" required="N" />
@@ -113,11 +93,6 @@
       <field name="CATroutedQuoteID" required="N" />
     </message>
     <message name="Trader State Acknowledgement" msgtype="OTA" msgcat="app">
-      <field name="MsgType" required="Y" />
-      <field name="SenderCompID" required="Y" />
-      <field name="TargetCompID" required="Y" />
-      <field name="DeliverToCompID" required="Y" />
-      <field name="DeliverToSubID" required="Y" />
       <field name="MsgRefID" required="Y" />
       <field name="ResultCode" required="Y" />
       <field name="Text" required="Y" />

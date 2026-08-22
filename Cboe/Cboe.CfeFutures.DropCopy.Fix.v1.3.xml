@@ -54,7 +54,6 @@
   </trailer>
   <messages>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
-      <field name="SendingTime" required="N" />
       <field name="TradeDate" required="N" />
       <field name="ExecTransType" required="N" />
       <field name="ExecID" required="N" />

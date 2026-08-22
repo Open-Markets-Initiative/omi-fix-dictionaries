@@ -93,14 +93,6 @@
       <field name="LocateBroker" required="N" />
       <field name="LocateIdentifier" required="N" />
       <field name="PartyIDOrderOriginationFirm" required="N" />
-      <field name="BeginString" required="N" />
-      <field name="BodyLength" required="N" />
-      <field name="MsgType" required="N" />
-      <field name="SenderCompID" required="N" />
-      <field name="TargetCompID" required="N" />
-      <field name="MsgSeqNum" required="N" />
-      <field name="SendingTime" required="N" />
-      <field name="CheckSum" required="N" />
     </message>
     <message name="Order Cancel/Replace Request" msgtype="G" msgcat="app">
       <field name="Account" required="N" />

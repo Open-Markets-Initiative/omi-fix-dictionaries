@@ -25,6 +25,6 @@ Ltse: [website](https://ltse.com "Go to Long-Term Stock Exchange")
 [Ltse.LtseEquities.DropCopy]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Ltse/Protocols/LtseEquities/DropCopy.md "Drop Copy"
 
 [Ltse.LtseEquities.DropCopy.Fix.v1.12.Url]: https://ltse.com/membership/resources "Long-Term Stock Exchange 1.12 Url"
-[Ltse.LtseEquities.DropCopy.Fix.v1.12.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Ltse/Specifications/LtseEquities/DropCopy/Ltse.LtseEquities.DropCopy.Fix.v1.12.pdf "Long-Term Stock Exchange 1.12 Pdf"
+[Ltse.LtseEquities.DropCopy.Fix.v1.12.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Ltse/Specifications/Equities/DropCopy/Ltse.LtseEquities.DropCopy.Fix.v1.12.pdf "Long-Term Stock Exchange 1.12 Pdf"
 [Ltse.LtseEquities.OrderEntry.Fix.v1.12.Url]: https://ltse.com/membership/resources "Long-Term Stock Exchange 1.12 Url"
-[Ltse.LtseEquities.OrderEntry.Fix.v1.12.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Ltse/Specifications/LtseEquities/OrderEntry/Ltse.LtseEquities.OrderEntry.Fix.v1.12.pdf "Long-Term Stock Exchange 1.12 Pdf"
+[Ltse.LtseEquities.OrderEntry.Fix.v1.12.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Ltse/Specifications/Equities/OrderEntry/Ltse.LtseEquities.OrderEntry.Fix.v1.12.pdf "Long-Term Stock Exchange 1.12 Pdf"

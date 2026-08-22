@@ -220,7 +220,6 @@
       <field name="TrdRegPublicationReasons" required="N" />
       <field name="OrderAttributeTypes" required="N" />
       <field name="CrossingDuration" required="N" />
-      <field name="MsgType" required="N" />
       <field name="AquisOrderAttribute" required="Y" />
     </message>
     <message name="Order Cancel Reject" msgtype="9" msgcat="app">
@@ -238,7 +237,9 @@
     <field number="1" name="Account" type="String" />
     <field number="6" name="AvgPx" type="Price" />
     <field number="7" name="BeginSeqNo" type="SeqNum" />
-    <field number="8" name="BeginString" type="String" />
+    <field number="8" name="BeginString" type="String">
+      <value enum="FIX.4.2" description="FIX 4.2" />
+    </field>
     <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />

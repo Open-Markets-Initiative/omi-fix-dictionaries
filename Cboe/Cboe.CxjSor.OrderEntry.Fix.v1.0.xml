@@ -136,7 +136,7 @@
     <message name="News" msgtype="B" msgcat="app">
       <field name="Headline" required="Y" />
       <field name="LinesOfText" required="Y" />
-      <field name="TargetCompID" required="Y" />
+      <field name="Text" required="Y" />
     </message>
   </messages>
   <components />

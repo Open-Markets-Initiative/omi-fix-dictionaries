@@ -32,7 +32,19 @@
     https://openmarketsinitiative.com
 -->
 <fix major="1" minor="0" servicepack="0" type="Purge">
-  <header />
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="SenderSubID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="TargetSubID" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="SendingTime" required="Y" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
   <trailer>
     <field name="CheckSum" required="N" />
   </trailer>
@@ -71,6 +83,10 @@
   </messages>
   <components />
   <fields>
+    <field number="8" name="BeginString" type="String">
+      <value enum="FIX.4.2" description="FIX.4.2" />
+    </field>
+    <field number="9" name="BodyLength" type="Length" />
     <field number="10" name="CheckSum" type="String" />
     <field number="11" name="ClOrdID" type="String" />
     <field number="18" name="ExecInst" type="MultipleValueString">
@@ -82,6 +98,8 @@
       <value enum="3" description="Status. Used to provide peg suspensions (" />
       <value enum="1" description="Trade Cancel" />
     </field>
+    <field number="34" name="MsgSeqNum" type="SeqNum" />
+    <field number="35" name="MsgType" type="String" />
     <field number="37" name="OrderID" type="String" />
     <field number="38" name="OrderQty" type="Qty" />
     <field number="39" name="OrdStatus" type="char">
@@ -97,12 +115,18 @@
       <value enum="2" description="Limit" />
       <value enum="P" description="Peg" />
     </field>
+    <field number="43" name="PossDupFlag" type="Boolean" />
     <field number="44" name="Price" type="Price" />
+    <field number="49" name="SenderCompID" type="String" />
+    <field number="50" name="SenderSubID" type="String" />
+    <field number="52" name="SendingTime" type="UTCTimestamp" />
     <field number="54" name="Side" type="char">
       <value enum="1" description="Buy" />
       <value enum="5" description="Sell Short (client affirms ability to borrow)" />
     </field>
     <field number="55" name="Symbol" type="String" />
+    <field number="56" name="TargetCompID" type="String" />
+    <field number="57" name="TargetSubID" type="String" />
     <field number="58" name="Text" type="String">
       <value enum="A" description="Admin" />
       <value enum="D" description="Duplicate identifier (e.g., Cl Ord ID)" />
@@ -129,6 +153,7 @@
     </field>
     <field number="111" name="MaxFloor" type="Qty" />
     <field number="115" name="OnBehalfOfCompID" type="String" />
+    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
     <field number="126" name="ExpireTime" type="UTCTimestamp" />
     <field number="150" name="ExecType" type="char">
       <value enum="0" description="New (acknowledgement of new order)" />

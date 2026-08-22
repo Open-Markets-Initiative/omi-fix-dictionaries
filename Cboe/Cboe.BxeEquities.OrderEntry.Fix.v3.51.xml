@@ -54,7 +54,6 @@
   </trailer>
   <messages>
     <message name="New Order — Single" msgtype="D" msgcat="app">
-      <field name="PossResend" required="N" />
       <field name="Account" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="Currency" required="N" />
@@ -94,7 +93,6 @@
       </group>
     </message>
     <message name="Order Cancel Request" msgtype="F" msgcat="app">
-      <field name="PossResend" required="N" />
       <field name="Account" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="Currency" required="N" />
@@ -109,7 +107,6 @@
       <field name="SecurityExchange" required="N" />
     </message>
     <message name="Order Cancel/Replace Request" msgtype="G" msgcat="app">
-      <field name="PossResend" required="N" />
       <field name="Account" required="N" />
       <field name="ClOrdID" required="N" />
       <field name="Currency" required="N" />

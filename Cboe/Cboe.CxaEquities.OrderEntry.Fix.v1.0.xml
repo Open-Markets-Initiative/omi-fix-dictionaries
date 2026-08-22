@@ -252,7 +252,6 @@
       <field name="TradeHandlingInstr" required="N" />
       <field name="OffExchTradeReportType" required="N" />
       <field name="NoSides" required="N" />
-      <field name="MsgType" required="N" />
       <field name="TradeRptStatus" required="N" />
       <field name="TradeReportRefID" required="N" />
       <field name="TradeID" required="N" />
