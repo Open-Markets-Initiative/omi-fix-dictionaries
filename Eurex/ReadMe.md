@@ -5,9 +5,13 @@
 
 | Division | [Protocol][Omi.Eurex.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Eurex.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v14.1](Eurex.T7.CashOrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.T7.CashOrderEntry.Fix.v14.1.Url] - [pdf][Eurex.T7.CashOrderEntry.Fix.v14.1.Pdf] |
+| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v12.0](Eurex.T7.CashOrderEntry.Fix.v12.0.xml) | 8/25/2023 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Eurex.T7.CashOrderEntry.Fix.v12.0.Url] - [xml][Eurex.T7.CashOrderEntry.Fix.v12.0.Xml] |
+| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v14.0](Eurex.T7.CashOrderEntry.Fix.v14.0.xml) | 8/18/2025 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Eurex.T7.CashOrderEntry.Fix.v14.0.Url] - [xml][Eurex.T7.CashOrderEntry.Fix.v14.0.Xml] |
+| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v14.1](Eurex.T7.CashOrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.T7.CashOrderEntry.Fix.v14.1.Url] - [xml][Eurex.T7.CashOrderEntry.Fix.v14.1.Xml] |
 | [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v15.0](Eurex.T7.CashOrderEntry.Fix.v15.0.xml) | 7/31/2026 | [Pending][Omi.Glossary.Status.Pending] | [url][Eurex.T7.CashOrderEntry.Fix.v15.0.Url] - [pdf][Eurex.T7.CashOrderEntry.Fix.v15.0.Pdf] - [xml][Eurex.T7.CashOrderEntry.Fix.v15.0.Xml] |
-| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v14.1](Eurex.T7.OrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.T7.OrderEntry.Fix.v14.1.Url] - [pdf][Eurex.T7.OrderEntry.Fix.v14.1.Pdf] |
+| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v12.0](Eurex.T7.OrderEntry.Fix.v12.0.xml) | 8/25/2023 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Eurex.T7.OrderEntry.Fix.v12.0.Url] - [xml][Eurex.T7.OrderEntry.Fix.v12.0.Xml] |
+| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v14.0](Eurex.T7.OrderEntry.Fix.v14.0.xml) | 8/18/2025 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Eurex.T7.OrderEntry.Fix.v14.0.Url] - [xml][Eurex.T7.OrderEntry.Fix.v14.0.Xml] |
+| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v14.1](Eurex.T7.OrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.T7.OrderEntry.Fix.v14.1.Url] - [xml][Eurex.T7.OrderEntry.Fix.v14.1.Xml] |
 | [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v15.0](Eurex.T7.OrderEntry.Fix.v15.0.xml) | 7/31/2026 | [Pending][Omi.Glossary.Status.Pending] | [url][Eurex.T7.OrderEntry.Fix.v15.0.Url] - [pdf][Eurex.T7.OrderEntry.Fix.v15.0.Pdf] - [xml][Eurex.T7.OrderEntry.Fix.v15.0.Xml] |
 
 
@@ -26,13 +30,21 @@ Eurex: [website](https://www.eurex.com "Go to Eurex Exchange")
 [Eurex.T7.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Protocols/T7/OrderEntry.md "Order Entry"
 [Eurex.T7.CashOrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Protocols/T7/CashOrderEntry.md "Cash Order Entry"
 
+[Eurex.T7.CashOrderEntry.Fix.v12.0.Url]: https://www.eurex.com/ex-en/technology/t7 "Eurex Exchange 12.0 Url"
+[Eurex.T7.CashOrderEntry.Fix.v12.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/12.0/T7_R.12.0_FIX_LF_XSD_XML_representation_and_layouts_Version_1.zip "Eurex Exchange 12.0 Xml"
+[Eurex.T7.CashOrderEntry.Fix.v14.0.Url]: https://www.eurex.com/ex-en/technology/t7 "Eurex Exchange 14.0 Url"
+[Eurex.T7.CashOrderEntry.Fix.v14.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/14.0/T7_R.14.0_FIX_LF_Manual_Version_1.pdf "Eurex Exchange 14.0 Xml"
 [Eurex.T7.CashOrderEntry.Fix.v14.1.Url]: https://www.eurex.com/ex-en/support/initiatives "Eurex Exchange 14.1 Url"
-[Eurex.T7.CashOrderEntry.Fix.v14.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/14.1/Fix/T7_R.14.1_FIX_LF_Cash_Message_Reference_Version_1.pdf "Eurex Exchange 14.1 Pdf"
+[Eurex.T7.CashOrderEntry.Fix.v14.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/14.1/T7_R.14.1_FIX_LF_XSD_XML_representation_and_layouts_Version_1.zip "Eurex Exchange 14.1 Xml"
 [Eurex.T7.CashOrderEntry.Fix.v15.0.Url]: https://www.eurex.com/ex-en/support/initiatives/t7release15-0 "Eurex Exchange 15.0 Url"
 [Eurex.T7.CashOrderEntry.Fix.v15.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/15.0/T7_R.15.0_FIX_LF_Cash_Message_Reference_Version_1.pdf "Eurex Exchange 15.0 Pdf"
 [Eurex.T7.CashOrderEntry.Fix.v15.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/15.0/T7_R.15.0_FIX_LF_XSD_XML_representation_and_layouts_Version_1.zip "Eurex Exchange 15.0 Xml"
+[Eurex.T7.OrderEntry.Fix.v12.0.Url]: https://www.eurex.com/ex-en/technology/t7 "Eurex Exchange 12.0 Url"
+[Eurex.T7.OrderEntry.Fix.v12.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/12.0/T7_R.12.0_FIX_LF_XSD_XML_representation_and_layouts_Version_1.zip "Eurex Exchange 12.0 Xml"
+[Eurex.T7.OrderEntry.Fix.v14.0.Url]: https://www.eurex.com/ex-en/technology/t7 "Eurex Exchange 14.0 Url"
+[Eurex.T7.OrderEntry.Fix.v14.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/14.0/T7_R.14.0_FIX_LF_Manual_Version_1.pdf "Eurex Exchange 14.0 Xml"
 [Eurex.T7.OrderEntry.Fix.v14.1.Url]: https://www.eurex.com/ex-en/support/initiatives "Eurex Exchange 14.1 Url"
-[Eurex.T7.OrderEntry.Fix.v14.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/14.1/Fix/T7_R.14.1_FIX_LF_Derivatives_Message_Reference_Version_1.pdf "Eurex Exchange 14.1 Pdf"
+[Eurex.T7.OrderEntry.Fix.v14.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/14.1/T7_R.14.1_FIX_LF_XSD_XML_representation_and_layouts_Version_1.zip "Eurex Exchange 14.1 Xml"
 [Eurex.T7.OrderEntry.Fix.v15.0.Url]: https://www.eurex.com/ex-en/support/initiatives/t7release15-0 "Eurex Exchange 15.0 Url"
 [Eurex.T7.OrderEntry.Fix.v15.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/15.0/T7_R.15.0_FIX_LF_Derivatives_Message_Reference_Version_1.pdf "Eurex Exchange 15.0 Pdf"
 [Eurex.T7.OrderEntry.Fix.v15.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Eurex/Specifications/Eurex/15.0/T7_R.15.0_FIX_LF_XSD_XML_representation_and_layouts_Version_1.zip "Eurex Exchange 15.0 Xml"

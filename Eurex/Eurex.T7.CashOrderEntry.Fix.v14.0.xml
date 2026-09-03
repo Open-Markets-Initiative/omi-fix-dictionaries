@@ -1,12 +1,12 @@
 <!--
-  Fix dictionary for: Eurex CashOrderEntry Fix v14.1
+  Fix dictionary for: Eurex CashOrderEntry Fix v14.0
 
   Protocol:
     Organization: Eurex Exchange
     Protocol: Cash Order Entry
     Encoding: Financial Information eXchange
-    Version: 14.1
-    Date: 2026-02-19
+    Version: 14.0
+    Date: 2025-08-18
     Specification: Unknown
 
   Script:
@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="14" minor="1" servicepack="0" type="Cash Order Entry">
+<fix major="14" minor="0" servicepack="0" type="Cash Order Entry">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -92,7 +92,6 @@
       <field name="StopPx" required="N" />
       <field name="ExecType" required="Y" />
       <field name="LeavesQty" required="Y" />
-      <field name="BrokerInternalizationID" required="N" />
       <field name="TradingSessionID" required="N" />
       <field name="ExecRestatementReason" required="N" />
       <field name="ExpireDate" required="N" />
@@ -159,7 +158,6 @@
       <field name="TimeInForce" required="N" />
       <field name="StopPx" required="N" />
       <field name="QuoteID" required="N" />
-      <field name="BrokerInternalizationID" required="N" />
       <field name="ExpireDate" required="N" />
       <field name="OrderOrigination" required="N" />
       <field name="TradingCapacity" required="Y" />
@@ -190,7 +188,6 @@
       <field name="FreeText1" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="StopPx" required="N" />
-      <field name="BrokerInternalizationID" required="N" />
       <field name="ExpireDate" required="N" />
       <field name="OrderOrigination" required="N" />
       <field name="TradingCapacity" required="Y" />
@@ -822,7 +819,6 @@
       <value enum="205" description="MIDPOINT_ORDER_SWEEP" />
       <value enum="212" description="BOOK_OR_CANCEL_CANCELED" />
       <value enum="213" description="TRAILING_STOP_UPDATE" />
-      <value enum="231" description="INVALID_SMP_INSTRUCTION_ID" />
       <value enum="237" description="EXCEEDS_MAXIMUM_QUANTITY" />
       <value enum="238" description="INVALID_LIMIT_PRICE" />
       <value enum="241" description="USER_DOES_NOT_EXIST" />
@@ -929,14 +925,11 @@
       <value enum="12" description="AUTO_MATCH_AT_MID_POINT" />
       <value enum="14" description="CONTINUOUS_AUCTION" />
       <value enum="15" description="RETAIL" />
-      <value enum="16" description="AVD_BROKER_INTERNALIZATION" />
-      <value enum="17" description="AVD" />
     </field>
     <field number="576" name="NoClearingInstructions" type="NUMINGROUP" />
     <field number="577" name="ClearingInstruction" type="INT">
       <value enum="2" description="BILATERAL_NETTING_ONLY" />
       <value enum="13" description="SELF_CLEARING" />
-      <value enum="100" description="AVD_BROKER_INTERNALIZATION" />
     </field>
     <field number="625" name="TradingSessionSubID" type="INT">
       <value enum="2" description="OPENINGAUCTIONONLY" />
@@ -945,9 +938,6 @@
       <value enum="8" description="AUCTIONONLY" />
       <value enum="105" description="SPECIALAUCTION" />
       <value enum="106" description="MAINTRADINGHOURS" />
-      <value enum="107" description="AVD_OPENING_AUCTION" />
-      <value enum="108" description="AVD_INTRADAY_AUCTION" />
-      <value enum="109" description="AVD_CLOSING_AUCTION" />
     </field>
     <field number="802" name="NoPartySubIDs" type="INT" />
     <field number="803" name="PartySubIDType" type="INT">
@@ -1132,7 +1122,6 @@
     </field>
     <field number="1724" name="OrderOrigination" type="INT">
       <value enum="5" description="DIRECT_MARKET_ACCESS" />
-      <value enum="105" description="SPONSORED_ACCESS" />
     </field>
     <field number="1767" name="RiskLimitAction" type="INT" />
     <field number="1795" name="NoOrderEvents" type="NUMINGROUP" />
@@ -1224,7 +1213,6 @@
     <field number="25245" name="BBOSetting" type="INT">
       <value enum="1" description="YES" />
     </field>
-    <field number="25263" name="BrokerInternalizationID" type="STRING" />
     <field number="28610" name="MatchSubType" type="INT">
       <value enum="1" description="OPENING_AUCTION" />
       <value enum="2" description="CLOSING_AUCTION" />
@@ -1270,8 +1258,6 @@
       <value enum="3" description="MARKET_DATA_AND_DESIGNATED_SPONSOR" />
       <value enum="4" description="MARKET_MAKER_AND_DESIGNATED_SPONSOR" />
       <value enum="5" description="MARKET_DATA_AND_MARKET_MAKER_AND_DESIGNATED_SPONSOR" />
-      <value enum="6" description="SPECIALIST" />
-      <value enum="7" description="ISSUER" />
     </field>
     <field number="28763" name="DefaultCstmApplVerSubID" type="STRING">
       <value enum="C0001" description="Cash_0001" />
