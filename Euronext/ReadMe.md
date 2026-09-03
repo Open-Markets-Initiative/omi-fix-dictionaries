@@ -28,6 +28,7 @@
 | [Optiq][Optiq.Platform] | [OrderEntry][Euronext.Optiq.OrderEntry] | [v6.64](Euronext.Optiq.OrderEntry.Fix.v6.64.xml) | 2/25/2026 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Euronext.Optiq.OrderEntry.Fix.v6.64.Url] - [pdf][Euronext.Optiq.OrderEntry.Fix.v6.64.Pdf] |
 | [Optiq][Optiq.Platform] | [OrderEntry][Euronext.Optiq.OrderEntry] | [v6.65](Euronext.Optiq.OrderEntry.Fix.v6.65.xml) | 2/25/2026 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Euronext.Optiq.OrderEntry.Fix.v6.65.Url] - [pdf][Euronext.Optiq.OrderEntry.Fix.v6.65.Pdf] |
 | [Optiq][Optiq.Platform] | [OrderEntry][Euronext.Optiq.OrderEntry] | [v6.66](Euronext.Optiq.OrderEntry.Fix.v6.66.xml) | 2/25/2026 | [Active][Omi.Glossary.Status.Active] | [url][Euronext.Optiq.OrderEntry.Fix.v6.66.Url] - [pdf][Euronext.Optiq.OrderEntry.Fix.v6.66.Pdf] |
+| [Optiq][Optiq.Platform] | [OrderEntry][Euronext.Optiq.OrderEntry] | [v6.69](Euronext.Optiq.OrderEntry.Fix.v6.69.xml) | 8/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Euronext.Optiq.OrderEntry.Fix.v6.69.Url] - [pdf][Euronext.Optiq.OrderEntry.Fix.v6.69.Pdf] |
 
 
 Euronext: [website](https://www.euronext.com "Go to Euronext")
@@ -91,3 +92,5 @@ Euronext: [website](https://www.euronext.com "Go to Euronext")
 [Euronext.Optiq.OrderEntry.Fix.v6.65.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Euronext/Specifications/Optiq/v6/v6.65/Euronext.Optiq.OrderEntry.Fix.v6.65.pdf "Euronext 6.65 Pdf"
 [Euronext.Optiq.OrderEntry.Fix.v6.66.Url]: https://www.euronext.com/en/trade-on-exchange/optiq "Euronext 6.66 Url"
 [Euronext.Optiq.OrderEntry.Fix.v6.66.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Euronext/Specifications/Optiq/v6/v6.66/Euronext.Optiq.OrderEntry.Fix.v6.66.pdf "Euronext 6.66 Pdf"
+[Euronext.Optiq.OrderEntry.Fix.v6.69.Url]: https://connect2.euronext.com/en/membership/resources/it-documentation "Euronext 6.69 Url"
+[Euronext.Optiq.OrderEntry.Fix.v6.69.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Euronext/Specifications/OEG%20FIX/optiq-oeg-fix-50-messages-interface-specification-euronext-cash-and-derivatives-markets-external_42.pdf "Euronext 6.69 Pdf"
