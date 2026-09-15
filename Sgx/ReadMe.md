@@ -1,4 +1,4 @@
-[![Sgx](https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Sgx/Images/Logo.png)](https://www.sgx.com)
+[![Sgx](https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Images/Logo.png)](https://www.sgx.com)
 
 
 ## Singapore Exchange
@@ -13,20 +13,20 @@
 Sgx: [website](https://www.sgx.com "Go to Singapore Exchange")
 
 
-[Omi.Glossary.Status]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Protocol Deployment Status"
-[Omi.Glossary.Status.Active]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Protocol is in active production"
-[Omi.Glossary.Status.Deprecated]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Protocol is no longer in active use"
-[Omi.Glossary.Status.Pending]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Protocol is not yet deployed to an active production environment"
-[Omi.Glossary.Status.Unknown]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Protocol deployment status is unknown"
-[Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
-[Omi.Sgx.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Sgx/Protocols "Sgx Protocol Directory"
-[Omi.Sgx.Specifications]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Sgx/Specifications "Sgx Specifications Directory"
-[TitanOtc.Platform]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Sgx/Protocols/TitanOtc "Sgx TitanOtc"
-[TitanDt.Platform]: https://github.com/Open-Markets-Initiative/Directory/tree/main/Organizations/Sgx/Protocols/TitanDt "Sgx TitanDt"
-[Sgx.TitanOtc.OrderEntry]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Sgx/Protocols/TitanOtc/OrderEntry.md "Order Entry"
-[Sgx.TitanDt.MarketData]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Sgx/Protocols/TitanDt/MarketData.md "Market Data"
-[Sgx.TitanDt.ReferenceData]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Sgx/Protocols/TitanDt/ReferenceData.md "Reference Data"
+[Omi.Glossary.Status]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Protocol Deployment Status"
+[Omi.Glossary.Status.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is in active production"
+[Omi.Glossary.Status.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is no longer in active use"
+[Omi.Glossary.Status.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is not yet deployed to an active production environment"
+[Omi.Glossary.Status.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol deployment status is unknown"
+[Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
+[Omi.Sgx.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Sgx/Protocols "Sgx Protocol Directory"
+[Omi.Sgx.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Sgx/Specifications "Sgx Specifications Directory"
+[TitanOtc.Platform]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Sgx/Protocols/TitanOtc "Sgx TitanOtc"
+[TitanDt.Platform]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Sgx/Protocols/TitanDt "Sgx TitanDt"
+[Sgx.TitanOtc.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Protocols/TitanOtc/OrderEntry.md "Order Entry"
+[Sgx.TitanDt.MarketData]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Protocols/TitanDt/MarketData.md "Market Data"
+[Sgx.TitanDt.ReferenceData]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Protocols/TitanDt/ReferenceData.md "Reference Data"
 
-[Sgx.TitanDt.MarketData.Fix.v0.8.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Sgx/Specifications/TitanDt/Sgx.TitanDt.MarketData.Fix.v0.8.pdf "Singapore Exchange 0.8 Pdf"
-[Sgx.TitanDt.ReferenceData.Fix.v0.8.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Sgx/Specifications/TitanDt/Sgx.TitanDt.ReferenceData.Fix.v0.8.pdf "Singapore Exchange 0.8 Pdf"
-[Sgx.TitanOtc.OrderEntry.Fix.v1.5.5.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/main/Organizations/Sgx/Specifications/TitanOtc/Sgx.TitanOtc.OrderEntry.Fix.v1.5.5.pdf "Singapore Exchange 1.5.5 Pdf"
+[Sgx.TitanDt.MarketData.Fix.v0.8.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Specifications/TitanDt/Sgx.TitanDt.MarketData.Fix.v0.8.pdf "Singapore Exchange 0.8 Pdf"
+[Sgx.TitanDt.ReferenceData.Fix.v0.8.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Specifications/TitanDt/Sgx.TitanDt.ReferenceData.Fix.v0.8.pdf "Singapore Exchange 0.8 Pdf"
+[Sgx.TitanOtc.OrderEntry.Fix.v1.5.5.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Specifications/TitanOtc/Sgx.TitanOtc.OrderEntry.Fix.v1.5.5.pdf "Singapore Exchange 1.5.5 Pdf"
