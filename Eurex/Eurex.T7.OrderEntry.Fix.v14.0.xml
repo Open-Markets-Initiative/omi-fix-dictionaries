@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="14" minor="0" servicepack="0" type="Order Entry">
+<fix major="4" minor="4" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />

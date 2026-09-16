@@ -21,7 +21,7 @@ This entire repository is source generated — including the words you are readi
 
 | Protocol Count | Generated Lines |
 | --- | --- |
-| 188 | 108,894 |
+| 188 | 108,812 |
 
 ## Open Markets Initiative
 
@@ -50,6 +50,7 @@ The Open Markets Initiative provides protocol definitions in several formats:
 - [DFDL Definitions][Dfdl.Definitions.Repository] — declarative DFDL schemas for cross language parsing
 - [P4 Definitions][P4.Definitions.Repository] — P4 programs for software and hardware data planes
 - [Spicy Definitions][Spicy.Definitions.Repository] — declarative Spicy grammars for the spicy toolchain and the zeek network security monitor
+- [Lean Definitions][Lean.Definitions.Repository] — Lean 4 definitions with machine checked encode and decode proofs
 - [Xml Specifications][Xml.Specifications.Repository] — the exchange protocol specification xmls, matching the original files
 ## Disclaimer
 
@@ -160,4 +161,5 @@ Enjoy.
 [Dfdl.Definitions.Repository]: https://github.com/Open-Markets-Initiative/omi-dfdl-definitions "Omi DFDL Definitions"
 [P4.Definitions.Repository]: https://github.com/Open-Markets-Initiative/omi-p4-definitions "Omi P4 Definitions"
 [Spicy.Definitions.Repository]: https://github.com/Open-Markets-Initiative/omi-spicy-definitions "Omi Spicy Definitions"
+[Lean.Definitions.Repository]: https://github.com/Open-Markets-Initiative/omi-lean-definitions "Omi Lean Definitions"
 [Xml.Specifications.Repository]: https://github.com/Open-Markets-Initiative/omi-xml-specifications "Omi Xml Specifications"

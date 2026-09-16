@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="3" minor="1" servicepack="0" type="Order Entry">
+<fix major="4" minor="4" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -63,10 +63,10 @@
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
     </message>
-    <message name="Test Request" msgtype="1" msgcat="admin">
+    <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
     </message>
-    <message name="Resend Request" msgtype="2" msgcat="admin">
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
       <field name="BeginSeqNo" required="Y" />
       <field name="EndSeqNo" required="Y" />
     </message>
@@ -77,17 +77,11 @@
       <field name="SessionRejectReason" required="N" />
       <field name="Text" required="N" />
     </message>
-    <message name="Sequence Reset Gap Fill" msgtype="4" msgcat="admin">
+    <message name="SequenceResetGapFill" msgtype="4" msgcat="admin">
       <field name="NewSeqNo" required="Y" />
       <field name="GapFillFlag" required="N" />
     </message>
-    <message name="Business Message Reject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="N" />
-      <field name="RefMsgType" required="Y" />
-      <field name="BusinessRejectReason" required="Y" />
-      <field name="Text" required="N" />
-    </message>
-    <message name="New Order Single" msgtype="D" msgcat="app">
+    <message name="NewOrderSingle" msgtype="D" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
@@ -109,7 +103,7 @@
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
     </message>
-    <message name="New Order Multi-leg" msgtype="AB" msgcat="app">
+    <message name="NewOrderMulti-leg" msgtype="AB" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
@@ -136,7 +130,7 @@
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
     </message>
-    <message name="Order Cancel Request" msgtype="F" msgcat="app">
+    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
       <field name="OrigClOrdID" required="Y" />
       <field name="ClOrdID" required="Y" />
       <group name="NoPartyIDs" required="Y">
@@ -152,7 +146,7 @@
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
     </message>
-    <message name="Order Cancel Replace Request" msgtype="G" msgcat="app">
+    <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="OrigClOrdID" required="Y" />
       <field name="ClOrdID" required="Y" />
       <group name="NoPartyIDs" required="Y">
@@ -174,7 +168,7 @@
       <field name="TaifexInfoSource" required="N" />
       <field name="TaifexExecType" required="Y" />
     </message>
-    <message name="Multi-leg Order Cancel Replace Request" msgtype="AC" msgcat="app">
+    <message name="Multi-legOrderCancelReplaceRequest" msgtype="AC" msgcat="app">
       <field name="OrigClOrdID" required="Y" />
       <field name="ClOrdID" required="Y" />
       <group name="NoPartyIDs" required="Y">
@@ -201,7 +195,7 @@
       <field name="TaifexInfoSource" required="N" />
       <field name="TaifexExecType" required="Y" />
     </message>
-    <message name="Order Status Request" msgtype="H" msgcat="app">
+    <message name="OrderStatusRequest" msgtype="H" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
@@ -210,57 +204,7 @@
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
-      <field name="OrderID" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="N">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
-      </group>
-      <field name="ExecID" required="Y" />
-      <field name="ExecType" required="Y" />
-      <field name="OrigClOrdID" required="N" />
-      <field name="Account" required="N" />
-      <field name="OrdStatus" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="OrdType" required="N" />
-      <field name="OrderQty" required="N" />
-      <field name="LeavesQty" required="Y" />
-      <field name="CumQty" required="Y" />
-      <field name="AvgPx" required="Y" />
-      <field name="Price" required="N" />
-      <field name="PositionEffect" required="N" />
-      <field name="Text" required="N" />
-      <field name="LastShares" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="TransactTime" required="N" />
-      <field name="TimeInForce" required="N" />
-      <group name="NoLegsExecution" required="N">
-        <field name="LegSymbol" required="Y" />
-        <field name="LegCFICode" required="Y" />
-        <field name="LegMaturityMonthYear" required="Y" />
-        <field name="LegSide" required="Y" />
-        <field name="LegLastPx" required="Y" />
-        <field name="LegQty" required="Y" />
-      </group>
-      <field name="ExecTransType" required="Y" />
-      <field name="CFICode" required="N" />
-      <field name="TaifexSymbolType" required="Y" />
-      <field name="TaifexPartID" required="N" />
-    </message>
-    <message name="Order Cancel Reject" msgtype="9" msgcat="app">
-      <field name="OrderID" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="OrdStatus" required="Y" />
-      <field name="CxlRejResponseTo" required="Y" />
-      <field name="ExecID" required="N" />
-      <field name="Text" required="N" />
-      <field name="TaifexPartID" required="N" />
-    </message>
-    <message name="Quote Request" msgtype="R" msgcat="app">
+    <message name="QuoteRequest" msgtype="R" msgcat="app">
       <field name="QuoteReqID" required="Y" />
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
@@ -269,21 +213,6 @@
       </group>
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
-    </message>
-    <message name="Quote Request Report" msgtype="U080" msgcat="app">
-      <field name="QuoteReqID" required="Y" />
-      <field name="TaifexPartID" required="N" />
-    </message>
-    <message name="Quote Request Reject" msgtype="AG" msgcat="app">
-      <field name="QuoteReqID" required="Y" />
-      <field name="QuoteRequestRejectReason" required="Y" />
-      <group name="NoRelatedSym" required="Y">
-        <field name="Symbol" required="Y" />
-        <field name="CFICode" required="Y" />
-        <field name="TaifexSymbolType" required="Y" />
-      </group>
-      <field name="Text" required="N" />
-      <field name="TaifexPartID" required="N" />
     </message>
     <message name="Quote" msgtype="S" msgcat="app">
       <field name="QuoteID" required="Y" />
@@ -307,7 +236,7 @@
       <field name="TaifexInfoSource" required="Y" />
       <field name="TaifexExecType" required="Y" />
     </message>
-    <message name="Quote Cancel" msgtype="Z" msgcat="app">
+    <message name="QuoteCancel" msgtype="Z" msgcat="app">
       <field name="QuoteID" required="Y" />
       <field name="QuoteCancelType" required="Y" />
       <group name="NoPartyIDs" required="Y">
@@ -325,7 +254,7 @@
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="Y" />
     </message>
-    <message name="Quote Status Request" msgtype="a" msgcat="app">
+    <message name="QuoteStatusRequest" msgtype="a" msgcat="app">
       <field name="QuoteID" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="CFICode" required="Y" />
@@ -333,7 +262,103 @@
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
     </message>
-    <message name="Quote Status Report" msgtype="AI" msgcat="app">
+    <message name="TradingSessionStatusRequest" msgtype="g" msgcat="app">
+      <field name="TradSesReqID" required="Y" />
+      <field name="SubscriptionRequestType" required="Y" />
+      <field name="TradingSessionID" required="Y" />
+    </message>
+    <message name="Email" msgtype="C" msgcat="app">
+      <field name="EmailThreadID" required="Y" />
+      <field name="EmailType" required="Y" />
+      <field name="OrigTime" required="Y" />
+      <field name="Subject" required="Y" />
+      <group name="LinesOfText" required="Y">
+        <field name="Text" required="Y" />
+      </group>
+    </message>
+    <message name="SecurityDefinitionRequest" msgtype="c" msgcat="app">
+      <field name="SecurityReqID" required="Y" />
+      <field name="SecurityRequestType" required="Y" />
+      <field name="Account" required="Y" />
+      <group name="NoLegsDefinition" required="Y">
+        <field name="LegSymbol" required="Y" />
+        <field name="LegCFICode" required="Y" />
+        <field name="LegMaturityDate" required="Y" />
+        <field name="LegStrikePrice" required="Y" />
+      </group>
+    </message>
+    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
+      <field name="RefSeqNum" required="N" />
+      <field name="RefMsgType" required="Y" />
+      <field name="BusinessRejectReason" required="Y" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <group name="NoPartyIDs" required="N">
+        <field name="PartyID" required="Y" />
+        <field name="PartyIDSource" required="Y" />
+        <field name="PartyRole" required="Y" />
+      </group>
+      <field name="ExecID" required="Y" />
+      <field name="ExecType" required="Y" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Account" required="N" />
+      <field name="OrdStatus" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrdType" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="LeavesQty" required="Y" />
+      <field name="CumQty" required="Y" />
+      <field name="AvgPx" required="Y" />
+      <field name="Price" required="N" />
+      <field name="PositionEffect" required="N" />
+      <field name="Text" required="N" />
+      <field name="LastQty" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="TimeInForce" required="N" />
+      <group name="NoLegsExecution" required="N">
+        <field name="LegSymbol" required="Y" />
+        <field name="LegCFICode" required="Y" />
+        <field name="LegMaturityMonthYear" required="Y" />
+        <field name="LegSide" required="Y" />
+        <field name="LegLastPx" required="Y" />
+        <field name="LegQty" required="Y" />
+      </group>
+      <field name="ExecTransType" required="Y" />
+      <field name="CFICode" required="N" />
+      <field name="TaifexSymbolType" required="Y" />
+      <field name="TaifexPartID" required="N" />
+    </message>
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
+      <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="CxlRejResponseTo" required="Y" />
+      <field name="ExecID" required="N" />
+      <field name="Text" required="N" />
+      <field name="TaifexPartID" required="N" />
+    </message>
+    <message name="QuoteRequestReport" msgtype="U080" msgcat="app">
+      <field name="QuoteReqID" required="Y" />
+      <field name="TaifexPartID" required="N" />
+    </message>
+    <message name="QuoteRequestReject" msgtype="AG" msgcat="app">
+      <field name="QuoteReqID" required="Y" />
+      <field name="QuoteRequestRejectReason" required="Y" />
+      <group name="NoRelatedSym" required="Y">
+        <field name="Symbol" required="Y" />
+        <field name="CFICode" required="Y" />
+        <field name="TaifexSymbolType" required="Y" />
+      </group>
+      <field name="Text" required="N" />
+      <field name="TaifexPartID" required="N" />
+    </message>
+    <message name="QuoteStatusReport" msgtype="AI" msgcat="app">
       <field name="QuoteID" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="BidPx" required="Y" />
@@ -346,38 +371,13 @@
       <field name="TaifexSymbolType" required="Y" />
       <field name="TaifexPartID" required="N" />
     </message>
-    <message name="Trading Session Status Request" msgtype="g" msgcat="app">
-      <field name="TradSesReqID" required="Y" />
-      <field name="SubscriptionRequestType" required="Y" />
-      <field name="TradingSessionID" required="Y" />
-    </message>
-    <message name="Trading Session Status" msgtype="h" msgcat="app">
+    <message name="TradingSessionStatus" msgtype="h" msgcat="app">
       <field name="TradSesReqID" required="Y" />
       <field name="TradSesStatus" required="Y" />
       <field name="TradingSessionID" required="Y" />
       <field name="Text" required="N" />
     </message>
-    <message name="Email" msgtype="C" msgcat="app">
-      <field name="EmailThreadID" required="Y" />
-      <field name="EmailType" required="Y" />
-      <field name="OrigTime" required="Y" />
-      <field name="Subject" required="Y" />
-      <group name="LinesOfText" required="Y">
-        <field name="Text" required="Y" />
-      </group>
-    </message>
-    <message name="Security Definition Request" msgtype="c" msgcat="app">
-      <field name="SecurityReqID" required="Y" />
-      <field name="SecurityRequestType" required="Y" />
-      <field name="Account" required="Y" />
-      <group name="NoLegsDefinition" required="Y">
-        <field name="LegSymbol" required="Y" />
-        <field name="LegCFICode" required="Y" />
-        <field name="LegMaturityDate" required="Y" />
-        <field name="LegStrikePrice" required="Y" />
-      </group>
-    </message>
-    <message name="Security Definition" msgtype="d" msgcat="app">
+    <message name="SecurityDefinition" msgtype="d" msgcat="app">
       <field name="SecurityReqID" required="Y" />
       <field name="SecurityResponseType" required="Y" />
       <field name="Text" required="N" />
@@ -385,69 +385,66 @@
   </messages>
   <components />
   <fields>
-    <field number="1" name="Account" type="String" />
-    <field number="6" name="AvgPx" type="Price" />
-    <field number="7" name="BeginSeqNo" type="SeqNum" />
-    <field number="8" name="BeginString" type="String">
-      <value enum="FIX.4.2" description="FIX 4.2" />
-      <value enum="FIX.4.4" description="FIX 4.4" />
-    </field>
-    <field number="9" name="BodyLength" type="Length" />
-    <field number="10" name="CheckSum" type="String" />
-    <field number="11" name="ClOrdID" type="String" />
-    <field number="14" name="CumQty" type="Qty" />
-    <field number="16" name="EndSeqNo" type="SeqNum" />
-    <field number="17" name="ExecID" type="String" />
-    <field number="20" name="ExecTransType" type="Char">
+    <field number="1" name="Account" type="STRING" />
+    <field number="6" name="AvgPx" type="PRICE" />
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="3" description="Status" />
     </field>
-    <field number="21" name="HandlInst" type="Char">
+    <field number="21" name="HandlInst" type="CHAR">
       <value enum="1" description="Automated execution order" />
     </field>
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
-    <field number="33" name="LinesOfText" type="NumInGroup" />
-    <field number="34" name="MsgSeqNum" type="SeqNum" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="36" name="NewSeqNo" type="SeqNum" />
-    <field number="37" name="OrderID" type="String" />
-    <field number="38" name="OrderQty" type="Qty" />
-    <field number="39" name="OrdStatus" type="Char">
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastQty" type="QTY" />
+    <field number="33" name="LinesOfText" type="NUMINGROUP" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Partially filled" />
       <value enum="2" description="Filled" />
       <value enum="4" description="Canceled" />
       <value enum="8" description="Rejected" />
     </field>
-    <field number="40" name="OrdType" type="Char">
+    <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
       <value enum="3" description="Market with protection" />
     </field>
-    <field number="41" name="OrigClOrdID" type="String" />
-    <field number="42" name="OrigTime" type="UTCTimestamp" />
-    <field number="43" name="PossDupFlag" type="Boolean" />
-    <field number="44" name="Price" type="Price" />
-    <field number="45" name="RefSeqNum" type="SeqNum" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="50" name="SenderSubID" type="String" />
-    <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="54" name="Side" type="Char">
+    <field number="41" name="OrigClOrdID" type="STRING" />
+    <field number="42" name="OrigTime" type="UTCTIMESTAMP" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="44" name="Price" type="PRICE" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="50" name="SenderSubID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
     </field>
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="57" name="TargetSubID" type="String" />
-    <field number="58" name="Text" type="String" />
-    <field number="59" name="TimeInForce" type="Char">
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="57" name="TargetSubID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="Day, rest of day" />
       <value enum="3" description="Immediate or cancel" />
       <value enum="4" description="Fill or kill" />
     </field>
-    <field number="60" name="TransactTime" type="UTCTimestamp" />
-    <field number="77" name="PositionEffect" type="Char">
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="77" name="PositionEffect" type="CHAR">
       <value enum="O" description="Open" />
       <value enum="C" description="Close" />
       <value enum="D" description="Day trade" />
@@ -455,7 +452,7 @@
       <value enum="9" description="Market maker quote" />
       <value enum="7" description="Offset by Fcm" />
     </field>
-    <field number="94" name="EmailType" type="Char">
+    <field number="94" name="EmailType" type="CHAR">
       <value enum="0" description="Regular market hours notice" />
       <value enum="1" description="Regular market hours general reply" />
       <value enum="2" description="Regular market hours administration reply" />
@@ -466,26 +463,26 @@
       <value enum="7" description="Flex trading general reply" />
       <value enum="8" description="Flex trading administration reply" />
     </field>
-    <field number="95" name="RawDataLength" type="Length" />
-    <field number="96" name="RawData" type="data" />
-    <field number="97" name="PossResend" type="Boolean" />
-    <field number="98" name="EncryptMethod" type="Int">
+    <field number="95" name="RawDataLength" type="LENGTH" />
+    <field number="96" name="RawData" type="DATA" />
+    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="98" name="EncryptMethod" type="INT">
       <value enum="0" description="None" />
     </field>
-    <field number="108" name="HeartBtInt" type="Int" />
-    <field number="112" name="TestReqID" type="String" />
-    <field number="117" name="QuoteID" type="String" />
-    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
-    <field number="123" name="GapFillFlag" type="Boolean" />
-    <field number="131" name="QuoteReqID" type="String" />
-    <field number="132" name="BidPx" type="Price" />
-    <field number="133" name="OfferPx" type="Price" />
-    <field number="134" name="BidSize" type="Qty" />
-    <field number="135" name="OfferSize" type="Qty" />
-    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
-    <field number="146" name="NoRelatedSym" type="NumInGroup" />
-    <field number="147" name="Subject" type="String" />
-    <field number="150" name="ExecType" type="Char">
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="117" name="QuoteID" type="STRING" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="131" name="QuoteReqID" type="STRING" />
+    <field number="132" name="BidPx" type="PRICE" />
+    <field number="133" name="OfferPx" type="PRICE" />
+    <field number="134" name="BidSize" type="QTY" />
+    <field number="135" name="OfferSize" type="QTY" />
+    <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
+    <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
+    <field number="147" name="Subject" type="STRING" />
+    <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="3" description="Order status" />
       <value enum="4" description="Canceled" />
@@ -494,29 +491,29 @@
       <value enum="F" description="Trade, partial fill or fill" />
       <value enum="n" description="New and execution report" />
     </field>
-    <field number="151" name="LeavesQty" type="Qty" />
-    <field number="164" name="EmailThreadID" type="String" />
-    <field number="263" name="SubscriptionRequestType" type="Char" />
-    <field number="295" name="NoQuoteEntries" type="NumInGroup" />
-    <field number="297" name="QuoteStatus" type="Int">
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="164" name="EmailThreadID" type="STRING" />
+    <field number="263" name="SubscriptionRequestType" type="CHAR" />
+    <field number="295" name="NoQuoteEntries" type="NUMINGROUP" />
+    <field number="297" name="QuoteStatus" type="INT">
       <value enum="0" description="Quote accepted, new or quantity change" />
       <value enum="1" description="Quote cancelled" />
       <value enum="5" description="Quote rejected" />
       <value enum="10" description="Pending" />
     </field>
-    <field number="298" name="QuoteCancelType" type="Int" />
-    <field number="320" name="SecurityReqID" type="String" />
-    <field number="321" name="SecurityRequestType" type="Int">
+    <field number="298" name="QuoteCancelType" type="INT" />
+    <field number="320" name="SecurityReqID" type="STRING" />
+    <field number="321" name="SecurityRequestType" type="INT">
       <value enum="1" description="Request" />
       <value enum="3" description="Query" />
     </field>
-    <field number="323" name="SecurityResponseType" type="Int" />
-    <field number="335" name="TradSesReqID" type="String" />
-    <field number="336" name="TradingSessionID" type="String" />
-    <field number="340" name="TradSesStatus" type="Int" />
-    <field number="371" name="RefTagID" type="Int" />
-    <field number="372" name="RefMsgType" type="String" />
-    <field number="373" name="SessionRejectReason" type="Int">
+    <field number="323" name="SecurityResponseType" type="INT" />
+    <field number="335" name="TradSesReqID" type="STRING" />
+    <field number="336" name="TradingSessionID" type="STRING" />
+    <field number="340" name="TradSesStatus" type="INT" />
+    <field number="371" name="RefTagID" type="INT" />
+    <field number="372" name="RefMsgType" type="STRING" />
+    <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
       <value enum="2" description="Tag not defined for this message type" />
@@ -537,18 +534,18 @@
       <value enum="17" description="Non data value includes field delimiter" />
       <value enum="99" description="Other" />
     </field>
-    <field number="380" name="BusinessRejectReason" type="Int" />
-    <field number="383" name="MaxMessageSize" type="Length" />
-    <field number="434" name="CxlRejResponseTo" type="Char" />
-    <field number="447" name="PartyIDSource" type="Char">
+    <field number="380" name="BusinessRejectReason" type="INT" />
+    <field number="383" name="MaxMessageSize" type="LENGTH" />
+    <field number="434" name="CxlRejResponseTo" type="CHAR" />
+    <field number="447" name="PartyIDSource" type="CHAR">
       <value enum="C" description="Generally accepted market participant identifier" />
     </field>
-    <field number="448" name="PartyID" type="String" />
-    <field number="452" name="PartyRole" type="Int">
+    <field number="448" name="PartyID" type="STRING" />
+    <field number="452" name="PartyRole" type="INT">
       <value enum="4" description="Clearing firm" />
     </field>
-    <field number="453" name="NoPartyIDs" type="NumInGroup" />
-    <field number="461" name="CFICode" type="String">
+    <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
+    <field number="461" name="CFICode" type="STRING">
       <value enum="FXXXXX" description="Regular trading future" />
       <value enum="OCXXXX" description="Regular trading call option" />
       <value enum="OPXXXX" description="Regular trading put option" />
@@ -556,11 +553,11 @@
       <value enum="OCXXXN" description="Flex trading call option" />
       <value enum="OPXXXN" description="Flex trading put option" />
     </field>
-    <field number="553" name="Username" type="String" />
-    <field number="554" name="Password" type="String" />
-    <field number="555" name="NoLegs" type="NumInGroup" />
-    <field number="600" name="LegSymbol" type="String" />
-    <field number="608" name="LegCFICode" type="String">
+    <field number="553" name="Username" type="STRING" />
+    <field number="554" name="Password" type="STRING" />
+    <field number="555" name="NoLegs" type="NUMINGROUP" />
+    <field number="600" name="LegSymbol" type="STRING" />
+    <field number="608" name="LegCFICode" type="STRING">
       <value enum="FXXXXX" description="Regular trading future" />
       <value enum="OCXXXX" description="Regular trading call option" />
       <value enum="OPXXXX" description="Regular trading put option" />
@@ -568,26 +565,26 @@
       <value enum="OCXXXN" description="Flex trading call option" />
       <value enum="OPXXXN" description="Flex trading put option" />
     </field>
-    <field number="610" name="LegMaturityMonthYear" type="MonthYear" />
-    <field number="611" name="LegMaturityDate" type="LocalMktDate" />
-    <field number="612" name="LegStrikePrice" type="Price" />
-    <field number="624" name="LegSide" type="Char">
+    <field number="610" name="LegMaturityMonthYear" type="MONTHYEAR" />
+    <field number="611" name="LegMaturityDate" type="LOCALMKTDATE" />
+    <field number="612" name="LegStrikePrice" type="PRICE" />
+    <field number="624" name="LegSide" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
     </field>
-    <field number="637" name="LegLastPx" type="Price" />
-    <field number="658" name="QuoteRequestRejectReason" type="Int">
+    <field number="637" name="LegLastPx" type="PRICE" />
+    <field number="658" name="QuoteRequestRejectReason" type="INT">
       <value enum="1" description="Unknown symbol" />
       <value enum="2" description="Exchange closed" />
       <value enum="99" description="Other, with the error code carried in Text" />
     </field>
-    <field number="687" name="LegQty" type="Qty" />
-    <field number="10000" name="TaifexSymbolType" type="Char">
+    <field number="687" name="LegQty" type="QTY" />
+    <field number="10000" name="TaifexSymbolType" type="CHAR">
       <value enum="1" description="Flex trading product serial number, a numeric value" />
       <value enum="2" description="Regular trading old product identifier, or the Flex trading product symbol as a text value" />
       <value enum="4" description="Regular trading new product identifier" />
     </field>
-    <field number="10001" name="TaifexOrderSource" type="Char">
+    <field number="10001" name="TaifexOrderSource" type="CHAR">
       <value enum="D" description="Leased line, Vpn or closed private network" />
       <value enum="A" description="Application programming interface" />
       <value enum="M" description="Mobile device" />
@@ -596,10 +593,10 @@
       <value enum="V" description="Voice" />
       <value enum="G" description="Telephone or telegram" />
     </field>
-    <field number="10002" name="TaifexInfoSource" type="String">
+    <field number="10002" name="TaifexInfoSource" type="STRING">
       <value enum="999" description="From Fcm" />
     </field>
-    <field number="10003" name="TaifexExecType" type="Char" />
-    <field number="10004" name="TaifexPartID" type="Int" />
+    <field number="10003" name="TaifexExecType" type="CHAR" />
+    <field number="10004" name="TaifexPartID" type="INT" />
   </fields>
 </fix>

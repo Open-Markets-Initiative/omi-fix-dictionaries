@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="0" minor="28" servicepack="0" type="Order Entry">
+<fix major="1" minor="1" servicepack="0" type="FIXT">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -63,14 +63,14 @@
       <field name="RefMsgType" required="N" />
       <field name="SessionRejectReason" required="N" />
     </message>
-    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
       <field name="GapFillFlag" required="Y" />
       <field name="NewSeqNo" required="Y" />
     </message>
-    <message name="Test Request" msgtype="1" msgcat="admin">
+    <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
     </message>
-    <message name="New Order Single" msgtype="D" msgcat="app">
+    <message name="NewOrderSingle" msgtype="D" msgcat="app">
       <field name="TransactTime" required="Y" />
       <field name="OrdType" required="Y" />
       <field name="ClOrdID" required="Y" />
@@ -91,14 +91,14 @@
       <field name="ExecInst" required="N" />
       <field name="CancelAtEntryIfCrossed" required="N" />
       <field name="PriceSlideInstruction" required="N" />
-      <field name="PegDifference" required="N" />
+      <field name="PegOffsetValue" required="N" />
       <field name="MinQty" required="N" />
       <field name="DisplayQty" required="N" />
       <field name="DisplayMinIncr" required="N" />
       <field name="MaxReplenishTimeRange" required="N" />
       <field name="ExpireTime" required="N" />
     </message>
-    <message name="Order Cancel Request" msgtype="F" msgcat="app">
+    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
@@ -107,7 +107,7 @@
       <field name="Side" required="Y" />
       <field name="OrderQty" required="N" />
     </message>
-    <message name="Order Replace Request" msgtype="G" msgcat="app">
+    <message name="OrderReplaceRequest" msgtype="G" msgcat="app">
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
@@ -124,10 +124,10 @@
       <field name="SelfMatchScope" required="N" />
       <field name="SelfMatchPreventionInstruction" required="N" />
       <field name="PriceSlideInstruction" required="N" />
-      <field name="PegDifference" required="N" />
+      <field name="PegOffsetValue" required="N" />
       <field name="DisplayQty" required="N" />
     </message>
-    <message name="Order Mass Cancel Request" msgtype="q" msgcat="app">
+    <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="MassCancelRequestType" required="Y" />
@@ -137,7 +137,7 @@
       <field name="OrigClOrdID" required="N" />
       <field name="ExcludeAuctionOrders" required="N" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="TransactTime" required="Y" />
       <field name="ExecType" required="Y" />
       <field name="OrdStatus" required="Y" />
@@ -163,7 +163,7 @@
       <field name="SelfMatchScope" required="Y" />
       <field name="SelfMatchPreventionInstruction" required="Y" />
       <field name="PriceSlideInstruction" required="Y" />
-      <field name="PegDifference" required="N" />
+      <field name="PegOffsetValue" required="N" />
       <field name="MinQty" required="N" />
       <field name="DisplayQty" required="N" />
       <field name="DisplayMinIncr" required="N" />
@@ -178,11 +178,11 @@
       <field name="CancelReason" required="Y" />
       <field name="ExecRestatementReason" required="N" />
       <field name="LastPx" required="Y" />
-      <field name="LastShares" required="Y" />
+      <field name="LastQty" required="Y" />
       <field name="LastLiquidityInd" required="Y" />
       <field name="TradeLiquidityIndicator" required="Y" />
     </message>
-    <message name="Order Cancel Reject" msgtype="9" msgcat="app">
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="TransactTime" required="Y" />
       <field name="CxlRejResponseTo" required="Y" />
       <field name="OrdStatus" required="Y" />
@@ -200,10 +200,10 @@
       <field name="SelfMatchScope" required="N" />
       <field name="SelfMatchPreventionInstruction" required="N" />
       <field name="PriceSlideInstruction" required="N" />
-      <field name="PegDifference" required="N" />
+      <field name="PegOffsetValue" required="N" />
       <field name="DisplayQty" required="N" />
     </message>
-    <message name="Order Mass Cancel Report" msgtype="r" msgcat="app">
+    <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
       <field name="TransactTime" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="MassCancelResponse" required="Y" />
@@ -219,24 +219,24 @@
   </messages>
   <components />
   <fields>
-    <field number="8" name="BeginString" type="String" />
-    <field number="9" name="BodyLength" type="Length" />
-    <field number="10" name="CheckSum" type="String" />
-    <field number="11" name="ClOrdID" type="String" />
-    <field number="14" name="CumQty" type="Qty" />
-    <field number="17" name="ExecID" type="String" />
-    <field number="18" name="ExecInst" type="MultipleCharValue">
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="18" name="ExecInst" type="MULTIPLECHARVALUE">
       <value enum="6" description="Indicates a Post Only order instruction." />
       <value enum="f" description="Indicates a Reg NMS Inter-market sweep order instruction." />
     </field>
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
-    <field number="34" name="MsgSeqNum" type="SeqNum" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="36" name="NewSeqNo" type="SeqNum" />
-    <field number="37" name="OrderID" type="String" />
-    <field number="38" name="OrderQty" type="Qty" />
-    <field number="39" name="OrdStatus" type="Char">
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastQty" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Partially Filled" />
       <value enum="2" description="Filled" />
@@ -244,26 +244,26 @@
       <value enum="5" description="Replaced" />
       <value enum="8" description="Rejected" />
     </field>
-    <field number="40" name="OrdType" type="Char">
+    <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
     </field>
-    <field number="41" name="OrigClOrdID" type="String" />
-    <field number="43" name="PossDupFlag" type="String" />
-    <field number="44" name="Price" type="Price" />
-    <field number="45" name="RefSeqNum" type="SeqNum" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="54" name="Side" type="Char">
+    <field number="41" name="OrigClOrdID" type="STRING" />
+    <field number="43" name="PossDupFlag" type="STRING" />
+    <field number="44" name="Price" type="PRICE" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Order is a buy order." />
       <value enum="2" description="Sell order of existing inventory." />
       <value enum="5" description="Sell order of borrowed shares." />
       <value enum="6" description="Sell order of borrowed shares exempt from certain regulations of Regula- tion SHO." />
     </field>
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="58" name="Text" type="String" />
-    <field number="59" name="TimeInForce" type="Char">
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="Accepted during the Early and Regular Sessions; rejected during the After Hours Session. Live immediately upon entry. On TXSE-primary-listed symbols, resting DAY orders participate in the Closing Auct" />
       <value enum="2" description="Auction-only TIF for the Opening Auction cross. Order participates only in the Opening cross - no continuous-book matching. Accepted fromthestartoftheEarlySessionuntilthecrossfires. Orderbecomes non-c" />
       <value enum="3" description="Similar to SYS, but canceled immediately, after trading with resting liquidity on the Exchange." />
@@ -272,10 +272,10 @@
       <value enum="S" description="Accepted during any session. Live immediately upon entry. Canceled at the end of the After Hours Session. (custom TXSE value) Value" />
       <value enum="R" description="Regular-Hours-Only limit order. Accepted during the Early Session for TXSE-primary-listedsymbolsonly;acceptedduringtheRegularSession for any symbol. Rejected during the After Hours Session. For TXSE-p" />
     </field>
-    <field number="60" name="TransactTime" type="UTCTimestamp" />
-    <field number="65" name="SymbolSfx" type="String" />
-    <field number="84" name="CxlQty" type="String" />
-    <field number="98" name="EncryptMethod" type="Int">
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="65" name="SymbolSfx" type="STRING" />
+    <field number="84" name="CxlQty" type="STRING" />
+    <field number="98" name="EncryptMethod" type="INT">
       <value enum="0" description="No encryption. TXSE requires EncryptMethod to always be set to 0." />
       <value enum="1" description="Not supported. Do not send." />
       <value enum="2" description="Not supported. Do not send." />
@@ -284,7 +284,7 @@
       <value enum="5" description="Not supported. Do not send." />
       <value enum="6" description="Not supported. Do not send." />
     </field>
-    <field number="102" name="CxlRejReason" type="String">
+    <field number="102" name="CxlRejReason" type="STRING">
       <value enum="0" description="Attempt to modify, replace, or cancel an orderthathasalreadycanceledorfullyex- ecuted." />
       <value enum="1" description="Attempttomodifyorreplaceaclientorder that was not found for the current session on this port." />
       <value enum="6" description="Client Order Id has already been used for the current session on this port." />
@@ -314,7 +314,7 @@
       <value enum="202" description="Ordernotionalvalueexceedsthemaximum notional limit configured in port settings. (custom TXSE value)" />
       <value enum="203" description="Order modification not permitted. (cus- tom TXSE value)" />
     </field>
-    <field number="103" name="OrdRejReason" type="Int">
+    <field number="103" name="OrdRejReason" type="INT">
       <value enum="1" description="Symbol ID is not valid for the current ses- sion." />
       <value enum="5" description="Client Order Id is invalid." />
       <value enum="6" description="Client Order Id has already been used for the current session on this port." />
@@ -351,16 +351,16 @@
       <value enum="125" description="Auction-Only orders for the Open and Close cannot be cancelled, modified, or replaced once the Band Window begins. (custom TXSE value)" />
       <value enum="126" description="Order property is incompatible with an auction-classed order. (custom TXSE value)" />
     </field>
-    <field number="108" name="HeartBtInt" type="Int" />
-    <field number="109" name="ClientID" type="String" />
-    <field number="110" name="MinQty" type="Qty" />
-    <field number="112" name="TestReqID" type="String" />
-    <field number="114" name="LocateReqd" type="Boolean" />
-    <field number="115" name="OnBehalfOfCompID" type="String" />
-    <field number="123" name="GapFillFlag" type="Boolean" />
-    <field number="126" name="ExpireTime" type="UTCTimestamp" />
-    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
-    <field number="150" name="ExecType" type="Char">
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="109" name="ClientID" type="STRING" />
+    <field number="110" name="MinQty" type="QTY" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="114" name="LocateReqd" type="BOOLEAN" />
+    <field number="115" name="OnBehalfOfCompID" type="STRING" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="126" name="ExpireTime" type="UTCTIMESTAMP" />
+    <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
+    <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
@@ -368,54 +368,54 @@
       <value enum="D" description="Restated" />
       <value enum="F" description="Trade" />
     </field>
-    <field number="151" name="LeavesQty" type="Qty" />
-    <field number="211" name="PegDifference" type="PriceOffset" />
-    <field number="372" name="RefMsgType" type="String" />
-    <field number="373" name="SessionRejectReason" type="Int">
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="211" name="PegOffsetValue" type="PRICEOFFSET" />
+    <field number="372" name="RefMsgType" type="STRING" />
+    <field number="373" name="SessionRejectReason" type="INT">
       <value enum="6" description="A message could not be fully parsed with invalid or missing fields." />
     </field>
-    <field number="378" name="ExecRestatementReason" type="Int">
+    <field number="378" name="ExecRestatementReason" type="INT">
       <value enum="3" description="A reprice eligible order has been repriced to a new price." />
       <value enum="5" description="Sent when Self Match Prevention decrements an order quantity." />
       <value enum="100" description="A new displayed slice of a reserve order has been added to the displayed book. (custom TXSE value)" />
       <value enum="101" description="Orders staged awaiting the result of the auction with un- filled residual have been reinstated into continuous book. (custom TXSE value)" />
     </field>
-    <field number="434" name="CxlRejResponseTo" type="Char">
+    <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Order Cancel Request" />
       <value enum="2" description="Order Cancel Replace Request" />
     </field>
-    <field number="528" name="OrderCapacity" type="Char">
+    <field number="528" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Acting on behalf of clients." />
       <value enum="P" description="Acting on behalf of Broker-Dealer." />
       <value enum="R" description="Order to offset client order." />
     </field>
-    <field number="530" name="MassCancelRequestType" type="Char">
+    <field number="530" name="MassCancelRequestType" type="CHAR">
       <value enum="100" description="(customTXSEvalue)CancelacrossallSenderComps owned by this Member" />
       <value enum="101" description="(customTXSEvalue)CancelacrossallMPIDsowned by this Member" />
     </field>
-    <field number="531" name="MassCancelResponse" type="Char">
+    <field number="531" name="MassCancelResponse" type="CHAR">
       <value enum="0" description="Rejected" />
       <value enum="100" description="(custom TXSE value) Request accepted; sweep in progress" />
       <value enum="101" description="(custom TXSE value) Sweep complete; see TotalAf- fectedOrders for count" />
     </field>
-    <field number="532" name="MassCancelRejectReason" type="String">
+    <field number="532" name="MassCancelRejectReason" type="STRING">
       <value enum="100" description="(custom TXSE value)" />
       <value enum="101" description="(custom TXSE value)" />
       <value enum="102" description="(custom TXSE value)" />
       <value enum="103" description="(custom TXSE value)" />
       <value enum="113" description="(custom TXSE value)" />
     </field>
-    <field number="533" name="TotalAffectedOrders" type="Int" />
-    <field number="554" name="Password" type="String" />
-    <field number="789" name="NextExpectedMsgSeqNum" type="String" />
-    <field number="851" name="LastLiquidityInd" type="Int">
+    <field number="533" name="TotalAffectedOrders" type="INT" />
+    <field number="554" name="Password" type="STRING" />
+    <field number="789" name="NextExpectedMsgSeqNum" type="STRING" />
+    <field number="851" name="LastLiquidityInd" type="INT">
       <value enum="1" description="Added Liquidity." />
       <value enum="2" description="Removed Liquidity." />
       <value enum="4" description="Execution from an auction cross (any AuctionType)." />
     </field>
-    <field number="930" name="RefCompID" type="String" />
-    <field number="1087" name="DisplayMinIncr" type="String" />
-    <field number="1137" name="DefaultApplVerID" type="String">
+    <field number="930" name="RefCompID" type="STRING" />
+    <field number="1087" name="DisplayMinIncr" type="STRING" />
+    <field number="1137" name="DefaultApplVerID" type="STRING">
       <value enum="0" description="Not supported. Do not send." />
       <value enum="1" description="Not supported. Do not send." />
       <value enum="2" description="Not supported. Do not send." />
@@ -428,10 +428,10 @@
       <value enum="9" description="FIX 5.0 Service Pack 2. TXSE uses FIX 5.0 SP2 for all sessions." />
       <value enum="10" description="Not supported. Do not send." />
     </field>
-    <field number="1138" name="DisplayQty" type="Qty" />
-    <field number="1369" name="MassActionReportID" type="String" />
-    <field number="2828" name="CurrentDisplayPrice" type="String" />
-    <field number="2964" name="SelfMatchPreventionInstruction" type="String">
+    <field number="1138" name="DisplayQty" type="QTY" />
+    <field number="1369" name="MassActionReportID" type="STRING" />
+    <field number="2828" name="CurrentDisplayPrice" type="STRING" />
+    <field number="2964" name="SelfMatchPreventionInstruction" type="STRING">
       <value enum="1" description="Cancels the incoming order. Keeps the resting order on the book." />
       <value enum="2" description="Cancels the resting order. Keeps the incoming order on the book." />
       <value enum="3" description="Cancels both orders entirely regardless of size." />
@@ -439,19 +439,19 @@
       <value enum="101" description="Ifordersareequalsize: cancelsboth. Ifdifferentsizes: cancels the smaller order, keeps the larger one. (custom TXSE value)" />
       <value enum="102" description="If orders are equal size: cancels both. If different sizes: can- cels the overlapping portion, keeps the remainder of the larger order. (custom TXSE value)" />
     </field>
-    <field number="8000" name="PriceSlideInstruction" type="Char">
+    <field number="8000" name="PriceSlideInstruction" type="CHAR">
       <value enum="0" description="No Display-Price Slide instruction. Or- dersthatwouldcreatelockingorcrossing quotations will be canceled. Value" />
       <value enum="1" description="Single price slide applied to both locking and crossing quotations. Adjusts order price only upon entry and one additional time following an NBBO change." />
       <value enum="2" description="Multiplepriceslidesappliedtobothlock- ing and crossing quotations. Continu- ously re-ranks and re-displays orders as NBBO changes throughout the order's life." />
       <value enum="3" description="Single price slide applied only to locking quotations. Crossing quotations will be canceled. Note: Given this only serves locked quotations, a multiple price slide optioncouldonlyslideonce,thusmaking" />
     </field>
-    <field number="8001" name="SelfMatchScope" type="String">
+    <field number="8001" name="SelfMatchScope" type="STRING">
       <value enum="0" description="Match prevention applies to all orders from the same Mem- ber." />
       <value enum="1" description="Match prevention applies to orders from the same Member with the same MPID." />
       <value enum="2" description="Match prevention applies to orders from the same Member within the same Member Group." />
       <value enum="3" description="Match prevention applies to orders from the same Member with the same MPID and Member Group." />
     </field>
-    <field number="8003" name="CancelReason" type="String">
+    <field number="8003" name="CancelReason" type="STRING">
       <value enum="1" description="Cancel due to request by client." />
       <value enum="2" description="Cancel due to time in force expiration." />
       <value enum="3" description="Cancel due to inability to meet minimum quantity." />
@@ -471,14 +471,14 @@
       <value enum="17" description="Pegged order canceled because its calcu- lated reference price moved beyond the order'slimitprice(thelimitpricecollared the peg)." />
       <value enum="18" description="Canceled as the order is of odd lot size and could not be executed against the contra-side liquidity on the TXSE Book." />
     </field>
-    <field number="9000" name="LocateBroker" type="String" />
-    <field number="9001" name="MaxReplenishTimeRange" type="String" />
-    <field number="9002" name="UserData" type="String" />
-    <field number="9004" name="MemberGroup" type="String" />
-    <field number="9005" name="CancelAtEntryIfCrossed" type="String" />
-    <field number="9008" name="RankPrice" type="String" />
-    <field number="9009" name="ExcludeAuctionOrders" type="String" />
-    <field number="9730" name="TradeLiquidityIndicator" type="String">
+    <field number="9000" name="LocateBroker" type="STRING" />
+    <field number="9001" name="MaxReplenishTimeRange" type="STRING" />
+    <field number="9002" name="UserData" type="STRING" />
+    <field number="9004" name="MemberGroup" type="STRING" />
+    <field number="9005" name="CancelAtEntryIfCrossed" type="STRING" />
+    <field number="9008" name="RankPrice" type="STRING" />
+    <field number="9009" name="ExcludeAuctionOrders" type="STRING" />
+    <field number="9730" name="TradeLiquidityIndicator" type="STRING">
       <value enum="0" description="Removed hidden liquidity." />
       <value enum="1" description="Removed displayed liquidity." />
       <value enum="2" description="Added hidden liquidity." />

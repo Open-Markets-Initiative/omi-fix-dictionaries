@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="1" minor="1" servicepack="0" type="Drop Copy">
+<fix major="1" minor="1" servicepack="0" type="FIXT">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -61,10 +61,10 @@
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
     </message>
-    <message name="Test Request" msgtype="1" msgcat="admin">
+    <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
     </message>
-    <message name="Resend Request" msgtype="2" msgcat="admin">
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
       <field name="BeginSeqNo" required="Y" />
       <field name="EndSeqNo" required="Y" />
     </message>
@@ -75,33 +75,41 @@
       <field name="SessionRejectReason" required="N" />
       <field name="Text" required="N" />
     </message>
-    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
       <field name="GapFillFlag" required="N" />
       <field name="NewSeqNo" required="Y" />
     </message>
     <message name="Logout" msgtype="5" msgcat="admin">
       <field name="Text" required="N" />
     </message>
-    <message name="Market Definition Request" msgtype="BT" msgcat="app">
+    <message name="MarketDefinitionRequest" msgtype="BT" msgcat="app">
       <field name="MarketReqID" required="Y" />
       <field name="SubscriptionRequestType" required="Y" />
       <field name="MarketID" required="N" />
       <field name="MarketSegmentID" required="N" />
     </message>
-    <message name="Market Definition" msgtype="BU" msgcat="app">
+    <message name="TradingSessionListRequest" msgtype="BI" msgcat="app">
+      <field name="TradSesReqID" required="Y" />
+      <field name="TradingSessionID" required="N" />
+      <field name="TradingSessionSubID" required="N" />
+      <field name="SubscriptionRequestType" required="N" />
+    </message>
+    <message name="SecurityListRequest" msgtype="x" msgcat="app">
+      <field name="SecurityReqID" required="Y" />
+      <field name="SecurityListRequestType" required="Y" />
+      <field name="MarketID" required="N" />
+      <field name="MarketSegmentID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SubscriptionRequestType" required="N" />
+    </message>
+    <message name="MarketDefinition" msgtype="BU" msgcat="app">
       <field name="MarketReportID" required="Y" />
       <field name="MarketReqID" required="N" />
       <field name="MarketID" required="Y" />
       <field name="MarketSegmentID" required="N" />
       <field name="MarketSegmentDesc" required="N" />
     </message>
-    <message name="Trading Session List Request" msgtype="BI" msgcat="app">
-      <field name="TradSesReqID" required="Y" />
-      <field name="TradingSessionID" required="N" />
-      <field name="TradingSessionSubID" required="N" />
-      <field name="SubscriptionRequestType" required="N" />
-    </message>
-    <message name="Trading Session List" msgtype="BJ" msgcat="app">
+    <message name="TradingSessionList" msgtype="BJ" msgcat="app">
       <field name="TradSesReqID" required="Y" />
       <group name="NoTradingSessions" required="Y">
         <field name="TradingSessionID" required="Y" />
@@ -121,15 +129,7 @@
         </group>
       </group>
     </message>
-    <message name="Security List Request" msgtype="x" msgcat="app">
-      <field name="SecurityReqID" required="Y" />
-      <field name="SecurityListRequestType" required="Y" />
-      <field name="MarketID" required="N" />
-      <field name="MarketSegmentID" required="N" />
-      <field name="Symbol" required="N" />
-      <field name="SubscriptionRequestType" required="N" />
-    </message>
-    <message name="Security List" msgtype="y" msgcat="app">
+    <message name="SecurityList" msgtype="y" msgcat="app">
       <field name="SecurityReqID" required="Y" />
       <field name="SecurityRequestResult" required="Y" />
       <field name="TotNoRelatedSym" required="N" />
@@ -139,7 +139,7 @@
       <group name="NoRelatedSym" required="N">
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
-        <field name="IDSource" required="N" />
+        <field name="SecurityIDSource" required="N" />
         <group name="NoSecurityAltID" required="N">
           <field name="SecurityAltID" required="Y" />
           <field name="SecurityAltIDSource" required="N" />
@@ -194,8 +194,8 @@
         <field name="IssueDate" required="N" />
         <field name="CouponPaymentDate" required="N" />
         <field name="ExDate" required="N" />
-        <field name="SettlmntTyp" required="N" />
-        <field name="FutSettDate" required="N" />
+        <field name="SettlType" required="N" />
+        <field name="SettlDate" required="N" />
         <field name="InstrumentPricePrecision" required="N" />
         <field name="CouponDayCount" required="N" />
         <field name="DividendYield" required="N" />
@@ -218,7 +218,7 @@
         <field name="PractiseSec" required="N" />
       </group>
     </message>
-    <message name="Security List Update Report" msgtype="BK" msgcat="app">
+    <message name="SecurityListUpdateReport" msgtype="BK" msgcat="app">
       <field name="SecurityReqID" required="N" />
       <field name="ListUpdateAction" required="Y" />
       <field name="MarketID" required="N" />
@@ -226,7 +226,7 @@
       <group name="NoRelatedSym" required="N">
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
-        <field name="IDSource" required="N" />
+        <field name="SecurityIDSource" required="N" />
         <group name="NoSecurityAltID" required="N">
           <field name="SecurityAltID" required="Y" />
           <field name="SecurityAltIDSource" required="N" />
@@ -281,8 +281,8 @@
         <field name="IssueDate" required="N" />
         <field name="CouponPaymentDate" required="N" />
         <field name="ExDate" required="N" />
-        <field name="SettlmntTyp" required="N" />
-        <field name="FutSettDate" required="N" />
+        <field name="SettlType" required="N" />
+        <field name="SettlDate" required="N" />
         <field name="InstrumentPricePrecision" required="N" />
         <field name="CouponDayCount" required="N" />
         <field name="DividendYield" required="N" />
@@ -305,13 +305,13 @@
         <field name="PractiseSec" required="N" />
       </group>
     </message>
-    <message name="Business Message Reject" msgtype="j" msgcat="app">
+    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
       <field name="RefSeqNum" required="N" />
       <field name="RefMsgType" required="Y" />
       <field name="BusinessRejectReason" required="Y" />
       <field name="Text" required="N" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="OrderID" required="Y" />
       <field name="ClOrdID" required="N" />
       <field name="ExecID" required="Y" />
@@ -326,7 +326,7 @@
       <field name="RejectText" required="N" />
       <field name="ExecRestatementReason" required="N" />
       <field name="SecurityID" required="N" />
-      <field name="IDSource" required="N" />
+      <field name="SecurityIDSource" required="N" />
       <field name="Symbol" required="N" />
       <field name="Side" required="N" />
       <field name="OrderQty" required="N" />
@@ -339,14 +339,14 @@
       <field name="ExpireDate" required="N" />
       <field name="ExecInst" required="N" />
       <field name="OrderCapacity" required="N" />
-      <field name="LastShares" required="N" />
+      <field name="LastQty" required="N" />
       <field name="LastPx" required="N" />
       <field name="LeavesQty" required="Y" />
       <field name="CumQty" required="Y" />
       <field name="TradeDate" required="N" />
       <field name="TransactTime" required="N" />
       <field name="Text" required="N" />
-      <field name="PartyIDOrderOriginationFirm" required="N" />
+      <field name="DirectedWholesale" required="N" />
       <field name="SupplementaryInfo" required="N" />
       <field name="CustomerInfo" required="N" />
       <field name="OptOutOfClearing" required="N" />
@@ -358,180 +358,178 @@
   </messages>
   <components />
   <fields>
-    <field number="7" name="BeginSeqNo" type="SeqNum" />
-    <field number="8" name="BeginString" type="String">
-      <value enum="FIXT.1.1" description="FIXT 1.1" />
-    </field>
-    <field number="9" name="BodyLength" type="Length" />
-    <field number="10" name="CheckSum" type="String" />
-    <field number="11" name="ClOrdID" type="String" />
-    <field number="14" name="CumQty" type="Qty" />
-    <field number="15" name="Currency" type="Currency" />
-    <field number="16" name="EndSeqNo" type="SeqNum" />
-    <field number="17" name="ExecID" type="String" />
-    <field number="18" name="ExecInst" type="MultipleValueString" />
-    <field number="22" name="IDSource" type="String" />
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
-    <field number="34" name="MsgSeqNum" type="SeqNum" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="36" name="NewSeqNo" type="SeqNum" />
-    <field number="37" name="OrderID" type="String" />
-    <field number="38" name="OrderQty" type="Qty" />
-    <field number="39" name="OrdStatus" type="char" />
-    <field number="40" name="OrdType" type="char" />
-    <field number="43" name="PossDupFlag" type="Boolean" />
-    <field number="44" name="Price" type="Price" />
-    <field number="45" name="RefSeqNum" type="SeqNum" />
-    <field number="48" name="SecurityID" type="String" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="50" name="SenderSubID" type="String" />
-    <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="54" name="Side" type="char">
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="15" name="Currency" type="CURRENCY" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="22" name="SecurityIDSource" type="STRING" />
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastQty" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR" />
+    <field number="40" name="OrdType" type="CHAR" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="44" name="Price" type="PRICE" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="48" name="SecurityID" type="STRING" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="50" name="SenderSubID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
     </field>
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="57" name="TargetSubID" type="String" />
-    <field number="58" name="Text" type="String" />
-    <field number="59" name="TimeInForce" type="char" />
-    <field number="60" name="TransactTime" type="UTCTimestamp" />
-    <field number="63" name="SettlmntTyp" type="char" />
-    <field number="64" name="FutSettDate" type="LocalMktDate" />
-    <field number="75" name="TradeDate" type="LocalMktDate" />
-    <field number="97" name="PossResend" type="Boolean" />
-    <field number="98" name="EncryptMethod" type="Int" />
-    <field number="106" name="Issuer" type="String" />
-    <field number="107" name="SecurityDesc" type="String" />
-    <field number="108" name="HeartBtInt" type="Int" />
-    <field number="112" name="TestReqID" type="String" />
-    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
-    <field number="123" name="GapFillFlag" type="Boolean" />
-    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
-    <field number="142" name="SenderLocationID" type="String" />
-    <field number="146" name="NoRelatedSym" type="NumInGroup" />
-    <field number="150" name="ExecType" type="char" />
-    <field number="151" name="LeavesQty" type="Qty" />
-    <field number="201" name="PutOrCall" type="Int" />
-    <field number="202" name="StrikePrice" type="Price" />
-    <field number="223" name="CouponRate" type="Percentage" />
-    <field number="224" name="CouponPaymentDate" type="LocalMktDate" />
-    <field number="225" name="IssueDate" type="LocalMktDate" />
-    <field number="228" name="Factor" type="float" />
-    <field number="230" name="ExDate" type="LocalMktDate" />
-    <field number="231" name="ContractMultiplier" type="float" />
-    <field number="263" name="SubscriptionRequestType" type="char" />
-    <field number="305" name="UnderlyingSecurityIDSource" type="String" />
-    <field number="309" name="UnderlyingSecurityID" type="String" />
-    <field number="311" name="UnderlyingSymbol" type="String" />
-    <field number="320" name="SecurityReqID" type="String" />
-    <field number="335" name="TradSesReqID" type="String" />
-    <field number="336" name="TradingSessionID" type="String" />
-    <field number="340" name="TradSesStatus" type="Int" />
-    <field number="371" name="RefTagID" type="Int" />
-    <field number="372" name="RefMsgType" type="String" />
-    <field number="373" name="SessionRejectReason" type="Int" />
-    <field number="378" name="ExecRestatementReason" type="Int" />
-    <field number="380" name="BusinessRejectReason" type="Int" />
-    <field number="386" name="NoTradingSessions" type="NumInGroup" />
-    <field number="393" name="TotNoRelatedSym" type="Int" />
-    <field number="432" name="ExpireDate" type="LocalMktDate" />
-    <field number="447" name="PartyIDSource" type="char" />
-    <field number="448" name="PartyID" type="String" />
-    <field number="452" name="PartyRole" type="Int" />
-    <field number="453" name="NoPartyIDs" type="NumInGroup" />
-    <field number="454" name="NoSecurityAltID" type="NumInGroup" />
-    <field number="455" name="SecurityAltID" type="String" />
-    <field number="456" name="SecurityAltIDSource" type="String" />
-    <field number="457" name="NoUnderlyingSecurityAltID" type="NumInGroup" />
-    <field number="458" name="UnderlyingSecurityAltID" type="String" />
-    <field number="459" name="UnderlyingSecurityAltIDSource" type="String" />
-    <field number="461" name="CFICode" type="String" />
-    <field number="468" name="RoundingDirection" type="char" />
-    <field number="528" name="OrderCapacity" type="char" />
-    <field number="541" name="MaturityDate" type="LocalMktDate" />
-    <field number="553" name="Username" type="String" />
-    <field number="554" name="Password" type="String" />
-    <field number="555" name="NoLegs" type="NumInGroup" />
-    <field number="559" name="SecurityListRequestType" type="Int" />
-    <field number="560" name="SecurityRequestResult" type="Int" />
-    <field number="561" name="RoundLot" type="Qty" />
-    <field number="574" name="MatchType" type="String" />
-    <field number="600" name="LegSymbol" type="String" />
-    <field number="602" name="LegSecurityID" type="String" />
-    <field number="603" name="LegSecurityIDSource" type="String" />
-    <field number="623" name="LegRatioQty" type="Qty" />
-    <field number="624" name="LegSide" type="char" />
-    <field number="625" name="TradingSessionSubID" type="String" />
-    <field number="711" name="NoUnderlyings" type="NumInGroup" />
-    <field number="835" name="PegMoveType" type="Int" />
-    <field number="840" name="PegScope" type="Int" />
-    <field number="864" name="NoEvents" type="NumInGroup" />
-    <field number="865" name="EventType" type="Int" />
-    <field number="866" name="EventDate" type="LocalMktDate" />
-    <field number="870" name="NoInstrAttrib" type="NumInGroup" />
-    <field number="871" name="InstrAttribType" type="Int" />
-    <field number="872" name="InstrAttribValue" type="String" />
-    <field number="880" name="TrdMatchID" type="String" />
-    <field number="893" name="LastFragment" type="Boolean" />
-    <field number="965" name="SecurityStatus" type="String" />
-    <field number="1094" name="PegPriceType" type="Int" />
-    <field number="1128" name="ApplVerID" type="String" />
-    <field number="1137" name="DefaultApplVerID" type="String" />
-    <field number="1142" name="MatchAlgorithm" type="String" />
-    <field number="1145" name="EventTime" type="UTCTimestamp" />
-    <field number="1193" name="SettleOnOpenFlag" type="String" />
-    <field number="1194" name="ExerciseStyle" type="Int" />
-    <field number="1205" name="NoTickRules" type="NumInGroup" />
-    <field number="1206" name="StartTickPriceRange" type="Price" />
-    <field number="1207" name="EndTickPriceRange" type="Price" />
-    <field number="1208" name="TickIncrement" type="Price" />
-    <field number="1235" name="NoMatchRules" type="NumInGroup" />
-    <field number="1237" name="NoOrdTypeRules" type="NumInGroup" />
-    <field number="1239" name="NoTimeInForceRules" type="NumInGroup" />
-    <field number="1300" name="MarketSegmentID" type="String" />
-    <field number="1301" name="MarketID" type="String" />
-    <field number="1324" name="ListUpdateAction" type="char">
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="57" name="TargetSubID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="59" name="TimeInForce" type="CHAR" />
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="63" name="SettlType" type="CHAR" />
+    <field number="64" name="SettlDate" type="LOCALMKTDATE" />
+    <field number="75" name="TradeDate" type="LOCALMKTDATE" />
+    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="98" name="EncryptMethod" type="INT" />
+    <field number="106" name="Issuer" type="STRING" />
+    <field number="107" name="SecurityDesc" type="STRING" />
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
+    <field number="142" name="SenderLocationID" type="STRING" />
+    <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
+    <field number="150" name="ExecType" type="CHAR" />
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="201" name="PutOrCall" type="INT" />
+    <field number="202" name="StrikePrice" type="PRICE" />
+    <field number="223" name="CouponRate" type="PERCENTAGE" />
+    <field number="224" name="CouponPaymentDate" type="LOCALMKTDATE" />
+    <field number="225" name="IssueDate" type="LOCALMKTDATE" />
+    <field number="228" name="Factor" type="FLOAT" />
+    <field number="230" name="ExDate" type="LOCALMKTDATE" />
+    <field number="231" name="ContractMultiplier" type="FLOAT" />
+    <field number="263" name="SubscriptionRequestType" type="CHAR" />
+    <field number="305" name="UnderlyingSecurityIDSource" type="STRING" />
+    <field number="309" name="UnderlyingSecurityID" type="STRING" />
+    <field number="311" name="UnderlyingSymbol" type="STRING" />
+    <field number="320" name="SecurityReqID" type="STRING" />
+    <field number="335" name="TradSesReqID" type="STRING" />
+    <field number="336" name="TradingSessionID" type="STRING" />
+    <field number="340" name="TradSesStatus" type="INT" />
+    <field number="371" name="RefTagID" type="INT" />
+    <field number="372" name="RefMsgType" type="STRING" />
+    <field number="373" name="SessionRejectReason" type="INT" />
+    <field number="378" name="ExecRestatementReason" type="INT" />
+    <field number="380" name="BusinessRejectReason" type="INT" />
+    <field number="386" name="NoTradingSessions" type="NUMINGROUP" />
+    <field number="393" name="TotNoRelatedSym" type="INT" />
+    <field number="432" name="ExpireDate" type="LOCALMKTDATE" />
+    <field number="447" name="PartyIDSource" type="CHAR" />
+    <field number="448" name="PartyID" type="STRING" />
+    <field number="452" name="PartyRole" type="INT" />
+    <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
+    <field number="454" name="NoSecurityAltID" type="NUMINGROUP" />
+    <field number="455" name="SecurityAltID" type="STRING" />
+    <field number="456" name="SecurityAltIDSource" type="STRING" />
+    <field number="457" name="NoUnderlyingSecurityAltID" type="NUMINGROUP" />
+    <field number="458" name="UnderlyingSecurityAltID" type="STRING" />
+    <field number="459" name="UnderlyingSecurityAltIDSource" type="STRING" />
+    <field number="461" name="CFICode" type="STRING" />
+    <field number="468" name="RoundingDirection" type="CHAR" />
+    <field number="528" name="OrderCapacity" type="CHAR" />
+    <field number="541" name="MaturityDate" type="LOCALMKTDATE" />
+    <field number="553" name="Username" type="STRING" />
+    <field number="554" name="Password" type="STRING" />
+    <field number="555" name="NoLegs" type="NUMINGROUP" />
+    <field number="559" name="SecurityListRequestType" type="INT" />
+    <field number="560" name="SecurityRequestResult" type="INT" />
+    <field number="561" name="RoundLot" type="QTY" />
+    <field number="574" name="MatchType" type="STRING" />
+    <field number="600" name="LegSymbol" type="STRING" />
+    <field number="602" name="LegSecurityID" type="STRING" />
+    <field number="603" name="LegSecurityIDSource" type="STRING" />
+    <field number="623" name="LegRatioQty" type="QTY" />
+    <field number="624" name="LegSide" type="CHAR" />
+    <field number="625" name="TradingSessionSubID" type="STRING" />
+    <field number="711" name="NoUnderlyings" type="NUMINGROUP" />
+    <field number="835" name="PegMoveType" type="INT" />
+    <field number="840" name="PegScope" type="INT" />
+    <field number="864" name="NoEvents" type="NUMINGROUP" />
+    <field number="865" name="EventType" type="INT" />
+    <field number="866" name="EventDate" type="LOCALMKTDATE" />
+    <field number="870" name="NoInstrAttrib" type="NUMINGROUP" />
+    <field number="871" name="InstrAttribType" type="INT" />
+    <field number="872" name="InstrAttribValue" type="STRING" />
+    <field number="880" name="TrdMatchID" type="STRING" />
+    <field number="893" name="LastFragment" type="BOOLEAN" />
+    <field number="965" name="SecurityStatus" type="STRING" />
+    <field number="1094" name="PegPriceType" type="INT" />
+    <field number="1128" name="ApplVerID" type="STRING" />
+    <field number="1137" name="DefaultApplVerID" type="STRING" />
+    <field number="1142" name="MatchAlgorithm" type="STRING" />
+    <field number="1145" name="EventTime" type="UTCTIMESTAMP" />
+    <field number="1193" name="SettleOnOpenFlag" type="STRING" />
+    <field number="1194" name="ExerciseStyle" type="INT" />
+    <field number="1205" name="NoTickRules" type="NUMINGROUP" />
+    <field number="1206" name="StartTickPriceRange" type="PRICE" />
+    <field number="1207" name="EndTickPriceRange" type="PRICE" />
+    <field number="1208" name="TickIncrement" type="PRICE" />
+    <field number="1235" name="NoMatchRules" type="NUMINGROUP" />
+    <field number="1237" name="NoOrdTypeRules" type="NUMINGROUP" />
+    <field number="1239" name="NoTimeInForceRules" type="NUMINGROUP" />
+    <field number="1300" name="MarketSegmentID" type="STRING" />
+    <field number="1301" name="MarketID" type="STRING" />
+    <field number="1324" name="ListUpdateAction" type="CHAR">
       <value enum="A" description="Add" />
       <value enum="D" description="Delete" />
       <value enum="M" description="Modify" />
     </field>
-    <field number="1326" name="TradingSessionDesc" type="String" />
-    <field number="1328" name="RejectText" type="String" />
-    <field number="1380" name="DividendYield" type="Percentage" />
-    <field number="1393" name="MarketReqID" type="String" />
-    <field number="1394" name="MarketReportID" type="String" />
-    <field number="1396" name="MarketSegmentDesc" type="String" />
-    <field number="1408" name="DefaultCstmApplVerID" type="String" />
-    <field number="1948" name="CouponFrequencyPeriod" type="Int" />
-    <field number="1950" name="CouponDayCount" type="Int" />
-    <field number="2567" name="InstrumentPricePrecision" type="Int" />
-    <field number="2577" name="SettlMethod" type="char" />
-    <field number="20013" name="PartyIDOrderOriginationFirm" type="Boolean" />
-    <field number="24100" name="SupplementaryInfo" type="String" />
-    <field number="24101" name="CustomerInfo" type="String" />
-    <field number="24107" name="OptOutOfClearing" type="Boolean" />
-    <field number="24108" name="DealSource" type="String" />
-    <field number="24109" name="ChangeReason" type="Int" />
-    <field number="24110" name="AliasName" type="String" />
-    <field number="24112" name="TradeCondition" type="MultipleValueString" />
-    <field number="24113" name="CorporateActionCode" type="String" />
-    <field number="24114" name="CorporateActionCodeType" type="String" />
-    <field number="24115" name="ASXSecurityType" type="String" />
-    <field number="24116" name="ASXInstrumentClass" type="String" />
-    <field number="24117" name="LinkedCommodity" type="String" />
-    <field number="24118" name="UpperLevelInstrument" type="String" />
-    <field number="24119" name="UpperLevelInstrumentCode" type="String" />
-    <field number="24120" name="AccruedInterestRounding" type="Int" />
-    <field number="24121" name="CleanPriceRounding" type="Int" />
-    <field number="24122" name="YieldConvention" type="Int" />
-    <field number="24123" name="RefSettlementDate" type="LocalMktDate" />
-    <field number="24124" name="ITRminVal" type="Amt" />
-    <field number="24125" name="ExtInfoInstrClass" type="String" />
-    <field number="24126" name="ForeignOwnFlag" type="Boolean" />
-    <field number="24127" name="PractiseSec" type="Boolean" />
-    <field number="24128" name="LegAliasName" type="String" />
-    <field number="28032" name="SessionStateTypeNumber" type="Int" />
+    <field number="1326" name="TradingSessionDesc" type="STRING" />
+    <field number="1328" name="RejectText" type="STRING" />
+    <field number="1380" name="DividendYield" type="PERCENTAGE" />
+    <field number="1393" name="MarketReqID" type="STRING" />
+    <field number="1394" name="MarketReportID" type="STRING" />
+    <field number="1396" name="MarketSegmentDesc" type="STRING" />
+    <field number="1408" name="DefaultCstmApplVerID" type="STRING" />
+    <field number="1948" name="CouponFrequencyPeriod" type="INT" />
+    <field number="1950" name="CouponDayCount" type="INT" />
+    <field number="2567" name="InstrumentPricePrecision" type="INT" />
+    <field number="2577" name="SettlMethod" type="CHAR" />
+    <field number="20013" name="DirectedWholesale" type="BOOLEAN" />
+    <field number="24100" name="SupplementaryInfo" type="STRING" />
+    <field number="24101" name="CustomerInfo" type="STRING" />
+    <field number="24107" name="OptOutOfClearing" type="BOOLEAN" />
+    <field number="24108" name="DealSource" type="STRING" />
+    <field number="24109" name="ChangeReason" type="INT" />
+    <field number="24110" name="AliasName" type="STRING" />
+    <field number="24112" name="TradeCondition" type="MULTIPLEVALUESTRING" />
+    <field number="24113" name="CorporateActionCode" type="STRING" />
+    <field number="24114" name="CorporateActionCodeType" type="STRING" />
+    <field number="24115" name="ASXSecurityType" type="STRING" />
+    <field number="24116" name="ASXInstrumentClass" type="STRING" />
+    <field number="24117" name="LinkedCommodity" type="STRING" />
+    <field number="24118" name="UpperLevelInstrument" type="STRING" />
+    <field number="24119" name="UpperLevelInstrumentCode" type="STRING" />
+    <field number="24120" name="AccruedInterestRounding" type="INT" />
+    <field number="24121" name="CleanPriceRounding" type="INT" />
+    <field number="24122" name="YieldConvention" type="INT" />
+    <field number="24123" name="RefSettlementDate" type="LOCALMKTDATE" />
+    <field number="24124" name="ITRminVal" type="AMT" />
+    <field number="24125" name="ExtInfoInstrClass" type="STRING" />
+    <field number="24126" name="ForeignOwnFlag" type="BOOLEAN" />
+    <field number="24127" name="PractiseSec" type="BOOLEAN" />
+    <field number="24128" name="LegAliasName" type="STRING" />
+    <field number="28032" name="SessionStateTypeNumber" type="INT" />
   </fields>
 </fix>

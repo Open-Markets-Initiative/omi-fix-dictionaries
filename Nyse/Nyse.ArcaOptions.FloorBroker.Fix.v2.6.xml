@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="2" minor="6" servicepack="0" type="NYSE Pillar Options Floor Broker OMS Open Outcry">
+<fix major="4" minor="2" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -42,7 +42,7 @@
     <field name="CheckSum" required="Y" />
   </trailer>
   <messages>
-    <message name="New Order Single" msgtype="D" msgcat="app">
+    <message name="NewOrderSingle" msgtype="D" msgcat="app">
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="OrderQty" required="Y" />
@@ -63,7 +63,7 @@
       <field name="NoTradingSessions" required="Y" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
-      <field name="SecondaryClOrdID" required="N" />
+      <field name="OptionalData" required="N" />
       <field name="SelfTradeType" required="N" />
       <field name="SpecialOrdType" required="N" />
       <field name="ExtendedExecInst" required="Y" />
@@ -77,7 +77,7 @@
       <field name="StockQty" required="N" />
       <field name="PackageLinkID" required="N" />
     </message>
-    <message name="Order Cancel Replace Request" msgtype="G" msgcat="app">
+    <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="OrderQty" required="Y" />
@@ -100,7 +100,7 @@
       <field name="SelfTradeType" required="N" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
-      <field name="SecondaryClOrdID" required="N" />
+      <field name="OptionalData" required="N" />
       <field name="SpecialOrdType" required="N" />
       <field name="ExtendedExecInst" required="Y" />
       <field name="IntroducingBadgeID" required="Y" />
@@ -113,7 +113,7 @@
       <field name="StockQty" required="N" />
       <field name="PackageLinkID" required="N" />
     </message>
-    <message name="New Order Multileg" msgtype="AB" msgcat="app">
+    <message name="NewOrderMultileg" msgtype="AB" msgcat="app">
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="OrderQty" required="Y" />
@@ -127,13 +127,13 @@
       <field name="NoTradingSessions" required="Y" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
-      <field name="SecondaryClOrdID" required="N" />
+      <field name="OptionalData" required="N" />
       <field name="NoLegs" required="Y" />
       <field name="SelfTradeType" required="N" />
       <field name="SpecialOrdType" required="N" />
       <field name="ExtendedExecInst" required="N" />
     </message>
-    <message name="Multileg Order Cancel Replace" msgtype="AC" msgcat="app">
+    <message name="MultilegOrderCancelReplace" msgtype="AC" msgcat="app">
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="OrderQty" required="Y" />
@@ -148,27 +148,27 @@
       <field name="NoTradingSessions" required="Y" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
-      <field name="SecondaryClOrdID" required="N" />
+      <field name="OptionalData" required="N" />
       <field name="NoLegs" required="Y" />
       <field name="SelfTradeType" required="N" />
       <field name="SpecialOrdType" required="N" />
       <field name="ExtendedExecInst" required="N" />
     </message>
-    <message name="Order Cancel Request" msgtype="F" msgcat="app">
+    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Side" required="N" />
       <field name="Symbol" required="N" />
       <field name="TransactTime" required="N" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="LastPx" required="Y" />
       <field name="OrderID" required="Y" />
       <field name="OrdStatus" required="Y" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Account" required="N" />
-      <field name="LastShares" required="Y" />
+      <field name="LastQty" required="Y" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="OpenClose" required="N" />
@@ -196,7 +196,7 @@
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="MultilegReportingType" required="Y" />
-      <field name="SecondaryClOrdID" required="N" />
+      <field name="OptionalData" required="N" />
       <field name="LegRefID" required="N" />
       <field name="SelfTradeType" required="N" />
       <field name="CapStrategyID" required="N" />
@@ -225,7 +225,7 @@
       <field name="BestBidQty" required="N" />
       <field name="BestBidPrice" required="N" />
     </message>
-    <message name="Order Cancel Reject" msgtype="9" msgcat="app">
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="OrderID" required="Y" />
       <field name="OrdStatus" required="Y" />
@@ -238,27 +238,25 @@
   </messages>
   <components />
   <fields>
-    <field number="1" name="Account" type="String" />
-    <field number="8" name="BeginString" type="String">
-      <value enum="FIX.4.2" description="FIX 4.2" />
-    </field>
-    <field number="9" name="BodyLength" type="String" />
-    <field number="10" name="CheckSum" type="String" />
-    <field number="11" name="ClOrdID" type="String" />
-    <field number="14" name="CumQty" type="Qty" />
-    <field number="17" name="ExecID" type="String" />
-    <field number="20" name="ExecTransType" type="Char">
+    <field number="1" name="Account" type="STRING" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="STRING" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="20" name="ExecTransType" type="CHAR">
       <value enum="1" description="Cancel (Trade Break Only)" />
       <value enum="2" description="Correct (Trade Correction Only)" />
     </field>
-    <field number="30" name="LastMkt" type="String" />
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
-    <field number="34" name="MsgSeqNum" type="String" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="37" name="OrderID" type="String" />
-    <field number="38" name="OrderQty" type="Qty" />
-    <field number="39" name="OrdStatus" type="Char">
+    <field number="30" name="LastMkt" type="STRING" />
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastQty" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="STRING" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Partially Filled" />
       <value enum="2" description="Filled" />
@@ -281,7 +279,7 @@
       <value enum="V" description="FLEX Price Reject" />
       <value enum="W" description="Trading Official Open Outcry Unannoucement" />
     </field>
-    <field number="40" name="OrdType" type="Char">
+    <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
       <value enum="3" description="Stop" />
@@ -290,11 +288,11 @@
       <value enum="9" description="AutoMatch Limit" />
       <value enum="P" description="Pegged" />
     </field>
-    <field number="41" name="OrigClOrdID" type="String" />
-    <field number="44" name="Price" type="Price" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="52" name="SendingTime" type="String" />
-    <field number="54" name="Side" type="Char">
+    <field number="41" name="OrigClOrdID" type="STRING" />
+    <field number="44" name="Price" type="PRICE" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="52" name="SendingTime" type="STRING" />
+    <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
       <value enum="5" description="Sell Short" />
@@ -303,10 +301,10 @@
       <value enum="9" description="Cross Short" />
       <value enum="A" description="Cross Short Exempt" />
     </field>
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="58" name="Text" type="String" />
-    <field number="59" name="TimeInForce" type="Char">
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="Day" />
       <value enum="1" description="GTC" />
       <value enum="2" description="At the Opening" />
@@ -316,12 +314,12 @@
       <value enum="6" description="GTD" />
       <value enum="7" description="On Close" />
     </field>
-    <field number="60" name="TransactTime" type="String" />
-    <field number="77" name="OpenClose" type="Char">
+    <field number="60" name="TransactTime" type="STRING" />
+    <field number="77" name="OpenClose" type="CHAR">
       <value enum="O" description="Open" />
       <value enum="C" description="Close" />
     </field>
-    <field number="150" name="ExecType" type="Char">
+    <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Partially Filled" />
       <value enum="2" description="Filled" />
@@ -344,14 +342,14 @@
       <value enum="V" description="FLEX Price Reject" />
       <value enum="W" description="Trading Official Open Outcry Unannoucement" />
     </field>
-    <field number="151" name="LeavesQty" type="Qty" />
-    <field number="167" name="SecurityType" type="String" />
-    <field number="200" name="MaturityMonthYear" type="String" />
-    <field number="201" name="PutOrCall" type="Char">
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="167" name="SecurityType" type="STRING" />
+    <field number="200" name="MaturityMonthYear" type="STRING" />
+    <field number="201" name="PutOrCall" type="CHAR">
       <value enum="0" description="Put" />
       <value enum="1" description="Call" />
     </field>
-    <field number="202" name="StrikePrice" type="Price">
+    <field number="202" name="StrikePrice" type="PRICE">
       <value enum="H" description="Pillar OMS Allocation Reject" />
       <value enum="J" description="Pillar OMS Trade Reject" />
       <value enum="K" description="OMS Allocation Request" />
@@ -363,7 +361,7 @@
       <value enum="V" description="FLEX Price Reject" />
       <value enum="W" description="Trading Official Open Outcry Unannoucement" />
     </field>
-    <field number="204" name="CustomerOrFirm" type="Char">
+    <field number="204" name="CustomerOrFirm" type="CHAR">
       <value enum="0" description="Customer" />
       <value enum="1" description="Firm" />
       <value enum="2" description="Broker" />
@@ -371,14 +369,14 @@
       <value enum="4" description="Away Market Maker" />
       <value enum="8" description="Prof customer" />
     </field>
-    <field number="205" name="MaturityDay" type="String" />
-    <field number="277" name="TradeCondition" type="Char">
+    <field number="205" name="MaturityDay" type="STRING" />
+    <field number="277" name="TradeCondition" type="CHAR">
       <value enum="e" description="Single Leg Floor Trade" />
       <value enum="i" description="Complex Order to Complex Order Floor Trade" />
       <value enum="m" description="Complex Order to Single Leg Order Floor Trade" />
     </field>
-    <field number="382" name="NoContraBrokers" type="Char" />
-    <field number="386" name="NoTradingSessions" type="Int">
+    <field number="382" name="NoContraBrokers" type="CHAR" />
+    <field number="386" name="NoTradingSessions" type="INT">
       <value enum="1" description="Early Trading Session" />
       <value enum="2" description="Core Trading Session" />
       <value enum="3" description="Late Trading Session" />
@@ -386,32 +384,32 @@
       <value enum="5" description="Core &amp; Late Trading Sessions" />
       <value enum="6" description="Early, Core, &amp; Late Trading Sessions" />
     </field>
-    <field number="434" name="CxlRejResponseTo" type="Char">
+    <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Order Cancel Request" />
       <value enum="2" description="Order Cancel/Replace Request" />
     </field>
-    <field number="439" name="ClearingFirm" type="String" />
-    <field number="440" name="ClearingAccount" type="String" />
-    <field number="442" name="MultilegReportingType" type="Char">
+    <field number="439" name="ClearingFirm" type="STRING" />
+    <field number="440" name="ClearingAccount" type="STRING" />
+    <field number="442" name="MultilegReportingType" type="CHAR">
       <value enum="1" description="Single-leg security" />
       <value enum="2" description="Individual leg of a multi-leg security" />
       <value enum="3" description="Multi-leg security" />
     </field>
-    <field number="526" name="SecondaryClOrdID" type="String" />
-    <field number="555" name="NoLegs" type="String">
+    <field number="526" name="OptionalData" type="STRING" />
+    <field number="555" name="NoLegs" type="STRING">
       <value enum="O" description="Open" />
       <value enum="OC" description="Option - Call [OPT]" />
       <value enum="OP" description="Option - Put [OPT]" />
       <value enum="1" description="Buy" />
     </field>
-    <field number="654" name="LegRefID" type="Int" />
-    <field number="7928" name="SelfTradeType" type="Char">
+    <field number="654" name="LegRefID" type="INT" />
+    <field number="7928" name="SelfTradeType" type="CHAR">
       <value enum="T" description="No Self Trade Prevention" />
       <value enum="N" description="Cancel Newest O (letter O)= Cancel Oldest" />
       <value enum="C" description="Cancel Both" />
     </field>
-    <field number="7929" name="CapStrategyID" type="String" />
-    <field number="9202" name="SpecialOrdType" type="Char">
+    <field number="7929" name="CapStrategyID" type="STRING" />
+    <field number="9202" name="SpecialOrdType" type="CHAR">
       <value enum="2" description="DMM Pre-auction - drop copy only" />
       <value enum="3" description="DMM After-auction - drop copy only" />
       <value enum="9" description="Cabinet" />
@@ -420,7 +418,7 @@
       <value enum="Q" description="QCC" />
       <value enum="S" description="AON CUBE" />
     </field>
-    <field number="9416" name="ExtendedExecInst" type="Char">
+    <field number="9416" name="ExtendedExecInst" type="CHAR">
       <value enum="A" description="Add Liquidity Only (ALO)" />
       <value enum="0" description="No trade against MPL" />
       <value enum="2" description="No route to IOI" />
@@ -437,17 +435,17 @@
       <value enum="O" description="Open Outcry" />
       <value enum="B" description="Clear the Book" />
     </field>
-    <field number="9448" name="IntroducingBadgeID" type="String" />
-    <field number="9483" name="DealID" type="String" />
-    <field number="9730" name="LiquidityIndicator" type="String">
+    <field number="9448" name="IntroducingBadgeID" type="STRING" />
+    <field number="9483" name="DealID" type="STRING" />
+    <field number="9730" name="LiquidityIndicator" type="STRING">
       <value enum="ZOS" description="Open outcry for Single leg" />
     </field>
-    <field number="20005" name="FlowIndicator" type="Char">
+    <field number="20005" name="FlowIndicator" type="CHAR">
       <value enum="0" description="Inbound message was not throttled" />
       <value enum="1" description="Inbound message was throttled" />
     </field>
-    <field number="20010" name="NanosecondTransactTime" type="String" />
-    <field number="20016" name="ContraCustomerOrFirm" type="Char">
+    <field number="20010" name="NanosecondTransactTime" type="STRING" />
+    <field number="20016" name="ContraCustomerOrFirm" type="CHAR">
       <value enum="0" description="Customer" />
       <value enum="1" description="Firm" />
       <value enum="2" description="Broker" />
@@ -455,30 +453,30 @@
       <value enum="4" description="Away Market Maker" />
       <value enum="8" description="Prof customer" />
     </field>
-    <field number="20017" name="ContraClearingAccount" type="String" />
-    <field number="20018" name="ContraOpenClose" type="Char">
+    <field number="20017" name="ContraClearingAccount" type="STRING" />
+    <field number="20018" name="ContraOpenClose" type="CHAR">
       <value enum="O" description="Open" />
       <value enum="C" description="Close" />
     </field>
-    <field number="20019" name="ContraMarketMaker" type="String" />
-    <field number="20022" name="AllocationFirmMPID" type="String" />
-    <field number="20023" name="AllocationFirmMMID" type="String" />
-    <field number="20024" name="AllocationFirmIntroducingBadgeID" type="String" />
-    <field number="20028" name="BestBidQty" type="Qty" />
-    <field number="20029" name="BestBidPrice" type="Price" />
-    <field number="20030" name="PercentageStrike" type="Price" />
-    <field number="20031" name="PercentagePrice" type="Price" />
-    <field number="20032" name="TiedHedgeIndicator" type="Char">
+    <field number="20019" name="ContraMarketMaker" type="STRING" />
+    <field number="20022" name="AllocationFirmMPID" type="STRING" />
+    <field number="20023" name="AllocationFirmMMID" type="STRING" />
+    <field number="20024" name="AllocationFirmIntroducingBadgeID" type="STRING" />
+    <field number="20028" name="BestBidQty" type="QTY" />
+    <field number="20029" name="BestBidPrice" type="PRICE" />
+    <field number="20030" name="PercentageStrike" type="PRICE" />
+    <field number="20031" name="PercentagePrice" type="PRICE" />
+    <field number="20032" name="TiedHedgeIndicator" type="CHAR">
       <value enum="Y" description="order is a tied hedge" />
       <value enum="N" description="order is NOT a tied hedge" />
     </field>
-    <field number="20035" name="TiedToStock" type="Char">
+    <field number="20035" name="TiedToStock" type="CHAR">
       <value enum="Y" description="order is tied to stock" />
       <value enum="N" description="order is NOT tied to stock" />
     </field>
-    <field number="20037" name="RefDelta" type="Price" />
-    <field number="20038" name="StockPrice" type="Price" />
-    <field number="20039" name="StockQty" type="Qty" />
-    <field number="20040" name="PackageLinkID" type="Int" />
+    <field number="20037" name="RefDelta" type="PRICE" />
+    <field number="20038" name="StockPrice" type="PRICE" />
+    <field number="20039" name="StockQty" type="QTY" />
+    <field number="20040" name="PackageLinkID" type="INT" />
   </fields>
 </fix>

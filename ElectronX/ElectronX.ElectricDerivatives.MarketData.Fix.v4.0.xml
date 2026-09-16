@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="4" minor="0" servicepack="0" type="Market Data">
+<fix major="1" minor="1" servicepack="0" type="FIXT">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -90,7 +90,7 @@
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
-        <field name="IDSource" required="N" />
+        <field name="SecurityIDSource" required="N" />
         <field name="Product" required="N" />
         <field name="SecurityType" required="N" />
         <field name="ContractMultiplier" required="N" />
@@ -113,7 +113,7 @@
       </group>
     </message>
     <message name="MarketDataSnapshotFullRefresh" msgtype="W" msgcat="app">
-      <field name="IDSource" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
       <field name="SecurityID" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="SecurityType" required="Y" />
@@ -133,7 +133,7 @@
         <field name="TradingSessionID" required="N" />
         <field name="Symbol" required="N" />
         <field name="SecurityID" required="N" />
-        <field name="IDSource" required="N" />
+        <field name="SecurityIDSource" required="N" />
         <field name="SecurityType" required="N" />
         <field name="SecurityGroup" required="N" />
       </group>
@@ -157,7 +157,7 @@
         <field name="TradingSessionID" required="N" />
         <field name="Symbol" required="N" />
         <field name="SecurityID" required="N" />
-        <field name="IDSource" required="N" />
+        <field name="SecurityIDSource" required="N" />
         <field name="SecurityType" required="N" />
         <field name="SecurityGroup" required="N" />
       </group>
@@ -172,7 +172,7 @@
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
-        <field name="IDSource" required="N" />
+        <field name="SecurityIDSource" required="N" />
         <field name="Product" required="N" />
         <field name="SecurityType" required="N" />
         <field name="ContractMultiplier" required="N" />
@@ -197,48 +197,48 @@
   </messages>
   <components />
   <fields>
-    <field number="7" name="BeginSeqNo" type="SeqNum" />
-    <field number="8" name="BeginString" type="String">
-      <value enum="FIXT.1.1" description="FIXT 1.1" />
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="15" name="Currency" type="CURRENCY" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="22" name="SecurityIDSource" type="INT">
+      <value enum="8" description="Exchange Symbol" />
     </field>
-    <field number="9" name="BodyLength" type="Length" />
-    <field number="10" name="CheckSum" type="String" />
-    <field number="15" name="Currency" type="Currency" />
-    <field number="16" name="EndSeqNo" type="SeqNum" />
-    <field number="22" name="IDSource" type="Int" />
-    <field number="34" name="MsgSeqNum" type="SeqNum" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="36" name="NewSeqNo" type="SeqNum" />
-    <field number="43" name="PossDupFlag" type="Boolean" />
-    <field number="45" name="RefSeqNum" type="SeqNum" />
-    <field number="48" name="SecurityID" type="String" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="50" name="SenderSubID" type="String" />
-    <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="57" name="TargetSubID" type="String" />
-    <field number="58" name="Text" type="String" />
-    <field number="98" name="EncryptMethod" type="Int">
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="48" name="SecurityID" type="STRING" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="50" name="SenderSubID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="57" name="TargetSubID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="98" name="EncryptMethod" type="INT">
       <value enum="0" description="None" />
     </field>
-    <field number="108" name="HeartBtInt" type="Int" />
-    <field number="112" name="TestReqID" type="String" />
-    <field number="123" name="GapFillFlag" type="Boolean" />
-    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
-    <field number="167" name="SecurityType" type="String" />
-    <field number="231" name="ContractMultiplier" type="Float" />
-    <field number="262" name="MDReqID" type="String" />
-    <field number="263" name="SubscriptionRequestType" type="Char">
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
+    <field number="167" name="SecurityType" type="STRING" />
+    <field number="231" name="ContractMultiplier" type="FLOAT" />
+    <field number="262" name="MDReqID" type="STRING" />
+    <field number="263" name="SubscriptionRequestType" type="CHAR">
       <value enum="0" description="Snapshot" />
       <value enum="1" description="Snapshot Plus Updates" />
       <value enum="2" description="Delete Previous Request" />
     </field>
-    <field number="264" name="MarketDepth" type="Int">
+    <field number="264" name="MarketDepth" type="INT">
       <value enum="0" description="Full Book Depth" />
       <value enum="1" description="Top of Book" />
     </field>
-    <field number="269" name="MDEntryType" type="Char">
+    <field number="269" name="MDEntryType" type="CHAR">
       <value enum="0" description="Bid" />
       <value enum="1" description="Offer" />
       <value enum="2" description="Trade" />
@@ -250,22 +250,22 @@
       <value enum="B" description="Trade Volume" />
       <value enum="C" description="Open Interest" />
     </field>
-    <field number="270" name="MDEntryPx" type="Price" />
-    <field number="271" name="MDEntrySize" type="Qty" />
-    <field number="272" name="MDEntryDate" type="UTCDateOnly" />
-    <field number="273" name="MDEntryTime" type="UTCTimeOnly" />
-    <field number="278" name="MDEntryID" type="String" />
-    <field number="279" name="MDUpdateAction" type="Char">
+    <field number="270" name="MDEntryPx" type="PRICE" />
+    <field number="271" name="MDEntrySize" type="QTY" />
+    <field number="272" name="MDEntryDate" type="UTCDATEONLY" />
+    <field number="273" name="MDEntryTime" type="UTCTIMEONLY" />
+    <field number="278" name="MDEntryID" type="STRING" />
+    <field number="279" name="MDUpdateAction" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Change" />
       <value enum="2" description="Delete" />
     </field>
-    <field number="320" name="SecurityReqID" type="String" />
-    <field number="322" name="SecurityResponseID" type="String" />
-    <field number="336" name="TradingSessionID" type="String" />
-    <field number="371" name="RefTagID" type="Int" />
-    <field number="372" name="RefMsgType" type="String" />
-    <field number="373" name="SessionRejectReason" type="Int">
+    <field number="320" name="SecurityReqID" type="STRING" />
+    <field number="322" name="SecurityResponseID" type="STRING" />
+    <field number="336" name="TradingSessionID" type="STRING" />
+    <field number="371" name="RefTagID" type="INT" />
+    <field number="372" name="RefMsgType" type="STRING" />
+    <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid Tag Number" />
       <value enum="1" description="Required Tag Missing" />
       <value enum="2" description="Tag Not Defined for This Message Type" />
@@ -282,8 +282,8 @@
       <value enum="16" description="Incorrect NumInGroup Count" />
       <value enum="99" description="Other" />
     </field>
-    <field number="379" name="BusinessRejectRefID" type="String" />
-    <field number="380" name="BusinessRejectReason" type="Int">
+    <field number="379" name="BusinessRejectRefID" type="STRING" />
+    <field number="380" name="BusinessRejectReason" type="INT">
       <value enum="0" description="Other" />
       <value enum="1" description="Unknown ID" />
       <value enum="2" description="Unknown Security" />
@@ -293,47 +293,47 @@
       <value enum="6" description="Not Authorized" />
       <value enum="18" description="Invalid Price Increment" />
     </field>
-    <field number="460" name="Product" type="Int">
+    <field number="460" name="Product" type="INT">
       <value enum="14" description="Energy" />
     </field>
-    <field number="554" name="Password" type="String" />
-    <field number="559" name="SecurityListRequestType" type="Int">
+    <field number="554" name="Password" type="STRING" />
+    <field number="559" name="SecurityListRequestType" type="INT">
       <value enum="0" description="Individual Symbol" />
       <value enum="4" description="All Securities" />
     </field>
-    <field number="560" name="SecurityRequestResult" type="Int">
+    <field number="560" name="SecurityRequestResult" type="INT">
       <value enum="0" description="Valid Request" />
       <value enum="1" description="Invalid or Unsupported Request" />
       <value enum="2" description="No Instruments Found" />
       <value enum="3" description="Not Authorized" />
       <value enum="4" description="Instrument Data Temporarily Unavailable" />
     </field>
-    <field number="562" name="MinTradeVol" type="Int" />
-    <field number="828" name="TrdType" type="Int">
+    <field number="562" name="MinTradeVol" type="INT" />
+    <field number="828" name="TrdType" type="INT">
       <value enum="0" description="Regular Trade" />
     </field>
-    <field number="865" name="EventType" type="Int">
+    <field number="865" name="EventType" type="INT">
       <value enum="5" description="Activation" />
       <value enum="7" description="Last Eligible Trade Date" />
     </field>
-    <field number="866" name="EventDate" type="LocalMktDate" />
-    <field number="868" name="EventText" type="String" />
-    <field number="969" name="MinPriceIncrement" type="Float" />
-    <field number="1003" name="TradeID" type="String" />
-    <field number="1070" name="MDQuoteType" type="Int">
+    <field number="866" name="EventDate" type="LOCALMKTDATE" />
+    <field number="868" name="EventText" type="STRING" />
+    <field number="969" name="MinPriceIncrement" type="FLOAT" />
+    <field number="1003" name="TradeID" type="STRING" />
+    <field number="1070" name="MDQuoteType" type="INT">
       <value enum="1" description="Tradable" />
     </field>
-    <field number="1137" name="DefaultApplVerID" type="String">
+    <field number="1137" name="DefaultApplVerID" type="STRING">
       <value enum="9" description="FIX50SP2" />
     </field>
-    <field number="1145" name="EventTime" type="UTCTimestamp" />
-    <field number="1148" name="LowLimitPrice" type="Price" />
-    <field number="1149" name="HighLimitPrice" type="Price" />
-    <field number="1151" name="SecurityGroup" type="String" />
-    <field number="1306" name="PriceLimitType" type="Int">
+    <field number="1145" name="EventTime" type="UTCTIMESTAMP" />
+    <field number="1148" name="LowLimitPrice" type="PRICE" />
+    <field number="1149" name="HighLimitPrice" type="PRICE" />
+    <field number="1151" name="SecurityGroup" type="STRING" />
+    <field number="1306" name="PriceLimitType" type="INT">
       <value enum="0" description="Price" />
     </field>
-    <field number="2446" name="AggressorSide" type="Char">
+    <field number="2446" name="AggressorSide" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
     </field>

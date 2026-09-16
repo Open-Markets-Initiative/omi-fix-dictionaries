@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="2" minor="1" servicepack="0" type="Drop Copy">
+<fix major="4" minor="2" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -59,10 +59,10 @@
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
     </message>
-    <message name="Test Request" msgtype="1" msgcat="admin">
+    <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
     </message>
-    <message name="Resend Request" msgtype="2" msgcat="admin">
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
       <field name="BeginSeqNo" required="Y" />
       <field name="EndSeqNo" required="Y" />
     </message>
@@ -73,14 +73,14 @@
       <field name="SessionRejectReason" required="Y" />
       <field name="Text" required="N" />
     </message>
-    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
       <field name="GapFillFlag" required="N" />
       <field name="NewSeqNo" required="Y" />
     </message>
     <message name="Logout" msgtype="5" msgcat="admin">
       <field name="Text" required="N" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="Account" required="N" />
       <field name="AvgPx" required="Y" />
       <field name="ClOrdID" required="Y" />
@@ -123,7 +123,7 @@
       <field name="AdditionalBillingParameters" required="N" />
       <field name="FirmMPID" required="N" />
     </message>
-    <message name="Trade Cancel Correct" msgtype="UCC" msgcat="app">
+    <message name="TradeCancelCorrect" msgtype="UCC" msgcat="app">
       <field name="ExecTransType" required="Y" />
       <field name="CorrectionType" required="Y" />
       <field name="ExecID" required="Y" />
@@ -157,7 +157,7 @@
       <field name="StockClearingAccount" required="N" />
       <field name="AdditionalBillingParameters" required="N" />
     </message>
-    <message name="Business Reject" msgtype="j" msgcat="app">
+    <message name="BusinessReject" msgtype="j" msgcat="app">
       <field name="RefSeqNum" required="Y" />
       <field name="RefMsgType" required="Y" />
       <field name="BusinessRejectRefID" required="Y" />
@@ -167,92 +167,90 @@
   </messages>
   <components />
   <fields>
-    <field number="1" name="Account" type="String" />
-    <field number="6" name="AvgPx" type="Price" />
-    <field number="7" name="BeginSeqNo" type="SeqNum" />
-    <field number="8" name="BeginString" type="String">
-      <value enum="FIX.4.2" description="FIX 4.2" />
-    </field>
-    <field number="9" name="BodyLength" type="Length" />
-    <field number="10" name="CheckSum" type="String" />
-    <field number="11" name="ClOrdID" type="String" />
-    <field number="14" name="CumQty" type="Qty" />
-    <field number="16" name="EndSeqNo" type="SeqNum" />
-    <field number="17" name="ExecID" type="String" />
-    <field number="18" name="ExecInst" type="MultipleValueString" />
-    <field number="20" name="ExecTransType" type="char">
+    <field number="1" name="Account" type="STRING" />
+    <field number="6" name="AvgPx" type="PRICE" />
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Trade Cancel" />
       <value enum="2" description="Trade Correct" />
       <value enum="3" description="Status" />
     </field>
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
-    <field number="34" name="MsgSeqNum" type="SeqNum" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="36" name="NewSeqNo" type="SeqNum" />
-    <field number="37" name="OrderID" type="String" />
-    <field number="38" name="OrderQty" type="Qty" />
-    <field number="39" name="OrdStatus" type="char">
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastShares" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR">
       <value enum="1" description="Partially Filled" />
       <value enum="2" description="Filled" />
       <value enum="6" description="Pending Cancel" />
     </field>
-    <field number="40" name="OrdType" type="char">
+    <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
     </field>
-    <field number="41" name="OrigClOrdID" type="String" />
-    <field number="42" name="OrigTime" type="UTCTimestamp" />
-    <field number="43" name="PossDupFlag" type="Boolean" />
-    <field number="44" name="Price" type="Price" />
-    <field number="45" name="RefSeqNum" type="SeqNum" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="50" name="SenderSubID" type="String" />
-    <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="54" name="Side" type="char">
+    <field number="41" name="OrigClOrdID" type="STRING" />
+    <field number="42" name="OrigTime" type="UTCTIMESTAMP" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="44" name="Price" type="PRICE" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="50" name="SenderSubID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
       <value enum="5" description="Sell Short (stock leg)" />
       <value enum="6" description="Sell Short Exempt (stock leg)" />
     </field>
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="57" name="TargetSubID" type="String" />
-    <field number="58" name="Text" type="String" />
-    <field number="59" name="TimeInForce" type="char">
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="57" name="TargetSubID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="DAY" />
       <value enum="1" description="GTC (Good Till Canceled)" />
       <value enum="2" description="OPG (Opening transaction only or Cancel)" />
       <value enum="3" description="IOC (Immediate or Cancel)" />
     </field>
-    <field number="60" name="TransactTime" type="UTCTimestamp" />
-    <field number="77" name="OpenClose" type="char">
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="77" name="OpenClose" type="CHAR">
       <value enum="O" description="Open" />
       <value enum="C" description="Close" />
     </field>
-    <field number="97" name="PossResend" type="Boolean" />
-    <field number="98" name="EncryptMethod" type="Int" />
-    <field number="108" name="HeartBtInt" type="Int" />
-    <field number="109" name="ClientID" type="String" />
-    <field number="112" name="TestReqID" type="String" />
-    <field number="115" name="OnBehalfOfCompID" type="String" />
-    <field number="116" name="OnBehalfOfSubID" type="String" />
-    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
-    <field number="123" name="GapFillFlag" type="Boolean" />
-    <field number="128" name="DeliverToCompID" type="String" />
-    <field number="129" name="DeliverToSubID" type="String" />
-    <field number="141" name="ResetSeqNumFlag" type="Boolean" />
-    <field number="150" name="ExecType" type="char" />
-    <field number="151" name="LeavesQty" type="Qty" />
-    <field number="167" name="SecurityType" type="String" />
-    <field number="200" name="MaturityMonthYear" type="MonthYear" />
-    <field number="201" name="PutOrCall" type="Int">
+    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="98" name="EncryptMethod" type="INT" />
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="109" name="ClientID" type="STRING" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="115" name="OnBehalfOfCompID" type="STRING" />
+    <field number="116" name="OnBehalfOfSubID" type="STRING" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="128" name="DeliverToCompID" type="STRING" />
+    <field number="129" name="DeliverToSubID" type="STRING" />
+    <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
+    <field number="150" name="ExecType" type="CHAR" />
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="167" name="SecurityType" type="STRING" />
+    <field number="200" name="MaturityMonthYear" type="MONTHYEAR" />
+    <field number="201" name="PutOrCall" type="INT">
       <value enum="0" description="Put" />
       <value enum="1" description="Call" />
     </field>
-    <field number="202" name="StrikePrice" type="Price" />
-    <field number="204" name="CustomerOrFirm" type="Int">
+    <field number="202" name="StrikePrice" type="PRICE" />
+    <field number="204" name="CustomerOrFirm" type="INT">
       <value enum="0" description="Priority Customer" />
       <value enum="1" description="Firm" />
       <value enum="2" description="Broker/Dealer" />
@@ -260,11 +258,11 @@
       <value enum="5" description="Non-Member Market Maker" />
       <value enum="8" description="Non-Priority Customer" />
     </field>
-    <field number="205" name="MaturityDay" type="DayOfMonth" />
-    <field number="207" name="SecurityExchange" type="String" />
-    <field number="371" name="RefTagID" type="Int" />
-    <field number="372" name="RefMsgType" type="String" />
-    <field number="373" name="SessionRejectReason" type="Int">
+    <field number="205" name="MaturityDay" type="DAYOFMONTH" />
+    <field number="207" name="SecurityExchange" type="STRING" />
+    <field number="371" name="RefTagID" type="INT" />
+    <field number="372" name="RefMsgType" type="STRING" />
+    <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
       <value enum="2" description="Tag not defined for this message type" />
@@ -276,40 +274,40 @@
       <value enum="10" description="SendingTime accuracy problem" />
       <value enum="11" description="Invalid MsgType" />
     </field>
-    <field number="379" name="BusinessRejectRefID" type="String" />
-    <field number="380" name="BusinessRejectReason" type="Int">
+    <field number="379" name="BusinessRejectRefID" type="STRING" />
+    <field number="380" name="BusinessRejectReason" type="INT">
       <value enum="0" description="Other" />
       <value enum="3" description="Unsupported Message Type" />
     </field>
-    <field number="439" name="ClearingFirm" type="String" />
-    <field number="440" name="ClearingAccount" type="String" />
-    <field number="442" name="MultiLegReportingType" type="char">
+    <field number="439" name="ClearingFirm" type="STRING" />
+    <field number="440" name="ClearingAccount" type="STRING" />
+    <field number="442" name="MultiLegReportingType" type="CHAR">
       <value enum="2" description="Individual Leg of a Multileg Security" />
       <value enum="3" description="Multileg Security" />
     </field>
-    <field number="461" name="CFICode" type="String" />
-    <field number="467" name="IndividualAllocID" type="String" />
-    <field number="528" name="OrderCapacity" type="char">
+    <field number="461" name="CFICode" type="STRING" />
+    <field number="467" name="IndividualAllocID" type="STRING" />
+    <field number="528" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency" />
       <value enum="P" description="Principal" />
       <value enum="R" description="Riskless Principal" />
     </field>
-    <field number="548" name="CrossID" type="String" />
-    <field number="654" name="LegRefID" type="String" />
-    <field number="1003" name="TradeID" type="String" />
-    <field number="1126" name="OrigTradeID" type="String" />
-    <field number="9018" name="MIAXExecInst" type="MultipleValueString" />
-    <field number="9020" name="CorrectionType" type="Int">
+    <field number="548" name="CrossID" type="STRING" />
+    <field number="654" name="LegRefID" type="STRING" />
+    <field number="1003" name="TradeID" type="STRING" />
+    <field number="1126" name="OrigTradeID" type="STRING" />
+    <field number="9018" name="MIAXExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="9020" name="CorrectionType" type="INT">
       <value enum="1" description="Not Applicable (used when message is generated due to a trade cancel)" />
       <value enum="2" description="Price and/or Size change" />
       <value enum="3" description="This side Clearing change" />
       <value enum="4" description="Contra side Clearing change" />
       <value enum="5" description="Both side Clearing change" />
     </field>
-    <field number="9021" name="CorrectionNum" type="Int" />
-    <field number="9207" name="StockExecutionDestination" type="String" />
-    <field number="9208" name="StockClearingAccount" type="String" />
-    <field number="9730" name="AdditionalBillingParameters" type="String" />
-    <field number="9946" name="FirmMPID" type="String" />
+    <field number="9021" name="CorrectionNum" type="INT" />
+    <field number="9207" name="StockExecutionDestination" type="STRING" />
+    <field number="9208" name="StockClearingAccount" type="STRING" />
+    <field number="9730" name="AdditionalBillingParameters" type="STRING" />
+    <field number="9946" name="FirmMPID" type="STRING" />
   </fields>
 </fix>

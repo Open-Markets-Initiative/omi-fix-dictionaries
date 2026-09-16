@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="1" minor="16" servicepack="0" type="Trade Messaging">
+<fix major="4" minor="2" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="N" />
     <field name="BodyLength" required="N" />
@@ -46,7 +46,7 @@
   </header>
   <trailer />
   <messages>
-    <message name="New Trade" msgtype="D" msgcat="app">
+    <message name="NewTrade" msgtype="D" msgcat="app">
       <field name="Symbol" required="N" />
       <field name="SymbolSfx" required="N" />
       <field name="SecurityID" required="N" />
@@ -79,14 +79,14 @@
       <field name="ReceiverBidSize" required="N" />
       <field name="ReceiverAskSize" required="N" />
     </message>
-    <message name="Cancel Trade" msgtype="F" msgcat="app">
-      <field name="MAXOrderID" required="N" />
+    <message name="CancelTrade" msgtype="F" msgcat="app">
+      <field name="MaxOrderID" required="N" />
       <field name="Symbol" required="N" />
       <field name="SymbolSfx" required="N" />
       <field name="SecurityID" required="N" />
       <field name="IDSource" required="N" />
     </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="ExecType" required="Y" />
       <field name="CounterOrdID" required="N" />
       <field name="OrdStatus" required="N" />
@@ -138,18 +138,17 @@
       <field name="InsAskEx" required="N" />
       <field name="InsBidSizeEx" required="N" />
       <field name="InsAskSizeEx" required="N" />
-      <field name="MAXOrderID" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="Duration" required="N" />
       <field name="CounterState" required="N" />
     </message>
-    <message name="Cancel Rejected" msgtype="9" msgcat="app">
+    <message name="CancelRejected" msgtype="9" msgcat="app">
       <field name="CounterOrdID" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="ResultCode" required="Y" />
       <field name="Text" required="Y" />
     </message>
-    <message name="Fill Decline Counter Or Replace Rejected" msgtype="Q" msgcat="app">
+    <message name="FillDeclineCounterOrReplaceRejected" msgtype="Q" msgcat="app">
       <field name="CounterOrdID" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="ResultCode" required="Y" />
@@ -158,12 +157,12 @@
   </messages>
   <components />
   <fields>
-    <field number="8" name="BeginString" type="String" />
-    <field number="9" name="BodyLength" type="Length" />
-    <field number="11" name="ClOrdID" type="String" />
-    <field number="14" name="CumQty" type="Qty" />
-    <field number="17" name="ExecID" type="String" />
-    <field number="18" name="ExecInst" type="MultipleValueString">
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
       <value enum="f" description="BXI (see chapter 2.2.12)" />
       <value enum="G" description="All or none (AON)" />
       <value enum="N" description="Non-negotiable (cannot be countered)" />
@@ -173,14 +172,14 @@
       <value enum="F" description="Fractional Share Trade Messages Accepted" />
       <value enum="g" description="No Partial (only execute if all shares requested are available)" />
     </field>
-    <field number="22" name="IDSource" type="String" />
-    <field number="31" name="LastPx" type="Price" />
-    <field number="32" name="LastShares" type="Qty" />
-    <field number="34" name="MsgSeqNum" type="SeqNum" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="37" name="OrderID" type="String" />
-    <field number="38" name="OrderQty" type="Qty" />
-    <field number="39" name="OrdStatus" type="Char">
+    <field number="22" name="IDSource" type="STRING" />
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastShares" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New (message is live without any fills)" />
       <value enum="4" description="Cancelled" />
       <value enum="5" description="Replaced (message is live)" />
@@ -188,35 +187,35 @@
       <value enum="C" description="Expired" />
       <value enum="S" description="Countered (message is live)" />
     </field>
-    <field number="40" name="OrdType" type="Char">
+    <field number="40" name="OrdType" type="CHAR">
       <value enum="2" description="Limit" />
     </field>
-    <field number="44" name="Price" type="Price" />
-    <field number="48" name="SecurityID" type="String" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="54" name="Side" type="Char">
+    <field number="44" name="Price" type="PRICE" />
+    <field number="48" name="SecurityID" type="STRING" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
       <value enum="5" description="Sell short" />
     </field>
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="58" name="Text" type="String" />
-    <field number="59" name="TimeInForce" type="Char">
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="59" name="TimeInForce" type="CHAR">
       <value enum="3" description="Immediate or Cancel (IOC, message has expire time, either specified or default, but will cancel immediately following a partial execution)" />
     </field>
-    <field number="60" name="TransactTime" type="UTCTimestamp" />
-    <field number="65" name="SymbolSfx" type="String" />
-    <field number="113" name="ReportToExch" type="String">
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="65" name="SymbolSfx" type="STRING" />
+    <field number="113" name="ReportToExch" type="STRING">
       <value enum="Y" description="receiver is the &quot;executing broker&quot;" />
       <value enum="N" description="receiver is not the &quot;executing broker&quot;" />
     </field>
-    <field number="115" name="OnBehalfOfCompID" type="String" />
-    <field number="116" name="OnBehalfOfSubID" type="String" />
-    <field number="128" name="DeliverToCompID" type="String" />
-    <field number="129" name="DeliverToSubID" type="String" />
-    <field number="150" name="ExecType" type="Char">
+    <field number="115" name="OnBehalfOfCompID" type="STRING" />
+    <field number="116" name="OnBehalfOfSubID" type="STRING" />
+    <field number="128" name="DeliverToCompID" type="STRING" />
+    <field number="129" name="DeliverToSubID" type="STRING" />
+    <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="4" description="Cancel" />
       <value enum="5" description="Replaced" />
@@ -226,79 +225,79 @@
       <value enum="1" description="Drop Copy Partial Fill" />
       <value enum="2" description="Drop Copy Fill" />
     </field>
-    <field number="151" name="LeavesQty" type="Qty" />
-    <field number="9377" name="SolicitedFlag" type="String">
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="9377" name="SolicitedFlag" type="STRING">
       <value enum="Y" description="Order is solicited - Default" />
       <value enum="N" description="Order is not solicited" />
     </field>
-    <field number="9528" name="OrderCapacity" type="String">
+    <field number="9528" name="OrderCapacity" type="STRING">
       <value enum="A" description="Agency" />
       <value enum="P" description="Principal - Default" />
       <value enum="R" description="Riskless Principal" />
     </field>
-    <field number="9547" name="LiabilityFlag" type="String">
+    <field number="9547" name="LiabilityFlag" type="STRING">
       <value enum="Y" description="matches or is better" />
       <value enum="N" description="does not match or is worse" />
     </field>
-    <field number="9548" name="ResultCode" type="String" />
-    <field number="9549" name="RestrictToRoundLots" type="String">
+    <field number="9548" name="ResultCode" type="STRING" />
+    <field number="9549" name="RestrictToRoundLots" type="STRING">
       <value enum="N" description="executions of odd lots allowed - Default" />
       <value enum="Y" description="only executions of round lots are allowed" />
     </field>
-    <field number="9551" name="OrderQueuePosition" type="String" />
-    <field number="9552" name="CounterOrdID" type="String" />
-    <field number="9553" name="CounterState" type="String">
+    <field number="9551" name="OrderQueuePosition" type="STRING" />
+    <field number="9552" name="CounterOrdID" type="STRING" />
+    <field number="9553" name="CounterState" type="STRING">
       <value enum="1" description="Receiver of message can now execute" />
       <value enum="2" description="Receiver of message cannot execute" />
     </field>
-    <field number="9559" name="Duration" type="String" />
-    <field number="9561" name="InsBidRcvd" type="String" />
-    <field number="9562" name="InsAskRcvd" type="String" />
-    <field number="9563" name="InsBidSizeRcvd" type="String" />
-    <field number="9564" name="InsAskSizeRcvd" type="String" />
-    <field number="9565" name="ReceiverBid" type="String" />
-    <field number="9566" name="ReceiverAsk" type="String" />
-    <field number="9567" name="ReceiverBidSize" type="String" />
-    <field number="9568" name="ReceiverAskSize" type="String" />
-    <field number="9569" name="FillerBid" type="String" />
-    <field number="9570" name="FillerAsk" type="String" />
-    <field number="9571" name="FillerBidSize" type="String" />
-    <field number="9572" name="FillerAskSize" type="String" />
-    <field number="9573" name="InsBidEx" type="String" />
-    <field number="9574" name="InsAskEx" type="String" />
-    <field number="9575" name="InsBidSizeEx" type="String" />
-    <field number="9576" name="InsAskSizeEx" type="String" />
-    <field number="9577" name="OrderInitiatorFlag" type="String">
+    <field number="9559" name="Duration" type="STRING" />
+    <field number="9561" name="InsBidRcvd" type="STRING" />
+    <field number="9562" name="InsAskRcvd" type="STRING" />
+    <field number="9563" name="InsBidSizeRcvd" type="STRING" />
+    <field number="9564" name="InsAskSizeRcvd" type="STRING" />
+    <field number="9565" name="ReceiverBid" type="STRING" />
+    <field number="9566" name="ReceiverAsk" type="STRING" />
+    <field number="9567" name="ReceiverBidSize" type="STRING" />
+    <field number="9568" name="ReceiverAskSize" type="STRING" />
+    <field number="9569" name="FillerBid" type="STRING" />
+    <field number="9570" name="FillerAsk" type="STRING" />
+    <field number="9571" name="FillerBidSize" type="STRING" />
+    <field number="9572" name="FillerAskSize" type="STRING" />
+    <field number="9573" name="InsBidEx" type="STRING" />
+    <field number="9574" name="InsAskEx" type="STRING" />
+    <field number="9575" name="InsBidSizeEx" type="STRING" />
+    <field number="9576" name="InsAskSizeEx" type="STRING" />
+    <field number="9577" name="OrderInitiatorFlag" type="STRING">
       <value enum="Y" description="Receiver of message was the Initiator" />
       <value enum="N" description="Receiver of message was the Respondent" />
     </field>
-    <field number="9580" name="MaxOrderID" type="String" />
-    <field number="9581" name="OATSReported" type="String">
+    <field number="9580" name="MaxOrderID" type="STRING" />
+    <field number="9581" name="OATSReported" type="STRING">
       <value enum="N" description="Receiver of Drop Copy should not report to OATS" />
       <value enum="Y" description="Receiver of Drop Copy should report to OATS" />
     </field>
-    <field number="9582" name="MAXCumQty" type="String" />
-    <field number="9583" name="Anonymous" type="String">
+    <field number="9582" name="MAXCumQty" type="STRING" />
+    <field number="9583" name="Anonymous" type="STRING">
       <value enum="Y" description="do not show identity of firm on Trade Data feed / do not forward trade to Volume Feed" />
       <value enum="N" description="show identity of firm on Trade Data feed / forward trade to Volume Feed - Default" />
     </field>
-    <field number="9592" name="CounterPartySide" type="String">
+    <field number="9592" name="CounterPartySide" type="STRING">
       <value enum="1" description="Counter party bought" />
       <value enum="2" description="Counter party sold" />
       <value enum="5" description="Counter party sold short" />
     </field>
-    <field number="9593" name="CounterPartyOrderCapacity" type="String" />
-    <field number="9600" name="PingECN" type="String">
+    <field number="9593" name="CounterPartyOrderCapacity" type="STRING" />
+    <field number="9600" name="PingECN" type="STRING">
       <value enum="L" description="Ping at Trade Msg Limit Price" />
       <value enum="M" description="Ping at CBBO Midpoint" />
     </field>
-    <field number="9664" name="QAPAmount" type="String" />
-    <field number="9665" name="QAPRate" type="String" />
-    <field number="9666" name="QAPWaived" type="String">
+    <field number="9664" name="QAPAmount" type="STRING" />
+    <field number="9665" name="QAPRate" type="STRING" />
+    <field number="9666" name="QAPWaived" type="STRING">
       <value enum="Y" description="Respondent waives QAP fee (not allowed when QAP is rebate)" />
       <value enum="N" description="Respondent charges/gives rebate QAP - Default" />
     </field>
-    <field number="9710" name="BFMMFlag" type="String">
+    <field number="9710" name="BFMMFlag" type="STRING">
       <value enum="Y" description="Supports the bona fide market making exception" />
       <value enum="N" description="Does not support the bona fide market making exception - Default" />
     </field>

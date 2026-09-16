@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="1" minor="0" servicepack="0" type="Trade24">
+<fix major="4" minor="0" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -53,10 +53,10 @@
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
     </message>
-    <message name="Test Request" msgtype="1" msgcat="admin">
+    <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
     </message>
-    <message name="Resend Request" msgtype="2" msgcat="admin">
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
       <field name="BeginSeqNo" required="Y" />
       <field name="EndSeqNo" required="Y" />
     </message>
@@ -64,14 +64,57 @@
       <field name="RefSeqNum" required="Y" />
       <field name="Text" required="N" />
     </message>
-    <message name="Sequence Reset" msgtype="4" msgcat="admin">
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
       <field name="GapFillFlag" required="N" />
       <field name="NewSeqNo" required="Y" />
     </message>
     <message name="Logout" msgtype="5" msgcat="admin">
       <field name="Text" required="N" />
     </message>
-    <message name="User Message" msgtype="U" msgcat="app">
+    <message name="NewOrderSingle" msgtype="D" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="Account" required="N" />
+      <field name="ExDestination" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="ProcessCode" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="SharedAccount" required="N" />
+      <field name="SharedOrderIndicator" required="N" />
+      <field name="Text" required="N" />
+      <field name="ExpireTime" required="N" />
+      <group name="NoLegs" required="N">
+        <field name="LegPrice" required="Y" />
+        <field name="LegVolumeRatio" required="N" />
+        <field name="LegSide" required="N" />
+      </group>
+    </message>
+    <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderID" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="Account" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="OrdType" required="N" />
+      <field name="ExpireTime" required="N" />
+      <field name="ProcessCode" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="Text" required="N" />
+      <field name="Price" required="N" />
+    </message>
+    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="CxlType" required="N" />
+      <field name="Account" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="Side" required="Y" />
+    </message>
+    <message name="UserMessage" msgtype="U" msgcat="app">
       <field name="UserMsgCat" required="Y" />
       <field name="ExDestination" required="N" />
       <field name="Symbol" required="N" />
@@ -109,55 +152,12 @@
       <field name="ImpliedPrice25" required="N" />
       <field name="UserMsgCatReq" required="N" />
       <field name="SendMsgType" required="N" />
-      <field name="SendMsgUserID" required="N" />
+      <field name="SendMsgUserId" required="N" />
       <field name="SendMsgText" required="N" />
       <field name="QuoteVolume" required="N" />
       <field name="QuoteFirm" required="N" />
     </message>
-    <message name="New Order Single" msgtype="D" msgcat="app">
-      <field name="ClOrdID" required="Y" />
-      <field name="Account" required="N" />
-      <field name="ExDestination" required="N" />
-      <field name="Symbol" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="ProcessCode" required="N" />
-      <field name="ExecInst" required="N" />
-      <field name="SharedAccount" required="N" />
-      <field name="SharedOrderIndicator" required="N" />
-      <field name="Text" required="N" />
-      <field name="ExpireTime" required="N" />
-      <group name="NoLegs" required="N">
-        <field name="LegPrice" required="Y" />
-        <field name="LegVolumeRatio" required="N" />
-        <field name="LegSide" required="N" />
-      </group>
-    </message>
-    <message name="Order Cancel Replace Request" msgtype="G" msgcat="app">
-      <field name="ClOrdID" required="Y" />
-      <field name="OrderID" required="N" />
-      <field name="Symbol" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="Account" required="N" />
-      <field name="OrderQty" required="N" />
-      <field name="OrdType" required="N" />
-      <field name="ExpireTime" required="N" />
-      <field name="ProcessCode" required="N" />
-      <field name="ExecInst" required="N" />
-      <field name="Text" required="N" />
-      <field name="Price" required="N" />
-    </message>
-    <message name="Order Cancel Request" msgtype="F" msgcat="app">
-      <field name="OrderID" required="N" />
-      <field name="ClOrdID" required="Y" />
-      <field name="CxlType" required="N" />
-      <field name="Account" required="N" />
-      <field name="Symbol" required="N" />
-      <field name="Side" required="Y" />
-    </message>
-    <message name="Execution Report" msgtype="8" msgcat="app">
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="OrderID" required="Y" />
       <field name="ExecID" required="Y" />
       <field name="ClOrdID" required="N" />
@@ -219,7 +219,7 @@
         <field name="BidVol" required="N" />
       </group>
     </message>
-    <message name="Order Cancel Reject" msgtype="9" msgcat="app">
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="OrderID" required="N" />
       <field name="ClOrdID" required="Y" />
       <field name="CxlRejReason" required="N" />
@@ -234,106 +234,104 @@
   </messages>
   <components />
   <fields>
-    <field number="1" name="Account" type="String" />
-    <field number="7" name="BeginSeqNo" type="SeqNum" />
-    <field number="8" name="BeginString" type="String">
-      <value enum="FIX.4.0" description="FIX 4.0" />
-    </field>
-    <field number="9" name="BodyLength" type="Length" />
-    <field number="10" name="CheckSum" type="String" />
-    <field number="11" name="ClOrdID" type="String" />
-    <field number="14" name="CumQty" type="Qty" />
-    <field number="16" name="EndSeqNo" type="SeqNum" />
-    <field number="17" name="ExecID" type="String" />
-    <field number="18" name="ExecInst" type="MultipleValueString" />
-    <field number="20" name="ExecTransType" type="char" />
-    <field number="32" name="LastShares" type="Qty" />
-    <field number="34" name="MsgSeqNum" type="SeqNum" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="36" name="NewSeqNo" type="SeqNum" />
-    <field number="37" name="OrderID" type="String" />
-    <field number="38" name="OrderQty" type="Qty" />
-    <field number="39" name="OrdStatus" type="char" />
-    <field number="40" name="OrdType" type="char" />
-    <field number="43" name="PossDupFlag" type="Boolean" />
-    <field number="44" name="Price" type="Price" />
-    <field number="45" name="RefSeqNum" type="SeqNum" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="54" name="Side" type="char">
+    <field number="1" name="Account" type="STRING" />
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="20" name="ExecTransType" type="CHAR" />
+    <field number="32" name="LastShares" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR" />
+    <field number="40" name="OrdType" type="CHAR" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="44" name="Price" type="PRICE" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
     </field>
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="58" name="Text" type="String" />
-    <field number="60" name="TransactTime" type="UTCTimestamp" />
-    <field number="81" name="ProcessCode" type="char" />
-    <field number="95" name="RawDataLength" type="Length" />
-    <field number="96" name="RawData" type="String" />
-    <field number="97" name="PossResend" type="Boolean" />
-    <field number="100" name="ExDestination" type="Exchange" />
-    <field number="102" name="CxlRejReason" type="Int" />
-    <field number="103" name="OrdRejReason" type="Int" />
-    <field number="108" name="HeartBtInt" type="Int" />
-    <field number="112" name="TestReqID" type="String" />
-    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
-    <field number="123" name="GapFillFlag" type="Boolean" />
-    <field number="125" name="CxlType" type="char" />
-    <field number="126" name="ExpireTime" type="UTCTimestamp" />
-    <field number="5001" name="UserMsgCat" type="Int" />
-    <field number="5002" name="InstrmntIndicator" type="char" />
-    <field number="5003" name="LastMessage" type="Boolean" />
-    <field number="5004" name="Currency" type="Currency" />
-    <field number="5005" name="TickIncrement" type="Price" />
-    <field number="5009" name="MonthYear" type="MonthYear" />
-    <field number="5010" name="UnderlyingFut" type="String" />
-    <field number="5011" name="LastTradedVolume" type="Qty" />
-    <field number="5012" name="ChangeStatusOf" type="char" />
-    <field number="5013" name="OptionsStrikeP" type="Price" />
-    <field number="5014" name="MarketStatus" type="char" />
-    <field number="5015" name="LowTradePrice" type="Price" />
-    <field number="5016" name="HighTradePrice" type="Price" />
-    <field number="5017" name="SettlementPrice" type="Price" />
-    <field number="5018" name="Volatility" type="float" />
-    <field number="5019" name="OpenPrice" type="Price" />
-    <field number="5020" name="ClosePrice" type="Price" />
-    <field number="5021" name="FOBIndicator" type="char" />
-    <field number="5022" name="AskPrice" type="Price" />
-    <field number="5023" name="AskVolume" type="Qty" />
-    <field number="5024" name="BidPrice" type="Price" />
-    <field number="5025" name="BidVolume" type="Qty" />
-    <field number="5026" name="LastTradedPrice" type="Price" />
-    <field number="5028" name="InterSprdRatio" type="float" />
-    <field number="5029" name="SharedOrderIndicator" type="char" />
-    <field number="5030" name="SharedAccount" type="String" />
-    <field number="5031" name="LastBuyer" type="String" />
-    <field number="5032" name="LastSeller" type="String" />
-    <field number="5033" name="FilterType" type="char" />
-    <field number="5034" name="InterSpreadsFlag" type="Boolean" />
-    <field number="5035" name="Enable" type="Boolean" />
-    <field number="5036" name="ReferenceNo" type="String" />
-    <field number="5037" name="CustomVolume" type="Qty" />
-    <field number="5038" name="NoLegs" type="NumInGroup" />
-    <field number="5039" name="LegPrice" type="Price" />
-    <field number="5040" name="LegVolumeRatio" type="float" />
-    <field number="5041" name="LegSide" type="char" />
-    <field number="5042" name="NoAskLevels" type="NumInGroup" />
-    <field number="5043" name="AskFirm" type="String" />
-    <field number="5044" name="AskVol" type="Qty" />
-    <field number="5045" name="NoBidLevels" type="NumInGroup" />
-    <field number="5046" name="BidFirm" type="String" />
-    <field number="5047" name="BidVol" type="Qty" />
-    <field number="5048" name="SendMsgType" type="char" />
-    <field number="5049" name="SendMsgUserID" type="String" />
-    <field number="5050" name="SendMsgText" type="String" />
-    <field number="5051" name="QuoteVolume" type="Qty" />
-    <field number="5052" name="QuoteFirm" type="String" />
-    <field number="5053" name="UserMsgCatReq" type="Int" />
-    <field number="5054" name="FractionalIndicator" type="char" />
-    <field number="5055" name="TotalTradedVolume" type="Qty" />
-    <field number="5056" name="InterimSettlement" type="Price" />
-    <field number="5057" name="ImpliedPrice25" type="Price" />
-    <field number="5059" name="SharedTradeIndicator" type="char" />
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="81" name="ProcessCode" type="CHAR" />
+    <field number="95" name="RawDataLength" type="LENGTH" />
+    <field number="96" name="RawData" type="STRING" />
+    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="100" name="ExDestination" type="EXCHANGE" />
+    <field number="102" name="CxlRejReason" type="INT" />
+    <field number="103" name="OrdRejReason" type="INT" />
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="125" name="CxlType" type="CHAR" />
+    <field number="126" name="ExpireTime" type="UTCTIMESTAMP" />
+    <field number="5001" name="UserMsgCat" type="INT" />
+    <field number="5002" name="InstrmntIndicator" type="CHAR" />
+    <field number="5003" name="LastMessage" type="BOOLEAN" />
+    <field number="5004" name="Currency" type="CURRENCY" />
+    <field number="5005" name="TickIncrement" type="PRICE" />
+    <field number="5009" name="MonthYear" type="MONTHYEAR" />
+    <field number="5010" name="UnderlyingFut" type="STRING" />
+    <field number="5011" name="LastTradedVolume" type="QTY" />
+    <field number="5012" name="ChangeStatusOf" type="CHAR" />
+    <field number="5013" name="OptionsStrikeP" type="PRICE" />
+    <field number="5014" name="MarketStatus" type="CHAR" />
+    <field number="5015" name="LowTradePrice" type="PRICE" />
+    <field number="5016" name="HighTradePrice" type="PRICE" />
+    <field number="5017" name="SettlementPrice" type="PRICE" />
+    <field number="5018" name="Volatility" type="FLOAT" />
+    <field number="5019" name="OpenPrice" type="PRICE" />
+    <field number="5020" name="ClosePrice" type="PRICE" />
+    <field number="5021" name="FOBIndicator" type="CHAR" />
+    <field number="5022" name="AskPrice" type="PRICE" />
+    <field number="5023" name="AskVolume" type="QTY" />
+    <field number="5024" name="BidPrice" type="PRICE" />
+    <field number="5025" name="BidVolume" type="QTY" />
+    <field number="5026" name="LastTradedPrice" type="PRICE" />
+    <field number="5028" name="InterSprdRatio" type="FLOAT" />
+    <field number="5029" name="SharedOrderIndicator" type="CHAR" />
+    <field number="5030" name="SharedAccount" type="STRING" />
+    <field number="5031" name="LastBuyer" type="STRING" />
+    <field number="5032" name="LastSeller" type="STRING" />
+    <field number="5033" name="FilterType" type="CHAR" />
+    <field number="5034" name="InterSpreadsFlag" type="BOOLEAN" />
+    <field number="5035" name="Enable" type="BOOLEAN" />
+    <field number="5036" name="ReferenceNo" type="STRING" />
+    <field number="5037" name="CustomVolume" type="QTY" />
+    <field number="5038" name="NoLegs" type="NUMINGROUP" />
+    <field number="5039" name="LegPrice" type="PRICE" />
+    <field number="5040" name="LegVolumeRatio" type="FLOAT" />
+    <field number="5041" name="LegSide" type="CHAR" />
+    <field number="5042" name="NoAskLevels" type="NUMINGROUP" />
+    <field number="5043" name="AskFirm" type="STRING" />
+    <field number="5044" name="AskVol" type="QTY" />
+    <field number="5045" name="NoBidLevels" type="NUMINGROUP" />
+    <field number="5046" name="BidFirm" type="STRING" />
+    <field number="5047" name="BidVol" type="QTY" />
+    <field number="5048" name="SendMsgType" type="CHAR" />
+    <field number="5049" name="SendMsgUserId" type="STRING" />
+    <field number="5050" name="SendMsgText" type="STRING" />
+    <field number="5051" name="QuoteVolume" type="QTY" />
+    <field number="5052" name="QuoteFirm" type="STRING" />
+    <field number="5053" name="UserMsgCatReq" type="INT" />
+    <field number="5054" name="FractionalIndicator" type="CHAR" />
+    <field number="5055" name="TotalTradedVolume" type="QTY" />
+    <field number="5056" name="InterimSettlement" type="PRICE" />
+    <field number="5057" name="ImpliedPrice25" type="PRICE" />
+    <field number="5059" name="SharedTradeIndicator" type="CHAR" />
   </fields>
 </fix>

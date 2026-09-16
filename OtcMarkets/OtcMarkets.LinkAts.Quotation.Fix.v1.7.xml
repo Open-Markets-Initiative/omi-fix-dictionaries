@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="1" minor="7" servicepack="0" type="Quotation">
+<fix major="4" minor="2" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="N" />
     <field name="BodyLength" required="N" />
@@ -38,7 +38,7 @@
     <field name="SendingTime" required="N" />
     <field name="TargetCompID" required="N" />
     <field name="OnBehalfOfCompID" required="N" />
-    <field name="OnBehalfOfSubID" required="N" />
+    <field name="OnBehaldOfSubID" required="N" />
     <field name="DeliverToCompID" required="N" />
     <field name="DeliverToSubID" required="N" />
   </header>
@@ -69,18 +69,18 @@
       <field name="CancelTime" required="N" />
       <field name="AutoCancelEOD" required="N" />
     </message>
-    <message name="Quote Cancel" msgtype="Z" msgcat="app">
+    <message name="QuoteCancel" msgtype="Z" msgcat="app">
       <field name="MsgRefID" required="N" />
       <field name="Symbol" required="N" />
       <field name="SymbolSfx" required="N" />
       <field name="SecurityID" required="N" />
       <field name="IDSource" required="N" />
     </message>
-    <message name="Trader State" msgtype="OT" msgcat="app">
+    <message name="TraderState" msgtype="OT" msgcat="app">
       <field name="MsgRefID" required="N" />
       <field name="OpenCloseState" required="Y" />
     </message>
-    <message name="Quote Acknowledgement" msgtype="b" msgcat="app">
+    <message name="QuoteAcknowledgement" msgtype="b" msgcat="app">
       <field name="MsgRefID" required="Y" />
       <field name="Symbol" required="N" />
       <field name="SymbolSfx" required="N" />
@@ -89,7 +89,7 @@
       <field name="QuoteID" required="Y" />
       <field name="CATroutedQuoteID" required="N" />
     </message>
-    <message name="Trader State Acknowledgement" msgtype="OTA" msgcat="app">
+    <message name="TraderStateAcknowledgement" msgtype="OTA" msgcat="app">
       <field name="MsgRefID" required="Y" />
       <field name="ResultCode" required="Y" />
       <field name="Text" required="Y" />
@@ -97,81 +97,81 @@
   </messages>
   <components />
   <fields>
-    <field number="8" name="BeginString" type="String" />
-    <field number="9" name="BodyLength" type="Length" />
-    <field number="22" name="IDSource" type="String">
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="22" name="IDSource" type="STRING">
       <value enum="1" description="CUSIP" />
     </field>
-    <field number="34" name="MsgSeqNum" type="SeqNum" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="48" name="SecurityID" type="String" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="58" name="Text" type="String" />
-    <field number="65" name="SymbolSfx" type="String" />
-    <field number="115" name="OnBehalfOfCompID" type="String" />
-    <field number="116" name="OnBehalfOfSubID" type="String" />
-    <field number="128" name="DeliverToCompID" type="String" />
-    <field number="129" name="DeliverToSubID" type="String" />
-    <field number="132" name="BidPx" type="String" />
-    <field number="133" name="OfferPx" type="String" />
-    <field number="134" name="BidSize" type="String" />
-    <field number="135" name="OfferSize" type="String" />
-    <field number="9501" name="BidPriceType" type="String">
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="48" name="SecurityID" type="STRING" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="65" name="SymbolSfx" type="STRING" />
+    <field number="115" name="OnBehalfOfCompID" type="STRING" />
+    <field number="116" name="OnBehaldOfSubID" type="STRING" />
+    <field number="128" name="DeliverToCompID" type="STRING" />
+    <field number="129" name="DeliverToSubID" type="STRING" />
+    <field number="132" name="BidPx" type="STRING" />
+    <field number="133" name="OfferPx" type="STRING" />
+    <field number="134" name="BidSize" type="STRING" />
+    <field number="135" name="OfferSize" type="STRING" />
+    <field number="9501" name="BidPriceType" type="STRING">
       <value enum="A" description="Actual" />
       <value enum="U" description="Unpriced" />
       <value enum="OW" description="Offers Wanted" />
     </field>
-    <field number="9502" name="OfferPriceType" type="String">
+    <field number="9502" name="OfferPriceType" type="STRING">
       <value enum="A" description="Actual" />
       <value enum="U" description="Unpriced" />
       <value enum="BW" description="Bids Wanted" />
     </field>
-    <field number="9506" name="LockCrossFlag" type="String">
+    <field number="9506" name="LockCrossFlag" type="STRING">
       <value enum="Y" description="Can lock/cross" />
       <value enum="N" description="Cannot lock/cross (Default)" />
     </field>
-    <field number="9534" name="Unsolicited" type="String">
+    <field number="9534" name="Unsolicited" type="STRING">
       <value enum="Y" description="Quote is unsolicited" />
       <value enum="N" description="Quote is not unsolicited (Default)" />
     </field>
-    <field number="9535" name="NonAffiliate" type="String">
+    <field number="9535" name="NonAffiliate" type="STRING">
       <value enum="Y" description="Unsolicited quote is from a Non- Affiliate" />
       <value enum="N" description="Unsolicited quote is not from a Non- Affiliate (Default)" />
     </field>
-    <field number="9540" name="UpdateType" type="String">
+    <field number="9540" name="UpdateType" type="STRING">
       <value enum="1" description="Update Quote" />
       <value enum="2" description="Add Quote" />
     </field>
-    <field number="9548" name="ResultCode" type="String" />
-    <field number="9595" name="ATSOnly" type="String">
+    <field number="9548" name="ResultCode" type="STRING" />
+    <field number="9595" name="ATSOnly" type="STRING">
       <value enum="Y" description="Quote can only be disseminated within OTC Link" />
     </field>
-    <field number="9596" name="CancelTime" type="String" />
-    <field number="9597" name="AutoCancelEOD" type="String">
+    <field number="9596" name="CancelTime" type="STRING" />
+    <field number="9597" name="AutoCancelEOD" type="STRING">
       <value enum="Y" description="Quote should be cancelled" />
       <value enum="N" description="Quote should not be cancelled (Default) Reserved TAGS" />
     </field>
-    <field number="9662" name="BidQAPRate" type="String" />
-    <field number="9663" name="OfferQAPRate" type="String" />
-    <field number="9670" name="MsgRefID" type="String" />
-    <field number="9671" name="OpenCloseState" type="String">
+    <field number="9662" name="BidQAPRate" type="STRING" />
+    <field number="9663" name="OfferQAPRate" type="STRING" />
+    <field number="9670" name="MsgRefID" type="STRING" />
+    <field number="9671" name="OpenCloseState" type="STRING">
       <value enum="1" description="Open this trader only" />
       <value enum="2" description="Close this trader only" />
       <value enum="3" description="Open all traders" />
       <value enum="4" description="Close all traders" />
     </field>
-    <field number="9680" name="BidAutoEx" type="String">
+    <field number="9680" name="BidAutoEx" type="STRING">
       <value enum="Y" description="Quote is Auto-Ex indicated" />
       <value enum="N" description="Quote is not Auto-Ex indicated (Default) Offer Side Properties, if none are provided then offer remains unchanged on Update Quote, and price is set to unpriced on Add Quote" />
     </field>
-    <field number="9681" name="OfferAutoEx" type="String">
+    <field number="9681" name="OfferAutoEx" type="STRING">
       <value enum="Y" description="Quote is Auto-Ex indicated" />
       <value enum="N" description="Quote is not Auto-Ex indicated (Default) Optional parameters" />
     </field>
-    <field number="9690" name="QuoteID" type="String" />
-    <field number="9695" name="CATroutedQuoteID" type="String" />
+    <field number="9690" name="QuoteID" type="STRING" />
+    <field number="9695" name="CATroutedQuoteID" type="STRING" />
   </fields>
 </fix>

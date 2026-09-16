@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="3" minor="51" servicepack="0" type="Purge">
+<fix major="4" minor="4" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="N" />
@@ -50,7 +50,7 @@
     <field name="CheckSum" required="N" />
   </trailer>
   <messages>
-    <message name="Purge Request" msgtype="F" msgcat="app">
+    <message name="PurgeRequest" msgtype="F" msgcat="app">
       <field name="TransactTime" required="N" />
       <field name="MassCancelInst" required="N" />
       <field name="MassCancelID" required="N" />
@@ -62,13 +62,13 @@
       <field name="CustomGroupIDCnt" required="N" />
       <field name="CustomGroupID" required="N" />
     </message>
-    <message name="Purge Acknowledgement" msgtype="8" msgcat="app">
+    <message name="PurgeAcknowledgement" msgtype="8" msgcat="app">
       <field name="ExecTransType" required="N" />
       <field name="ExecType" required="N" />
       <field name="MassCancelID" required="N" />
       <field name="CancelledOrderCount" required="N" />
     </message>
-    <message name="Purge Reject" msgtype="9" msgcat="app">
+    <message name="PurgeReject" msgtype="9" msgcat="app">
       <field name="OrdStatus" required="N" />
       <field name="CxlRejResponseTo" required="N" />
       <field name="CxlRejReason" required="N" />
@@ -78,38 +78,35 @@
   </messages>
   <components />
   <fields>
-    <field number="8" name="BeginString" type="String">
-      <value enum="FIX.4.2" description="FIX 4.2" />
-      <value enum="FIX.4.4" description="FIX 4.4" />
-    </field>
-    <field number="9" name="BodyLength" type="Length" />
-    <field number="10" name="CheckSum" type="String" />
-    <field number="15" name="Currency" type="Currency" />
-    <field number="20" name="ExecTransType" type="char">
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="15" name="Currency" type="CURRENCY" />
+    <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Cancel" />
       <value enum="3" description="Status" />
     </field>
-    <field number="22" name="IDSource" type="String">
+    <field number="22" name="IDSource" type="STRING">
       <value enum="4" description="ISIN" />
     </field>
-    <field number="34" name="MsgSeqNum" type="SeqNum" />
-    <field number="35" name="MsgType" type="String" />
-    <field number="39" name="OrdStatus" type="char">
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
       <value enum="2" description="Filled" />
       <value enum="5" description="Replaced" />
       <value enum="8" description="Rejected" />
       <value enum="E" description="Pending Replace" />
     </field>
-    <field number="43" name="PossDupFlag" type="Boolean" />
-    <field number="48" name="SecurityID" type="String" />
-    <field number="49" name="SenderCompID" type="String" />
-    <field number="52" name="SendingTime" type="UTCTimestamp" />
-    <field number="55" name="Symbol" type="String" />
-    <field number="56" name="TargetCompID" type="String" />
-    <field number="57" name="TargetSubID" type="String" />
-    <field number="58" name="Text" type="String">
+    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="48" name="SecurityID" type="STRING" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="57" name="TargetSubID" type="STRING" />
+    <field number="58" name="Text" type="STRING">
       <value enum="A" description="Admin" />
       <value enum="H" description="Halted" />
       <value enum="k" description="Pending periodic auction (BXE and DXE only)" />
@@ -126,34 +123,34 @@
       <value enum="Z" description="Unforseen Reason" />
       <value enum="o" description="Max Open Trade Count Exceeded" />
     </field>
-    <field number="60" name="TransactTime" type="UTCTimestamp" />
-    <field number="97" name="PossResend" type="Boolean" />
-    <field number="102" name="CxlRejReason" type="int">
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too Late to Cancel" />
       <value enum="3" description="Already Pending Cancel or Pending Replace" />
       <value enum="2" description="Broker Option" />
     </field>
-    <field number="115" name="OnBehalfOfCompID" type="String" />
-    <field number="116" name="OnBehalfOfSubID" type="String" />
-    <field number="122" name="OrigSendingTime" type="UTCTimestamp" />
-    <field number="128" name="DeliverToCompID" type="String" />
-    <field number="129" name="DeliverToSubID" type="String" />
-    <field number="150" name="ExecType" type="char">
+    <field number="115" name="OnBehalfOfCompID" type="STRING" />
+    <field number="116" name="OnBehalfOfSubID" type="STRING" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="128" name="DeliverToCompID" type="STRING" />
+    <field number="129" name="DeliverToSubID" type="STRING" />
+    <field number="150" name="ExecType" type="CHAR">
       <value enum="F" description="Trade" />
       <value enum="0" description="New (acknowledgement of new order)" />
       <value enum="2" description="Fill" />
       <value enum="5" description="Replaced" />
       <value enum="M" description="Mass Cancel Complete" />
     </field>
-    <field number="207" name="SecurityExchange" type="Exchange" />
-    <field number="434" name="CxlRejResponseTo" type="char">
+    <field number="207" name="SecurityExchange" type="EXCHANGE" />
+    <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Cancel" />
     </field>
-    <field number="7695" name="MassCancelID" type="String" />
-    <field number="7696" name="CancelledOrderCount" type="String" />
-    <field number="7698" name="CustomGroupIDCnt" type="String" />
-    <field number="7699" name="CustomGroupID" type="String" />
-    <field number="7700" name="MassCancelInst" type="String">
+    <field number="7695" name="MassCancelID" type="STRING" />
+    <field number="7696" name="CancelledOrderCount" type="STRING" />
+    <field number="7698" name="CustomGroupIDCnt" type="STRING" />
+    <field number="7699" name="CustomGroupID" type="STRING" />
+    <field number="7700" name="MassCancelInst" type="STRING">
       <value enum="A" description="No filtering by clearing firm is performed." />
     </field>
   </fields>

@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="0" minor="27" servicepack="0" type="FIX">
+<fix major="4" minor="4" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -64,33 +64,21 @@
     <field name="CheckSum" required="Y" />
   </trailer>
   <messages>
+    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
+      <field name="RefSeqNum" required="N" />
+      <field name="RefMsgType" required="Y" />
+      <field name="BusinessRejectRefID" required="N" />
+      <field name="BusinessRejectReason" required="Y" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="BusinessReject" msgtype="j" msgcat="app">
+      <field name="RefSeqNum" required="Y" />
+      <field name="Text" required="N" />
+      <field name="BusinessRejectRefID" required="N" />
+      <field name="BusinessRejectReason" required="Y" />
+    </message>
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
-    </message>
-    <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqID" required="Y" />
-    </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin">
-      <field name="BeginSeqNo" required="Y" />
-      <field name="EndSeqNo" required="Y" />
-    </message>
-    <message name="Reject" msgtype="3" msgcat="admin">
-      <field name="RefSeqNum" required="Y" />
-      <field name="RefTagID" required="N" />
-      <field name="RefMsgType" required="N" />
-      <field name="SessionRejectReason" required="N" />
-      <field name="Text" required="N" />
-      <field name="EncodedTextLen" required="N" />
-      <field name="EncodedText" required="N" />
-    </message>
-    <message name="SequenceReset" msgtype="4" msgcat="admin">
-      <field name="GapFillFlag" required="N" />
-      <field name="NewSeqNo" required="Y" />
-    </message>
-    <message name="Logout" msgtype="5" msgcat="admin">
-      <field name="Text" required="N" />
-      <field name="EncodedTextLen" required="N" />
-      <field name="EncodedText" required="N" />
     </message>
     <message name="Logon" msgtype="A" msgcat="admin">
       <field name="EncryptMethod" required="Y" />
@@ -108,38 +96,10 @@
       <field name="Username" required="N" />
       <field name="Password" required="N" />
     </message>
-    <message name="MarketDataRequest" msgtype="V" msgcat="app">
-      <field name="MDReqID" required="Y" />
-      <field name="SubscriptionRequestType" required="Y" />
-      <group name="NoRelatedSym" required="N">
-        <field name="Symbol" required="Y" />
-        <field name="SecurityType" required="Y" />
-        <component name="Security" required="Y" />
-      </group>
-    </message>
-    <message name="MarketDataSnapshotFullRefresh" msgtype="W" msgcat="app">
-      <field name="MDReqID" required="Y" />
-      <component name="Instrument" required="Y" />
-      <group name="NoMDEntries" required="Y">
-        <field name="MDEntryType" required="Y" />
-        <field name="MDEntryID" required="N" />
-        <field name="MDEntryPx" required="N" />
-        <field name="MDEntrySize" required="N" />
-        <field name="MDEntryDate" required="N" />
-        <field name="MDEntryTime" required="N" />
-        <field name="MinQty" required="N" />
-        <field name="TransactTime" required="Y" />
-        <field name="MDPriceLevel" required="N" />
-        <field name="OpenCloseSettlFlag" required="N" />
-        <field name="TradingReferenceDate" required="N" />
-        <field name="TrdType" required="N" />
-        <field name="MDUpdateAction" required="Y" />
-        <component name="Instrument" required="Y" />
-        <field name="AggressorSide" required="N" />
-        <field name="TrdSubType" required="N" />
-        <field name="DifferentialPrice" required="N" />
-        <field name="LegLastPx" required="N" />
-      </group>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+      <field name="EncodedTextLen" required="N" />
+      <field name="EncodedText" required="N" />
     </message>
     <message name="MarketDataIncrementalRefresh" msgtype="X" msgcat="app">
       <field name="MDReqID" required="Y" />
@@ -165,15 +125,61 @@
         <field name="LegLastPx" required="N" />
       </group>
     </message>
+    <message name="MarketDataRequest" msgtype="V" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <field name="SubscriptionRequestType" required="Y" />
+      <group name="NoRelatedSym" required="N">
+        <field name="Symbol" required="Y" />
+        <field name="SecurityType" required="Y" />
+        <component name="Security" required="Y" />
+      </group>
+    </message>
     <message name="MarketDataRequestReject" msgtype="Y" msgcat="app">
       <field name="MDReqID" required="Y" />
       <field name="MDReqRejReason" required="N" />
       <field name="Text" required="N" />
     </message>
-    <message name="SecurityListRequest" msgtype="x" msgcat="app">
-      <field name="SecurityReqID" required="Y" />
-      <field name="SecurityListRequestType" required="Y" />
-      <component name="Instrument" required="N" />
+    <message name="MarketDataSnapshotFullRefresh" msgtype="W" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <component name="Instrument" required="Y" />
+      <group name="NoMDEntries" required="Y">
+        <field name="MDEntryType" required="Y" />
+        <field name="MDEntryID" required="N" />
+        <field name="MDEntryPx" required="N" />
+        <field name="MDEntrySize" required="N" />
+        <field name="MDEntryDate" required="N" />
+        <field name="MDEntryTime" required="N" />
+        <field name="MinQty" required="N" />
+        <field name="TransactTime" required="Y" />
+        <field name="MDPriceLevel" required="N" />
+        <field name="OpenCloseSettlFlag" required="N" />
+        <field name="TradingReferenceDate" required="N" />
+        <field name="TrdType" required="N" />
+        <field name="MDUpdateAction" required="Y" />
+        <component name="Instrument" required="Y" />
+        <field name="AggressorSide" required="N" />
+        <field name="TrdSubType" required="N" />
+        <field name="DifferentialPrice" required="N" />
+        <field name="LegLastPx" required="N" />
+      </group>
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+      <field name="EncodedTextLen" required="N" />
+      <field name="EncodedText" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SecurityDefinition" msgtype="d" msgcat="app">
+      <field name="SecurityUpdateAction" required="Y" />
+      <field name="LastUpdateTime" required="Y" />
+      <component name="Security" required="N" />
     </message>
     <message name="SecurityList" msgtype="y" msgcat="app">
       <field name="SecurityReqID" required="Y" />
@@ -183,20 +189,27 @@
       <field name="LastFragment" required="N" />
       <component name="SecListGrp" required="N" />
     </message>
-    <message name="SecurityDefinition" msgtype="d" msgcat="app">
-      <field name="SecurityUpdateAction" required="Y" />
-      <field name="LastUpdateTime" required="Y" />
-      <component name="Security" required="N" />
+    <message name="SecurityListRequest" msgtype="x" msgcat="app">
+      <field name="SecurityReqID" required="Y" />
+      <field name="SecurityListRequestType" required="Y" />
+      <component name="Instrument" required="N" />
     </message>
-    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="N" />
-      <field name="RefMsgType" required="Y" />
-      <field name="BusinessRejectRefID" required="N" />
-      <field name="BusinessRejectReason" required="Y" />
-      <field name="Text" required="N" />
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
     </message>
   </messages>
   <components>
+    <component name="Instrument">
+      <field name="Symbol" required="N" />
+      <field name="SecurityType" required="N" />
+      <field name="SecuritySubType" required="N" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
+    </component>
     <component name="Security">
       <field name="Symbol" required="Y" />
       <field name="SecurityType" required="Y" />
@@ -253,13 +266,6 @@
         <field name="LegCurrency" required="N" />
       </group>
     </component>
-    <component name="Instrument">
-      <field name="Symbol" required="N" />
-      <field name="SecurityType" required="N" />
-      <field name="SecuritySubType" required="N" />
-      <field name="PutOrCall" required="N" />
-      <field name="StrikePrice" required="N" />
-    </component>
     <component name="SecListGrp">
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
@@ -270,9 +276,7 @@
   </components>
   <fields>
     <field number="7" name="BeginSeqNo" type="SEQNUM" />
-    <field number="8" name="BeginString" type="STRING">
-      <value enum="FIX.4.4" description="FIX 4.4" />
-    </field>
+    <field number="8" name="BeginString" type="STRING" />
     <field number="9" name="BodyLength" type="LENGTH" />
     <field number="10" name="CheckSum" type="STRING" />
     <field number="15" name="Currency" type="CURRENCY" />
@@ -289,55 +293,8 @@
       <value enum="7" description="ADVERTISEMENT" />
       <value enum="8" description="EXECUTION_REPORT" />
       <value enum="9" description="ORDER_CANCEL_REJECT" />
-      <value enum="A" description="LOGON" />
-      <value enum="B" description="NEWS" />
-      <value enum="C" description="EMAIL" />
-      <value enum="D" description="ORDER_SINGLE" />
-      <value enum="E" description="ORDER_LIST" />
-      <value enum="F" description="ORDER_CANCEL_REQUEST" />
-      <value enum="G" description="ORDER_CANCEL_REPLACE_REQUEST" />
-      <value enum="H" description="ORDER_STATUS_REQUEST" />
-      <value enum="J" description="ALLOCATION_INSTRUCTION" />
-      <value enum="K" description="LIST_CANCEL_REQUEST" />
-      <value enum="L" description="LIST_EXECUTE" />
-      <value enum="M" description="LIST_STATUS_REQUEST" />
-      <value enum="N" description="LIST_STATUS" />
-      <value enum="P" description="ALLOCATION_INSTRUCTION_ACK" />
-      <value enum="Q" description="DONT_KNOW_TRADE" />
-      <value enum="R" description="QUOTE_REQUEST" />
-      <value enum="S" description="QUOTE" />
-      <value enum="T" description="SETTLEMENT_INSTRUCTIONS" />
-      <value enum="V" description="MARKET_DATA_REQUEST" />
-      <value enum="W" description="MARKET_DATA_SNAPSHOT_FULL_REFRESH" />
-      <value enum="X" description="MARKET_DATA_INCREMENTAL_REFRESH" />
-      <value enum="Y" description="MARKET_DATA_REQUEST_REJECT" />
-      <value enum="Z" description="QUOTE_CANCEL" />
       <value enum="a" description="QUOTE_STATUS_REQUEST" />
-      <value enum="b" description="MASS_QUOTE_ACKNOWLEDGEMENT" />
-      <value enum="c" description="SECURITY_DEFINITION_REQUEST" />
-      <value enum="d" description="SECURITY_DEFINITION" />
-      <value enum="e" description="SECURITY_STATUS_REQUEST" />
-      <value enum="f" description="SECURITY_STATUS" />
-      <value enum="g" description="TRADING_SESSION_STATUS_REQUEST" />
-      <value enum="h" description="TRADING_SESSION_STATUS" />
-      <value enum="i" description="MASS_QUOTE" />
-      <value enum="j" description="BUSINESS_MESSAGE_REJECT" />
-      <value enum="k" description="BID_REQUEST" />
-      <value enum="l" description="BID_RESPONSE" />
-      <value enum="m" description="LIST_STRIKE_PRICE" />
-      <value enum="n" description="XML_MESSAGE" />
-      <value enum="o" description="REGISTRATION_INSTRUCTIONS" />
-      <value enum="p" description="REGISTRATION_INSTRUCTIONS_RESPONSE" />
-      <value enum="q" description="ORDER_MASS_CANCEL_REQUEST" />
-      <value enum="r" description="ORDER_MASS_CANCEL_REPORT" />
-      <value enum="s" description="NEW_ORDER_s" />
-      <value enum="t" description="CROSS_ORDER_CANCEL_REPLACE_REQUEST" />
-      <value enum="u" description="CROSS_ORDER_CANCEL_REQUEST" />
-      <value enum="v" description="SECURITY_TYPE_REQUEST" />
-      <value enum="w" description="SECURITY_TYPES" />
-      <value enum="x" description="SECURITY_LIST_REQUEST" />
-      <value enum="y" description="SECURITY_LIST" />
-      <value enum="z" description="DERIVATIVE_SECURITY_LIST_REQUEST" />
+      <value enum="A" description="LOGON" />
       <value enum="AA" description="DERIVATIVE_SECURITY_LIST" />
       <value enum="AB" description="NEW_ORDER_AB" />
       <value enum="AC" description="MULTILEG_ORDER_CANCEL_REPLACE" />
@@ -364,6 +321,8 @@
       <value enum="AX" description="COLLATERAL_REQUEST" />
       <value enum="AY" description="COLLATERAL_ASSIGNMENT" />
       <value enum="AZ" description="COLLATERAL_RESPONSE" />
+      <value enum="b" description="MASS_QUOTE_ACKNOWLEDGEMENT" />
+      <value enum="B" description="NEWS" />
       <value enum="BA" description="COLLATERAL_REPORT" />
       <value enum="BB" description="COLLATERAL_INQUIRY" />
       <value enum="BC" description="NETWORK_BC" />
@@ -372,11 +331,56 @@
       <value enum="BF" description="USER_RESPONSE" />
       <value enum="BG" description="COLLATERAL_INQUIRY_ACK" />
       <value enum="BH" description="CONFIRMATION_REQUEST" />
+      <value enum="c" description="SECURITY_DEFINITION_REQUEST" />
+      <value enum="C" description="EMAIL" />
+      <value enum="d" description="SECURITY_DEFINITION" />
+      <value enum="D" description="ORDER_SINGLE" />
+      <value enum="e" description="SECURITY_STATUS_REQUEST" />
+      <value enum="E" description="ORDER_LIST" />
+      <value enum="f" description="SECURITY_STATUS" />
+      <value enum="F" description="ORDER_CANCEL_REQUEST" />
+      <value enum="g" description="TRADING_SESSION_STATUS_REQUEST" />
+      <value enum="G" description="ORDER_CANCEL_REPLACE_REQUEST" />
+      <value enum="h" description="TRADING_SESSION_STATUS" />
+      <value enum="H" description="ORDER_STATUS_REQUEST" />
+      <value enum="i" description="MASS_QUOTE" />
+      <value enum="j" description="BUSINESS_MESSAGE_REJECT" />
+      <value enum="J" description="ALLOCATION_INSTRUCTION" />
+      <value enum="k" description="BID_REQUEST" />
+      <value enum="K" description="LIST_CANCEL_REQUEST" />
+      <value enum="l" description="BID_RESPONSE" />
+      <value enum="L" description="LIST_EXECUTE" />
+      <value enum="m" description="LIST_STRIKE_PRICE" />
+      <value enum="M" description="LIST_STATUS_REQUEST" />
+      <value enum="n" description="XML_MESSAGE" />
+      <value enum="N" description="LIST_STATUS" />
+      <value enum="o" description="REGISTRATION_INSTRUCTIONS" />
+      <value enum="p" description="REGISTRATION_INSTRUCTIONS_RESPONSE" />
+      <value enum="P" description="ALLOCATION_INSTRUCTION_ACK" />
+      <value enum="q" description="ORDER_MASS_CANCEL_REQUEST" />
+      <value enum="Q" description="DONT_KNOW_TRADE" />
+      <value enum="r" description="ORDER_MASS_CANCEL_REPORT" />
+      <value enum="R" description="QUOTE_REQUEST" />
+      <value enum="s" description="NEW_ORDER_s" />
+      <value enum="S" description="QUOTE" />
+      <value enum="t" description="CROSS_ORDER_CANCEL_REPLACE_REQUEST" />
+      <value enum="T" description="SETTLEMENT_INSTRUCTIONS" />
+      <value enum="u" description="CROSS_ORDER_CANCEL_REQUEST" />
+      <value enum="v" description="SECURITY_TYPE_REQUEST" />
+      <value enum="V" description="MARKET_DATA_REQUEST" />
+      <value enum="w" description="SECURITY_TYPES" />
+      <value enum="W" description="MARKET_DATA_SNAPSHOT_FULL_REFRESH" />
+      <value enum="x" description="SECURITY_LIST_REQUEST" />
+      <value enum="X" description="MARKET_DATA_INCREMENTAL_REFRESH" />
+      <value enum="y" description="SECURITY_LIST" />
+      <value enum="Y" description="MARKET_DATA_REQUEST_REJECT" />
+      <value enum="z" description="DERIVATIVE_SECURITY_LIST_REQUEST" />
+      <value enum="Z" description="QUOTE_CANCEL" />
     </field>
     <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="43" name="PossDupFlag" type="BOOLEAN">
-      <value enum="Y" description="YES" />
       <value enum="N" description="NO" />
+      <value enum="Y" description="YES" />
     </field>
     <field number="45" name="RefSeqNum" type="SEQNUM" />
     <field number="49" name="SenderCompID" type="STRING" />
@@ -394,8 +398,8 @@
     <field number="95" name="RawDataLength" type="LENGTH" />
     <field number="96" name="RawData" type="DATA" />
     <field number="97" name="PossResend" type="BOOLEAN">
-      <value enum="Y" description="YES" />
       <value enum="N" description="NO" />
+      <value enum="Y" description="YES" />
     </field>
     <field number="98" name="EncryptMethod" type="INT" />
     <field number="107" name="SecurityDesc" type="STRING" />
@@ -407,14 +411,14 @@
     <field number="120" name="SettlCurrency" type="CURRENCY" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="123" name="GapFillFlag" type="BOOLEAN">
-      <value enum="Y" description="YES" />
       <value enum="N" description="NO" />
+      <value enum="Y" description="YES" />
     </field>
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="129" name="DeliverToSubID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN">
-      <value enum="Y" description="YES" />
       <value enum="N" description="NO" />
+      <value enum="Y" description="YES" />
     </field>
     <field number="142" name="SenderLocationID" type="STRING" />
     <field number="143" name="TargetLocationID" type="STRING" />
@@ -441,8 +445,8 @@
       <value enum="3" description="UPDATES_ON_BLOCKS" />
     </field>
     <field number="266" name="AggregatedBook" type="BOOLEAN">
-      <value enum="Y" description="YES" />
       <value enum="N" description="NO" />
+      <value enum="Y" description="YES" />
     </field>
     <field number="268" name="NoMDEntries" type="NUMINGROUP" />
     <field number="269" name="MDEntryType" type="CHAR">
@@ -458,9 +462,9 @@
       <value enum="B" description="Trading Session Traded Volume" />
       <value enum="C" description="Open Interest" />
       <value enum="E" description="Implied Bid" />
+      <value enum="f" description="FUNDING_RATE" />
       <value enum="F" description="Implied Offer" />
       <value enum="J" description="Empty Book" />
-      <value enum="f" description="FUNDING_RATE" />
       <value enum="k" description="FINAL_MARK_PRICE" />
       <value enum="m" description="MARK_PRICE" />
       <value enum="p" description="PREDICTED_FUNDING_RATE" />
@@ -504,8 +508,8 @@
       <value enum="4" description="SYSTEM_DISRUPTION" />
     </field>
     <field number="347" name="MessageEncoding" type="STRING">
-      <value enum="ISO-2022-JP" description="JIS" />
       <value enum="EUC-JP" description="EUC" />
+      <value enum="ISO-2022-JP" description="JIS" />
       <value enum="Shift_JIS" description="FOR_USING_SJIS" />
       <value enum="UTF-8" description="UNICODE" />
     </field>
@@ -517,14 +521,6 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
-      <value enum="2" description="TAG_NOT_DEFINED_FOR_THIS_MESSAGE_TYPE" />
-      <value enum="3" description="Undefined Tag" />
-      <value enum="4" description="Tag specified without a value" />
-      <value enum="5" description="Value is incorrect (out of range) for this tag" />
-      <value enum="6" description="Incorrect data format for value" />
-      <value enum="7" description="DECRYPTION_PROBLEM" />
-      <value enum="8" description="SIGNATURE_PROBLEM" />
-      <value enum="9" description="CompID problem" />
       <value enum="10" description="SENDINGTIME_ACCURACY_PROBLEM" />
       <value enum="11" description="INVALID_MSGTYPE" />
       <value enum="12" description="XML_VALIDATION_ERROR" />
@@ -533,6 +529,14 @@
       <value enum="15" description="REPEATING_GROUP_FIELDS_OUT_OF_ORDER" />
       <value enum="16" description="INCORRECT_NUMINGROUP_COUNT_FOR_REPEATING_GROUP" />
       <value enum="17" description="NON_DATA_VALUE_INCLUDES_FIELD_DELIMITER" />
+      <value enum="2" description="TAG_NOT_DEFINED_FOR_THIS_MESSAGE_TYPE" />
+      <value enum="3" description="Undefined Tag" />
+      <value enum="4" description="Tag specified without a value" />
+      <value enum="5" description="Value is incorrect (out of range) for this tag" />
+      <value enum="6" description="Incorrect data format for value" />
+      <value enum="7" description="DECRYPTION_PROBLEM" />
+      <value enum="8" description="SIGNATURE_PROBLEM" />
+      <value enum="9" description="CompID problem" />
       <value enum="99" description="Other" />
     </field>
     <field number="379" name="BusinessRejectRefID" type="STRING" />
@@ -549,25 +553,25 @@
     <field number="383" name="MaxMessageSize" type="LENGTH" />
     <field number="384" name="NoMsgTypes" type="NUMINGROUP" />
     <field number="385" name="MsgDirection" type="CHAR">
-      <value enum="S" description="SEND" />
       <value enum="R" description="RECEIVE" />
+      <value enum="S" description="SEND" />
     </field>
     <field number="393" name="TotNoRelatedSym" type="INT" />
     <field number="461" name="CFICode" type="STRING" />
     <field number="462" name="UnderlyingProduct" type="INT">
-      <value enum="2" description="COMMODITY_AGRICULTURE" />
-      <value enum="4" description="CURRENCY" />
-      <value enum="5" description="EQUITY" />
       <value enum="12" description="OTHER" />
       <value enum="14" description="INTEREST_RATE" />
       <value enum="15" description="FX_CASH" />
       <value enum="16" description="ENERGY" />
       <value enum="17" description="METALS" />
+      <value enum="2" description="COMMODITY_AGRICULTURE" />
+      <value enum="4" description="CURRENCY" />
+      <value enum="5" description="EQUITY" />
       <value enum="99" description="CRYPTO" />
     </field>
     <field number="464" name="TestMessageIndicator" type="BOOLEAN">
-      <value enum="Y" description="YES" />
       <value enum="N" description="NO" />
+      <value enum="Y" description="YES" />
     </field>
     <field number="553" name="Username" type="STRING" />
     <field number="554" name="Password" type="STRING" />
@@ -631,14 +635,14 @@
       <value enum="99" description="OTHER" />
     </field>
     <field number="893" name="LastFragment" type="BOOLEAN">
-      <value enum="Y" description="YES" />
       <value enum="N" description="NO" />
+      <value enum="Y" description="YES" />
     </field>
     <field number="969" name="MinPriceIncrement" type="PRICE" />
     <field number="980" name="SecurityUpdateAction" type="CHAR">
       <value enum="A" description="NEWLY_ADDED" />
-      <value enum="M" description="MODIFIED" />
       <value enum="D" description="DELETED" />
+      <value enum="M" description="MODIFIED" />
     </field>
     <field number="996" name="UnitOfMeasure" type="STRING" />
     <field number="1023" name="MDPriceLevel" type="INT" />
@@ -650,17 +654,17 @@
     <field number="1149" name="HighLimitPrice" type="PRICE" />
     <field number="1522" name="DifferentialPrice" type="PRICE" />
     <field number="1682" name="MDSecurityTradingStatus" type="INT">
-      <value enum="2" description="TRADING_HALT" />
-      <value enum="4" description="CLOSE" />
       <value enum="15" description="NEW_PRICE_INDICATION" />
       <value enum="17" description="READY_TO_TRADE" />
       <value enum="18" description="NOT_AVAILABLE_FOR_TRADING" />
+      <value enum="2" description="TRADING_HALT" />
       <value enum="20" description="UNKNOWN_OR_INVALID" />
       <value enum="21" description="PRE_OPEN" />
       <value enum="24" description="PRE_CROSS" />
       <value enum="25" description="CROSS" />
       <value enum="26" description="POST_CLOSE" />
       <value enum="27" description="PRE_OPEN_NO_CANCEL" />
+      <value enum="4" description="CLOSE" />
       <value enum="99" description="PAUSE" />
     </field>
     <field number="5791" name="ClearedVolume" type="QTY" />
@@ -673,8 +677,8 @@
     </field>
     <field number="6937" name="Asset" type="STRING" />
     <field number="9001" name="FundingRateApplicable" type="BOOLEAN">
-      <value enum="Y" description="YES" />
       <value enum="N" description="NO" />
+      <value enum="Y" description="YES" />
     </field>
     <field number="9002" name="FundingInterval" type="INT" />
     <field number="9003" name="FairValueLimit" type="FLOAT" />
