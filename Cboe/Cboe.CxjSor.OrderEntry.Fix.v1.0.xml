@@ -165,22 +165,30 @@
       <value enum="5" description="Replaced" />
       <value enum="8" description="Rejected" />
       <value enum="E" description="Pending Replace" />
+      <value enum="1" description="Partially Filled" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="A" description="Pending New" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="5" description="Market On Close (route to TSE only)" />
       <value enum="I" description="Funari" />
+      <value enum="2" description="Limit" />
+      <value enum="B" description="Limit on Close (route to TSE only)" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="44" name="Price" type="PRICE" />
     <field number="47" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency" />
+      <value enum="P" description="Principal" />
     </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="5" description="Sell Short (SOR client affirms ability to borrow)" />
+      <value enum="2" description="Sell" />
+      <value enum="6" description="Sell Short Exempt" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
@@ -188,6 +196,7 @@
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="DAY (default)" />
       <value enum="3" description="IOC (portion not filled immediately is cancelled)." />
+      <value enum="2" description="At the Opening" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="76" name="ExecBroker" type="STRING">
@@ -195,10 +204,15 @@
       <value enum="KAIX" description="BIDS Japan" />
       <value enum="XSBI" description="Japannext X Market" />
     </field>
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="N" description="Original transmission (Default)" />
+      <value enum="Y" description="Possible resend attribute “ClOrdID Session Uniqueness” is set to “Session Unique, No Duplicate Detection&quot;, the message will be processed. Otherwise, the message will be logged but effectively ignored. cancel is processed in the same manner as PossResend=N. Cancel/Replace is processed in the same manner as PossResend=N." />
+    </field>
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too late to cancel." />
       <value enum="2" description="Broker option." />
+      <value enum="1" description="Unknown order." />
+      <value enum="3" description="Already pending cancel or pending replace." />
     </field>
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="0" description="Exchange option" />
@@ -218,9 +232,14 @@
     <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Cancel" />
+      <value enum="2" description="Cancel/Replace" />
     </field>
     <field number="527" name="SecondaryExecID" type="STRING" />
-    <field number="544" name="CashMargin" type="STRING" />
+    <field number="544" name="CashMargin" type="STRING">
+      <value enum="1" description="Cash (default)" />
+      <value enum="2" description="Margin Open" />
+      <value enum="3" description="Margin Close" />
+    </field>
     <field number="8031" name="PrimaryLastPx" type="PRICE" />
     <field number="8032" name="PrimaryBidPx" type="PRICE" />
     <field number="8033" name="PrimaryAskPx" type="PRICE" />
@@ -235,7 +254,10 @@
     <field number="8101" name="ToSTNetOrderID" type="STRING" />
     <field number="8102" name="ToSTNetExecutionID" type="STRING" />
     <field number="8106" name="BIDSTransactTime" type="UTCTIMESTAMP" />
-    <field number="8214" name="MarginTransactionType" type="STRING" />
+    <field number="8214" name="MarginTransactionType" type="STRING">
+      <value enum="1" description="Negotiable" />
+      <value enum="2" description="Standardized" />
+    </field>
     <field number="20060" name="VenueTransactTime" type="UTCTIMESTAMP" />
   </fields>
 </fix>

@@ -142,9 +142,9 @@ Cboe: [website](https://www.cboe.com "Go to Chicago Board Options Exchange")
 [Cboe.EdgxOptions.DropCopy]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Cboe/Protocols/EdgxOptions/DropCopy.md "Drop Copy"
 
 [Cboe.BidsJapan.DropCopy.Fix.v8.73.Url]: https://www.cboe.com/jp/equities/support/technical/ "Chicago Board Options Exchange 8.73 Url"
-[Cboe.BidsJapan.DropCopy.Fix.v8.73.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Cboe/Specifications/Japan/BidsJapan/FIX/BIDS%20Trading%20Japan%20FIX%20Back%20Office%20Specification.pdf "Chicago Board Options Exchange 8.73 Pdf"
+[Cboe.BidsJapan.DropCopy.Fix.v8.73.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Cboe/Specifications/Japan/Bids/FIX/BIDS%20Trading%20Japan%20FIX%20Back%20Office%20Specification.pdf "Chicago Board Options Exchange 8.73 Pdf"
 [Cboe.BidsJapan.OrderEntry.Fix.v8.73.Url]: https://www.cboe.com/jp/equities/support/technical/ "Chicago Board Options Exchange 8.73 Url"
-[Cboe.BidsJapan.OrderEntry.Fix.v8.73.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Cboe/Specifications/Japan/BidsJapan/FIX/BIDS%20Trading%20FIX%204.2%20Specification%20Japan.pdf "Chicago Board Options Exchange 8.73 Pdf"
+[Cboe.BidsJapan.OrderEntry.Fix.v8.73.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Cboe/Specifications/Japan/Bids/FIX/BIDS%20Trading%20FIX%204.2%20Specification%20Japan.pdf "Chicago Board Options Exchange 8.73 Pdf"
 [Cboe.BxeEquities.DropCopy.Fix.v3.51.Url]: https://www.cboe.com/europe/equities/support/technical/ "Chicago Board Options Exchange 3.51 Url"
 [Cboe.BxeEquities.DropCopy.Fix.v3.51.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Cboe/Specifications/Europe/FIX/BATS%20Europe%20FIX%20Specification.pdf "Chicago Board Options Exchange 3.51 Pdf"
 [Cboe.BxeEquities.OrderEntry.Fix.v3.51.Url]: https://www.cboe.com/europe/equities/support/technical/ "Chicago Board Options Exchange 3.51 Url"

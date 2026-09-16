@@ -76,6 +76,7 @@
       <value enum="0" description="New" />
       <value enum="1" description="Trade Cancel" />
       <value enum="3" description="Status" />
+      <value enum="2" description="Trade Correct" />
     </field>
     <field number="34" name="MsgSeqNum" type="SEQNUM" />
     <field number="35" name="MsgType" type="STRING" />
@@ -86,8 +87,15 @@
       <value enum="6" description="Pending Cancel" />
       <value enum="A" description="Pending Ack" />
       <value enum="8" description="Rejected" />
+      <value enum="1" description="Partially Filled" />
+      <value enum="3" description="DoneForDay" />
+      <value enum="5" description="Replaced" />
+      <value enum="E" description="Pending Replace" />
     </field>
-    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN">
+      <value enum="N" description="(Default)" />
+      <value enum="Y" description="Indicates a message resend and should be used during FIX Replay." />
+    </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
@@ -97,11 +105,15 @@
     <field number="58" name="Text" type="STRING" />
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="65" name="SymbolSfx" type="STRING" />
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="Y" description="Indicates an application level unsolicited resend. IfClOrdID" />
+      <value enum="N" description="(Default) indicates a new cancel." />
+    </field>
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too late to cancel." />
       <value enum="3" description="Already pending cancel or pending replace." />
       <value enum="2" description="Broker Option" />
+      <value enum="1" description="Unknown order." />
     </field>
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="150" name="ExecType" type="CHAR">
@@ -111,13 +123,25 @@
       <value enum="6" description="Pending Cancel" />
       <value enum="D" description="Restated" />
       <value enum="M" description="Mass Cancel Complete" />
+      <value enum="1" description="Partial Fill" />
+      <value enum="3" description="DoneForDay" />
+      <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
+      <value enum="E" description="Pending Replace" />
     </field>
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Cancel" />
+      <value enum="2" description="Cancel/Replace" />
     </field>
     <field number="7695" name="MassCancelID" type="STRING" />
     <field number="7700" name="MassCancelInst" type="STRING">
       <value enum="A" description="No filtering by MPID is performed." />
+      <value enum="F" description="All orders that were sent under the MPID specified in" />
+      <value enum="M" description="(Default) Individual Execution Reports are sent for each" />
+      <value enum="S" description="Single Purge Acknowledgment sent once all cancels" />
+      <value enum="B" description="Both individual Execution Reports and single" />
+      <value enum="N" description="(Default) No lockout" />
+      <value enum="L" description="Lockout until corresponding Risk Reset received. Lockout" />
     </field>
   </fields>
 </fix>

@@ -120,15 +120,18 @@
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
       <value enum="M" description="Midpoint (peg to PBBO Midpoint)" />
       <value enum="P" description="Market Peg (peg Buy [Sell] to TSE Offer [Bid]" />
+      <value enum="R" description="Primary Peg (peg Buy [Sell] to PBBO Bid [Offer], one tick within PBBO)" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="3" description="Status. Used to provide peg suspensions (" />
       <value enum="1" description="Trade Cancel" />
+      <value enum="2" description="Trade Correct" />
     </field>
     <field number="22" name="IDSource" type="STRING">
       <value enum="3" description="QUICK (default)" />
+      <value enum="5" description="RIC" />
     </field>
     <field number="29" name="LastCapacity" type="STRING">
       <value enum="1" description="Agent" />
@@ -155,10 +158,14 @@
       <value enum="P" description="Peg" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
-    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN">
+      <value enum="N" description="(Default)" />
+      <value enum="Y" description="Indicates a message resend and should be used during FIX Replay. Cboe will reject all inbound orders with ‘Y’." />
+    </field>
     <field number="44" name="Price" type="PRICE" />
     <field number="47" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency" />
+      <value enum="P" description="Principal" />
     </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
@@ -166,26 +173,18 @@
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="5" description="Sell Short (client affirms ability to borrow)" />
+      <value enum="2" description="Sell" />
+      <value enum="6" description="Sell Short Exempt" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="57" name="TargetSubID" type="STRING" />
-    <field number="58" name="Text" type="STRING">
-      <value enum="A" description="Admin" />
-      <value enum="D" description="Duplicate identifier (e.g., Cl Ord ID)" />
-      <value enum="H" description="Halted" />
-      <value enum="K" description="Order rate threshold exceeded" />
-      <value enum="M" description="Order size exceeded" />
-      <value enum="O" description="Cl Ord ID doesn’t match a known order" />
-      <value enum="T" description="Fill would trade through the NBBO" />
-      <value enum="V" description="Would wash" />
-      <value enum="W" description="Add liquidity only order would remove" />
-      <value enum="Z" description="Unforeseen reason" />
-      <value enum="r" description="Reserve reload" />
-      <value enum="y" description="Order received by Cboe during replay" />
-    </field>
+    <field number="58" name="Text" type="STRING" />
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="DAY (default)" />
+      <value enum="3" description="IOC (portion not filled immediately is cancelled)." />
+      <value enum="4" description="FOK (an IOC where the entire size must be filled, else the order will be cancelled back)." />
+      <value enum="6" description="GTD (expires at earlier of specified ExpireTime or end of day)." />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="76" name="ExecBroker" type="STRING" />
@@ -212,6 +211,8 @@
     <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
     <field number="544" name="CashMargin" type="STRING">
       <value enum="1" description="Cash (default)" />
+      <value enum="2" description="Margin Open" />
+      <value enum="3" description="Margin Close" />
     </field>
     <field number="7699" name="RiskGroupID" type="STRING" />
     <field number="7713" name="NoTradeFeat" type="NUMINGROUP">
@@ -225,20 +226,32 @@
     <field number="7905" name="PreventedTradeLiquidityIndicator" type="STRING">
       <value enum="A" description="Added liquidity" />
     </field>
-    <field number="8004" name="VWAPSessionID" type="STRING" />
+    <field number="8004" name="VWAPSessionID" type="STRING">
+      <value enum="DAY" description="Full day VWAP session" />
+      <value enum="AM" description="AM VWAP session" />
+      <value enum="PM" description="PM VWAP session" />
+    </field>
     <field number="8060" name="OrderClassification" type="STRING">
       <value enum="1" description="Non Low Latency trading (Auto)" />
       <value enum="3" description="Market Making Strategy" />
       <value enum="5" description="Directional Strategy" />
+      <value enum="2" description="Non Low Latency trading (Manual)" />
+      <value enum="4" description="Arbitrage Strategy" />
+      <value enum="6" description="Other Strategy" />
     </field>
     <field number="8101" name="ToSTNetTOrderID" type="STRING" />
     <field number="8102" name="ToSTNeTExecutionID" type="STRING" />
-    <field number="8105" name="Pullback" type="STRING" />
+    <field number="8105" name="Pullback" type="STRING">
+      <value enum="P" description="Pullback" />
+    </field>
     <field number="8106" name="ToSTNeTTransactTime" type="UTCTIMESTAMP" />
     <field number="8214" name="MarginTransactionType" type="STRING">
       <value enum="1" description="Negotiable" />
+      <value enum="2" description="Standardized" />
     </field>
-    <field number="9303" name="RoutingInst" type="STRING" />
+    <field number="9303" name="RoutingInst" type="STRING">
+      <value enum="P" description="Post Only (never take liquidity)." />
+    </field>
     <field number="9617" name="ModifySequence" type="STRING" />
     <field number="9688" name="OrigCompID" type="STRING" />
     <field number="9689" name="OrigSubID" type="STRING" />

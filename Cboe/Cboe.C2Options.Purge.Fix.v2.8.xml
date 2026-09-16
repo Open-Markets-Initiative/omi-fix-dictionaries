@@ -91,6 +91,7 @@
       <value enum="5" description="Clearing Edit" />
       <value enum="6" description="Clearing Edit Allocation" />
       <value enum="3" description="Status" />
+      <value enum="2" description="Trade Correct" />
     </field>
     <field number="34" name="MsgSeqNum" type="SEQNUM" />
     <field number="35" name="MsgType" type="STRING" />
@@ -99,8 +100,14 @@
       <value enum="2" description="Filled" />
       <value enum="5" description="Replaced 100" />
       <value enum="8" description="Rejected" />
+      <value enum="1" description="Partially Filled" />
+      <value enum="3" description="DoneForDay" />
+      <value enum="4" description="Cancelled" />
     </field>
-    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN">
+      <value enum="N" description="(Default)" />
+      <value enum="Y" description="Indicates a message resend and should be used during FIX Replay." />
+    </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
@@ -109,10 +116,16 @@
     <field number="57" name="TargetSubID" type="STRING" />
     <field number="58" name="Text" type="STRING" />
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="N" description="(Default) indicates a new order." />
+      <value enum="Y" description="Indicates an application level resend and is NOT SUPPORTED." />
+    </field>
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too late to cancel." />
       <value enum="2" description="Broker Option." />
+      <value enum="1" description="Unknown order." />
+      <value enum="3" description="Already pending cancel or pending replace." />
+      <value enum="4" description="After Volatility Cutoff." />
     </field>
     <field number="115" name="OnBehalfOfCompId" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
@@ -126,18 +139,35 @@
       <value enum="8" description="Rejected" />
       <value enum="M" description="Mass Cancel Complete" />
       <value enum="P" description="Purge Notification" />
+      <value enum="1" description="Partial Fill" />
+      <value enum="3" description="Done For Day" />
+      <value enum="5" description="Replaced" />
+      <value enum="D" description="Restated" />
+      <value enum="T" description="Floor Market Maker Trade Notification(C1 only)" />
     </field>
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Cancel" />
+      <value enum="2" description="Cancel/Replace" />
     </field>
     <field number="7695" name="MassCancelID" type="STRING" />
     <field number="7696" name="CancelledOrderCount" type="STRING" />
     <field number="7697" name="LockOut" type="STRING">
       <value enum="Y" description="Lockout" />
+      <value enum="N" description="No Lockout" />
     </field>
     <field number="7698" name="CustomGroupIDCnt" type="STRING" />
     <field number="7699" name="CustomGroupID" type="STRING" />
-    <field number="7700" name="MassCancelInst" type="STRING" />
+    <field number="7700" name="MassCancelInst" type="STRING">
+      <value enum="A" description="No filtering by EFID is performed." />
+      <value enum="F" description="All orders that were sent under the EFID specified inOnBehalfOfCompId (115) will" />
+      <value enum="M" description="(Default) Individual Execution Reports are sent for each cancelled order." />
+      <value enum="S" description="Single Execution Report sent once all cancels have been processed. Single" />
+      <value enum="B" description="Both Individual Execution Reports and summary Single Execution Report. Also" />
+      <value enum="N" description="(Default) No lockout" />
+      <value enum="L" description="Lockout until corresponding Risk Reset received. Lockout can be used only with" />
+      <value enum="C" description="Cancel Complex orders only" />
+      <value enum="P" description="Don’t cancel (preserve) GTC/GTD orders" />
+    </field>
     <field number="7933" name="RoutingFirmID" type="STRING" />
     <field number="25017" name="MatchingUnit" type="STRING" />
   </fields>

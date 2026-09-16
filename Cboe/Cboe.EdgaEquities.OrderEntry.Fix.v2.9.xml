@@ -199,12 +199,21 @@
       <value enum="U" description="Supplemental Peg Order" />
       <value enum="d" description="Midpoint Discretionary Order" />
       <value enum="o" description="Listing Market Opening (for ROOC strategy only)" />
+      <value enum="P" description="Market Peg (peg Buy [Sell] to NBBO Offer [Bid])" />
+      <value enum="R" description="Primary Peg (peg Buy [Sell] to NBBO Bid [Offer])" />
+      <value enum="M" description="Midpoint (peg to NBBO Midpoint)" />
+      <value enum="m" description="Midpoint (peg to NBBO Midpoint, but do not match when NBBO is locked)" />
+      <value enum="L" description="Alternate Midpoint (less aggressive of midpoint and 1 tick inside NBBO)" />
+      <value enum="e" description="Midpoint Discretionary Order with Quote Depletion Protection" />
+      <value enum="c" description="Listing Market Close (for ROOC strategy only)" />
+      <value enum="a" description="Both Listing Market Open and Close (for ROOC strategy only; also eligible" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Trade Cancel" />
       <value enum="3" description="Status" />
+      <value enum="2" description="Trade Correct" />
     </field>
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastShares" type="QTY" />
@@ -219,18 +228,29 @@
       <value enum="6" description="Pending Cancel" />
       <value enum="A" description="Pending Ack" />
       <value enum="8" description="Rejected" />
+      <value enum="1" description="Partially Filled" />
+      <value enum="3" description="DoneForDay" />
+      <value enum="5" description="Replaced" />
+      <value enum="E" description="Pending Replace" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market (Regular Session only)" />
       <value enum="3" description="Stop" />
+      <value enum="2" description="Limit" />
+      <value enum="4" description="Stop Limit" />
+      <value enum="P" description="Pegged" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="42" name="OrigTime" type="UTCTIMESTAMP" />
-    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN">
+      <value enum="N" description="(Default)" />
+      <value enum="Y" description="Indicates a message resend and should be used during FIX Replay." />
+    </field>
     <field number="44" name="Price" type="PRICE" />
     <field number="47" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency" />
       <value enum="R" description="Riskless Principal" />
+      <value enum="P" description="Principal" />
     </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
@@ -238,6 +258,8 @@
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="5" description="Sell Short (client affirms ability to borrow)" />
+      <value enum="2" description="Sell" />
+      <value enum="6" description="Sell Short Exempt" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
@@ -248,29 +270,49 @@
       <value enum="3" description="IOC (Portion not filled immediately is cancelled.)" />
       <value enum="5" description="GTX (Early Trading Session until end of Post-Market Session)" />
       <value enum="R" description="RHO (Regular Hours/Session Only)" />
+      <value enum="0" description="DAY (Default) (Early Trading Session until end of Regular Session)" />
+      <value enum="2" description="At the Open(Available on BZX and applicable to Cboe listed securities only)" />
+      <value enum="4" description="FOK (An IOC where the entire size must be filled, else the order will be" />
+      <value enum="6" description="GTD (Early Trading Session; expires at earlier of specifiedExpireTimeor end" />
+      <value enum="7" description="At the Close(Available on BZX and applicable to Cboe listed securities and" />
+      <value enum="E" description="PRE (Pre-Market Trading Session until end of Regular Session)" />
+      <value enum="T" description="PTD (Pre-Market Trading Session; expires at earlier of specifiedExpireTime" />
+      <value enum="X" description="PTX (Pre-Market Trading Session until end of Post-Market Session)" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="65" name="SymbolSfx" type="STRING" />
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="Y" description="Indicates an application level unsolicited resend. IfClOrdID" />
+      <value enum="N" description="(Default) indicates a new cancel." />
+    </field>
     <field number="99" name="StopPx" type="PRICE" />
     <field number="100" name="ExDestination" type="EXCHANGE">
       <value enum="A" description="NYSE American1" />
       <value enum="C" description="NYSE National" />
+      <value enum="B" description="NASDAQ Texas1" />
+      <value enum="G" description="24X National Exchange" />
     </field>
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too late to cancel." />
       <value enum="3" description="Already pending cancel or pending replace." />
       <value enum="2" description="Broker Option" />
+      <value enum="1" description="Unknown order." />
     </field>
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="0" description="Exchange option" />
       <value enum="2" description="Exchange closed" />
       <value enum="5" description="Unknown order" />
       <value enum="8" description="Stale order" />
+      <value enum="1" description="Unknown symbol" />
+      <value enum="3" description="Order exceeds limit" />
+      <value enum="6" description="Duplicate order" />
     </field>
     <field number="110" name="MinQty" type="QTY" />
     <field number="111" name="MaxFloor" type="QTY" />
-    <field number="114" name="LocateReqd" type="STRING" />
+    <field number="114" name="LocateReqd" type="STRING">
+      <value enum="N" description="(Default) Client affirms ability to borrow, or member is relying on an" />
+      <value enum="Y" description="Client does not affirm ability to borrow (results in a reject)." />
+    </field>
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="126" name="ExpireTime" type="UTCTIMESTAMP" />
     <field number="150" name="ExecType" type="CHAR">
@@ -280,6 +322,11 @@
       <value enum="6" description="Pending Cancel" />
       <value enum="D" description="Restated" />
       <value enum="M" description="Mass Cancel Complete" />
+      <value enum="1" description="Partial Fill" />
+      <value enum="3" description="DoneForDay" />
+      <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
+      <value enum="E" description="Pending Replace" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="198" name="SecondaryOrderID" type="STRING" />
@@ -289,16 +336,21 @@
       <value enum="3" description="Repricing of Peg Order" />
       <value enum="5" description="Reduction of Ord Qtydue to SWP or MTP Decrement" />
       <value enum="C" description="Cboe Market Close (CMC)" />
+      <value enum="4" description="State Change" />
+      <value enum="6" description="Price Sliding Reprice or Reserve Order Reload" />
     </field>
     <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Cancel" />
+      <value enum="2" description="Cancel/Replace" />
     </field>
     <field number="439" name="ClearingFirm" type="STRING" />
     <field number="440" name="ClearingAccount" type="STRING" />
     <field number="5700" name="LocateBroker" type="STRING" />
     <field number="7692" name="RiskReset" type="STRING">
       <value enum="S" description="Symbol level lockout reset" />
+      <value enum="F" description="MPID level lockout reset" />
+      <value enum="C" description="RiskGroupIDlockout reset" />
     </field>
     <field number="7699" name="RiskGroupID" type="STRING" />
     <field number="7928" name="PreventMemberMatch" type="STRING">
@@ -306,32 +358,67 @@
       <value enum="B" description="Cancel Both" />
       <value enum="D" description="Decrement Larger / Cancel Smaller" />
       <value enum="F" description="Prevent Match at Firm(Member) Level" />
+      <value enum="O" description="Cancel Oldest" />
+      <value enum="S" description="Cancel Smallest" />
+      <value enum="d" description="Same as D above, but only decrement LeavesQty. Do not restate OrderQty." />
+      <value enum="M" description="Prevent Match at MPID Level" />
+      <value enum="X" description="Prevent Match at the Affiliate (Exchange Member) or Sponsored Participant" />
     </field>
     <field number="8020" name="DisplayRange" type="STRING" />
     <field number="9303" name="RoutingInst" type="STRING">
       <value enum="B" description="Book Only (not routable, will remove from local book)" />
       <value enum="L" description="Route to displayed markets only" />
+      <value enum="P" description="Post Only (not routable)" />
+      <value enum="R" description="Routable(DDeeffaauulltt iiff nnoott ssppeecciififieedd oonn tthhee ppoorrtt oorr oorrddeerr lleevveell)" />
+      <value enum="S" description="Super Aggressive - Cross or Lock (order will be removed from the book and" />
+      <value enum="X" description="Aggressive - Cross or Lock (order will be removed from the book and routed" />
+      <value enum="K" description="Super Aggressive When Odd Lot (routable order will be automatically" />
+      <value enum="A" description="Post to Away (a limit order that will post remainder to an away venue" />
+      <value enum="N" description="Non-Displayed Swap - Book only, Hidden order that may remove liquidity" />
+      <value enum="D" description="Eligible to route to DRT(DDeeffaauulltt iiff nnoott ssppeecciififieedd oonn tthhee ppoorrtt oorr oorrddeerr lleevveell)" />
     </field>
-    <field number="9350" name="RouteDeliveryMethod" type="STRING" />
+    <field number="9350" name="RouteDeliveryMethod" type="STRING">
+      <value enum="RTI" description="Route to Improve(DDeeffaauulltt iiff nnoott ssppeecciififieedd)" />
+      <value enum="RTF" description="Route to Fill" />
+    </field>
     <field number="9400" name="RoutStrategy" type="STRING">
       <value enum="ALLB" description="Book + IOC Other Cboe Exchanges" />
       <value enum="ROUX" description="Book + Street" />
       <value enum="SWPA" description="ISO Sweep of All Protected Markets" />
       <value enum="DIRC" description="Book + Midpoint IOC IEX (also requires Ord" />
       <value enum="TRIM" description="Book + NYSE National + Nasdaq Texas + (DRT)" />
+      <value enum="RDOT" description="Book + DRT + IOC/Day NYSE" />
+      <value enum="ROUT" description="Book + DRT + Street(ddeeffaauulltt iiff nnoott ssppeecciififieedd)" />
+      <value enum="ROUZ" description="Book + DRT" />
+      <value enum="ROUC" description="Book + DRT + LCPMC + All Other Protected Markets + Posts to" />
+      <value enum="RMPT" description="Book + Midpoint IOC Select (DRT/Lit Venues) + Post to Local Book if" />
+      <value enum="RMPL" description="Book + Midpoint IOC RMPT Venues + Midpoint IOC RMPL Venues +" />
+      <value enum="SLIM" description="Book + LCPMC + (DRT) + LCPMC + All other protected markets" />
+      <value enum="ROOC" description="Listing Market Open + Book + DRT + Street + Listing Market Close2" />
     </field>
     <field number="9416" name="ExtendedExecInst" type="STRING">
       <value enum="N" description="None" />
       <value enum="P" description="Retail Order (Price Improvement Only)" />
       <value enum="9416" description="P, R or T. EDGX:" />
+      <value enum="R" description="Retail Order; eligible for Retail rebate." />
+      <value enum="T" description="Retail Price Improving Order" />
+      <value enum="X" description="Retail Priority Order ; eligible for Retail Priority and Retail rebate rate." />
     </field>
     <field number="9479" name="DisplayIndicator" type="STRING">
       <value enum="V" description="Default. As determined by port level setting (defaults to S)" />
       <value enum="m" description="Multiple Price Adjust" />
       <value enum="M" description="Multiple Display Price Sliding OOtthheerr OOppttiioonnss::" />
+      <value enum="P" description="Price Adjust" />
+      <value enum="R" description="Cancel back the order if it cannot be booked and displayed without" />
+      <value enum="S" description="Display Price Sliding (this is to override an opt-out of Display Price Siding at" />
+      <value enum="L" description="Display Price Sliding, but cancel back if order crosses the NBBO on entry" />
+      <value enum="v" description="Visible (for visible peg orders only; others will be rejected)" />
+      <value enum="N" description="No Rescrape at Limit. Applicable only to fully routable, IOC orders" />
+      <value enum="I" description="Invisible" />
     </field>
     <field number="9619" name="CancelOrigOnReject" type="STRING">
       <value enum="N" description="Leave original order alone." />
+      <value enum="Y" description="Cancel original order if replacement fails (an unsolicited Cancel" />
     </field>
     <field number="9620" name="CorrectedPrice" type="PRICE" />
     <field number="9621" name="AccessFee" type="STRING" />
@@ -341,8 +428,14 @@
     <field number="9732" name="AttributedQuote" type="STRING">
       <value enum="N" description="Do not attribute firm MPID to this order." />
       <value enum="R" description="Attribute &quot;RTAL&quot; to this order." />
+      <value enum="Y" description="Attribute firm MPID to this order." />
     </field>
     <field number="9882" name="FeeCode" type="STRING" />
-    <field number="25020" name="CmcSessions" type="STRING" />
+    <field number="25020" name="CmcSessions" type="STRING">
+      <value enum="A" description="3:15 p.m." />
+      <value enum="D" description="3:30 p.m." />
+      <value enum="L" description="3:49 p.m." />
+      <value enum="S" description="3:54 p.m. (Nasdaq-listed only)" />
+    </field>
   </fields>
 </fix>

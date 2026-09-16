@@ -200,6 +200,7 @@
     <field number="15" name="Currency" type="CURRENCY" />
     <field number="22" name="IDSource" type="STRING">
       <value enum="4" description="ISIN" />
+      <value enum="5" description="RIC" />
     </field>
     <field number="30" name="LastMkt" type="STRING" />
     <field number="31" name="LastPx" type="PRICE" />
@@ -212,36 +213,26 @@
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
       <value enum="5" description="Sell Short" />
+      <value enum="6" description="Sell Short Exempt" />
       <value enum="H" description="Sell Undisclosed" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="57" name="TargetSubID" type="STRING" />
-    <field number="58" name="Text" type="STRING">
-      <value enum="A" description="Admin" />
-      <value enum="H" description="Halted" />
-      <value enum="k" description="Pending periodic auction (BXE and DXE only)" />
-      <value enum="N" description="Ran Out of Liquidity to Execute Against" />
-      <value enum="P" description="Can’t Modify an Order That is Pending Fill" />
-      <value enum="R" description="Routing Unavailable" />
-      <value enum="U" description="User Requested" />
-      <value enum="W" description="Add Liquidity Only Order Would Remove" />
-      <value enum="Y" description="Symbol Not Supported" />
-      <value enum="l" description="Large in Scale" />
-      <value enum="m" description="Market Access Risk Limit Exceeded" />
-      <value enum="p" description="Static Collar Breach" />
-      <value enum="v" description="Mi FID II Double Cap related" />
-      <value enum="Z" description="Unforseen Reason" />
-      <value enum="o" description="Max Open Trade Count Exceeded" />
-    </field>
+    <field number="58" name="Text" type="STRING" />
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="63" name="SettlType" type="STRING">
       <value enum="0" description="Regular (default)" />
+      <value enum="6" description="Future" />
     </field>
     <field number="64" name="SettlDate" type="UTCTIMESTAMP" />
     <field number="75" name="TradeDate" type="UTCTIMESTAMP" />
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="N" description="indicates a new order (default)" />
+      <value enum="Y" description="indicates an application level resend and is not supported" />
+    </field>
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="120" name="SettlCurrency" type="STRING" />
@@ -249,40 +240,51 @@
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="129" name="DeliverToSubID" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
-      <value enum="F" description="Trade" />
       <value enum="0" description="New (acknowledgement of new order)" />
+      <value enum="1" description="Partial Fill" />
       <value enum="2" description="Fill" />
+      <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
+      <value enum="D" description="Restated" />
+      <value enum="F" description="Trade" />
       <value enum="M" description="Mass Cancel Complete" />
     </field>
     <field number="207" name="SecurityExchange" type="EXCHANGE" />
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="381" name="GrossTradeAmt" type="STRING" />
     <field number="447" name="PartyIDSource" type="STRING" />
-    <field number="448" name="PartyID" type="STRING">
-      <value enum="0" description="NONE (No Client for this order)" />
-    </field>
+    <field number="448" name="PartyID" type="STRING" />
     <field number="452" name="PartyRole" type="STRING">
       <value enum="3" description="Client ID" />
+      <value enum="12" description="Executing Trader (the Executing Decision Maker)" />
       <value enum="122" description="Investor ID (the Investment Decision Maker)" />
-      <value enum="14" description="Giveup Clearing Firm (Drop only)" />
       <value enum="1" description="Executing Firm" />
       <value enum="6" description="Introducing Firm (Drop only)" />
+      <value enum="7" description="EnteringFirm (the party reporting the trade. Should not be used in the second leg, except when TradeHandlingInst (1123) = 0)" />
+      <value enum="14" description="Giveup Clearing Firm (Drop only)" />
+      <value enum="17" description="ContraFirm (the party the trade is alleged against)" />
     </field>
     <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
     <field number="487" name="TradeReportTransType" type="STRING">
       <value enum="0" description="New" />
+      <value enum="1" description="Cancel" />
       <value enum="2" description="Replace" />
+      <value enum="3" description="Release" />
     </field>
     <field number="523" name="PartySubID" type="STRING" />
     <field number="528" name="OrderCapacity" type="STRING">
       <value enum="A" description="Agency (maps to ’AOTC’)" />
+      <value enum="P" description="Principal (maps to ’DEAL’)" />
       <value enum="R" description="Riskless (maps to ’MTCH’)" />
     </field>
     <field number="552" name="NoSides" type="NUMINGROUP" />
     <field number="571" name="TradeReportID" type="STRING" />
     <field number="572" name="TradeReportRefID" type="STRING" />
-    <field number="573" name="MatchStatus" type="STRING" />
+    <field number="573" name="MatchStatus" type="STRING">
+      <value enum="0" description="Matched" />
+      <value enum="1" description="Unmatched" />
+    </field>
     <field number="574" name="MatchType" type="STRING">
       <value enum="3" description="Trade Reporting (On-Exchange)." />
     </field>
@@ -290,6 +292,7 @@
     <field number="730" name="SettlPrice" type="PRICE" />
     <field number="775" name="BookingType" type="STRING">
       <value enum="0" description="Regular (default)" />
+      <value enum="1" description="CFD (Contract for Difference)" />
     </field>
     <field number="802" name="NoPartySubIDs" type="NUMINGROUP" />
     <field number="803" name="PartySubIDType" type="INT">
@@ -298,13 +301,28 @@
     <field number="820" name="TradeLinkID" type="STRING" />
     <field number="828" name="TrdType" type="STRING">
       <value enum="0" description="Regular Trade" />
+      <value enum="2" description="Exchange For Physicals (XFPH), for RTS 2 non-equities only" />
+      <value enum="50" description="Portfolio Trade. Refer to p. 9 for more details. This corresponds to MMT Level 3.11 field ‘Portfolio’, PORT. Should only be set to this value whenusedinconjunctionwithSecondaryTrdType (855)=64(BENC)and TertiaryTrdType (2896) = 65 (CONT)." />
+      <value enum="65" description="PackageTrade(TPAC)whicharenotExchangeforPhysicals(XFPH),for RTS 2 non-equities only. Use 2 if it’s Exchange for Physicals (XFPH)." />
     </field>
     <field number="829" name="TrdSubType" type="STRING" />
     <field number="855" name="SecondaryTrdType" type="STRING">
+      <value enum="50" description="Portfolio Trade (MMT Level 3.11 field ‘Portfolio’, PORT) - Effective 1 December 2025, on BXE and CXE, if this is set for a RTS 2 non-equity along with Package Trade ( TrdType (828) = 65 ), the PORT value will be ignored, as TPAC and PORT are mutually exclusive." />
       <value enum="61" description="RFMD Give-up Trade (MMT Level 3.13 field ‘Give-up’, GIVE)" />
+      <value enum="64" description="Benchmark (MMT Level 3.5 field ‘Benchmark Indicator’, BENC)" />
+      <value enum="65" description="ContingentTransaction(RTS1equitiesonly)(MMTLevel3.12field‘Con- tingent’, CONT)" />
+      <value enum="67" description="BenchmarkTransactionsExecutedAttheMarketClosePrice(MMTLevel 3.5 field ‘Benchmark At Market Close Price’, CLSE) (Supported in BXE and CXE, for RTS 1 equities only)" />
     </field>
-    <field number="856" name="TradeReportType" type="STRING" />
-    <field number="939" name="TrdRptStatus" type="STRING" />
+    <field number="856" name="TradeReportType" type="STRING">
+      <value enum="0" description="(Submit) for all new trade reports" />
+      <value enum="6" description="(TradeReportCancel)tocancelanyacknowledged,butnotconfirmedtrade reports entered where TradeHandlingInst (1123) = 2" />
+      <value enum="2" description="Accept" />
+      <value enum="3" description="Decline" />
+    </field>
+    <field number="939" name="TrdRptStatus" type="STRING">
+      <value enum="0" description="Accepted" />
+      <value enum="1" description="Rejected" />
+    </field>
     <field number="1003" name="TradeID" type="STRING" />
     <field number="1115" name="OrderCategory" type="STRING">
       <value enum="3" description="Privately Negotiated Trade" />
@@ -313,45 +331,69 @@
     <field number="1117" name="RootPartyID" type="STRING" />
     <field number="1118" name="RootPartyIDSource" type="STRING">
       <value enum="D" description="Proprietary / Custom Code" />
+      <value enum="G" description="MIC (Drop only)" />
     </field>
     <field number="1119" name="RootPartyRole" type="STRING">
-      <value enum="10" description="Settlement Location" />
       <value enum="6" description="Introducing Firm" />
+      <value enum="10" description="Settlement Location" />
+      <value enum="64" description="MultilateralTradingFacility (Drop only)" />
     </field>
     <field number="1123" name="TradeHandlingInstr" type="STRING" />
     <field number="1390" name="TradePublishIndicator" type="STRING">
+      <value enum="0" description="Do Not Publish. Deprecated from 4th December 2017 in Certification and 2ndJanuary2018inProduction. Anyrequeststopublishatradeusingthis indicator will not be honoured and will instead be published immediately." />
       <value enum="1" description="Publish Trade Immediately" />
+      <value enum="2" description="Deferred Publication" />
     </field>
     <field number="1427" name="SideExecID" type="STRING" />
     <field number="1430" name="VenueType" type="STRING" />
     <field number="1838" name="NoTradePriceConditions" type="NUMINGROUP" />
-    <field number="1839" name="TradePriceCondition" type="INT" />
+    <field number="1839" name="TradePriceCondition" type="INT">
+      <value enum="16" description="Negotiated Trade Subject to Conditions Other than The current Market Price (PRIC). Note that this is no longer required or sup- ported on BXE or CXE. For MMT Level 3.6 ‘Special Divided Indicator’, supported values are:" />
+      <value enum="13" description="Special Dividend (SDIV) ForMMTLevel3.8‘ContributiontoPriceFormationorthePriceDiscovery Process’, supported values are: For MMT Level 3.8 ‘Contribution to Price Formation or the Price Discovery Process’, supported values are:" />
+      <value enum="15" description="Non-Price Forming Trade (NPFT) Effective 1 December 2025, on BXE and CXE, this value will be ignored if used on a RTS2 instru- ment. If the value 16 is used in the incoming TradeCaptureReport, then it will not be in this confirm message. Instead, TrdRegPublicationRea- sons (8013) = 2 will be set if appropriate." />
+    </field>
     <field number="2373" name="IntraFirmTradeIndicator" type="STRING">
       <value enum="N" description="Not an intra-group transaction (default)" />
+      <value enum="Y" description="Is an intra-group transaction" />
     </field>
     <field number="2376" name="PartyRoleQualifier" type="STRING">
       <value enum="0" description="None (applicable only for the reserved Party IDs)" />
+      <value enum="22" description="Algorithm (applicable to PartyRole values 12 or 122)" />
       <value enum="23" description="Firm or legal entity (LEI) (applicable to Party Role value 3)" />
+      <value enum="24" description="Naturalperson(applicabletoPartyRolevalues3,12and122)" />
     </field>
     <field number="2405" name="ExecMethod" type="STRING">
       <value enum="0" description="Unspecified (default)" />
+      <value enum="1" description="Manual" />
       <value enum="2" description="Automated" />
     </field>
     <field number="2667" name="AlgorithmicTradeIndicator" type="STRING">
       <value enum="0" description="No algorithm was involved (the default)." />
+      <value enum="1" description="The trade was an algorithmic trade (ALGO)." />
     </field>
     <field number="2896" name="TertiaryTrdType" type="STRING">
+      <value enum="50" description="Portfolio Trade (MMT Level 3.11 field ‘Portfolio’, PORT) - Effective 1 December 2025, on BXE and CXE, if this is set for a RTS 2 non-equity along with Package Trade ( TrdType (828) = 65 ), the PORT value will be ignored, as TPAC and PORT are mutually exclusive." />
       <value enum="61" description="RFMD Give-up Trade (MMT Level 3.13 field ‘Give-up’, GIVE)" />
+      <value enum="64" description="Benchmark (MMT Level 3.5 field ‘Benchmark Indicator’, BENC)" />
+      <value enum="65" description="ContingentTransaction(RTS1equitiesonly)(MMTLevel3.12field‘Con- tingent’, CONT)" />
+      <value enum="67" description="BenchmarkTransactionsExecutedAttheMarketClosePrice(MMTLevel 3.5 field ‘Benchmark At Market Close Price’, CLSE) (Supported in BXE and CXE, for RTS 1 equities only)" />
     </field>
     <field number="7570" name="RptTime" type="UTCTIMESTAMP" />
     <field number="7772" name="CentralCounterparty" type="STRING">
       <value enum="EMCF" description="Cboe Clear" />
+      <value enum="LCHL" description="LCH Ltd (London)" />
       <value enum="XCLR" description="SIX x-clear" />
+      <value enum="NONE" description="Clearing Suppressed" />
     </field>
     <field number="8013" name="TrdRegPublicationReasons" type="STRING">
       <value enum="3" description="Reference Price (Dark Book) (RFPT)" />
+      <value enum="9" description="Large In Scale (Pre-Trade Transparency Waiver)" />
+      <value enum="10" description="Order Management Facility (Iceberg) (Pre-Trade Transparency" />
       <value enum="0" description="Negotiated Trade in Liquid Instrument (NLIQ)" />
+      <value enum="1" description="Negotiated Trade in Illiquid Instrument (OILQ)" />
+      <value enum="2" description="NegotiatedTradeSubjecttoConditionsOtherThantheCurrentMarket" />
       <value enum="6" description="Deferral for Large in Scale (LRGS)" />
+      <value enum="17" description="Negotiated Trade Subject to a Pre-Trade Transparency Waiver (re-" />
     </field>
     <field number="8016" name="TradingVenueRegTradeId" type="STRING" />
     <field number="9128" name="Tolerance" type="STRING" />

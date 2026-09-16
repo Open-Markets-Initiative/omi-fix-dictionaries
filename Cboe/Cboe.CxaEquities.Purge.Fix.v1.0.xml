@@ -111,14 +111,8 @@
       <field name="CxlRejResponseTo" required="N" />
       <field name="CxlRejReason" required="N" />
       <field name="Text" required="N" />
-    </message>
-    <message name="AmendReject" msgtype="9" msgcat="app">
       <field name="ClOrdId" required="N" />
       <field name="OrderID" required="N" />
-      <field name="OrdStatus" required="N" />
-      <field name="CxlRejResponseTo" required="N" />
-      <field name="CxlRejReason" required="N" />
-      <field name="Text" required="N" />
       <field name="Side" required="Y" />
       <field name="OrderQty" required="Y" />
       <field name="MaxFloor" required="Y" />
@@ -153,6 +147,8 @@
       <value enum="M" description="Midpoint (peg to NBBO Midpoint)" />
       <value enum="j" description="Best X Order" />
       <value enum="k" description="Market X Order" />
+      <value enum="P" description="Market Peg (peg Buy [Sell] to NBBO Offer [Bid], one tick within NBBO)" />
+      <value enum="R" description="Primary Peg (peg Buy [Sell] to NBBO Bid [Offer], one tick within NBBO)" />
     </field>
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
@@ -186,31 +182,35 @@
     <field number="47" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency" />
       <value enum="X" description="Mixed" />
+      <value enum="P" description="Principal" />
     </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="5" description="Sell Short (client affirms ability to borrow)" />
+      <value enum="2" description="Sell" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
-    <field number="58" name="Text" type="STRING">
-      <value enum="A" description="Admin" />
-      <value enum="D" description="Duplicate identifier (e.g., Cl Ord ID)" />
-    </field>
+    <field number="58" name="Text" type="STRING" />
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="DAY (default)" />
       <value enum="3" description="IOC (portion not filled immediately is cancelled)." />
       <value enum="6" description="GTD All other values will be rejected." />
       <value enum="1" description="GTC" />
+      <value enum="4" description="FOK (an IOC where the entire size must be filled, else the order will be cancelled back)." />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="Y" description="Indicates an application level unsolicited resend. If ClOrdID has not yet been seen, the cancel is treated as normal. If ClOrdID already exists, the resent cancel is ignored." />
+      <value enum="N" description="(default) indicates a new cancel." />
+    </field>
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too late to cancel." />
       <value enum="2" description="Broker Option" />
       <value enum="1" description="Unknown order" />
+      <value enum="3" description="Already pending cancel or pending replace." />
     </field>
     <field number="110" name="MinQty" type="QTY" />
     <field number="111" name="MaxFloor" type="QTY" />
@@ -245,6 +245,7 @@
     <field number="7714" name="NoTradeKey" type="NUMINGROUP" />
     <field number="8081" name="MEQSE" type="STRING">
       <value enum="Y" description="Minimum Execution Quantity Single Execution (MEQSE)" />
+      <value enum="N" description="Minimum Execution Quantity (MEQ)" />
     </field>
     <field number="8138" name="OriginOfTrans" type="STRING" />
     <field number="8139" name="IntermediaryID" type="STRING" />
@@ -252,13 +253,19 @@
     <field number="8177" name="RemoveCrossingFromClearing" type="STRING" />
     <field number="8182" name="BrokerPreferencing" type="STRING">
       <value enum="Y" description="Use broker preferencing" />
+      <value enum="N" description="No broker preferencing" />
     </field>
     <field number="9303" name="RoutingInst" type="STRING">
       <value enum="P" description="Post Only (never take liquidity)" />
+      <value enum="F" description="Focused Nearpoint (only eligible to trade with" />
     </field>
-    <field number="9479" name="DisplayIndicator" type="STRING" />
+    <field number="9479" name="DisplayIndicator" type="STRING">
+      <value enum="V" description="Default. Post Only orders which would lock the NBBO on entry are allowed to do so." />
+      <value enum="R" description="Cancel back the Post Only order on entry if it were to create a locked NBBO." />
+    </field>
     <field number="9619" name="CancelOrigOnReject" type="STRING">
       <value enum="N" description="Leave original order alone." />
+      <value enum="Y" description="Cancel original order if replacement fails (an unsolicited Cancel report will be sent for original order in this case)." />
     </field>
     <field number="9730" name="ExecutingFirm" type="STRING" />
   </fields>

@@ -50,6 +50,28 @@
       <field name="TradeDate" required="N" />
       <field name="ExecType" required="Y" />
       <field name="TradeReportTransType" required="N" />
+      <group name="NoSides" required="Y">
+        <field name="Side" required="Y" />
+        <field name="ClOrdID" required="N" />
+        <field name="OrderId" required="N" />
+        <field name="Account" required="N" />
+        <field name="OrderCapacity" required="N" />
+        <field name="ClearingFirm" required="N" />
+        <field name="ClearingAccount" required="N" />
+        <group name="NoPartyIDs" required="Y">
+          <field name="PartyID" required="Y" />
+          <field name="PartyIDSource" required="Y" />
+          <field name="PartyRole" required="Y" />
+        </group>
+        <field name="ClientCrossRef" required="N" />
+        <field name="ShortSaleNakedQty" required="N" />
+        <field name="ShortSaleCoveredQty" required="N" />
+        <field name="ShortSaleLongQty" required="N" />
+        <field name="OriginOfTrans" required="N" />
+        <field name="IntermediaryID" required="N" />
+        <field name="DirectedWholesaleIndic" required="N" />
+        <field name="FeeCode" required="N" />
+      </group>
       <field name="TradeReportID" required="Y" />
       <field name="TradeLinkID" required="N" />
       <field name="TradeReportType" required="Y" />
@@ -145,6 +167,28 @@
       <field name="TradeDate" required="N" />
       <field name="ExecType" required="Y" />
       <field name="TradeReportTransType" required="N" />
+      <group name="NoSides" required="Y">
+        <field name="Side" required="Y" />
+        <field name="ClOrdID" required="N" />
+        <field name="OrderId" required="N" />
+        <field name="Account" required="N" />
+        <field name="OrderCapacity" required="N" />
+        <field name="ClearingFirm" required="N" />
+        <field name="ClearingAccount" required="N" />
+        <group name="NoPartyIDs" required="Y">
+          <field name="PartyID" required="Y" />
+          <field name="PartyIDSource" required="Y" />
+          <field name="PartyRole" required="Y" />
+        </group>
+        <field name="ClientCrossRef" required="N" />
+        <field name="ShortSaleNakedQty" required="N" />
+        <field name="ShortSaleCoveredQty" required="N" />
+        <field name="ShortSaleLongQty" required="N" />
+        <field name="OriginOfTrans" required="N" />
+        <field name="IntermediaryID" required="N" />
+        <field name="DirectedWholesaleIndic" required="N" />
+        <field name="FeeCode" required="N" />
+      </group>
       <field name="TradeReportID" required="Y" />
       <field name="TradeLinkID" required="N" />
       <field name="TradeReportType" required="Y" />
@@ -171,6 +215,8 @@
       <value enum="M" description="Midpoint (peg to NBBO Midpoint)" />
       <value enum="j" description="Best X Order" />
       <value enum="k" description="Market X Order" />
+      <value enum="P" description="Market Peg (peg Buy [Sell] to NBBO Offer [Bid], one tick within NBBO)" />
+      <value enum="R" description="Primary Peg (peg Buy [Sell] to NBBO Bid [Offer], one tick within NBBO)" />
     </field>
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
@@ -209,30 +255,33 @@
     <field number="47" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency" />
       <value enum="X" description="Mixed" />
+      <value enum="P" description="Principal" />
     </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="5" description="Sell Short (client affirms ability to borrow)" />
+      <value enum="2" description="Sell" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
-    <field number="58" name="Text" type="STRING">
-      <value enum="A" description="Admin" />
-      <value enum="D" description="Duplicate identifier (e.g., Cl Ord ID)" />
-    </field>
+    <field number="58" name="Text" type="STRING" />
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="DAY (default)" />
       <value enum="3" description="IOC (portion not filled immediately is cancelled)." />
       <value enum="6" description="GTD All other values will be rejected." />
       <value enum="1" description="GTC" />
+      <value enum="4" description="FOK (an IOC where the entire size must be filled, else the order will be cancelled back)." />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="63" name="SettlmntTyp" type="STRING" />
     <field number="64" name="FutSettDate" type="STRING" />
     <field number="75" name="TradeDate" type="STRING" />
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="N" description="(default) indicates a new order." />
+      <value enum="Y" description="Indicates an application level resend and is NOT SUPPORTED. For reasons of economy, Cboe does not track in primary storage the ClOrdID values of orders that are no longer live. For reasons of performance, Cboe does not access secondary storage to enforce unique ClOrdID values against orders that are no longer live. Without full duplicate ClOrdID value enforcement, it is not possible to safely implement the full behavior specified in the FIX 4.2 Protocol for PossResend=‘Y’. To remain economical, fast and safe, all messages with PossResend=‘Y’ will be simply ignored." />
+    </field>
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="0" description="Exchange option" />
       <value enum="2" description="Exchange closed" />
@@ -253,6 +302,7 @@
       <value enum="5" description="Replaced" />
       <value enum="1" description="Partial Fill" />
       <value enum="D" description="Restated" />
+      <value enum="H" description="Trade Cancel (Two Sided Reports only)" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="198" name="SecondaryOrderID" type="STRING" />
@@ -265,17 +315,38 @@
     <field number="432" name="ExpireDate" type="UTCTIMESTAMP" />
     <field number="439" name="ClearingFirm" type="STRING" />
     <field number="440" name="ClearingAccount" type="STRING" />
-    <field number="487" name="TradeReportTransType" type="STRING" />
+    <field number="447" name="PartyIDSource" type="CHAR">
+      <value enum="C" description="Generally accepted market participant identifier" />
+    </field>
+    <field number="448" name="PartyID" type="STRING" />
+    <field number="452" name="PartyRole" type="INT">
+      <value enum="7" description="EnteringFirm" />
+      <value enum="17" description="ContraFirm" />
+    </field>
+    <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
+    <field number="487" name="TradeReportTransType" type="STRING">
+      <value enum="0" description="New" />
+      <value enum="1" description="Cancel" />
+    </field>
+    <field number="552" name="NoSides" type="NUMINGROUP" />
     <field number="571" name="TradeReportID" type="STRING" />
     <field number="572" name="TradeReportRefID" type="STRING" />
     <field number="639" name="PriceImprovement" type="PRICE" />
     <field number="820" name="TradeLinkID" type="STRING" />
-    <field number="856" name="TradeReportType" type="STRING" />
-    <field number="939" name="TrdRptStatus" type="STRING" />
+    <field number="856" name="TradeReportType" type="STRING">
+      <value enum="0" description="(submit) for all new trade reports" />
+      <value enum="2" description="Accept" />
+      <value enum="3" description="Decline" />
+    </field>
+    <field number="939" name="TrdRptStatus" type="STRING">
+      <value enum="0" description="Accepted" />
+      <value enum="1" description="Rejected" />
+    </field>
     <field number="1003" name="TradeID" type="STRING" />
     <field number="1123" name="TradeHandlingInstr" type="STRING">
       <value enum="0" description="Confirmed Trade" />
       <value enum="2" description="One Sided Report for Matching" />
+      <value enum="1" description="Two Sided Report" />
     </field>
     <field number="4805" name="ExecVenue" type="STRING" />
     <field number="6801" name="Undisclosed" type="STRING" />
@@ -295,6 +366,7 @@
     <field number="8080" name="T1Settlement" type="STRING" />
     <field number="8081" name="MEQSE" type="STRING">
       <value enum="Y" description="Minimum Execution Quantity Single Execution (MEQSE)" />
+      <value enum="N" description="Minimum Execution Quantity (MEQ)" />
     </field>
     <field number="8138" name="OriginOfTrans" type="STRING" />
     <field number="8139" name="IntermediaryID" type="STRING" />
@@ -305,9 +377,13 @@
       <value enum="S" description="Trade with Price Improvement" />
       <value enum="M" description="Permitted trade during pre trading hours period" />
       <value enum="X" description="Booking purpose trade" />
+      <value enum="L" description="Permitted trade during post trading hours period" />
+      <value enum="E" description="Out of hours trade" />
+      <value enum="F" description="ETF trade report – unit creation or redemption Using ‘p’ or ‘t’ for large portfolio trades and large principal transaction indicates that the trade subject of the report was done on the previous trading day and the participant has delayed the trade report as permitted in the Market Integrity Rules. One Sided Report for Matching Trade Reports may not use ‘S’, ‘P’,’p’, ‘E’, ‘F’, and ‘X’. the receipt of a Trade is not considered to have fully of 2 (Accept). Description" />
     </field>
     <field number="8182" name="BrokerPreferencing" type="STRING">
       <value enum="Y" description="Use broker preferencing" />
+      <value enum="N" description="No broker preferencing" />
     </field>
     <field number="8183" name="CrossType" type="STRING">
       <value enum="101" description="Trade was the result of a broker preferenced crossing" />
@@ -317,8 +393,12 @@
     </field>
     <field number="9303" name="RoutingInst" type="STRING">
       <value enum="P" description="Post Only (never take liquidity)" />
+      <value enum="F" description="Focused Nearpoint (only eligible to trade with" />
     </field>
-    <field number="9479" name="DisplayIndicator" type="STRING" />
+    <field number="9479" name="DisplayIndicator" type="STRING">
+      <value enum="V" description="Default. Post Only orders which would lock the NBBO on entry are allowed to do so." />
+      <value enum="R" description="Cancel back the Post Only order on entry if it were to create a locked NBBO." />
+    </field>
     <field number="9617" name="ModifySequence" type="STRING" />
     <field number="9688" name="OrigCompID" type="STRING" />
     <field number="9689" name="OrigSubID" type="STRING" />

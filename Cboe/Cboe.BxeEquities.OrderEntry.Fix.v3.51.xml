@@ -225,19 +225,24 @@
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
       <value enum="P" description="Market Peg (peg buy to PBBO offer, peg sell to PBBO bid)" />
+      <value enum="R" description="Primary Peg (peg buy to PBBO bid, peg sell to PBBO offer) offset specified in PegDifference (211). For Periodic Auction orders, this offset can be aggressive." />
       <value enum="M" description="Midpoint (peg to PBBO midpoint)" />
+      <value enum="L" description="Alternate Midpoint (less aggressive of midpoint and 1 tick inside PBBO)" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Cancel" />
+      <value enum="2" description="Correct" />
       <value enum="3" description="Status" />
     </field>
     <field number="22" name="IDSource" type="STRING">
       <value enum="4" description="ISIN" />
+      <value enum="5" description="RIC" />
     </field>
     <field number="29" name="LastCapacity" type="STRING">
       <value enum="1" description="Agent (maps to ’AOTC’)" />
+      <value enum="3" description="Cross as Principal (maps to ’MTCH’)" />
       <value enum="4" description="Principal (maps to ’DEAL’)" />
     </field>
     <field number="30" name="LastMkt" type="STRING" />
@@ -249,13 +254,19 @@
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
+      <value enum="1" description="Partially Filled" />
       <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
+      <value enum="6" description="Pending Cancel" />
       <value enum="8" description="Rejected" />
+      <value enum="A" description="Pending Ack" />
       <value enum="E" description="Pending Replace" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
+      <value enum="2" description="Limit" />
+      <value enum="P" description="Pegged" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="42" name="OrigTime" type="UTCTIMESTAMP" />
@@ -263,6 +274,7 @@
     <field number="44" name="Price" type="PRICE" />
     <field number="47" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency (maps to ’AOTC’)" />
+      <value enum="P" description="Principal (maps to ’DEAL’)" />
       <value enum="R" description="Riskless (maps to ’MTCH’)" />
     </field>
     <field number="48" name="SecurityID" type="STRING" />
@@ -270,49 +282,47 @@
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
       <value enum="5" description="Sell Short" />
+      <value enum="6" description="Sell Short Exempt" />
       <value enum="H" description="Sell Undisclosed" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="57" name="TargetSubID" type="STRING" />
-    <field number="58" name="Text" type="STRING">
-      <value enum="A" description="Admin" />
-      <value enum="H" description="Halted" />
-      <value enum="k" description="Pending periodic auction (BXE and DXE only)" />
-      <value enum="N" description="Ran Out of Liquidity to Execute Against" />
-      <value enum="P" description="Can’t Modify an Order That is Pending Fill" />
-      <value enum="R" description="Routing Unavailable" />
-      <value enum="U" description="User Requested" />
-      <value enum="W" description="Add Liquidity Only Order Would Remove" />
-      <value enum="Y" description="Symbol Not Supported" />
-      <value enum="l" description="Large in Scale" />
-      <value enum="m" description="Market Access Risk Limit Exceeded" />
-      <value enum="p" description="Static Collar Breach" />
-      <value enum="v" description="Mi FID II Double Cap related" />
-      <value enum="Z" description="Unforseen Reason" />
-      <value enum="o" description="Max Open Trade Count Exceeded" />
-    </field>
+    <field number="58" name="Text" type="STRING" />
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="Day" />
+      <value enum="1" description="GTC" />
       <value enum="2" description="At The Open" />
+      <value enum="3" description="IOC (treated as Accept-Or-Cancel for RoutingInst (9303) = BP or BH)" />
       <value enum="6" description="GTD (expires at specified Expire Time for a specific day)" />
+      <value enum="7" description="AtTheClose" />
+      <value enum="8" description="Good For Auction (only valid if RoutingInst (9303) = BP or BU)" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="63" name="SettlType" type="STRING">
       <value enum="0" description="Regular (default)" />
+      <value enum="6" description="Future" />
     </field>
     <field number="64" name="SettlDate" type="UTCTIMESTAMP" />
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="N" description="indicates a new order (default)" />
+      <value enum="Y" description="indicates an application level resend and is not supported" />
+    </field>
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too Late to Cancel" />
+      <value enum="1" description="Unknown Order" />
       <value enum="3" description="Already Pending Cancel or Pending Replace" />
       <value enum="2" description="Broker Option" />
     </field>
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="0" description="Broker Option" />
+      <value enum="1" description="Unknown Symbol" />
       <value enum="2" description="Exchange Closed" />
+      <value enum="3" description="Order Exceeds Limit" />
       <value enum="5" description="Unknown Order" />
+      <value enum="6" description="Duplicate Order" />
       <value enum="8" description="Stale Order" />
     </field>
     <field number="110" name="MinQty" type="QTY" />
@@ -324,10 +334,14 @@
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="129" name="DeliverToSubID" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
-      <value enum="F" description="Trade" />
       <value enum="0" description="New (acknowledgement of new order)" />
+      <value enum="1" description="Partial Fill" />
       <value enum="2" description="Fill" />
+      <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
+      <value enum="D" description="Restated" />
+      <value enum="F" description="Trade" />
       <value enum="M" description="Mass Cancel Complete" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
@@ -336,83 +350,129 @@
     <field number="211" name="PegDifference" type="STRING" />
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="378" name="ExecRestatementReason" type="STRING">
+      <value enum="4" description="Brokeroption;optionallysentduringreloadofareserve(iceberg)order." />
       <value enum="5" description="Partial decline of Order Qty" />
     </field>
     <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Cancel" />
+      <value enum="2" description="Cancel/Replace" />
     </field>
     <field number="439" name="ClearingFirm" type="STRING" />
     <field number="440" name="ClearingAccount" type="STRING" />
     <field number="447" name="PartyIDSource" type="STRING" />
-    <field number="448" name="PartyID" type="STRING">
-      <value enum="0" description="NONE (No Client for this order)" />
-    </field>
+    <field number="448" name="PartyID" type="STRING" />
     <field number="452" name="PartyRole" type="STRING">
       <value enum="3" description="Client ID" />
+      <value enum="12" description="Executing Trader (the Executing Decision Maker)" />
       <value enum="122" description="Investor ID (the Investment Decision Maker)" />
-      <value enum="14" description="Giveup Clearing Firm (Drop only)" />
       <value enum="1" description="Executing Firm" />
       <value enum="6" description="Introducing Firm (Drop only)" />
+      <value enum="7" description="EnteringFirm (the party reporting the trade. Should not be used in the second leg, except when TradeHandlingInst (1123) = 0)" />
+      <value enum="14" description="Giveup Clearing Firm (Drop only)" />
+      <value enum="17" description="ContraFirm (the party the trade is alleged against)" />
     </field>
     <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
     <field number="730" name="SettlPrice" type="PRICE" />
-    <field number="1724" name="OrderOrigination" type="STRING" />
+    <field number="1724" name="OrderOrigination" type="STRING">
+      <value enum="5" description="DEA. Indicate DEA activity (as defined by MiFID II) is involved in the" />
+      <value enum="0" description="Non-DEA. (default)" />
+    </field>
     <field number="2376" name="PartyRoleQualifier" type="STRING">
       <value enum="0" description="None (applicable only for the reserved Party IDs)" />
+      <value enum="22" description="Algorithm (applicable to PartyRole values 12 or 122)" />
       <value enum="23" description="Firm or legal entity (LEI) (applicable to Party Role value 3)" />
+      <value enum="24" description="Naturalperson(applicabletoPartyRolevalues3,12and122)" />
     </field>
     <field number="6655" name="CorrectedSize" type="STRING" />
     <field number="7692" name="RiskReset" type="STRING">
       <value enum="S" description="Symbol level lockout reset" />
+      <value enum="F" description="Clearing firm level lockout reset" />
+      <value enum="C" description="CustomGroupID lockout reset" />
     </field>
     <field number="7699" name="CustomGroupID" type="STRING" />
     <field number="7772" name="CentralCounterparty" type="STRING">
       <value enum="EMCF" description="Cboe Clear" />
+      <value enum="LCHL" description="LCH Ltd (London)" />
       <value enum="XCLR" description="SIX x-clear" />
+      <value enum="NONE" description="Clearing Suppressed" />
     </field>
     <field number="7928" name="PreventParticipantMatch" type="STRING">
       <value enum="N" description="Cancel Newest" />
+      <value enum="O" description="Cancel Oldest" />
       <value enum="B" description="Cancel Both" />
+      <value enum="D" description="Decrement Larger5 / Cancel Smaller" />
+      <value enum="d" description="SameasDabove,butonlydecrementLeavesQty (151). Donot restate OrderQty (38). restate OrderQty (38)." />
+      <value enum="F" description="Prevent Match at Participant Level" />
       <value enum="M" description="Prevent Match at Trading Firm Level" />
+      <value enum="P" description="Prevent Match at Port Owner Level" />
     </field>
     <field number="8013" name="TrdRegPublicationReasons" type="STRING">
       <value enum="3" description="Reference Price (Dark Book) (RFPT)" />
+      <value enum="9" description="Large In Scale (Pre-Trade Transparency Waiver)" />
+      <value enum="10" description="Order Management Facility (Iceberg) (Pre-Trade Transparency" />
       <value enum="0" description="Negotiated Trade in Liquid Instrument (NLIQ)" />
+      <value enum="1" description="Negotiated Trade in Illiquid Instrument (OILQ)" />
+      <value enum="2" description="NegotiatedTradeSubjecttoConditionsOtherThantheCurrentMarket" />
       <value enum="6" description="Deferral for Large in Scale (LRGS)" />
+      <value enum="17" description="Negotiated Trade Subject to a Pre-Trade Transparency Waiver (re-" />
     </field>
-    <field number="8015" name="OrderAttributeTypes" type="STRING" />
+    <field number="8015" name="OrderAttributeTypes" type="STRING">
+      <value enum="2" description="LiquidityProvisionactivityorder. Thisindicatestheorderisrelatedto anysortofliquidityprovisionactivity,asdefinedbyMiFIDII.Thisflag is mandatory for orders which are part of a liquidity provision activity. Absence of this value indicates otherwise. anysortofliquidityprovisionactivity,asdefinedbyMiFIDII.Thisflag is mandatory for orders which are part of a liquidity provision activity. Absence of this value indicates otherwise." />
+      <value enum="4" description="Algorithmicorder. Thisindicatesthattheorderwasplacedasaresult of an investment firm engaging in algorithmic trading. Absence of this value indicates otherwise. of an investment firm engaging in algorithmic trading. Absence of this value indicates otherwise." />
+    </field>
     <field number="8016" name="TradingVenueRegTradeId" type="STRING" />
     <field number="9303" name="RoutingInst" type="STRING">
       <value enum="B" description="Cboe Only (default)" />
+      <value enum="P" description="CboeOnly—PostOnly(willrejectratherthanremovevisibleliquidity)" />
       <value enum="U" description="Dark Sweep (interbook)" />
+      <value enum="u" description="Dark Lit Sweep (best-price)" />
       <value enum="W" description="Lit Sweep (interbook, best-price)" />
+      <value enum="X" description="Lit Sweep (interbook, sequential)" />
       <value enum="BD" description="Cboe Dark Book Only (hidden midpoint peg orders only)" />
+      <value enum="BA" description="Cboe Automatic Dark Routed (routes to Cboe Integrated Book if order is Large In Scale (LIS) or is not a midpoint order, otherwise routes midpoint non-LIS orders to Cboe Dark Book) order is Large In Scale (LIS) or is not a midpoint order, otherwise routes midpoint non-LIS orders to Cboe Dark Book)" />
       <value enum="BP" description="Cboe Periodic Auction Book" />
+      <value enum="BH" description="Dark Periodic Sweep (midpoint peg orders)" />
       <value enum="BU" description="Cboe Closing Cross" />
+      <value enum="BL" description="Periodic Lit Sweep" />
+      <value enum="BM" description="Dark Periodic Lit Sweep" />
       <value enum="N" description="None (implied if 3rd char is not specified)" />
+      <value enum="L" description="Limit (1-tick inside the limit price)" />
+      <value enum="T" description="Far-touch (least aggressive of 1-tick inside the EBBO far-touch or limit price) or limit price)" />
+      <value enum="D" description="Dark-on-Expiry" />
     </field>
     <field number="9416" name="ExtExecInst" type="STRING">
       <value enum="N" description="None" />
+      <value enum="G" description="All Or None" />
       <value enum="R" description="Retail Order" />
+      <value enum="A" description="Retail All Or None" />
+      <value enum="L" description="Retail Liquidity Provision" />
     </field>
     <field number="9479" name="DisplayIndicator" type="STRING">
       <value enum="X" description="Displayed Order (default)" />
+      <value enum="I" description="Invisible" />
     </field>
     <field number="9619" name="CancelOrigOnReject" type="STRING">
       <value enum="N" description="Leave original order alone (default)" />
+      <value enum="Y" description="Cancel original order if replacement fails" />
     </field>
     <field number="9620" name="CorrectedPrice" type="PRICE" />
     <field number="9688" name="OrigCompID" type="STRING" />
     <field number="9689" name="OrigSubID" type="STRING" />
     <field number="9730" name="TradeLiquidityIndicator" type="STRING">
       <value enum="A" description="Added Liquidity" />
+      <value enum="R" description="Removed Liquidity" />
       <value enum="C" description="Auction" />
+      <value enum="S" description="Self Match (opt-in)" />
       <value enum="P" description="Periodic Auction" />
+      <value enum="X" description="Routed to Another Market" />
       <value enum="D" description="Cboe Dark Pool" />
       <value enum="T" description="Cboe Dark Pool IOC order" />
       <value enum="I" description="Hidden Liquidity that was price improved" />
+      <value enum="K" description="Hidden (reserve) portion of an iceberg order" />
       <value enum="O" description="Open Auction" />
+      <value enum="L" description="Close Auction" />
+      <value enum="V" description="Volatility Auction" />
     </field>
     <field number="9882" name="FeeCode" type="STRING" />
   </fields>

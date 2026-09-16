@@ -56,7 +56,11 @@
     <field name="XmlData" required="N" />
     <field name="MessageEncoding" required="N" />
     <field name="LastMsgSeqNumProcessed" required="N" />
-    <group name="NoHops" required="N" />
+    <group name="NoHops" required="N">
+      <field name="HopCompID" required="N" />
+      <field name="HopSendingTime" required="N" />
+      <field name="HopRefID" required="N" />
+    </group>
   </header>
   <trailer>
     <field name="SignatureLength" required="N" />
@@ -458,6 +462,10 @@
       <value enum="3" description="MEMBER_TRADING_FOR_ANOTHER_MEMBER" />
       <value enum="4" description="ALL_OTHER" />
     </field>
+    <field number="627" name="NoHops" type="NUMINGROUP" />
+    <field number="628" name="HopCompID" type="STRING" />
+    <field number="629" name="HopSendingTime" type="UTCTIMESTAMP" />
+    <field number="630" name="HopRefID" type="SEQNUM" />
     <field number="637" name="LegLastPx" type="PRICE" />
     <field number="789" name="NextExpectedMsgSeqNum" type="SEQNUM" />
     <field number="828" name="TrdType" type="INT">

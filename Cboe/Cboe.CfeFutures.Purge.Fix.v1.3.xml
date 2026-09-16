@@ -89,8 +89,16 @@
       <value enum="5" description="Replaced" />
       <value enum="8" description="Rejected" />
       <value enum="B" description="Calculated" />
+      <value enum="1" description="Partially Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="A" description="Pending Ack" />
+      <value enum="E" description="Pending Replace" />
     </field>
-    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN">
+      <value enum="N" description="(Default)" />
+      <value enum="Y" description="Indicates a message resend and should be used during FIX Replay. All" />
+    </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
@@ -101,10 +109,13 @@
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="97" name="PossResend" type="BOOLEAN">
       <value enum="N" description="Default. Indicates a new order." />
+      <value enum="Y" description="Indicates an application level resend and is NOT supported." />
     </field>
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too late to cancel." />
       <value enum="2" description="Broker Option." />
+      <value enum="1" description="Unknown order." />
+      <value enum="3" description="Already pending cancel or pending replace." />
     </field>
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
@@ -117,13 +128,18 @@
       <value enum="5" description="Replaced" />
       <value enum="D" description="Restated" />
       <value enum="M" description="Mass Cancel Complete" />
+      <value enum="1" description="Partial Fill" />
+      <value enum="4" description="Canceled" />
+      <value enum="8" description="Rejected" />
     </field>
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Cancel" />
+      <value enum="2" description="Cancel/Replace" />
     </field>
     <field number="7695" name="MassCancelID" type="STRING" />
     <field number="7700" name="MassCancelInst" type="STRING">
       <value enum="A" description="No filtering by EFID is performed." />
+      <value enum="F" description="All orders that were sent under the EFID specified in" />
     </field>
   </fields>
 </fix>

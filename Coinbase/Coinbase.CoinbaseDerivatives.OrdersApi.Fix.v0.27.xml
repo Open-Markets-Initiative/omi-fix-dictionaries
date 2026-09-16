@@ -56,7 +56,11 @@
     <field name="XmlData" required="N" />
     <field name="MessageEncoding" required="N" />
     <field name="LastMsgSeqNumProcessed" required="N" />
-    <group name="NoHops" required="N" />
+    <group name="NoHops" required="N">
+      <field name="HopCompID" required="N" />
+      <field name="HopSendingTime" required="N" />
+      <field name="HopRefID" required="N" />
+    </group>
   </header>
   <trailer>
     <field name="SignatureLength" required="N" />
@@ -78,19 +82,13 @@
       <field name="Text" required="N" />
     </message>
     <message name="BusinessMessageReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="N" />
+      <field name="RefSeqNum" required="Y" />
       <field name="RefMsgType" required="Y" />
       <field name="BusinessRejectRefID" required="N" />
       <field name="BusinessRejectReason" required="Y" />
       <field name="Text" required="N" />
       <field name="EncodedTextLen" required="N" />
       <field name="EncodedText" required="N" />
-    </message>
-    <message name="BusinessReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="Y" />
-      <field name="Text" required="N" />
-      <field name="BusinessRejectRefID" required="N" />
-      <field name="BusinessRejectReason" required="Y" />
     </message>
     <message name="EventResendComplete" msgtype="F4" msgcat="app">
       <field name="RefSeqNum" required="Y" />
@@ -814,6 +812,10 @@
       <value enum="4" description="ALL_OTHER" />
     </field>
     <field number="625" name="TradingSessionSubID" type="STRING" />
+    <field number="627" name="NoHops" type="NUMINGROUP" />
+    <field number="628" name="HopCompID" type="STRING" />
+    <field number="629" name="HopSendingTime" type="UTCTIMESTAMP" />
+    <field number="630" name="HopRefID" type="SEQNUM" />
     <field number="789" name="NextExpectedMsgSeqNum" type="SEQNUM" />
     <field number="880" name="TrdMatchID" type="QTY" />
     <field number="1028" name="ManualOrderIndicator" type="BOOLEAN">

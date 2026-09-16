@@ -51,11 +51,6 @@
       <field name="HeartBtInt" required="Y" />
       <field name="ResetSeqNumFlag" required="N" />
     </message>
-    <message name="LogonResponse" msgtype="A" msgcat="admin">
-      <field name="EncryptMethod" required="Y" />
-      <field name="HeartBtInt" required="Y" />
-      <field name="ResetSeqNumFlag" required="N" />
-    </message>
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
     </message>

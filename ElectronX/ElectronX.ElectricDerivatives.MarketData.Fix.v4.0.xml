@@ -226,6 +226,7 @@
     <field number="112" name="TestReqID" type="STRING" />
     <field number="123" name="GapFillFlag" type="BOOLEAN" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
+    <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
     <field number="167" name="SecurityType" type="STRING" />
     <field number="231" name="ContractMultiplier" type="FLOAT" />
     <field number="262" name="MDReqID" type="STRING" />
@@ -238,6 +239,8 @@
       <value enum="0" description="Full Book Depth" />
       <value enum="1" description="Top of Book" />
     </field>
+    <field number="267" name="NoMDEntryTypes" type="NUMINGROUP" />
+    <field number="268" name="NoMDEntries" type="NUMINGROUP" />
     <field number="269" name="MDEntryType" type="CHAR">
       <value enum="0" description="Bid" />
       <value enum="1" description="Offer" />
@@ -312,6 +315,7 @@
     <field number="828" name="TrdType" type="INT">
       <value enum="0" description="Regular Trade" />
     </field>
+    <field number="864" name="NoEvents" type="NUMINGROUP" />
     <field number="865" name="EventType" type="INT">
       <value enum="5" description="Activation" />
       <value enum="7" description="Last Eligible Trade Date" />

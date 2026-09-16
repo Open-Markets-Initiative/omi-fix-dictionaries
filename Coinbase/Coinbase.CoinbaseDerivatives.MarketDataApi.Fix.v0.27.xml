@@ -56,7 +56,11 @@
     <field name="OrigSendingTime" required="N" />
     <field name="XmlDataLen" required="N" />
     <field name="XmlData" required="N" />
-    <group name="NoHops" required="N" />
+    <group name="NoHops" required="N">
+      <field name="HopCompID" required="N" />
+      <field name="HopSendingTime" required="N" />
+      <field name="HopRefID" required="N" />
+    </group>
   </header>
   <trailer>
     <field name="SignatureLength" required="N" />
@@ -65,17 +69,11 @@
   </trailer>
   <messages>
     <message name="BusinessMessageReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="N" />
+      <field name="RefSeqNum" required="Y" />
       <field name="RefMsgType" required="Y" />
       <field name="BusinessRejectRefID" required="N" />
       <field name="BusinessRejectReason" required="Y" />
       <field name="Text" required="N" />
-    </message>
-    <message name="BusinessReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="Y" />
-      <field name="Text" required="N" />
-      <field name="BusinessRejectRefID" required="N" />
-      <field name="BusinessRejectReason" required="Y" />
     </message>
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
@@ -604,6 +602,10 @@
       <value enum="1" description="BUY" />
       <value enum="2" description="SELL" />
     </field>
+    <field number="627" name="NoHops" type="NUMINGROUP" />
+    <field number="628" name="HopCompID" type="STRING" />
+    <field number="629" name="HopSendingTime" type="UTCTIMESTAMP" />
+    <field number="630" name="HopRefID" type="SEQNUM" />
     <field number="637" name="LegLastPx" type="PRICE" />
     <field number="711" name="NoUnderlyings" type="NUMINGROUP" />
     <field number="730" name="SettlPrice" type="PRICE" />
