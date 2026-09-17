@@ -2,7 +2,7 @@
   Fix dictionary for: Box OrderEntry Fix v5.0
 
   Protocol:
-    Organization: 
+    Organization: Box Options Market
     Protocol: Order Entry
     Encoding: Financial Information eXchange
     Version: 5.0

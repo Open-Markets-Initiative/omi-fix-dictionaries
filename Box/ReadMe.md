@@ -5,7 +5,7 @@
 
 | Division | [Protocol][Omi.Box.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Box.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [Options][Options] | [OrderEntry][Box.Options.OrderEntry] | [v5.0](Box.Options.OrderEntry.Fix.v5.0.xml) | 1/1/2024 | [Active][Omi.Glossary.Status.Active] | [pdf][Box.Options.OrderEntry.Fix.v5.0.Pdf] |
+| [BoxOptions][BoxOptions.Exchange] | [OrderEntry][Box.BoxOptions.OrderEntry] | [v5.0](Box.BoxOptions.OrderEntry.Fix.v5.0.xml) | 1/1/2024 | [Active][Omi.Glossary.Status.Active] | [pdf][Box.BoxOptions.OrderEntry.Fix.v5.0.Pdf] |
 
 
 Box: [website](https://boxoptions.com "Go to Box Options Market")
@@ -19,7 +19,7 @@ Box: [website](https://boxoptions.com "Go to Box Options Market")
 [Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
 [Omi.Box.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Box/Protocols "Box Protocol Directory"
 [Omi.Box.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Box/Specifications "Box Specifications Directory"
-[Options]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Box/Protocols/Options "Box Options"
-[Box.Options.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Box/Protocols/Options/OrderEntry.md "Order Entry"
+[BoxOptions.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Box/Protocols/BoxOptions "Box BoxOptions"
+[Box.BoxOptions.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Box/Protocols/BoxOptions/OrderEntry.md "Order Entry"
 
-[Box.Options.OrderEntry.Fix.v5.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Box/Specifications/Box.Options.OrderEntry.Fix.v5.0.pdf " 5.0 Pdf"
+[Box.BoxOptions.OrderEntry.Fix.v5.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Box/Specifications/Box.Options.OrderEntry.Fix.v5.0.pdf "Box Options Market 5.0 Pdf"
