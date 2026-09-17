@@ -3,10 +3,10 @@
 
 ## Aquis Exchange
 
-| Division | [Protocol][Omi.Aquis.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Aquis.Specifications] |
-| --- | --- | --- | ---: | --- | --- |
-| [AquisEquities][AquisEquities.Exchange] | [DropCopy][Aquis.AquisEquities.DropCopy] | [v2.1](Aquis.AquisEquities.DropCopy.Fix.v2.1.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Aquis.AquisEquities.DropCopy.Fix.v2.1.Pdf] |
-| [AquisEquities][AquisEquities.Exchange] | [OrderEntry][Aquis.AquisEquities.OrderEntry] | [v5.0](Aquis.AquisEquities.OrderEntry.Fix.v5.0.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Aquis.AquisEquities.OrderEntry.Fix.v5.0.Pdf] |
+| [Protocol][Omi.Aquis.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Aquis.Specifications] |
+| --- | --- | ---: | --- | --- |
+| [DropCopy][Aquis.AquisEquities.DropCopy] | [v2.1](Aquis.AquisEquities.DropCopy.Fix.v2.1.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Aquis.AquisEquities.DropCopy.Fix.v2.1.Pdf] |
+| [OrderEntry][Aquis.AquisEquities.OrderEntry] | [v5.0](Aquis.AquisEquities.OrderEntry.Fix.v5.0.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Aquis.AquisEquities.OrderEntry.Fix.v5.0.Pdf] |
 
 
 Aquis: [website](https://www.aquis.eu "Go to Aquis Exchange")

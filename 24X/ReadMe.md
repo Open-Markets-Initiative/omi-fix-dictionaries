@@ -3,10 +3,10 @@
 
 ## 24 National Exchange
 
-| Division | [Protocol][Omi.24X.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.24X.Specifications] |
-| --- | --- | --- | ---: | --- | --- |
-| [24XEquities][24XEquities.Exchange] | [DropCopy][24X.24XEquities.DropCopy] | [v1.13](24X.24XEquities.DropCopy.Fix.v1.13.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][24X.24XEquities.DropCopy.Fix.v1.13.Pdf] |
-| [24XEquities][24XEquities.Exchange] | [OrderEntry][24X.24XEquities.OrderEntry] | [v1.13](24X.24XEquities.OrderEntry.Fix.v1.13.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][24X.24XEquities.OrderEntry.Fix.v1.13.Pdf] |
+| [Protocol][Omi.24X.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.24X.Specifications] |
+| --- | --- | ---: | --- | --- |
+| [DropCopy][24X.24XEquities.DropCopy] | [v1.13](24X.24XEquities.DropCopy.Fix.v1.13.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][24X.24XEquities.DropCopy.Fix.v1.13.Pdf] |
+| [OrderEntry][24X.24XEquities.OrderEntry] | [v1.13](24X.24XEquities.OrderEntry.Fix.v1.13.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][24X.24XEquities.OrderEntry.Fix.v1.13.Pdf] |
 
 
 24X: [website](https://24exchange.com "Go to 24 National Exchange")

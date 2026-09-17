@@ -3,11 +3,11 @@
 
 ## Blue Ocean Technologies
 
-| Division | [Protocol][Omi.BlueOceanAts.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.BlueOceanAts.Specifications] |
-| --- | --- | --- | ---: | --- | --- |
-| [BlueEquities][BlueEquities.Ats] | [DropCopy][BlueOceanAts.BlueEquities.DropCopy] | [v1.13.1](BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.xml) | 5/7/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.Pdf] |
-| [BlueEquities][BlueEquities.Ats] | [OrderEntry][BlueOceanAts.BlueEquities.OrderEntry] | [v1.13](BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.Pdf] |
-| [BlueEquities][BlueEquities.Ats] | [TopOfBook][BlueOceanAts.BlueEquities.TopOfBook] | [v2.0.1](BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.Pdf] |
+| [Protocol][Omi.BlueOceanAts.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.BlueOceanAts.Specifications] |
+| --- | --- | ---: | --- | --- |
+| [DropCopy][BlueOceanAts.BlueEquities.DropCopy] | [v1.13.1](BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.xml) | 5/7/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.Pdf] |
+| [OrderEntry][BlueOceanAts.BlueEquities.OrderEntry] | [v1.13](BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.Pdf] |
+| [TopOfBook][BlueOceanAts.BlueEquities.TopOfBook] | [v2.0.1](BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.xml) | 1/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.Pdf] |
 
 
 BlueOceanAts: [website](https://blueocean-tech.io/ "Go to Blue Ocean Technologies")

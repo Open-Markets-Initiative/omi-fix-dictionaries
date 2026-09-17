@@ -3,10 +3,10 @@
 
 ## The Small Exchange
 
-| Division | [Protocol][Omi.SmallX.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.SmallX.Specifications] |
-| --- | --- | --- | ---: | --- | --- |
-| [SmallFutures][SmallFutures.Exchange] | [DropCopy][SmallX.SmallFutures.DropCopy] | [v2.1](SmallX.SmallFutures.DropCopy.Fix.v2.1.xml) | 7/2/2021 | [Active][Omi.Glossary.Status.Active] | [url][SmallX.SmallFutures.DropCopy.Fix.v2.1.Url] - [pdf][SmallX.SmallFutures.DropCopy.Fix.v2.1.Pdf] |
-| [SmallFutures][SmallFutures.Exchange] | [OrderEntry][SmallX.SmallFutures.OrderEntry] | [v2.7](SmallX.SmallFutures.OrderEntry.Fix.v2.7.xml) | 7/2/2021 | [Active][Omi.Glossary.Status.Active] | [url][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Url] - [pdf][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Pdf] |
+| [Protocol][Omi.SmallX.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.SmallX.Specifications] |
+| --- | --- | ---: | --- | --- |
+| [DropCopy][SmallX.SmallFutures.DropCopy] | [v2.1](SmallX.SmallFutures.DropCopy.Fix.v2.1.xml) | 7/2/2021 | [Active][Omi.Glossary.Status.Active] | [url][SmallX.SmallFutures.DropCopy.Fix.v2.1.Url] - [pdf][SmallX.SmallFutures.DropCopy.Fix.v2.1.Pdf] |
+| [OrderEntry][SmallX.SmallFutures.OrderEntry] | [v2.7](SmallX.SmallFutures.OrderEntry.Fix.v2.7.xml) | 7/2/2021 | [Active][Omi.Glossary.Status.Active] | [url][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Url] - [pdf][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Pdf] |
 
 
 SmallX: [website](https://smallexchange.com "Go to The Small Exchange")

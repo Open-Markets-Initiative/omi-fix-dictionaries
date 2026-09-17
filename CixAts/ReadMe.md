@@ -3,9 +3,9 @@
 
 ## CIX Trading Inc.
 
-| Division | [Protocol][Omi.CixAts.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.CixAts.Specifications] |
-| --- | --- | --- | ---: | --- | --- |
-| [CixAspen][CixAspen.Platform] | [OrderEntry][CixAts.CixAspen.OrderEntry] | [v1.4](CixAts.CixAspen.OrderEntry.Fix.v1.4.xml) | 6/1/2026 | [Active][Omi.Glossary.Status.Active] | [url][CixAts.CixAspen.OrderEntry.Fix.v1.4.Url] - [pdf][CixAts.CixAspen.OrderEntry.Fix.v1.4.Pdf] |
+| [Protocol][Omi.CixAts.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.CixAts.Specifications] |
+| --- | --- | ---: | --- | --- |
+| [OrderEntry][CixAts.CixAspen.OrderEntry] | [v1.4](CixAts.CixAspen.OrderEntry.Fix.v1.4.xml) | 6/1/2026 | [Active][Omi.Glossary.Status.Active] | [url][CixAts.CixAspen.OrderEntry.Fix.v1.4.Url] - [pdf][CixAts.CixAspen.OrderEntry.Fix.v1.4.Pdf] |
 
 
 CixAts: [website](https://www.thecix.ca "Go to CIX Trading Inc.")

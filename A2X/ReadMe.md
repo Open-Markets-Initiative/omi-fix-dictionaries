@@ -3,9 +3,9 @@
 
 ## A2X Markets
 
-| Division | [Protocol][Omi.A2X.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.A2X.Specifications] |
-| --- | --- | --- | ---: | --- | --- |
-| [A2XEquities][A2XEquities.Exchange] | [OrderEntry][A2X.A2XEquities.OrderEntry] | [v2.0](A2X.A2XEquities.OrderEntry.Fix.v2.0.xml) | 5/24/2023 | [Active][Omi.Glossary.Status.Active] | [url][A2X.A2XEquities.OrderEntry.Fix.v2.0.Url] - [pdf][A2X.A2XEquities.OrderEntry.Fix.v2.0.Pdf] |
+| [Protocol][Omi.A2X.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.A2X.Specifications] |
+| --- | --- | ---: | --- | --- |
+| [OrderEntry][A2X.A2XEquities.OrderEntry] | [v2.0](A2X.A2XEquities.OrderEntry.Fix.v2.0.xml) | 5/24/2023 | [Active][Omi.Glossary.Status.Active] | [url][A2X.A2XEquities.OrderEntry.Fix.v2.0.Url] - [pdf][A2X.A2XEquities.OrderEntry.Fix.v2.0.Pdf] |
 
 
 A2X: [website](https://www.a2x.co.za "Go to A2X Markets")
