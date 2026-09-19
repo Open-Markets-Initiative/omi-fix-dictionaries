@@ -43,8 +43,8 @@ Euronext: [website](https://www.euronext.com "Go to Euronext")
 [Omi.Euronext.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Euronext/Protocols "Euronext Protocol Directory"
 [Omi.Euronext.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Euronext/Specifications "Euronext Specifications Directory"
 [Optiq.Platform]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Euronext/Protocols/Optiq "Euronext Optiq"
-[Euronext.Optiq.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Euronext/Protocols/Optiq/OrderEntry.md "Order Entry"
 [Euronext.Optiq.DropCopy]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Euronext/Protocols/Optiq/DropCopy.md "Drop Copy"
+[Euronext.Optiq.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Euronext/Protocols/Optiq/OrderEntry.md "Order Entry"
 
 [Euronext.Optiq.DropCopy.Fix.v5.25.Url]: https://www.euronext.com/en/trade-on-exchange/optiq "Euronext 5.25 Url"
 [Euronext.Optiq.DropCopy.Fix.v5.25.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Euronext/Specifications/Optiq/v5/v5.25/Euronext.Optiq.DropCopy.Fix.v5.25.pdf "Euronext 5.25 Pdf"

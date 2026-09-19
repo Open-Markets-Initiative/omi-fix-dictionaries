@@ -24,9 +24,9 @@ Coinbase: [website](https://www.coinbase.com/ "Go to Coinbase")
 [Omi.Coinbase.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Coinbase/Specifications "Coinbase Specifications Directory"
 [CoinbaseDerivatives.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Coinbase/Protocols/CoinbaseDerivatives "Coinbase CoinbaseDerivatives"
 [Deribit]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Coinbase/Protocols/Deribit "Coinbase Deribit"
-[Coinbase.CoinbaseDerivatives.OrdersApi]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Protocols/CoinbaseDerivatives/OrdersApi.md ""
-[Coinbase.CoinbaseDerivatives.MarketDataApi]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Protocols/CoinbaseDerivatives/MarketDataApi.md ""
 [Coinbase.CoinbaseDerivatives.DropCopy]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Protocols/CoinbaseDerivatives/DropCopy.md "Drop Copy"
+[Coinbase.CoinbaseDerivatives.MarketDataApi]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Protocols/CoinbaseDerivatives/MarketDataApi.md ""
+[Coinbase.CoinbaseDerivatives.OrdersApi]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Protocols/CoinbaseDerivatives/OrdersApi.md ""
 [Coinbase.Deribit.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Protocols/Deribit/OrderEntry.md "Order Entry"
 
 [Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Url]: https://docs.cdp.coinbase.com/derivatives/docs/welcome "Coinbase 0.9 Url"

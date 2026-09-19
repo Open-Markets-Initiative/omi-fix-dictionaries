@@ -23,8 +23,8 @@ Odx: [website](https://www.odx.co.jp/en "Go to Osaka Digital Exchange")
 [Omi.Odx.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Odx/Specifications "Odx Specifications Directory"
 [OdxEquities.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Odx/Protocols/OdxEquities "Odx OdxEquities"
 [OdxSecurityToken.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Odx/Protocols/OdxSecurityToken "Odx OdxSecurityToken"
-[Odx.OdxEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Protocols/OdxEquities/OrderEntry.md "Order Entry"
 [Odx.OdxEquities.DropCopy]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Protocols/OdxEquities/DropCopy.md "Drop Copy"
+[Odx.OdxEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Protocols/OdxEquities/OrderEntry.md "Order Entry"
 [Odx.OdxSecurityToken.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Protocols/OdxSecurityToken/OrderEntry.md "Order Entry"
 
 [Odx.OdxEquities.DropCopy.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/Odx.OdxEquities.DropCopy.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"

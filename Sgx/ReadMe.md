@@ -21,11 +21,11 @@ Sgx: [website](https://www.sgx.com "Go to Singapore Exchange")
 [Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
 [Omi.Sgx.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Sgx/Protocols "Sgx Protocol Directory"
 [Omi.Sgx.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Sgx/Specifications "Sgx Specifications Directory"
-[TitanOtc.Platform]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Sgx/Protocols/TitanOtc "Sgx TitanOtc"
 [TitanDt.Platform]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Sgx/Protocols/TitanDt "Sgx TitanDt"
-[Sgx.TitanOtc.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Protocols/TitanOtc/OrderEntry.md "Order Entry"
+[TitanOtc.Platform]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Sgx/Protocols/TitanOtc "Sgx TitanOtc"
 [Sgx.TitanDt.MarketData]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Protocols/TitanDt/MarketData.md "Market Data"
 [Sgx.TitanDt.ReferenceData]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Protocols/TitanDt/ReferenceData.md "Reference Data"
+[Sgx.TitanOtc.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Protocols/TitanOtc/OrderEntry.md "Order Entry"
 
 [Sgx.TitanDt.MarketData.Fix.v0.8.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Specifications/TitanDt/Sgx.TitanDt.MarketData.Fix.v0.8.pdf "Singapore Exchange 0.8 Pdf"
 [Sgx.TitanDt.ReferenceData.Fix.v0.8.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Sgx/Specifications/TitanDt/Sgx.TitanDt.ReferenceData.Fix.v0.8.pdf "Singapore Exchange 0.8 Pdf"

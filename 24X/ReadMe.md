@@ -21,8 +21,8 @@
 [Omi.24X.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/24X/Protocols "24X Protocol Directory"
 [Omi.24X.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/24X/Specifications "24X Specifications Directory"
 [24XEquities.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/24X/Protocols/24XEquities "24X 24XEquities"
-[24X.24XEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/24X/Protocols/24XEquities/OrderEntry.md "Order Entry"
 [24X.24XEquities.DropCopy]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/24X/Protocols/24XEquities/DropCopy.md "Drop Copy"
+[24X.24XEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/24X/Protocols/24XEquities/OrderEntry.md "Order Entry"
 
 [24X.24XEquities.DropCopy.Fix.v1.13.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/24X/Specifications/24XEquities/24X.24XEquities.DropCopy.Fix.v1.13.pdf "24 National Exchange 1.13 Pdf"
 [24X.24XEquities.OrderEntry.Fix.v1.13.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/24X/Specifications/24XEquities/24X.24XEquities.OrderEntry.Fix.v1.13.pdf "24 National Exchange 1.13 Pdf"

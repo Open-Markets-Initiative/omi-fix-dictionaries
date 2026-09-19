@@ -72,7 +72,7 @@ Enjoy.
 [ElectronX.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/ElectronX "ElectronX Markets"
 [Eurex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Eurex "Eurex Exchange"
 [Euronext.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Euronext "Euronext"
-[Hkex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Hkex "Hong Kong Exchanges and Clearing"
+[Hkex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Hkex ""
 [Iex.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Iex "Investors Exchange"
 [Jnx.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Jnx "Japannext Securities"
 [Ltse.Directory]: https://github.com/Open-Markets-Initiative/omi-fix-dictionaries/tree/main/Ltse "Long-Term Stock Exchange"

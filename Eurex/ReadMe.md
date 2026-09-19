@@ -27,8 +27,8 @@ Eurex: [website](https://www.eurex.com "Go to Eurex Exchange")
 [Omi.Eurex.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Eurex/Protocols "Eurex Protocol Directory"
 [Omi.Eurex.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Eurex/Specifications "Eurex Specifications Directory"
 [T7.Platform]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Eurex/Protocols/T7 "Eurex T7"
-[Eurex.T7.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Eurex/Protocols/T7/OrderEntry.md "Order Entry"
 [Eurex.T7.CashOrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Eurex/Protocols/T7/CashOrderEntry.md "Cash Order Entry"
+[Eurex.T7.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Eurex/Protocols/T7/OrderEntry.md "Order Entry"
 
 [Eurex.T7.CashOrderEntry.Fix.v12.0.Url]: https://www.eurex.com/ex-en/technology/t7 "Eurex Exchange 12.0 Url"
 [Eurex.T7.CashOrderEntry.Fix.v12.0.Xml]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Eurex/Specifications/12.0/T7_R.12.0_FIX_LF_XSD_XML_representation_and_layouts_Version_1.zip "Eurex Exchange 12.0 Xml"

@@ -21,8 +21,8 @@ Memx: [website](https://www.memx.com "Go to The Members Exchange")
 [Omi.Memx.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Memx/Protocols "Memx Protocol Directory"
 [Omi.Memx.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Memx/Specifications "Memx Specifications Directory"
 [MemxOptions.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Memx/Protocols/MemxOptions "Memx MemxOptions"
-[Memx.MemxOptions.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Protocols/MemxOptions/OrderEntry.md "Order Entry"
 [Memx.MemxOptions.DropCopy]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Protocols/MemxOptions/DropCopy.md "Drop Copy"
+[Memx.MemxOptions.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Protocols/MemxOptions/OrderEntry.md "Order Entry"
 
 [Memx.MemxOptions.DropCopy.Fix.v1.8.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/MemxOptions/Memx.MemxOptions.DropCopy.Fix.v1.8.pdf "The Members Exchange 1.8 Pdf"
 [Memx.MemxOptions.OrderEntry.Fix.v1.8.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/MemxOptions/Memx.MemxOptions.OrderEntry.Fix.v1.8.pdf "The Members Exchange 1.8 Pdf"
