@@ -3,23 +3,24 @@
 
 ## Coinbase
 
-| Division | [Protocol][Omi.Coinbase.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Coinbase.Specifications] |
+| Division | [Protocol][Omi.Coinbase.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Coinbase.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [CoinbaseDerivatives][CoinbaseDerivatives.Exchange] | [DropCopy][Coinbase.CoinbaseDerivatives.DropCopy] | [v0.9](Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.xml) | 6/16/2026 | [Active][Omi.Glossary.Status.Active] | [url][Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Url] - [pdf][Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Pdf] |
-| [CoinbaseDerivatives][CoinbaseDerivatives.Exchange] | [MarketDataApi][Coinbase.CoinbaseDerivatives.MarketDataApi] | [v0.27](Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.xml) | 6/17/2026 | [Active][Omi.Glossary.Status.Active] | [url][Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Url] - [pdf][Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Pdf] |
-| [CoinbaseDerivatives][CoinbaseDerivatives.Exchange] | [OrdersApi][Coinbase.CoinbaseDerivatives.OrdersApi] | [v0.27](Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.xml) | 6/17/2026 | [Active][Omi.Glossary.Status.Active] | [url][Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Url] - [pdf][Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Pdf] |
-| [Deribit][Deribit] | [OrderEntry][Coinbase.Deribit.OrderEntry] | [v1.0](Coinbase.Deribit.OrderEntry.Fix.v1.0.xml) | 7/24/2026 | [Active][Omi.Glossary.Status.Active] | [url][Coinbase.Deribit.OrderEntry.Fix.v1.0.Url] - [xml][Coinbase.Deribit.OrderEntry.Fix.v1.0.Xml] |
+| [CoinbaseDerivatives][CoinbaseDerivatives.Exchange] | [DropCopy][Coinbase.CoinbaseDerivatives.DropCopy] | [v0.9](Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.xml) | 6/16/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Url] - [pdf][Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Pdf] |
+| [CoinbaseDerivatives][CoinbaseDerivatives.Exchange] | [MarketDataApi][Coinbase.CoinbaseDerivatives.MarketDataApi] | [v0.27](Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.xml) | 6/17/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Url] - [pdf][Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Pdf] |
+| [CoinbaseDerivatives][CoinbaseDerivatives.Exchange] | [OrdersApi][Coinbase.CoinbaseDerivatives.OrdersApi] | [v0.27](Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.xml) | 6/17/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Url] - [pdf][Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Pdf] |
+| [Deribit][Deribit] | [OrderEntry][Coinbase.Deribit.OrderEntry] | [v1.0](Coinbase.Deribit.OrderEntry.Fix.v1.0.xml) | 7/24/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Coinbase.Deribit.OrderEntry.Fix.v1.0.Url] - [xml][Coinbase.Deribit.OrderEntry.Fix.v1.0.Xml] |
 
 
 Coinbase: [website](https://www.coinbase.com/ "Go to Coinbase")
 
 
-[Omi.Glossary.Status]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Protocol Deployment Status"
-[Omi.Glossary.Status.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is in active production"
-[Omi.Glossary.Status.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is no longer in active use"
-[Omi.Glossary.Status.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is not yet deployed to an active production environment"
-[Omi.Glossary.Status.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol deployment status is unknown"
-[Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Protocol Deployment"
+[Omi.Glossary.Deployment.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is in active production"
+[Omi.Glossary.Deployment.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is no longer in active use"
+[Omi.Glossary.Deployment.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is not yet deployed to an active production environment"
+[Omi.Glossary.Deployment.Observability]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is carried for observability rather than trading"
+[Omi.Glossary.Deployment.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol deployment is unknown"
 [Omi.Coinbase.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Coinbase/Protocols "Coinbase Protocol Directory"
 [Omi.Coinbase.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Coinbase/Specifications "Coinbase Specifications Directory"
 [CoinbaseDerivatives.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Coinbase/Protocols/CoinbaseDerivatives "Coinbase CoinbaseDerivatives"

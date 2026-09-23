@@ -3,24 +3,25 @@
 
 ## OTC Markets Group
 
-| Division | [Protocol][Omi.OtcMarkets.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.OtcMarkets.Specifications] |
+| Division | [Protocol][Omi.OtcMarkets.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.OtcMarkets.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [LinkAts][LinkAts.Ats] | [Quotation][OtcMarkets.LinkAts.Quotation] | [v1.7](OtcMarkets.LinkAts.Quotation.Fix.v1.7.xml) | 5/15/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkAts.Quotation.Fix.v1.7.Url] - [pdf][OtcMarkets.LinkAts.Quotation.Fix.v1.7.Pdf] |
-| [LinkAts][LinkAts.Ats] | [TradeMessaging][OtcMarkets.LinkAts.TradeMessaging] | [v1.16](OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.xml) | 5/15/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.Url] - [pdf][OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.Pdf] |
-| [LinkEcn][LinkEcn.Ats] | [OrderEntry][OtcMarkets.LinkEcn.OrderEntry] | [v1.3.31](OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.xml) | 6/3/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.Url] - [pdf][OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.Pdf] |
-| [LinkNqb][LinkNqb.Ats] | [OrderEntry][OtcMarkets.LinkNqb.OrderEntry] | [v1.18.1](OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.xml) | 6/3/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.Url] - [pdf][OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.Pdf] |
-| [MoonAts][MoonAts.Ats] | [OrderEntry][OtcMarkets.MoonAts.OrderEntry] | [v1.8.2](OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.xml) | 6/3/2026 | [Active][Omi.Glossary.Status.Active] | [url][OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.Url] - [pdf][OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.Pdf] |
+| [LinkAts][LinkAts.Ats] | [Quotation][OtcMarkets.LinkAts.Quotation] | [v1.7](OtcMarkets.LinkAts.Quotation.Fix.v1.7.xml) | 5/15/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][OtcMarkets.LinkAts.Quotation.Fix.v1.7.Url] - [pdf][OtcMarkets.LinkAts.Quotation.Fix.v1.7.Pdf] |
+| [LinkAts][LinkAts.Ats] | [TradeMessaging][OtcMarkets.LinkAts.TradeMessaging] | [v1.16](OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.xml) | 5/15/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.Url] - [pdf][OtcMarkets.LinkAts.TradeMessaging.Fix.v1.16.Pdf] |
+| [LinkEcn][LinkEcn.Ats] | [OrderEntry][OtcMarkets.LinkEcn.OrderEntry] | [v1.3.31](OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.xml) | 6/3/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.Url] - [pdf][OtcMarkets.LinkEcn.OrderEntry.Fix.v1.3.31.Pdf] |
+| [LinkNqb][LinkNqb.Ats] | [OrderEntry][OtcMarkets.LinkNqb.OrderEntry] | [v1.18.1](OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.xml) | 6/3/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.Url] - [pdf][OtcMarkets.LinkNqb.OrderEntry.Fix.v1.18.1.Pdf] |
+| [MoonAts][MoonAts.Ats] | [OrderEntry][OtcMarkets.MoonAts.OrderEntry] | [v1.8.2](OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.xml) | 6/3/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.Url] - [pdf][OtcMarkets.MoonAts.OrderEntry.Fix.v1.8.2.Pdf] |
 
 
 OtcMarkets: [website](https://www.otcmarkets.com "Go to OTC Markets Group")
 
 
-[Omi.Glossary.Status]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Protocol Deployment Status"
-[Omi.Glossary.Status.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is in active production"
-[Omi.Glossary.Status.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is no longer in active use"
-[Omi.Glossary.Status.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is not yet deployed to an active production environment"
-[Omi.Glossary.Status.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol deployment status is unknown"
-[Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Protocol Deployment"
+[Omi.Glossary.Deployment.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is in active production"
+[Omi.Glossary.Deployment.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is no longer in active use"
+[Omi.Glossary.Deployment.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is not yet deployed to an active production environment"
+[Omi.Glossary.Deployment.Observability]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is carried for observability rather than trading"
+[Omi.Glossary.Deployment.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol deployment is unknown"
 [Omi.OtcMarkets.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/OtcMarkets/Protocols "OtcMarkets Protocol Directory"
 [Omi.OtcMarkets.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/OtcMarkets/Specifications "OtcMarkets Specifications Directory"
 [LinkAts.Ats]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/OtcMarkets/Protocols/LinkAts "OtcMarkets LinkAts"

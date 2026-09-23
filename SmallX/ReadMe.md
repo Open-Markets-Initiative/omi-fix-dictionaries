@@ -3,21 +3,22 @@
 
 ## The Small Exchange
 
-| [Protocol][Omi.SmallX.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.SmallX.Specifications] |
+| [Protocol][Omi.SmallX.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.SmallX.Specifications] |
 | --- | --- | ---: | --- | --- |
-| [DropCopy][SmallX.SmallFutures.DropCopy] | [v2.1](SmallX.SmallFutures.DropCopy.Fix.v2.1.xml) | 7/2/2021 | [Active][Omi.Glossary.Status.Active] | [url][SmallX.SmallFutures.DropCopy.Fix.v2.1.Url] - [pdf][SmallX.SmallFutures.DropCopy.Fix.v2.1.Pdf] |
-| [OrderEntry][SmallX.SmallFutures.OrderEntry] | [v2.7](SmallX.SmallFutures.OrderEntry.Fix.v2.7.xml) | 7/2/2021 | [Active][Omi.Glossary.Status.Active] | [url][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Url] - [pdf][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Pdf] |
+| [DropCopy][SmallX.SmallFutures.DropCopy] | [v2.1](SmallX.SmallFutures.DropCopy.Fix.v2.1.xml) | 7/2/2021 | [Active][Omi.Glossary.Deployment.Active] | [url][SmallX.SmallFutures.DropCopy.Fix.v2.1.Url] - [pdf][SmallX.SmallFutures.DropCopy.Fix.v2.1.Pdf] |
+| [OrderEntry][SmallX.SmallFutures.OrderEntry] | [v2.7](SmallX.SmallFutures.OrderEntry.Fix.v2.7.xml) | 7/2/2021 | [Active][Omi.Glossary.Deployment.Active] | [url][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Url] - [pdf][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Pdf] |
 
 
 SmallX: [website](https://smallexchange.com "Go to The Small Exchange")
 
 
-[Omi.Glossary.Status]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Protocol Deployment Status"
-[Omi.Glossary.Status.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is in active production"
-[Omi.Glossary.Status.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is no longer in active use"
-[Omi.Glossary.Status.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is not yet deployed to an active production environment"
-[Omi.Glossary.Status.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol deployment status is unknown"
-[Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Protocol Deployment"
+[Omi.Glossary.Deployment.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is in active production"
+[Omi.Glossary.Deployment.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is no longer in active use"
+[Omi.Glossary.Deployment.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is not yet deployed to an active production environment"
+[Omi.Glossary.Deployment.Observability]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is carried for observability rather than trading"
+[Omi.Glossary.Deployment.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol deployment is unknown"
 [Omi.SmallX.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/SmallX/Protocols "SmallX Protocol Directory"
 [Omi.SmallX.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/SmallX/Specifications "SmallX Specifications Directory"
 [SmallFutures.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/SmallX/Protocols/SmallFutures "SmallX SmallFutures"

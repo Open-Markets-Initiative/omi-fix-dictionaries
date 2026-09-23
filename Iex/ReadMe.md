@@ -3,21 +3,22 @@
 
 ## Investors Exchange
 
-| Division | [Protocol][Omi.Iex.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Iex.Specifications] |
+| Division | [Protocol][Omi.Iex.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Iex.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [IexEquities][IexEquities.Exchange] | [OrderEntry][Iex.IexEquities.OrderEntry] | [v2.91](Iex.IexEquities.OrderEntry.Fix.v2.91.xml) | 11/18/2022 | [Active][Omi.Glossary.Status.Active] | [pdf][Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf] |
-| [IexOptions][IexOptions.Exchange] | [OrderEntry][Iex.IexOptions.OrderEntry] | [v1.01](Iex.IexOptions.OrderEntry.Fix.v1.01.xml) | 3/23/2026 | [Pending][Omi.Glossary.Status.Pending] | [url][Iex.IexOptions.OrderEntry.Fix.v1.01.Url] - [pdf][Iex.IexOptions.OrderEntry.Fix.v1.01.Pdf] |
+| [IexEquities][IexEquities.Exchange] | [OrderEntry][Iex.IexEquities.OrderEntry] | [v2.91](Iex.IexEquities.OrderEntry.Fix.v2.91.xml) | 11/18/2022 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf] |
+| [IexOptions][IexOptions.Exchange] | [OrderEntry][Iex.IexOptions.OrderEntry] | [v1.01](Iex.IexOptions.OrderEntry.Fix.v1.01.xml) | 3/23/2026 | [Pending][Omi.Glossary.Deployment.Pending] | [url][Iex.IexOptions.OrderEntry.Fix.v1.01.Url] - [pdf][Iex.IexOptions.OrderEntry.Fix.v1.01.Pdf] |
 
 
 Iex: [website](https://www.iex.io "Go to Investors Exchange")
 
 
-[Omi.Glossary.Status]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Protocol Deployment Status"
-[Omi.Glossary.Status.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is in active production"
-[Omi.Glossary.Status.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is no longer in active use"
-[Omi.Glossary.Status.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is not yet deployed to an active production environment"
-[Omi.Glossary.Status.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol deployment status is unknown"
-[Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Protocol Deployment"
+[Omi.Glossary.Deployment.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is in active production"
+[Omi.Glossary.Deployment.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is no longer in active use"
+[Omi.Glossary.Deployment.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is not yet deployed to an active production environment"
+[Omi.Glossary.Deployment.Observability]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is carried for observability rather than trading"
+[Omi.Glossary.Deployment.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol deployment is unknown"
 [Omi.Iex.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Iex/Protocols "Iex Protocol Directory"
 [Omi.Iex.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Iex/Specifications "Iex Specifications Directory"
 [IexEquities.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Iex/Protocols/IexEquities "Iex IexEquities"

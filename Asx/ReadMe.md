@@ -3,27 +3,28 @@
 
 ## Australian Securities Exchange
 
-| Division | [Protocol][Omi.Asx.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Asx.Specifications] |
+| Division | [Protocol][Omi.Asx.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Asx.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [AsxDerivatives][AsxDerivatives.Exchange] | [DropCopy][Asx.AsxDerivatives.DropCopy] | [v1.1](Asx.AsxDerivatives.DropCopy.Fix.v1.1.xml) | 1/1/2023 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxDerivatives.DropCopy.Fix.v1.1.Pdf] |
-| [AsxDerivatives][AsxDerivatives.Exchange] | [MarketData][Asx.AsxDerivatives.MarketData] | [v2.02](Asx.AsxDerivatives.MarketData.Fix.v2.02.xml) | 1/1/2023 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxDerivatives.MarketData.Fix.v2.02.Pdf] |
-| [AsxDerivatives][AsxDerivatives.Exchange] | [OrderEntry][Asx.AsxDerivatives.OrderEntry] | [v2.05](Asx.AsxDerivatives.OrderEntry.Fix.v2.05.xml) | 1/1/2023 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxDerivatives.OrderEntry.Fix.v2.05.Pdf] |
-| [AsxDerivatives][AsxDerivatives.Exchange] | [Trade24][Asx.AsxDerivatives.Trade24] | [v1.0](Asx.AsxDerivatives.Trade24.Fix.v1.0.xml) | 1/1/2023 | [Deprecated][Omi.Glossary.Status.Deprecated] | [pdf][Asx.AsxDerivatives.Trade24.Fix.v1.0.Pdf] |
-| [AsxSecurities][AsxSecurities.Exchange] | [DropCopy][Asx.AsxSecurities.DropCopy] | [v1.1](Asx.AsxSecurities.DropCopy.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxSecurities.DropCopy.Fix.v1.1.Pdf] |
-| [AsxSecurities][AsxSecurities.Exchange] | [MarketPoint][Asx.AsxSecurities.MarketPoint] | [v1.0](Asx.AsxSecurities.MarketPoint.Fix.v1.0.xml) | 1/1/2023 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxSecurities.MarketPoint.Fix.v1.0.Pdf] |
-| [AsxSecurities][AsxSecurities.Exchange] | [OrderEntry][Asx.AsxSecurities.OrderEntry] | [v1.1](Asx.AsxSecurities.OrderEntry.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxSecurities.OrderEntry.Fix.v1.1.Pdf] |
-| [AsxSecurities][AsxSecurities.Exchange] | [SignalB][Asx.AsxSecurities.SignalB] | [v1.0](Asx.AsxSecurities.SignalB.Fix.v1.0.xml) | 1/1/2023 | [Active][Omi.Glossary.Status.Active] | [pdf][Asx.AsxSecurities.SignalB.Fix.v1.0.Pdf] |
+| [AsxDerivatives][AsxDerivatives.Exchange] | [DropCopy][Asx.AsxDerivatives.DropCopy] | [v1.1](Asx.AsxDerivatives.DropCopy.Fix.v1.1.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxDerivatives.DropCopy.Fix.v1.1.Pdf] |
+| [AsxDerivatives][AsxDerivatives.Exchange] | [MarketData][Asx.AsxDerivatives.MarketData] | [v2.02](Asx.AsxDerivatives.MarketData.Fix.v2.02.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxDerivatives.MarketData.Fix.v2.02.Pdf] |
+| [AsxDerivatives][AsxDerivatives.Exchange] | [OrderEntry][Asx.AsxDerivatives.OrderEntry] | [v2.05](Asx.AsxDerivatives.OrderEntry.Fix.v2.05.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxDerivatives.OrderEntry.Fix.v2.05.Pdf] |
+| [AsxDerivatives][AsxDerivatives.Exchange] | [Trade24][Asx.AsxDerivatives.Trade24] | [v1.0](Asx.AsxDerivatives.Trade24.Fix.v1.0.xml) | 1/1/2023 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [pdf][Asx.AsxDerivatives.Trade24.Fix.v1.0.Pdf] |
+| [AsxSecurities][AsxSecurities.Exchange] | [DropCopy][Asx.AsxSecurities.DropCopy] | [v1.1](Asx.AsxSecurities.DropCopy.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxSecurities.DropCopy.Fix.v1.1.Pdf] |
+| [AsxSecurities][AsxSecurities.Exchange] | [MarketPoint][Asx.AsxSecurities.MarketPoint] | [v1.0](Asx.AsxSecurities.MarketPoint.Fix.v1.0.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxSecurities.MarketPoint.Fix.v1.0.Pdf] |
+| [AsxSecurities][AsxSecurities.Exchange] | [OrderEntry][Asx.AsxSecurities.OrderEntry] | [v1.1](Asx.AsxSecurities.OrderEntry.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxSecurities.OrderEntry.Fix.v1.1.Pdf] |
+| [AsxSecurities][AsxSecurities.Exchange] | [SignalB][Asx.AsxSecurities.SignalB] | [v1.0](Asx.AsxSecurities.SignalB.Fix.v1.0.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxSecurities.SignalB.Fix.v1.0.Pdf] |
 
 
 Asx: [website](https://www.asx.com.au "Go to Australian Securities Exchange")
 
 
-[Omi.Glossary.Status]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Protocol Deployment Status"
-[Omi.Glossary.Status.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is in active production"
-[Omi.Glossary.Status.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is no longer in active use"
-[Omi.Glossary.Status.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is not yet deployed to an active production environment"
-[Omi.Glossary.Status.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol deployment status is unknown"
-[Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Protocol Deployment"
+[Omi.Glossary.Deployment.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is in active production"
+[Omi.Glossary.Deployment.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is no longer in active use"
+[Omi.Glossary.Deployment.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is not yet deployed to an active production environment"
+[Omi.Glossary.Deployment.Observability]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is carried for observability rather than trading"
+[Omi.Glossary.Deployment.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol deployment is unknown"
 [Omi.Asx.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Asx/Protocols "Asx Protocol Directory"
 [Omi.Asx.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Asx/Specifications "Asx Specifications Directory"
 [AsxDerivatives.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Asx/Protocols/AsxDerivatives "Asx AsxDerivatives"

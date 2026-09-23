@@ -3,27 +3,28 @@
 
 ## Eurex Exchange
 
-| Division | [Protocol][Omi.Eurex.Protocol.Definitions] | Version | Date | [Status][Omi.Glossary.Status] | [Documentation][Omi.Eurex.Specifications] |
+| Division | [Protocol][Omi.Eurex.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Eurex.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v12.0](Eurex.T7.CashOrderEntry.Fix.v12.0.xml) | 8/25/2023 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Eurex.T7.CashOrderEntry.Fix.v12.0.Url] - [xml][Eurex.T7.CashOrderEntry.Fix.v12.0.Xml] |
-| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v14.0](Eurex.T7.CashOrderEntry.Fix.v14.0.xml) | 8/18/2025 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Eurex.T7.CashOrderEntry.Fix.v14.0.Url] - [xml][Eurex.T7.CashOrderEntry.Fix.v14.0.Xml] |
-| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v14.1](Eurex.T7.CashOrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.T7.CashOrderEntry.Fix.v14.1.Url] - [xml][Eurex.T7.CashOrderEntry.Fix.v14.1.Xml] |
-| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v15.0](Eurex.T7.CashOrderEntry.Fix.v15.0.xml) | 7/31/2026 | [Pending][Omi.Glossary.Status.Pending] | [url][Eurex.T7.CashOrderEntry.Fix.v15.0.Url] - [pdf][Eurex.T7.CashOrderEntry.Fix.v15.0.Pdf] - [xml][Eurex.T7.CashOrderEntry.Fix.v15.0.Xml] |
-| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v12.0](Eurex.T7.OrderEntry.Fix.v12.0.xml) | 8/25/2023 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Eurex.T7.OrderEntry.Fix.v12.0.Url] - [xml][Eurex.T7.OrderEntry.Fix.v12.0.Xml] |
-| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v14.0](Eurex.T7.OrderEntry.Fix.v14.0.xml) | 8/18/2025 | [Deprecated][Omi.Glossary.Status.Deprecated] | [url][Eurex.T7.OrderEntry.Fix.v14.0.Url] - [xml][Eurex.T7.OrderEntry.Fix.v14.0.Xml] |
-| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v14.1](Eurex.T7.OrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Status.Active] | [url][Eurex.T7.OrderEntry.Fix.v14.1.Url] - [xml][Eurex.T7.OrderEntry.Fix.v14.1.Xml] |
-| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v15.0](Eurex.T7.OrderEntry.Fix.v15.0.xml) | 7/31/2026 | [Pending][Omi.Glossary.Status.Pending] | [url][Eurex.T7.OrderEntry.Fix.v15.0.Url] - [pdf][Eurex.T7.OrderEntry.Fix.v15.0.Pdf] - [xml][Eurex.T7.OrderEntry.Fix.v15.0.Xml] |
+| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v12.0](Eurex.T7.CashOrderEntry.Fix.v12.0.xml) | 8/25/2023 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [url][Eurex.T7.CashOrderEntry.Fix.v12.0.Url] - [xml][Eurex.T7.CashOrderEntry.Fix.v12.0.Xml] |
+| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v14.0](Eurex.T7.CashOrderEntry.Fix.v14.0.xml) | 8/18/2025 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [url][Eurex.T7.CashOrderEntry.Fix.v14.0.Url] - [xml][Eurex.T7.CashOrderEntry.Fix.v14.0.Xml] |
+| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v14.1](Eurex.T7.CashOrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Eurex.T7.CashOrderEntry.Fix.v14.1.Url] - [xml][Eurex.T7.CashOrderEntry.Fix.v14.1.Xml] |
+| [T7][T7.Platform] | [CashOrderEntry][Eurex.T7.CashOrderEntry] | [v15.0](Eurex.T7.CashOrderEntry.Fix.v15.0.xml) | 7/31/2026 | [Pending][Omi.Glossary.Deployment.Pending] | [url][Eurex.T7.CashOrderEntry.Fix.v15.0.Url] - [pdf][Eurex.T7.CashOrderEntry.Fix.v15.0.Pdf] - [xml][Eurex.T7.CashOrderEntry.Fix.v15.0.Xml] |
+| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v12.0](Eurex.T7.OrderEntry.Fix.v12.0.xml) | 8/25/2023 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [url][Eurex.T7.OrderEntry.Fix.v12.0.Url] - [xml][Eurex.T7.OrderEntry.Fix.v12.0.Xml] |
+| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v14.0](Eurex.T7.OrderEntry.Fix.v14.0.xml) | 8/18/2025 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [url][Eurex.T7.OrderEntry.Fix.v14.0.Url] - [xml][Eurex.T7.OrderEntry.Fix.v14.0.Xml] |
+| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v14.1](Eurex.T7.OrderEntry.Fix.v14.1.xml) | 2/19/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Eurex.T7.OrderEntry.Fix.v14.1.Url] - [xml][Eurex.T7.OrderEntry.Fix.v14.1.Xml] |
+| [T7][T7.Platform] | [OrderEntry][Eurex.T7.OrderEntry] | [v15.0](Eurex.T7.OrderEntry.Fix.v15.0.xml) | 7/31/2026 | [Pending][Omi.Glossary.Deployment.Pending] | [url][Eurex.T7.OrderEntry.Fix.v15.0.Url] - [pdf][Eurex.T7.OrderEntry.Fix.v15.0.Pdf] - [xml][Eurex.T7.OrderEntry.Fix.v15.0.Xml] |
 
 
 Eurex: [website](https://www.eurex.com "Go to Eurex Exchange")
 
 
-[Omi.Glossary.Status]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Protocol Deployment Status"
-[Omi.Glossary.Status.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is in active production"
-[Omi.Glossary.Status.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is no longer in active use"
-[Omi.Glossary.Status.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol is not yet deployed to an active production environment"
-[Omi.Glossary.Status.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Protocol deployment status is unknown"
-[Omi.Glossary.Status.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Status.md "Deployment Status: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Protocol Deployment"
+[Omi.Glossary.Deployment.Active]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is in active production"
+[Omi.Glossary.Deployment.Deprecated]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is no longer in active use"
+[Omi.Glossary.Deployment.Pending]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is not yet deployed to an active production environment"
+[Omi.Glossary.Deployment.Observability]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol is carried for observability rather than trading"
+[Omi.Glossary.Deployment.Header]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Header only protocol provided for debugging"
+[Omi.Glossary.Deployment.Unknown]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Glossary/Deployment.md "Deployment: Protocol deployment is unknown"
 [Omi.Eurex.Protocol.Definitions]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Eurex/Protocols "Eurex Protocol Directory"
 [Omi.Eurex.Specifications]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Eurex/Specifications "Eurex Specifications Directory"
 [T7.Platform]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Eurex/Protocols/T7 "Eurex T7"
