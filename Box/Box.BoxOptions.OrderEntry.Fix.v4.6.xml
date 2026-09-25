@@ -1,0 +1,634 @@
+<!--
+  Fix dictionary for: Box OrderEntry Fix v4.6
+
+  Protocol:
+    Organization: Box Options Market
+    Protocol: Order Entry
+    Encoding: Financial Information eXchange
+    Version: 4.6
+    Date: 2018-04-09
+    Specification: SOLA FIX Specifications Guide for BOX v4.6
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The protocol compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="4" minor="2" servicepack="0" type="FIX">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="OrigSendingTime" required="N" />
+    <field name="PossResend" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="MaxMessageSize" required="N" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="FIXProtocolError/Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="N" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="NewSingle/ComplexOrder" msgtype="D" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="Account" required="N" />
+      <field name="SecurityType" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="MaturityDay" required="N" />
+      <field name="Side" required="Y" />
+      <field name="TransactTime" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="OrdType" required="Y" />
+      <field name="Rule80A" required="Y" />
+      <field name="Price" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="ExpireDate" required="N" />
+      <field name="Text" required="N" />
+      <field name="OpenClose" required="Y" />
+      <field name="ExecBroker" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="ExecutingParticipantID" required="N" />
+      <field name="CombinedOrdType" required="N" />
+      <field name="RoutingInst" required="N" />
+    </message>
+    <message name="Cancel/ReplaceSingle/ComplexOrderRequest(Order" msgtype="G" msgcat="app">
+      <field name="OrderID" required="N" />
+      <field name="Account" required="N" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="SecurityType" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="MaturityDay" required="N" />
+      <field name="Side" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="OrderQty" required="N" />
+      <field name="OrdType" required="N" />
+      <field name="Rule80A" required="N" />
+      <field name="Price" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="ExpireDate" required="N" />
+      <field name="Text" required="N" />
+      <field name="OpenClose" required="N" />
+      <field name="ExecBroker" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="ExecutingParticipantID" required="N" />
+      <field name="CombinedOrdType" required="N" />
+      <field name="RoutingInst" required="N" />
+    </message>
+    <message name="AuctionInitialOrder" msgtype="PI" msgcat="app">
+      <field name="SecurityType" required="Y" />
+      <field name="Symbol" required="N" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="MaturityDay" required="N" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="Price" required="Y" />
+      <field name="QtyType" required="N" />
+      <field name="PriceImprovement" required="N" />
+      <field name="ImprovePhaseID" required="N" />
+      <field name="AddQty" required="N" />
+      <field name="AuctionType" required="N" />
+      <field name="ContingentOrder" required="N" />
+      <field name="NoClearingData" required="Y" />
+      <field name="NoLegs" required="Y" />
+    </message>
+    <message name="OrderSingle/ComplexCancelRequest" msgtype="F" msgcat="app">
+      <field name="OrigClOrdID" required="Y" />
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderQty" required="N" />
+      <field name="SecurityType" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="MaturityDay" required="N" />
+      <field name="Side" required="Y" />
+      <field name="Text" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="NoLegs" required="N" />
+    </message>
+    <message name="QuoteRequest" msgtype="R" msgcat="app">
+      <field name="QuoteReqID" required="N" />
+      <field name="NoRelatedSym" required="N" />
+      <field name="SecurityType" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="MaturityMonthYear" required="Y" />
+      <field name="MaturityDay" required="Y" />
+      <field name="OrderQty" required="N" />
+    </message>
+    <message name="SecurityDefinitionRequest" msgtype="c" msgcat="app">
+      <field name="SecurityReqID" required="N" />
+      <field name="SecurityRequestType" required="Y" />
+      <field name="SecurityType" required="N" />
+      <field name="NoRelatedSym" required="N" />
+    </message>
+    <message name="OrderMassStatusRequest" msgtype="AF" msgcat="app">
+      <field name="MassStatusReqID2" required="N" />
+      <field name="MassStatusReqType" required="N" />
+    </message>
+    <message name="NewMulti-LegOrder-Single" msgtype="AB" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="Account" required="N" />
+      <field name="SecurityType" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="TransactTime" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="OrdType" required="Y" />
+      <field name="Rule80A" required="Y" />
+      <field name="Price" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="Text" required="N" />
+      <field name="ExecBroker" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="ExecutingParticipantID" required="N" />
+      <field name="CombinedOrdType" required="N" />
+      <field name="RoutingInst" required="N" />
+      <field name="NoLegs" required="Y" />
+    </message>
+    <message name="Cancel/ReplaceMulti-LegOrder" msgtype="AC" msgcat="app">
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="Account" required="N" />
+      <field name="SecurityType" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="TransactTime" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="OrdType" required="Y" />
+      <field name="Rule80A" required="N" />
+      <field name="Price" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="Text" required="N" />
+      <field name="ExecBroker" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="ExecutingParticipantID" required="N" />
+      <field name="RoutingInst" required="N" />
+      <field name="NoLegs" required="Y" />
+    </message>
+    <message name="UserRequest" msgtype="BE" msgcat="app">
+      <field name="TransactTime" required="Y" />
+      <field name="UserRequestId" required="Y" />
+      <field name="UserRequestType" required="Y" />
+      <field name="SecurityType" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="PutOrCall" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="MaturityDay" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="Rule80A" required="N" />
+    </message>
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="Account" required="N" />
+      <field name="ExecID" required="N" />
+      <field name="ExecTransType" required="N" />
+      <field name="ExecRefID" required="N" />
+      <field name="ExecType" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="OrdStatus" required="N" />
+      <field name="OrderQty" required="N" />
+      <field name="Price" required="N" />
+      <field name="SecurityType" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="MaturityDay" required="N" />
+      <field name="Side" required="N" />
+      <field name="OrdType" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="ExpireDate" required="N" />
+      <field name="LastShares" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="LeavesQty" required="N" />
+      <field name="CumQty" required="N" />
+      <field name="AvgPx" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="OpenClose" required="N" />
+      <field name="Text" required="N" />
+      <field name="ExecBroker" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="Rule80A" required="N" />
+      <field name="MultiLegReportingType" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="MassStatusReqID2" required="N" />
+      <field name="TrdType" required="N" />
+      <field name="ImprovePhaseID" required="N" />
+      <field name="CombinedOrdType" required="N" />
+      <field name="AuctionType" required="N" />
+      <field name="ContingentOrder" required="N" />
+      <field name="SpecialTradeInd" required="N" />
+      <field name="TradeLiquidityIndicator" required="N" />
+      <field name="AddQty" required="N" />
+      <field name="QtyType" required="N" />
+      <field name="PriceImprovement" required="N" />
+      <field name="LegRefID" required="N" />
+      <field name="SecurityAltId" required="N" />
+      <field name="SecondaryExedId" required="N" />
+      <field name="ContraAccountType" required="N" />
+    </message>
+    <message name="OrderSingle/ComplexCancelReject" msgtype="9" msgcat="app">
+      <field name="OrderID" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="OrdStatus" required="N" />
+      <field name="CxlRejResponseTo" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="QuoteAcknowledgement" msgtype="b" msgcat="app">
+      <field name="QuoteReqID" required="N" />
+      <field name="QuoteAckStatus" required="N" />
+      <field name="QuoteRejectReason" required="N" />
+    </message>
+    <message name="SecurityDefinition" msgtype="d" msgcat="app">
+      <field name="SecurityReqID" required="N" />
+      <field name="SecurityResponseID" required="N" />
+      <field name="SecurityResponseType" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SecurityType" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="MaturityDay" required="N" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="IDSource" required="N" />
+      <field name="NoRelatedSym" required="N" />
+    </message>
+    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
+      <field name="RefSeqNum" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="BusinessRejectRefID" required="N" />
+      <field name="BusinessRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="UserResponse" msgtype="BF" msgcat="app">
+      <field name="TransactTime" required="N" />
+      <field name="UserRequestId" required="Y" />
+      <field name="UserRequestType" required="Y" />
+      <field name="SecurityType" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="PutOrCall" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="MaturityDay" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="Rule80A" required="N" />
+    </message>
+    <message name="UserNotification" msgtype="CB" msgcat="app">
+      <field name="TransactTime" required="N" />
+      <field name="UserStatus" required="N" />
+      <field name="RiskTeamStatus" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="STRING" />
+    <field number="6" name="AvgPx" type="PRICE" />
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="19" name="ExecRefID" type="STRING" />
+    <field number="20" name="ExecTransType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Cancel" />
+      <value enum="2" description="Correct" />
+      <value enum="3" description="Status" />
+    </field>
+    <field number="22" name="IDSource" type="STRING" />
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastShares" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING">
+      <value enum="0" description="Heartbeat" />
+      <value enum="1" description="Test Request" />
+      <value enum="2" description="Resend Request" />
+      <value enum="3" description="Reject" />
+      <value enum="4" description="Sequence Reset" />
+      <value enum="5" description="Logout" />
+      <value enum="8" description="Execution Report" />
+      <value enum="9" description="Order Cancel Reject" />
+      <value enum="A" description="Logon" />
+      <value enum="D" description="New Single/Complex Order" />
+      <value enum="F" description="Order Single/Complex Cancel Request" />
+      <value enum="G" description="Cancel/Replace Single/Complex Request" />
+      <value enum="R" description="Quote Request" />
+      <value enum="b" description="Quote Acknowledgement" />
+      <value enum="c" description="Security Definition Request" />
+      <value enum="d" description="Security Definition" />
+      <value enum="AF" description="Order Mass Status Request" />
+      <value enum="PI" description="Auction Initial Order" />
+      <value enum="AB" description="New Multi-Leg Order - Single" />
+      <value enum="AC" description="Cancel/Replace Multi-Leg Order" />
+      <value enum="BE" description="User Request" />
+      <value enum="BF" description="User Response" />
+      <value enum="CB" description="User Notification" />
+      <value enum="J" description="Business Reject" />
+    </field>
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partially filled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Cancelled" />
+      <value enum="5" description="Replaced" />
+      <value enum="6" description="Cancel Pending" />
+      <value enum="8" description="Rejected" />
+      <value enum="P" description="Exposed" />
+      <value enum="Q" description="Directed Order" />
+      <value enum="L" description="Directed through IML" />
+      <value enum="I" description="Session Order cancelled when the participant connection gets disconnected" />
+      <value enum="T" description="Order cancelled due to Trading Restriction" />
+      <value enum="F" description="Order eliminated due to an invalid out of limits price" />
+      <value enum="M" description="Cancelled by the Market Operation Center (MOC)" />
+      <value enum="C" description="Expired" />
+      <value enum="H" description="Eliminated due to trade limit exceeded" />
+      <value enum="J" description="Eliminated due to maximum nb triggers limit exceeded" />
+      <value enum="K" description="Eliminated due to trade activity limit exceeded" />
+      <value enum="O" description="Eliminated due to drill through protection" />
+      <value enum="S" description="Cancelled by supervisor" />
+    </field>
+    <field number="40" name="OrdType" type="CHAR">
+      <value enum="1" description="Market" />
+      <value enum="2" description="Limit" />
+      <value enum="O" description="Market at Open (Order trades at the opening price) Remaining quantity, if any, is booked at the o opening price. (This usage and meaning are different from [TimeInForce 59=2] in FIX v4.2)" />
+      <value enum="F" description="Indication of Interest" />
+    </field>
+    <field number="41" name="OrigClOrdID" type="STRING" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN">
+      <value enum="Y" description="Possible duplicate" />
+      <value enum="N" description="Original transmission" />
+    </field>
+    <field number="44" name="Price" type="PRICE" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="47" name="Rule80A" type="CHAR">
+      <value enum="C" description="Public Customer" />
+      <value enum="F" description="Broker Dealer" />
+      <value enum="M" description="Market Maker" />
+      <value enum="T" description="Professional Customer" />
+      <value enum="W" description="Broker Dealer Cleared as Customer" />
+      <value enum="X" description="Away Market Maker Refer to Appendix A, Rule80A and CombinedOrdType Combinations" />
+    </field>
+    <field number="48" name="SecurityID" type="STRING" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+    </field>
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="59" name="TimeInForce" type="CHAR">
+      <value enum="0" description="Day" />
+      <value enum="3" description="Immediate or Cancel (IOC)" />
+      <value enum="W" description="Session Order" />
+      <value enum="1" description="Good Till Cancel (GTC)" />
+      <value enum="6" description="Good Till Date" />
+      <value enum="8" description="Auction or Kill" />
+    </field>
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="76" name="ExecBroker" type="STRING" />
+    <field number="77" name="OpenClose" type="CHAR">
+      <value enum="O" description="Open" />
+      <value enum="C" description="Close The following values are used when referencing Complex Order instrument" />
+      <value enum="1" description="1st leg Open, 2nd leg Close" />
+      <value enum="2" description="1st leg Close, 2nd leg Open" />
+      <value enum="3" description="1st and 2nd legs Open, 3rd leg Close" />
+      <value enum="4" description="1st leg Open, 2nd leg Close, 3rd leg Open" />
+      <value enum="5" description="1st leg Open, 2nd and 3rd legs Close" />
+      <value enum="6" description="1st leg Close, 2nd and 3rd legs Open" />
+      <value enum="7" description="1st leg Close, 2nd leg Open, 3rd leg Close" />
+      <value enum="8" description="1st and 2nd legs Close, 3rd leg Open" />
+      <value enum="A" description="1st, 2nd and 3rd legs Open, 4th leg Close" />
+      <value enum="B" description="1st and 2nd legs Open, 3rd leg Close, 4th leg Open" />
+      <value enum="D" description="1st and 2nd legs Open, 3rd and 4th legs Close" />
+      <value enum="E" description="1st leg Open, 2nd leg Close, 3rd and 4th legs Open" />
+      <value enum="F" description="1st leg Open, 2nd leg Close, 3rd leg Open, 4th leg Close" />
+      <value enum="G" description="1st leg Open, 2nd and 3rd legs Close, 4th leg Open" />
+      <value enum="H" description="1st leg Open, 2nd, 3rd and 4th legs Close" />
+      <value enum="I" description="1st leg Close, 2nd, 3rd and 4th legs Open" />
+      <value enum="J" description="1st leg Close, 2nd and 3rd legs Open, 4th legs Close" />
+      <value enum="K" description="1st leg Close, 2nd leg Open, 3rd leg Close, 4th leg Open" />
+      <value enum="L" description="1st leg Close, 2nd leg Open, 3rd and 4th legs Close" />
+      <value enum="M" description="1st and 2nd legs Close, 3rd and 4th legs Open" />
+      <value enum="N" description="1st and 2nd legs Close, 3rd leg Open, 4th leg Close" />
+      <value enum="P" description="1st, 2nd and 3rd legs Close, 4th leg Open" />
+    </field>
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="Y" description="Possible resend" />
+      <value enum="N" description="Original transmission" />
+    </field>
+    <field number="98" name="EncryptMethod" type="INT" />
+    <field number="103" name="OrdRejReason" type="INT" />
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN">
+      <value enum="Y" description="Gap Fill message, MsgSeqNum field valid" />
+      <value enum="N" description="Sequence Reset, ignore MsgSeqNum" />
+    </field>
+    <field number="131" name="QuoteReqID" type="STRING" />
+    <field number="141" name="ResetSeqNumFlag" type="BOOLEAN">
+      <value enum="Y" description="Yes, reset sequence numbers" />
+      <value enum="N" description="No" />
+    </field>
+    <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
+    <field number="150" name="ExecType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partial fill" />
+      <value enum="2" description="Fill" />
+      <value enum="4" description="Cancelled" />
+      <value enum="5" description="Replace" />
+      <value enum="6" description="Cancel Pending" />
+      <value enum="8" description="Rejected" />
+      <value enum="C" description="Expired" />
+    </field>
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="167" name="SecurityType" type="STRING">
+      <value enum="OPT" description="Option" />
+      <value enum="MLEG" description="Complex Order instrument" />
+    </field>
+    <field number="200" name="MaturityMonthYear" type="MONTHYEAR" />
+    <field number="201" name="PutOrCall" type="INT">
+      <value enum="0" description="Put" />
+      <value enum="1" description="Call" />
+    </field>
+    <field number="202" name="StrikePrice" type="PRICE" />
+    <field number="205" name="MaturityDay" type="DAYOFMONTH" />
+    <field number="297" name="QuoteAckStatus" type="INT">
+      <value enum="0" description="Accepted" />
+      <value enum="5" description="Rejected" />
+    </field>
+    <field number="300" name="QuoteRejectReason" type="INT" />
+    <field number="320" name="SecurityReqID" type="STRING" />
+    <field number="321" name="SecurityRequestType" type="INT">
+      <value enum="1" description="Request to create a new Complex Order instrument" />
+      <value enum="2" description="Request to receive all listed instruments" />
+    </field>
+    <field number="322" name="SecurityResponseID" type="STRING" />
+    <field number="323" name="SecurityResponseType" type="STRING">
+      <value enum="1" description="Accept Security Definition Request as initially requested" />
+      <value enum="2" description="Accept Security Definition Request with revisions as indicated in this message" />
+    </field>
+    <field number="371" name="RefTagID" type="INT" />
+    <field number="372" name="RefMsgType" type="STRING" />
+    <field number="373" name="SessionRejectReason" type="INT" />
+    <field number="375" name="ContraBroker" type="STRING" />
+    <field number="379" name="BusinessRejectRefID" type="STRING" />
+    <field number="380" name="BusinessRejectReason" type="INT" />
+    <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
+    <field number="383" name="MaxMessageSize" type="INT" />
+    <field number="432" name="ExpireDate" type="LOCALMKTDATE" />
+    <field number="434" name="CxlRejResponseTo" type="CHAR">
+      <value enum="1" description="Order Cancel Request" />
+      <value enum="2" description="Order Cancel/Replace Request" />
+    </field>
+    <field number="439" name="ClearingFirm" type="STRING" />
+    <field number="442" name="MultiLegReportingType" type="CHAR">
+      <value enum="1" description="Single security or outright contract (default)" />
+      <value enum="2" description="Individual leg of a Complex Order" />
+      <value enum="3" description="Report refers to a Complex Order" />
+    </field>
+    <field number="527" name="SecondaryExedId" type="STRING" />
+    <field number="555" name="NoLegs" type="NUMINGROUP" />
+    <field number="584" name="MassStatusReqID2" type="STRING" />
+    <field number="585" name="MassStatusReqType" type="INT" />
+    <field number="639" name="PriceImprovement" type="PRICE" />
+    <field number="654" name="LegRefID" type="STRING" />
+    <field number="828" name="TrdType" type="INT">
+      <value enum="O" description="Opening – Trade performed during opening Rotation" />
+      <value enum="A" description="Guaranteed Auction – Trade done at the end of a PIP Auction" />
+      <value enum="F" description="Continuous Trading – All other trade conditions" />
+      <value enum="B" description="Solicitation Auction – Trade was part of that type of auction" />
+      <value enum="C" description="Facilitation Auction – Trade was part of that type of auction" />
+    </field>
+    <field number="854" name="QtyType" type="INT">
+      <value enum="J" description="Auction Type is MIP" />
+      <value enum="B" description="Surrender Quantity for Solicitation: Indicates that the InitO is willing to surrender a portion of the total number of contracts in the Solicitation auction" />
+    </field>
+    <field number="923" name="UserRequestId" type="STRING" />
+    <field number="924" name="UserRequestType" type="INT">
+      <value enum="L" description="LockOut" />
+      <value enum="O" description="CancelOrders" />
+    </field>
+    <field number="926" name="UserStatus" type="INT" />
+    <field number="6005" name="ContraAccountType" type="CHAR">
+      <value enum="C" description="Public Customer" />
+      <value enum="F" description="Broker Dealer" />
+      <value enum="M" description="Market Mker" />
+      <value enum="T" description="Professional Customer" />
+      <value enum="W" description="Broker Dealer Cleared as Customer" />
+      <value enum="X" description="Away Market Maker" />
+    </field>
+    <field number="7388" name="ContingentOrder" type="CHAR">
+      <value enum="2" description="Contingent Order Specifying that the auction is contingent and should not be/was not controlled against the NBBO for the execution price" />
+    </field>
+    <field number="7900" name="ImprovePhaseID" type="STRING" />
+    <field number="7901" name="ExecutingParticipantID" type="STRING" />
+    <field number="7904" name="NoClearingData" type="NUMINGROUP" />
+    <field number="7906" name="CombinedOrdType" type="CHAR">
+      <value enum="1" description="NBBO Filtering and IML Routing" />
+      <value enum="2" description="No NBBO Filtering" />
+      <value enum="3" description="NBBO Filtering and no IML Routing (default value if the field is not provided)" />
+      <value enum="6" description="No Exposure for Complex Order Instrument upon entry. Default behavior for Complex Order instrument is to be flashed upon entry. Only valid for Complex Order. For Solicitation and Facilitation auction types: When tag [ContingentOrder 7388] is sent with o value 2 (Contingent), tag [CombinedOrdType 7906] must be set to 2 (No NBBO Filtering) or must not be provided, otherwise the auction is rejected. When tag [ContingentOrder 7388] is not o provided, the tag [CombinedOrdType 7906] must be set to 3 (NBBO Filtering and No Routing) or must not be provided. For a detailed description of Price Validation Types, refer to Appendix A, Rule80A and CombinedOrdType Combinations" />
+    </field>
+    <field number="7926" name="RiskTeamStatus" type="INT">
+      <value enum="A" description="Active" />
+      <value enum="L" description="Locked" />
+    </field>
+    <field number="9303" name="RoutingInst" type="STRING">
+      <value enum="O" description="Directed Order" />
+      <value enum="P" description="Preferenced Order" />
+    </field>
+    <field number="9383" name="AuctionType" type="CHAR">
+      <value enum="G" description="Regular Auction" />
+      <value enum="B" description="Solicitation Auction" />
+      <value enum="C" description="Facilitation Auction" />
+      <value enum="X" description="Customer Cross Order or Qualified Contingent Cross" />
+      <value enum="R" description="Floor Trade" />
+    </field>
+    <field number="9459" name="SpecialTradeInd" type="CHAR">
+      <value enum="0" description="Regular Trade (All)" />
+      <value enum="g" description="Contingent Trade (apply to Solicitation and Facilitation, and Floor Trades only)" />
+      <value enum="D" description="Customer Cross Order or Qualified Contingent Cross" />
+      <value enum="P" description="PIP" />
+      <value enum="W" description="ISO Inbound" />
+      <value enum="O" description="Hidden Trade (trade done at an away exchange through the InterMarket Linkage plan)" />
+    </field>
+    <field number="9461" name="AddQty" type="QTY" />
+    <field number="9730" name="TradeLiquidityIndicator" type="STRING">
+      <value enum="A" description="Add liquidity (Make)" />
+      <value enum="R" description="Remove liquidity (Take)" />
+    </field>
+    <field number="10455" name="SecurityAltId" type="STRING" />
+  </fields>
+</fix>
