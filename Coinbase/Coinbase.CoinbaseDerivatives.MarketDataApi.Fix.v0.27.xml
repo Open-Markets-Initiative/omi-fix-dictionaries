@@ -123,15 +123,6 @@
         <field name="LegLastPx" required="N" />
       </group>
     </message>
-    <message name="MarketDataRequest" msgtype="V" msgcat="app">
-      <field name="MDReqID" required="Y" />
-      <field name="SubscriptionRequestType" required="Y" />
-      <group name="NoRelatedSym" required="N">
-        <field name="Symbol" required="Y" />
-        <field name="SecurityType" required="Y" />
-        <component name="Security" required="Y" />
-      </group>
-    </message>
     <message name="MarketDataRequestReject" msgtype="Y" msgcat="app">
       <field name="MDReqID" required="Y" />
       <field name="MDReqRejReason" required="N" />
@@ -187,17 +178,26 @@
       <field name="LastFragment" required="N" />
       <component name="SecListGrp" required="N" />
     </message>
-    <message name="SecurityListRequest" msgtype="x" msgcat="app">
-      <field name="SecurityReqID" required="Y" />
-      <field name="SecurityListRequestType" required="Y" />
-      <component name="Instrument" required="N" />
-    </message>
     <message name="SequenceReset" msgtype="4" msgcat="admin">
       <field name="GapFillFlag" required="N" />
       <field name="NewSeqNo" required="Y" />
     </message>
     <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
+    </message>
+    <message name="MarketDataRequest" msgtype="V" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <field name="SubscriptionRequestType" required="Y" />
+      <group name="NoRelatedSym" required="N">
+        <field name="Symbol" required="Y" />
+        <field name="SecurityType" required="Y" />
+        <component name="Security" required="Y" />
+      </group>
+    </message>
+    <message name="SecurityListRequest" msgtype="x" msgcat="app">
+      <field name="SecurityReqID" required="Y" />
+      <field name="SecurityListRequestType" required="Y" />
+      <component name="Instrument" required="N" />
     </message>
   </messages>
   <components>
@@ -291,7 +291,6 @@
       <value enum="7" description="ADVERTISEMENT" />
       <value enum="8" description="EXECUTION_REPORT" />
       <value enum="9" description="ORDER_CANCEL_REJECT" />
-      <value enum="a" description="QUOTE_STATUS_REQUEST" />
       <value enum="A" description="LOGON" />
       <value enum="AA" description="DERIVATIVE_SECURITY_LIST" />
       <value enum="AB" description="NEW_ORDER_AB" />
@@ -319,7 +318,6 @@
       <value enum="AX" description="COLLATERAL_REQUEST" />
       <value enum="AY" description="COLLATERAL_ASSIGNMENT" />
       <value enum="AZ" description="COLLATERAL_RESPONSE" />
-      <value enum="b" description="MASS_QUOTE_ACKNOWLEDGEMENT" />
       <value enum="B" description="NEWS" />
       <value enum="BA" description="COLLATERAL_REPORT" />
       <value enum="BB" description="COLLATERAL_INQUIRY" />
@@ -329,51 +327,53 @@
       <value enum="BF" description="USER_RESPONSE" />
       <value enum="BG" description="COLLATERAL_INQUIRY_ACK" />
       <value enum="BH" description="CONFIRMATION_REQUEST" />
-      <value enum="c" description="SECURITY_DEFINITION_REQUEST" />
       <value enum="C" description="EMAIL" />
-      <value enum="d" description="SECURITY_DEFINITION" />
       <value enum="D" description="ORDER_SINGLE" />
-      <value enum="e" description="SECURITY_STATUS_REQUEST" />
       <value enum="E" description="ORDER_LIST" />
-      <value enum="f" description="SECURITY_STATUS" />
       <value enum="F" description="ORDER_CANCEL_REQUEST" />
-      <value enum="g" description="TRADING_SESSION_STATUS_REQUEST" />
       <value enum="G" description="ORDER_CANCEL_REPLACE_REQUEST" />
-      <value enum="h" description="TRADING_SESSION_STATUS" />
       <value enum="H" description="ORDER_STATUS_REQUEST" />
+      <value enum="J" description="ALLOCATION_INSTRUCTION" />
+      <value enum="K" description="LIST_CANCEL_REQUEST" />
+      <value enum="L" description="LIST_EXECUTE" />
+      <value enum="M" description="LIST_STATUS_REQUEST" />
+      <value enum="N" description="LIST_STATUS" />
+      <value enum="P" description="ALLOCATION_INSTRUCTION_ACK" />
+      <value enum="Q" description="DONT_KNOW_TRADE" />
+      <value enum="R" description="QUOTE_REQUEST" />
+      <value enum="S" description="QUOTE" />
+      <value enum="T" description="SETTLEMENT_INSTRUCTIONS" />
+      <value enum="V" description="MARKET_DATA_REQUEST" />
+      <value enum="W" description="MARKET_DATA_SNAPSHOT_FULL_REFRESH" />
+      <value enum="X" description="MARKET_DATA_INCREMENTAL_REFRESH" />
+      <value enum="Y" description="MARKET_DATA_REQUEST_REJECT" />
+      <value enum="Z" description="QUOTE_CANCEL" />
+      <value enum="a" description="QUOTE_STATUS_REQUEST" />
+      <value enum="b" description="MASS_QUOTE_ACKNOWLEDGEMENT" />
+      <value enum="c" description="SECURITY_DEFINITION_REQUEST" />
+      <value enum="d" description="SECURITY_DEFINITION" />
+      <value enum="e" description="SECURITY_STATUS_REQUEST" />
+      <value enum="f" description="SECURITY_STATUS" />
+      <value enum="g" description="TRADING_SESSION_STATUS_REQUEST" />
+      <value enum="h" description="TRADING_SESSION_STATUS" />
       <value enum="i" description="MASS_QUOTE" />
       <value enum="j" description="BUSINESS_MESSAGE_REJECT" />
-      <value enum="J" description="ALLOCATION_INSTRUCTION" />
       <value enum="k" description="BID_REQUEST" />
-      <value enum="K" description="LIST_CANCEL_REQUEST" />
       <value enum="l" description="BID_RESPONSE" />
-      <value enum="L" description="LIST_EXECUTE" />
       <value enum="m" description="LIST_STRIKE_PRICE" />
-      <value enum="M" description="LIST_STATUS_REQUEST" />
       <value enum="n" description="XML_MESSAGE" />
-      <value enum="N" description="LIST_STATUS" />
       <value enum="o" description="REGISTRATION_INSTRUCTIONS" />
       <value enum="p" description="REGISTRATION_INSTRUCTIONS_RESPONSE" />
-      <value enum="P" description="ALLOCATION_INSTRUCTION_ACK" />
       <value enum="q" description="ORDER_MASS_CANCEL_REQUEST" />
-      <value enum="Q" description="DONT_KNOW_TRADE" />
       <value enum="r" description="ORDER_MASS_CANCEL_REPORT" />
-      <value enum="R" description="QUOTE_REQUEST" />
       <value enum="s" description="NEW_ORDER_s" />
-      <value enum="S" description="QUOTE" />
       <value enum="t" description="CROSS_ORDER_CANCEL_REPLACE_REQUEST" />
-      <value enum="T" description="SETTLEMENT_INSTRUCTIONS" />
       <value enum="u" description="CROSS_ORDER_CANCEL_REQUEST" />
       <value enum="v" description="SECURITY_TYPE_REQUEST" />
-      <value enum="V" description="MARKET_DATA_REQUEST" />
       <value enum="w" description="SECURITY_TYPES" />
-      <value enum="W" description="MARKET_DATA_SNAPSHOT_FULL_REFRESH" />
       <value enum="x" description="SECURITY_LIST_REQUEST" />
-      <value enum="X" description="MARKET_DATA_INCREMENTAL_REFRESH" />
       <value enum="y" description="SECURITY_LIST" />
-      <value enum="Y" description="MARKET_DATA_REQUEST_REJECT" />
       <value enum="z" description="DERIVATIVE_SECURITY_LIST_REQUEST" />
-      <value enum="Z" description="QUOTE_CANCEL" />
     </field>
     <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="43" name="PossDupFlag" type="BOOLEAN">
@@ -460,9 +460,9 @@
       <value enum="B" description="Trading Session Traded Volume" />
       <value enum="C" description="Open Interest" />
       <value enum="E" description="Implied Bid" />
-      <value enum="f" description="FUNDING_RATE" />
       <value enum="F" description="Implied Offer" />
       <value enum="J" description="Empty Book" />
+      <value enum="f" description="FUNDING_RATE" />
       <value enum="k" description="FINAL_MARK_PRICE" />
       <value enum="m" description="MARK_PRICE" />
       <value enum="p" description="PREDICTED_FUNDING_RATE" />

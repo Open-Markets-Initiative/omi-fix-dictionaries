@@ -106,16 +106,16 @@
     <field number="11" name="ClOrdID" type="STRING" />
     <field number="14" name="CumQty" type="QTY" />
     <field number="15" name="Currency" type="CURRENCY">
-      <value enum="USD" description="United States Dollar" />
       <value enum="CAD" description="Canadian Dollar" />
+      <value enum="USD" description="United States Dollar" />
     </field>
     <field number="17" name="ExecID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
-      <value enum="5" description="Auto execution" />
       <value enum="1" description="Trade Cancel" />
-      <value enum="3" description="Status. Used to provide order restatements (150=D)." />
       <value enum="2" description="Trade Correct" />
+      <value enum="3" description="Status. Used to provide order restatements (150=D)." />
+      <value enum="5" description="Auto execution" />
     </field>
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastShares" type="QTY" />
@@ -125,21 +125,21 @@
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
-      <value enum="2" description="Filled" />
-      <value enum="4" description="Canceled" />
-      <value enum="6" description="Pending Cancel" />
-      <value enum="E" description="Pending Replace" />
-      <value enum="8" description="Rejected" />
       <value enum="1" description="Partially Filled" />
+      <value enum="2" description="Filled" />
       <value enum="3" description="DoneForDay" />
+      <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
+      <value enum="E" description="Pending Replace" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
-      <value enum="3" description="Stop(rreejjeecctteedd bbyy MMAATTCCHHNNooww)" />
-      <value enum="P" description="Pegged(rreejjeecctteedd bbyy MMAATTCCHHNNooww)" />
       <value enum="2" description="Limit" />
+      <value enum="3" description="Stop(rreejjeecctteedd bbyy MMAATTCCHHNNooww)" />
       <value enum="4" description="Stop Limit(rreejjeecctteedd bbyy MMAATTCCHHNNooww)" />
+      <value enum="P" description="Pegged(rreejjeecctteedd bbyy MMAATTCCHHNNooww)" />
     </field>
     <field number="43" name="PossDupFlag" type="BOOLEAN">
       <value enum="N" description="(Default)" />
@@ -151,10 +151,10 @@
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
-      <value enum="5" description="Sell Short (client affirms ability to borrow)" />
-      <value enum="9" description="Cross Short(see Cross Orderson page 54)" />
-      <value enum="8" description="Cross" />
       <value enum="2" description="Sell" />
+      <value enum="5" description="Sell Short (client affirms ability to borrow)" />
+      <value enum="8" description="Cross" />
+      <value enum="9" description="Cross Short(see Cross Orderson page 54)" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
@@ -172,44 +172,44 @@
     </field>
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="0" description="Exchange option" />
-      <value enum="2" description="Exchange closed" />
       <value enum="1" description="Unknown symbol" />
+      <value enum="2" description="Exchange closed" />
     </field>
     <field number="115" name="OnBehalfOfCompId" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New (acknowledgement of new order)" />
-      <value enum="2" description="Fill" />
-      <value enum="4" description="Canceled" />
-      <value enum="8" description="Rejected" />
       <value enum="1" description="Partial Fill" />
+      <value enum="2" description="Fill" />
       <value enum="3" description="DoneForDay" />
+      <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
       <value enum="D" description="Restated" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="851" name="LastLiquidityInd" type="INT">
       <value enum="1" description="Trade added liquidity" />
-      <value enum="4" description="Auction Trade" />
       <value enum="2" description="Trade removed liquidity" />
+      <value enum="4" description="Auction Trade" />
       <value enum="8" description="Conditional Trade(MMAATTCCHHNNooww oonnllyy)" />
     </field>
     <field number="1724" name="LEIOrderOrigination" type="STRING">
       <value enum="5" description="Direct access client" />
-      <value enum="7" description="Order execution only service" />
       <value enum="6" description="Foreign dealer equivalent" />
+      <value enum="7" description="Order execution only service" />
     </field>
     <field number="2883" name="LEIRoutingArrangementIndicator" type="STRING" />
     <field number="6750" name="UMIRAccountType" type="STRING">
-      <value enum="IN" description="Inventory" />
-      <value enum="CL" description="Client" />
-      <value enum="OF" description="Options Firm Account" />
       <value enum="BU" description="Bundled" />
-      <value enum="NC" description="Non-Client" />
-      <value enum="ST" description="Specialist" />
-      <value enum="OT" description="Options Market Maker" />
+      <value enum="CL" description="Client" />
+      <value enum="IN" description="Inventory" />
       <value enum="MC" description="Multi Client" />
+      <value enum="NC" description="Non-Client" />
+      <value enum="OF" description="Options Firm Account" />
+      <value enum="OT" description="Options Market Maker" />
+      <value enum="ST" description="Specialist" />
     </field>
     <field number="6751" name="UMIRUserID" type="STRING" />
     <field number="6754" name="BasketTrade" type="STRING">
@@ -219,17 +219,17 @@
     <field number="6757" name="Jitney" type="STRING" />
     <field number="6761" name="Anonymous" type="STRING" />
     <field number="6763" name="UMIRRegulationID" type="STRING">
-      <value enum="SS" description="Significant Shareholder" />
       <value enum="IA" description="Insider" />
+      <value enum="SS" description="Significant Shareholder" />
     </field>
     <field number="6773" name="CrossType" type="STRING">
       <value enum="B" description="Basis" />
-      <value enum="D" description="Derivative" />
-      <value enum="N" description="Net asset value (NAV)(effective 01/13/26)" />
-      <value enum="V" description="VWAP" />
       <value enum="C" description="Contingent" />
+      <value enum="D" description="Derivative" />
       <value enum="I" description="Internal" />
+      <value enum="N" description="Net asset value (NAV)(effective 01/13/26)" />
       <value enum="R" description="Regular(DDeeffaauulltt)" />
+      <value enum="V" description="VWAP" />
     </field>
     <field number="6776" name="PrincipalTrade" type="STRING" />
     <field number="6783" name="NonResident" type="NUMINGROUP" />
@@ -238,8 +238,8 @@
     <field number="7729" name="ShortMarkingExempt" type="STRING">
       <value enum="0" description="SME (Non cross order)" />
       <value enum="1" description="Buy Cross SME" />
-      <value enum="3" description="Both Buy and Sell Cross SME" />
       <value enum="2" description="Sell Cross SME" />
+      <value enum="3" description="Both Buy and Sell Cross SME" />
       <value enum="Side" description="1 (Buy)and on cross entryShortMarkingExemptwas 1 or 3, or" />
     </field>
     <field number="8025" name="LEICustomerAccount" type="STRING" />

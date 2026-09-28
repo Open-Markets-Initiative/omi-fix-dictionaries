@@ -157,23 +157,23 @@
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
       <value enum="1" description="Not Held (accepted, but not processed)" />
-      <value enum="f" description="ISO" />
-      <value enum="h" description="External Routing Not Allowed" />
-      <value enum="6" description="Post Only on Order Entry" />
-      <value enum="M" description="Midpoint Peg (requires" />
       <value enum="40" description="P)" />
+      <value enum="59" description="7 and" />
+      <value enum="6" description="Post Only on Order Entry" />
+      <value enum="A" description="No Cross" />
+      <value enum="M" description="Midpoint Peg (requires" />
       <value enum="R" description="Primary Peg (requires" />
-      <value enum="r" description="Route IOC l (lowercase L) = Route IOC to OTC Link ATS Only" />
+      <value enum="S" description="Allow Price Sliding" />
       <value enum="a" description="Self Trade Prevention" />
       <value enum="c" description="Ignore Erroneous Price Check" />
+      <value enum="f" description="ISO" />
+      <value enum="h" description="External Routing Not Allowed" />
+      <value enum="i" description="Imbalance Only LOC order (requires" />
+      <value enum="n" description="Route Outside Normal Market Hours" />
       <value enum="o" description="Route ISO" />
       <value enum="p" description="Ping ISO" />
-      <value enum="n" description="Route Outside Normal Market Hours" />
-      <value enum="S" description="Allow Price Sliding" />
+      <value enum="r" description="Route IOC l (lowercase L) = Route IOC to OTC Link ATS Only" />
       <value enum="x" description="IOC after Cancel / Replace" />
-      <value enum="A" description="No Cross" />
-      <value enum="i" description="Imbalance Only LOC order (requires" />
-      <value enum="59" description="7 and" />
     </field>
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
@@ -211,10 +211,10 @@
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market (requires" />
-      <value enum="59" description="7)" />
-      <value enum="2" description="Limit" />
-      <value enum="P" description="Pegged (requires" />
       <value enum="18" description="M or R)" />
+      <value enum="2" description="Limit" />
+      <value enum="59" description="7)" />
+      <value enum="P" description="Pegged (requires" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="44" name="Price" type="PRICE" />
@@ -235,9 +235,9 @@
     <field number="58" name="Text" type="STRING" />
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="Day (Default)" />
+      <value enum="1" description="GTC" />
       <value enum="3" description="IOC**" />
       <value enum="5" description="GTX" />
-      <value enum="1" description="GTC" />
       <value enum="7" description="At the Close (OC)" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
@@ -248,8 +248,8 @@
     </field>
     <field number="111" name="MaxFloor" type="QTY" />
     <field number="114" name="LocateReqd" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No Required to be N for sell short orders" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="115" name="OnBehalfOfCompId" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
@@ -277,37 +277,37 @@
     </field>
     <field number="5700" name="LocateBroker" type="STRING" />
     <field number="7928" name="NoSelfTrade" type="STRING">
+      <value enum="C" description="Cancel Both" />
       <value enum="D" description="Cancel Smaller/Decrement Larger (Default)" />
       <value enum="N" description="Cancel Newest" />
       <value enum="O" description="Cancel Oldest" />
-      <value enum="C" description="Cancel Both" />
     </field>
     <field number="9111" name="RefreshBelowShow" type="STRING">
-      <value enum="Y" description="Below MaxFloor" />
       <value enum="N" description="Below Minimum Quote Size (Default)" />
+      <value enum="Y" description="Below MaxFloor" />
     </field>
     <field number="9534" name="UnsolicitedFlag" type="STRING">
-      <value enum="Y" description="Order is unsolicited" />
       <value enum="N" description="Order is not unsolicited (Default)" />
+      <value enum="Y" description="Order is unsolicited" />
     </field>
     <field number="9535" name="NonAffliiateFlag" type="STRING">
-      <value enum="Y" description="Unsolicited order is from a Non-Affiliate" />
       <value enum="N" description="Unsolicited order is not from a Non-Affiliate (Default)" />
+      <value enum="Y" description="Unsolicited order is from a Non-Affiliate" />
     </field>
     <field number="9730" name="LiquidityIndicator" type="STRING">
       <value enum="A" description="Added Liquidity" />
       <value enum="B" description="Added Hidden Liquidity" />
-      <value enum="R" description="Removed Liquidity" />
       <value enum="D" description="Added Liquidity - Sub Dollar" />
       <value enum="E" description="Added Hidden Liquidity - Sub Dollar" />
       <value enum="H" description="Removed Liquidity - Sub Dollar" />
-      <value enum="X" description="Routed Execution - External ECN" />
       <value enum="L" description="Routed Execution - OTC Link ATS" />
       <value enum="P" description="Routed Execution - External Liquidity" />
+      <value enum="R" description="Removed Liquidity" />
+      <value enum="X" description="Routed Execution - External ECN" />
       <value enum="a" description="Added Liquidity during Closing Cross Auction" />
-      <value enum="r" description="Removed Liquidity during Closing Cross Auction" />
       <value enum="d" description="Added Liquidity during Closing Cross Auction - Sub Dollar" />
       <value enum="h" description="Removed Liquidity during Closing Cross Auction - Sub Dollar" />
+      <value enum="r" description="Removed Liquidity during Closing Cross Auction" />
     </field>
   </fields>
 </fix>

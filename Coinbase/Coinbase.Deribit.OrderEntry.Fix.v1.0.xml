@@ -142,47 +142,6 @@
       <field name="MDReqID" required="Y" />
       <field name="MDReqRejReason" required="Y" />
     </message>
-    <message name="MarketDataRequest" msgtype="V" msgcat="app">
-      <field name="MDReqID" required="Y" />
-      <field name="SubscriptionRequestType" required="Y" />
-      <field name="MarketDepth" required="N" />
-      <field name="MDUpdateType" required="N" />
-      <field name="DeribitSkipBlockTrades" required="N" />
-      <field name="DeribitShowBlockTradeId" required="N" />
-      <field name="DeribitTradeAmount" required="N" />
-      <field name="DeribitSinceTimestamp" required="N" />
-      <group name="NoMdEntryTypes" required="Y">
-        <field name="MDEntryType" required="Y" />
-      </group>
-      <group name="NoRelatedSym" required="N">
-        <field name="Symbol" required="Y" />
-        <field name="SecurityDesc" required="N" />
-        <field name="SecurityType" required="N" />
-        <field name="PutOrCall" required="N" />
-        <field name="StrikePrice" required="N" />
-        <field name="StrikeCurrency" required="N" />
-        <field name="Currency" required="N" />
-        <field name="PriceQuoteCurrency" required="N" />
-        <field name="InstrumentPricePrecision" required="N" />
-        <field name="MinPriceIncrement" required="N" />
-        <field name="UnderlyingSymbol" required="N" />
-        <field name="IssueDate" required="N" />
-        <field name="MaturityDate" required="N" />
-        <field name="MaturityTime" required="N" />
-        <field name="MinTradeVol" required="N" />
-        <field name="SettlType" required="N" />
-        <field name="SettlCurrency" required="N" />
-        <field name="CommCurrency" required="N" />
-        <field name="ContractMultiplier" required="N" />
-        <field name="NoSecurityAltID" required="N" />
-        <field name="SecurityAltID" required="N" />
-        <field name="SecurityAltIDSource" required="N" />
-        <field name="NoTickRules" required="N" />
-        <field name="StartTickPriceRange" required="N" />
-        <field name="TickIncrement" required="N" />
-        <field name="SecurityStatus" required="N" />
-      </group>
-    </message>
     <message name="MarketDataSnapshot" msgtype="W" msgcat="app">
       <field name="Symbol" required="Y" />
       <field name="MDReqID" required="N" />
@@ -235,6 +194,225 @@
         <field name="Text" required="N" />
       </group>
     </message>
+    <message name="MMProtectionLimitsResult" msgtype="MR" msgcat="app">
+      <field name="ProtectionRequestID" required="Y" />
+      <field name="ProtectionRequestResult" required="Y" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
+      <field name="OrdStatus" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrigClOrdId" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="DeribitLabel" required="N" />
+      <field name="ExecType" required="N" />
+    </message>
+    <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
+      <field name="ClOrdID" required="N" />
+      <field name="OrderId" required="N" />
+      <field name="MassCancelRequestType" required="Y" />
+      <field name="MassCancelResponse" required="N" />
+      <field name="QuoteCancelType" required="N" />
+      <field name="Text" required="N" />
+      <field name="MassCancelRejectReason" required="N" />
+      <field name="TotalAffectedOrders" required="N" />
+      <group name="NoAffectedOrders" required="N">
+        <field name="OrigClOrdId" required="N" />
+      </group>
+    </message>
+    <message name="PositionReport" msgtype="AP" msgcat="app">
+      <field name="PosMaintRptID" required="Y" />
+      <field name="PosReqID" required="N" />
+      <field name="PosReqType" required="N" />
+      <field name="PosReqResult" required="N" />
+      <group name="NoPositions" required="N">
+        <field name="PosType" required="N" />
+        <field name="LongQty" required="N" />
+        <field name="ShortQty" required="N" />
+        <field name="Symbol" required="N" />
+        <field name="QtyType" required="N" />
+        <field name="ContractMultiplier" required="N" />
+        <field name="UnderlyingEndPrice" required="N" />
+        <field name="Side" required="N" />
+        <field name="SettlPrice" required="N" />
+        <field name="RawData" required="N" />
+        <field name="DeribitLiquidationPrice" required="N" />
+        <field name="DeribitSizeInCurrency" required="N" />
+      </group>
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SecurityDefinition" msgtype="d" msgcat="app">
+      <field name="SecurityReqID" required="Y" />
+      <field name="SecurityResponseID" required="Y" />
+      <field name="SecurityResponseType" required="Y" />
+      <field name="Symbol" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="SecurityIDSource" required="N" />
+      <field name="IssueDate" required="N" />
+      <field name="DatedDate" required="N" />
+      <field name="Text" required="N" />
+      <group name="NoUnderlyings" required="N">
+        <field name="UnderlyingSymbol" required="N" />
+      </group>
+      <field name="SecurityStatus" required="N" />
+      <group name="NoLegs" required="Y">
+        <field name="LegSymbol" required="N" />
+        <field name="LegSide" required="N" />
+        <field name="LegRatioQty" required="N" />
+      </group>
+    </message>
+    <message name="SecurityList" msgtype="y" msgcat="app">
+      <field name="SecurityReqID" required="Y" />
+      <field name="SecurityResponseID" required="Y" />
+      <field name="SecurityRequestResult" required="Y" />
+      <group name="NoRelatedSym" required="N">
+        <field name="Symbol" required="Y" />
+        <field name="SecurityDesc" required="N" />
+        <field name="SecurityType" required="N" />
+        <field name="PutOrCall" required="N" />
+        <field name="StrikePrice" required="N" />
+        <field name="StrikeCurrency" required="N" />
+        <field name="Currency" required="N" />
+        <field name="PriceQuoteCurrency" required="N" />
+        <field name="InstrumentPricePrecision" required="N" />
+        <field name="MinPriceIncrement" required="N" />
+        <field name="UnderlyingSymbol" required="N" />
+        <field name="IssueDate" required="N" />
+        <field name="MaturityDate" required="N" />
+        <field name="MaturityTime" required="N" />
+        <field name="MinTradeVol" required="N" />
+        <field name="SettlType" required="N" />
+        <field name="SettlCurrency" required="N" />
+        <field name="CommCurrency" required="N" />
+        <field name="ContractMultiplier" required="N" />
+        <field name="NoSecurityAltID" required="N" />
+        <field name="SecurityAltID" required="N" />
+        <field name="SecurityAltIDSource" required="N" />
+        <field name="NoTickRules" required="N" />
+        <field name="StartTickPriceRange" required="N" />
+        <field name="TickIncrement" required="N" />
+        <field name="SecurityStatus" required="N" />
+      </group>
+    </message>
+    <message name="SecurityStatus" msgtype="f" msgcat="app">
+      <field name="SecurityStatusReqID" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityTradingStatus" required="N" />
+      <field name="BuyVolume" required="N" />
+      <field name="SellVolume" required="N" />
+      <field name="HighPx" required="N" />
+      <field name="LowPx" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="Text" required="N" />
+      <field name="ProtectionRequestID" required="Y" />
+      <field name="Currency" required="Y" />
+      <field name="SecondaryCurrency" required="N" />
+      <field name="ProtectionQtyLimit" required="N" />
+      <field name="ProtectionDeltaLimit" required="N" />
+      <field name="FrozenLimit" required="Y" />
+      <field name="IntervalLength" required="Y" />
+      <field name="ProtectionVegaLimit" required="N" />
+      <field name="MaxQuoteQuantity" required="N" />
+      <field name="MMPGroup" required="N" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqId" required="Y" />
+    </message>
+    <message name="TradeCaptureReportRequestAck" msgtype="AQ" msgcat="app">
+      <field name="TradeRequestID" required="Y" />
+      <field name="TradeRequestType" required="Y" />
+      <field name="TradeRequestResult" required="Y" />
+      <field name="TradeRequestStatus" required="Y" />
+      <field name="Symbol" required="Y" />
+    </message>
+    <message name="TradeCaptureReport" msgtype="AE" msgcat="app">
+      <field name="TradeRequestID" required="N" />
+      <field name="PreviouslyReported" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="LastQty" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="TradeId" required="Y" />
+      <field name="SecondaryTradeId" required="N" />
+      <field name="TradeDate" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="NoLegs" required="N" />
+      <field name="LegSymbol" required="N" />
+      <field name="LegQty" required="Y" />
+      <field name="LegPrice" required="Y" />
+      <field name="LegSide" required="Y" />
+      <field name="NoSides" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrderId" required="Y" />
+      <field name="Commission" required="Y" />
+      <field name="CommCurrency" required="Y" />
+    </message>
+    <message name="UserResponse" msgtype="BF" msgcat="app">
+      <field name="UserRequestID" required="Y" />
+      <field name="Username" required="Y" />
+      <field name="UserStatus" required="N" />
+      <field name="Currency" required="N" />
+      <field name="DeribitUserEquity" required="N" />
+      <field name="DeribitUserBalance" required="N" />
+      <field name="DeribitUserInitialMargin" required="N" />
+      <field name="DeribitUserMaintenanceMargin" required="N" />
+      <field name="DeribitUnrealizedPl" required="N" />
+      <field name="DeribitRealizedPl" required="N" />
+      <field name="DeribitTotalPl" required="N" />
+      <field name="DeribitMarginBalance" required="N" />
+    </message>
+    <message name="MarketDataRequest" msgtype="V" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <field name="SubscriptionRequestType" required="Y" />
+      <field name="MarketDepth" required="N" />
+      <field name="MDUpdateType" required="N" />
+      <field name="DeribitSkipBlockTrades" required="N" />
+      <field name="DeribitShowBlockTradeId" required="N" />
+      <field name="DeribitTradeAmount" required="N" />
+      <field name="DeribitSinceTimestamp" required="N" />
+      <group name="NoMdEntryTypes" required="Y">
+        <field name="MDEntryType" required="Y" />
+      </group>
+      <group name="NoRelatedSym" required="N">
+        <field name="Symbol" required="Y" />
+        <field name="SecurityDesc" required="N" />
+        <field name="SecurityType" required="N" />
+        <field name="PutOrCall" required="N" />
+        <field name="StrikePrice" required="N" />
+        <field name="StrikeCurrency" required="N" />
+        <field name="Currency" required="N" />
+        <field name="PriceQuoteCurrency" required="N" />
+        <field name="InstrumentPricePrecision" required="N" />
+        <field name="MinPriceIncrement" required="N" />
+        <field name="UnderlyingSymbol" required="N" />
+        <field name="IssueDate" required="N" />
+        <field name="MaturityDate" required="N" />
+        <field name="MaturityTime" required="N" />
+        <field name="MinTradeVol" required="N" />
+        <field name="SettlType" required="N" />
+        <field name="SettlCurrency" required="N" />
+        <field name="CommCurrency" required="N" />
+        <field name="ContractMultiplier" required="N" />
+        <field name="NoSecurityAltID" required="N" />
+        <field name="SecurityAltID" required="N" />
+        <field name="SecurityAltIDSource" required="N" />
+        <field name="NoTickRules" required="N" />
+        <field name="StartTickPriceRange" required="N" />
+        <field name="TickIncrement" required="N" />
+        <field name="SecurityStatus" required="N" />
+      </group>
+    </message>
     <message name="MassQuote" msgtype="i" msgcat="app">
       <field name="QuoteID" required="Y" />
       <field name="MMPGroup" required="Y" />
@@ -251,11 +429,6 @@
         <field name="OfferSize" required="N" />
         <field name="ExecInst" required="N" />
       </group>
-    </message>
-    <message name="MMProtectionLimitsResult" msgtype="MR" msgcat="app">
-      <field name="ProtectionRequestID" required="Y" />
-      <field name="ProtectionRequestResult" required="Y" />
-      <field name="Text" required="N" />
     </message>
     <message name="MMProtectionLimits" msgtype="MM" msgcat="app">
       <field name="ProtectionRequestID" required="Y" />
@@ -327,14 +500,6 @@
         <field name="FillLiquidityInd" required="N" />
       </group>
     </message>
-    <message name="OrderCancelReject" msgtype="9" msgcat="app">
-      <field name="OrdStatus" required="N" />
-      <field name="Text" required="N" />
-      <field name="OrigClOrdId" required="N" />
-      <field name="ClOrdID" required="N" />
-      <field name="DeribitLabel" required="N" />
-      <field name="ExecType" required="N" />
-    </message>
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="ClOrdID" required="N" />
       <field name="OrigClOrdId" required="N" />
@@ -357,19 +522,6 @@
       <field name="DeribitLabel" required="N" />
       <field name="Symbol" required="N" />
       <field name="Currency" required="N" />
-    </message>
-    <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
-      <field name="ClOrdID" required="N" />
-      <field name="OrderId" required="N" />
-      <field name="MassCancelRequestType" required="Y" />
-      <field name="MassCancelResponse" required="N" />
-      <field name="QuoteCancelType" required="N" />
-      <field name="Text" required="N" />
-      <field name="MassCancelRejectReason" required="N" />
-      <field name="TotalAffectedOrders" required="N" />
-      <group name="NoAffectedOrders" required="N">
-        <field name="OrigClOrdId" required="N" />
-      </group>
     </message>
     <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
       <field name="ClOrdID" required="Y" />
@@ -425,26 +577,6 @@
       </group>
       <field name="TotNumReports" required="Y" />
     </message>
-    <message name="PositionReport" msgtype="AP" msgcat="app">
-      <field name="PosMaintRptID" required="Y" />
-      <field name="PosReqID" required="N" />
-      <field name="PosReqType" required="N" />
-      <field name="PosReqResult" required="N" />
-      <group name="NoPositions" required="N">
-        <field name="PosType" required="N" />
-        <field name="LongQty" required="N" />
-        <field name="ShortQty" required="N" />
-        <field name="Symbol" required="N" />
-        <field name="QtyType" required="N" />
-        <field name="ContractMultiplier" required="N" />
-        <field name="UnderlyingEndPrice" required="N" />
-        <field name="Side" required="N" />
-        <field name="SettlPrice" required="N" />
-        <field name="RawData" required="N" />
-        <field name="DeribitLiquidationPrice" required="N" />
-        <field name="DeribitSizeInCurrency" required="N" />
-      </group>
-    </message>
     <message name="QuoteCancel" msgtype="Z" msgcat="app">
       <field name="QuoteMsgID" required="N" />
       <field name="QuoteCancelType" required="N" />
@@ -456,47 +588,17 @@
       <field name="MinDelta" required="N" />
       <field name="MaxDelta" required="N" />
     </message>
-    <message name="Reject" msgtype="3" msgcat="admin">
-      <field name="RefSeqNum" required="Y" />
-      <field name="RefMsgType" required="N" />
-      <field name="SessionRejectReason" required="N" />
-      <field name="Text" required="N" />
-    </message>
     <message name="RequestForPositions" msgtype="AN" msgcat="app">
       <field name="PosReqID" required="Y" />
       <field name="PosReqType" required="Y" />
       <field name="SubscriptionRequestType" required="N" />
       <field name="Currency" required="N" />
     </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin">
-      <field name="BeginSeqNo" required="Y" />
-      <field name="EndSeqNo" required="Y" />
-    </message>
     <message name="SecurityDefinitionRequest" msgtype="c" msgcat="app">
       <field name="SecurityReqID" required="Y" />
       <field name="SecurityRequestType" required="Y" />
       <field name="Currency" required="Y" />
       <field name="SecurityID" required="N" />
-      <group name="NoLegs" required="Y">
-        <field name="LegSymbol" required="N" />
-        <field name="LegSide" required="N" />
-        <field name="LegRatioQty" required="N" />
-      </group>
-    </message>
-    <message name="SecurityDefinition" msgtype="d" msgcat="app">
-      <field name="SecurityReqID" required="Y" />
-      <field name="SecurityResponseID" required="Y" />
-      <field name="SecurityResponseType" required="Y" />
-      <field name="Symbol" required="N" />
-      <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
-      <field name="IssueDate" required="N" />
-      <field name="DatedDate" required="N" />
-      <field name="Text" required="N" />
-      <group name="NoUnderlyings" required="N">
-        <field name="UnderlyingSymbol" required="N" />
-      </group>
-      <field name="SecurityStatus" required="N" />
       <group name="NoLegs" required="Y">
         <field name="LegSymbol" required="N" />
         <field name="LegSide" required="N" />
@@ -513,77 +615,10 @@
       <field name="SecondaryCurrency" required="N" />
       <field name="SecurityType" required="N" />
     </message>
-    <message name="SecurityList" msgtype="y" msgcat="app">
-      <field name="SecurityReqID" required="Y" />
-      <field name="SecurityResponseID" required="Y" />
-      <field name="SecurityRequestResult" required="Y" />
-      <group name="NoRelatedSym" required="N">
-        <field name="Symbol" required="Y" />
-        <field name="SecurityDesc" required="N" />
-        <field name="SecurityType" required="N" />
-        <field name="PutOrCall" required="N" />
-        <field name="StrikePrice" required="N" />
-        <field name="StrikeCurrency" required="N" />
-        <field name="Currency" required="N" />
-        <field name="PriceQuoteCurrency" required="N" />
-        <field name="InstrumentPricePrecision" required="N" />
-        <field name="MinPriceIncrement" required="N" />
-        <field name="UnderlyingSymbol" required="N" />
-        <field name="IssueDate" required="N" />
-        <field name="MaturityDate" required="N" />
-        <field name="MaturityTime" required="N" />
-        <field name="MinTradeVol" required="N" />
-        <field name="SettlType" required="N" />
-        <field name="SettlCurrency" required="N" />
-        <field name="CommCurrency" required="N" />
-        <field name="ContractMultiplier" required="N" />
-        <field name="NoSecurityAltID" required="N" />
-        <field name="SecurityAltID" required="N" />
-        <field name="SecurityAltIDSource" required="N" />
-        <field name="NoTickRules" required="N" />
-        <field name="StartTickPriceRange" required="N" />
-        <field name="TickIncrement" required="N" />
-        <field name="SecurityStatus" required="N" />
-      </group>
-    </message>
     <message name="SecurityStatusRequest" msgtype="e" msgcat="app">
       <field name="SecurityStatusReqID" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="SubscriptionRequestType" required="Y" />
-    </message>
-    <message name="SecurityStatus" msgtype="f" msgcat="app">
-      <field name="SecurityStatusReqID" required="N" />
-      <field name="Symbol" required="Y" />
-      <field name="SecurityTradingStatus" required="N" />
-      <field name="BuyVolume" required="N" />
-      <field name="SellVolume" required="N" />
-      <field name="HighPx" required="N" />
-      <field name="LowPx" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="Text" required="N" />
-      <field name="ProtectionRequestID" required="Y" />
-      <field name="Currency" required="Y" />
-      <field name="SecondaryCurrency" required="N" />
-      <field name="ProtectionQtyLimit" required="N" />
-      <field name="ProtectionDeltaLimit" required="N" />
-      <field name="FrozenLimit" required="Y" />
-      <field name="IntervalLength" required="Y" />
-      <field name="ProtectionVegaLimit" required="N" />
-      <field name="MaxQuoteQuantity" required="N" />
-      <field name="MMPGroup" required="N" />
-    </message>
-    <message name="SequenceReset" msgtype="4" msgcat="admin">
-      <field name="NewSeqNo" required="Y" />
-    </message>
-    <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqId" required="Y" />
-    </message>
-    <message name="TradeCaptureReportRequestAck" msgtype="AQ" msgcat="app">
-      <field name="TradeRequestID" required="Y" />
-      <field name="TradeRequestType" required="Y" />
-      <field name="TradeRequestResult" required="Y" />
-      <field name="TradeRequestStatus" required="Y" />
-      <field name="Symbol" required="Y" />
     </message>
     <message name="TradeCaptureReportRequest" msgtype="AD" msgcat="app">
       <field name="TradeRequestID" required="Y" />
@@ -591,46 +626,11 @@
       <field name="Symbol" required="Y" />
       <field name="SubscriptionRequestType" required="N" />
     </message>
-    <message name="TradeCaptureReport" msgtype="AE" msgcat="app">
-      <field name="TradeRequestID" required="N" />
-      <field name="PreviouslyReported" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="LastQty" required="Y" />
-      <field name="LastPx" required="Y" />
-      <field name="TradeId" required="Y" />
-      <field name="SecondaryTradeId" required="N" />
-      <field name="TradeDate" required="Y" />
-      <field name="TransactTime" required="Y" />
-      <field name="NoLegs" required="N" />
-      <field name="LegSymbol" required="N" />
-      <field name="LegQty" required="Y" />
-      <field name="LegPrice" required="Y" />
-      <field name="LegSide" required="Y" />
-      <field name="NoSides" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="OrderId" required="Y" />
-      <field name="Commission" required="Y" />
-      <field name="CommCurrency" required="Y" />
-    </message>
     <message name="UserRequest" msgtype="BE" msgcat="app">
       <field name="UserRequestID" required="Y" />
       <field name="UserRequestType" required="Y" />
       <field name="Username" required="Y" />
       <field name="Currency" required="N" />
-    </message>
-    <message name="UserResponse" msgtype="BF" msgcat="app">
-      <field name="UserRequestID" required="Y" />
-      <field name="Username" required="Y" />
-      <field name="UserStatus" required="N" />
-      <field name="Currency" required="N" />
-      <field name="DeribitUserEquity" required="N" />
-      <field name="DeribitUserBalance" required="N" />
-      <field name="DeribitUserInitialMargin" required="N" />
-      <field name="DeribitUserMaintenanceMargin" required="N" />
-      <field name="DeribitUnrealizedPl" required="N" />
-      <field name="DeribitRealizedPl" required="N" />
-      <field name="DeribitTotalPl" required="N" />
-      <field name="DeribitMarginBalance" required="N" />
     </message>
   </messages>
   <components />
@@ -662,15 +662,15 @@
       <value enum="1" description="Partially filled" />
       <value enum="2" description="Filled" />
       <value enum="4" description="Cancelled" />
-      <value enum="8" description="Rejected" />
       <value enum="6" description="Pending cancel" />
+      <value enum="8" description="Rejected" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
       <value enum="4" description="Stop Limit" />
-      <value enum="K" description="Market With Left Over as Limit (market limit)" />
       <value enum="J" description="Market If Touched (stop limit" />
+      <value enum="K" description="Market With Left Over as Limit (market limit)" />
       <value enum="S" description="Stop Limit on Bid or Offer (stop market" />
     </field>
     <field number="41" name="OrigClOrdId" type="STRING" />
@@ -701,14 +701,6 @@
     <field number="99" name="StopPx" type="PRICE" />
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="1" description="Unknown symbol" />
-      <value enum="2" description="Exchange closed" />
-      <value enum="3" description="Order exceeds limit" />
-      <value enum="4" description="Too late to enter" />
-      <value enum="5" description="Unknown order" />
-      <value enum="6" description="Duplicate Order (e" />
-      <value enum="7" description="Duplicate of a verbally communicated order" />
-      <value enum="8" description="Stale order" />
-      <value enum="9" description="Trade along required" />
       <value enum="10" description="Invalid Investor ID" />
       <value enum="11" description="Unsupported order characteristic" />
       <value enum="12" description="Surveillance Option" />
@@ -717,6 +709,14 @@
       <value enum="15" description="Unknown account(s)" />
       <value enum="16" description="Price exceeds current price band" />
       <value enum="18" description="Invalid price increment" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="3" description="Order exceeds limit" />
+      <value enum="4" description="Too late to enter" />
+      <value enum="5" description="Unknown order" />
+      <value enum="6" description="Duplicate Order (e" />
+      <value enum="7" description="Duplicate of a verbally communicated order" />
+      <value enum="8" description="Stale order" />
+      <value enum="9" description="Trade along required" />
       <value enum="99" description="Other" />
     </field>
     <field number="107" name="SecurityDesc" type="STRING" />
@@ -730,9 +730,9 @@
     <field number="135" name="OfferSize" type="QTY" />
     <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
     <field number="150" name="ExecType" type="CHAR">
-      <value enum="8" description="Rejected" />
       <value enum="4" description="Cancelled" />
       <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="152" name="CashOrderQty" type="QTY" />
@@ -807,9 +807,9 @@
     <field number="323" name="SecurityResponseType" type="INT" />
     <field number="324" name="SecurityStatusReqID" type="STRING" />
     <field number="326" name="SecurityTradingStatus" type="INT">
+      <value enum="20" description="Unknown or Invalid" />
       <value enum="7" description="Ready to trade" />
       <value enum="8" description="Not Available for trading" />
-      <value enum="20" description="Unknown or Invalid" />
     </field>
     <field number="330" name="BuyVolume" type="FLOAT" />
     <field number="331" name="SellVolume" type="FLOAT" />
@@ -818,8 +818,8 @@
     <field number="368" name="QuoteEntryRejectReason" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
     <field number="373" name="SessionRejectReason" type="INT">
-      <value enum="6" description="Incorrect data format for value" />
       <value enum="11" description="Invalid" />
+      <value enum="6" description="Incorrect data format for value" />
       <value enum="99" description="Other" />
     </field>
     <field number="454" name="NoSecurityAltID" type="NUMINGROUP" />
@@ -889,10 +889,10 @@
     <field number="947" name="StrikeCurrency" type="STRING" />
     <field number="965" name="SecurityStatus" type="STRING">
       <value enum="1" description="Active" />
+      <value enum="12" description="Archivized" />
       <value enum="2" description="Inactive" />
       <value enum="3" description="RFQ" />
       <value enum="4" description="Closed" />
-      <value enum="12" description="Archivized" />
     </field>
     <field number="969" name="MinPriceIncrement" type="FLOAT" />
     <field number="1003" name="TradeId" type="STRING" />
@@ -906,7 +906,6 @@
     <field number="1166" name="QuoteMsgID" type="STRING" />
     <field number="1167" name="QuoteEntryStatus" type="INT">
       <value enum="0" description="Accepted" />
-      <value enum="5" description="Rejected" />
       <value enum="17" description="Cancelled" />
       <value enum="18" description="Cancelled by MMP" />
       <value enum="19" description="Replaced" />
@@ -916,6 +915,7 @@
       <value enum="23" description="Triggered" />
       <value enum="24" description="Untriggered" />
       <value enum="25" description="Unknown" />
+      <value enum="5" description="Rejected" />
     </field>
     <field number="1188" name="Volatility" type="FLOAT" />
     <field number="1205" name="NoTickRules" type="NUMINGROUP" />

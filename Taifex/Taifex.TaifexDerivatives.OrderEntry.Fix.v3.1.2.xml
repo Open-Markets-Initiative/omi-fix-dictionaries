@@ -445,12 +445,12 @@
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="77" name="PositionEffect" type="CHAR">
-      <value enum="O" description="Open" />
+      <value enum="7" description="Offset by Fcm" />
+      <value enum="9" description="Market maker quote" />
+      <value enum="A" description="Open and specified position offset" />
       <value enum="C" description="Close" />
       <value enum="D" description="Day trade" />
-      <value enum="A" description="Open and specified position offset" />
-      <value enum="9" description="Market maker quote" />
-      <value enum="7" description="Offset by Fcm" />
+      <value enum="O" description="Open" />
     </field>
     <field number="94" name="EmailType" type="CHAR">
       <value enum="0" description="Regular market hours notice" />
@@ -498,8 +498,8 @@
     <field number="297" name="QuoteStatus" type="INT">
       <value enum="0" description="Quote accepted, new or quantity change" />
       <value enum="1" description="Quote cancelled" />
-      <value enum="5" description="Quote rejected" />
       <value enum="10" description="Pending" />
+      <value enum="5" description="Quote rejected" />
     </field>
     <field number="298" name="QuoteCancelType" type="INT" />
     <field number="320" name="SecurityReqID" type="STRING" />
@@ -516,14 +516,6 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
-      <value enum="2" description="Tag not defined for this message type" />
-      <value enum="3" description="Undefined tag" />
-      <value enum="4" description="Tag specified without a value" />
-      <value enum="5" description="Value is incorrect for this tag" />
-      <value enum="6" description="Incorrect data format for value" />
-      <value enum="7" description="Decryption problem" />
-      <value enum="8" description="Signature problem" />
-      <value enum="9" description="CompID problem" />
       <value enum="10" description="SendingTime accuracy problem" />
       <value enum="11" description="Invalid message type" />
       <value enum="12" description="Xml validation error" />
@@ -532,6 +524,14 @@
       <value enum="15" description="Repeating group fields out of order" />
       <value enum="16" description="Incorrect NumInGroup count for repeating group" />
       <value enum="17" description="Non data value includes field delimiter" />
+      <value enum="2" description="Tag not defined for this message type" />
+      <value enum="3" description="Undefined tag" />
+      <value enum="4" description="Tag specified without a value" />
+      <value enum="5" description="Value is incorrect for this tag" />
+      <value enum="6" description="Incorrect data format for value" />
+      <value enum="7" description="Decryption problem" />
+      <value enum="8" description="Signature problem" />
+      <value enum="9" description="CompID problem" />
       <value enum="99" description="Other" />
     </field>
     <field number="380" name="BusinessRejectReason" type="INT" />
@@ -546,24 +546,24 @@
     </field>
     <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
     <field number="461" name="CFICode" type="STRING">
-      <value enum="FXXXXX" description="Regular trading future" />
-      <value enum="OCXXXX" description="Regular trading call option" />
-      <value enum="OPXXXX" description="Regular trading put option" />
       <value enum="FXXXNX" description="Flex trading future" />
+      <value enum="FXXXXX" description="Regular trading future" />
       <value enum="OCXXXN" description="Flex trading call option" />
+      <value enum="OCXXXX" description="Regular trading call option" />
       <value enum="OPXXXN" description="Flex trading put option" />
+      <value enum="OPXXXX" description="Regular trading put option" />
     </field>
     <field number="553" name="Username" type="STRING" />
     <field number="554" name="Password" type="STRING" />
     <field number="555" name="NoLegs" type="NUMINGROUP" />
     <field number="600" name="LegSymbol" type="STRING" />
     <field number="608" name="LegCFICode" type="STRING">
-      <value enum="FXXXXX" description="Regular trading future" />
-      <value enum="OCXXXX" description="Regular trading call option" />
-      <value enum="OPXXXX" description="Regular trading put option" />
       <value enum="FXXXNX" description="Flex trading future" />
+      <value enum="FXXXXX" description="Regular trading future" />
       <value enum="OCXXXN" description="Flex trading call option" />
+      <value enum="OCXXXX" description="Regular trading call option" />
       <value enum="OPXXXN" description="Flex trading put option" />
+      <value enum="OPXXXX" description="Regular trading put option" />
     </field>
     <field number="610" name="LegMaturityMonthYear" type="MONTHYEAR" />
     <field number="611" name="LegMaturityDate" type="LOCALMKTDATE" />
@@ -585,13 +585,13 @@
       <value enum="4" description="Regular trading new product identifier" />
     </field>
     <field number="10001" name="TaifexOrderSource" type="CHAR">
-      <value enum="D" description="Leased line, Vpn or closed private network" />
       <value enum="A" description="Application programming interface" />
+      <value enum="D" description="Leased line, Vpn or closed private network" />
+      <value enum="G" description="Telephone or telegram" />
       <value enum="M" description="Mobile device" />
-      <value enum="W" description="Web site" />
       <value enum="P" description="Personal computer" />
       <value enum="V" description="Voice" />
-      <value enum="G" description="Telephone or telegram" />
+      <value enum="W" description="Web site" />
     </field>
     <field number="10002" name="TaifexInfoSource" type="STRING">
       <value enum="999" description="From Fcm" />

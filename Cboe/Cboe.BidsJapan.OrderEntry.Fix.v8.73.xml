@@ -289,10 +289,10 @@
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy," />
-      <value enum="4" description="Sell Plus" />
-      <value enum="6" description="Sell Short Exempt are currently supported" />
       <value enum="3" description="Buy Minus" />
+      <value enum="4" description="Sell Plus" />
       <value enum="5" description="Sell Short," />
+      <value enum="6" description="Sell Short Exempt are currently supported" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
@@ -354,8 +354,8 @@
     </field>
     <field number="448" name="PartyID" type="STRING" />
     <field number="452" name="PartyRole" type="STRING">
-      <value enum="13" description="Order Origination Firm" />
       <value enum="1" description="Executing Firm" />
+      <value enum="13" description="Order Origination Firm" />
     </field>
     <field number="528" name="OrderCapacity" type="STRING">
       <value enum="A" description="Agency" />

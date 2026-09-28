@@ -73,86 +73,12 @@
       <field name="RequestTime" required="N" />
       <field name="Text" required="N" />
     </message>
-    <message name="ApplicationPong" msgtype="FB" msgcat="app">
-      <field name="PingId" required="Y" />
-      <field name="RequestTime" required="N" />
-      <field name="TransactTime" required="Y" />
-      <field name="InternalRoundtripNanos" required="Y" />
-      <field name="InternalClusterProcessingNanos" required="Y" />
-      <field name="Text" required="N" />
-    </message>
-    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="Y" />
-      <field name="RefMsgType" required="Y" />
-      <field name="BusinessRejectRefID" required="N" />
-      <field name="BusinessRejectReason" required="Y" />
-      <field name="Text" required="N" />
-      <field name="EncodedTextLen" required="N" />
-      <field name="EncodedText" required="N" />
-    </message>
-    <message name="EventResendComplete" msgtype="F4" msgcat="app">
-      <field name="RefSeqNum" required="Y" />
-      <field name="ResentEventCount" required="Y" />
-    </message>
-    <message name="EventResendReject" msgtype="F5" msgcat="app">
-      <field name="RefSeqNum" required="Y" />
-      <field name="EventResendRejectReason" required="Y" />
-      <field name="Text" required="N" />
-    </message>
     <message name="EventResendRequest" msgtype="F3" msgcat="app">
       <field name="BeginExecId" required="Y" />
       <field name="EndExecId" required="N" />
     </message>
-    <message name="ExecutionReport" msgtype="8" msgcat="app">
-      <field name="OrderID" required="Y" />
-      <field name="ClOrdID" required="N" />
-      <field name="OrigClOrdID" required="N" />
-      <component name="Parties" required="N" />
-      <field name="ExecID" required="Y" />
-      <field name="TrdMatchID" required="N" />
-      <field name="ExecType" required="Y" />
-      <field name="OrdStatus" required="Y" />
-      <field name="ExecRestatementReason" required="N" />
-      <field name="Account" required="N" />
-      <field name="SecurityID" required="N" />
-      <component name="Instrument" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="OrderQty" required="N" />
-      <field name="OrdType" required="N" />
-      <field name="Price" required="N" />
-      <field name="StopPx" required="N" />
-      <field name="StopLimitPx" required="N" />
-      <field name="TimeInForce" required="N" />
-      <field name="ExpireDate" required="N" />
-      <field name="OrderCapacity" required="N" />
-      <field name="LastQty" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="LeavesQty" required="Y" />
-      <field name="CumQty" required="Y" />
-      <field name="AvgPx" required="N" />
-      <field name="TradeDate" required="N" />
-      <field name="TransactTime" required="N" />
-      <field name="MinQty" required="N" />
-      <field name="MaxShow" required="N" />
-      <field name="TotalNumSecurities" required="N" />
-      <field name="MultiLegReporting" required="N" />
-      <field name="SecondaryExecID" required="N" />
-      <field name="ManualOrderIndicator" required="Y" />
-      <field name="CustOrderHandlingInst" required="Y" />
-      <field name="AggressorIndicator" required="N" />
-      <field name="RequestTime" required="N" />
-      <field name="SelfMatchPreventionId" required="N" />
-      <field name="SelfMatchPreventionInstruction" required="N" />
-      <field name="Text" required="N" />
-      <field name="ExecInst" required="N" />
-      <field name="OrdRejReason" required="N" />
-    </message>
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
-    </message>
-    <message name="LastExecId" msgtype="F2" msgcat="app">
-      <field name="RefSeqNum" required="Y" />
-      <field name="ExecID" required="Y" />
     </message>
     <message name="LastExecIdRequest" msgtype="F1" msgcat="app">
       <field name="TestReqID" required="N" />
@@ -203,19 +129,6 @@
       <field name="ExecInst" required="N" />
       <field name="StopLimitPx" required="N" />
     </message>
-    <message name="OrderCancelReject" msgtype="9" msgcat="app">
-      <field name="Account" required="N" />
-      <field name="ClOrdID" required="Y" />
-      <field name="OrderID" required="Y" />
-      <field name="OrdStatus" required="Y" />
-      <field name="OrigClOrdID" required="N" />
-      <component name="Instrument" required="Y" />
-      <field name="Text" required="N" />
-      <field name="TransactTime" required="N" />
-      <field name="CxlRejResponseTo" required="Y" />
-      <field name="CxlRejReason" required="N" />
-      <field name="RequestTime" required="N" />
-    </message>
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <component name="Parties" required="N" />
       <field name="Account" required="N" />
@@ -252,22 +165,6 @@
       <component name="Instrument" required="Y" />
       <field name="TransactTime" required="Y" />
       <field name="ManualOrderIndicator" required="Y" />
-    </message>
-    <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
-      <field name="ClOrdID" required="N" />
-      <field name="OrderID" required="Y" />
-      <field name="MassCancelRequestType" required="Y" />
-      <field name="MassCancelResponse" required="Y" />
-      <field name="MassCancelRejectReason" required="N" />
-      <field name="TotalAffectedOrders" required="N" />
-      <field name="NoAffectedOrders" required="N" />
-      <field name="TradingSessionID" required="N" />
-      <component name="Instrument" required="N" />
-      <field name="Side" required="N" />
-      <field name="TransactTime" required="N" />
-      <field name="Text" required="N" />
-      <field name="EncodedTextLen" required="N" />
-      <field name="EncodedText" required="N" />
     </message>
     <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
       <field name="ClOrdID" required="Y" />
@@ -308,6 +205,109 @@
     </message>
     <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
+    </message>
+    <message name="ApplicationPong" msgtype="FB" msgcat="app">
+      <field name="PingId" required="Y" />
+      <field name="RequestTime" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="InternalRoundtripNanos" required="Y" />
+      <field name="InternalClusterProcessingNanos" required="Y" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefMsgType" required="Y" />
+      <field name="BusinessRejectRefID" required="N" />
+      <field name="BusinessRejectReason" required="Y" />
+      <field name="Text" required="N" />
+      <field name="EncodedTextLen" required="N" />
+      <field name="EncodedText" required="N" />
+    </message>
+    <message name="EventResendComplete" msgtype="F4" msgcat="app">
+      <field name="RefSeqNum" required="Y" />
+      <field name="ResentEventCount" required="Y" />
+    </message>
+    <message name="EventResendReject" msgtype="F5" msgcat="app">
+      <field name="RefSeqNum" required="Y" />
+      <field name="EventResendRejectReason" required="Y" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <component name="Parties" required="N" />
+      <field name="ExecID" required="Y" />
+      <field name="TrdMatchID" required="N" />
+      <field name="ExecType" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="ExecRestatementReason" required="N" />
+      <field name="Account" required="N" />
+      <field name="SecurityID" required="N" />
+      <component name="Instrument" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="N" />
+      <field name="OrdType" required="N" />
+      <field name="Price" required="N" />
+      <field name="StopPx" required="N" />
+      <field name="StopLimitPx" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="ExpireDate" required="N" />
+      <field name="OrderCapacity" required="N" />
+      <field name="LastQty" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="LeavesQty" required="Y" />
+      <field name="CumQty" required="Y" />
+      <field name="AvgPx" required="N" />
+      <field name="TradeDate" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="MinQty" required="N" />
+      <field name="MaxShow" required="N" />
+      <field name="TotalNumSecurities" required="N" />
+      <field name="MultiLegReporting" required="N" />
+      <field name="SecondaryExecID" required="N" />
+      <field name="ManualOrderIndicator" required="Y" />
+      <field name="CustOrderHandlingInst" required="Y" />
+      <field name="AggressorIndicator" required="N" />
+      <field name="RequestTime" required="N" />
+      <field name="SelfMatchPreventionId" required="N" />
+      <field name="SelfMatchPreventionInstruction" required="N" />
+      <field name="Text" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="OrdRejReason" required="N" />
+    </message>
+    <message name="LastExecId" msgtype="F2" msgcat="app">
+      <field name="RefSeqNum" required="Y" />
+      <field name="ExecID" required="Y" />
+    </message>
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
+      <field name="Account" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OrigClOrdID" required="N" />
+      <component name="Instrument" required="Y" />
+      <field name="Text" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="CxlRejResponseTo" required="Y" />
+      <field name="CxlRejReason" required="N" />
+      <field name="RequestTime" required="N" />
+    </message>
+    <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
+      <field name="ClOrdID" required="N" />
+      <field name="OrderID" required="Y" />
+      <field name="MassCancelRequestType" required="Y" />
+      <field name="MassCancelResponse" required="Y" />
+      <field name="MassCancelRejectReason" required="N" />
+      <field name="TotalAffectedOrders" required="N" />
+      <field name="NoAffectedOrders" required="N" />
+      <field name="TradingSessionID" required="N" />
+      <component name="Instrument" required="N" />
+      <field name="Side" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="Text" required="N" />
+      <field name="EncodedTextLen" required="N" />
+      <field name="EncodedText" required="N" />
     </message>
     <message name="TradingSessionStatus" msgtype="h" msgcat="app">
       <field name="TradSesReqID" required="N" />
@@ -373,7 +373,6 @@
       <value enum="7" description="ADVERTISEMENT" />
       <value enum="8" description="EXECUTION_REPORT" />
       <value enum="9" description="ORDER_CANCEL_REJECT" />
-      <value enum="a" description="QUOTE_STATUS_REQUEST" />
       <value enum="A" description="LOGON" />
       <value enum="AA" description="DERIVATIVE_SECURITY_LIST" />
       <value enum="AB" description="NEW_ORDER_AB" />
@@ -401,7 +400,6 @@
       <value enum="AX" description="COLLATERAL_REQUEST" />
       <value enum="AY" description="COLLATERAL_ASSIGNMENT" />
       <value enum="AZ" description="COLLATERAL_RESPONSE" />
-      <value enum="b" description="MASS_QUOTE_ACKNOWLEDGEMENT" />
       <value enum="B" description="NEWS" />
       <value enum="BA" description="COLLATERAL_REPORT" />
       <value enum="BB" description="COLLATERAL_INQUIRY" />
@@ -411,13 +409,9 @@
       <value enum="BF" description="USER_RESPONSE" />
       <value enum="BG" description="COLLATERAL_INQUIRY_ACK" />
       <value enum="BH" description="CONFIRMATION_REQUEST" />
-      <value enum="c" description="SECURITY_DEFINITION_REQUEST" />
       <value enum="C" description="EMAIL" />
-      <value enum="d" description="SECURITY_DEFINITION" />
       <value enum="D" description="ORDER_SINGLE" />
-      <value enum="e" description="SECURITY_STATUS_REQUEST" />
       <value enum="E" description="ORDER_LIST" />
-      <value enum="f" description="SECURITY_STATUS" />
       <value enum="F" description="ORDER_CANCEL_REQUEST" />
       <value enum="F1" description="LAST_EXEC_ID_REQUEST" />
       <value enum="F2" description="LAST_EXEC_ID" />
@@ -426,43 +420,49 @@
       <value enum="F5" description="EVENT_RESEND_REJECT" />
       <value enum="FA" description="APPLICATION_PING" />
       <value enum="FB" description="APPLICATION_PONG" />
-      <value enum="g" description="TRADING_SESSION_STATUS_REQUEST" />
       <value enum="G" description="ORDER_CANCEL_REPLACE_REQUEST" />
-      <value enum="h" description="TRADING_SESSION_STATUS" />
       <value enum="H" description="ORDER_STATUS_REQUEST" />
+      <value enum="J" description="ALLOCATION_INSTRUCTION" />
+      <value enum="K" description="LIST_CANCEL_REQUEST" />
+      <value enum="L" description="LIST_EXECUTE" />
+      <value enum="M" description="LIST_STATUS_REQUEST" />
+      <value enum="N" description="LIST_STATUS" />
+      <value enum="P" description="ALLOCATION_INSTRUCTION_ACK" />
+      <value enum="Q" description="DONT_KNOW_TRADE" />
+      <value enum="R" description="QUOTE_REQUEST" />
+      <value enum="S" description="QUOTE" />
+      <value enum="T" description="SETTLEMENT_INSTRUCTIONS" />
+      <value enum="V" description="MARKET_DATA_REQUEST" />
+      <value enum="W" description="MARKET_DATA_SNAPSHOT_FULL_REFRESH" />
+      <value enum="X" description="MARKET_DATA_INCREMENTAL_REFRESH" />
+      <value enum="Y" description="MARKET_DATA_REQUEST_REJECT" />
+      <value enum="Z" description="QUOTE_CANCEL" />
+      <value enum="a" description="QUOTE_STATUS_REQUEST" />
+      <value enum="b" description="MASS_QUOTE_ACKNOWLEDGEMENT" />
+      <value enum="c" description="SECURITY_DEFINITION_REQUEST" />
+      <value enum="d" description="SECURITY_DEFINITION" />
+      <value enum="e" description="SECURITY_STATUS_REQUEST" />
+      <value enum="f" description="SECURITY_STATUS" />
+      <value enum="g" description="TRADING_SESSION_STATUS_REQUEST" />
+      <value enum="h" description="TRADING_SESSION_STATUS" />
       <value enum="i" description="MASS_QUOTE" />
       <value enum="j" description="BUSINESS_MESSAGE_REJECT" />
-      <value enum="J" description="ALLOCATION_INSTRUCTION" />
       <value enum="k" description="BID_REQUEST" />
-      <value enum="K" description="LIST_CANCEL_REQUEST" />
       <value enum="l" description="BID_RESPONSE" />
-      <value enum="L" description="LIST_EXECUTE" />
       <value enum="m" description="LIST_STRIKE_PRICE" />
-      <value enum="M" description="LIST_STATUS_REQUEST" />
       <value enum="n" description="XML_MESSAGE" />
-      <value enum="N" description="LIST_STATUS" />
       <value enum="o" description="REGISTRATION_INSTRUCTIONS" />
       <value enum="p" description="REGISTRATION_INSTRUCTIONS_RESPONSE" />
-      <value enum="P" description="ALLOCATION_INSTRUCTION_ACK" />
       <value enum="q" description="ORDER_MASS_CANCEL_REQUEST" />
-      <value enum="Q" description="DONT_KNOW_TRADE" />
       <value enum="r" description="ORDER_MASS_CANCEL_REPORT" />
-      <value enum="R" description="QUOTE_REQUEST" />
       <value enum="s" description="NEW_ORDER_s" />
-      <value enum="S" description="QUOTE" />
       <value enum="t" description="CROSS_ORDER_CANCEL_REPLACE_REQUEST" />
-      <value enum="T" description="SETTLEMENT_INSTRUCTIONS" />
       <value enum="u" description="CROSS_ORDER_CANCEL_REQUEST" />
       <value enum="v" description="SECURITY_TYPE_REQUEST" />
-      <value enum="V" description="MARKET_DATA_REQUEST" />
       <value enum="w" description="SECURITY_TYPES" />
-      <value enum="W" description="MARKET_DATA_SNAPSHOT_FULL_REFRESH" />
       <value enum="x" description="SECURITY_LIST_REQUEST" />
-      <value enum="X" description="MARKET_DATA_INCREMENTAL_REFRESH" />
       <value enum="y" description="SECURITY_LIST" />
-      <value enum="Y" description="MARKET_DATA_REQUEST_REJECT" />
       <value enum="z" description="DERIVATIVE_SECURITY_LIST_REQUEST" />
-      <value enum="Z" description="QUOTE_CANCEL" />
     </field>
     <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="37" name="OrderID" type="QTY" />

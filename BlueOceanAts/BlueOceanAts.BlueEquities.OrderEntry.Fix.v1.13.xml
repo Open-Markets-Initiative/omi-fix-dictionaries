@@ -83,6 +83,50 @@
       <field name="RefMsgType" required="N" />
       <field name="Text" required="N" />
     </message>
+    <message name="NewOrderSingle" msgtype="D" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SymbolSfx" required="N" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="TimeInForce" required="Y" />
+      <field name="OrderCapacity" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="LocateReqd" required="N" />
+      <field name="SelfTradePrevention" required="N" />
+      <field name="StpGroupID" required="N" />
+      <field name="RiskGroupID" required="N" />
+      <field name="CustOrderCapacity" required="N" />
+      <field name="LnkID" required="N" />
+      <field name="LocateBroker" required="N" />
+      <field name="NoPartyIDs" required="N" />
+    </message>
+    <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
+      <field name="OrigClOrdID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SymbolSfx" required="N" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="LocateReqd" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="LnkID" required="N" />
+      <field name="LocateBroker" required="N" />
+    </message>
+    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
+      <field name="OrigClOrdID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderID" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="SymbolSfx" required="N" />
+      <field name="Side" required="Y" />
+      <field name="TransactTime" required="Y" />
+    </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="OrderID" required="Y" />
       <field name="ClOrdID" required="Y" />
@@ -132,50 +176,6 @@
       <field name="ExecRestatementReason" required="Y" />
       <field name="ExtendedRestatementReason" required="N" />
       <field name="ExecRefID" required="Y" />
-    </message>
-    <message name="NewOrderSingle" msgtype="D" msgcat="app">
-      <field name="ClOrdID" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="SymbolSfx" required="N" />
-      <field name="Side" required="Y" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="TimeInForce" required="Y" />
-      <field name="OrderCapacity" required="Y" />
-      <field name="ExecInst" required="N" />
-      <field name="TransactTime" required="Y" />
-      <field name="LocateReqd" required="N" />
-      <field name="SelfTradePrevention" required="N" />
-      <field name="StpGroupID" required="N" />
-      <field name="RiskGroupID" required="N" />
-      <field name="CustOrderCapacity" required="N" />
-      <field name="LnkID" required="N" />
-      <field name="LocateBroker" required="N" />
-      <field name="NoPartyIDs" required="N" />
-    </message>
-    <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
-      <field name="OrigClOrdID" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="SymbolSfx" required="N" />
-      <field name="Side" required="Y" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="LocateReqd" required="N" />
-      <field name="TransactTime" required="Y" />
-      <field name="LnkID" required="N" />
-      <field name="LocateBroker" required="N" />
-    </message>
-    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
-      <field name="OrigClOrdID" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="OrderID" required="N" />
-      <field name="Symbol" required="Y" />
-      <field name="SymbolSfx" required="N" />
-      <field name="Side" required="Y" />
-      <field name="TransactTime" required="Y" />
     </message>
   </messages>
   <components />
@@ -249,14 +249,14 @@
     <field number="583" name="LnkID" type="STRING" />
     <field number="851" name="LastLiquidityInd" type="INT">
       <value enum="1" description="AddDisplayedLiquidity" />
-      <value enum="2" description="RemovedLiquidity" />
-      <value enum="53" description="AddNbboImprove" />
-      <value enum="54" description="AddNbboJoin" />
       <value enum="101" description="RetailAddDisplayedLiquidity" />
       <value enum="102" description="RetailRemovedLiquidity" />
       <value enum="153" description="RetailAddNbboImprove" />
       <value enum="154" description="RetailAddNbboJoin" />
       <value enum="160" description="RetailRemovedOnEntry" />
+      <value enum="2" description="RemovedLiquidity" />
+      <value enum="53" description="AddNbboImprove" />
+      <value enum="54" description="AddNbboJoin" />
     </field>
     <field number="880" name="TrdMatchID" type="STRING" />
     <field number="1137" name="DefaultApplVerID" type="STRING" />
@@ -272,12 +272,6 @@
     <field number="21004" name="CancelReason" type="STRING">
       <value enum="0" description="Other" />
       <value enum="1" description="UserRequestedCancel" />
-      <value enum="4" description="EndOfTrading" />
-      <value enum="5" description="LimitUpLimitDown" />
-      <value enum="6" description="Halted" />
-      <value enum="7" description="ExchangeSupervisory" />
-      <value enum="8" description="OrderExpired" />
-      <value enum="9" description="LockOrCrossBook" />
       <value enum="10" description="SelfTradePrevention" />
       <value enum="11" description="InsufficientQuotes" />
       <value enum="12" description="NonCompliantPrice" />
@@ -288,10 +282,16 @@
       <value enum="17" description="FirmDisabled" />
       <value enum="18" description="MPIDDisabled" />
       <value enum="19" description="AccountDisabled" />
+      <value enum="2" description="JoinedNBBO" />
       <value enum="20" description="NotionalExposureRiskBreached" />
       <value enum="21" description="InvalidClOrdId" />
-      <value enum="2" description="JoinedNBBO" />
       <value enum="3" description="SelfTradeCancelNewest" />
+      <value enum="4" description="EndOfTrading" />
+      <value enum="5" description="LimitUpLimitDown" />
+      <value enum="6" description="Halted" />
+      <value enum="7" description="ExchangeSupervisory" />
+      <value enum="8" description="OrderExpired" />
+      <value enum="9" description="LockOrCrossBook" />
     </field>
     <field number="21005" name="RiskGroupID" type="STRING" />
     <field number="21022" name="ExtendedRestatementReason" type="STRING" />

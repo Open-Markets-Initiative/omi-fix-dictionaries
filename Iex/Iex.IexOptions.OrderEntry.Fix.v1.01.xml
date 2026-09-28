@@ -278,18 +278,18 @@
     <field number="32" name="LastQty" type="QTY" />
     <field number="34" name="MsgSeqNum" type="SEQNUM" />
     <field number="35" name="MsgType" type="STRING">
-      <value enum="A" description="Logon" />
       <value enum="0" description="Heartbeat" />
       <value enum="1" description="Test Request" />
       <value enum="2" description="Resend Request" />
       <value enum="3" description="Session Layer Reject" />
       <value enum="4" description="Sequence Reset" />
       <value enum="5" description="Logout" />
+      <value enum="8" description="Execution Report" />
+      <value enum="9" description="Order Cancel Reject" />
+      <value enum="A" description="Logon" />
       <value enum="D" description="New Order Single" />
       <value enum="F" description="Order Cancel Request" />
       <value enum="G" description="Order Cancel/Replace Request" />
-      <value enum="8" description="Execution Report" />
-      <value enum="9" description="Order Cancel Reject" />
       <value enum="UCC" description="Trade Bust / Correction" />
     </field>
     <field number="36" name="NewSeqNo" type="SEQNUM" />
@@ -331,9 +331,9 @@
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
       <value enum="N" description="Not Applicable" />
+      <value enum="O" description="Open" />
     </field>
     <field number="97" name="PossResend" type="BOOLEAN" />
     <field number="108" name="HeartBtInt" type="INT" />
@@ -342,8 +342,8 @@
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="123" name="GapFillFlag" type="BOOLEAN">
-      <value enum="Y" description="Gap Fill Reset" />
       <value enum="N" description="Sequence Reset" />
+      <value enum="Y" description="Gap Fill Reset" />
     </field>
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="129" name="DeliverToSubID" type="STRING" />
@@ -382,6 +382,8 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
       <value enum="2" description="Tag not defined for this message type" />
       <value enum="3" description="Undefined Tag" />
       <value enum="4" description="Tag is empty" />
@@ -390,8 +392,6 @@
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
       <value enum="9" description="CompID problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
     </field>
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="378" name="ExecRestatementReason" type="INT">
@@ -451,21 +451,21 @@
     </field>
     <field number="20017" name="ContraClearingAccount" type="STRING" />
     <field number="20018" name="ContraOpenClose" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
       <value enum="N" description="Not Applicable" />
+      <value enum="O" description="Open" />
     </field>
     <field number="20100" name="AckStyle" type="CHAR">
-      <value enum="S" description="Single Mass Cancel Acknowledgement" />
       <value enum="B" description="Order Canceled messages and Mass Cancel Acknowledgement" />
+      <value enum="S" description="Single Mass Cancel Acknowledgement" />
     </field>
     <field number="20101" name="MPIDFilter" type="INT">
       <value enum="0" description="Take BulkAction explicitly for this MPID on this session" />
       <value enum="1" description="Take BulkAction across MPIDs on this session" />
     </field>
     <field number="20102" name="BulkAction" type="CHAR">
-      <value enum="C" description="Cancel" />
       <value enum="B" description="Cancel and Block" />
+      <value enum="C" description="Cancel" />
       <value enum="U" description="Unblock" />
     </field>
     <field number="20103" name="CancelCount" type="INT" />

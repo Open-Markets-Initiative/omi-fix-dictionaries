@@ -283,54 +283,54 @@
     <field number="851" name="LastLiquidityInd" type="INT" />
     <field number="8020" name="DisplayRange" type="QTY" />
     <field number="9140" name="DisplayInst" type="CHAR">
-      <value enum="Y" description="Anonymous Price to Comply" />
       <value enum="A" description="Attributable Price to Display" />
-      <value enum="N" description="Non-Display" />
       <value enum="I" description="Imbalance Only" />
+      <value enum="N" description="Non-Display" />
       <value enum="P" description="Post-Only" />
       <value enum="W" description="Mid-Point Peg Post Only" />
+      <value enum="Y" description="Anonymous Price to Comply" />
     </field>
     <field number="9355" name="CrossTradeFlag" type="CHAR">
-      <value enum="O" description="Opening Cross" />
       <value enum="C" description="Closing Cross" />
       <value enum="I" description="Intraday Cross" />
+      <value enum="O" description="Opening Cross" />
     </field>
     <field number="9391" name="DisplayExecInst" type="CHAR">
+      <value enum="M" description="Mid Peg" />
       <value enum="P" description="Market Peg" />
       <value enum="R" description="Primary Peg" />
-      <value enum="M" description="Mid Peg" />
     </field>
     <field number="9392" name="DisplayPrice" type="PRICE" />
     <field number="9395" name="MarketabilityInstructions" type="INT" />
     <field number="9396" name="DisplayPegDifference" type="FLOAT" />
     <field number="9882" name="LiquidityFlag" type="CHAR">
-      <value enum="A" description="Added" />
-      <value enum="R" description="Removed" />
-      <value enum="J" description="Non-Displayed Added Liquidity" />
-      <value enum="X" description="Routed" />
-      <value enum="D" description="DOT" />
-      <value enum="F" description="Added or Opening Trade on NYSE" />
-      <value enum="G" description="Odd Lot or On-Close Order on NYSE" />
-      <value enum="O" description="Open Cross Billable" />
-      <value enum="M" description="Open Cross Non-Billable" />
-      <value enum="C" description="Closing Cross Billable" />
-      <value enum="L" description="Closing Cross Non-Billable" />
-      <value enum="H" description="Halt or IPO Cross Billable" />
-      <value enum="K" description="Halt or IPO Cross Billable" />
-      <value enum="I" description="Intraday or Post-Market Cross" />
-      <value enum="Y" description="Re-Routed by NYSE" />
-      <value enum="S" description="Odd Lot Execution on NYSE" />
-      <value enum="U" description="Added Liquidity on NYSE" />
-      <value enum="B" description="Routed to BX" />
-      <value enum="E" description="NYSE Other" />
-      <value enum="P" description="Routed to PSX" />
-      <value enum="T" description="Opening Trade on ARCA" />
-      <value enum="Z" description="On-Close Order on ARCA" />
-      <value enum="Q" description="Routed to Nasdaq" />
-      <value enum="m" description="Removed Liquidity at Midpoint" />
-      <value enum="k" description="Added Liquidity via Midpoint Order" />
       <value enum="7" description="Displayed Liquidity-Adding Order Improves NBBO" />
       <value enum="8" description="Displayed Liquidity-Adding Order Sets QBBO Joining NBBO" />
+      <value enum="A" description="Added" />
+      <value enum="B" description="Routed to BX" />
+      <value enum="C" description="Closing Cross Billable" />
+      <value enum="D" description="DOT" />
+      <value enum="E" description="NYSE Other" />
+      <value enum="F" description="Added or Opening Trade on NYSE" />
+      <value enum="G" description="Odd Lot or On-Close Order on NYSE" />
+      <value enum="H" description="Halt or IPO Cross Billable" />
+      <value enum="I" description="Intraday or Post-Market Cross" />
+      <value enum="J" description="Non-Displayed Added Liquidity" />
+      <value enum="K" description="Halt or IPO Cross Billable" />
+      <value enum="L" description="Closing Cross Non-Billable" />
+      <value enum="M" description="Open Cross Non-Billable" />
+      <value enum="O" description="Open Cross Billable" />
+      <value enum="P" description="Routed to PSX" />
+      <value enum="Q" description="Routed to Nasdaq" />
+      <value enum="R" description="Removed" />
+      <value enum="S" description="Odd Lot Execution on NYSE" />
+      <value enum="T" description="Opening Trade on ARCA" />
+      <value enum="U" description="Added Liquidity on NYSE" />
+      <value enum="X" description="Routed" />
+      <value enum="Y" description="Re-Routed by NYSE" />
+      <value enum="Z" description="On-Close Order on ARCA" />
+      <value enum="k" description="Added Liquidity via Midpoint Order" />
+      <value enum="m" description="Removed Liquidity at Midpoint" />
     </field>
   </fields>
 </fix>

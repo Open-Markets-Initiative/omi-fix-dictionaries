@@ -281,17 +281,17 @@
     <field number="14" name="CumQty" type="QTY" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="CHAR">
-      <value enum="d" description="Tracking Order" />
-      <value enum="f" description="ISO" />
       <value enum="B" description="OK to Cross" />
       <value enum="E" description="DNI" />
       <value enum="F" description="DNR" />
       <value enum="G" description="All or None" />
-      <value enum="R" description="Primary Peg" />
-      <value enum="P" description="Market Peg" />
-      <value enum="M" description="MPL (Midpoint Liquidity)" />
-      <value enum="y" description="Trade-at ISO" />
       <value enum="L" description="Last Sale Peg" />
+      <value enum="M" description="MPL (Midpoint Liquidity)" />
+      <value enum="P" description="Market Peg" />
+      <value enum="R" description="Primary Peg" />
+      <value enum="d" description="Tracking Order" />
+      <value enum="f" description="ISO" />
+      <value enum="y" description="Trade-at ISO" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
@@ -303,28 +303,28 @@
     <field number="32" name="LastQty" type="QTY" />
     <field number="34" name="MsgSeqNum" type="INT" />
     <field number="35" name="MsgType" type="STRING">
-      <value enum="A" description="Logon" />
       <value enum="0" description="Heartbeat" />
       <value enum="1" description="Test Request" />
       <value enum="2" description="Resend Request" />
       <value enum="3" description="Session Layer Reject" />
       <value enum="4" description="Sequence Reset" />
       <value enum="5" description="Logout" />
+      <value enum="8" description="Execution Report" />
+      <value enum="9" description="Order Cancel Reject" />
+      <value enum="A" description="Logon" />
       <value enum="D" description="New Order Single" />
       <value enum="F" description="Order Cancel Request" />
       <value enum="G" description="Order Cancel/Replace Request" />
-      <value enum="8" description="Execution Report" />
-      <value enum="9" description="Order Cancel Reject" />
     </field>
     <field number="37" name="OrderID" type="STRING">
+      <value enum="10" description="Block all new order entry for the MPID" />
+      <value enum="11" description="Unblock new order entry for the MPID" />
+      <value enum="12" description="Cancel orders for the MPID" />
       <value enum="4" description="Cancel orders for the MPID" />
       <value enum="5" description="Cancel orders for the MPID" />
       <value enum="6" description="Cancel orders for the MPID" />
       <value enum="7" description="Cancel orders for the MPID" />
       <value enum="8" description="Cancel orders for the MPID" />
-      <value enum="10" description="Block all new order entry for the MPID" />
-      <value enum="11" description="Unblock new order entry for the MPID" />
-      <value enum="12" description="Cancel orders for the MPID" />
     </field>
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
@@ -349,8 +349,8 @@
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="43" name="PossDupFlag" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="44" name="Price" type="PRICE" />
     <field number="45" name="RefSeqNum" type="INT" />
@@ -389,12 +389,12 @@
     <field number="95" name="RawDataLength" type="INT" />
     <field number="96" name="RawData" type="STRING">
       <value enum="0" description="Cancel on Disconnect Disabled" />
-      <value enum="TIF" description="2-At the Opening and 7-On Close*)" />
       <value enum="2" description="Enable Cancel on Disconnect" />
+      <value enum="TIF" description="2-At the Opening and 7-On Close*)" />
     </field>
     <field number="97" name="PossResend" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="98" name="EncryptMethod" type="INT" />
     <field number="108" name="HeartBtInt" type="INT" />
@@ -436,6 +436,10 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid Tag Number" />
       <value enum="1" description="Required Tag Missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
+      <value enum="14" description="Tag specified out of required order" />
+      <value enum="15" description="Repeating group fields out of order" />
       <value enum="2" description="Tag Not Defined For This Message Type" />
       <value enum="3" description="Undefined Tag" />
       <value enum="4" description="Tag specified without a value" />
@@ -443,10 +447,6 @@
       <value enum="6" description="Incorrect data format for value" />
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
-      <value enum="14" description="Tag specified out of required order" />
-      <value enum="15" description="Repeating group fields out of order" />
       <value enum="99" description="Other" />
     </field>
     <field number="386" name="NoTradingSessions" type="INT">
@@ -472,10 +472,10 @@
     <field number="1409" name="SessionStatus" type="INT" />
     <field number="5700" name="LocateBroker" type="STRING" />
     <field number="7928" name="SelfTradeType" type="CHAR">
-      <value enum="T" description="No Self Trade Prevention" />
-      <value enum="N" description="Cancel Newest O (letter O)= Cancel Oldest" />
       <value enum="C" description="Cancel Both" />
       <value enum="D" description="Cancel Decrement" />
+      <value enum="N" description="Cancel Newest O (letter O)= Cancel Oldest" />
+      <value enum="T" description="No Self Trade Prevention" />
     </field>
     <field number="9202" name="SpecialOrdType" type="CHAR">
       <value enum="2" description="DMM Pre-auction - drop copy only" />
@@ -483,29 +483,29 @@
       <value enum="8" description="No route to IOI for dOrders" />
     </field>
     <field number="9303" name="RoutingInst" type="CHAR">
-      <value enum="N" description="Non Routable" />
-      <value enum="R" description="Routable" />
-      <value enum="D" description="Directed (Primary Only)" />
-      <value enum="S" description="Directed + Routable (PO+S)" />
       <value enum="1" description="Primary Market until 9:45" />
       <value enum="2" description="Primary Market after 3:55" />
       <value enum="A" description="Route to ATS" />
+      <value enum="D" description="Directed (Primary Only)" />
       <value enum="E" description="Route to Algo" />
+      <value enum="N" description="Non Routable" />
+      <value enum="R" description="Routable" />
+      <value enum="S" description="Directed + Routable (PO+S)" />
     </field>
     <field number="9403" name="OffsetPrice" type="PRICE" />
     <field number="9416" name="ExtendedExecInst" type="CHAR">
-      <value enum="A" description="Add Liquidity Only (ALO)" />
       <value enum="2" description="No route to IOI" />
       <value enum="4" description="Retail Order Type 1" />
       <value enum="5" description="Retail Order Type 2" />
       <value enum="7" description="Retail Provider" />
       <value enum="8" description="Imbalance Offset" />
-      <value enum="L" description="Limit dOrder" />
-      <value enum="M" description="Midpoint dOrder" />
-      <value enum="C" description="Complex Order Auction" />
       <value enum="9" description="Discretionary Peg" />
+      <value enum="A" description="Add Liquidity Only (ALO)" />
+      <value enum="C" description="Complex Order Auction" />
       <value enum="D" description="Dark (Non-Displayed) Primary Peg" />
       <value enum="I" description="Issuer Direct Offering (IDO)" />
+      <value enum="L" description="Limit dOrder" />
+      <value enum="M" description="Midpoint dOrder" />
     </field>
     <field number="9448" name="IntroducingBadgeID" type="STRING" />
     <field number="9449" name="BillTo" type="STRING" />

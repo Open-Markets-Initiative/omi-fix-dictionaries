@@ -249,10 +249,10 @@
       <value enum="7" description="Trading High" />
       <value enum="8" description="Trading Low" />
       <value enum="B" description="Trade Volume" />
+      <value enum="t" description="Closing Auction Price (SGX extension)" />
       <value enum="x" description="Last Price (SGX extension)" />
       <value enum="y" description="Turnover (SGX extension)" />
       <value enum="z" description="Reported Trade Volume (SGX extension)" />
-      <value enum="t" description="Closing Auction Price (SGX extension)" />
     </field>
     <field number="270" name="MDEntryPx" type="PRICE" />
     <field number="271" name="MDEntrySize" type="QTY" />

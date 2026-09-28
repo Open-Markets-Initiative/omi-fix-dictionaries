@@ -145,15 +145,15 @@
     <field number="37" name="OrderID" type="STRING" />
     <field number="47" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency" />
-      <value enum="X" description="Mixed" />
       <value enum="P" description="Principal" />
+      <value enum="X" description="Mixed" />
     </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
-      <value enum="5" description="Sell Short (client affirms ability to borrow)" />
       <value enum="2" description="Sell" />
+      <value enum="5" description="Sell Short (client affirms ability to borrow)" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
@@ -168,15 +168,15 @@
     </field>
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New (acknowledgement of new order)" />
+      <value enum="1" description="Partial Fill" />
       <value enum="2" description="Fill" />
       <value enum="4" description="Canceled" />
-      <value enum="8" description="Rejected" />
-      <value enum="F" description="Trade" />
-      <value enum="M" description="Mass Cancel Complete" />
       <value enum="5" description="Replaced" />
-      <value enum="1" description="Partial Fill" />
+      <value enum="8" description="Rejected" />
       <value enum="D" description="Restated" />
+      <value enum="F" description="Trade" />
       <value enum="H" description="Trade Cancel (Two Sided Reports only)" />
+      <value enum="M" description="Mass Cancel Complete" />
     </field>
     <field number="439" name="ClearingFirm" type="STRING" />
     <field number="440" name="ClearingAccount" type="STRING" />
@@ -185,8 +185,8 @@
     </field>
     <field number="448" name="PartyID" type="STRING" />
     <field number="452" name="PartyRole" type="INT">
-      <value enum="7" description="EnteringFirm" />
       <value enum="17" description="ContraFirm" />
+      <value enum="7" description="EnteringFirm" />
     </field>
     <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
     <field number="487" name="TradeReportTransType" type="STRING">
@@ -209,8 +209,8 @@
     <field number="1003" name="TradeID" type="STRING" />
     <field number="1123" name="TradeHandlingInstr" type="STRING">
       <value enum="0" description="Confirmed Trade" />
-      <value enum="2" description="One Sided Report for Matching" />
       <value enum="1" description="Two Sided Report" />
+      <value enum="2" description="One Sided Report for Matching" />
     </field>
     <field number="4805" name="ExecVenue" type="STRING" />
     <field number="6802" name="ClientCrossRef" type="STRING" />
@@ -225,12 +225,12 @@
     <field number="8177" name="RemoveCrossingFromClearing" type="STRING" />
     <field number="8181" name="OffExchTradeReportType" type="STRING">
       <value enum="B" description="Block trade P," />
-      <value enum="S" description="Trade with Price Improvement" />
-      <value enum="M" description="Permitted trade during pre trading hours period" />
-      <value enum="X" description="Booking purpose trade" />
-      <value enum="L" description="Permitted trade during post trading hours period" />
       <value enum="E" description="Out of hours trade" />
       <value enum="F" description="ETF trade report – unit creation or redemption Using ‘p’ or ‘t’ for large portfolio trades and large principal transaction indicates that the trade subject of the report was done on the previous trading day and the participant has delayed the trade report as permitted in the Market Integrity Rules. One Sided Report for Matching Trade Reports may not use ‘S’, ‘P’,’p’, ‘E’, ‘F’, and ‘X’. the receipt of a Trade is not considered to have fully of 2 (Accept). Description" />
+      <value enum="L" description="Permitted trade during post trading hours period" />
+      <value enum="M" description="Permitted trade during pre trading hours period" />
+      <value enum="S" description="Trade with Price Improvement" />
+      <value enum="X" description="Booking purpose trade" />
     </field>
     <field number="9688" name="OrigCompID" type="STRING" />
     <field number="9689" name="OrigSubID" type="STRING" />

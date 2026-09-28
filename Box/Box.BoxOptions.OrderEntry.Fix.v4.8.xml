@@ -375,21 +375,21 @@
       <value enum="8" description="Execution Report" />
       <value enum="9" description="Order Cancel Reject" />
       <value enum="A" description="Logon" />
+      <value enum="AB" description="New Multi-Leg Order - Single" />
+      <value enum="AC" description="Cancel/Replace Multi-Leg Order" />
+      <value enum="AF" description="Order Mass Status Request" />
+      <value enum="BE" description="User Request" />
+      <value enum="BF" description="User Response" />
+      <value enum="CB" description="User Notification" />
       <value enum="D" description="New Single/Complex Order" />
       <value enum="F" description="Order Single/Complex Cancel Request" />
       <value enum="G" description="Cancel/Replace Single/Complex Request" />
+      <value enum="J" description="Business Reject" />
+      <value enum="PI" description="Auction Initial Order" />
       <value enum="R" description="Quote Request" />
       <value enum="b" description="Quote Acknowledgement" />
       <value enum="c" description="Security Definition Request" />
       <value enum="d" description="Security Definition" />
-      <value enum="AF" description="Order Mass Status Request" />
-      <value enum="PI" description="Auction Initial Order" />
-      <value enum="AB" description="New Multi-Leg Order - Single" />
-      <value enum="AC" description="Cancel/Replace Multi-Leg Order" />
-      <value enum="BE" description="User Request" />
-      <value enum="BF" description="User Response" />
-      <value enum="CB" description="User Notification" />
-      <value enum="J" description="Business Reject" />
     </field>
     <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="37" name="OrderID" type="STRING" />
@@ -402,30 +402,30 @@
       <value enum="5" description="Replaced" />
       <value enum="6" description="Cancel Pending" />
       <value enum="8" description="Rejected" />
-      <value enum="P" description="Exposed" />
-      <value enum="Q" description="Directed Order" />
-      <value enum="L" description="Directed through IML" />
-      <value enum="I" description="Session Order cancelled when the participant connection gets disconnected" />
-      <value enum="T" description="Order cancelled due to Trading Restriction" />
-      <value enum="F" description="Order eliminated due to an invalid out of limits price" />
-      <value enum="M" description="Cancelled by the Market Operation Center (MOC)" />
       <value enum="C" description="Expired" />
+      <value enum="F" description="Order eliminated due to an invalid out of limits price" />
       <value enum="H" description="Eliminated due to trade limit exceeded" />
+      <value enum="I" description="Session Order cancelled when the participant connection gets disconnected" />
       <value enum="J" description="Eliminated due to maximum nb triggers limit exceeded" />
       <value enum="K" description="Eliminated due to trade activity limit exceeded" />
+      <value enum="L" description="Directed through IML" />
+      <value enum="M" description="Cancelled by the Market Operation Center (MOC)" />
       <value enum="O" description="Eliminated due to drill through protection" />
+      <value enum="P" description="Exposed" />
+      <value enum="Q" description="Directed Order" />
       <value enum="S" description="Cancelled by supervisor" />
+      <value enum="T" description="Order cancelled due to Trading Restriction" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
-      <value enum="O" description="Market at Open (Order trades at the opening price) Remaining quantity, if any, is booked at the opening o price. (This usage and meaning are different from [TimeInForce 59=2] in FIX v4.2)" />
       <value enum="F" description="Indication of Interest" />
+      <value enum="O" description="Market at Open (Order trades at the opening price) Remaining quantity, if any, is booked at the opening o price. (This usage and meaning are different from [TimeInForce 59=2] in FIX v4.2)" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="43" name="PossDupFlag" type="BOOLEAN">
-      <value enum="Y" description="Possible duplicate" />
       <value enum="N" description="Original transmission" />
+      <value enum="Y" description="Possible duplicate" />
     </field>
     <field number="44" name="Price" type="PRICE" />
     <field number="45" name="RefSeqNum" type="SEQNUM" />
@@ -449,17 +449,15 @@
     <field number="58" name="Text" type="STRING" />
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="Day" />
-      <value enum="3" description="Immediate or Cancel (IOC)" />
-      <value enum="W" description="Session Order" />
       <value enum="1" description="Good Till Cancel (GTC)" />
+      <value enum="3" description="Immediate or Cancel (IOC)" />
       <value enum="6" description="Good Till Date" />
       <value enum="8" description="Auction or Kill" />
+      <value enum="W" description="Session Order" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="76" name="ExecBroker" type="STRING" />
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="Open" />
-      <value enum="C" description="Close" />
       <value enum="1" description="1st leg Open, 2nd leg Close" />
       <value enum="2" description="1st leg Close, 2nd leg Open" />
       <value enum="3" description="1st and 2nd legs Open, 3rd leg Close" />
@@ -470,6 +468,7 @@
       <value enum="8" description="1st and 2nd legs Close, 3rd leg Open" />
       <value enum="A" description="1st, 2nd and 3rd legs Open, 4th leg Close" />
       <value enum="B" description="1st and 2nd legs Open, 3rd leg Close, 4th leg Open" />
+      <value enum="C" description="Close" />
       <value enum="D" description="1st and 2nd legs Open, 3rd and 4th legs Close" />
       <value enum="E" description="1st leg Open, 2nd leg Close, 3rd and 4th legs Open" />
       <value enum="F" description="1st leg Open, 2nd leg Close, 3rd leg Open, 4th leg Close" />
@@ -481,11 +480,12 @@
       <value enum="L" description="1st leg Close, 2nd leg Open, 3rd and 4th legs Close" />
       <value enum="M" description="1st and 2nd legs Close, 3rd and 4th legs Open" />
       <value enum="N" description="1st and 2nd legs Close, 3rd leg Open, 4th leg Close" />
+      <value enum="O" description="Open" />
       <value enum="P" description="1st, 2nd and 3rd legs Close, 4th leg Open" />
     </field>
     <field number="97" name="PossResend" type="BOOLEAN">
-      <value enum="Y" description="Possible resend" />
       <value enum="N" description="Original transmission" />
+      <value enum="Y" description="Possible resend" />
     </field>
     <field number="98" name="EncryptMethod" type="INT" />
     <field number="103" name="OrdRejReason" type="INT" />
@@ -493,13 +493,13 @@
     <field number="112" name="TestReqID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="123" name="GapFillFlag" type="BOOLEAN">
-      <value enum="Y" description="Gap Fill message, MsgSeqNum field valid" />
       <value enum="N" description="Sequence Reset, ignore MsgSeqNum" />
+      <value enum="Y" description="Gap Fill message, MsgSeqNum field valid" />
     </field>
     <field number="131" name="QuoteReqID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN">
-      <value enum="Y" description="Yes, reset sequence numbers" />
       <value enum="N" description="No" />
+      <value enum="Y" description="Yes, reset sequence numbers" />
     </field>
     <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
     <field number="150" name="ExecType" type="CHAR">
@@ -514,8 +514,8 @@
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="167" name="SecurityType" type="STRING">
-      <value enum="OPT" description="Option" />
       <value enum="MLEG" description="Complex Order instrument" />
+      <value enum="OPT" description="Option" />
     </field>
     <field number="200" name="MaturityMonthYear" type="MONTHYEAR" />
     <field number="201" name="PutOrCall" type="INT">
@@ -565,15 +565,15 @@
     <field number="639" name="PriceImprovement" type="PRICE" />
     <field number="654" name="LegRefID" type="STRING" />
     <field number="828" name="TrdType" type="INT">
-      <value enum="O" description="Opening – Trade performed during opening Rotation" />
       <value enum="A" description="Guaranteed Auction – Trade done at the end of a PIP Auction" />
-      <value enum="F" description="Continuous Trading – All other trade conditions" />
       <value enum="B" description="Solicitation Auction – Trade was part of that type of auction" />
       <value enum="C" description="Facilitation Auction – Trade was part of that type of auction" />
+      <value enum="F" description="Continuous Trading – All other trade conditions" />
+      <value enum="O" description="Opening – Trade performed during opening Rotation" />
     </field>
     <field number="854" name="QtyType" type="INT">
-      <value enum="J" description="Auction Type is MIP" />
       <value enum="B" description="Surrender Quantity for Solicitation: Indicates that the InitO is willing to surrender a portion of the total number of contracts in the Solicitation auction" />
+      <value enum="J" description="Auction Type is MIP" />
     </field>
     <field number="923" name="UserRequestId" type="STRING" />
     <field number="924" name="UserRequestType" type="INT">
@@ -610,19 +610,19 @@
       <value enum="P" description="Preferenced Order" />
     </field>
     <field number="9383" name="AuctionType" type="CHAR">
-      <value enum="G" description="Regular Auction" />
       <value enum="B" description="Solicitation Auction" />
       <value enum="C" description="Facilitation Auction" />
-      <value enum="X" description="Customer Cross Order or Qualified Contingent Cross" />
+      <value enum="G" description="Regular Auction" />
       <value enum="R" description="Floor Trade" />
+      <value enum="X" description="Customer Cross Order or Qualified Contingent Cross" />
     </field>
     <field number="9459" name="SpecialTradeInd" type="CHAR">
       <value enum="0" description="Regular Trade (All)" />
-      <value enum="g" description="Contingent Trade (apply to Solicitation and Facilitation, and Floor Trades only)" />
       <value enum="D" description="Customer Cross Order or Qualified Contingent Cross" />
+      <value enum="O" description="Hidden Trade (trade done at an away exchange through the InterMarket Linkage plan)" />
       <value enum="P" description="PIP" />
       <value enum="W" description="ISO Inbound" />
-      <value enum="O" description="Hidden Trade (trade done at an away exchange through the InterMarket Linkage plan)" />
+      <value enum="g" description="Contingent Trade (apply to Solicitation and Facilitation, and Floor Trades only)" />
     </field>
     <field number="9461" name="AddQty" type="QTY" />
     <field number="9730" name="TradeLiquidityIndicator" type="STRING">

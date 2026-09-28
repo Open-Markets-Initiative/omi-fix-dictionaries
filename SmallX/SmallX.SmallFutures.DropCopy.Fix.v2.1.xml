@@ -201,11 +201,11 @@
       <value enum="0" description="New" />
       <value enum="1" description="Partially filled" />
       <value enum="2" description="Filled" />
+      <value enum="3" description="Done for day" />
       <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
       <value enum="8" description="Rejected" />
       <value enum="C" description="Expired" />
-      <value enum="3" description="Done for day" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
@@ -265,14 +265,14 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
       <value enum="2" description="Tag not defined for this message type" />
       <value enum="3" description="Undefined tag" />
       <value enum="4" description="Tag specified without a value" />
       <value enum="5" description="Value is incorrect for this tag" />
       <value enum="6" description="Incorrect data format for value" />
       <value enum="9" description="CompID problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
       <value enum="99" description="Other" />
     </field>
     <field number="377" name="SolicitedFlag" type="BOOLEAN" />
@@ -310,8 +310,8 @@
     <field number="790" name="OrdStatusReqID" type="STRING" />
     <field number="880" name="TrdMatchID" type="STRING" />
     <field number="1028" name="ManualOrderIndicator" type="BOOLEAN">
-      <value enum="Y" description="Entered manually" />
       <value enum="N" description="Entered by an automated system" />
+      <value enum="Y" description="Entered manually" />
     </field>
     <field number="1166" name="QuoteMsgID" type="STRING" />
     <field number="2362" name="SelfMatchPreventionID" type="STRING" />

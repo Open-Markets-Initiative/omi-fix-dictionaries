@@ -164,6 +164,12 @@
       <field name="NWTOrdType" required="N" />
       <field name="NWTPrice" required="N" />
     </message>
+    <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
+      <field name="ClientID" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="UnderlyingSymbol" required="Y" />
+      <field name="RequestType" required="Y" />
+    </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="OrderID" required="Y" />
       <field name="ExecID" required="Y" />
@@ -218,12 +224,6 @@
       <field name="Text" required="N" />
       <field name="CxlRejResponseTo" required="Y" />
     </message>
-    <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
-      <field name="ClientID" required="N" />
-      <field name="ClOrdID" required="Y" />
-      <field name="UnderlyingSymbol" required="Y" />
-      <field name="RequestType" required="Y" />
-    </message>
     <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
       <field name="ClientID" required="Y" />
       <field name="OrderID" required="Y" />
@@ -246,8 +246,8 @@
     <field number="14" name="CumQty" type="QTY" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLECHARVALUE">
-      <value enum="f" description="InterMarket Sweep Order (ISO)" />
       <value enum="G" description="All Or None (AON)" />
+      <value enum="f" description="InterMarket Sweep Order (ISO)" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
@@ -282,13 +282,13 @@
     <field number="43" name="PossDupFlag" type="BOOLEAN" />
     <field number="44" name="Price" type="PRICE" />
     <field number="47" name="Rule80A" type="CHAR">
-      <value enum="C" description="Customer Order" />
       <value enum="B" description="Broker Dealer Order" />
+      <value enum="C" description="Customer Order" />
       <value enum="F" description="Firm Order" />
+      <value enum="J" description="Joint Back Office" />
       <value enum="M" description="Nasdaq Registered Market Maker Order" />
       <value enum="O" description="Other Exchange Registered Market Maker Order" />
       <value enum="P" description="Professional Customer" />
-      <value enum="J" description="Joint Back Office" />
     </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
@@ -323,8 +323,8 @@
       <value enum="WAIT" description="Wait for a period before booking the order" />
     </field>
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="Opening Position" />
       <value enum="C" description="Closing Position" />
+      <value enum="O" description="Opening Position" />
     </field>
     <field number="79" name="AllocAccount" type="STRING" />
     <field number="95" name="RawDataLength" type="LENGTH" />
@@ -369,21 +369,21 @@
     <field number="205" name="MaturityDay" type="INT" />
     <field number="207" name="SecurityExchange" type="STRING">
       <value enum="1" description="AMEX" />
-      <value enum="Z" description="BATS" />
+      <value enum="7" description="MIAX" />
       <value enum="B" description="BSE" />
       <value enum="C" description="C2" />
-      <value enum="W" description="CBOE" />
-      <value enum="Y" description="ISE" />
-      <value enum="X" description="PHLX" />
+      <value enum="D" description="MIAX Emerald" />
+      <value enum="E" description="BATS EDGX" />
+      <value enum="H" description="ISE Gemini" />
+      <value enum="J" description="ISE Mercury" />
       <value enum="N" description="NYSE" />
+      <value enum="P" description="MIAX PEARL" />
       <value enum="Q" description="NASDAQ" />
       <value enum="T" description="BX Options" />
-      <value enum="7" description="MIAX" />
-      <value enum="H" description="ISE Gemini" />
-      <value enum="E" description="BATS EDGX" />
-      <value enum="J" description="ISE Mercury" />
-      <value enum="P" description="MIAX PEARL" />
-      <value enum="D" description="MIAX Emerald" />
+      <value enum="W" description="CBOE" />
+      <value enum="X" description="PHLX" />
+      <value enum="Y" description="ISE" />
+      <value enum="Z" description="BATS" />
     </field>
     <field number="311" name="UnderlyingSymbol" type="STRING" />
     <field number="375" name="ContraBroker" type="STRING" />
@@ -395,8 +395,8 @@
     <field number="439" name="ClearingFirm" type="STRING" />
     <field number="440" name="ClearingAccount" type="STRING" />
     <field number="530" name="RequestType" type="INT">
-      <value enum="8" description="Reset" />
       <value enum="2" description="Purge" />
+      <value enum="8" description="Reset" />
     </field>
     <field number="531" name="Response" type="INT">
       <value enum="0" description="Purge/Reset Request Rejected" />
@@ -423,31 +423,31 @@
       <value enum="P" description="PRISM Cross" />
     </field>
     <field number="9375" name="CrossSurrender" type="BOOLEAN">
-      <value enum="Y" description="Surrender the Agency order to other participants" />
       <value enum="N" description="Do Not Surrender" />
+      <value enum="Y" description="Surrender the Agency order to other participants" />
     </field>
     <field number="9882" name="LiquidityFlag" type="CHAR">
-      <value enum="A" description="Executed on NASDAQ - Added Liquidity (maker)" />
-      <value enum="R" description="Executed on NASDAQ - Removed Liquidity (taker)" />
-      <value enum="N" description="Executed on NASDAQ - Maker/Taker N/A" />
-      <value enum="O" description="Market Opening Auction" />
-      <value enum="E" description="Executed on AMEX" />
-      <value enum="P" description="Executed on Arca" />
-      <value enum="B" description="Executed on BOX" />
-      <value enum="W" description="Executed on CBOE" />
-      <value enum="S" description="Executed on ISE" />
-      <value enum="U" description="Executed on PHLX" />
-      <value enum="Z" description="Executed on BATS" />
       <value enum="2" description="Executed on C2" />
-      <value enum="Q" description="Executed on NOM (NOM only)" />
-      <value enum="Y" description="Executed on MIAX" />
-      <value enum="H" description="Executed on ISE Gemini" />
-      <value enum="D" description="Executed on BATS EDGX" />
       <value enum="3" description="Executed on ISE Mercury" />
       <value enum="4" description="Executed on MIAX PEARL" />
       <value enum="5" description="Executed on MIAX Emerald" />
+      <value enum="A" description="Executed on NASDAQ - Added Liquidity (maker)" />
+      <value enum="B" description="Executed on BOX" />
+      <value enum="D" description="Executed on BATS EDGX" />
+      <value enum="E" description="Executed on AMEX" />
+      <value enum="H" description="Executed on ISE Gemini" />
       <value enum="J" description="Executed on NASDAQ - Order Exposure Alerted (Flash Order) (NOM only)" />
       <value enum="K" description="Executed on NASDAQ - Executed against a Flash Order (NOM only)" />
+      <value enum="N" description="Executed on NASDAQ - Maker/Taker N/A" />
+      <value enum="O" description="Market Opening Auction" />
+      <value enum="P" description="Executed on Arca" />
+      <value enum="Q" description="Executed on NOM (NOM only)" />
+      <value enum="R" description="Executed on NASDAQ - Removed Liquidity (taker)" />
+      <value enum="S" description="Executed on ISE" />
+      <value enum="U" description="Executed on PHLX" />
+      <value enum="W" description="Executed on CBOE" />
+      <value enum="Y" description="Executed on MIAX" />
+      <value enum="Z" description="Executed on BATS" />
     </field>
   </fields>
 </fix>

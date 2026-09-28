@@ -161,20 +161,20 @@
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
+      <value enum="1" description="Partially Filled" />
       <value enum="2" description="Filled" />
       <value enum="5" description="Replaced" />
-      <value enum="8" description="Rejected" />
-      <value enum="E" description="Pending Replace" />
-      <value enum="1" description="Partially Filled" />
       <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
       <value enum="A" description="Pending New" />
+      <value enum="E" description="Pending Replace" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
-      <value enum="5" description="Market On Close (route to TSE only)" />
-      <value enum="I" description="Funari" />
       <value enum="2" description="Limit" />
+      <value enum="5" description="Market On Close (route to TSE only)" />
       <value enum="B" description="Limit on Close (route to TSE only)" />
+      <value enum="I" description="Funari" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="44" name="Price" type="PRICE" />
@@ -186,8 +186,8 @@
     <field number="50" name="SenderSubID" type="STRING" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
-      <value enum="5" description="Sell Short (SOR client affirms ability to borrow)" />
       <value enum="2" description="Sell" />
+      <value enum="5" description="Sell Short (SOR client affirms ability to borrow)" />
       <value enum="6" description="Sell Short Exempt" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
@@ -195,8 +195,8 @@
     <field number="58" name="Text" type="STRING" />
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="DAY (default)" />
-      <value enum="3" description="IOC (portion not filled immediately is cancelled)." />
       <value enum="2" description="At the Opening" />
+      <value enum="3" description="IOC (portion not filled immediately is cancelled)." />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="76" name="ExecBroker" type="STRING">
@@ -210,8 +210,8 @@
     </field>
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too late to cancel." />
-      <value enum="2" description="Broker option." />
       <value enum="1" description="Unknown order." />
+      <value enum="2" description="Broker option." />
       <value enum="3" description="Already pending cancel or pending replace." />
     </field>
     <field number="103" name="OrdRejReason" type="INT">

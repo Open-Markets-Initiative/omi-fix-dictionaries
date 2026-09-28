@@ -265,6 +265,13 @@
       <field name="LegSide" required="Y" />
       <field name="LegRatioQty" required="Y" />
     </message>
+    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefMsgType" required="Y" />
+      <field name="BusinessRejectRefID" required="Y" />
+      <field name="BusinessRejectReason" required="Y" />
+      <field name="Text" required="N" />
+    </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="AuctionType" required="N" />
       <field name="NWTOrdType" required="N" />
@@ -329,13 +336,6 @@
       <field name="Text" required="N" />
       <field name="SecurityType" required="N" />
     </message>
-    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="Y" />
-      <field name="RefMsgType" required="Y" />
-      <field name="BusinessRejectRefID" required="Y" />
-      <field name="BusinessRejectReason" required="Y" />
-      <field name="Text" required="N" />
-    </message>
   </messages>
   <components />
   <fields>
@@ -388,8 +388,8 @@
     <field number="44" name="Price" type="PRICE" />
     <field number="45" name="RefSeqNum" type="SEQNUM" />
     <field number="47" name="Rule80A" type="CHAR">
-      <value enum="P" description="Principal" />
       <value enum="A" description="Agency (default for stock leg)" />
+      <value enum="P" description="Principal" />
       <value enum="R" description="Riskless Principal" />
     </field>
     <field number="49" name="SenderCompID" type="STRING" />
@@ -415,13 +415,13 @@
     <field number="67" name="ListSeqNo" type="INT" />
     <field number="73" name="NoOrders" type="INT" />
     <field number="76" name="ExecBroker" type="STRING">
-      <value enum="SRCH" description="Search for execution at away exchange then post to PHLX book; continue to proactively route away (default)" />
-      <value enum="FIND" description="Search for execution at away exchange then post to PHLX book; do not proactively route away that day" />
       <value enum="DNR" description="Do Not Route - post directly to PHLX book, never route away" />
+      <value enum="FIND" description="Search for execution at away exchange then post to PHLX book; do not proactively route away that day" />
+      <value enum="SRCH" description="Search for execution at away exchange then post to PHLX book; continue to proactively route away (default)" />
     </field>
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
     </field>
     <field number="79" name="AllocAccount" type="STRING" />
     <field number="97" name="PossResend" type="BOOLEAN" />
@@ -435,6 +435,9 @@
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="0" description="Broker Option" />
       <value enum="1" description="Unknown Symbol" />
+      <value enum="16" description="Buy MKT Order Cancelled Due to No Offer" />
+      <value enum="17" description="MKT Invalid During LULD" />
+      <value enum="18" description="Suspend" />
       <value enum="2" description="Exchange Closed" />
       <value enum="3" description="Order Exceeds Limit" />
       <value enum="4" description="Too Late to Enter" />
@@ -442,9 +445,6 @@
       <value enum="6" description="Duplicate Order (e.g. duplicate ClOrdID)" />
       <value enum="7" description="Duplicate of a Verbally Communicated Order" />
       <value enum="8" description="Stale Order" />
-      <value enum="16" description="Buy MKT Order Cancelled Due to No Offer" />
-      <value enum="17" description="MKT Invalid During LULD" />
-      <value enum="18" description="Suspend" />
     </field>
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="109" name="ClientID" type="STRING" />
@@ -462,8 +462,8 @@
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="167" name="SecurityType" type="STRING">
-      <value enum="OPT" description="Option" />
       <value enum="MLEG" description="Multi-leg" />
+      <value enum="OPT" description="Option" />
     </field>
     <field number="200" name="MaturityMonthYear" type="MONTHYEAR" />
     <field number="201" name="PutOrCall" type="INT">
@@ -487,21 +487,21 @@
     <field number="205" name="MaturityDay" type="INT" />
     <field number="207" name="SecurityExchange" type="STRING">
       <value enum="1" description="AMEX" />
-      <value enum="Z" description="BATS" />
+      <value enum="7" description="MIAX" />
       <value enum="B" description="BSE" />
       <value enum="C" description="C2" />
-      <value enum="W" description="CBOE" />
-      <value enum="Y" description="ISE" />
-      <value enum="X" description="PHLX" />
+      <value enum="D" description="MIAX Emerald" />
+      <value enum="E" description="BATS EDGX" />
+      <value enum="H" description="ISE Gemini" />
+      <value enum="J" description="ISE Mercury" />
       <value enum="N" description="NYSE" />
+      <value enum="P" description="MIAX PEARL" />
       <value enum="Q" description="NASDAQ" />
       <value enum="T" description="BX Options" />
-      <value enum="7" description="MIAX" />
-      <value enum="H" description="ISE Gemini" />
-      <value enum="E" description="BATS EDGX" />
-      <value enum="J" description="ISE Mercury" />
-      <value enum="P" description="MIAX PEARL" />
-      <value enum="D" description="MIAX Emerald" />
+      <value enum="W" description="CBOE" />
+      <value enum="X" description="PHLX" />
+      <value enum="Y" description="ISE" />
+      <value enum="Z" description="BATS" />
     </field>
     <field number="372" name="RefMsgType" type="STRING" />
     <field number="375" name="ContraBroker" type="STRING" />
@@ -535,14 +535,14 @@
     <field number="541" name="MaturityDate" type="LOCALMKTDATE" />
     <field number="555" name="NoLegs" type="INT" />
     <field number="564" name="LegPositionEffect" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
     </field>
     <field number="600" name="LegSymbol" type="STRING" />
     <field number="608" name="LegCFICode" type="STRING">
+      <value enum="ES" description="Equity Shares (stock leg)" />
       <value enum="OC" description="Option Call (option leg)" />
       <value enum="OP" description="Option Put (option leg)" />
-      <value enum="ES" description="Equity Shares (stock leg)" />
     </field>
     <field number="610" name="LegMaturityMonthYear" type="MONTHYEAR" />
     <field number="611" name="LegMaturityDate" type="LOCALMKTDATE" />
@@ -567,12 +567,12 @@
     <field number="9372" name="NWTPrice" type="PRICE" />
     <field number="9373" name="AuctionType" type="CHAR">
       <value enum="P" description="PIXL Cross" />
-      <value enum="S" description="Solicitation Cross" />
       <value enum="Q" description="QCC Cross" />
+      <value enum="S" description="Solicitation Cross" />
     </field>
     <field number="9374" name="FromFloor" type="BOOLEAN">
-      <value enum="Y" description="Order sent from PHLX floor" />
       <value enum="N" description="Order not sent from PHLX floor" />
+      <value enum="Y" description="Order sent from PHLX floor" />
     </field>
     <field number="9375" name="StockLegShares" type="QTY" />
     <field number="9377" name="ContraStockLegSide" type="INT">
@@ -582,31 +582,31 @@
       <value enum="6" description="Sell Short Exempt" />
     </field>
     <field number="9378" name="CrossSurrender" type="BOOLEAN">
-      <value enum="Y" description="Surrender the Agency order to other participants" />
       <value enum="N" description="Do Not Surrender" />
+      <value enum="Y" description="Surrender the Agency order to other participants" />
     </field>
     <field number="9882" name="LiquidityFlag" type="CHAR">
-      <value enum="E" description="Executed on AMEX" />
-      <value enum="P" description="Executed on ARCA" />
-      <value enum="Z" description="Executed on BATS" />
-      <value enum="B" description="Executed on BOX" />
       <value enum="2" description="Executed on C2" />
-      <value enum="W" description="Executed on CBOE" />
-      <value enum="S" description="Executed on ISE" />
-      <value enum="Q" description="Executed on NASDAQ" />
-      <value enum="T" description="Executed on BX Options" />
-      <value enum="Y" description="Executed on MIAX" />
-      <value enum="H" description="Executed on ISE Gemini" />
-      <value enum="D" description="Executed on BATS EDGX" />
       <value enum="3" description="Executed on ISE Mercury" />
       <value enum="4" description="Executed on MIAX PEARL" />
       <value enum="5" description="Executed on MIAX Emerald" />
-      <value enum="U" description="Executed on PHLX - No Maker/Taker Info" />
-      <value enum="N" description="Executed on PHLX - Maker/Taker N/A" />
       <value enum="A" description="Executed on PHLX - Added Liquidity (maker)" />
-      <value enum="R" description="Executed on PHLX - Removed Liquidity (taker)" />
+      <value enum="B" description="Executed on BOX" />
+      <value enum="D" description="Executed on BATS EDGX" />
+      <value enum="E" description="Executed on AMEX" />
+      <value enum="H" description="Executed on ISE Gemini" />
       <value enum="J" description="Executed on PHLX - Order Exposure Alerted (Flash Order)" />
       <value enum="K" description="Executed on PHLX - Executed Against a Flash Order" />
+      <value enum="N" description="Executed on PHLX - Maker/Taker N/A" />
+      <value enum="P" description="Executed on ARCA" />
+      <value enum="Q" description="Executed on NASDAQ" />
+      <value enum="R" description="Executed on PHLX - Removed Liquidity (taker)" />
+      <value enum="S" description="Executed on ISE" />
+      <value enum="T" description="Executed on BX Options" />
+      <value enum="U" description="Executed on PHLX - No Maker/Taker Info" />
+      <value enum="W" description="Executed on CBOE" />
+      <value enum="Y" description="Executed on MIAX" />
+      <value enum="Z" description="Executed on BATS" />
     </field>
   </fields>
 </fix>

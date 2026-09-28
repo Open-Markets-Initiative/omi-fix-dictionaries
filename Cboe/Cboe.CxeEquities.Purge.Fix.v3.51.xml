@@ -109,26 +109,26 @@
     <field number="58" name="Text" type="STRING">
       <value enum="A" description="Admin" />
       <value enum="H" description="Halted" />
-      <value enum="k" description="Pending periodic auction (BXE and DXE only)" />
       <value enum="N" description="Ran Out of Liquidity to Execute Against" />
       <value enum="P" description="Can’t Modify an Order That is Pending Fill" />
       <value enum="R" description="Routing Unavailable" />
       <value enum="U" description="User Requested" />
       <value enum="W" description="Add Liquidity Only Order Would Remove" />
       <value enum="Y" description="Symbol Not Supported" />
+      <value enum="Z" description="Unforseen Reason" />
+      <value enum="k" description="Pending periodic auction (BXE and DXE only)" />
       <value enum="l" description="Large in Scale" />
       <value enum="m" description="Market Access Risk Limit Exceeded" />
+      <value enum="o" description="Max Open Trade Count Exceeded" />
       <value enum="p" description="Static Collar Breach" />
       <value enum="v" description="Mi FID II Double Cap related" />
-      <value enum="Z" description="Unforseen Reason" />
-      <value enum="o" description="Max Open Trade Count Exceeded" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="97" name="PossResend" type="BOOLEAN" />
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too Late to Cancel" />
-      <value enum="3" description="Already Pending Cancel or Pending Replace" />
       <value enum="2" description="Broker Option" />
+      <value enum="3" description="Already Pending Cancel or Pending Replace" />
     </field>
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
@@ -136,10 +136,10 @@
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="129" name="DeliverToSubID" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
-      <value enum="F" description="Trade" />
       <value enum="0" description="New (acknowledgement of new order)" />
       <value enum="2" description="Fill" />
       <value enum="5" description="Replaced" />
+      <value enum="F" description="Trade" />
       <value enum="M" description="Mass Cancel Complete" />
     </field>
     <field number="207" name="SecurityExchange" type="EXCHANGE" />

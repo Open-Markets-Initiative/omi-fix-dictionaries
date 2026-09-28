@@ -255,14 +255,14 @@
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="0" description="Broker or trading venue option" />
       <value enum="1" description="Unknown symbol" />
-      <value enum="2" description="Trading venue closed" />
-      <value enum="3" description="Order exceeds limit" />
-      <value enum="6" description="Duplicate order" />
-      <value enum="8" description="Stale order" />
       <value enum="11" description="Unsupported order characteristic" />
       <value enum="12" description="Surveillance option" />
       <value enum="13" description="Incorrect quantity" />
       <value enum="16" description="Price exceeds current price band" />
+      <value enum="2" description="Trading venue closed" />
+      <value enum="3" description="Order exceeds limit" />
+      <value enum="6" description="Duplicate order" />
+      <value enum="8" description="Stale order" />
       <value enum="99" description="Other" />
     </field>
     <field number="108" name="HeartBtInt" type="INT" />
@@ -301,18 +301,18 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
       <value enum="2" description="Tag not defined for this message type" />
       <value enum="3" description="Undefined tag" />
       <value enum="4" description="Tag specified without a value" />
       <value enum="5" description="Value is incorrect for this tag" />
       <value enum="6" description="Incorrect data format for value" />
       <value enum="9" description="CompID problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
     </field>
     <field number="378" name="ExecRestatementReason" type="INT">
-      <value enum="12" description="Cancel on connection loss" />
       <value enum="100" description="Trade prevention" />
+      <value enum="12" description="Cancel on connection loss" />
     </field>
     <field number="379" name="BusinessRejectRefID" type="STRING" />
     <field number="380" name="BusinessRejectReason" type="INT">

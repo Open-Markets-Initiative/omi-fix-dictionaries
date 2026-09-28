@@ -73,6 +73,54 @@
       <field name="RequestTime" required="N" />
       <field name="Text" required="N" />
     </message>
+    <message name="EventResendRequest" msgtype="F3" msgcat="app">
+      <field name="BeginExecId" required="Y" />
+      <field name="EndExecId" required="N" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="RawDataLength" required="N" />
+      <field name="RawData" required="N" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="NextExpectedMsgSeqNum" required="N" />
+      <field name="MaxMessageSize" required="N" />
+      <group name="NoMsgTypes" required="N">
+        <field name="RefMsgType" required="N" />
+        <field name="MsgDirection" required="N" />
+      </group>
+      <field name="TestMessageIndicator" required="N" />
+      <field name="Username" required="N" />
+      <field name="Password" required="N" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+      <field name="EncodedTextLen" required="N" />
+      <field name="EncodedText" required="N" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+      <field name="EncodedTextLen" required="N" />
+      <field name="EncodedText" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
     <message name="ApplicationPong" msgtype="FB" msgcat="app">
       <field name="PingId" required="Y" />
       <field name="RequestTime" required="N" />
@@ -98,10 +146,6 @@
       <field name="RefSeqNum" required="Y" />
       <field name="EventResendRejectReason" required="Y" />
       <field name="Text" required="N" />
-    </message>
-    <message name="EventResendRequest" msgtype="F3" msgcat="app">
-      <field name="BeginExecId" required="Y" />
-      <field name="EndExecId" required="N" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="Account" required="Y" />
@@ -150,50 +194,6 @@
       <field name="DifferentialPrice" required="N" />
       <field name="LegLastPx" required="N" />
       <field name="ExecInst" required="N" />
-    </message>
-    <message name="Heartbeat" msgtype="0" msgcat="admin">
-      <field name="TestReqID" required="N" />
-    </message>
-    <message name="Logon" msgtype="A" msgcat="admin">
-      <field name="EncryptMethod" required="Y" />
-      <field name="HeartBtInt" required="Y" />
-      <field name="RawDataLength" required="N" />
-      <field name="RawData" required="N" />
-      <field name="ResetSeqNumFlag" required="N" />
-      <field name="NextExpectedMsgSeqNum" required="N" />
-      <field name="MaxMessageSize" required="N" />
-      <group name="NoMsgTypes" required="N">
-        <field name="RefMsgType" required="N" />
-        <field name="MsgDirection" required="N" />
-      </group>
-      <field name="TestMessageIndicator" required="N" />
-      <field name="Username" required="N" />
-      <field name="Password" required="N" />
-    </message>
-    <message name="Logout" msgtype="5" msgcat="admin">
-      <field name="Text" required="N" />
-      <field name="EncodedTextLen" required="N" />
-      <field name="EncodedText" required="N" />
-    </message>
-    <message name="Reject" msgtype="3" msgcat="admin">
-      <field name="RefSeqNum" required="Y" />
-      <field name="RefTagID" required="N" />
-      <field name="RefMsgType" required="N" />
-      <field name="SessionRejectReason" required="N" />
-      <field name="Text" required="N" />
-      <field name="EncodedTextLen" required="N" />
-      <field name="EncodedText" required="N" />
-    </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin">
-      <field name="BeginSeqNo" required="Y" />
-      <field name="EndSeqNo" required="Y" />
-    </message>
-    <message name="SequenceReset" msgtype="4" msgcat="admin">
-      <field name="GapFillFlag" required="N" />
-      <field name="NewSeqNo" required="Y" />
-    </message>
-    <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqID" required="Y" />
     </message>
   </messages>
   <components>

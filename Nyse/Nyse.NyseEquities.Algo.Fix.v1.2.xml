@@ -168,17 +168,17 @@
     <field number="32" name="LastQty" type="QTY" />
     <field number="34" name="MsgSeqNum" type="INT" />
     <field number="35" name="MsgType" type="STRING">
-      <value enum="A" description="Logon" />
       <value enum="0" description="Heartbeat" />
       <value enum="1" description="Test Request" />
       <value enum="2" description="Resend Request" />
       <value enum="3" description="Session Layer Reject" />
       <value enum="4" description="Sequence Reset" />
       <value enum="5" description="Logout" />
-      <value enum="D" description="New Order Single" />
-      <value enum="F" description="Order Cancel Request" />
       <value enum="8" description="Execution Report" />
       <value enum="9" description="Order Cancel Reject" />
+      <value enum="A" description="Logon" />
+      <value enum="D" description="New Order Single" />
+      <value enum="F" description="Order Cancel Request" />
     </field>
     <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
@@ -204,8 +204,8 @@
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="43" name="PossDupFlag" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="44" name="Price" type="PRICE" />
     <field number="45" name="RefSeqNum" type="INT" />
@@ -238,8 +238,8 @@
     <field number="60" name="TransactTime" type="STRING" />
     <field number="65" name="SymbolSfx" type="STRING" />
     <field number="97" name="PossResend" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="98" name="EncryptMethod" type="INT" />
     <field number="102" name="CxlRejReason" type="STRING">
@@ -252,14 +252,14 @@
     <field number="103" name="OrdRejReason" type="STRING">
       <value enum="0" description="Broker / Exchange option" />
       <value enum="1" description="Unknown symbol" />
+      <value enum="11" description="Unsupported order characteristic" />
+      <value enum="13" description="Incorrect quantity" />
+      <value enum="15" description="Unknown account(s)" />
       <value enum="2" description="Exchange closed" />
       <value enum="3" description="Order Exceeds Limit" />
       <value enum="4" description="Too Late To Enter" />
       <value enum="5" description="Unknown Order" />
       <value enum="6" description="Duplicate Order (e.g" />
-      <value enum="11" description="Unsupported order characteristic" />
-      <value enum="13" description="Incorrect quantity" />
-      <value enum="15" description="Unknown account(s)" />
       <value enum="99" description="Other" />
     </field>
     <field number="108" name="HeartBtInt" type="INT" />
@@ -293,6 +293,10 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid Tag Number" />
       <value enum="1" description="Required Tag Missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
+      <value enum="14" description="Tag specified out of required order" />
+      <value enum="15" description="Repeating group fields out of order" />
       <value enum="2" description="Tag Not Defined For This Message Type" />
       <value enum="3" description="Undefined Tag" />
       <value enum="4" description="Tag specified without a value" />
@@ -300,10 +304,6 @@
       <value enum="6" description="Incorrect data format for value" />
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
-      <value enum="14" description="Tag specified out of required order" />
-      <value enum="15" description="Repeating group fields out of order" />
       <value enum="99" description="Other" />
     </field>
     <field number="386" name="NoTradingSessions" type="INT">
@@ -320,8 +320,8 @@
     <field number="528" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency" />
       <value enum="P" description="Principal" />
-      <value enum="R" description="Riskless Principal" />
       <value enum="Q" description="Error Account" />
+      <value enum="R" description="Riskless Principal" />
     </field>
     <field number="553" name="Username" type="STRING" />
     <field number="554" name="Password" type="STRING" />
@@ -329,14 +329,14 @@
     <field number="849" name="ParticipationRate" type="PRICE" />
     <field number="1409" name="SessionStatus" type="INT" />
     <field number="9303" name="RoutingInst" type="CHAR">
-      <value enum="N" description="Non Routable" />
-      <value enum="R" description="Routable" />
-      <value enum="D" description="Directed (Primary Only)" />
-      <value enum="S" description="Directed + Routable (PO+S)" />
       <value enum="1" description="Primary Market until 9:45" />
       <value enum="2" description="Primary Market after 3:55" />
       <value enum="A" description="Route to ATS" />
+      <value enum="D" description="Directed (Primary Only)" />
       <value enum="E" description="Route to Algo" />
+      <value enum="N" description="Non Routable" />
+      <value enum="R" description="Routable" />
+      <value enum="S" description="Directed + Routable (PO+S)" />
     </field>
     <field number="9448" name="IntroducingBadgeID" type="STRING" />
     <field number="20046" name="TargetStrategy" type="STRING" />

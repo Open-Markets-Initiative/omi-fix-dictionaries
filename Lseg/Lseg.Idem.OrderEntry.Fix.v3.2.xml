@@ -224,11 +224,6 @@
       <field name="OptAttribute" required="N" />
       <field name="OrderQty" required="N" />
     </message>
-    <message name="QuoteAcknowledgement" msgtype="b" msgcat="app">
-      <field name="QuoteReqID" required="N" />
-      <field name="QuoteAckStatus" required="N" />
-      <field name="QuoteRejectReason" required="N" />
-    </message>
     <message name="SecurityDefinitionRequest" msgtype="c" msgcat="app">
       <field name="SecurityReqID" required="Y" />
       <field name="SecurityRequestType" required="Y" />
@@ -245,6 +240,31 @@
         <field name="Side" required="Y" />
         <field name="OptionStyle" required="N" />
       </group>
+    </message>
+    <message name="NewOrderCross" msgtype="s" msgcat="app">
+      <field name="SecurityType" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="MaturityDay" required="N" />
+      <field name="OptAttribute" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="Price" required="Y" />
+      <group name="NoSides" required="N">
+        <field name="Side" required="Y" />
+        <field name="ClOrdID" required="Y" />
+        <field name="Account" required="Y" />
+        <field name="AccountProfile" required="N" />
+        <field name="OpenClose" required="Y" />
+        <field name="Text" required="N" />
+        <field name="Rule80A" required="Y" />
+      </group>
+    </message>
+    <message name="QuoteAcknowledgement" msgtype="b" msgcat="app">
+      <field name="QuoteReqID" required="N" />
+      <field name="QuoteAckStatus" required="N" />
+      <field name="QuoteRejectReason" required="N" />
     </message>
     <message name="SecurityDefinition" msgtype="d" msgcat="app">
       <field name="SecurityReqID" required="Y" />
@@ -277,26 +297,6 @@
       <field name="BusinessRejectRefID" required="Y" />
       <field name="BusinessRejectReason" required="Y" />
       <field name="Text" required="Y" />
-    </message>
-    <message name="NewOrderCross" msgtype="s" msgcat="app">
-      <field name="SecurityType" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="PutOrCall" required="N" />
-      <field name="StrikePrice" required="N" />
-      <field name="MaturityMonthYear" required="N" />
-      <field name="MaturityDay" required="N" />
-      <field name="OptAttribute" required="N" />
-      <field name="OrderQty" required="Y" />
-      <field name="Price" required="Y" />
-      <group name="NoSides" required="N">
-        <field name="Side" required="Y" />
-        <field name="ClOrdID" required="Y" />
-        <field name="Account" required="Y" />
-        <field name="AccountProfile" required="N" />
-        <field name="OpenClose" required="Y" />
-        <field name="Text" required="N" />
-        <field name="Rule80A" required="Y" />
-      </group>
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="OrderID" required="N" />
@@ -384,6 +384,9 @@
       <value enum="8" description="Execution Report" />
       <value enum="9" description="Order Cancel Reject" />
       <value enum="A" description="Logon" />
+      <value enum="AE" description="Trade Capture Report" />
+      <value enum="AF" description="Order Mass Status Request" />
+      <value enum="AR" description="Trade Capture Report Acknowledgment" />
       <value enum="D" description="New Order - Single" />
       <value enum="F" description="Order Cancel Request" />
       <value enum="G" description="Order Cancel/Replace Request" />
@@ -391,11 +394,8 @@
       <value enum="b" description="Quote Acknowledgement" />
       <value enum="c" description="Security Definition Request" />
       <value enum="d" description="Security Definition" />
-      <value enum="AE" description="Trade Capture Report" />
-      <value enum="AF" description="Order Mass Status Request" />
-      <value enum="AR" description="Trade Capture Report Acknowledgment" />
-      <value enum="s" description="New Order Cross" />
       <value enum="j" description="Business Reject" />
+      <value enum="s" description="New Order Cross" />
     </field>
     <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="37" name="OrderID" type="STRING" />
@@ -409,8 +409,8 @@
       <value enum="8" description="Rejected" />
       <value enum="F" description="Eliminated out of Limits" />
       <value enum="G" description="Eliminated by Circuit Breaker" />
-      <value enum="M" description="Eliminated by Market Control" />
       <value enum="I" description="Eliminated on Disconnect" />
+      <value enum="M" description="Eliminated by Market Control" />
       <value enum="U" description="Eliminated due to Unpriced Leg" />
       <value enum="Z" description="Eliminated by Self Execution Prevention (SEP)" />
     </field>
@@ -425,16 +425,16 @@
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="43" name="PossDupFlag" type="BOOLEAN">
-      <value enum="Y" description="Possible duplicate" />
       <value enum="N" description="Original transmission" />
+      <value enum="Y" description="Possible duplicate" />
     </field>
     <field number="44" name="Price" type="PRICE" />
     <field number="45" name="RefSeqNum" type="SEQNUM" />
     <field number="47" name="Rule80A" type="CHAR">
+      <value enum="C" description="Client" />
+      <value enum="F" description="House" />
       <value enum="N" description="Non-Segregated Client" />
       <value enum="P" description="Market Maker" />
-      <value enum="F" description="House" />
-      <value enum="C" description="Client" />
     </field>
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
@@ -456,8 +456,6 @@
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="All Legs are open or single security" />
-      <value enum="C" description="All Legs are closed or single security" />
       <value enum="1" description="1st Leg Open, 2nd Leg Close" />
       <value enum="2" description="1st Leg Close, 2nd Leg Open" />
       <value enum="3" description="1st Leg Open, 2nd Leg Open, 3rd Leg Close" />
@@ -468,6 +466,7 @@
       <value enum="8" description="1st Leg Close, 2nd Leg Close, 3rd Leg Open" />
       <value enum="A" description="1st Leg Open, 2nd Leg Open, 3rd Leg Open, 4th Leg Close" />
       <value enum="B" description="1st Leg Open, 2nd Leg Open, 3rd Leg Close, 4th Leg Open" />
+      <value enum="C" description="All Legs are closed or single security" />
       <value enum="D" description="1st Leg Open, 2nd Leg Open, 3rd Leg Close, 4th Leg Close" />
       <value enum="E" description="1st Leg Open, 2nd Leg Close, 3rd Leg Open, 4th Leg Open" />
       <value enum="F" description="1st Leg Open, 2nd Leg Close, 3rd Leg Open, 4th Leg Close" />
@@ -479,12 +478,13 @@
       <value enum="L" description="1st Leg Close, 2nd Leg Open, 3rd Leg Close, 4th Leg Close" />
       <value enum="M" description="1st Leg Close, 2nd Leg Close, 3rd Leg Open, 4th Leg Open" />
       <value enum="N" description="1st Leg Close, 2nd Leg Close, 3rd Leg Open, 4th Leg Close" />
+      <value enum="O" description="All Legs are open or single security" />
       <value enum="P" description="1st Leg Close, 2nd Leg Close, 3rd Leg Close, 4th Leg Open" />
     </field>
     <field number="84" name="CxlQty" type="QTY" />
     <field number="97" name="PossResend" type="BOOLEAN">
-      <value enum="Y" description="Possible resend" />
       <value enum="N" description="Original transmission" />
+      <value enum="Y" description="Possible resend" />
     </field>
     <field number="98" name="EncryptMethod" type="INT">
       <value enum="0" description="None" />
@@ -507,13 +507,13 @@
     <field number="112" name="TestReqID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="123" name="GapFillFlag" type="BOOLEAN">
-      <value enum="Y" description="Gap Fill message, MsgSeqNum field valid" />
       <value enum="N" description="Sequence Reset, ignore MsgSeqNum" />
+      <value enum="Y" description="Gap Fill message, MsgSeqNum field valid" />
     </field>
     <field number="131" name="QuoteReqID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN">
-      <value enum="Y" description="Yes, reset sequence numbers" />
       <value enum="N" description="No" />
+      <value enum="Y" description="Yes, reset sequence numbers" />
     </field>
     <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
     <field number="150" name="ExecType" type="CHAR">
@@ -527,8 +527,8 @@
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="167" name="SecurityType" type="STRING">
-      <value enum="OPT" description="Option" />
       <value enum="FUT" description="Future" />
+      <value enum="OPT" description="Option" />
       <value enum="STR" description="Strategy" />
     </field>
     <field number="200" name="MaturityMonthYear" type="MONTHYEAR" />
@@ -548,47 +548,64 @@
     </field>
     <field number="300" name="QuoteRejectReason" type="INT">
       <value enum="1" description="User Identification is not correct" />
-      <value enum="2" description="Protocol Version is not supported" />
-      <value enum="3" description="Message Type is not supported" />
-      <value enum="4" description="Session ID is not active" />
-      <value enum="6" description="Message Type requested is not supported" />
-      <value enum="8" description="Message is too short" />
-      <value enum="9" description="Message is too long" />
       <value enum="10" description="Message contains Binary Data" />
-      <value enum="11" description="No Heartbeat Activity: Disconnection" />
-      <value enum="12" description="Message Type is Out Of Context" />
-      <value enum="13" description="User ID has been deactivated: Disconnection" />
-      <value enum="14" description="Syntax Error + &lt;detailed text&gt;" />
-      <value enum="15" description="Field value is too small" />
-      <value enum="16" description="Field value is too big" />
       <value enum="100" description="Firm is Forbidden to trade on this Group" />
+      <value enum="1000" description="Cross orders forbidden in Pre-opening phase." />
+      <value enum="1001" description="Instrument does not exist" />
+      <value enum="1002" description="Group ID does not exist" />
+      <value enum="1003" description="Trader ID is invalid" />
+      <value enum="1004" description="Message Type is forbidden for current Instrument state" />
+      <value enum="1007" description="Participant must use A4 protocol version" />
+      <value enum="1008" description="RFQ currently underway for this instrument" />
+      <value enum="1009" description="Action not allowed under current configuration" />
       <value enum="101" description="Duration Type is Forbidden for current Group state" />
+      <value enum="1010" description="Number of entries is invalid" />
       <value enum="102" description="Verb field (Side) cannot be modified" />
       <value enum="103" description="Order is not active" />
       <value enum="104" description="Price Type is forbidden for this instrument" />
       <value enum="105" description="Price Term is Forbidden for current Instrument state" />
       <value enum="108" description="Duration Type is Forbidden for current Instrument state" />
       <value enum="109" description="Order cannot be processed: No opposite limit" />
+      <value enum="11" description="No Heartbeat Activity: Disconnection" />
       <value enum="110" description="Price does not represent a valid tick increment for this Instrument" />
+      <value enum="1107" description="Firm or trader had been disabled" />
+      <value enum="1108" description="Instrument mandatory when using MM Monitoring mode forced" />
+      <value enum="1109" description="Market maker has no obligation for this group" />
       <value enum="111" description="Duration Type is invalid for this Price Type" />
+      <value enum="1110" description="Participant not authorized for this Group (for message 35 = 8)" />
+      <value enum="1111" description="Participant not authorized for this Account Type (for message 35 = 8)" />
       <value enum="112" description="Cross Order price must be within the Instrument trading limits" />
       <value enum="113" description="Cross Order price is outside bid/ask price spread" />
       <value enum="114" description="Opposite firm must be filled for committed order" />
       <value enum="116" description="Cross order is not allowed" />
       <value enum="117" description="Cross order quantity is outside limits" />
       <value enum="118" description="Duration Type Is Invalid For This Price Term" />
+      <value enum="12" description="Message Type is Out Of Context" />
+      <value enum="13" description="User ID has been deactivated: Disconnection" />
+      <value enum="14" description="Syntax Error + &lt;detailed text&gt;" />
+      <value enum="15" description="Field value is too small" />
+      <value enum="16" description="Field value is too big" />
+      <value enum="2" description="Protocol Version is not supported" />
+      <value enum="2000" description="Technical error; function not performed. Contact Technical Help Desk." />
+      <value enum="2001" description="Gateway State forbids this command. Contact Technical Help Desk." />
+      <value enum="2002" description="Function only partially performed. Contact Technical Help Desk." />
       <value enum="201" description="GTD date must be equal to or greater than current day" />
       <value enum="202" description="GTD date must be equal to or less than Instrument expiration date" />
       <value enum="203" description="GTD date must be filled only if Duration Type is equal to GTD" />
+      <value enum="3" description="Message Type is not supported" />
       <value enum="300" description="Quantity Term is Forbidden for current Instrument state" />
+      <value enum="3017" description="Open Close Missing Invalid" />
       <value enum="302" description="Quantity must be less than or equal to Maximum Improvement Quantity" />
       <value enum="303" description="Quantity Term is not authorized for this Order Type" />
       <value enum="304" description="Additional Quantity must be less than Order Quantity" />
+      <value enum="3041" description="Unknown Clearing Operation Mode" />
+      <value enum="3042" description="Invalid Price Type" />
       <value enum="305" description="Additional Quantity is too small" />
       <value enum="306" description="Minimum quantity cannot be modified" />
       <value enum="307" description="Quantity Term is forbidden for Duration Type" />
       <value enum="308" description="Order quantity is outside the instrument quantity threshold" />
       <value enum="309" description="Quantities must be multiples of lot size" />
+      <value enum="4" description="Session ID is not active" />
       <value enum="402" description="Trader ID field cannot be modified" />
       <value enum="403" description="Market Maker not authorized for Group" />
       <value enum="500" description="Order price is outside the instrument price threshold" />
@@ -604,6 +621,7 @@
       <value enum="510" description="Order cannot be modified" />
       <value enum="511" description="Order price is outside circuit breaker limits" />
       <value enum="512" description="Price Term Invalid For Price Type" />
+      <value enum="6" description="Message Type requested is not supported" />
       <value enum="700" description="Only one quote per Instrument and per Side is accepted" />
       <value enum="701" description="Quote is not present in the Instrument Book" />
       <value enum="702" description="Market Maker Protection in progress; Quote not processed." />
@@ -614,26 +632,8 @@
       <value enum="708" description="Trader ID has no quote for this Group" />
       <value enum="709" description="All the Instruments must belong to the same Group" />
       <value enum="710" description="Clearing Data has not been initialized" />
-      <value enum="1000" description="Cross orders forbidden in Pre-opening phase." />
-      <value enum="1001" description="Instrument does not exist" />
-      <value enum="1002" description="Group ID does not exist" />
-      <value enum="1003" description="Trader ID is invalid" />
-      <value enum="1004" description="Message Type is forbidden for current Instrument state" />
-      <value enum="1007" description="Participant must use A4 protocol version" />
-      <value enum="1008" description="RFQ currently underway for this instrument" />
-      <value enum="1009" description="Action not allowed under current configuration" />
-      <value enum="1010" description="Number of entries is invalid" />
-      <value enum="1107" description="Firm or trader had been disabled" />
-      <value enum="1108" description="Instrument mandatory when using MM Monitoring mode forced" />
-      <value enum="1109" description="Market maker has no obligation for this group" />
-      <value enum="1110" description="Participant not authorized for this Group (for message 35 = 8)" />
-      <value enum="1111" description="Participant not authorized for this Account Type (for message 35 = 8)" />
-      <value enum="2000" description="Technical error; function not performed. Contact Technical Help Desk." />
-      <value enum="2001" description="Gateway State forbids this command. Contact Technical Help Desk." />
-      <value enum="2002" description="Function only partially performed. Contact Technical Help Desk." />
-      <value enum="3017" description="Open Close Missing Invalid" />
-      <value enum="3041" description="Unknown Clearing Operation Mode" />
-      <value enum="3042" description="Invalid Price Type" />
+      <value enum="8" description="Message is too short" />
+      <value enum="9" description="Message is too long" />
       <value enum="9017" description="Invalid number of legs" />
       <value enum="9018" description="Invalid leg information" />
       <value enum="9019" description="Unknown strategy type" />
@@ -657,8 +657,8 @@
       <value enum="9037" description="Proposal creation quotas has been reached for the Firm" />
     </field>
     <field number="310" name="UnderlyingSecurityType" type="STRING">
-      <value enum="OPT" description="Option" />
       <value enum="FUT" description="Future" />
+      <value enum="OPT" description="Option" />
     </field>
     <field number="311" name="UnderlyingSymbol" type="STRING" />
     <field number="313" name="UnderlyingMaturityMonthYear" type="MONTHYEAR" />
@@ -713,10 +713,10 @@
     <field number="571" name="TradeReportID" type="STRING" />
     <field number="577" name="ClearingInstruction" type="INT" />
     <field number="581" name="CaptRptAccountType" type="CHAR">
+      <value enum="C" description="Client" />
+      <value enum="F" description="House" />
       <value enum="N" description="Non-Segregated Client" />
       <value enum="P" description="Market Maker" />
-      <value enum="F" description="House" />
-      <value enum="C" description="Client" />
     </field>
     <field number="584" name="MassStatusReqID" type="STRING" />
     <field number="585" name="MassStatusReqType" type="INT">
@@ -724,8 +724,8 @@
     </field>
     <field number="600" name="LegSymbol" type="STRING" />
     <field number="609" name="LegSecurityType" type="STRING">
-      <value enum="OPT" description="Option" />
       <value enum="FUT" description="Future" />
+      <value enum="OPT" description="Option" />
     </field>
     <field number="610" name="LegMaturityMonthYear" type="MONTHYEAR" />
     <field number="612" name="LegStrikePrice" type="PRICE" />
@@ -736,8 +736,8 @@
     </field>
     <field number="687" name="LegQty" type="QTY" />
     <field number="852" name="PublishTrdIndicator" type="STRING">
-      <value enum="Y" description="Published" />
       <value enum="N" description="Unpublished" />
+      <value enum="Y" description="Published" />
     </field>
     <field number="856" name="TradeReportType" type="INT">
       <value enum="2" description="Accept" />
@@ -751,12 +751,12 @@
     </field>
     <field number="1358" name="LegPutOrCall" type="INT" />
     <field number="5255" name="StopPxCondition" type="CHAR">
-      <value enum="S" description="Regular Stop (optional: default value used if none provided)" />
-      <value enum="T" description="If Touched" />
       <value enum="E" description="Stop On Bid" />
       <value enum="F" description="If Bid Touched" />
-      <value enum="I" description="Stop On Ask" />
       <value enum="H" description="If Ask Touched" />
+      <value enum="I" description="Stop On Ask" />
+      <value enum="S" description="Regular Stop (optional: default value used if none provided)" />
+      <value enum="T" description="If Touched" />
     </field>
     <field number="8001" name="AccountProfile" type="CHAR">
       <value enum="H" description="Hedger" />
@@ -764,13 +764,13 @@
     </field>
     <field number="9433" name="TextExecutionReport" type="STRING" />
     <field number="9459" name="SpecialTradeInd" type="CHAR">
-      <value enum="A" description="AsOfTrade" />
-      <value enum="L" description="LateTrade" />
       <value enum="1" description="ExchangeGranted1" />
+      <value enum="A" description="AsOfTrade" />
       <value enum="B" description="BlockTrade" />
-      <value enum="K" description="CommittedBlock" />
-      <value enum="T" description="Committed" />
       <value enum="D" description="Cross" />
+      <value enum="K" description="CommittedBlock" />
+      <value enum="L" description="LateTrade" />
+      <value enum="T" description="Committed" />
     </field>
     <field number="10455" name="SecurityAltID" type="STRING" />
     <field number="16453" name="ProposalType" type="CHAR">

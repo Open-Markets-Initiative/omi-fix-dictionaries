@@ -301,8 +301,8 @@
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
     </field>
     <field number="97" name="PossResend" type="BOOLEAN" />
     <field number="98" name="EncryptMethod" type="INT" />
@@ -361,8 +361,8 @@
     <field number="1003" name="TradeID" type="STRING" />
     <field number="1004" name="ComplexTradeID" type="STRING" />
     <field number="1028" name="ManualOrderIndicator" type="BOOLEAN">
-      <value enum="Y" description="Manual" />
       <value enum="N" description="Automated" />
+      <value enum="Y" description="Manual" />
     </field>
     <field number="1031" name="CustOrderHandlingInst" type="STRING" />
     <field number="1598" name="SideClearingTradePriceType" type="INT" />
@@ -383,10 +383,10 @@
     <field number="9730" name="TradeLiquidityIndicator" type="CHAR" />
     <field number="9749" name="ProductGroupCode" type="STRING" />
     <field number="9750" name="ProductType" type="CHAR">
+      <value enum="B" description="Butterfly Spread" />
+      <value enum="E" description="Equity Calendar Spread" />
       <value enum="O" description="Outright" />
       <value enum="S" description="Standard Calendar Spread" />
-      <value enum="E" description="Equity Calendar Spread" />
-      <value enum="B" description="Butterfly Spread" />
     </field>
     <field number="9751" name="SpreadType" type="STRING" />
   </fields>

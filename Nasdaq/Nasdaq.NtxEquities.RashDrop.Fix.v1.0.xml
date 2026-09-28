@@ -161,9 +161,9 @@
       <value enum="4" description="Fill or Kill" />
       <value enum="5" description="Good Till Crossing" />
       <value enum="7" description="At the Close" />
-      <value enum="R" description="Re-routed every 4 minutes" />
       <value enum="C" description="Market Hours Good Till Cancel" />
       <value enum="M" description="System Hours Good Till Cancel" />
+      <value enum="R" description="Re-routed every 4 minutes" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
@@ -194,51 +194,51 @@
     <field number="382" name="NoContraBrokers" type="STRING" />
     <field number="851" name="LastLiquidityInd" type="INT" />
     <field number="9140" name="DisplayInst" type="CHAR">
-      <value enum="Y" description="Anonymous Price to Comply" />
-      <value enum="N" description="Non-Displayed" />
       <value enum="A" description="Attributable Price to Display" />
       <value enum="I" description="Imbalance Only" />
+      <value enum="L" description="Post-Only and Attributable Price to Display" />
+      <value enum="N" description="Non-Displayed" />
       <value enum="P" description="Post-Only" />
       <value enum="W" description="Mid-Point Peg Post-Only" />
-      <value enum="L" description="Post-Only and Attributable Price to Display" />
+      <value enum="Y" description="Anonymous Price to Comply" />
     </field>
     <field number="9882" name="LiquidityFlag" type="CHAR">
-      <value enum="A" description="Added" />
-      <value enum="R" description="Removed" />
-      <value enum="X" description="Routed" />
-      <value enum="D" description="DOT" />
-      <value enum="F" description="Opening Trade on NYSE" />
-      <value enum="G" description="On-Close Order on NYSE" />
-      <value enum="O" description="Opening Cross" />
-      <value enum="M" description="Opening Cross Imbalance-Only" />
-      <value enum="C" description="Closing Cross" />
-      <value enum="L" description="Closing Cross Imbalance-Only" />
-      <value enum="H" description="Halt or IPO Cross" />
-      <value enum="J" description="Non-displayed Adding Liquidity" />
-      <value enum="Y" description="Re-routed to NYSE" />
-      <value enum="S" description="Odd Lot Execution on NYSE" />
-      <value enum="U" description="Added Liquidity on NYSE" />
-      <value enum="B" description="Routed to BX" />
-      <value enum="E" description="NYSE Other" />
-      <value enum="P" description="Routed to PSX" />
-      <value enum="T" description="Opening Trade on ARCA" />
-      <value enum="Z" description="On-Close Order on ARCA" />
-      <value enum="W" description="Added Post-Only" />
-      <value enum="m" description="Removed Liquidity at a Midpoint" />
-      <value enum="k" description="Added Liquidity via Midpoint Order" />
       <value enum="0" description="Supplemental Order Execution" />
-      <value enum="7" description="Displayed Liquidity-Adding Order Improves NBBO" />
-      <value enum="8" description="Displayed Liquidity-Adding Order Sets QBBO Joining NBBO" />
-      <value enum="d" description="Retail Designated Execution Removed Liquidity" />
-      <value enum="e" description="Retail Designated Execution Added Displayed Liquidity" />
-      <value enum="f" description="Retail Designated Execution Added Non-Displayed Liquidity" />
-      <value enum="j" description="RPI Order Provides Liquidity" />
-      <value enum="r" description="Retail Order Removes RPI Liquidity" />
-      <value enum="t" description="Retail Order Removes Price-Improving Non-Displayed Liquidity Other Than RPI" />
       <value enum="4" description="Added Displayed Liquidity in Select Symbol" />
       <value enum="5" description="Added Non-Displayed Liquidity in Select Symbol" />
       <value enum="6" description="Liquidity Removing Order in Select Symbol" />
+      <value enum="7" description="Displayed Liquidity-Adding Order Improves NBBO" />
+      <value enum="8" description="Displayed Liquidity-Adding Order Sets QBBO Joining NBBO" />
+      <value enum="A" description="Added" />
+      <value enum="B" description="Routed to BX" />
+      <value enum="C" description="Closing Cross" />
+      <value enum="D" description="DOT" />
+      <value enum="E" description="NYSE Other" />
+      <value enum="F" description="Opening Trade on NYSE" />
+      <value enum="G" description="On-Close Order on NYSE" />
+      <value enum="H" description="Halt or IPO Cross" />
+      <value enum="J" description="Non-displayed Adding Liquidity" />
+      <value enum="L" description="Closing Cross Imbalance-Only" />
+      <value enum="M" description="Opening Cross Imbalance-Only" />
+      <value enum="O" description="Opening Cross" />
+      <value enum="P" description="Routed to PSX" />
+      <value enum="R" description="Removed" />
+      <value enum="S" description="Odd Lot Execution on NYSE" />
+      <value enum="T" description="Opening Trade on ARCA" />
+      <value enum="U" description="Added Liquidity on NYSE" />
+      <value enum="W" description="Added Post-Only" />
+      <value enum="X" description="Routed" />
+      <value enum="Y" description="Re-routed to NYSE" />
+      <value enum="Z" description="On-Close Order on ARCA" />
+      <value enum="d" description="Retail Designated Execution Removed Liquidity" />
+      <value enum="e" description="Retail Designated Execution Added Displayed Liquidity" />
+      <value enum="f" description="Retail Designated Execution Added Non-Displayed Liquidity" />
       <value enum="g" description="Added Non-Displayed Midpoint Liquidity in Select Symbol" />
+      <value enum="j" description="RPI Order Provides Liquidity" />
+      <value enum="k" description="Added Liquidity via Midpoint Order" />
+      <value enum="m" description="Removed Liquidity at a Midpoint" />
+      <value enum="r" description="Retail Order Removes RPI Liquidity" />
+      <value enum="t" description="Retail Order Removes Price-Improving Non-Displayed Liquidity Other Than RPI" />
     </field>
     <field number="20006" name="CustomerType" type="CHAR">
       <value enum="R" description="Retail Designated Order" />

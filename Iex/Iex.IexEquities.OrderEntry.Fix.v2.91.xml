@@ -211,19 +211,19 @@
     <field number="16" name="EndSeqNo" type="SEQNUM" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLECHARVALUE">
+      <value enum="1" description="Automated execution order private no broker intervention" />
+      <value enum="M" description="Midpoint peg" />
+      <value enum="P" description="Market peg" />
+      <value enum="Q" description="Market maker peg" />
+      <value enum="R" description="Primary peg" />
       <value enum="d" description="Discretionary peg" />
       <value enum="f" description="ISO" />
       <value enum="i" description="Iex only" />
       <value enum="j" description="Discretionary limit" />
-      <value enum="M" description="Midpoint peg" />
       <value enum="o" description="Offset peg" />
-      <value enum="P" description="Market peg" />
-      <value enum="Q" description="Market maker peg" />
-      <value enum="R" description="Primary peg" />
       <value enum="u" description="ROUTER" />
       <value enum="y" description="Trade at iso" />
       <value enum="z" description="Corporate d peg" />
-      <value enum="1" description="Automated execution order private no broker intervention" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
@@ -233,22 +233,22 @@
     </field>
     <field number="21" name="HandlInst" type="CHAR" />
     <field number="30" name="LastMkt" type="EXCHANGE">
-      <value enum="IEXG" description="Investors exchange" />
-      <value enum="XNYS" description="New york stock exchange" />
       <value enum="ARCX" description="Nyse arca" />
-      <value enum="XASE" description="Nyse american" />
-      <value enum="XCHI" description="Nyse chicago" />
-      <value enum="XCIS" description="Nyse national" />
       <value enum="BATS" description="Cboe bzx exchange" />
       <value enum="BATY" description="Cboe byx exchange" />
       <value enum="EDGA" description="Cboe edga exchange" />
       <value enum="EDGX" description="Cboe edgx exchange" />
-      <value enum="XNGS" description="Nasdaq stock exchange" />
-      <value enum="XBOS" description="Nasdaq bx" />
-      <value enum="XPHL" description="Nasdaq psx" />
+      <value enum="EPRL" description="Miax pearl equities" />
+      <value enum="IEXG" description="Investors exchange" />
       <value enum="LTSE" description="Long term stock exchange" />
       <value enum="MEMX" description="Memx llc" />
-      <value enum="EPRL" description="Miax pearl equities" />
+      <value enum="XASE" description="Nyse american" />
+      <value enum="XBOS" description="Nasdaq bx" />
+      <value enum="XCHI" description="Nyse chicago" />
+      <value enum="XCIS" description="Nyse national" />
+      <value enum="XNGS" description="Nasdaq stock exchange" />
+      <value enum="XNYS" description="New york stock exchange" />
+      <value enum="XPHL" description="Nasdaq psx" />
     </field>
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastShares" type="QTY" />
@@ -331,8 +331,8 @@
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="123" name="GapFillFlag" type="BOOLEAN">
-      <value enum="Y" description="Gap fill message" />
       <value enum="N" description="Sequence reset" />
+      <value enum="Y" description="Gap fill message" />
     </field>
     <field number="126" name="ExpireTime" type="UTCTIMESTAMP" />
     <field number="128" name="DeliverToCompID" type="STRING" />
@@ -354,6 +354,8 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
+      <value enum="10" description="Sendingtime accuracy problem" />
+      <value enum="11" description="Invalid msgtype" />
       <value enum="2" description="Tag not defined for this message type" />
       <value enum="3" description="Undefined tag" />
       <value enum="4" description="Tag specified without a value" />
@@ -362,8 +364,6 @@
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
       <value enum="9" description="Compid problem" />
-      <value enum="10" description="Sendingtime accuracy problem" />
-      <value enum="11" description="Invalid msgtype" />
     </field>
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="378" name="ExecRestatementReason" type="INT">
@@ -390,9 +390,9 @@
       <value enum="T" description="Retail liquidity provider" />
     </field>
     <field number="9500" name="MinQtyInstruction" type="CHAR">
+      <value enum="A" description="Minimum execution size with aon remaining" />
       <value enum="C" description="COMPOSITE" />
       <value enum="M" description="Minimum execution size with cancel remaining" />
-      <value enum="A" description="Minimum execution size with aon remaining" />
     </field>
     <field number="9690" name="EffectiveLimitPrice" type="PRICE" />
     <field number="9730" name="TradeLiquidityIndicator" type="STRING" />

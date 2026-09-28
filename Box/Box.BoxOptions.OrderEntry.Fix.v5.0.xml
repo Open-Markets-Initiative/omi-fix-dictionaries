@@ -471,8 +471,8 @@
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="76" name="ExecBroker" type="STRING" />
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
     </field>
     <field number="97" name="PossResend" type="BOOLEAN" />
     <field number="98" name="EncryptMethod" type="INT" />
@@ -527,8 +527,8 @@
     <field number="527" name="SecondaryExecId" type="STRING" />
     <field number="555" name="NoLegs" type="NUMINGROUP" />
     <field number="564" name="LegPositionEffect" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
     </field>
     <field number="584" name="MassStatusReqID" type="STRING" />
     <field number="585" name="MassStatusReqType" type="INT" />

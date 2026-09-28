@@ -76,13 +76,6 @@
       <field name="RefMsgType" required="Y" />
       <field name="SessionRejectReason" required="N" />
     </message>
-    <message name="BusinessMessageReject" msgtype="j" msgcat="admin">
-      <field name="RefSeqNum" required="N" />
-      <field name="Text" required="N" />
-      <field name="RefMsgType" required="Y" />
-      <field name="BusinessRejectRefID" required="N" />
-      <field name="BusinessRejectReason" required="Y" />
-    </message>
     <message name="MarketDataRequest" msgtype="V" msgcat="app">
       <field name="MDReqID" required="Y" />
       <field name="SubscriptionRequestType" required="Y" />
@@ -111,6 +104,19 @@
       <group name="NoMDEntryTypes" required="N">
         <field name="MDEntryType" required="Y" />
       </group>
+    </message>
+    <message name="SecurityListRequest" msgtype="x" msgcat="app">
+      <field name="SecurityReqID" required="Y" />
+      <field name="TradingSessionID" required="N" />
+      <field name="SecurityListRequestType" required="Y" />
+      <field name="Symbol" required="N" />
+    </message>
+    <message name="BusinessMessageReject" msgtype="j" msgcat="admin">
+      <field name="RefSeqNum" required="N" />
+      <field name="Text" required="N" />
+      <field name="RefMsgType" required="Y" />
+      <field name="BusinessRejectRefID" required="N" />
+      <field name="BusinessRejectReason" required="Y" />
     </message>
     <message name="MarketDataSnapshotFullRefresh" msgtype="W" msgcat="app">
       <field name="SecurityIDSource" required="Y" />
@@ -161,12 +167,6 @@
         <field name="SecurityType" required="N" />
         <field name="SecurityGroup" required="N" />
       </group>
-    </message>
-    <message name="SecurityListRequest" msgtype="x" msgcat="app">
-      <field name="SecurityReqID" required="Y" />
-      <field name="TradingSessionID" required="N" />
-      <field name="SecurityListRequestType" required="Y" />
-      <field name="Symbol" required="N" />
     </message>
     <message name="SecurityList" msgtype="y" msgcat="app">
       <group name="NoRelatedSym" required="Y">
@@ -271,30 +271,30 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid Tag Number" />
       <value enum="1" description="Required Tag Missing" />
-      <value enum="2" description="Tag Not Defined for This Message Type" />
-      <value enum="3" description="Undefined Tag" />
-      <value enum="4" description="Tag Specified Without Value" />
-      <value enum="5" description="Value Is Incorrect" />
-      <value enum="6" description="Incorrect Data Format for Value" />
-      <value enum="9" description="CompID Problem" />
       <value enum="10" description="SendingTime Accuracy Problem" />
       <value enum="11" description="Invalid MsgType" />
       <value enum="13" description="Tag Appears More Than Once" />
       <value enum="14" description="Tag Specified Out of Required Order" />
       <value enum="15" description="Repeating Group Fields Out of Order" />
       <value enum="16" description="Incorrect NumInGroup Count" />
+      <value enum="2" description="Tag Not Defined for This Message Type" />
+      <value enum="3" description="Undefined Tag" />
+      <value enum="4" description="Tag Specified Without Value" />
+      <value enum="5" description="Value Is Incorrect" />
+      <value enum="6" description="Incorrect Data Format for Value" />
+      <value enum="9" description="CompID Problem" />
       <value enum="99" description="Other" />
     </field>
     <field number="379" name="BusinessRejectRefID" type="STRING" />
     <field number="380" name="BusinessRejectReason" type="INT">
       <value enum="0" description="Other" />
       <value enum="1" description="Unknown ID" />
+      <value enum="18" description="Invalid Price Increment" />
       <value enum="2" description="Unknown Security" />
       <value enum="3" description="Unsupported Message Type" />
       <value enum="4" description="Application Not Available" />
       <value enum="5" description="Conditionally Required Field Missing" />
       <value enum="6" description="Not Authorized" />
-      <value enum="18" description="Invalid Price Increment" />
     </field>
     <field number="460" name="Product" type="INT">
       <value enum="14" description="Energy" />

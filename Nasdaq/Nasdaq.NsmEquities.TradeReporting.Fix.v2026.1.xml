@@ -172,8 +172,8 @@
     <field number="37" name="OrderID" type="STRING" />
     <field number="39" name="OrdStatus" type="CHAR" />
     <field number="43" name="PossDupFlag" type="STRING">
-      <value enum="Y" description="Possible duplicate" />
       <value enum="N" description="Original transmission" />
+      <value enum="Y" description="Possible duplicate" />
     </field>
     <field number="45" name="RefSeqNum" type="SEQNUM" />
     <field number="49" name="SenderCompID" type="STRING" />
@@ -192,19 +192,19 @@
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
     <field number="81" name="ProcessCode" type="STRING">
       <value enum="0" description="regular (default)" />
+      <value enum="2" description="FINRA Step-in trade***" />
       <value enum="3" description="FINRA Step-out trade***" />
-      <value enum="Q" description="Nasdaq Step-Out" />
       <value enum="7" description="Special trade" />
       <value enum="8" description="Special and Step-out trade***" />
-      <value enum="F" description="Nasdaq Sales Fee Transfer" />
-      <value enum="2" description="FINRA Step-in trade***" />
       <value enum="A" description="FINRA Special and step-in trade***" />
       <value enum="B" description="FINRA Step-out trade with fees***" />
       <value enum="C" description="FINRA Special and Step-out trade with fees***" />
       <value enum="D" description="FINRA Position Transfer" />
+      <value enum="F" description="Nasdaq Sales Fee Transfer" />
       <value enum="M" description="Clearing Only/Non Regulatory*" />
       <value enum="N" description="Special and Clearing Only/Non Regulatory*" />
       <value enum="O" description="Clearing Copy**" />
+      <value enum="Q" description="Nasdaq Step-Out" />
     </field>
     <field number="90" name="SecureDataLen" type="STRING" />
     <field number="91" name="SecureData" type="STRING" />
@@ -213,9 +213,9 @@
     <field number="97" name="PossResend" type="BOOLEAN" />
     <field number="98" name="EncryptMethod" type="INT" />
     <field number="107" name="SecurityDesc" type="STRING">
+      <value enum="C" description="CQS" />
       <value enum="N" description="Nasdaq Global Select or Nasdaq Global" />
       <value enum="R" description="Nasdaq Capital Market" />
-      <value enum="C" description="CQS" />
     </field>
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="109" name="ClientID" type="STRING" />
@@ -231,22 +231,24 @@
     </field>
     <field number="277" name="TradeCondition" type="STRING">
       <value enum="0" description="regular (1 Day Settlement) (effective 5/28/24)" />
-      <value enum="C" description="Cash (Same Day)" />
-      <value enum="L" description="Seller's Option Trade Through Exempt Modifier (Byte 2)" />
+      <value enum="19" description="Error Correction" />
       <value enum="2" description="FINRA Self Help Indicator" />
+      <value enum="20" description="Print Protection Extended Hours &amp; Late Modifier (Byte 3)" />
       <value enum="3" description="Intermarket Sweep Outbound" />
       <value enum="4" description="Derivatively Priced" />
       <value enum="6" description="Intermarket Sweep Inbound" />
       <value enum="7" description="Qualified Contingent Trade" />
       <value enum="8" description="FINRA Subpenny Indicator" />
-      <value enum="19" description="Error Correction" />
-      <value enum="20" description="Print Protection Extended Hours &amp; Late Modifier (Byte 3)" />
+      <value enum="C" description="Cash (Same Day)" />
+      <value enum="L" description="Seller's Option Trade Through Exempt Modifier (Byte 2)" />
     </field>
     <field number="371" name="RefTagId" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
       <value enum="2" description="Tag not defined for this message type" />
       <value enum="3" description="Undefined Tag" />
       <value enum="4" description="Tag specified without a value" />
@@ -255,8 +257,6 @@
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
       <value enum="9" description="CompID problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
     </field>
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="423" name="PriceType" type="STRING">
@@ -265,13 +265,13 @@
     </field>
     <field number="440" name="ClearingAccount" type="STRING" />
     <field number="452" name="PartyRole" type="INT">
-      <value enum="7" description="executing firm" />
       <value enum="17" description="contra firm" />
+      <value enum="7" description="executing firm" />
     </field>
     <field number="527" name="SecondaryExecId" type="STRING" />
     <field number="528" name="OrderCapacity" type="CHAR">
-      <value enum="P" description="principal" />
       <value enum="A" description="agent" />
+      <value enum="P" description="principal" />
       <value enum="R" description="Riskless Principal" />
     </field>
     <field number="571" name="TradeReportID" type="STRING" />
@@ -280,35 +280,35 @@
       <value enum="0" description="FINRA clear*" />
       <value enum="10" description="FINRA AGU Lock-in*" />
       <value enum="11" description="QSR clear*" />
-      <value enum="97" description="no clear" />
-      <value enum="98" description="QSR no clear*" />
       <value enum="92" description="Nasdaq QSR for clearing*" />
       <value enum="93" description="Nasdaq AGU for clearing*" />
       <value enum="94" description="AGU Clearing, non-risk eligible" />
       <value enum="95" description="No Clear, Risk Update only*" />
+      <value enum="97" description="no clear" />
+      <value enum="98" description="QSR no clear*" />
       <value enum="99" description="ext" />
     </field>
     <field number="700" name="ReversalIndicator" type="STRING">
+      <value enum="K" description="reversal reported through ACT" />
       <value enum="N" description="Not a reversal (default)" />
       <value enum="Y" description="reversal reported through ACT" />
-      <value enum="K" description="reversal reported through ACT" />
     </field>
     <field number="829" name="TrdSubType" type="STRING">
       <value enum="0" description="No Trade Through Exemption" />
       <value enum="1" description="Trade Through Exemption" />
     </field>
     <field number="852" name="PublishTrdIndicator" type="STRING">
-      <value enum="Y" description="Report to Tape (default)" />
-      <value enum="N" description="Do Not Report to Tape If tag" />
       <value enum="277" description="16, 17, or 18, then tag 852 must = N" />
       <value enum="452" description="17) are required to have" />
+      <value enum="N" description="Do Not Report to Tape If tag" />
+      <value enum="Y" description="Report to Tape (default)" />
     </field>
     <field number="853" name="ShortSaleReason" type="STRING">
       <value enum="0" description="Dealer Sold Short" />
-      <value enum="2" description="Selling Customer Sold Short" />
-      <value enum="4" description="Contra Side Sold Short" />
       <value enum="1" description="Dealer Sold Short Exempt" />
+      <value enum="2" description="Selling Customer Sold Short" />
       <value enum="3" description="Selling Customer Sold Short Exempt" />
+      <value enum="4" description="Contra Side Sold Short" />
     </field>
     <field number="855" name="SecondaryTrdType" type="STRING" />
     <field number="856" name="TradeReportType" type="STRING">
@@ -324,12 +324,12 @@
       <value enum="95" description="Locked-in trades from other Nasdaq systems or QSR trades" />
       <value enum="97" description="Trades entered for Ticker only (no clearing only)" />
       <value enum="98" description="Unanswered (executing party entry)" />
-      <value enum="Y" description="As-of (T+1 to T+n)" />
       <value enum="N" description="Original (T-day entry)" />
+      <value enum="Y" description="As-of (T+1 to T+n)" />
     </field>
     <field number="5080" name="AsOfIndicator" type="STRING">
-      <value enum="Y" description="As-of (T+1 to T+n)" />
       <value enum="N" description="Original (T-day entry)" />
+      <value enum="Y" description="As-of (T+1 to T+n)" />
     </field>
     <field number="5149" name="Memo" type="STRING" />
     <field number="9277" name="RelatedMarketCenter" type="STRING">
@@ -383,14 +383,14 @@
       <value enum="L" description="Auto-locked trade" />
     </field>
     <field number="9854" name="OverrideFlag" type="STRING">
-      <value enum="Y" description="Override" />
       <value enum="N" description="No override" />
+      <value enum="Y" description="Override" />
     </field>
     <field number="9856" name="BreakIndicator" type="STRING">
       <value enum="B" description="only buyer has broken" />
+      <value enum="L" description="broken through market center" />
       <value enum="S" description="only seller has broken" />
       <value enum="X" description="both buyer and seller have broken" />
-      <value enum="L" description="broken through market center" />
     </field>
     <field number="9857" name="LockedIn" type="STRING">
       <value enum="A" description="locked-in by acceptance, else sell control number" />
@@ -400,22 +400,22 @@
     <field number="9860" name="ContraBranchSeqNbr" type="STRING" />
     <field number="9861" name="BranchSeqNbr" type="STRING" />
     <field number="9862" name="ContraTradePA" type="STRING">
-      <value enum="P" description="Principal" />
       <value enum="A" description="agent" />
+      <value enum="P" description="Principal" />
       <value enum="R" description="Riskless Principal" />
     </field>
     <field number="9863" name="ContraClearingAcct" type="STRING" />
     <field number="22012" name="OrigControlDate" type="STRING" />
     <field number="22018" name="TradeModifier4Time" type="STRING" />
     <field number="22024" name="ShortSaleIndicator" type="STRING">
-      <value enum="S" description="Sold Short" />
       <value enum="E" description="Sold Short Exempt" />
+      <value enum="S" description="Sold Short" />
     </field>
     <field number="22029" name="RefReportingFacility" type="STRING">
       <value enum="A" description="ADF" />
       <value enum="B" description="FINRA/Nasdaq TRF Chicago" />
-      <value enum="Q" description="FINRA/Nasdaq TRF Carteret" />
       <value enum="N" description="FINRA/NYSE TRF" />
+      <value enum="Q" description="FINRA/Nasdaq TRF Carteret" />
     </field>
     <field number="22033" name="TradeModifier2Time" type="STRING" />
   </fields>

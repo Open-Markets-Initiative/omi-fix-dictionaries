@@ -226,8 +226,8 @@
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
     </field>
     <field number="97" name="PossResend" type="BOOLEAN" />
     <field number="98" name="EncryptMethod" type="INT" />
@@ -265,14 +265,14 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
       <value enum="2" description="Tag not defined for this message type" />
       <value enum="3" description="Undefined tag" />
       <value enum="4" description="Tag specified without a value" />
       <value enum="5" description="Value is incorrect (out of range) for this tag" />
       <value enum="6" description="Incorrect data format for value" />
       <value enum="9" description="Comp ID problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
     </field>
     <field number="379" name="BusinessRejectRefID" type="STRING" />
     <field number="380" name="BusinessRejectReason" type="INT">

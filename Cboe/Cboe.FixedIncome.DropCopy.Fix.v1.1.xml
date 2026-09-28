@@ -140,8 +140,8 @@
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="43" name="PossDupFlag" type="BOOLEAN">
-      <value enum="Y" description="Possible duplicate." />
       <value enum="N" description="Not a duplicate." />
+      <value enum="Y" description="Possible duplicate." />
     </field>
     <field number="44" name="Price" type="PRICE" />
     <field number="48" name="SecurityID" type="STRING" />
@@ -161,9 +161,9 @@
     <field number="64" name="SettlementDate" type="LOCALMKTDATE" />
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
     <field number="76" name="ExecBroker" type="STRING">
-      <value enum="Y" description="Aggressive trade (Liquidity Consumers Only)" />
-      <value enum="N" description="Passive trade (Liquidity Providers Only)" />
       <value enum="CBOEUST" description="Otherwise (manually entered trade)" />
+      <value enum="N" description="Passive trade (Liquidity Providers Only)" />
+      <value enum="Y" description="Aggressive trade (Liquidity Consumers Only)" />
     </field>
     <field number="97" name="PossResend" type="BOOLEAN" />
     <field number="98" name="EncryptMethod" type="INT">
@@ -173,12 +173,12 @@
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="112" name="TestReqID" type="STRING" />
     <field number="123" name="GapFillFlag" type="BOOLEAN">
-      <value enum="Y" description="Gap fill (required for common resequencing)." />
       <value enum="N" description="SeqNo of the SequenceReset message is ignored. Emergency-only use." />
+      <value enum="Y" description="Gap fill (required for common resequencing)." />
     </field>
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN">
-      <value enum="Y" description="Reset sequence numbers on both sides of the connection." />
       <value enum="N" description="Do not reset sequence numbers." />
+      <value enum="Y" description="Reset sequence numbers on both sides of the connection." />
     </field>
     <field number="150" name="ExecType" type="CHAR">
       <value enum="F" description="Trade" />

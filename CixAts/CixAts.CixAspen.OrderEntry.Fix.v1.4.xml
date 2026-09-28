@@ -216,10 +216,10 @@
     <field number="16" name="EndSeqNo" type="SEQNUM" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
-      <value enum="f" description="DAO" />
       <value enum="M" description="Midpoint Peg" />
-      <value enum="R" description="Primary (Passive) Peg" />
       <value enum="P" description="Market (Aggressive) Peg" />
+      <value enum="R" description="Primary (Passive) Peg" />
+      <value enum="f" description="DAO" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
@@ -232,8 +232,8 @@
       <value enum="5" description="OPR Cancel" />
     </field>
     <field number="30" name="LastMkt" type="EXCHANGE">
-      <value enum="ASPV" description="CIX ASPEN VERT" />
       <value enum="ASPC" description="CIX ASPEN" />
+      <value enum="ASPV" description="CIX ASPEN VERT" />
       <value enum="INCC" description="CIX Midpoint" />
     </field>
     <field number="31" name="LastPx" type="PRICE" />
@@ -294,8 +294,8 @@
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="98" name="EncryptMethod" type="INT" />
     <field number="100" name="ExDestination" type="STRING">
-      <value enum="ASPV" description="CIX ASPEN VERT" />
       <value enum="ASPC" description="CIX ASPEN" />
+      <value enum="ASPV" description="CIX ASPEN VERT" />
       <value enum="INCC" description="CIX Midpoint" />
     </field>
     <field number="102" name="CxlRejReason" type="INT">
@@ -320,8 +320,8 @@
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="123" name="GapFillFlag" type="BOOLEAN">
-      <value enum="Y" description="Sequence Reset - Gap Fill" />
       <value enum="N" description="Sequence Reset - Reset" />
+      <value enum="Y" description="Sequence Reset - Gap Fill" />
     </field>
     <field number="126" name="ExpireTime" type="UTCTIMESTAMP" />
     <field number="128" name="DeliverToCompID" type="STRING" />
@@ -338,6 +338,8 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
       <value enum="2" description="Tag not defined for this message type" />
       <value enum="3" description="Undefined tag" />
       <value enum="4" description="Tag specified without a value" />
@@ -345,8 +347,6 @@
       <value enum="6" description="Incorrect data format for value" />
       <value enum="8" description="Signature problem" />
       <value enum="9" description="CompID problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
     </field>
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="378" name="ExecRestatementReason" type="INT">
@@ -372,27 +372,27 @@
       <value enum="1" description="Routing arrangement in place" />
     </field>
     <field number="6750" name="UMIRAccountType" type="STRING">
+      <value enum="BU" description="Bundled" />
       <value enum="CL" description="Client" />
-      <value enum="NC" description="Non-Client (Default)" />
-      <value enum="ST" description="Specialist" />
       <value enum="IN" description="Inventory" />
+      <value enum="MC" description="Multiple Clients" />
+      <value enum="NC" description="Non-Client (Default)" />
       <value enum="OF" description="Options firm account" />
       <value enum="OT" description="Options market maker" />
-      <value enum="BU" description="Bundled" />
-      <value enum="MC" description="Multiple Clients" />
+      <value enum="ST" description="Specialist" />
     </field>
     <field number="6751" name="UMIRUserID" type="STRING" />
     <field number="6754" name="BasketTrade" type="STRING">
       <value enum="N" description="No (Default)" />
     </field>
     <field number="6755" name="ProgramTrade" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="6757" name="Jitney" type="STRING" />
     <field number="6761" name="Anonymous" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No (Default)" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="6763" name="UMIRRegulationID" type="STRING">
       <value enum="IA" description="Insider Account" />
@@ -407,14 +407,14 @@
       <value enum="Y" description="Yes" />
     </field>
     <field number="6791" name="Bypass" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No (Default)" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="7713" name="NoTradeFeat" type="CHAR">
-      <value enum="N" description="Cancel newest order" />
-      <value enum="O" description="Cancel oldest order" />
       <value enum="D" description="Decrement and Cancel (larger order decremented)" />
       <value enum="E" description="Execute - trade is suppressed on market data; ExecuteMatch(7733) returned in ExecutionReport" />
+      <value enum="N" description="Cancel newest order" />
+      <value enum="O" description="Cancel oldest order" />
     </field>
     <field number="7714" name="NoTradeKey" type="STRING" />
     <field number="7729" name="ShortMarkingExempt" type="CHAR">
@@ -433,8 +433,8 @@
     <field number="8027" name="CustomerLEI" type="STRING" />
     <field number="8028" name="BrokerLEI" type="STRING" />
     <field number="9110" name="MinQtyAggregation" type="BOOLEAN">
-      <value enum="Y" description="Enabled" />
       <value enum="N" description="Disabled" />
+      <value enum="Y" description="Enabled" />
     </field>
     <field number="9303" name="RoutingInst" type="CHAR">
       <value enum="P" description="Post Only" />

@@ -316,8 +316,8 @@
     </field>
     <field number="60" name="TransactTime" type="STRING" />
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
     </field>
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
@@ -397,16 +397,16 @@
     </field>
     <field number="526" name="OptionalData" type="STRING" />
     <field number="555" name="NoLegs" type="STRING">
+      <value enum="1" description="Buy" />
       <value enum="O" description="Open" />
       <value enum="OC" description="Option - Call [OPT]" />
       <value enum="OP" description="Option - Put [OPT]" />
-      <value enum="1" description="Buy" />
     </field>
     <field number="654" name="LegRefID" type="INT" />
     <field number="7928" name="SelfTradeType" type="CHAR">
-      <value enum="T" description="No Self Trade Prevention" />
-      <value enum="N" description="Cancel Newest O (letter O)= Cancel Oldest" />
       <value enum="C" description="Cancel Both" />
+      <value enum="N" description="Cancel Newest O (letter O)= Cancel Oldest" />
+      <value enum="T" description="No Self Trade Prevention" />
     </field>
     <field number="7929" name="CapStrategyID" type="STRING" />
     <field number="9202" name="SpecialOrdType" type="CHAR">
@@ -419,7 +419,6 @@
       <value enum="S" description="AON CUBE" />
     </field>
     <field number="9416" name="ExtendedExecInst" type="CHAR">
-      <value enum="A" description="Add Liquidity Only (ALO)" />
       <value enum="0" description="No trade against MPL" />
       <value enum="2" description="No route to IOI" />
       <value enum="3" description="No trade against MPL and no route to IOI" />
@@ -427,13 +426,14 @@
       <value enum="5" description="Retail Order Type 2" />
       <value enum="7" description="Retail Provider" />
       <value enum="8" description="Imbalance Offset" />
-      <value enum="C" description="Complex Order Auction" />
       <value enum="9" description="Discretionary Peg" />
+      <value enum="A" description="Add Liquidity Only (ALO)" />
+      <value enum="B" description="Clear the Book" />
+      <value enum="C" description="Complex Order Auction" />
       <value enum="D" description="Dark (Non-Displayed) Primary Peg" />
       <value enum="I" description="Issuer Direct Offering (IDO)" />
       <value enum="N" description="Add Liquidity Only (Non-Taking ALO)" />
       <value enum="O" description="Open Outcry" />
-      <value enum="B" description="Clear the Book" />
     </field>
     <field number="9448" name="IntroducingBadgeID" type="STRING" />
     <field number="9483" name="DealID" type="STRING" />
@@ -455,8 +455,8 @@
     </field>
     <field number="20017" name="ContraClearingAccount" type="STRING" />
     <field number="20018" name="ContraOpenClose" type="CHAR">
-      <value enum="O" description="Open" />
       <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
     </field>
     <field number="20019" name="ContraMarketMaker" type="STRING" />
     <field number="20022" name="AllocationFirmMPID" type="STRING" />
@@ -467,12 +467,12 @@
     <field number="20030" name="PercentageStrike" type="PRICE" />
     <field number="20031" name="PercentagePrice" type="PRICE" />
     <field number="20032" name="TiedHedgeIndicator" type="CHAR">
-      <value enum="Y" description="order is a tied hedge" />
       <value enum="N" description="order is NOT a tied hedge" />
+      <value enum="Y" description="order is a tied hedge" />
     </field>
     <field number="20035" name="TiedToStock" type="CHAR">
-      <value enum="Y" description="order is tied to stock" />
       <value enum="N" description="order is NOT tied to stock" />
+      <value enum="Y" description="order is tied to stock" />
     </field>
     <field number="20037" name="RefDelta" type="PRICE" />
     <field number="20038" name="StockPrice" type="PRICE" />

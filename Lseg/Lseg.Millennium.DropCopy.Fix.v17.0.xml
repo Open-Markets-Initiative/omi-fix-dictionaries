@@ -217,9 +217,9 @@
       <value enum="8" description="Exchange Symbol" />
     </field>
     <field number="30" name="LastMkt" type="STRING">
-      <value enum="XLON" description="On Exchange LSE RM" />
-      <value enum="XLOM" description="On Exchange Non-AIM MTF" />
       <value enum="AIMX" description="On Exchange AIM MTF" />
+      <value enum="XLOM" description="On Exchange Non-AIM MTF" />
+      <value enum="XLON" description="On Exchange LSE RM" />
       <value enum="XLOX" description="On Exchange Mid-Priced Executions" />
     </field>
     <field number="31" name="LastPx" type="PRICE" />
@@ -250,22 +250,22 @@
       <value enum="2" description="Filled" />
       <value enum="4" description="Cancelled" />
       <value enum="8" description="Rejected" />
-      <value enum="C" description="Expired" />
       <value enum="9" description="Suspended" />
+      <value enum="C" description="Expired" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
       <value enum="3" description="Stop" />
       <value enum="4" description="Stop Limit" />
-      <value enum="P" description="Pegged" />
       <value enum="F" description="Offset" />
+      <value enum="P" description="Pegged" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="42" name="OrigTime" type="UTCTIMESTAMP" />
     <field number="43" name="PossDupFlag" type="BOOLEAN">
-      <value enum="Y" description="Possible Duplicate" />
       <value enum="N" description="Original Transmission" />
+      <value enum="Y" description="Possible Duplicate" />
     </field>
     <field number="44" name="Price" type="PRICE" />
     <field number="45" name="RefSeqNum" type="SEQNUM" />
@@ -295,8 +295,8 @@
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="61" name="Urgency" type="CHAR" />
     <field number="97" name="PossResend" type="BOOLEAN">
-      <value enum="Y" description="Possible Resend" />
       <value enum="N" description="Original Transmission" />
+      <value enum="Y" description="Possible Resend" />
     </field>
     <field number="98" name="EncryptMethod" type="INT">
       <value enum="0" description="None" />
@@ -309,14 +309,14 @@
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="123" name="GapFillFlag" type="BOOLEAN">
-      <value enum="Y" description="Gap Fill" />
       <value enum="N" description="Sequence Reset" />
+      <value enum="Y" description="Gap Fill" />
     </field>
     <field number="126" name="ExpireTime" type="UTCTIMESTAMP" />
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN">
-      <value enum="Y" description="Reset Sequence Numbers" />
       <value enum="N" description="Do Not Reset Sequence Numbers" />
+      <value enum="Y" description="Reset Sequence Numbers" />
     </field>
     <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
     <field number="148" name="Headline" type="STRING" />
@@ -325,12 +325,12 @@
       <value enum="4" description="Cancelled" />
       <value enum="5" description="Replaced" />
       <value enum="8" description="Rejected" />
+      <value enum="9" description="Suspended" />
       <value enum="C" description="Expired" />
       <value enum="D" description="Restated" />
       <value enum="F" description="Trade" />
       <value enum="H" description="Trade Cancel" />
       <value enum="I" description="Order Status" />
-      <value enum="9" description="Suspended" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="215" name="NoRoutingIDs" type="NUMINGROUP" />
@@ -345,9 +345,9 @@
     <field number="372" name="RefMsgType" type="STRING" />
     <field number="373" name="SessionRejectReason" type="INT" />
     <field number="378" name="ExecRestatementReason" type="INT">
+      <value enum="100" description="Order replenishment" />
       <value enum="3" description="Order re-priced at start of CPX" />
       <value enum="8" description="Market Option" />
-      <value enum="100" description="Order replenishment" />
     </field>
     <field number="379" name="BusinessRejectRefID" type="STRING" />
     <field number="380" name="BusinessRejectReason" type="INT" />
@@ -364,11 +364,11 @@
     </field>
     <field number="452" name="PartyRole" type="INT">
       <value enum="100" description="Trader ID" />
-      <value enum="17" description="Counterparty Firm" />
-      <value enum="76" description="Trader Group" />
-      <value enum="3" description="Client ID" />
-      <value enum="122" description="Investment Decision Maker" />
       <value enum="12" description="Executing Trader" />
+      <value enum="122" description="Investment Decision Maker" />
+      <value enum="17" description="Counterparty Firm" />
+      <value enum="3" description="Client ID" />
+      <value enum="76" description="Trader Group" />
     </field>
     <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
     <field number="522" name="OwnerType" type="INT">
@@ -394,9 +394,9 @@
       <value enum="8" description="All open orders of specified PartyID" />
     </field>
     <field number="694" name="QuoteRespType" type="INT">
-      <value enum="3" description="Expired" />
-      <value enum="11" description="Cancelled" />
       <value enum="101" description="Executable" />
+      <value enum="11" description="Cancelled" />
+      <value enum="3" description="Expired" />
     </field>
     <field number="828" name="TrdType" type="INT">
       <value enum="0" description="Regular trade" />
@@ -414,22 +414,22 @@
     </field>
     <field number="923" name="UserRequestID" type="STRING" />
     <field number="924" name="UserRequestType" type="INT">
-      <value enum="4" description="Request individual user status" />
       <value enum="103" description="Suspend user" />
       <value enum="104" description="Activate user" />
+      <value enum="4" description="Request individual user status" />
     </field>
     <field number="925" name="NewPassword" type="STRING" />
     <field number="926" name="UserStatus" type="INT">
-      <value enum="3" description="User Not Recognised" />
-      <value enum="6" description="Other" />
       <value enum="103" description="User suspended" />
       <value enum="104" description="User active" />
+      <value enum="3" description="User Not Recognised" />
+      <value enum="6" description="Other" />
     </field>
     <field number="927" name="UserStatusText" type="STRING" />
     <field number="1084" name="DisplayMethod" type="CHAR" />
     <field number="1091" name="PreTradeAnonymity" type="BOOLEAN">
-      <value enum="Y" description="Anonymous" />
       <value enum="N" description="Named" />
+      <value enum="Y" description="Anonymous" />
     </field>
     <field number="1128" name="ApplVerID" type="STRING">
       <value enum="9" description="FIX50SP2" />
@@ -441,15 +441,15 @@
     <field number="1180" name="ApplID" type="STRING" />
     <field number="1409" name="SessionStatus" type="INT">
       <value enum="0" description="Session Active" />
+      <value enum="100" description="Other" />
+      <value enum="101" description="Logout due to session level failure" />
+      <value enum="102" description="Logout by market operations" />
       <value enum="2" description="Password Due to Expire" />
       <value enum="3" description="New session password does not comply with policy." />
       <value enum="4" description="Session logout complete" />
       <value enum="6" description="Account locked" />
       <value enum="7" description="Logons are not allowed at this time" />
       <value enum="8" description="Password expired" />
-      <value enum="100" description="Other" />
-      <value enum="101" description="Logout due to session level failure" />
-      <value enum="102" description="Logout by market operations" />
     </field>
     <field number="1724" name="OrderOrigination" type="INT">
       <value enum="5" description="DEA" />
@@ -461,8 +461,8 @@
     </field>
     <field number="2593" name="NoOrderAttributes" type="NUMINGROUP" />
     <field number="2594" name="OrderAttributeType" type="INT">
-      <value enum="4" description="Algorithm" />
       <value enum="2" description="Liquidity Provision" />
+      <value enum="4" description="Algorithm" />
     </field>
     <field number="2595" name="OrderAttributeValue" type="STRING">
       <value enum="Y" description="Yes" />
@@ -472,13 +472,13 @@
       <value enum="0" description="Pre-trade transparency waiver" />
     </field>
     <field number="2670" name="TrdRegPublicationReason" type="INT">
-      <value enum="4" description="ILQD" />
       <value enum="3" description="RFPT" />
+      <value enum="4" description="ILQD" />
     </field>
     <field number="9730" name="TradeLiquidityIndicator" type="STRING">
       <value enum="A" description="Added Liquidity" />
-      <value enum="R" description="Removed Liquidity" />
       <value enum="C" description="Auction" />
+      <value enum="R" description="Removed Liquidity" />
     </field>
     <field number="20000" name="TypeOfTrade" type="INT">
       <value enum="0" description="Visible" />
@@ -487,11 +487,11 @@
     </field>
     <field number="27010" name="PassiveOnlyOrder" type="INT">
       <value enum="0" description="No constraint" />
-      <value enum="99" description="Only accept order if it will not match with visible contra order. Otherwise expire order" />
-      <value enum="100" description="Only accept order if setting new visible BBO, otherwise expire order" />
       <value enum="1" description="Only accept order if setting new BBO or joining existing BBO. Otherwise expire order" />
+      <value enum="100" description="Only accept order if setting new visible BBO, otherwise expire order" />
       <value enum="2" description="Only accept order if it will be at BBO or within one visible price-point. Otherwise expire order" />
       <value enum="3" description="Only accept order if it will be at BBO or within two visible price-points. Otherwise expire order" />
+      <value enum="99" description="Only accept order if it will not match with visible contra order. Otherwise expire order" />
     </field>
     <field number="27017" name="GroupID" type="INT" />
     <field number="27018" name="Offset" type="PRICEOFFSET" />

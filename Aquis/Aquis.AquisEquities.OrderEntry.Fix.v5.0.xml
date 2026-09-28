@@ -305,8 +305,8 @@
       <value enum="0" description="NONE (no client ID)" />
       <value enum="1" description="AGGR (aggregated)" />
       <value enum="2" description="PNAL (pending allocation)" />
-      <value enum="3" description="CLIENT (order instructed by client) 4 to 4,294,967" />
       <value enum="295" description="Member-specified short code 447* PartyIDSour" />
+      <value enum="3" description="CLIENT (order instructed by client) 4 to 4,294,967" />
     </field>
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
     <field number="97" name="PossResend" type="BOOLEAN" />
@@ -328,16 +328,16 @@
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
-      <value enum="F" description="Trade" />
-      <value enum="8" description="Rejected" />
       <value enum="0" description="New" />
       <value enum="1" description="Partially Filled" />
       <value enum="2" description="Filled" />
       <value enum="3" description="Done for Day" />
       <value enum="4" description="Cancelled" />
       <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
       <value enum="C" description="Expired" />
       <value enum="D" description="Restated" />
+      <value enum="F" description="Trade" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="198" name="SecondaryOrderID" type="STRING" />
@@ -356,14 +356,14 @@
       <value enum="0" description="NONE (no client ID)" />
       <value enum="1" description="AGGR (aggregated)" />
       <value enum="2" description="PNAL (pending allocation)" />
-      <value enum="3" description="CLIENT (order instructed by client) 4 to 4,294,967" />
       <value enum="295" description="Member-specified short code 447* PartyIDSource N" />
+      <value enum="3" description="CLIENT (order instructed by client) 4 to 4,294,967" />
       <value enum="P" description="short code 45" />
     </field>
     <field number="571" name="TradeReportID" type="STRING" />
     <field number="828" name="TrdType" type="STRING">
-      <value enum="1" description="Block Trade (default if not supplied, LIS_CROSS)" />
       <value enum="0" description="Block Trade for clearing" />
+      <value enum="1" description="Block Trade (default if not supplied, LIS_CROSS)" />
       <value enum="2" description="Volume Weighted Average Price Trade for clearing" />
       <value enum="3" description="Volume Weighted Average Price Trade not for clearing" />
       <value enum="4" description="Time Weighted Average Price Trade" />
@@ -380,10 +380,10 @@
       <value enum="5" description="Yes" />
     </field>
     <field number="8002" name="ConditionalType" type="STRING">
+      <value enum="0" description="No constraint, regular order (default if tag not supplied)" />
       <value enum="1" description="IOI" />
       <value enum="2" description="Firm-Up" />
       <value enum="4" description="Algorithmic order 27010+ AquisOrderAttribute N" />
-      <value enum="0" description="No constraint, regular order (default if tag not supplied)" />
       <value enum="5" description="Restrict" />
     </field>
     <field number="8013" name="TrdRegPublicationReasons" type="STRING">

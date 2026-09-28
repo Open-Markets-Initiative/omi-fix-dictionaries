@@ -116,8 +116,8 @@
     </field>
     <field number="30" name="LastExchange" type="CHAR">
       <value enum="&quot; &quot;" description="Not provided" />
-      <value enum="Q" description="Nasdaq" />
       <value enum="B" description="Nasdaq BX" />
+      <value enum="Q" description="Nasdaq" />
       <value enum="X" description="Nasdaq PSX" />
     </field>
     <field number="31" name="LastPx" type="PRICE" />
@@ -191,31 +191,31 @@
     <field number="382" name="NoContraBrokers" type="STRING" />
     <field number="851" name="LastLiquidityInd" type="INT" />
     <field number="9882" name="LiquidityFlag" type="CHAR">
-      <value enum="A" description="Added" />
-      <value enum="R" description="Removed" />
-      <value enum="O" description="Opening Cross" />
-      <value enum="M" description="Opening Cross Imbalance-Only" />
-      <value enum="C" description="Closing Cross" />
-      <value enum="L" description="Closing Cross Imbalance-Only" />
-      <value enum="H" description="Halt or IPO Cross" />
-      <value enum="K" description="Halt Cross" />
-      <value enum="J" description="Non-Displayed Adding Liquidity" />
-      <value enum="W" description="Added Post-Only" />
-      <value enum="m" description="Removed Liquidity at Midpoint" />
-      <value enum="k" description="Added Liquidity via Midpoint Order" />
       <value enum="0" description="Supplemental Order Execution" />
-      <value enum="7" description="Displayed Liquidity-Adding Order Improves NBBO" />
-      <value enum="8" description="Displayed Liquidity-Adding Order Sets QBBO Joining NBBO" />
-      <value enum="d" description="Retail Designated Execution Removed Liquidity" />
-      <value enum="e" description="Retail Designated Execution Added Displayed Liquidity" />
-      <value enum="f" description="Retail Designated Execution Added Non-Displayed Liquidity" />
-      <value enum="j" description="RPI Order Provides Liquidity" />
-      <value enum="r" description="Retail Order Removes RPI Liquidity" />
-      <value enum="t" description="Retail Order Removes Price-Improving Non-Displayed Liquidity Other Than RPI" />
       <value enum="4" description="Added Displayed Liquidity in Select Symbol" />
       <value enum="5" description="Added Non-Displayed Liquidity in Select Symbol" />
       <value enum="6" description="Removed Liquidity in Select Symbol" />
+      <value enum="7" description="Displayed Liquidity-Adding Order Improves NBBO" />
+      <value enum="8" description="Displayed Liquidity-Adding Order Sets QBBO Joining NBBO" />
+      <value enum="A" description="Added" />
+      <value enum="C" description="Closing Cross" />
+      <value enum="H" description="Halt or IPO Cross" />
+      <value enum="J" description="Non-Displayed Adding Liquidity" />
+      <value enum="K" description="Halt Cross" />
+      <value enum="L" description="Closing Cross Imbalance-Only" />
+      <value enum="M" description="Opening Cross Imbalance-Only" />
+      <value enum="O" description="Opening Cross" />
+      <value enum="R" description="Removed" />
+      <value enum="W" description="Added Post-Only" />
+      <value enum="d" description="Retail Designated Execution Removed Liquidity" />
+      <value enum="e" description="Retail Designated Execution Added Displayed Liquidity" />
+      <value enum="f" description="Retail Designated Execution Added Non-Displayed Liquidity" />
       <value enum="g" description="Added Non-Displayed Midpoint Liquidity in Select Symbol" />
+      <value enum="j" description="RPI Order Provides Liquidity" />
+      <value enum="k" description="Added Liquidity via Midpoint Order" />
+      <value enum="m" description="Removed Liquidity at Midpoint" />
+      <value enum="r" description="Retail Order Removes RPI Liquidity" />
+      <value enum="t" description="Retail Order Removes Price-Improving Non-Displayed Liquidity Other Than RPI" />
     </field>
     <field number="20006" name="CustomerType" type="CHAR">
       <value enum="R" description="Retail Designated Order" />

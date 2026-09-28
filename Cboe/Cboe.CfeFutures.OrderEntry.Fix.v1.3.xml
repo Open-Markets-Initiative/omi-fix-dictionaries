@@ -226,8 +226,8 @@
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
-      <value enum="2" description="Correct" />
       <value enum="1" description="Trade Cancel" />
+      <value enum="2" description="Correct" />
       <value enum="3" description="Status" />
     </field>
     <field number="31" name="LastPx" type="PRICE" />
@@ -238,14 +238,14 @@
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
-      <value enum="2" description="Filled" />
-      <value enum="5" description="Replaced" />
-      <value enum="8" description="Rejected" />
-      <value enum="B" description="Calculated" />
       <value enum="1" description="Partially Filled" />
+      <value enum="2" description="Filled" />
       <value enum="4" description="Canceled" />
+      <value enum="5" description="Replaced" />
       <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
       <value enum="A" description="Pending Ack" />
+      <value enum="B" description="Calculated" />
       <value enum="E" description="Pending Replace" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
@@ -282,9 +282,9 @@
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="75" name="TradeDate" type="UTCTIMESTAMP" />
     <field number="77" name="OpenClose" type="CHAR">
-      <value enum="O" description="Open" />
-      <value enum="N" description="None (same as not present)" />
       <value enum="C" description="Close" />
+      <value enum="N" description="None (same as not present)" />
+      <value enum="O" description="Open" />
     </field>
     <field number="97" name="PossResend" type="BOOLEAN">
       <value enum="N" description="Default. Indicates a new order." />
@@ -293,18 +293,18 @@
     <field number="99" name="StopPx" type="PRICE" />
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too late to cancel." />
-      <value enum="2" description="Broker Option." />
       <value enum="1" description="Unknown order." />
+      <value enum="2" description="Broker Option." />
       <value enum="3" description="Already pending cancel or pending replace." />
     </field>
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="0" description="Broker option" />
-      <value enum="2" description="Exchange closed" />
-      <value enum="5" description="Unknown order" />
-      <value enum="8" description="Stale order" />
       <value enum="1" description="Unknown symbol" />
+      <value enum="2" description="Exchange closed" />
       <value enum="3" description="Order exceeds limit" />
+      <value enum="5" description="Unknown order" />
       <value enum="6" description="Duplicate order" />
+      <value enum="8" description="Stale order" />
     </field>
     <field number="107" name="SecurityDesc" type="STRING" />
     <field number="110" name="MinQty" type="QTY" />
@@ -317,13 +317,13 @@
     <field number="142" name="SenderLocationID" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New (acknowledgement of new order)" />
+      <value enum="1" description="Partial Fill" />
       <value enum="2" description="Fill" />
+      <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
       <value enum="D" description="Restated" />
       <value enum="M" description="Mass Cancel Complete" />
-      <value enum="1" description="Partial Fill" />
-      <value enum="4" description="Canceled" />
-      <value enum="8" description="Rejected" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="167" name="SecurityType" type="STRING">
@@ -353,8 +353,8 @@
     <field number="440" name="ClearingAccount" type="STRING" />
     <field number="442" name="MultilegReportingType" type="STRING">
       <value enum="1" description="Simple instrument execution" />
-      <value enum="3" description="Spread instrument execution." />
       <value enum="2" description="Simple instrument execution that is part of a Spread instrument" />
+      <value enum="3" description="Spread instrument execution." />
     </field>
     <field number="527" name="SecondaryExecID" type="STRING" />
     <field number="828" name="TrdType" type="STRING">
@@ -362,24 +362,24 @@
       <value enum="2" description="ECRP Trade" />
     </field>
     <field number="1028" name="ManualOrderIndicator" type="STRING">
-      <value enum="Y" description="Manual order entry" />
       <value enum="N" description="Automated order entry" />
+      <value enum="Y" description="Manual order entry" />
     </field>
     <field number="1031" name="CustOrderHandlingInst" type="MULTIPLEVALUESTRING">
-      <value enum="W" description="Desk (high touch)" />
       <value enum="C" description="Vendor-provided platform, billed by Executing Broker" />
       <value enum="D" description="Other, including other-provided screen" />
-      <value enum="Y" description="Electronic (default)" />
       <value enum="G" description="Sponsored Access via Exchange API or FIX, provided by" />
       <value enum="H" description="Premium algorithmic trading provider, billed by executing broker" />
+      <value enum="W" description="Desk (high touch)" />
+      <value enum="Y" description="Electronic (default)" />
     </field>
     <field number="7692" name="RiskReset" type="STRING">
-      <value enum="S" description="Product-level risk/lockout reset(Futures only)" />
       <value enum="C" description="Custom Group IDlockout reset(Futures only)" />
-      <value enum="I" description="Firm-level risk/lockout reset(Options only)" />
-      <value enum="F" description="Firm-level risk/lockout reset(Futures only)" />
-      <value enum="R" description="Product-level risk/lockout reset(Options only)" />
       <value enum="D" description="CustomGroupIDlockout reset(Options only)" />
+      <value enum="F" description="Firm-level risk/lockout reset(Futures only)" />
+      <value enum="I" description="Firm-level risk/lockout reset(Options only)" />
+      <value enum="R" description="Product-level risk/lockout reset(Options only)" />
+      <value enum="S" description="Product-level risk/lockout reset(Futures only)" />
     </field>
     <field number="7695" name="MassCancelID" type="STRING" />
     <field number="7696" name="CancelledOrderCount" type="STRING" />
@@ -389,11 +389,11 @@
       <value enum="F" description="All orders that were sent under the EFID specified in" />
     </field>
     <field number="7928" name="PreventMatch" type="STRING">
-      <value enum="N" description="Cancel Newest" />
-      <value enum="F" description="Prevent Match at CFE Exchange TPH level" />
-      <value enum="O" description="Cancel Oldest" />
       <value enum="B" description="Cancel Both" />
+      <value enum="F" description="Prevent Match at CFE Exchange TPH level" />
       <value enum="M" description="Prevent Match at EFID Level" />
+      <value enum="N" description="Cancel Newest" />
+      <value enum="O" description="Cancel Oldest" />
     </field>
     <field number="9617" name="ModifySequence" type="STRING" />
     <field number="9619" name="CancelOrigOnReject" type="STRING">
@@ -411,10 +411,10 @@
     </field>
     <field number="9730" name="TradeLiquidityIndicator" type="STRING">
       <value enum="A" description="Trade Added Liquidity" />
-      <value enum="R" description="Trade Removed Liquidity" />
-      <value enum="C" description="Market opening/re-opening trade" />
-      <value enum="U" description="Qualifying Market Turner order.Only sent when first character value=A." />
       <value enum="AU" description="Zero or more immediate partial remove fills followed by posting as" />
+      <value enum="C" description="Market opening/re-opening trade" />
+      <value enum="R" description="Trade Removed Liquidity" />
+      <value enum="U" description="Qualifying Market Turner order.Only sent when first character value=A." />
     </field>
     <field number="9882" name="FeeCode" type="STRING" />
     <field number="21050" name="ClearingPrice" type="PRICE" />

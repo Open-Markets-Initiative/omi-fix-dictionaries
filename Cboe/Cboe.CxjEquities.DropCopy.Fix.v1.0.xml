@@ -125,9 +125,9 @@
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
-      <value enum="3" description="Status. Used to provide peg suspensions (" />
       <value enum="1" description="Trade Cancel" />
       <value enum="2" description="Trade Correct" />
+      <value enum="3" description="Status. Used to provide peg suspensions (" />
     </field>
     <field number="22" name="IDSource" type="STRING">
       <value enum="3" description="QUICK (default)" />
@@ -149,8 +149,8 @@
       <value enum="2" description="Filled" />
       <value enum="5" description="Replaced" />
       <value enum="8" description="Rejected" />
-      <value enum="B" description="Calculated" />
       <value enum="9" description="Suspended" />
+      <value enum="B" description="Calculated" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
@@ -172,8 +172,8 @@
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
-      <value enum="5" description="Sell Short (client affirms ability to borrow)" />
       <value enum="2" description="Sell" />
+      <value enum="5" description="Sell Short (client affirms ability to borrow)" />
       <value enum="6" description="Sell Short Exempt" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
@@ -199,8 +199,8 @@
       <value enum="2" description="Fill" />
       <value enum="5" description="Replaced" />
       <value enum="9" description="Suspended" />
-      <value enum="M" description="Mass Cancel Complete" />
       <value enum="D" description="Restated" />
+      <value enum="M" description="Mass Cancel Complete" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="198" name="SecondaryOrderID" type="STRING" />
@@ -216,9 +216,9 @@
     </field>
     <field number="7699" name="RiskGroupID" type="STRING" />
     <field number="7713" name="NoTradeFeat" type="NUMINGROUP">
-      <value enum="N" description="Cancel Newest" />
       <value enum="B" description="Cancel Both" />
       <value enum="D" description="Decrement larger/Cancel Smaller" />
+      <value enum="N" description="Cancel Newest" />
     </field>
     <field number="7714" name="NoTradeKey" type="NUMINGROUP" />
     <field number="7903" name="PreventedTradePx" type="PRICE" />
@@ -227,16 +227,16 @@
       <value enum="A" description="Added liquidity" />
     </field>
     <field number="8004" name="VWAPSessionID" type="STRING">
-      <value enum="DAY" description="Full day VWAP session" />
       <value enum="AM" description="AM VWAP session" />
+      <value enum="DAY" description="Full day VWAP session" />
       <value enum="PM" description="PM VWAP session" />
     </field>
     <field number="8060" name="OrderClassification" type="STRING">
       <value enum="1" description="Non Low Latency trading (Auto)" />
-      <value enum="3" description="Market Making Strategy" />
-      <value enum="5" description="Directional Strategy" />
       <value enum="2" description="Non Low Latency trading (Manual)" />
+      <value enum="3" description="Market Making Strategy" />
       <value enum="4" description="Arbitrage Strategy" />
+      <value enum="5" description="Directional Strategy" />
       <value enum="6" description="Other Strategy" />
     </field>
     <field number="8101" name="ToSTNetTOrderID" type="STRING" />

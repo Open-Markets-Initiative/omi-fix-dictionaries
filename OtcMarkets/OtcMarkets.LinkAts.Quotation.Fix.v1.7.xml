@@ -121,25 +121,25 @@
     <field number="135" name="OfferSize" type="STRING" />
     <field number="9501" name="BidPriceType" type="STRING">
       <value enum="A" description="Actual" />
-      <value enum="U" description="Unpriced" />
       <value enum="OW" description="Offers Wanted" />
+      <value enum="U" description="Unpriced" />
     </field>
     <field number="9502" name="OfferPriceType" type="STRING">
       <value enum="A" description="Actual" />
-      <value enum="U" description="Unpriced" />
       <value enum="BW" description="Bids Wanted" />
+      <value enum="U" description="Unpriced" />
     </field>
     <field number="9506" name="LockCrossFlag" type="STRING">
-      <value enum="Y" description="Can lock/cross" />
       <value enum="N" description="Cannot lock/cross (Default)" />
+      <value enum="Y" description="Can lock/cross" />
     </field>
     <field number="9534" name="Unsolicited" type="STRING">
-      <value enum="Y" description="Quote is unsolicited" />
       <value enum="N" description="Quote is not unsolicited (Default)" />
+      <value enum="Y" description="Quote is unsolicited" />
     </field>
     <field number="9535" name="NonAffiliate" type="STRING">
-      <value enum="Y" description="Unsolicited quote is from a Non- Affiliate" />
       <value enum="N" description="Unsolicited quote is not from a Non- Affiliate (Default)" />
+      <value enum="Y" description="Unsolicited quote is from a Non- Affiliate" />
     </field>
     <field number="9540" name="UpdateType" type="STRING">
       <value enum="1" description="Update Quote" />
@@ -151,8 +151,8 @@
     </field>
     <field number="9596" name="CancelTime" type="STRING" />
     <field number="9597" name="AutoCancelEOD" type="STRING">
-      <value enum="Y" description="Quote should be cancelled" />
       <value enum="N" description="Quote should not be cancelled (Default) Reserved TAGS" />
+      <value enum="Y" description="Quote should be cancelled" />
     </field>
     <field number="9662" name="BidQAPRate" type="STRING" />
     <field number="9663" name="OfferQAPRate" type="STRING" />
@@ -164,12 +164,12 @@
       <value enum="4" description="Close all traders" />
     </field>
     <field number="9680" name="BidAutoEx" type="STRING">
-      <value enum="Y" description="Quote is Auto-Ex indicated" />
       <value enum="N" description="Quote is not Auto-Ex indicated (Default) Offer Side Properties, if none are provided then offer remains unchanged on Update Quote, and price is set to unpriced on Add Quote" />
+      <value enum="Y" description="Quote is Auto-Ex indicated" />
     </field>
     <field number="9681" name="OfferAutoEx" type="STRING">
-      <value enum="Y" description="Quote is Auto-Ex indicated" />
       <value enum="N" description="Quote is not Auto-Ex indicated (Default) Optional parameters" />
+      <value enum="Y" description="Quote is Auto-Ex indicated" />
     </field>
     <field number="9690" name="QuoteID" type="STRING" />
     <field number="9695" name="CATroutedQuoteID" type="STRING" />

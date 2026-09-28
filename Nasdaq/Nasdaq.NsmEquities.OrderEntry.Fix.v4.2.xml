@@ -200,15 +200,15 @@
     <field number="14" name="CumQty" type="QTY" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLECHARVALUE">
+      <value enum="B" description="Trade Now" />
+      <value enum="I" description="INAV Pegging" />
       <value enum="M" description="Midpoint Peg" />
       <value enum="N" description="No Peg" />
       <value enum="P" description="Market Peg" />
       <value enum="Q" description="Quoting Peg (market makers only)" />
       <value enum="R" description="Primary Peg" />
-      <value enum="I" description="INAV Pegging" />
-      <value enum="f" description="InterMarket Sweep Order (ISO)" />
-      <value enum="B" description="Trade Now" />
       <value enum="b" description="Trade Now Opt-Out" />
+      <value enum="f" description="InterMarket Sweep Order (ISO)" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
@@ -307,24 +307,24 @@
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="211" name="PegDifference" type="FLOAT" />
     <field number="375" name="ContraBroker" type="STRING">
+      <value enum="24EQ" description="Routed to 24 Exchange" />
       <value enum="ARCX" description="Routed to NYSE Arca" />
-      <value enum="XASE" description="Routed to NYSE American" />
-      <value enum="XNYS" description="Routed to NYSE" />
-      <value enum="XCIS" description="Routed to NYSE National" />
-      <value enum="XCHI" description="Routed to NYSE Chicago" />
       <value enum="BATS" description="Routed to BATS" />
       <value enum="BATY" description="Routed to BATS Y" />
       <value enum="EDGA" description="Routed to EDGA" />
       <value enum="EDGX" description="Routed to EDGX" />
-      <value enum="offX" description="Routed to non-Reg NMS protected venue" />
+      <value enum="EPRL" description="Routed to MIAX PEARL Equities" />
       <value enum="IEXG" description="Routed to IEX" />
-      <value enum="XBOS" description="Routed to Nasdaq BX" />
-      <value enum="XNAS" description="Routed to Nasdaq Stock Market" />
-      <value enum="XPSX" description="Routed to Nasdaq PSX" />
       <value enum="LTSE" description="Routed to Long Term Stock Exchange" />
       <value enum="MEMX" description="Routed to Members Exchange" />
-      <value enum="EPRL" description="Routed to MIAX PEARL Equities" />
-      <value enum="24EQ" description="Routed to 24 Exchange" />
+      <value enum="XASE" description="Routed to NYSE American" />
+      <value enum="XBOS" description="Routed to Nasdaq BX" />
+      <value enum="XCHI" description="Routed to NYSE Chicago" />
+      <value enum="XCIS" description="Routed to NYSE National" />
+      <value enum="XNAS" description="Routed to Nasdaq Stock Market" />
+      <value enum="XNYS" description="Routed to NYSE" />
+      <value enum="XPSX" description="Routed to Nasdaq PSX" />
+      <value enum="offX" description="Routed to non-Reg NMS protected venue" />
     </field>
     <field number="378" name="ExecRestatementReason" type="INT">
       <value enum="5" description="Partial Decline of OrderQty" />
@@ -339,34 +339,34 @@
     <field number="851" name="LastLiquidityInd" type="INT" />
     <field number="8020" name="DisplayRange" type="QTY" />
     <field number="9140" name="DisplayInst" type="CHAR">
-      <value enum="Y" description="Anonymous - Price to Comply" />
       <value enum="A" description="Attributable - Price to Display" />
-      <value enum="N" description="Non-Display (required for midpoint orders)" />
+      <value enum="B" description="M-ELO and Continuous Book Midpoint" />
       <value enum="I" description="Imbalance Only" />
-      <value enum="P" description="Post-Only" />
-      <value enum="W" description="Mid-Point Peg Post Only" />
       <value enum="L" description="Post-Only and Attributable - Price to Display" />
-      <value enum="O" description="Retail Order Type 1" />
-      <value enum="T" description="Retail Order Type 2" />
-      <value enum="Q" description="Retail Price Improvement Order" />
       <value enum="M" description="Mid-Point Peg (tag 18 must be N)" />
+      <value enum="N" description="Non-Display (required for midpoint orders)" />
+      <value enum="O" description="Retail Order Type 1" />
+      <value enum="P" description="Post-Only" />
+      <value enum="Q" description="Retail Price Improvement Order" />
+      <value enum="T" description="Retail Order Type 2" />
+      <value enum="W" description="Mid-Point Peg Post Only" />
+      <value enum="Y" description="Anonymous - Price to Comply" />
+      <value enum="d" description="Direct Listing Capital Raise" />
       <value enum="m" description="Mid-Point Peg and Trade Now" />
       <value enum="n" description="Non-Display and Trade Now" />
-      <value enum="B" description="M-ELO and Continuous Book Midpoint" />
-      <value enum="d" description="Direct Listing Capital Raise" />
     </field>
     <field number="9355" name="CrossTradeFlag" type="CHAR">
-      <value enum="O" description="Opening Cross" />
+      <value enum="A" description="Extended Trading Close" />
       <value enum="C" description="Closing Cross" />
       <value enum="E" description="Extended Life" />
-      <value enum="A" description="Extended Trading Close" />
+      <value enum="O" description="Opening Cross" />
     </field>
     <field number="9391" name="DisplayExecInst" type="CHAR">
-      <value enum="P" description="Market Peg" />
-      <value enum="R" description="Primary Peg" />
-      <value enum="M" description="Mid Peg" />
-      <value enum="Q" description="Quoting Peg" />
       <value enum="I" description="INAV Peg" />
+      <value enum="M" description="Mid Peg" />
+      <value enum="P" description="Market Peg" />
+      <value enum="Q" description="Quoting Peg" />
+      <value enum="R" description="Primary Peg" />
     </field>
     <field number="9392" name="DisplayPrice" type="PRICE" />
     <field number="9395" name="MarketabilityInstructions" type="INT">
@@ -374,51 +374,51 @@
     </field>
     <field number="9396" name="DisplayPegDifference" type="FLOAT" />
     <field number="9882" name="LiquidityFlag" type="CHAR">
-      <value enum="A" description="Added" />
-      <value enum="R" description="Removed" />
-      <value enum="X" description="Routed" />
-      <value enum="D" description="DOT" />
-      <value enum="F" description="Opening Trade (on NYSE)" />
-      <value enum="G" description="On-Close Order (on NYSE)" />
-      <value enum="J" description="Non-Displayed Adding Liquidity" />
-      <value enum="O" description="Open Cross" />
-      <value enum="M" description="Open Cross (imbalance-only)" />
-      <value enum="C" description="Closing Cross" />
-      <value enum="L" description="Closing Cross (imbalance-only)" />
-      <value enum="H" description="Halt/IPO Cross" />
-      <value enum="K" description="Halt Cross" />
-      <value enum="Y" description="Re-Routed by NYSE" />
-      <value enum="S" description="Odd Lot Execution (on NYSE)" />
-      <value enum="U" description="Added Liquidity (on NYSE)" />
-      <value enum="B" description="Routed to BX" />
-      <value enum="E" description="NYSE Other" />
-      <value enum="P" description="Routed to PSX" />
-      <value enum="T" description="Executed in Open, Close, or Re-open on ARCA" />
-      <value enum="N" description="Passive Midpoint Execution" />
-      <value enum="W" description="Added Post-Only" />
-      <value enum="m" description="Removed Liquidity at a Midpoint" />
-      <value enum="k" description="Added Liquidity via a Midpoint Order" />
-      <value enum="7" description="Displayed, Liquidity-Adding Order Improves the NBBO" />
-      <value enum="8" description="Displayed, Liquidity-Adding Order Sets the QBBO While Joining the NBBO" />
-      <value enum="d" description="Retail Designated Execution That Removed Liquidity" />
-      <value enum="e" description="Retail Designated Execution That Added Displayed Liquidity" />
-      <value enum="f" description="Retail Designated Execution That Added Non-Displayed Liquidity" />
-      <value enum="j" description="RPI (Retail Price Improving) Order Provides Liquidity" />
-      <value enum="r" description="Retail Order Removes RPI Liquidity" />
-      <value enum="t" description="Retail Order Removes Price Improving Non-Displayed Liquidity Other Than RPI Liquidity" />
-      <value enum="n" description="Midpoint Extended Life Order Execution" />
-      <value enum="v" description="MIDP Order Executed on Away NMS Protected Market Center" />
-      <value enum="w" description="MIDP Order Executed on Off-Exchange Venue" />
-      <value enum="i" description="Extended Trading Close Execution" />
-      <value enum="u" description="Added Non-Displayed Liquidity via a Reserve Order" />
       <value enum="2" description="Added in the Pre-Market" />
       <value enum="3" description="Removed in the Pre-Market" />
       <value enum="5" description="Displayed, Liquidity-Adding Order Improves the NBBO in the Pre-Market" />
+      <value enum="7" description="Displayed, Liquidity-Adding Order Improves the NBBO" />
+      <value enum="8" description="Displayed, Liquidity-Adding Order Sets the QBBO While Joining the NBBO" />
       <value enum="9" description="Non-Displayed Adding Liquidity in the Pre-Market" />
+      <value enum="A" description="Added" />
+      <value enum="B" description="Routed to BX" />
+      <value enum="C" description="Closing Cross" />
+      <value enum="D" description="DOT" />
+      <value enum="E" description="NYSE Other" />
+      <value enum="F" description="Opening Trade (on NYSE)" />
+      <value enum="G" description="On-Close Order (on NYSE)" />
+      <value enum="H" description="Halt/IPO Cross" />
+      <value enum="J" description="Non-Displayed Adding Liquidity" />
+      <value enum="K" description="Halt Cross" />
+      <value enum="L" description="Closing Cross (imbalance-only)" />
+      <value enum="M" description="Open Cross (imbalance-only)" />
+      <value enum="N" description="Passive Midpoint Execution" />
+      <value enum="O" description="Open Cross" />
+      <value enum="P" description="Routed to PSX" />
+      <value enum="R" description="Removed" />
+      <value enum="S" description="Odd Lot Execution (on NYSE)" />
+      <value enum="T" description="Executed in Open, Close, or Re-open on ARCA" />
+      <value enum="U" description="Added Liquidity (on NYSE)" />
+      <value enum="W" description="Added Post-Only" />
+      <value enum="X" description="Routed" />
+      <value enum="Y" description="Re-Routed by NYSE" />
+      <value enum="d" description="Retail Designated Execution That Removed Liquidity" />
+      <value enum="e" description="Retail Designated Execution That Added Displayed Liquidity" />
+      <value enum="f" description="Retail Designated Execution That Added Non-Displayed Liquidity" />
+      <value enum="i" description="Extended Trading Close Execution" />
+      <value enum="j" description="RPI (Retail Price Improving) Order Provides Liquidity" />
+      <value enum="k" description="Added Liquidity via a Midpoint Order" />
+      <value enum="m" description="Removed Liquidity at a Midpoint" />
+      <value enum="n" description="Midpoint Extended Life Order Execution" />
+      <value enum="r" description="Retail Order Removes RPI Liquidity" />
+      <value enum="t" description="Retail Order Removes Price Improving Non-Displayed Liquidity Other Than RPI Liquidity" />
+      <value enum="u" description="Added Non-Displayed Liquidity via a Reserve Order" />
+      <value enum="v" description="MIDP Order Executed on Away NMS Protected Market Center" />
+      <value enum="w" description="MIDP Order Executed on Off-Exchange Venue" />
     </field>
     <field number="20006" name="CustomerType" type="CHAR">
-      <value enum="R" description="Retail designated order" />
       <value enum="N" description="Not a retail designated order (default)" />
+      <value enum="R" description="Retail designated order" />
     </field>
     <field number="20007" name="IntradayIndicativePrice" type="PRICE" />
     <field number="20107" name="GroupId" type="INT" />

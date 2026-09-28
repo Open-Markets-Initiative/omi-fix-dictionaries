@@ -86,6 +86,12 @@
       <field name="SecurityID" required="N" />
       <field name="IDSource" required="N" />
     </message>
+    <message name="FillDeclineCounterOrReplaceRejected" msgtype="Q" msgcat="app">
+      <field name="CounterOrdID" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="ResultCode" required="Y" />
+      <field name="Text" required="Y" />
+    </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="ExecType" required="Y" />
       <field name="CounterOrdID" required="N" />
@@ -148,12 +154,6 @@
       <field name="ResultCode" required="Y" />
       <field name="Text" required="Y" />
     </message>
-    <message name="FillDeclineCounterOrReplaceRejected" msgtype="Q" msgcat="app">
-      <field name="CounterOrdID" required="N" />
-      <field name="TransactTime" required="Y" />
-      <field name="ResultCode" required="Y" />
-      <field name="Text" required="Y" />
-    </message>
   </messages>
   <components />
   <fields>
@@ -163,14 +163,14 @@
     <field number="14" name="CumQty" type="QTY" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
-      <value enum="f" description="BXI (see chapter 2.2.12)" />
+      <value enum="F" description="Fractional Share Trade Messages Accepted" />
       <value enum="G" description="All or none (AON)" />
       <value enum="N" description="Non-negotiable (cannot be countered)" />
-      <value enum="b" description="Strict Limit (no price improvement allowed)" />
-      <value enum="s" description="Saturate on Expiration" />
       <value enum="Z" description="Auto Cancel" />
-      <value enum="F" description="Fractional Share Trade Messages Accepted" />
+      <value enum="b" description="Strict Limit (no price improvement allowed)" />
+      <value enum="f" description="BXI (see chapter 2.2.12)" />
       <value enum="g" description="No Partial (only execute if all shares requested are available)" />
+      <value enum="s" description="Saturate on Expiration" />
     </field>
     <field number="22" name="IDSource" type="STRING" />
     <field number="31" name="LastPx" type="PRICE" />
@@ -208,8 +208,8 @@
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="65" name="SymbolSfx" type="STRING" />
     <field number="113" name="ReportToExch" type="STRING">
-      <value enum="Y" description="receiver is the &quot;executing broker&quot;" />
       <value enum="N" description="receiver is not the &quot;executing broker&quot;" />
+      <value enum="Y" description="receiver is the &quot;executing broker&quot;" />
     </field>
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
@@ -217,18 +217,18 @@
     <field number="129" name="DeliverToSubID" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
+      <value enum="1" description="Drop Copy Partial Fill" />
+      <value enum="2" description="Drop Copy Fill" />
       <value enum="4" description="Cancel" />
       <value enum="5" description="Replaced" />
       <value enum="8" description="Reject" />
       <value enum="C" description="Expires / Times out" />
       <value enum="S" description="Countered" />
-      <value enum="1" description="Drop Copy Partial Fill" />
-      <value enum="2" description="Drop Copy Fill" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="9377" name="SolicitedFlag" type="STRING">
-      <value enum="Y" description="Order is solicited - Default" />
       <value enum="N" description="Order is not solicited" />
+      <value enum="Y" description="Order is solicited - Default" />
     </field>
     <field number="9528" name="OrderCapacity" type="STRING">
       <value enum="A" description="Agency" />
@@ -236,8 +236,8 @@
       <value enum="R" description="Riskless Principal" />
     </field>
     <field number="9547" name="LiabilityFlag" type="STRING">
-      <value enum="Y" description="matches or is better" />
       <value enum="N" description="does not match or is worse" />
+      <value enum="Y" description="matches or is better" />
     </field>
     <field number="9548" name="ResultCode" type="STRING" />
     <field number="9549" name="RestrictToRoundLots" type="STRING">
@@ -268,8 +268,8 @@
     <field number="9575" name="InsBidSizeEx" type="STRING" />
     <field number="9576" name="InsAskSizeEx" type="STRING" />
     <field number="9577" name="OrderInitiatorFlag" type="STRING">
-      <value enum="Y" description="Receiver of message was the Initiator" />
       <value enum="N" description="Receiver of message was the Respondent" />
+      <value enum="Y" description="Receiver of message was the Initiator" />
     </field>
     <field number="9580" name="MaxOrderID" type="STRING" />
     <field number="9581" name="OATSReported" type="STRING">
@@ -278,8 +278,8 @@
     </field>
     <field number="9582" name="MAXCumQty" type="STRING" />
     <field number="9583" name="Anonymous" type="STRING">
-      <value enum="Y" description="do not show identity of firm on Trade Data feed / do not forward trade to Volume Feed" />
       <value enum="N" description="show identity of firm on Trade Data feed / forward trade to Volume Feed - Default" />
+      <value enum="Y" description="do not show identity of firm on Trade Data feed / do not forward trade to Volume Feed" />
     </field>
     <field number="9592" name="CounterPartySide" type="STRING">
       <value enum="1" description="Counter party bought" />
@@ -294,12 +294,12 @@
     <field number="9664" name="QAPAmount" type="STRING" />
     <field number="9665" name="QAPRate" type="STRING" />
     <field number="9666" name="QAPWaived" type="STRING">
-      <value enum="Y" description="Respondent waives QAP fee (not allowed when QAP is rebate)" />
       <value enum="N" description="Respondent charges/gives rebate QAP - Default" />
+      <value enum="Y" description="Respondent waives QAP fee (not allowed when QAP is rebate)" />
     </field>
     <field number="9710" name="BFMMFlag" type="STRING">
-      <value enum="Y" description="Supports the bona fide market making exception" />
       <value enum="N" description="Does not support the bona fide market making exception - Default" />
+      <value enum="Y" description="Supports the bona fide market making exception" />
     </field>
   </fields>
 </fix>

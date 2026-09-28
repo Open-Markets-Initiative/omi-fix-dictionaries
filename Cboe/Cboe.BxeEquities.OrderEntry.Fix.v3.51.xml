@@ -224,10 +224,10 @@
     <field number="15" name="Currency" type="CURRENCY" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
+      <value enum="L" description="Alternate Midpoint (less aggressive of midpoint and 1 tick inside PBBO)" />
+      <value enum="M" description="Midpoint (peg to PBBO midpoint)" />
       <value enum="P" description="Market Peg (peg buy to PBBO offer, peg sell to PBBO bid)" />
       <value enum="R" description="Primary Peg (peg buy to PBBO bid, peg sell to PBBO offer) offset specified in PegDifference (211). For Periodic Auction orders, this offset can be aggressive." />
-      <value enum="M" description="Midpoint (peg to PBBO midpoint)" />
-      <value enum="L" description="Alternate Midpoint (less aggressive of midpoint and 1 tick inside PBBO)" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
@@ -313,8 +313,8 @@
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too Late to Cancel" />
       <value enum="1" description="Unknown Order" />
-      <value enum="3" description="Already Pending Cancel or Pending Replace" />
       <value enum="2" description="Broker Option" />
+      <value enum="3" description="Already Pending Cancel or Pending Replace" />
     </field>
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="0" description="Broker Option" />
@@ -363,20 +363,20 @@
     <field number="447" name="PartyIDSource" type="STRING" />
     <field number="448" name="PartyID" type="STRING" />
     <field number="452" name="PartyRole" type="STRING">
-      <value enum="3" description="Client ID" />
+      <value enum="1" description="Executing Firm" />
       <value enum="12" description="Executing Trader (the Executing Decision Maker)" />
       <value enum="122" description="Investor ID (the Investment Decision Maker)" />
-      <value enum="1" description="Executing Firm" />
-      <value enum="6" description="Introducing Firm (Drop only)" />
-      <value enum="7" description="EnteringFirm (the party reporting the trade. Should not be used in the second leg, except when TradeHandlingInst (1123) = 0)" />
       <value enum="14" description="Giveup Clearing Firm (Drop only)" />
       <value enum="17" description="ContraFirm (the party the trade is alleged against)" />
+      <value enum="3" description="Client ID" />
+      <value enum="6" description="Introducing Firm (Drop only)" />
+      <value enum="7" description="EnteringFirm (the party reporting the trade. Should not be used in the second leg, except when TradeHandlingInst (1123) = 0)" />
     </field>
     <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
     <field number="730" name="SettlPrice" type="PRICE" />
     <field number="1724" name="OrderOrigination" type="STRING">
-      <value enum="5" description="DEA. Indicate DEA activity (as defined by MiFID II) is involved in the" />
       <value enum="0" description="Non-DEA. (default)" />
+      <value enum="5" description="DEA. Indicate DEA activity (as defined by MiFID II) is involved in the" />
     </field>
     <field number="2376" name="PartyRoleQualifier" type="STRING">
       <value enum="0" description="None (applicable only for the reserved Party IDs)" />
@@ -386,36 +386,36 @@
     </field>
     <field number="6655" name="CorrectedSize" type="STRING" />
     <field number="7692" name="RiskReset" type="STRING">
-      <value enum="S" description="Symbol level lockout reset" />
-      <value enum="F" description="Clearing firm level lockout reset" />
       <value enum="C" description="CustomGroupID lockout reset" />
+      <value enum="F" description="Clearing firm level lockout reset" />
+      <value enum="S" description="Symbol level lockout reset" />
     </field>
     <field number="7699" name="CustomGroupID" type="STRING" />
     <field number="7772" name="CentralCounterparty" type="STRING">
       <value enum="EMCF" description="Cboe Clear" />
       <value enum="LCHL" description="LCH Ltd (London)" />
-      <value enum="XCLR" description="SIX x-clear" />
       <value enum="NONE" description="Clearing Suppressed" />
+      <value enum="XCLR" description="SIX x-clear" />
     </field>
     <field number="7928" name="PreventParticipantMatch" type="STRING">
-      <value enum="N" description="Cancel Newest" />
-      <value enum="O" description="Cancel Oldest" />
       <value enum="B" description="Cancel Both" />
       <value enum="D" description="Decrement Larger5 / Cancel Smaller" />
-      <value enum="d" description="SameasDabove,butonlydecrementLeavesQty (151). Donot restate OrderQty (38). restate OrderQty (38)." />
       <value enum="F" description="Prevent Match at Participant Level" />
       <value enum="M" description="Prevent Match at Trading Firm Level" />
+      <value enum="N" description="Cancel Newest" />
+      <value enum="O" description="Cancel Oldest" />
       <value enum="P" description="Prevent Match at Port Owner Level" />
+      <value enum="d" description="SameasDabove,butonlydecrementLeavesQty (151). Donot restate OrderQty (38). restate OrderQty (38)." />
     </field>
     <field number="8013" name="TrdRegPublicationReasons" type="STRING">
-      <value enum="3" description="Reference Price (Dark Book) (RFPT)" />
-      <value enum="9" description="Large In Scale (Pre-Trade Transparency Waiver)" />
-      <value enum="10" description="Order Management Facility (Iceberg) (Pre-Trade Transparency" />
       <value enum="0" description="Negotiated Trade in Liquid Instrument (NLIQ)" />
       <value enum="1" description="Negotiated Trade in Illiquid Instrument (OILQ)" />
-      <value enum="2" description="NegotiatedTradeSubjecttoConditionsOtherThantheCurrentMarket" />
-      <value enum="6" description="Deferral for Large in Scale (LRGS)" />
+      <value enum="10" description="Order Management Facility (Iceberg) (Pre-Trade Transparency" />
       <value enum="17" description="Negotiated Trade Subject to a Pre-Trade Transparency Waiver (re-" />
+      <value enum="2" description="NegotiatedTradeSubjecttoConditionsOtherThantheCurrentMarket" />
+      <value enum="3" description="Reference Price (Dark Book) (RFPT)" />
+      <value enum="6" description="Deferral for Large in Scale (LRGS)" />
+      <value enum="9" description="Large In Scale (Pre-Trade Transparency Waiver)" />
     </field>
     <field number="8015" name="OrderAttributeTypes" type="STRING">
       <value enum="2" description="LiquidityProvisionactivityorder. Thisindicatestheorderisrelatedto anysortofliquidityprovisionactivity,asdefinedbyMiFIDII.Thisflag is mandatory for orders which are part of a liquidity provision activity. Absence of this value indicates otherwise. anysortofliquidityprovisionactivity,asdefinedbyMiFIDII.Thisflag is mandatory for orders which are part of a liquidity provision activity. Absence of this value indicates otherwise." />
@@ -424,33 +424,33 @@
     <field number="8016" name="TradingVenueRegTradeId" type="STRING" />
     <field number="9303" name="RoutingInst" type="STRING">
       <value enum="B" description="Cboe Only (default)" />
-      <value enum="P" description="CboeOnly—PostOnly(willrejectratherthanremovevisibleliquidity)" />
-      <value enum="U" description="Dark Sweep (interbook)" />
-      <value enum="u" description="Dark Lit Sweep (best-price)" />
-      <value enum="W" description="Lit Sweep (interbook, best-price)" />
-      <value enum="X" description="Lit Sweep (interbook, sequential)" />
-      <value enum="BD" description="Cboe Dark Book Only (hidden midpoint peg orders only)" />
       <value enum="BA" description="Cboe Automatic Dark Routed (routes to Cboe Integrated Book if order is Large In Scale (LIS) or is not a midpoint order, otherwise routes midpoint non-LIS orders to Cboe Dark Book) order is Large In Scale (LIS) or is not a midpoint order, otherwise routes midpoint non-LIS orders to Cboe Dark Book)" />
-      <value enum="BP" description="Cboe Periodic Auction Book" />
+      <value enum="BD" description="Cboe Dark Book Only (hidden midpoint peg orders only)" />
       <value enum="BH" description="Dark Periodic Sweep (midpoint peg orders)" />
-      <value enum="BU" description="Cboe Closing Cross" />
       <value enum="BL" description="Periodic Lit Sweep" />
       <value enum="BM" description="Dark Periodic Lit Sweep" />
-      <value enum="N" description="None (implied if 3rd char is not specified)" />
-      <value enum="L" description="Limit (1-tick inside the limit price)" />
-      <value enum="T" description="Far-touch (least aggressive of 1-tick inside the EBBO far-touch or limit price) or limit price)" />
+      <value enum="BP" description="Cboe Periodic Auction Book" />
+      <value enum="BU" description="Cboe Closing Cross" />
       <value enum="D" description="Dark-on-Expiry" />
+      <value enum="L" description="Limit (1-tick inside the limit price)" />
+      <value enum="N" description="None (implied if 3rd char is not specified)" />
+      <value enum="P" description="CboeOnly—PostOnly(willrejectratherthanremovevisibleliquidity)" />
+      <value enum="T" description="Far-touch (least aggressive of 1-tick inside the EBBO far-touch or limit price) or limit price)" />
+      <value enum="U" description="Dark Sweep (interbook)" />
+      <value enum="W" description="Lit Sweep (interbook, best-price)" />
+      <value enum="X" description="Lit Sweep (interbook, sequential)" />
+      <value enum="u" description="Dark Lit Sweep (best-price)" />
     </field>
     <field number="9416" name="ExtExecInst" type="STRING">
-      <value enum="N" description="None" />
-      <value enum="G" description="All Or None" />
-      <value enum="R" description="Retail Order" />
       <value enum="A" description="Retail All Or None" />
+      <value enum="G" description="All Or None" />
       <value enum="L" description="Retail Liquidity Provision" />
+      <value enum="N" description="None" />
+      <value enum="R" description="Retail Order" />
     </field>
     <field number="9479" name="DisplayIndicator" type="STRING">
-      <value enum="X" description="Displayed Order (default)" />
       <value enum="I" description="Invisible" />
+      <value enum="X" description="Displayed Order (default)" />
     </field>
     <field number="9619" name="CancelOrigOnReject" type="STRING">
       <value enum="N" description="Leave original order alone (default)" />
@@ -461,18 +461,18 @@
     <field number="9689" name="OrigSubID" type="STRING" />
     <field number="9730" name="TradeLiquidityIndicator" type="STRING">
       <value enum="A" description="Added Liquidity" />
-      <value enum="R" description="Removed Liquidity" />
       <value enum="C" description="Auction" />
-      <value enum="S" description="Self Match (opt-in)" />
-      <value enum="P" description="Periodic Auction" />
-      <value enum="X" description="Routed to Another Market" />
       <value enum="D" description="Cboe Dark Pool" />
-      <value enum="T" description="Cboe Dark Pool IOC order" />
       <value enum="I" description="Hidden Liquidity that was price improved" />
       <value enum="K" description="Hidden (reserve) portion of an iceberg order" />
-      <value enum="O" description="Open Auction" />
       <value enum="L" description="Close Auction" />
+      <value enum="O" description="Open Auction" />
+      <value enum="P" description="Periodic Auction" />
+      <value enum="R" description="Removed Liquidity" />
+      <value enum="S" description="Self Match (opt-in)" />
+      <value enum="T" description="Cboe Dark Pool IOC order" />
       <value enum="V" description="Volatility Auction" />
+      <value enum="X" description="Routed to Another Market" />
     </field>
     <field number="9882" name="FeeCode" type="STRING" />
   </fields>

@@ -86,7 +86,6 @@
     <field number="27" name="IOIQty" type="QTY" />
     <field number="34" name="MsgSeqNum" type="INT" />
     <field number="35" name="MsgType" type="STRING">
-      <value enum="A" description="Logon" />
       <value enum="0" description="Heartbeat" />
       <value enum="1" description="Test Request" />
       <value enum="2" description="Resend Request" />
@@ -94,10 +93,11 @@
       <value enum="4" description="Sequence Reset" />
       <value enum="5" description="Logout" />
       <value enum="6" description="Indication of Interest" />
+      <value enum="A" description="Logon" />
     </field>
     <field number="43" name="PossDupFlag" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="45" name="RefSeqNum" type="INT" />
     <field number="49" name="SenderCompID" type="STRING" />
@@ -121,6 +121,10 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid Tag Number" />
       <value enum="1" description="Required Tag Missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
+      <value enum="13" description="Tag Appears More than Once" />
+      <value enum="14" description="Tag specified out of required order" />
       <value enum="2" description="Tag Not Defined For This Message Type" />
       <value enum="3" description="Undefined Tag" />
       <value enum="4" description="Tag specified without a value" />
@@ -128,10 +132,6 @@
       <value enum="6" description="Incorrect data format for value" />
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
-      <value enum="13" description="Tag Appears More than Once" />
-      <value enum="14" description="Tag specified out of required order" />
       <value enum="99" description="Other" />
     </field>
     <field number="553" name="Username" type="STRING" />

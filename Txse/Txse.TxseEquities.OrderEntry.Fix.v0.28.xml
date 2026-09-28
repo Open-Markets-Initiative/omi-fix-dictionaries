@@ -269,8 +269,8 @@
       <value enum="3" description="Similar to SYS, but canceled immediately, after trading with resting liquidity on the Exchange." />
       <value enum="6" description="Similar to SYS, but canceled after the requested time has passed or the end of the After Hours Session, whichever comes first. See the order's expireTime field. For additional information, refer to GT" />
       <value enum="7" description="Auction-onlyTIFfortheClosingAuctioncross. Orderparticipatesonly in the Closing cross - no continuous-book matching. Accepted from the start of the Early Session until the cross fires. Order becomes no" />
-      <value enum="S" description="Accepted during any session. Live immediately upon entry. Canceled at the end of the After Hours Session. (custom TXSE value) Value" />
       <value enum="R" description="Regular-Hours-Only limit order. Accepted during the Early Session for TXSE-primary-listedsymbolsonly;acceptedduringtheRegularSession for any symbol. Rejected during the After Hours Session. For TXSE-p" />
+      <value enum="S" description="Accepted during any session. Live immediately upon entry. Canceled at the end of the After Hours Session. (custom TXSE value) Value" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="65" name="SymbolSfx" type="STRING" />
@@ -287,9 +287,6 @@
     <field number="102" name="CxlRejReason" type="STRING">
       <value enum="0" description="Attempt to modify, replace, or cancel an orderthathasalreadycanceledorfullyex- ecuted." />
       <value enum="1" description="Attempttomodifyorreplaceaclientorder that was not found for the current session on this port." />
-      <value enum="6" description="Client Order Id has already been used for the current session on this port." />
-      <value enum="8" description="Invalid limit price." />
-      <value enum="18" description="Price does not conform to the minimum price variation (tick size)." />
       <value enum="100" description="Invalidreferencepricetargetrelatedtothe order attributes. (custom TXSE value)" />
       <value enum="103" description="Invalid side. (custom TXSE value)" />
       <value enum="104" description="Invalid max floor quantity related to the order attributes. (custom TXSE value)" />
@@ -309,20 +306,16 @@
       <value enum="124" description="Order limit price is outside LULD (Limit Up-Limit Down) bands and port settings require rejection. (custom TXSE value)" />
       <value enum="125" description="Auction-Only orders for the Open and Close cannot be cancelled, modified, or replaced once the Band Window begins. (custom TXSE value)" />
       <value enum="126" description="Order property is incompatible with an auction-classed order. (custom TXSE value)" />
+      <value enum="18" description="Price does not conform to the minimum price variation (tick size)." />
       <value enum="200" description="Symbol ID is not valid for the current ses- sion. (custom TXSE value)" />
       <value enum="201" description="Invalid order quantity. (custom TXSE value)" />
       <value enum="202" description="Ordernotionalvalueexceedsthemaximum notional limit configured in port settings. (custom TXSE value)" />
       <value enum="203" description="Order modification not permitted. (cus- tom TXSE value)" />
+      <value enum="6" description="Client Order Id has already been used for the current session on this port." />
+      <value enum="8" description="Invalid limit price." />
     </field>
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="1" description="Symbol ID is not valid for the current ses- sion." />
-      <value enum="5" description="Client Order Id is invalid." />
-      <value enum="6" description="Client Order Id has already been used for the current session on this port." />
-      <value enum="8" description="Attempt to modify, replace, or cancel an orderthathasalreadycanceledorfullyex- ecuted." />
-      <value enum="13" description="Invalid order quantity." />
-      <value enum="16" description="Invalid limit price." />
-      <value enum="18" description="Price does not conform to the minimum price variation (tick size)." />
-      <value enum="27" description="Ordernotionalvalueexceedsthemaximum notional limit configured in port settings. Value" />
       <value enum="100" description="Invalidreferencepricetargetrelatedtothe order attributes. (custom TXSE value)" />
       <value enum="101" description="Invalid'IsHidden'flagrelatedtotheorder attributes. (custom TXSE value)" />
       <value enum="102" description="Invalid order type related to the order at- tributes. (custom TXSE value)" />
@@ -350,6 +343,13 @@
       <value enum="124" description="Order limit price is outside LULD (Limit Up-Limit Down) bands and port settings require rejection. (custom TXSE value)" />
       <value enum="125" description="Auction-Only orders for the Open and Close cannot be cancelled, modified, or replaced once the Band Window begins. (custom TXSE value)" />
       <value enum="126" description="Order property is incompatible with an auction-classed order. (custom TXSE value)" />
+      <value enum="13" description="Invalid order quantity." />
+      <value enum="16" description="Invalid limit price." />
+      <value enum="18" description="Price does not conform to the minimum price variation (tick size)." />
+      <value enum="27" description="Ordernotionalvalueexceedsthemaximum notional limit configured in port settings. Value" />
+      <value enum="5" description="Client Order Id is invalid." />
+      <value enum="6" description="Client Order Id has already been used for the current session on this port." />
+      <value enum="8" description="Attempt to modify, replace, or cancel an orderthathasalreadycanceledorfullyex- ecuted." />
     </field>
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="109" name="ClientID" type="STRING" />
@@ -375,10 +375,10 @@
       <value enum="6" description="A message could not be fully parsed with invalid or missing fields." />
     </field>
     <field number="378" name="ExecRestatementReason" type="INT">
-      <value enum="3" description="A reprice eligible order has been repriced to a new price." />
-      <value enum="5" description="Sent when Self Match Prevention decrements an order quantity." />
       <value enum="100" description="A new displayed slice of a reserve order has been added to the displayed book. (custom TXSE value)" />
       <value enum="101" description="Orders staged awaiting the result of the auction with un- filled residual have been reinstated into continuous book. (custom TXSE value)" />
+      <value enum="3" description="A reprice eligible order has been repriced to a new price." />
+      <value enum="5" description="Sent when Self Match Prevention decrements an order quantity." />
     </field>
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Order Cancel Request" />
@@ -418,6 +418,7 @@
     <field number="1137" name="DefaultApplVerID" type="STRING">
       <value enum="0" description="Not supported. Do not send." />
       <value enum="1" description="Not supported. Do not send." />
+      <value enum="10" description="Not supported. Do not send." />
       <value enum="2" description="Not supported. Do not send." />
       <value enum="3" description="Not supported. Do not send." />
       <value enum="4" description="Not supported. Do not send." />
@@ -426,18 +427,17 @@
       <value enum="7" description="Not supported. Do not send." />
       <value enum="8" description="Not supported. Do not send." />
       <value enum="9" description="FIX 5.0 Service Pack 2. TXSE uses FIX 5.0 SP2 for all sessions." />
-      <value enum="10" description="Not supported. Do not send." />
     </field>
     <field number="1138" name="DisplayQty" type="QTY" />
     <field number="1369" name="MassActionReportID" type="STRING" />
     <field number="2828" name="CurrentDisplayPrice" type="STRING" />
     <field number="2964" name="SelfMatchPreventionInstruction" type="STRING">
       <value enum="1" description="Cancels the incoming order. Keeps the resting order on the book." />
-      <value enum="2" description="Cancels the resting order. Keeps the incoming order on the book." />
-      <value enum="3" description="Cancels both orders entirely regardless of size." />
       <value enum="100" description="Self-match prevention is disabled. (custom TXSE value)" />
       <value enum="101" description="Ifordersareequalsize: cancelsboth. Ifdifferentsizes: cancels the smaller order, keeps the larger one. (custom TXSE value)" />
       <value enum="102" description="If orders are equal size: cancels both. If different sizes: can- cels the overlapping portion, keeps the remainder of the larger order. (custom TXSE value)" />
+      <value enum="2" description="Cancels the resting order. Keeps the incoming order on the book." />
+      <value enum="3" description="Cancels both orders entirely regardless of size." />
     </field>
     <field number="8000" name="PriceSlideInstruction" type="CHAR">
       <value enum="0" description="No Display-Price Slide instruction. Or- dersthatwouldcreatelockingorcrossing quotations will be canceled. Value" />
@@ -453,14 +453,6 @@
     </field>
     <field number="8003" name="CancelReason" type="STRING">
       <value enum="1" description="Cancel due to request by client." />
-      <value enum="2" description="Cancel due to time in force expiration." />
-      <value enum="3" description="Cancel due to inability to meet minimum quantity." />
-      <value enum="4" description="Canceled as order would violate Regu- lation NMS Rule 610(d) by creating a lockedorcrossedmarket,andpricesliding was either not selected or not applicable." />
-      <value enum="5" description="Reserve orders will be canceled when deemed marketable at another exchange either at new order entry or replenish- ment." />
-      <value enum="6" description="Cancel due to self-match prevention in- structions." />
-      <value enum="7" description="Replenishment canceled related to the Reserveorderbeingcanceledorreplaced." />
-      <value enum="8" description="Cancelduetoordertypee.g. MarketOr- ders do not rest." />
-      <value enum="9" description="Cancel due to client instruction on crossed markets." />
       <value enum="10" description="Cancel due to a mass cancel request." />
       <value enum="11" description="Canceledasorderwouldlockorcrossthe Exchange book, and price sliding was ei- ther not selected or not applicable." />
       <value enum="12" description="Canceled as order would violate Regula- tionSHORule201bydisplayatorbelow the National Best Bid during a short sale pricetestrestriction,andpriceslidingwas either not selected or not applicable" />
@@ -470,6 +462,14 @@
       <value enum="16" description="Auction order is canceled because the auction it was eligible for has concluded. Covers two cases: (a) the cross ran but did not fully fill this order - canceled at end of the post-cross auction-cance" />
       <value enum="17" description="Pegged order canceled because its calcu- lated reference price moved beyond the order'slimitprice(thelimitpricecollared the peg)." />
       <value enum="18" description="Canceled as the order is of odd lot size and could not be executed against the contra-side liquidity on the TXSE Book." />
+      <value enum="2" description="Cancel due to time in force expiration." />
+      <value enum="3" description="Cancel due to inability to meet minimum quantity." />
+      <value enum="4" description="Canceled as order would violate Regu- lation NMS Rule 610(d) by creating a lockedorcrossedmarket,andpricesliding was either not selected or not applicable." />
+      <value enum="5" description="Reserve orders will be canceled when deemed marketable at another exchange either at new order entry or replenish- ment." />
+      <value enum="6" description="Cancel due to self-match prevention in- structions." />
+      <value enum="7" description="Replenishment canceled related to the Reserveorderbeingcanceledorreplaced." />
+      <value enum="8" description="Cancelduetoordertypee.g. MarketOr- ders do not rest." />
+      <value enum="9" description="Cancel due to client instruction on crossed markets." />
     </field>
     <field number="9000" name="LocateBroker" type="STRING" />
     <field number="9001" name="MaxReplenishTimeRange" type="STRING" />

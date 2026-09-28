@@ -232,14 +232,14 @@
     <field number="16" name="EndSeqNo" type="SEQNUM" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLECHARVALUE">
-      <value enum="f" description="Intermarket Sweep Order (ISO) R or" />
-      <value enum="H" description="regular pegged to NBBO" />
-      <value enum="P" description="reverse pegged to NBBO" />
-      <value enum="M" description="Mid-Point Peg" />
-      <value enum="Q" description="Market Maker Peg" />
-      <value enum="y" description="Trade-at Intermarket Sweep Order" />
       <value enum="B" description="Reactive Trade Now" />
+      <value enum="H" description="regular pegged to NBBO" />
+      <value enum="M" description="Mid-Point Peg" />
+      <value enum="P" description="reverse pegged to NBBO" />
+      <value enum="Q" description="Market Maker Peg" />
       <value enum="b" description="Reactive Trade Now opt-out" />
+      <value enum="f" description="Intermarket Sweep Order (ISO) R or" />
+      <value enum="y" description="Trade-at Intermarket Sweep Order" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
@@ -258,14 +258,14 @@
       <value enum="0" description="New" />
       <value enum="1" description="Partial Fill" />
       <value enum="2" description="Filled" />
+      <value enum="3" description="Done for day" />
       <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
       <value enum="6" description="Pending Cancel" />
-      <value enum="8" description="Rejected" />
-      <value enum="A" description="Pending New" />
-      <value enum="3" description="Done for day" />
       <value enum="7" description="Stopped" />
+      <value enum="8" description="Rejected" />
       <value enum="9" description="Suspended" />
+      <value enum="A" description="Pending New" />
       <value enum="B" description="Calculated" />
       <value enum="C" description="Expired" />
       <value enum="D" description="Accepted for bidding" />
@@ -279,8 +279,8 @@
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="43" name="PossDupFlag" type="STRING">
-      <value enum="Y" description="Possible duplicate" />
       <value enum="N" description="Original transmission" />
+      <value enum="Y" description="Possible duplicate" />
     </field>
     <field number="44" name="Price" type="PRICE">
       <value enum="40" description="2" />
@@ -306,10 +306,10 @@
       <value enum="2" description="At the Opening (OPG)" />
       <value enum="3" description="Immediate or Cancel (IOC)" />
       <value enum="5" description="GTX" />
+      <value enum="59" description="A, N, or R, then tag 110 is also required" />
       <value enum="7" description="At the Close" />
       <value enum="A" description="Able to participate in all Mid-day crosses" />
       <value enum="N" description="Participates only in the Next Mid-day cross" />
-      <value enum="59" description="A, N, or R, then tag 110 is also required" />
       <value enum="R" description="Participates only in Regular Intraday crosses If this tag" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
@@ -369,6 +369,8 @@
     <field number="373" name="SessionRejectReason" type="INT">
       <value enum="0" description="Invalid tag number" />
       <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
       <value enum="2" description="Tag not defined for this message type" />
       <value enum="3" description="Undefined Tag" />
       <value enum="4" description="Tag specified without a value" />
@@ -377,8 +379,6 @@
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
       <value enum="9" description="CompID problem" />
-      <value enum="10" description="SendingTime accuracy problem" />
-      <value enum="11" description="Invalid MsgType" />
     </field>
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="378" name="ExecRestatementReason" type="STRING" />
@@ -391,17 +391,17 @@
     </field>
     <field number="5149" name="Memo" type="STRING" />
     <field number="9140" name="DisplayInst" type="STRING">
-      <value enum="Y" description="Anonymous-Price to Comply" />
       <value enum="A" description="Attributable-Price to Display" />
-      <value enum="N" description="Non-Display" />
       <value enum="I" description="Imbalance Only" />
+      <value enum="N" description="Non-Display" />
+      <value enum="Y" description="Anonymous-Price to Comply" />
     </field>
     <field number="9211" name="SMAttribFlag" type="STRING">
-      <value enum="Y" description="attributable - Price to Display (default)" />
-      <value enum="N" description="anonynous - Price to Display" />
       <value enum="C" description="anonymous - Price to Comply" />
+      <value enum="N" description="anonynous - Price to Display" />
       <value enum="P" description="Post Only order" />
       <value enum="W" description="Mid-Point Post Only order" />
+      <value enum="Y" description="attributable - Price to Display (default)" />
     </field>
     <field number="9212" name="SMAIQFlag" type="STRING" />
     <field number="9214" name="SMBnchdFlag" type="STRING" />

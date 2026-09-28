@@ -136,14 +136,14 @@
     <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
+      <value enum="0" description="New" />
       <value enum="1" description="Partially" />
       <value enum="2" description="Filled" />
-      <value enum="0" description="New" />
       <value enum="4" description="Canceled" />
-      <value enum="C" description="Expired" />
       <value enum="6" description="Pending Cancel" />
       <value enum="8" description="Rejected" />
       <value enum="A" description="Pending New" />
+      <value enum="C" description="Expired" />
       <value enum="E" description="Pending Replace" />
     </field>
     <field number="40" name="OrdType" type="CHAR" />
@@ -169,14 +169,14 @@
     <field number="123" name="GapFillFlag" type="BOOLEAN" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
     <field number="150" name="ExecType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="4" description="Canceled" />
+      <value enum="5" description="Replaced" />
+      <value enum="C" description="Expired" />
+      <value enum="D" description="Restated" />
       <value enum="F" description="Trade" />
       <value enum="G" description="Trade Correct" />
       <value enum="H" description="Trade Cancel" />
-      <value enum="0" description="New" />
-      <value enum="5" description="Replaced" />
-      <value enum="4" description="Canceled" />
-      <value enum="C" description="Expired" />
-      <value enum="D" description="Restated" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="371" name="RefTagID" type="STRING" />
@@ -209,15 +209,15 @@
     <field number="21004" name="CancelReason" type="STRING">
       <value enum="0" description="Other" />
       <value enum="1" description="User Requested Cancel" />
+      <value enum="10" description="Self Trade Prevention" />
+      <value enum="11" description="Insufficient Quotes" />
+      <value enum="12" description="Non Compliant Price" />
       <value enum="4" description="End Of Trading" />
       <value enum="5" description="Limit Up Limit Down" />
       <value enum="6" description="Halted" />
       <value enum="7" description="Exchange Supervisory" />
       <value enum="8" description="Order Expired" />
       <value enum="9" description="Lock Or Cross Book" />
-      <value enum="10" description="Self Trade Prevention" />
-      <value enum="11" description="Insufficient Quotes" />
-      <value enum="12" description="Non Compliant Price" />
     </field>
   </fields>
 </fix>

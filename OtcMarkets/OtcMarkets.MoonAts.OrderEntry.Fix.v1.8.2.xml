@@ -162,13 +162,13 @@
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
       <value enum="1" description="Not Held (accepted, but not processed)" />
-      <value enum="f" description="ISO" />
       <value enum="6" description="Post Only on Order Entry" />
-      <value enum="r" description="Route IOC" />
-      <value enum="a" description="Self Trade Prevention" />
-      <value enum="o" description="Route ISO" />
-      <value enum="n" description="Route Outside Normal Market Hours" />
       <value enum="S" description="Allow Price Sliding" />
+      <value enum="a" description="Self Trade Prevention" />
+      <value enum="f" description="ISO" />
+      <value enum="n" description="Route Outside Normal Market Hours" />
+      <value enum="o" description="Route ISO" />
+      <value enum="r" description="Route IOC" />
       <value enum="x" description="IOC after Cancel / Replace" />
     </field>
     <field number="20" name="ExecTransType" type="CHAR">
@@ -226,10 +226,10 @@
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="58" name="Text" type="STRING" />
     <field number="59" name="TimeInForce" type="CHAR">
+      <value enum="0" description="DAY" />
+      <value enum="1" description="GTC" />
       <value enum="3" description="IOC" />
       <value enum="5" description="GTX" />
-      <value enum="1" description="GTC" />
-      <value enum="0" description="DAY" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="65" name="SymbolSfx" type="STRING" />
@@ -242,8 +242,8 @@
     </field>
     <field number="111" name="MaxFloor" type="QTY" />
     <field number="114" name="LocateReqd" type="BOOLEAN">
-      <value enum="Y" description="Yes" />
       <value enum="N" description="No Required to be N for sell short orders" />
+      <value enum="Y" description="Yes" />
     </field>
     <field number="115" name="OnBehalfOfCompId" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
@@ -271,26 +271,26 @@
     </field>
     <field number="5700" name="LocateBroker" type="STRING" />
     <field number="7928" name="NoSelfTrade" type="STRING">
+      <value enum="C" description="Cancel Both" />
       <value enum="D" description="Cancel Smaller/Decrement Larger (Default)" />
       <value enum="N" description="Cancel Newest" />
       <value enum="O" description="Cancel Oldest" />
-      <value enum="C" description="Cancel Both" />
     </field>
     <field number="9111" name="RefreshBelowShow" type="STRING">
-      <value enum="Y" description="Below MaxFloor" />
       <value enum="N" description="Below Minimum Quote Size (Default)" />
+      <value enum="Y" description="Below MaxFloor" />
     </field>
     <field number="9700" name="Anonymous" type="STRING">
-      <value enum="Y" description="Display with 'MOON' MPID" />
       <value enum="N" description="Display with firm MPID (Default)" />
+      <value enum="Y" description="Display with 'MOON' MPID" />
     </field>
     <field number="9730" name="LiquidityIndicator" type="STRING">
       <value enum="A" description="Added Liquidity" />
       <value enum="B" description="Added Hidden Liquidity" />
-      <value enum="R" description="Removed Liquidity" />
       <value enum="D" description="Added Liquidity - Sub Dollar" />
       <value enum="E" description="Added Hidden Liquidity - Sub Dollar" />
       <value enum="H" description="Removed Liquidity - Sub Dollar" />
+      <value enum="R" description="Removed Liquidity" />
       <value enum="X" description="Routed Execution - External Marketplace" />
     </field>
     <field number="9740" name="ClosingPrice" type="STRING" />
