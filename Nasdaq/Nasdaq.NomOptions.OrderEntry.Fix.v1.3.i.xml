@@ -1,13 +1,13 @@
 <!--
-  Fix dictionary for: Nasdaq OrderEntry Fix v1.3.g
+  Fix dictionary for: Nasdaq OrderEntry Fix v1.3.i
 
   Protocol:
     Organization: National Association of Securities Dealers Automated Quotations (Nasdaq)
     Protocol: Order Entry
     Encoding: Financial Information eXchange
-    Version: 1.3.g
-    Date: 2019-02-20
-    Specification: NOM and BX Options FIX System
+    Version: 1.3.i
+    Date: 2026-07-13
+    Specification: 1062-26_IEX and MX2 Updates_NOM-Options-FIX-System.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -315,10 +315,9 @@
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
     <field number="76" name="ExecBroker" type="STRING">
       <value enum="DNR" description="Do Not Route - send directly to NASDAQ and never route away" />
-      <value enum="POST" description="Post Only - DAY limit maker order, never a taker (NOM only)" />
+      <value enum="POST" description="Post Only - DAY limit maker order, never a taker" />
       <value enum="SEEK" description="Try available market centers up to the limit price then post to NASDAQ; does not proactively route out again" />
       <value enum="SRCH" description="Search - try available market centers then post; continues to proactively route out" />
-      <value enum="WAIT" description="Wait for a period before booking the order" />
     </field>
     <field number="77" name="OpenClose" type="CHAR">
       <value enum="C" description="Closing Position" />
@@ -372,12 +371,16 @@
       <value enum="C" description="C2" />
       <value enum="D" description="MIAX Emerald" />
       <value enum="E" description="BATS EDGX" />
+      <value enum="G" description="MX2" />
       <value enum="H" description="ISE Gemini" />
       <value enum="J" description="ISE Mercury" />
       <value enum="N" description="NYSE" />
       <value enum="P" description="MIAX PEARL" />
       <value enum="Q" description="NASDAQ" />
+      <value enum="S" description="MIAX Sapphire" />
       <value enum="T" description="BX Options" />
+      <value enum="U" description="MEMX" />
+      <value enum="V" description="IEX Options" />
       <value enum="W" description="CBOE" />
       <value enum="X" description="PHLX" />
       <value enum="Y" description="ISE" />
@@ -426,19 +429,25 @@
       <value enum="3" description="Executed on ISE Mercury" />
       <value enum="4" description="Executed on MIAX PEARL" />
       <value enum="5" description="Executed on MIAX Emerald" />
+      <value enum="6" description="Executed on MEMX" />
+      <value enum="7" description="Executed on MIAX Sapphire" />
+      <value enum="8" description="Executed on IEX Options" />
+      <value enum="9" description="Executed on MX2" />
       <value enum="A" description="Executed on NASDAQ - Added Liquidity (maker)" />
       <value enum="B" description="Executed on BOX" />
       <value enum="D" description="Executed on BATS EDGX" />
       <value enum="E" description="Executed on AMEX" />
+      <value enum="F" description="Opening Customer to Customer" />
       <value enum="H" description="Executed on ISE Gemini" />
-      <value enum="J" description="Executed on NASDAQ - Order Exposure Alerted (Flash Order) (NOM only)" />
-      <value enum="K" description="Executed on NASDAQ - Executed against a Flash Order (NOM only)" />
+      <value enum="J" description="Executed on NASDAQ - Order Exposure Alerted (Flash Order)" />
+      <value enum="K" description="Executed on NASDAQ - Executed against a Flash Order (not supported; available at a later date)" />
       <value enum="N" description="Executed on NASDAQ - Maker/Taker N/A" />
       <value enum="O" description="Market Opening Auction" />
       <value enum="P" description="Executed on Arca" />
-      <value enum="Q" description="Executed on NOM (NOM only)" />
+      <value enum="Q" description="Executed on NOM" />
       <value enum="R" description="Executed on NASDAQ - Removed Liquidity (taker)" />
       <value enum="S" description="Executed on ISE" />
+      <value enum="T" description="Executed on BX Options" />
       <value enum="U" description="Executed on PHLX" />
       <value enum="W" description="Executed on CBOE" />
       <value enum="Y" description="Executed on MIAX" />

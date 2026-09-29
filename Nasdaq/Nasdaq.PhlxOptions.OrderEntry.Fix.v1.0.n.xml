@@ -1,13 +1,13 @@
 <!--
-  Fix dictionary for: Nasdaq OrderEntry Fix v1.0
+  Fix dictionary for: Nasdaq OrderEntry Fix v1.0.n
 
   Protocol:
     Organization: National Association of Securities Dealers Automated Quotations (Nasdaq)
     Protocol: Order Entry
     Encoding: Financial Information eXchange
-    Version: 1.0
-    Date: 2019-04-15
-    Specification: PHLX Firm FIX Engine Session and Application Manual
+    Version: 1.0.n
+    Date: 2024-06-03
+    Specification: 1016-Q24_PHLX_FIX.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -487,6 +487,7 @@
       <value enum="5" description="PHLX Registered Market Maker" />
       <value enum="7" description="Joint Back Office (JBO)" />
       <value enum="8" description="Professional Customer" />
+      <value enum="9" description="PHLX Market Maker with CMTA" />
     </field>
     <field number="205" name="MaturityDay" type="INT" />
     <field number="207" name="SecurityExchange" type="STRING">
@@ -501,7 +502,9 @@
       <value enum="N" description="NYSE" />
       <value enum="P" description="MIAX PEARL" />
       <value enum="Q" description="NASDAQ" />
+      <value enum="S" description="MIAX Sapphire" />
       <value enum="T" description="BX Options" />
+      <value enum="U" description="MEMX" />
       <value enum="W" description="CBOE" />
       <value enum="X" description="PHLX" />
       <value enum="Y" description="ISE" />
@@ -592,6 +595,8 @@
       <value enum="3" description="Executed on ISE Mercury" />
       <value enum="4" description="Executed on MIAX PEARL" />
       <value enum="5" description="Executed on MIAX Emerald" />
+      <value enum="6" description="Executed on MEMX" />
+      <value enum="7" description="Executed on MIAX Sapphire" />
       <value enum="A" description="Executed on PHLX - Added Liquidity (maker)" />
       <value enum="B" description="Executed on BOX" />
       <value enum="D" description="Executed on BATS EDGX" />

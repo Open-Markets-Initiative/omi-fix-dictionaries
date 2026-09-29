@@ -1,0 +1,416 @@
+<!--
+  Fix dictionary for: Nasdaq DropCopy Fix v2.1
+
+  Protocol:
+    Organization: National Association of Securities Dealers Automated Quotations (Nasdaq)
+    Protocol: Drop Copy
+    Encoding: Financial Information eXchange
+    Version: 2.1
+    Date: 2026-08-01
+    Specification: Options_FIX_Drop.pdf
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The protocol compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="4" minor="2" servicepack="0" type="FIX">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="SenderSubID" required="N" />
+    <field name="TargetSubID" required="N" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+    </message>
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="Account" required="N" />
+      <field name="AvgPx" required="N" />
+      <field name="ClOrdID" required="N" />
+      <field name="QuoteID" required="N" />
+      <field name="CumQty" required="N" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="ExecRefID" required="N" />
+      <field name="ExecTransType" required="Y" />
+      <field name="LastMkt" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="LastShares" required="N" />
+      <field name="OrderID" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdStatus" required="N" />
+      <field name="OrdType" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Price" required="N" />
+      <field name="Rule80A" required="N" />
+      <field name="Side" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="Text" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="ExecBroker" required="N" />
+      <field name="OpenClose" required="Y" />
+      <field name="StopPx" required="N" />
+      <field name="MaxFloor" required="N" />
+      <field name="ExecType" required="Y" />
+      <field name="LeavesQty" required="Y" />
+      <field name="SecurityType" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="CustomerOrFirm" required="Y" />
+      <field name="MaturityDate" required="Y" />
+      <field name="DayOrderQty" required="N" />
+      <field name="DayCumQty" required="N" />
+      <field name="DayAvgPx" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="ClearingAccount" required="N" />
+      <field name="MultiLegReportingType" required="N" />
+      <field name="CrossID" required="N" />
+      <field name="LegRefID" required="N" />
+      <field name="SeriesID" required="N" />
+      <field name="StockLegGiveUp" required="N" />
+      <field name="AuctionID" required="N" />
+      <field name="AuctionType" required="N" />
+      <field name="UnderlyingPx" required="N" />
+      <field name="UnderlyingQty" required="N" />
+      <field name="RoutingStrategy" required="N" />
+      <field name="DisplayWhen" required="N" />
+      <field name="PriceProtectionScope" required="N" />
+      <field name="StepUpPriceType" required="N" />
+      <field name="StepUpPrice" required="N" />
+      <field name="CounterpartyExecBrokerClearingFirm" required="N" />
+      <field name="CounterpartyExecBroker" required="N" />
+      <field name="CounterpartyCustomerOrFirm" required="N" />
+      <field name="FloorBrokerNumber" required="N" />
+      <field name="OrderSource" required="N" />
+      <field name="LiquidityIndicator" required="N" />
+      <field name="PriceDelta" required="N" />
+      <field name="ExpireDate" required="N" />
+      <field name="DisplayRange" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="STRING" />
+    <field number="6" name="AvgPx" type="PRICE" />
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
+      <value enum="G" description="All Or None (AON)" />
+      <value enum="f" description="Intermarket Sweep Order (ISO)" />
+    </field>
+    <field number="19" name="ExecRefID" type="STRING" />
+    <field number="20" name="ExecTransType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Cancel" />
+    </field>
+    <field number="30" name="LastMkt" type="EXCHANGE">
+      <value enum="&quot; &quot;" description="Nasdaq Execution Services (stock trades)" />
+      <value enum="A" description="NYSE AMEX" />
+      <value enum="B" description="BOX" />
+      <value enum="C" description="CBOE" />
+      <value enum="D" description="MIAX Emerald" />
+      <value enum="E" description="EDGX" />
+      <value enum="G" description="MX2" />
+      <value enum="H" description="GEMX" />
+      <value enum="I" description="ISE" />
+      <value enum="J" description="MRX" />
+      <value enum="M" description="Miami" />
+      <value enum="N" description="NYSE ARCA" />
+      <value enum="P" description="MIAX Pearl" />
+      <value enum="Q" description="NASDAQ" />
+      <value enum="S" description="MIAX Sapphire" />
+      <value enum="T" description="NASDAQ TX Options" />
+      <value enum="U" description="MEMX" />
+      <value enum="V" description="IEX" />
+      <value enum="W" description="C2" />
+      <value enum="X" description="NASDAQ PHLX" />
+      <value enum="Z" description="BATS" />
+    </field>
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastShares" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partially Filled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="5" description="Replaced" />
+    </field>
+    <field number="40" name="OrdType" type="CHAR" />
+    <field number="41" name="OrigClOrdID" type="STRING" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN">
+      <value enum="N" description="Original transmission" />
+      <value enum="Y" description="Possible duplicate" />
+    </field>
+    <field number="44" name="Price" type="PRICE" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="47" name="Rule80A" type="CHAR" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="50" name="SenderSubID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR" />
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="57" name="TargetSubID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="59" name="TimeInForce" type="CHAR" />
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="76" name="ExecBroker" type="STRING" />
+    <field number="77" name="OpenClose" type="CHAR" />
+    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="98" name="EncryptMethod" type="INT">
+      <value enum="0" description="None" />
+    </field>
+    <field number="99" name="StopPx" type="PRICE" />
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="111" name="MaxFloor" type="QTY" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="117" name="QuoteID" type="STRING" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN">
+      <value enum="N" description="Sequence Reset, ignore MsgSeqNum" />
+      <value enum="Y" description="Gap Fill message, MsgSeqNum field valid" />
+    </field>
+    <field number="150" name="ExecType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partially Filled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="5" description="Replace" />
+    </field>
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="167" name="SecurityType" type="STRING">
+      <value enum="CS" description="Common stock (stock leg)" />
+      <value enum="MLEG" description="Multi-leg (default for all legs)" />
+      <value enum="OPT" description="Option" />
+    </field>
+    <field number="201" name="PutOrCall" type="INT">
+      <value enum="0" description="Put" />
+      <value enum="1" description="Call" />
+    </field>
+    <field number="202" name="StrikePrice" type="PRICE" />
+    <field number="204" name="CustomerOrFirm" type="INT">
+      <value enum="0" description="Customer" />
+      <value enum="1" description="Firm" />
+      <value enum="2" description="Broker Dealer" />
+      <value enum="4" description="Other exchange registered Market Maker" />
+      <value enum="5" description="Nasdaq registered Market Maker" />
+      <value enum="7" description="Joint Back Office (PHLX, NOM and BX only)" />
+      <value enum="8" description="Professional Customer" />
+    </field>
+    <field number="371" name="RefTagID" type="INT" />
+    <field number="372" name="RefMsgType" type="STRING" />
+    <field number="373" name="SessionRejectReason" type="INT">
+      <value enum="0" description="Invalid tag number" />
+      <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
+      <value enum="2" description="Tag not defined for this message type" />
+      <value enum="3" description="Undefined Tag" />
+      <value enum="4" description="Tag specified without a value" />
+      <value enum="5" description="Value is incorrect (out of range) for this tag" />
+      <value enum="6" description="Incorrect data format for value" />
+      <value enum="7" description="Decryption problem" />
+      <value enum="8" description="Signature problem" />
+      <value enum="9" description="CompID problem" />
+    </field>
+    <field number="424" name="DayOrderQty" type="QTY" />
+    <field number="425" name="DayCumQty" type="QTY" />
+    <field number="426" name="DayAvgPx" type="PRICE" />
+    <field number="432" name="ExpireDate" type="LOCALMKTDATE" />
+    <field number="439" name="ClearingFirm" type="STRING" />
+    <field number="440" name="ClearingAccount" type="STRING" />
+    <field number="442" name="MultiLegReportingType" type="CHAR">
+      <value enum="2" description="Individual leg of a multi-leg security" />
+      <value enum="3" description="Multi-leg security" />
+    </field>
+    <field number="541" name="MaturityDate" type="LOCALMKTDATE" />
+    <field number="548" name="CrossID" type="STRING" />
+    <field number="654" name="LegRefID" type="STRING" />
+    <field number="810" name="UnderlyingPx" type="PRICE" />
+    <field number="847" name="RoutingStrategy" type="STRING">
+      <value enum="DNR" description="DNR" />
+      <value enum="FIND" description="FIND" />
+      <value enum="POST" description="POST" />
+      <value enum="SRCH" description="SRCH" />
+    </field>
+    <field number="879" name="UnderlyingQty" type="QTY" />
+    <field number="1083" name="DisplayWhen" type="CHAR">
+      <value enum="1" description="Immediate" />
+      <value enum="2" description="Exhaust" />
+    </field>
+    <field number="1092" name="PriceProtectionScope" type="INT" />
+    <field number="5333" name="SeriesID" type="INT" />
+    <field number="7300" name="OrderSource" type="CHAR">
+      <value enum="B" description="Floor/FBMS" />
+    </field>
+    <field number="8020" name="DisplayRange" type="QTY" />
+    <field number="9043" name="StepUpPriceType" type="CHAR">
+      <value enum="1" description="Market" />
+      <value enum="2" description="Limit" />
+    </field>
+    <field number="9044" name="StepUpPrice" type="PRICE" />
+    <field number="9076" name="StockLegGiveUp" type="STRING" />
+    <field number="9176" name="CounterpartyExecBroker" type="STRING" />
+    <field number="9370" name="AuctionID" type="INT" />
+    <field number="9373" name="AuctionType" type="CHAR">
+      <value enum="B" description="Block" />
+      <value enum="C" description="Customer to Customer Cross" />
+      <value enum="F" description="Facilitation" />
+      <value enum="P" description="PIM" />
+      <value enum="Q" description="QCC" />
+      <value enum="S" description="Solicitation" />
+      <value enum="X" description="Flex Auction" />
+    </field>
+    <field number="9404" name="CounterpartyCustomerOrFirm" type="INT">
+      <value enum="0" description="Customer" />
+      <value enum="1" description="Firm" />
+      <value enum="2" description="Broker Dealer" />
+      <value enum="4" description="Other exchange registered Market Maker" />
+      <value enum="5" description="Nasdaq registered Market Maker" />
+      <value enum="7" description="Joint Back Office (not supported at this time)" />
+      <value enum="8" description="Professional Customer" />
+    </field>
+    <field number="9405" name="FloorBrokerNumber" type="STRING" />
+    <field number="9439" name="CounterpartyExecBrokerClearingFirm" type="STRING" />
+    <field number="9730" name="LiquidityIndicator" type="STRING">
+      <value enum="0" description="undefined" />
+      <value enum="1" description="Maker" />
+      <value enum="10" description="Routed Out" />
+      <value enum="11" description="Trade Report" />
+      <value enum="12" description="Combo Maker Against Combo" />
+      <value enum="13" description="Combo Taker Against Combo" />
+      <value enum="14" description="Combo Response Against Combo" />
+      <value enum="15" description="Combo Hidden Against Combo" />
+      <value enum="16" description="Combo Opening Rotation" />
+      <value enum="17" description="Combo Cross" />
+      <value enum="18" description="Combo Taker Against Regular" />
+      <value enum="19" description="Regular Maker Against Combo" />
+      <value enum="2" description="Taker" />
+      <value enum="20" description="Combo Taker Against IO" />
+      <value enum="21" description="Regular Taker Against IO (incl. PIM)" />
+      <value enum="22" description="IO Maker Against Combo" />
+      <value enum="23" description="IO Maker Against Regular" />
+      <value enum="24" description="Regular Maker Against IO Participant" />
+      <value enum="25" description="IO Participant Taker Against Regular" />
+      <value enum="26" description="Broken Price Improvement" />
+      <value enum="27" description="Broken Facilitation" />
+      <value enum="28" description="Broken Solicitation" />
+      <value enum="29" description="Combo Broken Price Improvement" />
+      <value enum="30" description="Combo Broken Facilitation" />
+      <value enum="31" description="Combo Broken Solicitation" />
+      <value enum="32" description="Block" />
+      <value enum="33" description="Block Response" />
+      <value enum="34" description="Directed Response" />
+      <value enum="35" description="Facilitation" />
+      <value enum="36" description="Facilitation Response" />
+      <value enum="37" description="Price Improvement" />
+      <value enum="38" description="Price improvement Response" />
+      <value enum="39" description="Solicitation" />
+      <value enum="4" description="Hidden" />
+      <value enum="40" description="Solicitation Response" />
+      <value enum="41" description="Qualified Contingent Cross" />
+      <value enum="42" description="Customer to Customer" />
+      <value enum="43" description="Combo Facilitation" />
+      <value enum="44" description="Combo Facilitation Response" />
+      <value enum="45" description="Combo Price Improvement" />
+      <value enum="46" description="Combo Price Improvement Response" />
+      <value enum="47" description="Combo Solicitation" />
+      <value enum="48" description="Combo Solicitation Response" />
+      <value enum="49" description="Combo Qualified Contingent Cross" />
+      <value enum="5" description="Opening" />
+      <value enum="50" description="Combo Customer to Customer" />
+      <value enum="51" description="Sweep Routed Out" />
+      <value enum="52" description="Sweep Trade Report" />
+      <value enum="53" description="Combo Taker Against Regular - Thru NBBO" />
+      <value enum="54" description="Combo Taker Against IO - Thru NBBO" />
+      <value enum="55" description="Simple Exposure Order - Upon Receipt" />
+      <value enum="56" description="Simple Exposure Order - Subsequent" />
+      <value enum="57" description="Simplex Exposure Order - Responder" />
+      <value enum="58" description="Flex Auction" />
+      <value enum="59" description="Flex Auction Responder" />
+      <value enum="6" description="Cross" />
+      <value enum="60" description="Flex Price Improvement" />
+      <value enum="61" description="Flex Price Improvement Responder" />
+      <value enum="62" description="Flex Broken Price Improvement" />
+      <value enum="63" description="Flex Solicitation" />
+      <value enum="64" description="Flex Solicitation Responder" />
+      <value enum="65" description="Flex Broken Solicitation" />
+      <value enum="66" description="Combo Flex Auction" />
+      <value enum="67" description="Combo Flex Auction Responder" />
+      <value enum="68" description="Combo Flex Price Improvement" />
+      <value enum="69" description="Combo Flex Price Improvement Responder" />
+      <value enum="7" description="Response" />
+      <value enum="70" description="Combo Flex Broken Price Improvement" />
+      <value enum="71" description="Combo Flex Solicitation" />
+      <value enum="72" description="Combo Flex Solicitation Responder" />
+      <value enum="73" description="Combo Flex Broken Solicitation" />
+      <value enum="8" description="Flashed Order" />
+      <value enum="9" description="Flash Response" />
+    </field>
+    <field number="9811" name="PriceDelta" type="PRICE" />
+  </fields>
+</fix>
