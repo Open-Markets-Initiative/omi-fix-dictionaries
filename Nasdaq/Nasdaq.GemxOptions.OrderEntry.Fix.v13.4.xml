@@ -108,7 +108,6 @@
       <field name="AuctionID" required="N" />
       <field name="AuctionType" required="N" />
       <field name="AuctionDuration" required="N" />
-      <field name="SessionEligibility" required="N" />
       <field name="StepUpPriceType" required="N" />
       <field name="StepUpPrice" required="N" />
     </message>
@@ -171,7 +170,6 @@
       <field name="AuctionID" required="N" />
       <field name="AuctionType" required="N" />
       <field name="AuctionDuration" required="N" />
-      <field name="SessionEligibility" required="N" />
       <group name="NoLegs" required="Y">
         <field name="LegRefID" required="Y" />
         <field name="LegPositionEffect" required="Y" />
@@ -307,7 +305,6 @@
       <field name="OpenClose" required="Y" />
       <field name="AllocAccount" required="N" />
       <field name="StopPx" required="N" />
-      <field name="MinQty" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="PutOrCall" required="Y" />
       <field name="StrikePrice" required="Y" />
@@ -426,7 +423,6 @@
       <field name="UnderlyingQty" required="N" />
       <field name="PriceProtectionScope" required="N" />
       <field name="LiquidityIndicator" required="N" />
-      <field name="SessionEligibility" required="N" />
       <field name="AuctionType" required="N" />
       <field name="StepUpPriceType" required="N" />
       <field name="StepUpPrice" required="N" />
@@ -641,7 +637,6 @@
       <value enum="99" description="Other" />
     </field>
     <field number="108" name="HeartBtInt" type="INT" />
-    <field number="110" name="MinQty" type="QTY" />
     <field number="111" name="MaxFloor" type="QTY" />
     <field number="112" name="TestReqID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
@@ -680,7 +675,6 @@
       <value enum="2" description="Broker Dealer" />
       <value enum="4" description="Other exchange registered Market Maker" />
       <value enum="5" description="Nasdaq registered Market Maker" />
-      <value enum="7" description="Joint Back Office (not supported on ISE, GEMX or MRX at this time)" />
       <value enum="8" description="Professional Customer" />
     </field>
     <field number="207" name="SecurityExchange" type="EXCHANGE">
@@ -820,7 +814,6 @@
     <field number="9044" name="StepUpPrice" type="PRICE" />
     <field number="9076" name="StockLegGiveUp" type="STRING" />
     <field number="9202" name="SpecialOrdType" type="CHAR">
-      <value enum="A" description="Combo Auction Order (CAO)" />
       <value enum="N" description="Non-CAO" />
     </field>
     <field number="9203" name="ExposureFlag" type="MULTIPLEVALUESTRING">
@@ -843,19 +836,12 @@
     <field number="9373" name="AuctionType" type="CHAR">
       <value enum="B" description="Block Auction" />
       <value enum="C" description="Customer to Customer Cross (CCC)" />
-      <value enum="E" description="Complex Auction Order (auction responses and their executions only)" />
       <value enum="F" description="Facilitation Auction" />
       <value enum="P" description="PIM" />
       <value enum="Q" description="Qualified Contingent Cross (QCC)" />
       <value enum="S" description="Solicitation Auction" />
-      <value enum="X" description="Flex Auction" />
     </field>
     <field number="9379" name="AuctionDuration" type="INT" />
-    <field number="9380" name="SessionEligibility" type="CHAR">
-      <value enum="A" description="All/Any session" />
-      <value enum="E" description="Extended close (9:30 to 4:15)" />
-      <value enum="R" description="Regular Session (default)" />
-    </field>
     <field number="9564" name="ContraLegPositionEffect" type="CHAR">
       <value enum="C" description="Close" />
       <value enum="O" description="Open" />

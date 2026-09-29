@@ -307,7 +307,6 @@
       <field name="OpenClose" required="Y" />
       <field name="AllocAccount" required="N" />
       <field name="StopPx" required="N" />
-      <field name="MinQty" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="PutOrCall" required="Y" />
       <field name="StrikePrice" required="Y" />
@@ -641,7 +640,6 @@
       <value enum="99" description="Other" />
     </field>
     <field number="108" name="HeartBtInt" type="INT" />
-    <field number="110" name="MinQty" type="QTY" />
     <field number="111" name="MaxFloor" type="QTY" />
     <field number="112" name="TestReqID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
@@ -680,7 +678,6 @@
       <value enum="2" description="Broker Dealer" />
       <value enum="4" description="Other exchange registered Market Maker" />
       <value enum="5" description="Nasdaq registered Market Maker" />
-      <value enum="7" description="Joint Back Office (not supported on ISE, GEMX or MRX at this time)" />
       <value enum="8" description="Professional Customer" />
     </field>
     <field number="207" name="SecurityExchange" type="EXCHANGE">
@@ -848,7 +845,6 @@
       <value enum="P" description="PIM" />
       <value enum="Q" description="Qualified Contingent Cross (QCC)" />
       <value enum="S" description="Solicitation Auction" />
-      <value enum="X" description="Flex Auction" />
     </field>
     <field number="9379" name="AuctionDuration" type="INT" />
     <field number="9380" name="SessionEligibility" type="CHAR">

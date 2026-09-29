@@ -108,7 +108,6 @@
       <field name="AuctionID" required="N" />
       <field name="AuctionType" required="N" />
       <field name="AuctionDuration" required="N" />
-      <field name="SessionEligibility" required="N" />
       <field name="StepUpPriceType" required="N" />
       <field name="StepUpPrice" required="N" />
     </message>
@@ -171,7 +170,6 @@
       <field name="AuctionID" required="N" />
       <field name="AuctionType" required="N" />
       <field name="AuctionDuration" required="N" />
-      <field name="SessionEligibility" required="N" />
       <group name="NoLegs" required="Y">
         <field name="LegRefID" required="Y" />
         <field name="LegPositionEffect" required="Y" />
@@ -426,7 +424,6 @@
       <field name="UnderlyingQty" required="N" />
       <field name="PriceProtectionScope" required="N" />
       <field name="LiquidityIndicator" required="N" />
-      <field name="SessionEligibility" required="N" />
       <field name="AuctionType" required="N" />
       <field name="StepUpPriceType" required="N" />
       <field name="StepUpPrice" required="N" />
@@ -851,11 +848,6 @@
       <value enum="X" description="Flex Auction" />
     </field>
     <field number="9379" name="AuctionDuration" type="INT" />
-    <field number="9380" name="SessionEligibility" type="CHAR">
-      <value enum="A" description="All/Any session" />
-      <value enum="E" description="Extended close (9:30 to 4:15)" />
-      <value enum="R" description="Regular Session (default)" />
-    </field>
     <field number="9564" name="ContraLegPositionEffect" type="CHAR">
       <value enum="C" description="Close" />
       <value enum="O" description="Open" />
