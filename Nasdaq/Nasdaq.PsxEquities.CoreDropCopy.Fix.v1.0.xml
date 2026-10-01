@@ -1,0 +1,225 @@
+<!--
+  Fix dictionary for: Nasdaq CoreDropCopy Fix v1.0
+
+  Protocol:
+    Organization: National Association of Securities Dealers Automated Quotations (Nasdaq)
+    Protocol: 
+    Encoding: 
+    Version: 1.0
+    Date: 2026-06-03
+    Specification: DROP to FIX (OUCH) Format
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The protocol compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="4" minor="2" servicepack="0" type="FIX">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="N" />
+      <field name="HeartBtInt" required="Y" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin" />
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="DeliverToCompID" required="N" />
+      <field name="TargetSubID" required="Y" />
+      <field name="SenderSubID" required="Y" />
+      <field name="Account" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecTransType" required="Y" />
+      <field name="ExecType" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="ClientID" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="LeavesQty" required="N" />
+      <field name="CumQty" required="Y" />
+      <field name="AvgPx" required="Y" />
+      <field name="Price" required="N" />
+      <field name="OrdType" required="N" />
+      <field name="Rule80A" required="N" />
+      <field name="LastCapacity" required="N" />
+      <field name="ExecBroker" required="N" />
+      <field name="MaxFloor" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="ExecRefID" required="N" />
+      <field name="TradeDate" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="LiquidityFlag" required="N" />
+      <field name="LastExchange" required="N" />
+      <field name="CustomerType" required="N" />
+      <field name="IntraDayIndicativePrice" required="N" />
+      <field name="LastShares" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="ContraBroker" required="N" />
+      <field name="NoContraBrokers" required="N" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="ExecRestatementReason" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="STRING" />
+    <field number="6" name="AvgPx" type="PRICE" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="18" name="ExecInst" type="MULTIPLECHARVALUE" />
+    <field number="19" name="ExecRefID" type="STRING" />
+    <field number="20" name="ExecTransType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Cancel" />
+      <value enum="2" description="Correct" />
+    </field>
+    <field number="29" name="LastCapacity" type="CHAR">
+      <value enum="1" description="Agency" />
+      <value enum="4" description="Principal" />
+    </field>
+    <field number="30" name="LastExchange" type="CHAR">
+      <value enum="&quot; &quot;" description="Not provided" />
+      <value enum="B" description="Nasdaq BX" />
+      <value enum="Q" description="Nasdaq" />
+      <value enum="X" description="Nasdaq PSX" />
+    </field>
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastShares" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partial Fill" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="5" description="Replaced" />
+    </field>
+    <field number="40" name="OrdType" type="CHAR">
+      <value enum="1" description="Market" />
+      <value enum="2" description="Limit" />
+      <value enum="3" description="Cross" />
+    </field>
+    <field number="41" name="OrigClOrdID" type="STRING" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="44" name="Price" type="PRICE" />
+    <field number="47" name="Rule80A" type="CHAR">
+      <value enum="A" description="Agent" />
+      <value enum="E" description="Registered Market Maker Trade" />
+      <value enum="P" description="Principal" />
+    </field>
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="50" name="SenderSubID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+      <value enum="5" description="Short Sell" />
+      <value enum="6" description="Short Sell Exempt" />
+    </field>
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="57" name="TargetSubID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="59" name="TimeInForce" type="CHAR">
+      <value enum="0" description="Day" />
+      <value enum="2" description="At the Opening" />
+      <value enum="3" description="Immediate or Cancel" />
+      <value enum="4" description="Fill or Kill" />
+      <value enum="5" description="Good Till Cancel" />
+      <value enum="6" description="Good Till Date" />
+      <value enum="7" description="At the Close" />
+    </field>
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="75" name="TradeDate" type="LOCALMKTDATE" />
+    <field number="76" name="ExecBroker" type="STRING" />
+    <field number="98" name="EncryptMethod" type="INT" />
+    <field number="103" name="OrdRejReason" type="INT" />
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="109" name="ClientID" type="STRING" />
+    <field number="111" name="MaxFloor" type="QTY" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="128" name="DeliverToCompID" type="STRING" />
+    <field number="150" name="ExecType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partial Fill" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="5" description="Replaced" />
+    </field>
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="375" name="ContraBroker" type="STRING" />
+    <field number="378" name="ExecRestatementReason" type="INT" />
+    <field number="382" name="NoContraBrokers" type="STRING" />
+    <field number="851" name="LastLiquidityInd" type="INT" />
+    <field number="9882" name="LiquidityFlag" type="CHAR">
+      <value enum="0" description="Supplemental Order Execution" />
+      <value enum="4" description="Added Displayed Liquidity in Select Symbol" />
+      <value enum="5" description="Added Non-Displayed Liquidity in Select Symbol" />
+      <value enum="6" description="Removed Liquidity in Select Symbol" />
+      <value enum="7" description="Displayed Liquidity-Adding Order Improves NBBO" />
+      <value enum="8" description="Displayed Liquidity-Adding Order Sets QBBO Joining NBBO" />
+      <value enum="A" description="Added" />
+      <value enum="C" description="Closing Cross" />
+      <value enum="H" description="Halt or IPO Cross" />
+      <value enum="J" description="Non-Displayed Adding Liquidity" />
+      <value enum="K" description="Halt Cross" />
+      <value enum="L" description="Closing Cross Imbalance-Only" />
+      <value enum="M" description="Opening Cross Imbalance-Only" />
+      <value enum="O" description="Opening Cross" />
+      <value enum="R" description="Removed" />
+      <value enum="W" description="Added Post-Only" />
+      <value enum="d" description="Retail Designated Execution Removed Liquidity" />
+      <value enum="e" description="Retail Designated Execution Added Displayed Liquidity" />
+      <value enum="f" description="Retail Designated Execution Added Non-Displayed Liquidity" />
+      <value enum="g" description="Added Non-Displayed Midpoint Liquidity in Select Symbol" />
+      <value enum="j" description="RPI Order Provides Liquidity" />
+      <value enum="k" description="Added Liquidity via Midpoint Order" />
+      <value enum="m" description="Removed Liquidity at Midpoint" />
+      <value enum="r" description="Retail Order Removes RPI Liquidity" />
+      <value enum="t" description="Retail Order Removes Price-Improving Non-Displayed Liquidity Other Than RPI" />
+    </field>
+    <field number="20006" name="CustomerType" type="CHAR">
+      <value enum="R" description="Retail Designated Order" />
+    </field>
+    <field number="20007" name="IntraDayIndicativePrice" type="PRICE" />
+  </fields>
+</fix>

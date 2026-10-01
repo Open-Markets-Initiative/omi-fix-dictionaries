@@ -836,14 +836,7 @@
       <value enum="C" description="Cancel back upon unsuccessful RFP attempt" />
     </field>
     <field number="9370" name="AuctionID" type="INT" />
-    <field number="9373" name="AuctionType" type="CHAR">
-      <value enum="B" description="Block Auction" />
-      <value enum="C" description="Customer to Customer Cross (CCC)" />
-      <value enum="F" description="Facilitation Auction" />
-      <value enum="P" description="PIM" />
-      <value enum="Q" description="Qualified Contingent Cross (QCC)" />
-      <value enum="S" description="Solicitation Auction" />
-    </field>
+    <field number="9373" name="AuctionType" type="CHAR" />
     <field number="9379" name="AuctionDuration" type="INT" />
     <field number="9564" name="ContraLegPositionEffect" type="CHAR">
       <value enum="C" description="Close" />
