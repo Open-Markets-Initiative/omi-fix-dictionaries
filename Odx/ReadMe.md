@@ -5,9 +5,10 @@
 
 | Division | [Protocol][Omi.Odx.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Odx.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [OdxEquities][OdxEquities.Exchange] | [DropCopy][Odx.OdxEquities.DropCopy] | [v1.1](Odx.OdxEquities.DropCopy.Fix.v1.1.xml) | 7/20/2022 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Odx.OdxEquities.DropCopy.Fix.v1.1.Pdf] |
+| [OdxEquities][OdxEquities.Exchange] | [DropCopy][Odx.OdxEquities.DropCopy] | [v1.1](Odx.OdxEquities.DropCopy.Fix.v1.1.xml) | 11/18/2024 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Odx.OdxEquities.DropCopy.Fix.v1.1.Pdf] |
 | [OdxEquities][OdxEquities.Exchange] | [OrderEntry][Odx.OdxEquities.OrderEntry] | [v1.1](Odx.OdxEquities.OrderEntry.Fix.v1.1.xml) | 7/20/2022 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Odx.OdxEquities.OrderEntry.Fix.v1.1.Pdf] |
-| [OdxSecurityToken][OdxSecurityToken.Exchange] | [OrderEntry][Odx.OdxSecurityToken.OrderEntry] | [v1.1](Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.xml) | 7/20/2022 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.Pdf] |
+| [OdxSecurityToken][OdxSecurityToken.Exchange] | [OrderEntry][Odx.OdxSecurityToken.OrderEntry] | [v1.0](Odx.OdxSecurityToken.OrderEntry.Fix.v1.0.xml) | 11/15/2023 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [pdf][Odx.OdxSecurityToken.OrderEntry.Fix.v1.0.Pdf] |
+| [OdxSecurityToken][OdxSecurityToken.Exchange] | [OrderEntry][Odx.OdxSecurityToken.OrderEntry] | [v1.1](Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.xml) | 9/6/2024 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.Pdf] |
 
 
 Odx: [website](https://www.odx.co.jp/en "Go to Osaka Digital Exchange")
@@ -30,4 +31,5 @@ Odx: [website](https://www.odx.co.jp/en "Go to Osaka Digital Exchange")
 
 [Odx.OdxEquities.DropCopy.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/Odx.OdxEquities.DropCopy.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"
 [Odx.OdxEquities.OrderEntry.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/Odx.OdxEquities.OrderEntry.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"
+[Odx.OdxSecurityToken.OrderEntry.Fix.v1.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/Odx.OdxSecurityToken.OrderEntry.Fix.v1.0.pdf "Osaka Digital Exchange 1.0 Pdf"
 [Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"

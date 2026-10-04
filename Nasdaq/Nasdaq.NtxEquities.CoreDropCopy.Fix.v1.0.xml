@@ -84,13 +84,8 @@
       <field name="IntraDayIndicativePrice" required="N" />
       <field name="LastShares" required="Y" />
       <field name="LastPx" required="Y" />
-      <field name="ContraBroker" required="N" />
-      <field name="NoContraBrokers" required="N" />
-      <field name="LastLiquidityInd" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="Text" required="N" />
-      <field name="OrdRejReason" required="N" />
-      <field name="ExecRestatementReason" required="N" />
     </message>
   </messages>
   <components />
@@ -172,7 +167,6 @@
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
     <field number="76" name="ExecBroker" type="STRING" />
     <field number="98" name="EncryptMethod" type="INT" />
-    <field number="103" name="OrdRejReason" type="INT" />
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="109" name="ClientID" type="STRING" />
     <field number="111" name="MaxFloor" type="QTY" />
@@ -186,10 +180,6 @@
       <value enum="5" description="Replaced" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
-    <field number="375" name="ContraBroker" type="STRING" />
-    <field number="378" name="ExecRestatementReason" type="INT" />
-    <field number="382" name="NoContraBrokers" type="STRING" />
-    <field number="851" name="LastLiquidityInd" type="INT" />
     <field number="9882" name="LiquidityFlag" type="CHAR">
       <value enum="0" description="Supplemental Order Execution" />
       <value enum="4" description="Added Displayed Liquidity in Select Symbol" />
