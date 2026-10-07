@@ -103,8 +103,10 @@
       <field name="MDReqID" required="Y" />
       <field name="AggregatedBook" required="N" />
       <group name="NoMDEntries" required="Y">
+        <field name="MDUpdateAction" required="Y" />
         <field name="MDEntryType" required="Y" />
         <field name="MDEntryID" required="N" />
+        <component name="Instrument" required="Y" />
         <field name="MDEntryPx" required="N" />
         <field name="MDEntrySize" required="N" />
         <field name="MDEntryDate" required="N" />
@@ -114,10 +116,8 @@
         <field name="MDPriceLevel" required="N" />
         <field name="OpenCloseSettlFlag" required="N" />
         <field name="TradingReferenceDate" required="N" />
-        <field name="TrdType" required="N" />
-        <field name="MDUpdateAction" required="Y" />
-        <component name="Instrument" required="Y" />
         <field name="AggressorSide" required="N" />
+        <field name="TrdType" required="N" />
         <field name="TrdSubType" required="N" />
         <field name="DifferentialPrice" required="N" />
         <field name="LegLastPx" required="N" />
@@ -144,12 +144,6 @@
         <field name="OpenCloseSettlFlag" required="N" />
         <field name="TradingReferenceDate" required="N" />
         <field name="TrdType" required="N" />
-        <field name="MDUpdateAction" required="Y" />
-        <component name="Instrument" required="Y" />
-        <field name="AggressorSide" required="N" />
-        <field name="TrdSubType" required="N" />
-        <field name="DifferentialPrice" required="N" />
-        <field name="LegLastPx" required="N" />
       </group>
     </message>
     <message name="Reject" msgtype="3" msgcat="admin">
@@ -191,7 +185,6 @@
       <group name="NoRelatedSym" required="N">
         <field name="Symbol" required="Y" />
         <field name="SecurityType" required="Y" />
-        <component name="Security" required="Y" />
       </group>
     </message>
     <message name="SecurityListRequest" msgtype="x" msgcat="app">
@@ -266,8 +259,6 @@
     </component>
     <component name="SecListGrp">
       <group name="NoRelatedSym" required="Y">
-        <field name="Symbol" required="Y" />
-        <field name="SecurityType" required="Y" />
         <component name="Security" required="Y" />
       </group>
     </component>
@@ -555,7 +546,11 @@
       <value enum="S" description="SEND" />
     </field>
     <field number="393" name="TotNoRelatedSym" type="INT" />
-    <field number="461" name="CFICode" type="STRING" />
+    <field number="461" name="CFICode" type="STRING">
+      <value enum="FXXXXX" description="Futures" />
+      <value enum="OCXXXS" description="Options Call" />
+      <value enum="OPXXXS" description="Options Put" />
+    </field>
     <field number="462" name="UnderlyingProduct" type="INT">
       <value enum="12" description="OTHER" />
       <value enum="14" description="INTEREST_RATE" />
@@ -592,15 +587,19 @@
     </field>
     <field number="562" name="MinTradeVol" type="QTY" />
     <field number="600" name="LegSymbol" type="STRING" />
-    <field number="608" name="LegCFICode" type="STRING" />
+    <field number="608" name="LegCFICode" type="STRING">
+      <value enum="FXXXXX" description="Futures" />
+      <value enum="OCXXXS" description="Options Call" />
+      <value enum="OPXXXS" description="Options Put" />
+    </field>
     <field number="609" name="LegSecurityType" type="STRING">
-      <value enum="FUT" description="FUTURES" />
-      <value enum="OPT" description="OPTIONS" />
+      <value enum="FUT" description="Future" />
+      <value enum="OPT" description="Option" />
     </field>
     <field number="620" name="LegSecurityDesc" type="STRING" />
     <field number="624" name="LegSide" type="CHAR">
-      <value enum="1" description="BUY" />
-      <value enum="2" description="SELL" />
+      <value enum="1" description="Buy Side" />
+      <value enum="2" description="Sell Side" />
     </field>
     <field number="627" name="NoHops" type="NUMINGROUP" />
     <field number="628" name="HopCompID" type="STRING" />

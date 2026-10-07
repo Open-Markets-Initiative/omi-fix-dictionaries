@@ -176,24 +176,13 @@
       <field name="SecurityType" required="N" />
       <field name="Symbol" required="N" />
       <field name="MultilegPriceMethod" required="N" />
-      <group name="NoLegs" required="N">
-        <field name="LegSymbol" required="Y" />
+      <group name="NoLegsDefinition" required="N">
+        <field name="LegSymbol" required="N" />
         <field name="LegSecurityID" required="N" />
         <field name="LegSecurityIDSource" required="N" />
         <field name="LegRatioQty" required="N" />
         <field name="LegSide" required="N" />
         <field name="LegPrice" required="N" />
-        <field name="LegID" required="N" />
-        <field name="LegAllocID" required="N" />
-        <field name="LegLastPx" required="N" />
-        <field name="LegLastQty" required="N" />
-        <field name="LegCurrency" required="N" />
-        <field name="LegOrderQty" required="N" />
-        <group name="NoLegInstrumentParties" required="N">
-          <field name="PartyID" required="Y" />
-          <field name="PartyIDSource" required="N" />
-          <field name="PartyRole" required="N" />
-        </group>
       </group>
     </message>
     <message name="OrderMassStatusRequest" msgtype="AF" msgcat="app">
@@ -276,11 +265,10 @@
       <field name="ExpireDate" required="N" />
       <field name="ExpireTime" required="N" />
       <field name="Text" required="N" />
-      <group name="NoLegs" required="N">
+      <group name="NoLegsDefinition" required="N">
         <field name="LegSymbol" required="Y" />
         <field name="LegSecurityID" required="N" />
         <field name="LegSecurityIDSource" required="N" />
-        <field name="LegRatioQty" required="N" />
         <field name="LegSide" required="N" />
         <field name="LegPrice" required="N" />
         <field name="LegID" required="N" />
@@ -290,9 +278,9 @@
         <field name="LegCurrency" required="N" />
         <field name="LegOrderQty" required="N" />
         <group name="NoLegInstrumentParties" required="N">
-          <field name="PartyID" required="Y" />
-          <field name="PartyIDSource" required="N" />
-          <field name="PartyRole" required="N" />
+          <field name="LegInstrumentPartyID" required="N" />
+          <field name="LegInstrumentPartyIDSource" required="N" />
+          <field name="LegInstrumentPartyRole" required="N" />
         </group>
       </group>
     </message>
@@ -347,12 +335,25 @@
       <field name="Text" required="N" />
       <group name="NoPartyRiskLimits" required="N">
         <group name="NoPartyDetails" required="N">
-          <field name="PartyID" required="Y" />
-          <field name="PartyIDSource" required="N" />
-          <field name="PartyRole" required="N" />
+          <field name="PartyDetailID" required="N" />
+          <field name="PartyDetailIDSource" required="N" />
+          <field name="PartyDetailRole" required="N" />
         </group>
         <group name="NoRiskLimits" required="N">
-          <field name="NoRiskLimits" required="Y" />
+          <group name="NoRiskLimitTypes" required="N">
+            <field name="RiskLimitType" required="N" />
+            <field name="RiskLimitUtilizationPercent" required="N" />
+            <field name="RiskLimitAction" required="N" />
+            <group name="NoRiskWarningLevel" required="N">
+              <field name="RiskWarningLevelAction" required="N" />
+              <field name="RiskWarningLevelPercent" required="N" />
+            </group>
+          </group>
+          <group name="NoRiskInstrumentScopes" required="N">
+            <field name="InstrumentScopeOperator" required="N" />
+            <field name="InstrumentScopeSecurityGroup" required="N" />
+            <field name="InstrumentScopeSecurityExchange" required="N" />
+          </group>
         </group>
       </group>
     </message>
@@ -448,7 +449,7 @@
     <field number="532" name="MassCancelRejectReason" type="INT" />
     <field number="553" name="Username" type="STRING" />
     <field number="554" name="Password" type="STRING" />
-    <field number="555" name="NoLegs" type="NUMINGROUP" />
+    <field number="555" name="NoLegsDefinition" type="NUMINGROUP" />
     <field number="556" name="LegCurrency" type="CURRENCY" />
     <field number="566" name="LegPrice" type="PRICE" />
     <field number="574" name="MatchType" type="STRING" />
@@ -458,7 +459,7 @@
     <field number="600" name="LegSymbol" type="STRING" />
     <field number="602" name="LegSecurityID" type="STRING" />
     <field number="603" name="LegSecurityIDSource" type="STRING" />
-    <field number="623" name="LegRatioQty" type="QTY" />
+    <field number="623" name="LegRatioQty" type="FLOAT" />
     <field number="624" name="LegSide" type="CHAR" />
     <field number="637" name="LegLastPx" type="PRICE" />
     <field number="658" name="QuoteRequestRejectReason" type="INT" />
@@ -480,6 +481,14 @@
     <field number="1462" name="TargetPartyID" type="STRING" />
     <field number="1463" name="TargetPartyIDSource" type="CHAR" />
     <field number="1464" name="TargetPartyRole" type="INT" />
+    <field number="1529" name="NoRiskLimitTypes" type="NUMINGROUP" />
+    <field number="1530" name="RiskLimitType" type="INT" />
+    <field number="1534" name="NoRiskInstrumentScopes" type="NUMINGROUP" />
+    <field number="1535" name="InstrumentScopeOperator" type="INT" />
+    <field number="1545" name="InstrumentScopeSecurityGroup" type="STRING" />
+    <field number="1559" name="NoRiskWarningLevel" type="NUMINGROUP" />
+    <field number="1560" name="RiskWarningLevelPercent" type="PERCENTAGE" />
+    <field number="1616" name="InstrumentScopeSecurityExchange" type="EXCHANGE" />
     <field number="1624" name="NoMatchInst" type="NUMINGROUP" />
     <field number="1625" name="MatchInst" type="INT" />
     <field number="1626" name="MatchAttribTagID" type="INT" />
@@ -488,7 +497,16 @@
     <field number="1669" name="NoRiskLimits" type="NUMINGROUP" />
     <field number="1671" name="NoPartyDetails" type="NUMINGROUP" />
     <field number="1677" name="NoPartyRiskLimits" type="NUMINGROUP" />
+    <field number="1691" name="PartyDetailID" type="STRING" />
+    <field number="1692" name="PartyDetailIDSource" type="CHAR" />
+    <field number="1693" name="PartyDetailRole" type="INT" />
+    <field number="1765" name="RiskLimitUtilizationPercent" type="PERCENTAGE" />
+    <field number="1767" name="RiskLimitAction" type="INT" />
+    <field number="1769" name="RiskWarningLevelAction" type="INT" />
     <field number="1788" name="LegID" type="STRING" />
     <field number="2254" name="NoLegInstrumentParties" type="NUMINGROUP" />
+    <field number="2255" name="LegInstrumentPartyID" type="STRING" />
+    <field number="2256" name="LegInstrumentPartyIDSource" type="CHAR" />
+    <field number="2257" name="LegInstrumentPartyRole" type="INT" />
   </fields>
 </fix>

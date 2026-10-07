@@ -466,35 +466,15 @@
         <field name="ClOrdID" required="N" />
         <field name="InputSource" required="N" />
         <field name="Side" required="Y" />
-        <component name="Parties" required="N" />
-        <component name="OrderAttributeGrp" required="N" />
-        <component name="MtchgInst" required="N" />
-        <field name="SelfMatchPreventionInstruction" required="N" />
-        <field name="CrossMatchInstruction" required="N" />
-        <field name="MaximumPrice" required="N" />
-        <field name="TradingCapacity" required="Y" />
-        <field name="PositionEffect" required="N" />
-        <field name="CustOrderHandlingInst" required="N" />
-        <field name="OrderOrigination" required="N" />
-        <field name="Account" required="N" />
-        <field name="FreeText1" required="N" />
-        <field name="FreeText2" required="N" />
-        <field name="FreeText3" required="N" />
-        <field name="SideComplianceText" required="N" />
-        <field name="PartyEndClientIdentification" required="N" />
-        <field name="SideLastQty" required="N" />
-        <field name="SideTradeID" required="N" />
-        <field name="PartyIDClearingUnit" required="N" />
-        <field name="OrderCategory" required="N" />
-        <field name="SideLiquidityInd" required="N" />
-        <field name="StrategyLinkID" required="N" />
-        <field name="OrdType" required="N" />
-        <field name="Price" required="N" />
-        <field name="LeavesQty" required="N" />
-        <field name="CumQty" required="N" />
-        <field name="SideLastPx" required="N" />
-        <field name="FeeIdntCode" required="N" />
       </group>
+    </component>
+    <component name="Instrument">
+      <field name="Symbol" required="Y" />
+      <field name="SecurityID" required="N" />
+      <field name="SecurityIDSource" required="N" />
+      <field name="ProductComplex" required="N" />
+      <field name="SecurityType" required="N" />
+      <field name="SecuritySubType" required="N" />
     </component>
     <component name="Parties">
       <group name="NoPartyIDs" required="Y">
@@ -507,26 +487,6 @@
         <field name="PartySubIDType" required="N" />
       </group>
     </component>
-    <component name="OrderAttributeGrp">
-      <group name="NoOrderAttributes" required="Y">
-        <field name="OrderAttributeType" required="N" />
-        <field name="OrderAttributeValue" required="N" />
-      </group>
-    </component>
-    <component name="MtchgInst">
-      <group name="NoMatchInst" required="Y">
-        <field name="MatchInst" required="Y" />
-        <field name="MatchInstCrossID" required="Y" />
-      </group>
-    </component>
-    <component name="Instrument">
-      <field name="Symbol" required="Y" />
-      <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
-      <field name="ProductComplex" required="N" />
-      <field name="SecurityType" required="N" />
-      <field name="SecuritySubType" required="N" />
-    </component>
     <component name="InstrmtLegExecGrp">
       <group name="NoLegs" required="Y">
         <field name="LegSymbol" required="Y" />
@@ -537,23 +497,21 @@
         <field name="LegLastQty" required="N" />
         <field name="LegExecID" required="N" />
         <field name="LegSide" required="N" />
-        <field name="LegSecurityType" required="Y" />
-        <field name="LegRatioQty" required="Y" />
-        <field name="LegPrice" required="N" />
+      </group>
+    </component>
+    <component name="MtchgInst">
+      <group name="NoMatchInst" required="Y">
+        <field name="MatchInst" required="Y" />
+        <field name="MatchInstCrossID" required="Y" />
       </group>
     </component>
     <component name="InstrmtLegGrp">
       <group name="NoLegs" required="Y">
         <field name="LegSymbol" required="Y" />
-        <field name="LegSecurityID" required="N" />
-        <field name="LegAccount" required="N" />
-        <field name="LegPositionEffect" required="N" />
-        <field name="LegLastPx" required="N" />
-        <field name="LegLastQty" required="N" />
-        <field name="LegExecID" required="N" />
-        <field name="LegSide" required="N" />
+        <field name="LegSecurityID" required="Y" />
         <field name="LegSecurityType" required="Y" />
         <field name="LegRatioQty" required="Y" />
+        <field name="LegSide" required="Y" />
         <field name="LegPrice" required="N" />
       </group>
     </component>
@@ -595,38 +553,35 @@
     </component>
     <component name="TrdCapRptSideGrp">
       <group name="NoSides" required="Y">
-        <field name="OrderID" required="Y" />
-        <field name="ClOrdID" required="N" />
-        <field name="InputSource" required="N" />
         <field name="Side" required="Y" />
-        <component name="Parties" required="N" />
-        <component name="OrderAttributeGrp" required="N" />
-        <component name="MtchgInst" required="N" />
-        <field name="SelfMatchPreventionInstruction" required="N" />
-        <field name="CrossMatchInstruction" required="N" />
-        <field name="MaximumPrice" required="N" />
-        <field name="TradingCapacity" required="Y" />
-        <field name="PositionEffect" required="N" />
-        <field name="CustOrderHandlingInst" required="N" />
-        <field name="OrderOrigination" required="N" />
-        <field name="Account" required="N" />
-        <field name="FreeText1" required="N" />
-        <field name="FreeText2" required="N" />
-        <field name="FreeText3" required="N" />
-        <field name="SideComplianceText" required="N" />
-        <field name="PartyEndClientIdentification" required="N" />
         <field name="SideLastQty" required="N" />
         <field name="SideTradeID" required="N" />
+        <component name="Parties" required="N" />
         <field name="PartyIDClearingUnit" required="N" />
+        <field name="Account" required="N" />
+        <field name="PositionEffect" required="N" />
+        <field name="FreeText1" required="N" />
         <field name="OrderCategory" required="N" />
         <field name="SideLiquidityInd" required="N" />
         <field name="StrategyLinkID" required="N" />
+        <field name="OrderID" required="N" />
+        <field name="ClOrdID" required="N" />
         <field name="OrdType" required="N" />
         <field name="Price" required="N" />
         <field name="LeavesQty" required="N" />
         <field name="CumQty" required="N" />
+        <component name="OrderAttributeGrp" required="N" />
+        <field name="CustOrderHandlingInst" required="N" />
+        <field name="FreeText2" required="N" />
+        <field name="FreeText3" required="N" />
         <field name="SideLastPx" required="N" />
         <field name="FeeIdntCode" required="N" />
+      </group>
+    </component>
+    <component name="OrderAttributeGrp">
+      <group name="NoOrderAttributes" required="Y">
+        <field name="OrderAttributeType" required="N" />
+        <field name="OrderAttributeValue" required="N" />
       </group>
     </component>
     <component name="UsernameGrp">
@@ -682,16 +637,15 @@
     </component>
     <component name="CrossRequestSideGrp">
       <group name="NoSides" required="Y">
-        <field name="OrderID" required="Y" />
-        <field name="ClOrdID" required="N" />
-        <field name="InputSource" required="N" />
-        <field name="Side" required="Y" />
         <component name="Parties" required="N" />
         <component name="OrderAttributeGrp" required="N" />
         <component name="MtchgInst" required="N" />
+        <field name="ClOrdID" required="N" />
         <field name="SelfMatchPreventionInstruction" required="N" />
         <field name="CrossMatchInstruction" required="N" />
         <field name="MaximumPrice" required="N" />
+        <field name="InputSource" required="N" />
+        <field name="Side" required="Y" />
         <field name="TradingCapacity" required="Y" />
         <field name="PositionEffect" required="N" />
         <field name="CustOrderHandlingInst" required="N" />
@@ -702,18 +656,6 @@
         <field name="FreeText3" required="N" />
         <field name="SideComplianceText" required="N" />
         <field name="PartyEndClientIdentification" required="N" />
-        <field name="SideLastQty" required="N" />
-        <field name="SideTradeID" required="N" />
-        <field name="PartyIDClearingUnit" required="N" />
-        <field name="OrderCategory" required="N" />
-        <field name="SideLiquidityInd" required="N" />
-        <field name="StrategyLinkID" required="N" />
-        <field name="OrdType" required="N" />
-        <field name="Price" required="N" />
-        <field name="LeavesQty" required="N" />
-        <field name="CumQty" required="N" />
-        <field name="SideLastPx" required="N" />
-        <field name="FeeIdntCode" required="N" />
       </group>
     </component>
     <component name="SideCrossLegGrp">
@@ -731,17 +673,8 @@
     </component>
     <component name="LegOrdGrp">
       <group name="NoLegs" required="Y">
-        <field name="LegSymbol" required="Y" />
-        <field name="LegSecurityID" required="N" />
-        <field name="LegAccount" required="N" />
-        <field name="LegPositionEffect" required="N" />
-        <field name="LegLastPx" required="N" />
-        <field name="LegLastQty" required="N" />
-        <field name="LegExecID" required="N" />
-        <field name="LegSide" required="N" />
-        <field name="LegSecurityType" required="Y" />
-        <field name="LegRatioQty" required="Y" />
-        <field name="LegPrice" required="N" />
+        <field name="LegAccount" required="Y" />
+        <field name="LegPositionEffect" required="Y" />
       </group>
     </component>
     <component name="TrdgSesGrp">

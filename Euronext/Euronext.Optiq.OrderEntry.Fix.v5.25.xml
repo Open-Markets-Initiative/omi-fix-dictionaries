@@ -503,6 +503,7 @@
       <field name="Purge" required="N" />
       <field name="OSLFlag" required="N" />
       <field name="OrderSizeLimit" required="N" />
+      <field name="OALFlag" required="N" />
       <field name="OrderAmountLimit" required="N" />
     </message>
     <message name="GetRiskControls" msgtype="U70" msgcat="app">
@@ -964,6 +965,7 @@
       <field name="Purge" required="N" />
       <field name="OSLFlag" required="N" />
       <field name="OrderSizeLimit" required="N" />
+      <field name="OALFlag" required="N" />
       <field name="OrderAmountLimit" required="N" />
       <field name="AckStatus" required="Y" />
       <field name="ErrorCode" required="N" />
@@ -990,6 +992,7 @@
       <field name="ERGStatus" required="N" />
       <field name="OSLFlag" required="N" />
       <field name="OrderSizeLimit" required="N" />
+      <field name="OALFlag" required="N" />
       <field name="OrderAmountLimit" required="N" />
     </message>
     <message name="InstrumentSynchronizationList" msgtype="U50" msgcat="app">
@@ -2045,9 +2048,10 @@
     <field number="21805" name="FinalSecurityID" type="STRING" />
     <field number="21806" name="FinalExecID" type="STRING" />
     <field number="21807" name="ParentRegulatoryTradeID" type="STRING" />
-    <field number="21808" name="OrderAmountLimit" type="AMT">
+    <field number="21808" name="OALFlag" type="BOOLEAN">
       <value enum="N" description="False" />
       <value enum="Y" description="True" />
     </field>
+    <field number="21809" name="OrderAmountLimit" type="AMT" />
   </fields>
 </fix>

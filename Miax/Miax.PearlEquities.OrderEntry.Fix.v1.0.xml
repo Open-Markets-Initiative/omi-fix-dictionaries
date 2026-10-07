@@ -101,47 +101,51 @@
       <field name="LocateAccount" required="N" />
       <field name="PurgeGroup" required="N" />
       <field name="SelfTradeProtection" required="N" />
+      <field name="PriceSlidingAndRepriceFrequency" required="N" />
       <field name="DisplayRange" required="N" />
+      <field name="MinQtyExecType" required="N" />
+      <field name="RoutingInst" required="N" />
       <field name="RoutingStrategy" required="N" />
       <field name="TradingCollarDollarValue" required="N" />
       <field name="DisplayIndicator" required="N" />
       <field name="RetailOrderIndicator" required="N" />
       <field name="AttributableIndicator" required="N" />
       <field name="CancelOrderIfNotNBBOSetter" required="N" />
+      <field name="CancelOrderIfNotNBBOSetterWithSize" required="N" />
     </message>
     <message name="OrderCancelRequest" msgtype="F" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="OrderID" required="N" />
       <field name="OrderQty" required="N" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="Side" required="Y" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Side" required="N" />
       <field name="Symbol" required="Y" />
-      <field name="TransactTime" required="N" />
+      <field name="TransactTime" required="Y" />
     </message>
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
       <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
+      <field name="OrdType" required="N" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Price" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
-      <field name="TimeInForce" required="Y" />
+      <field name="TimeInForce" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="MinQty" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="LocateReqd" required="N" />
       <field name="ExpireTime" required="N" />
-      <field name="OrderCapacity" required="Y" />
+      <field name="OrderCapacity" required="N" />
       <field name="LocateAccount" required="N" />
     </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="OrderID" required="Y" />
       <field name="OrdStatus" required="Y" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="Text" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="Y" />
       <field name="CxlRejReason" required="Y" />
       <field name="CxlRejResponseTo" required="Y" />
       <field name="OrigSession" required="N" />
@@ -166,7 +170,7 @@
       <field name="Symbol" required="Y" />
       <field name="Text" required="N" />
       <field name="TimeInForce" required="N" />
-      <field name="TransactTime" required="N" />
+      <field name="TransactTime" required="Y" />
       <field name="ExecBroker" required="N" />
       <field name="OrdRejReason" required="N" />
       <field name="MinQty" required="N" />
@@ -187,12 +191,16 @@
       <field name="LocateAccount" required="N" />
       <field name="PurgeGroup" required="N" />
       <field name="DisplayRange" required="N" />
+      <field name="RoutingInst" required="N" />
       <field name="RoutingStrategy" required="N" />
       <field name="DisplayIndicator" required="N" />
+      <field name="OriginalOrderCapacity" required="N" />
       <field name="RetailOrderIndicator" required="N" />
       <field name="CancelOrderIfNotNBBOSetter" required="N" />
-      <field name="OriginalOrderCapacity" required="N" />
       <field name="NBBOIndicator" required="N" />
+      <field name="CancelOrderIfNotNBBOSetterWithSize" required="N" />
+      <field name="WorkingPrice" required="N" />
+      <field name="TradeLiquidityIndicator" required="N" />
       <field name="AdditionalTradeLiquidityIndicator" required="N" />
       <field name="OrigSession" required="N" />
       <field name="OrigCompID" required="N" />
@@ -210,13 +218,18 @@
       <field name="TradeID" required="Y" />
       <field name="CorrectionNum" required="Y" />
       <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="OrigTime" required="Y" />
+      <field name="TransactTime" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
-      <field name="TransactTime" required="Y" />
       <field name="LastPx" required="Y" />
       <field name="LastShares" required="Y" />
       <field name="Account" required="N" />
+      <field name="TradeLiquidityIndicator" required="N" />
+      <field name="AdditionalTradeLiquidityIndicator" required="N" />
+      <field name="OrigSession" required="N" />
+      <field name="OrigCompID" required="N" />
     </message>
   </messages>
   <components />
@@ -235,7 +248,6 @@
       <value enum="0" description="New" />
       <value enum="1" description="Cancel (Trade Cancel/Correct)" />
       <value enum="2" description="Correct (Trade Cancel/Correct)" />
-      <value enum="3" description="Status" />
     </field>
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastShares" type="QTY" />
@@ -314,8 +326,11 @@
     <field number="5700" name="LocateAccount" type="STRING" />
     <field number="7699" name="PurgeGroup" type="STRING" />
     <field number="7928" name="SelfTradeProtection" type="STRING" />
+    <field number="7947" name="PriceSlidingAndRepriceFrequency" type="CHAR" />
+    <field number="8020" name="DisplayRange" type="QTY" />
     <field number="9021" name="CorrectionNum" type="INT" />
-    <field number="9303" name="DisplayRange" type="QTY" />
+    <field number="9110" name="MinQtyExecType" type="CHAR" />
+    <field number="9303" name="RoutingInst" type="STRING" />
     <field number="9375" name="ContraBrokerMPID" type="STRING" />
     <field number="9400" name="RoutingStrategy" type="STRING" />
     <field number="9478" name="TradingCollarDollarValue" type="PRICE" />
@@ -323,10 +338,13 @@
     <field number="9481" name="RetailOrderIndicator" type="CHAR" />
     <field number="9482" name="AttributableIndicator" type="CHAR" />
     <field number="9483" name="CancelOrderIfNotNBBOSetter" type="CHAR" />
+    <field number="9484" name="NBBOIndicator" type="CHAR" />
+    <field number="9485" name="CancelOrderIfNotNBBOSetterWithSize" type="CHAR" />
     <field number="9528" name="OriginalOrderCapacity" type="CHAR" />
     <field number="9687" name="OrigSession" type="STRING" />
     <field number="9688" name="OrigCompID" type="STRING" />
-    <field number="9690" name="NBBOIndicator" type="CHAR" />
-    <field number="9882" name="AdditionalTradeLiquidityIndicator" type="CHAR" />
+    <field number="9690" name="WorkingPrice" type="PRICE" />
+    <field number="9730" name="TradeLiquidityIndicator" type="STRING" />
+    <field number="9882" name="AdditionalTradeLiquidityIndicator" type="STRING" />
   </fields>
 </fix>
