@@ -176,7 +176,7 @@
       <field name="SecurityType" required="N" />
       <field name="Symbol" required="N" />
       <field name="MultilegPriceMethod" required="N" />
-      <group name="NoLegsDefinition" required="N">
+      <group name="NoLegs" required="N">
         <field name="LegSymbol" required="N" />
         <field name="LegSecurityID" required="N" />
         <field name="LegSecurityIDSource" required="N" />
@@ -265,7 +265,7 @@
       <field name="ExpireDate" required="N" />
       <field name="ExpireTime" required="N" />
       <field name="Text" required="N" />
-      <group name="NoLegsDefinition" required="N">
+      <group name="NoLegs" required="N">
         <field name="LegSymbol" required="Y" />
         <field name="LegSecurityID" required="N" />
         <field name="LegSecurityIDSource" required="N" />
@@ -449,7 +449,7 @@
     <field number="532" name="MassCancelRejectReason" type="INT" />
     <field number="553" name="Username" type="STRING" />
     <field number="554" name="Password" type="STRING" />
-    <field number="555" name="NoLegsDefinition" type="NUMINGROUP" />
+    <field number="555" name="NoLegs" type="NUMINGROUP" />
     <field number="556" name="LegCurrency" type="CURRENCY" />
     <field number="566" name="LegPrice" type="PRICE" />
     <field number="574" name="MatchType" type="STRING" />

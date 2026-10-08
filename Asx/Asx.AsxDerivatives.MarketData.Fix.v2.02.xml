@@ -92,7 +92,7 @@
       <group name="NoMDEntryTypes" required="Y">
         <field name="MDEntryType" required="Y" />
       </group>
-      <group name="NoRelatedSymMarketData" required="Y">
+      <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
       </group>
       <group name="NoMarketSegments" required="N">
@@ -111,7 +111,7 @@
         <field name="PartyIDSource" required="N" />
         <field name="PartyRole" required="N" />
       </group>
-      <group name="NoRelatedSymMarketData" required="Y">
+      <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
         <field name="SecurityIDSource" required="N" />
@@ -219,7 +219,7 @@
     </message>
     <message name="QuoteRequest" msgtype="R" msgcat="app">
       <field name="QuoteReqID" required="Y" />
-      <group name="NoRelatedSymMarketData" required="Y">
+      <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="N" />
         <field name="SecurityID" required="N" />
         <field name="SecurityIDSource" required="N" />
@@ -249,7 +249,7 @@
       <field name="MarketSegmentID" required="N" />
       <field name="LastFragment" required="N" />
       <field name="ClearingBusinessDate" required="N" />
-      <group name="NoRelatedSymMarketData" required="N">
+      <group name="NoRelatedSym" required="N">
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
         <field name="SecurityIDSource" required="N" />
@@ -319,7 +319,7 @@
           <field name="MinLotSize" required="N" />
         </group>
       </group>
-      <group name="NoRelatedSymMarketData" required="N">
+      <group name="NoRelatedSym" required="N">
         <field name="Symbol" required="N" />
         <field name="SecurityID" required="N" />
         <field name="SecurityIDSource" required="N" />
@@ -391,7 +391,7 @@
     <field number="123" name="GapFillFlag" type="BOOLEAN" />
     <field number="131" name="QuoteReqID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
-    <field number="146" name="NoRelatedSymMarketData" type="NUMINGROUP" />
+    <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
     <field number="148" name="Headline" type="STRING" />
     <field number="200" name="MaturityMonthYear" type="MONTHYEAR" />
     <field number="202" name="StrikePrice" type="PRICE" />

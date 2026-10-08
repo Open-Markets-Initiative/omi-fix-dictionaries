@@ -218,15 +218,16 @@
       <group name="NoQuoteSets" required="Y">
         <field name="QuoteSetID" required="Y" />
         <field name="TotNoQuoteEntries" required="Y" />
-        <field name="NoQuoteEntries" required="Y" />
-        <field name="QuoteEntryID" required="Y" />
-        <field name="InstrumentSymbol" required="N" />
-        <field name="InstrumentSecurityID" required="N" />
-        <field name="InstrumentSecurityIDSource" required="N" />
-        <field name="BidPx" required="Y" />
-        <field name="OfferPx" required="Y" />
-        <field name="BidSize" required="Y" />
-        <field name="OfferSize" required="Y" />
+        <group name="NoQuoteEntries" required="Y">
+          <field name="QuoteEntryID" required="Y" />
+          <field name="InstrumentSymbol" required="N" />
+          <field name="InstrumentSecurityID" required="N" />
+          <field name="InstrumentSecurityIDSource" required="N" />
+          <field name="BidPx" required="Y" />
+          <field name="OfferPx" required="Y" />
+          <field name="BidSize" required="Y" />
+          <field name="OfferSize" required="Y" />
+        </group>
       </group>
     </message>
     <message name="QuoteRequest" msgtype="R" msgcat="app">
@@ -238,11 +239,11 @@
         <field name="Side" required="N" />
         <field name="MinQty" required="N" />
       </group>
-      <group name="NoRootParyIDs" required="N">
+      <group name="NoRootPartyIDs" required="N">
         <field name="RootPartyID" required="Y" />
+        <field name="RootPartyIDSource" required="Y" />
+        <field name="RootPartyRole" required="Y" />
       </group>
-      <field name="RootPartyIDSource" required="Y" />
-      <field name="RootPartyRole" required="Y" />
     </message>
     <message name="TradeCaptureReport" msgtype="AE" msgcat="app">
       <field name="TradeReportID" required="Y" />
@@ -253,7 +254,7 @@
       <field name="TransactTime" required="Y" />
       <field name="TrdType" required="Y" />
       <field name="PreviouslyReported" required="Y" />
-      <group name="NoRootParyIDs" required="N">
+      <group name="NoRootPartyIDs" required="N">
         <field name="RootPartyID" required="Y" />
         <field name="RootPartyIDSource" required="Y" />
         <field name="RootPartyRole" required="Y" />
@@ -538,9 +539,10 @@
       </group>
       <group name="NoQuoteSets" required="Y">
         <field name="QuoteSetID" required="Y" />
-        <field name="NoQuoteEntries" required="Y" />
-        <field name="QuoteEntryID" required="Y" />
-        <field name="QuoteEntryRejectReason" required="N" />
+        <group name="NoQuoteEntries" required="Y">
+          <field name="QuoteEntryID" required="Y" />
+          <field name="QuoteEntryRejectReason" required="N" />
+        </group>
       </group>
       <field name="Text" required="N" />
       <field name="QuoteRejectReason" required="N" />
@@ -568,7 +570,7 @@
       <field name="AllocID" required="N" />
       <field name="Account" required="N" />
       <field name="OrderCapacity" required="N" />
-      <group name="NoRootParyIDs" required="N">
+      <group name="NoRootPartyIDs" required="N">
         <field name="RootPartyID" required="Y" />
         <field name="RootPartyIDSource" required="Y" />
         <field name="RootPartyRole" required="Y" />
@@ -752,7 +754,7 @@
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="161" name="AllocText" type="STRING" />
     <field number="202" name="StrikePrice" type="PRICE" />
-    <field number="295" name="NoQuoteEntries" type="STRING" />
+    <field number="295" name="NoQuoteEntries" type="NUMINGROUP" />
     <field number="296" name="NoQuoteSets" type="NUMINGROUP" />
     <field number="297" name="QuoteStatus" type="STRING">
       <value enum="0" description="Accept" />
@@ -957,7 +959,7 @@
     <field number="1101" name="TriggeringInstructionTriggerAction" type="STRING" />
     <field number="1102" name="TriggeringInstructionTriggerPrice" type="STRING" />
     <field number="1103" name="TriggeringInstructionTriggerSymbol" type="STRING" />
-    <field number="1116" name="NoRootParyIDs" type="NUMINGROUP" />
+    <field number="1116" name="NoRootPartyIDs" type="NUMINGROUP" />
     <field number="1117" name="RootPartyID" type="STRING" />
     <field number="1118" name="RootPartyIDSource" type="STRING" />
     <field number="1119" name="RootPartyRole" type="STRING">
