@@ -151,6 +151,10 @@
       <field name="BulkAction" required="N" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="TransactTime" required="Y" />
+      <field name="NanosecondSendingTime" required="Y" />
+      <field name="NanosecondTransactTime" required="Y" />
+      <field name="ExecType" required="Y" />
       <field name="Account" required="N" />
       <field name="CumQty" required="Y" />
       <field name="ExecInst" required="N" />
@@ -160,7 +164,6 @@
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="TimeInForce" required="Y" />
-      <field name="TransactTime" required="Y" />
       <field name="OpenClose" required="Y" />
       <field name="LeavesQty" required="Y" />
       <field name="SecurityType" required="Y" />
@@ -179,9 +182,6 @@
       <field name="AuctionID" required="N" />
       <field name="AttributedQuote" required="N" />
       <field name="CancelInsteadOfSlide" required="Y" />
-      <field name="NanosecondSendingTime" required="Y" />
-      <field name="NanosecondTransactTime" required="Y" />
-      <field name="ExecType" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="ExecTransType" required="Y" />
       <field name="OrderID" required="Y" />
@@ -207,7 +207,6 @@
       <field name="OCCID" required="Y" />
       <field name="ContraOCCID" required="Y" />
       <field name="ExecRestatementReason" required="Y" />
-      <field name="SendingTime" required="Y" />
       <field name="AckStyle" required="N" />
       <field name="MPIDFilter" required="Y" />
       <field name="BulkAction" required="Y" />

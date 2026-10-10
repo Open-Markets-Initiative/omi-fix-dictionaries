@@ -220,11 +220,11 @@
     <field number="11" name="ClOrdID" type="STRING" />
     <field number="14" name="CumQty" type="QTY" />
     <field number="16" name="EndSeqNo" type="SEQNUM" />
-    <field number="17" name="ExecID" type="QTY" />
+    <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
       <value enum="6" description="POST_ONLY" />
     </field>
-    <field number="19" name="ExecRefID" type="QTY" />
+    <field number="19" name="ExecRefID" type="STRING" />
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastQty" type="QTY" />
     <field number="34" name="MsgSeqNum" type="SEQNUM" />
@@ -245,7 +245,7 @@
       <value enum="j" description="BUSINESS_MESSAGE_REJECT" />
     </field>
     <field number="36" name="NewSeqNo" type="SEQNUM" />
-    <field number="37" name="OrderID" type="QTY" />
+    <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
@@ -474,7 +474,7 @@
     <field number="829" name="TrdSubType" type="INT">
       <value enum="40" description="TAS" />
     </field>
-    <field number="880" name="TrdMatchID" type="QTY" />
+    <field number="880" name="TrdMatchID" type="STRING" />
     <field number="1028" name="ManualOrderIndicator" type="BOOLEAN">
       <value enum="N" description="Automated" />
       <value enum="Y" description="Manual" />

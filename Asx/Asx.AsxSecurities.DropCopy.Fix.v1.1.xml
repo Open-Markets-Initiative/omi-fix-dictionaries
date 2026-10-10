@@ -148,9 +148,9 @@
         <field name="MaturityDate" required="N" />
         <field name="SecurityStatus" required="N" />
         <field name="StrikePrice" required="N" />
-        <field name="SettlMethod" required="N" />
+        <field name="StrikePricePrecision" required="N" />
         <field name="ContractMultiplier" required="N" />
-        <field name="SettleOnOpenFlag" required="N" />
+        <field name="SettlMethod" required="N" />
         <field name="ExerciseStyle" required="N" />
         <field name="PutOrCall" required="N" />
         <field name="SecurityDesc" required="N" />
@@ -197,6 +197,7 @@
         <field name="SettlType" required="N" />
         <field name="SettlDate" required="N" />
         <field name="InstrumentPricePrecision" required="N" />
+        <field name="DatedDate" required="N" />
         <field name="CouponDayCount" required="N" />
         <field name="DividendYield" required="N" />
         <field name="RoundingDirection" required="N" />
@@ -220,10 +221,10 @@
     </message>
     <message name="SecurityListUpdateReport" msgtype="BK" msgcat="app">
       <field name="SecurityReqID" required="N" />
-      <field name="ListUpdateAction" required="Y" />
       <field name="MarketID" required="N" />
       <field name="MarketSegmentID" required="N" />
       <group name="NoRelatedSym" required="N">
+        <field name="ListUpdateAction" required="Y" />
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
         <field name="SecurityIDSource" required="N" />
@@ -235,9 +236,9 @@
         <field name="MaturityDate" required="N" />
         <field name="SecurityStatus" required="N" />
         <field name="StrikePrice" required="N" />
-        <field name="SettlMethod" required="N" />
+        <field name="StrikePricePrecision" required="N" />
         <field name="ContractMultiplier" required="N" />
-        <field name="SettleOnOpenFlag" required="N" />
+        <field name="SettlMethod" required="N" />
         <field name="ExerciseStyle" required="N" />
         <field name="PutOrCall" required="N" />
         <field name="SecurityDesc" required="N" />
@@ -282,8 +283,8 @@
         <field name="CouponPaymentDate" required="N" />
         <field name="ExDate" required="N" />
         <field name="SettlType" required="N" />
-        <field name="SettlDate" required="N" />
         <field name="InstrumentPricePrecision" required="N" />
+        <field name="DatedDate" required="N" />
         <field name="CouponDayCount" required="N" />
         <field name="DividendYield" required="N" />
         <field name="RoundingDirection" required="N" />
@@ -471,6 +472,7 @@
     <field number="870" name="NoInstrAttrib" type="NUMINGROUP" />
     <field number="871" name="InstrAttribType" type="INT" />
     <field number="872" name="InstrAttribValue" type="STRING" />
+    <field number="873" name="DatedDate" type="LOCALMKTDATE" />
     <field number="880" name="TrdMatchID" type="STRING" />
     <field number="893" name="LastFragment" type="BOOLEAN" />
     <field number="965" name="SecurityStatus" type="STRING" />
@@ -479,7 +481,7 @@
     <field number="1137" name="DefaultApplVerID" type="STRING" />
     <field number="1142" name="MatchAlgorithm" type="STRING" />
     <field number="1145" name="EventTime" type="UTCTIMESTAMP" />
-    <field number="1193" name="SettleOnOpenFlag" type="STRING" />
+    <field number="1193" name="SettlMethod" type="CHAR" />
     <field number="1194" name="ExerciseStyle" type="INT" />
     <field number="1205" name="NoTickRules" type="NUMINGROUP" />
     <field number="1206" name="StartTickPriceRange" type="PRICE" />
@@ -505,7 +507,7 @@
     <field number="1948" name="CouponFrequencyPeriod" type="INT" />
     <field number="1950" name="CouponDayCount" type="INT" />
     <field number="2567" name="InstrumentPricePrecision" type="INT" />
-    <field number="2577" name="SettlMethod" type="CHAR" />
+    <field number="2577" name="StrikePricePrecision" type="INT" />
     <field number="20013" name="DirectedWholesale" type="BOOLEAN" />
     <field number="24100" name="SupplementaryInfo" type="STRING" />
     <field number="24101" name="CustomerInfo" type="STRING" />

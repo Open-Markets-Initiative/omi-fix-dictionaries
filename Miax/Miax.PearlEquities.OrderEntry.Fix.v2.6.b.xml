@@ -1,13 +1,13 @@
 <!--
-  Fix dictionary for: Miax OrderEntry Fix v1.0
+  Fix dictionary for: Miax OrderEntry Fix v2.6.b
 
   Protocol:
     Organization: Miami International Holdings
     Protocol: Order Entry
     Encoding: Financial Information eXchange
-    Version: 1.0
+    Version: 2.6.b
     Date: 2026-03-17
-    Specification: fix order interface and drop interface foi (2026-03-17)
+    Specification: FIX Order Interface and Drop Interface FOI v2.6.b
 
   Script:
     Generator: 1.0.0.0
@@ -44,8 +44,6 @@
     <field name="OnBehalfOfCompID" required="N" />
     <field name="OnBehalfOfSubID" required="N" />
     <field name="OrigSendingTime" required="N" />
-    <field name="DeliverToCompID" required="N" />
-    <field name="DeliverToSubID" required="N" />
   </header>
   <trailer>
     <field name="CheckSum" required="Y" />
@@ -243,7 +241,13 @@
     <field number="14" name="CumQty" type="QTY" />
     <field number="16" name="EndSeqNo" type="SEQNUM" />
     <field number="17" name="ExecID" type="STRING" />
-    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
+      <value enum="M" description="Midpoint Peg" />
+      <value enum="R" description="Primary Peg" />
+      <value enum="f" description="Inter-market Sweep Order (ISO)" />
+      <value enum="m" description="Midpoint Peg, but do not match when NBBO is locked" />
+      <value enum="r" description="Primary Peg, but do not match when NBBO is locked" />
+    </field>
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Cancel (Trade Cancel/Correct)" />
@@ -256,7 +260,16 @@
     <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
-    <field number="39" name="OrdStatus" type="CHAR" />
+    <field number="39" name="OrdStatus" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partially Filled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="5" description="Replaced" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
+      <value enum="E" description="Pending Replace" />
+    </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
@@ -268,7 +281,10 @@
     <field number="44" name="Price" type="PRICE" />
     <field number="45" name="RefSeqNum" type="SEQNUM" />
     <field number="49" name="SenderCompID" type="STRING" />
-    <field number="50" name="SenderSubID" type="STRING" />
+    <field number="50" name="SenderSubID" type="STRING">
+      <value enum="PROD" description="MIAX Pearl Equities PROD Env." />
+      <value enum="TEST" description="MIAX Pearl Equities TEST Env." />
+    </field>
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
@@ -278,20 +294,48 @@
     </field>
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
-    <field number="57" name="TargetSubID" type="STRING" />
+    <field number="57" name="TargetSubID" type="STRING">
+      <value enum="PROD" description="MIAX Pearl Equities PROD Env." />
+      <value enum="TEST" description="MIAX Pearl Equities TEST Env." />
+    </field>
     <field number="58" name="Text" type="STRING" />
-    <field number="59" name="TimeInForce" type="CHAR" />
+    <field number="59" name="TimeInForce" type="CHAR">
+      <value enum="0" description="Day (Early and Regular Hours)" />
+      <value enum="3" description="IOC (Immediate or Cancel)" />
+      <value enum="4" description="Fill or Kill (FOK)" />
+      <value enum="5" description="Good Till Extended Day (GTX)" />
+      <value enum="6" description="Good Till Time (GTT)" />
+      <value enum="R" description="RHO (Regular Hours Only)" />
+    </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
-    <field number="76" name="ExecBroker" type="STRING" />
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="76" name="ExecBroker" type="STRING">
+      <value enum="PO" description="Post Only" />
+    </field>
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="N" description="New message (Default)" />
+      <value enum="Y" description="Application level resend (not supported from the Firm: logged but effectively ignored)" />
+    </field>
     <field number="98" name="EncryptMethod" type="INT" />
-    <field number="102" name="CxlRejReason" type="INT" />
-    <field number="103" name="OrdRejReason" type="INT" />
+    <field number="102" name="CxlRejReason" type="INT">
+      <value enum="0" description="Too late to cancel" />
+      <value enum="1" description="Unknown order" />
+      <value enum="2" description="Broker Option (details in Text (58), see Appendix B)" />
+      <value enum="3" description="Previous cancel or cancel/replace request is still pending" />
+    </field>
+    <field number="103" name="OrdRejReason" type="INT">
+      <value enum="0" description="Broker Option (details in Text (58), see Appendix B)" />
+      <value enum="1" description="Unknown Symbol" />
+      <value enum="2" description="Exchange Closed" />
+      <value enum="6" description="Duplicate Order (duplicate ClOrdID)" />
+    </field>
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="110" name="MinQty" type="QTY" />
     <field number="111" name="MaxFloor" type="QTY" />
     <field number="112" name="TestReqID" type="STRING" />
-    <field number="114" name="LocateReqd" type="BOOLEAN" />
+    <field number="114" name="LocateReqd" type="BOOLEAN">
+      <value enum="N" description="Client affirms ability to borrow or Member is relying on an exception to the Regulation SHO locate requirement (Default)" />
+      <value enum="Y" description="Client does not affirm ability to borrow (results in a reject)" />
+    </field>
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
@@ -300,17 +344,49 @@
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="129" name="DeliverToSubID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
-    <field number="150" name="ExecType" type="CHAR" />
+    <field number="150" name="ExecType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partially filled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="5" description="Replaced" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
+      <value enum="D" description="Restated" />
+      <value enum="E" description="Pending Replace" />
+    </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="198" name="SecondaryOrderID" type="STRING" />
     <field number="211" name="PegOffset" type="PRICE" />
     <field number="371" name="RefTagID" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
-    <field number="373" name="SessionRejectReason" type="INT" />
+    <field number="373" name="SessionRejectReason" type="INT">
+      <value enum="0" description="Invalid tag number" />
+      <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
+      <value enum="2" description="Tag not defined for this message type" />
+      <value enum="3" description="Undefined tag" />
+      <value enum="4" description="Tag specified without a value" />
+      <value enum="5" description="Value is incorrect (out of range) for this tag" />
+      <value enum="6" description="Incorrect data format for value" />
+      <value enum="9" description="Comp ID problem" />
+    </field>
     <field number="375" name="ContraBroker" type="STRING" />
-    <field number="378" name="ExecRestatementReason" type="INT" />
+    <field number="378" name="ExecRestatementReason" type="INT">
+      <value enum="3" description="Repricing of Order" />
+      <value enum="5" description="Reduction of OrderQty due to Self Trade Protection" />
+      <value enum="6" description="Reserve Order Replenishment" />
+    </field>
     <field number="379" name="BusinessRejectRefID" type="STRING" />
-    <field number="380" name="BusinessRejectReason" type="INT" />
+    <field number="380" name="BusinessRejectReason" type="INT">
+      <value enum="0" description="Other" />
+      <value enum="1" description="Unknown ID" />
+      <value enum="2" description="Unknown Security" />
+      <value enum="3" description="Unsupported Message Type" />
+      <value enum="4" description="System not available" />
+      <value enum="5" description="Required or conditional tag missing" />
+    </field>
     <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Order Cancel Request" />
@@ -326,20 +402,57 @@
     <field number="5700" name="LocateAccount" type="STRING" />
     <field number="7699" name="PurgeGroup" type="STRING" />
     <field number="7928" name="SelfTradeProtection" type="STRING" />
-    <field number="7947" name="PriceSlidingAndRepriceFrequency" type="CHAR" />
+    <field number="7947" name="PriceSlidingAndRepriceFrequency" type="CHAR">
+      <value enum="C" description="Display Price Sliding, Re-price Once, but Cancel if Crossed at Entry" />
+      <value enum="D" description="Display Price Sliding, Re-price Once (Default for displayed orders)" />
+      <value enum="M" description="Display Price Sliding, Reprice Multiple Times" />
+      <value enum="N" description="No Price Sliding" />
+    </field>
     <field number="8020" name="DisplayRange" type="QTY" />
     <field number="9021" name="CorrectionNum" type="INT" />
-    <field number="9110" name="MinQtyExecType" type="CHAR" />
-    <field number="9303" name="RoutingInst" type="STRING" />
+    <field number="9110" name="MinQtyExecType" type="CHAR">
+      <value enum="1" description="Only single contra order can fulfill MinQty requirement (Default when MinQty is specified)" />
+      <value enum="2" description="Multiple contra orders can fulfill MinQty requirement" />
+    </field>
+    <field number="9303" name="RoutingInst" type="CHAR">
+      <value enum="N" description="Do Not Route" />
+      <value enum="O" description="Route Once" />
+      <value enum="R" description="Re-routable" />
+    </field>
     <field number="9375" name="ContraBrokerMPID" type="STRING" />
-    <field number="9400" name="RoutingStrategy" type="STRING" />
+    <field number="9400" name="RoutingStrategy" type="STRING">
+      <value enum="P" description="Order Protection (Default)" />
+      <value enum="PAC" description="Primary Auction" />
+    </field>
     <field number="9478" name="TradingCollarDollarValue" type="PRICE" />
-    <field number="9479" name="DisplayIndicator" type="CHAR" />
-    <field number="9481" name="RetailOrderIndicator" type="CHAR" />
-    <field number="9482" name="AttributableIndicator" type="CHAR" />
-    <field number="9483" name="CancelOrderIfNotNBBOSetter" type="CHAR" />
-    <field number="9484" name="NBBOIndicator" type="CHAR" />
-    <field number="9485" name="CancelOrderIfNotNBBOSetterWithSize" type="CHAR" />
+    <field number="9479" name="DisplayIndicator" type="CHAR">
+      <value enum="N" description="Non-Displayed (Default for Midpoint Peg and Primary Peg orders)" />
+      <value enum="Y" description="Displayed (Default for Limit and Market orders)" />
+    </field>
+    <field number="9481" name="RetailOrderIndicator" type="CHAR">
+      <value enum="N" description="Non Retail Order (Default)" />
+      <value enum="Y" description="Retail Order" />
+    </field>
+    <field number="9482" name="AttributableIndicator" type="CHAR">
+      <value enum="N" description="Do not attribute" />
+      <value enum="R" description="Attributed to RTAL" />
+      <value enum="Y" description="Attributed to Firm MPID" />
+    </field>
+    <field number="9483" name="CancelOrderIfNotNBBOSetter" type="CHAR">
+      <value enum="N" description="If not NBBO Setter, order will not be cancelled back (Default)" />
+      <value enum="Y" description="If not NBBO Setter, order will be cancelled back" />
+    </field>
+    <field number="9484" name="NBBOIndicator" type="CHAR">
+      <value enum="F" description="NBBO First Joiner" />
+      <value enum="J" description="NBBO First Joiner with Size" />
+      <value enum="N" description="None of the above values are applicable" />
+      <value enum="S" description="NBBO Setter with Size" />
+      <value enum="Y" description="NBBO Setter" />
+    </field>
+    <field number="9485" name="CancelOrderIfNotNBBOSetterWithSize" type="CHAR">
+      <value enum="N" description="If not NBBO Setter with Size, order will not be cancelled back (Default)" />
+      <value enum="Y" description="If not NBBO Setter with Size, order will be cancelled back" />
+    </field>
     <field number="9528" name="OriginalOrderCapacity" type="CHAR" />
     <field number="9687" name="OrigSession" type="STRING" />
     <field number="9688" name="OrigCompID" type="STRING" />

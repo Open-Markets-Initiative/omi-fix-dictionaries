@@ -155,11 +155,11 @@
       <field name="Rule80A" required="N" />
       <field name="LiquidityFlag" required="N" />
       <field name="MaxFloor" required="N" />
+      <field name="ContraBroker" required="N" />
       <field name="NoContraBroker" required="N" />
       <field name="ExtendedReasonCode" required="N" />
       <field name="LastShares" required="Y" />
       <field name="LastPx" required="Y" />
-      <field name="ContraBroker" required="N" />
       <field name="LastLiquidityInd" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="Text" required="N" />

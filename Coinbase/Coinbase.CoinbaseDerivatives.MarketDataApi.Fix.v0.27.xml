@@ -467,7 +467,7 @@
     <field number="271" name="MDEntrySize" type="QTY" />
     <field number="272" name="MDEntryDate" type="UTCDATEONLY" />
     <field number="273" name="MDEntryTime" type="UTCTIMEONLY" />
-    <field number="278" name="MDEntryID" type="QTY" />
+    <field number="278" name="MDEntryID" type="STRING" />
     <field number="279" name="MDUpdateAction" type="CHAR">
       <value enum="0" description="NEW" />
       <value enum="1" description="CHANGE" />
@@ -616,7 +616,7 @@
     <field number="762" name="SecuritySubType" type="STRING">
       <value enum="SP" description="Standard Calendar Spreads" />
     </field>
-    <field number="779" name="LastUpdateTime" type="UTCDATEONLY" />
+    <field number="779" name="LastUpdateTime" type="UTCTIMESTAMP" />
     <field number="789" name="NextExpectedMsgSeqNum" type="SEQNUM" />
     <field number="828" name="TrdType" type="INT">
       <value enum="0" description="REGULAR_TRADE" />
@@ -649,7 +649,7 @@
     <field number="1023" name="MDPriceLevel" type="INT" />
     <field number="1140" name="MaxTradeVol" type="QTY" />
     <field number="1143" name="MaxPriceVariation" type="PRICE" />
-    <field number="1145" name="EventTime" type="UTCDATEONLY" />
+    <field number="1145" name="EventTime" type="STRING" />
     <field number="1147" name="UnitOfMeasureQty" type="QTY" />
     <field number="1148" name="LowLimitPrice" type="PRICE" />
     <field number="1149" name="HighLimitPrice" type="PRICE" />
@@ -670,7 +670,7 @@
     </field>
     <field number="5791" name="ClearedVolume" type="QTY" />
     <field number="5792" name="OpenInterestQty" type="QTY" />
-    <field number="5796" name="TradingReferenceDate" type="UTCDATEONLY" />
+    <field number="5796" name="TradingReferenceDate" type="LOCALMKTDATE" />
     <field number="5797" name="AggressorSide" type="INT">
       <value enum="0" description="NO_AGGRESSOR" />
       <value enum="1" description="BUY" />

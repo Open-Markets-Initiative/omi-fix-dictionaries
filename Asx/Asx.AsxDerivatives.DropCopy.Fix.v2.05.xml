@@ -95,162 +95,162 @@
       <field name="TransactTime" required="N" />
     </message>
     <message name="BusinessMessageReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="N" />
+      <field name="RefSeqNum" required="Y" />
       <field name="RefMsgType" required="Y" />
       <field name="BusinessRejectReason" required="Y" />
       <field name="Text" required="N" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="OrderID" required="Y" />
-      <field name="SecondaryOrderID" required="N" />
-      <field name="ClOrdID" required="N" />
+      <field name="SecondaryOrderID" required="Y" />
+      <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="N" />
-      <field name="CopyMsgIndicator" required="N" />
+      <field name="CopyMsgIndicator" required="Y" />
       <field name="ExecID" required="Y" />
       <field name="ExecRefID" required="N" />
       <field name="TrdMatchID" required="N" />
       <field name="OrdStatus" required="Y" />
       <field name="ExecType" required="Y" />
       <field name="ExecRestatementReason" required="N" />
-      <field name="Account" required="N" />
-      <field name="AccountType" required="N" />
+      <field name="Account" required="Y" />
+      <field name="AccountType" required="Y" />
       <field name="MatchType" required="N" />
-      <field name="Side" required="N" />
-      <field name="OrderQty" required="N" />
-      <field name="Price" required="N" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="Price" required="Y" />
       <field name="LastPx" required="N" />
-      <field name="AvgPx" required="N" />
-      <field name="Currency" required="N" />
+      <field name="AvgPx" required="Y" />
+      <field name="Currency" required="Y" />
       <field name="LastQty" required="N" />
-      <field name="CumQty" required="N" />
-      <field name="LeavesQty" required="N" />
+      <field name="CumQty" required="Y" />
+      <field name="LeavesQty" required="Y" />
       <field name="TradeDate" required="N" />
-      <field name="OrdType" required="N" />
+      <field name="OrdType" required="Y" />
       <field name="TimeInForce" required="N" />
       <field name="LastCapacity" required="N" />
-      <field name="Symbol" required="N" />
-      <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityID" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
       <field name="SecurityExchange" required="N" />
       <field name="ExecInst" required="N" />
-      <group name="NoPartyIDs" required="N">
+      <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="N" />
+        <field name="PartyIDSource" required="Y" />
         <field name="PartyRole" required="Y" />
       </group>
       <field name="AggressorIndicator" required="N" />
       <group name="NoMatchInst" required="N">
         <field name="MatchInst" required="Y" />
-        <field name="MatchAttribTagID" required="N" />
-        <field name="MatchAttribValue" required="N" />
+        <field name="MatchAttribTagID" required="Y" />
+        <field name="MatchAttribValue" required="Y" />
       </group>
       <field name="ExpireDate" required="N" />
       <field name="ExpireTime" required="N" />
       <field name="Text" required="N" />
-      <field name="TransactTime" required="N" />
+      <field name="TransactTime" required="Y" />
       <group name="NoLegs" required="N">
         <field name="LegSymbol" required="Y" />
-        <field name="LegSecurityID" required="N" />
+        <field name="LegSecurityID" required="Y" />
         <field name="LegSecurityIDSource" required="N" />
-        <field name="LegID" required="N" />
-        <field name="LegAllocID" required="N" />
-        <field name="LegLastPx" required="N" />
-        <field name="LegLastQty" required="N" />
-        <field name="LegSide" required="N" />
-        <field name="LegCurrency" required="N" />
-        <field name="LegOrderQty" required="N" />
+        <field name="LegID" required="Y" />
+        <field name="LegAllocID" required="Y" />
+        <field name="LegLastPx" required="Y" />
+        <field name="LegLastQty" required="Y" />
+        <field name="LegSide" required="Y" />
+        <field name="LegCurrency" required="Y" />
+        <field name="LegOrderQty" required="Y" />
         <group name="NoLegInstrumentParties" required="N">
-          <field name="LegInstrumentPartyID" required="N" />
-          <field name="LegInstrumentPartyIDSource" required="N" />
-          <field name="LegInstrumentPartyRole" required="N" />
+          <field name="LegInstrumentPartyID" required="Y" />
+          <field name="LegInstrumentPartyIDSource" required="Y" />
+          <field name="LegInstrumentPartyRole" required="Y" />
         </group>
       </group>
     </message>
     <message name="TradeCaptureReport" msgtype="AE" msgcat="app">
       <field name="TradeReportID" required="Y" />
-      <field name="TradeReportTransType" required="N" />
-      <field name="TradeRequestID" required="N" />
-      <field name="TrdMatchID" required="N" />
-      <field name="Symbol" required="N" />
-      <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
-      <field name="LastQty" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="TradeDate" required="N" />
-      <field name="TransactTime" required="N" />
-      <field name="MatchType" required="N" />
-      <field name="PreviouslyReported" required="N" />
-      <field name="LastRptRequested" required="N" />
+      <field name="TradeReportTransType" required="Y" />
+      <field name="TradeRequestID" required="Y" />
+      <field name="TrdMatchID" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityID" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
+      <field name="LastQty" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="TradeDate" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="MatchType" required="Y" />
+      <field name="PreviouslyReported" required="Y" />
+      <field name="LastRptRequested" required="Y" />
       <group name="NoSides" required="Y">
         <field name="Side" required="Y" />
-        <field name="LastCapacity" required="N" />
-        <field name="AggressorIndicator" required="N" />
+        <field name="LastCapacity" required="Y" />
+        <field name="AggressorIndicator" required="Y" />
         <field name="StrategyLinkID" required="N" />
-        <group name="NoPartyIDs" required="N">
+        <group name="NoPartyIDs" required="Y">
           <field name="PartyID" required="Y" />
-          <field name="PartyIDSource" required="N" />
+          <field name="PartyIDSource" required="Y" />
           <field name="PartyRole" required="Y" />
         </group>
         <group name="NoMatchInst" required="N">
           <field name="MatchInst" required="Y" />
-          <field name="MatchAttribTagID" required="N" />
-          <field name="MatchAttribValue" required="N" />
+          <field name="MatchAttribTagID" required="Y" />
+          <field name="MatchAttribValue" required="Y" />
         </group>
-        <field name="Account" required="N" />
-        <field name="AccountType" required="N" />
-        <field name="OrderID" required="N" />
-        <field name="ClOrdID" required="N" />
+        <field name="Account" required="Y" />
+        <field name="AccountType" required="Y" />
+        <field name="OrderID" required="Y" />
+        <field name="ClOrdID" required="Y" />
         <field name="Text" required="N" />
       </group>
-      <field name="CopyMsgIndicator" required="N" />
+      <field name="CopyMsgIndicator" required="Y" />
     </message>
     <message name="TradeCaptureReportRequestAck" msgtype="AQ" msgcat="app">
       <field name="TradeRequestID" required="Y" />
       <field name="TradeRequestType" required="Y" />
       <field name="TotNumTradeReports" required="N" />
-      <field name="TradeRequestResult" required="N" />
-      <field name="TradeRequestStatus" required="N" />
-      <field name="Symbol" required="N" />
+      <field name="TradeRequestResult" required="Y" />
+      <field name="TradeRequestStatus" required="Y" />
+      <field name="Symbol" required="Y" />
       <field name="Text" required="N" />
     </message>
     <message name="QuoteRequest" msgtype="R" msgcat="app">
       <field name="QuoteReqID" required="Y" />
-      <group name="NoRootPartyIDs" required="N">
-        <field name="RootPartyID" required="N" />
-        <field name="RootPartyIDSource" required="N" />
-        <field name="RootPartyRole" required="N" />
+      <group name="NoRootPartyIDs" required="Y">
+        <field name="RootPartyID" required="Y" />
+        <field name="RootPartyIDSource" required="Y" />
+        <field name="RootPartyRole" required="Y" />
       </group>
-      <group name="NoRelatedSym" required="N">
+      <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
-        <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
+        <field name="SecurityID" required="Y" />
+        <field name="SecurityIDSource" required="Y" />
         <field name="Side" required="N" />
-        <field name="OrderQty" required="N" />
-        <field name="TransactTime" required="N" />
+        <field name="OrderQty" required="Y" />
+        <field name="TransactTime" required="Y" />
       </group>
     </message>
     <message name="PartyRiskLimitsReport" msgtype="CM" msgcat="app">
       <field name="RiskLimitReportID" required="Y" />
-      <field name="TransactTime" required="N" />
-      <field name="Text" required="N" />
-      <group name="NoPartyRiskLimits" required="N">
-        <group name="NoPartyDetails" required="N">
-          <field name="PartyDetailID" required="N" />
-          <field name="PartyDetailIDSource" required="N" />
-          <field name="PartyDetailRole" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="Text" required="Y" />
+      <group name="NoPartyRiskLimits" required="Y">
+        <group name="NoPartyDetails" required="Y">
+          <field name="PartyDetailID" required="Y" />
+          <field name="PartyDetailIDSource" required="Y" />
+          <field name="PartyDetailRole" required="Y" />
         </group>
-        <group name="NoRiskLimits" required="N">
-          <group name="NoRiskLimitTypes" required="N">
-            <field name="RiskLimitType" required="N" />
-            <field name="RiskLimitUtilizationPercent" required="N" />
-            <field name="RiskLimitAction" required="N" />
-            <group name="NoRiskWarningLevel" required="N">
-              <field name="RiskWarningLevelAction" required="N" />
-              <field name="RiskWarningLevelPercent" required="N" />
+        <group name="NoRiskLimits" required="Y">
+          <group name="NoRiskLimitTypes" required="Y">
+            <field name="RiskLimitType" required="Y" />
+            <field name="RiskLimitUtilizationPercent" required="Y" />
+            <field name="RiskLimitAction" required="Y" />
+            <group name="NoRiskWarningLevel" required="Y">
+              <field name="RiskWarningLevelAction" required="Y" />
+              <field name="RiskWarningLevelPercent" required="Y" />
             </group>
-            <group name="NoRiskInstrumentScopes" required="N">
-              <field name="InstrumentScopeOperator" required="N" />
-              <field name="InstrumentScopeSecurityGroup" required="N" />
+            <group name="NoRiskInstrumentScopes" required="Y">
+              <field name="InstrumentScopeOperator" required="Y" />
+              <field name="InstrumentScopeSecurityGroup" required="Y" />
               <field name="InstrumentScopeSecurityExchange" required="N" />
             </group>
           </group>
@@ -259,8 +259,8 @@
     </message>
     <message name="News" msgtype="B" msgcat="app">
       <field name="Headline" required="Y" />
-      <field name="OrigTime" required="N" />
-      <group name="NoLinesOfText" required="N">
+      <field name="OrigTime" required="Y" />
+      <group name="NoLinesOfText" required="Y">
         <field name="Text" required="Y" />
       </group>
     </message>

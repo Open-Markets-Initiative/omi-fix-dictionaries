@@ -350,7 +350,7 @@
     <field number="211" name="PegDifference" type="STRING" />
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="378" name="ExecRestatementReason" type="STRING">
-      <value enum="4" description="Brokeroption;optionallysentduringreloadofareserve(iceberg)order." />
+      <value enum="4" description="Broker option; optionally sent during reload of a reserve (iceberg) order." />
       <value enum="5" description="Partial decline of Order Qty" />
     </field>
     <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
@@ -382,7 +382,7 @@
       <value enum="0" description="None (applicable only for the reserved Party IDs)" />
       <value enum="22" description="Algorithm (applicable to PartyRole values 12 or 122)" />
       <value enum="23" description="Firm or legal entity (LEI) (applicable to Party Role value 3)" />
-      <value enum="24" description="Naturalperson(applicabletoPartyRolevalues3,12and122)" />
+      <value enum="24" description="Natural person (applicable to PartyRole values 3, 12 and 122)" />
     </field>
     <field number="6655" name="CorrectedSize" type="STRING" />
     <field number="7692" name="RiskReset" type="STRING">
@@ -405,21 +405,21 @@
       <value enum="N" description="Cancel Newest" />
       <value enum="O" description="Cancel Oldest" />
       <value enum="P" description="Prevent Match at Port Owner Level" />
-      <value enum="d" description="SameasDabove,butonlydecrementLeavesQty (151). Donot restate OrderQty (38). restate OrderQty (38)." />
+      <value enum="d" description="Same as D above, but only decrement LeavesQty (151). Do not restate OrderQty (38). restate OrderQty (38)." />
     </field>
     <field number="8013" name="TrdRegPublicationReasons" type="STRING">
       <value enum="0" description="Negotiated Trade in Liquid Instrument (NLIQ)" />
       <value enum="1" description="Negotiated Trade in Illiquid Instrument (OILQ)" />
       <value enum="10" description="Order Management Facility (Iceberg) (Pre-Trade Transparency" />
       <value enum="17" description="Negotiated Trade Subject to a Pre-Trade Transparency Waiver (re-" />
-      <value enum="2" description="NegotiatedTradeSubjecttoConditionsOtherThantheCurrentMarket" />
+      <value enum="2" description="Negotiated Trade Subject to Conditions Other Than the Current Market" />
       <value enum="3" description="Reference Price (Dark Book) (RFPT)" />
       <value enum="6" description="Deferral for Large in Scale (LRGS)" />
       <value enum="9" description="Large In Scale (Pre-Trade Transparency Waiver)" />
     </field>
     <field number="8015" name="OrderAttributeTypes" type="STRING">
-      <value enum="2" description="LiquidityProvisionactivityorder. Thisindicatestheorderisrelatedto anysortofliquidityprovisionactivity,asdefinedbyMiFIDII.Thisflag is mandatory for orders which are part of a liquidity provision activity. Absence of this value indicates otherwise. anysortofliquidityprovisionactivity,asdefinedbyMiFIDII.Thisflag is mandatory for orders which are part of a liquidity provision activity. Absence of this value indicates otherwise." />
-      <value enum="4" description="Algorithmicorder. Thisindicatesthattheorderwasplacedasaresult of an investment firm engaging in algorithmic trading. Absence of this value indicates otherwise. of an investment firm engaging in algorithmic trading. Absence of this value indicates otherwise." />
+      <value enum="2" description="Liquidity Provision activity order. This indicates the order is related to any sort of liquidity provision activity, as defined by MiFID II. This flag is mandatory for orders which are part of a liquidity provision activity. Absence of this value indicates otherwise. any sort of liquidity provision activity, as defined by MiFID II. This flag is mandatory for orders which are part of a liquidity provision activity. Absence of this value indicates otherwise." />
+      <value enum="4" description="Algorithmic order. This indicates that the order was placed as a result of an investment firm engaging in algorithmic trading. Absence of this value indicates otherwise. of an investment firm engaging in algorithmic trading. Absence of this value indicates otherwise." />
     </field>
     <field number="8016" name="TradingVenueRegTradeId" type="STRING" />
     <field number="9303" name="RoutingInst" type="STRING">
@@ -434,7 +434,7 @@
       <value enum="D" description="Dark-on-Expiry" />
       <value enum="L" description="Limit (1-tick inside the limit price)" />
       <value enum="N" description="None (implied if 3rd char is not specified)" />
-      <value enum="P" description="CboeOnly—PostOnly(willrejectratherthanremovevisibleliquidity)" />
+      <value enum="P" description="Cboe Only — Post Only (will reject rather than remove visible liquidity)" />
       <value enum="T" description="Far-touch (least aggressive of 1-tick inside the EBBO far-touch or limit price) or limit price)" />
       <value enum="U" description="Dark Sweep (interbook)" />
       <value enum="W" description="Lit Sweep (interbook, best-price)" />

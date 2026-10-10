@@ -32,8 +32,8 @@
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
-    <field name="MesSeqNum" required="Y" />
     <field name="MsgType" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
     <field name="SenderCompID" required="Y" />
     <field name="TargetCompID" required="Y" />
     <field name="SendingTime" required="Y" />
@@ -181,7 +181,7 @@
     <field number="30" name="LastMkt" type="EXCHANGE" />
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastShares" type="QTY" />
-    <field number="34" name="MesSeqNum" type="SEQNUM" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
     <field number="35" name="MsgType" type="STRING">
       <value enum="0" description="HeartBeat" />
       <value enum="1" description="TestRequest" />

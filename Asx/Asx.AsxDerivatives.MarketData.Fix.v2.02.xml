@@ -144,7 +144,7 @@
       <field name="SubscriptionRequestType" required="N" />
     </message>
     <message name="BusinessMessageReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="N" />
+      <field name="RefSeqNum" required="Y" />
       <field name="RefMsgType" required="Y" />
       <field name="BusinessRejectReason" required="Y" />
       <field name="BusinessRejectRefID" required="N" />
@@ -152,16 +152,16 @@
     </message>
     <message name="MarketDataRequestReject" msgtype="Y" msgcat="app">
       <field name="MDReqID" required="Y" />
-      <field name="MDReqRejReason" required="N" />
-      <field name="Text" required="N" />
+      <field name="MDReqRejReason" required="Y" />
+      <field name="Text" required="Y" />
     </message>
     <message name="MarketDataSnapshotFullRefresh" msgtype="W" msgcat="app">
       <field name="MDReqID" required="N" />
-      <field name="TradeDate" required="N" />
+      <field name="TradeDate" required="Y" />
       <field name="Symbol" required="Y" />
-      <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
-      <field name="CFICode" required="N" />
+      <field name="SecurityID" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
+      <field name="CFICode" required="Y" />
       <group name="NoMDEntries" required="Y">
         <field name="MDEntryType" required="Y" />
         <field name="MDUpdateAction" required="N" />
@@ -176,8 +176,8 @@
         <field name="NumberOfOrders" required="N" />
         <field name="MDEntryPx" required="N" />
         <field name="MDEntrySize" required="N" />
-        <field name="MDEntryDate" required="N" />
-        <field name="MDEntryTime" required="N" />
+        <field name="MDEntryDate" required="Y" />
+        <field name="MDEntryTime" required="Y" />
         <field name="QuoteCondition" required="N" />
         <field name="TradeCondition" required="N" />
         <field name="MatchType" required="N" />
@@ -190,7 +190,7 @@
     </message>
     <message name="MarketDataIncrementalRefresh" msgtype="X" msgcat="app">
       <field name="MDReqID" required="N" />
-      <field name="TradeDate" required="N" />
+      <field name="TradeDate" required="Y" />
       <group name="NoMDEntries" required="Y">
         <field name="MDEntryType" required="Y" />
         <field name="MDUpdateAction" required="N" />
@@ -205,8 +205,8 @@
         <field name="NumberOfOrders" required="N" />
         <field name="MDEntryPx" required="N" />
         <field name="MDEntrySize" required="N" />
-        <field name="MDEntryDate" required="N" />
-        <field name="MDEntryTime" required="N" />
+        <field name="MDEntryDate" required="Y" />
+        <field name="MDEntryTime" required="Y" />
         <field name="QuoteCondition" required="N" />
         <field name="TradeCondition" required="N" />
         <field name="MatchType" required="N" />
@@ -229,36 +229,36 @@
     </message>
     <message name="MarketDefinition" msgtype="BU" msgcat="app">
       <field name="MarketReportID" required="Y" />
-      <field name="MarketReqID" required="N" />
+      <field name="MarketReqID" required="Y" />
       <field name="MarketID" required="Y" />
-      <field name="MarketSegmentID" required="N" />
-      <field name="MarketSegmentDesc" required="N" />
+      <field name="MarketSegmentID" required="Y" />
+      <field name="MarketSegmentDesc" required="Y" />
       <field name="ParentMktSegmID" required="N" />
       <field name="EffectiveBusinessDate" required="N" />
       <group name="NoTickRules" required="N">
         <field name="StartTickPriceRange" required="Y" />
-        <field name="TickIncrement" required="N" />
+        <field name="TickIncrement" required="Y" />
       </group>
     </message>
     <message name="SecurityList" msgtype="y" msgcat="app">
       <field name="SecurityReqID" required="Y" />
       <field name="SecurityResponseID" required="Y" />
       <field name="TotNoRelatedSym" required="N" />
-      <field name="SecurityRequestResult" required="N" />
-      <field name="MarketID" required="N" />
-      <field name="MarketSegmentID" required="N" />
-      <field name="LastFragment" required="N" />
-      <field name="ClearingBusinessDate" required="N" />
-      <group name="NoRelatedSym" required="N">
+      <field name="SecurityRequestResult" required="Y" />
+      <field name="MarketID" required="Y" />
+      <field name="MarketSegmentID" required="Y" />
+      <field name="LastFragment" required="Y" />
+      <field name="ClearingBusinessDate" required="Y" />
+      <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
-        <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
-        <field name="SecurityExchange" required="N" />
-        <field name="CFICode" required="N" />
-        <field name="SecurityGroup" required="N" />
-        <field name="SecurityDesc" required="N" />
-        <field name="MinPriceIncrement" required="N" />
-        <field name="Currency" required="N" />
+        <field name="SecurityID" required="Y" />
+        <field name="SecurityIDSource" required="Y" />
+        <field name="SecurityExchange" required="Y" />
+        <field name="CFICode" required="Y" />
+        <field name="SecurityGroup" required="Y" />
+        <field name="SecurityDesc" required="Y" />
+        <field name="MinPriceIncrement" required="Y" />
+        <field name="Currency" required="Y" />
         <field name="MultilegPriceMethod" required="N" />
         <field name="MaturityMonthYear" required="N" />
         <field name="MaturityDate" required="N" />
@@ -267,88 +267,88 @@
         <field name="ContractMultiplier" required="N" />
         <group name="NoLegs" required="N">
           <field name="LegSymbol" required="Y" />
-          <field name="LegSecurityID" required="N" />
-          <field name="LegSecurityIDSource" required="N" />
-          <field name="LegRatioQty" required="N" />
-          <field name="LegSide" required="N" />
+          <field name="LegSecurityID" required="Y" />
+          <field name="LegSecurityIDSource" required="Y" />
+          <field name="LegRatioQty" required="Y" />
+          <field name="LegSide" required="Y" />
           <field name="LegPrice" required="N" />
         </group>
         <group name="NoInstrAttrib" required="N">
-          <field name="InstrAttribType" required="N" />
-          <field name="InstrAttribValue" required="N" />
+          <field name="InstrAttribType" required="Y" />
+          <field name="InstrAttribValue" required="Y" />
         </group>
         <group name="NoLotTypeRules" required="N">
-          <field name="LotType" required="N" />
-          <field name="MinLotSize" required="N" />
+          <field name="LotType" required="Y" />
+          <field name="MinLotSize" required="Y" />
         </group>
-        <field name="TradeSeqNoSeries" required="N" />
+        <field name="TradeSeqNoSeries" required="Y" />
       </group>
     </message>
     <message name="DerivativeSecurityList" msgtype="AA" msgcat="app">
-      <field name="SecurityReqID" required="N" />
+      <field name="SecurityReqID" required="Y" />
       <field name="SecurityResponseID" required="Y" />
       <field name="TotNoRelatedSym" required="N" />
-      <field name="SecurityRequestResult" required="N" />
-      <field name="LastFragment" required="N" />
-      <field name="ClearingBusinessDate" required="N" />
-      <field name="UnderlyingSymbol" required="N" />
-      <field name="UnderlyingSecurityID" required="N" />
-      <field name="UnderlyingSecurityIDSource" required="N" />
-      <field name="UnderlyingSecurityExchange" required="N" />
+      <field name="SecurityRequestResult" required="Y" />
+      <field name="LastFragment" required="Y" />
+      <field name="ClearingBusinessDate" required="Y" />
+      <field name="UnderlyingSymbol" required="Y" />
+      <field name="UnderlyingSecurityID" required="Y" />
+      <field name="UnderlyingSecurityIDSource" required="Y" />
+      <field name="UnderlyingSecurityExchange" required="Y" />
       <field name="UnderlyingCouponRate" required="N" />
       <field name="UnderlyingFactor" required="N" />
-      <field name="DerivativeCFICode" required="N" />
-      <field name="DerivativeSecurityGroup" required="N" />
-      <field name="DerivativeSecurityDesc" required="N" />
-      <field name="DerivativeSecurityExchange" required="N" />
-      <field name="DerivativePriceQuoteCurrency" required="N" />
-      <field name="DerivativeMinPriceIncrement" required="N" />
-      <field name="DerivativeMaturityMonthYear" required="N" />
-      <field name="DerivativeMaturityDate" required="N" />
-      <field name="DerivativeMaturityTime" required="N" />
-      <field name="DerivativeContractMultiplier" required="N" />
-      <group name="NoDerivativeEvents" required="N">
-        <field name="DerivativeEventType" required="N" />
-        <field name="DerivativeEventDate" required="N" />
+      <field name="DerivativeCFICode" required="Y" />
+      <field name="DerivativeSecurityGroup" required="Y" />
+      <field name="DerivativeSecurityDesc" required="Y" />
+      <field name="DerivativeSecurityExchange" required="Y" />
+      <field name="DerivativePriceQuoteCurrency" required="Y" />
+      <field name="DerivativeMinPriceIncrement" required="Y" />
+      <field name="DerivativeMaturityMonthYear" required="Y" />
+      <field name="DerivativeMaturityDate" required="Y" />
+      <field name="DerivativeMaturityTime" required="Y" />
+      <field name="DerivativeContractMultiplier" required="Y" />
+      <group name="NoDerivativeEvents" required="Y">
+        <field name="DerivativeEventType" required="Y" />
+        <field name="DerivativeEventDate" required="Y" />
       </group>
-      <group name="NoMarketSegments" required="N">
-        <field name="MarketID" required="N" />
-        <field name="MarketSegmentID" required="N" />
-        <group name="NoLotTypeRules" required="N">
-          <field name="LotType" required="N" />
-          <field name="MinLotSize" required="N" />
+      <group name="NoMarketSegments" required="Y">
+        <field name="MarketID" required="Y" />
+        <field name="MarketSegmentID" required="Y" />
+        <group name="NoLotTypeRules" required="Y">
+          <field name="LotType" required="Y" />
+          <field name="MinLotSize" required="Y" />
         </group>
       </group>
-      <group name="NoRelatedSym" required="N">
-        <field name="Symbol" required="N" />
-        <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
-        <field name="StrikePrice" required="N" />
+      <group name="NoRelatedSym" required="Y">
+        <field name="Symbol" required="Y" />
+        <field name="SecurityID" required="Y" />
+        <field name="SecurityIDSource" required="Y" />
+        <field name="StrikePrice" required="Y" />
       </group>
     </message>
     <message name="SecurityStatus" msgtype="f" msgcat="app">
-      <field name="SecurityStatusReqID" required="N" />
+      <field name="SecurityStatusReqID" required="Y" />
       <field name="Symbol" required="Y" />
-      <field name="SecurityID" required="N" />
-      <field name="SecurityIDSource" required="N" />
-      <field name="TradeDate" required="N" />
-      <field name="SecurityTradingStatus" required="N" />
+      <field name="SecurityID" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
+      <field name="TradeDate" required="Y" />
+      <field name="SecurityTradingStatus" required="Y" />
       <field name="HaltReason" required="N" />
-      <field name="CFICode" required="N" />
+      <field name="CFICode" required="Y" />
       <field name="Text" required="N" />
     </message>
     <message name="TradingSessionStatus" msgtype="h" msgcat="app">
-      <field name="TradSesReqID" required="N" />
+      <field name="TradSesReqID" required="Y" />
       <field name="TradingSessionID" required="Y" />
-      <field name="MarketID" required="N" />
-      <field name="MarketSegmentID" required="N" />
-      <field name="TradeDate" required="N" />
+      <field name="MarketID" required="Y" />
+      <field name="MarketSegmentID" required="Y" />
+      <field name="TradeDate" required="Y" />
       <field name="Text" required="N" />
     </message>
     <message name="News" msgtype="B" msgcat="app">
       <field name="Headline" required="Y" />
-      <field name="OrigTime" required="N" />
-      <group name="NoLinesOfText" required="N">
+      <field name="OrigTime" required="Y" />
+      <group name="NoLinesOfText" required="Y">
         <field name="Text" required="Y" />
       </group>
     </message>

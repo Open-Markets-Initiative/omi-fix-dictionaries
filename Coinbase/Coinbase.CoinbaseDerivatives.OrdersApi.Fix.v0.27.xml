@@ -355,7 +355,7 @@
     <field number="11" name="ClOrdID" type="STRING" />
     <field number="14" name="CumQty" type="QTY" />
     <field number="16" name="EndSeqNo" type="SEQNUM" />
-    <field number="17" name="ExecID" type="QTY" />
+    <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
       <value enum="6" description="POST_ONLY" />
     </field>
@@ -465,7 +465,7 @@
       <value enum="z" description="DERIVATIVE_SECURITY_LIST_REQUEST" />
     </field>
     <field number="36" name="NewSeqNo" type="SEQNUM" />
-    <field number="37" name="OrderID" type="QTY" />
+    <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
@@ -817,7 +817,7 @@
     <field number="629" name="HopSendingTime" type="UTCTIMESTAMP" />
     <field number="630" name="HopRefID" type="SEQNUM" />
     <field number="789" name="NextExpectedMsgSeqNum" type="SEQNUM" />
-    <field number="880" name="TrdMatchID" type="QTY" />
+    <field number="880" name="TrdMatchID" type="STRING" />
     <field number="1028" name="ManualOrderIndicator" type="BOOLEAN">
       <value enum="N" description="Automated" />
       <value enum="Y" description="Manual" />

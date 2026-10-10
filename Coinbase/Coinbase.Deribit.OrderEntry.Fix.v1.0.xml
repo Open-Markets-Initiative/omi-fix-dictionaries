@@ -235,6 +235,7 @@
         <field name="UnderlyingEndPrice" required="N" />
         <field name="Side" required="N" />
         <field name="SettlPrice" required="N" />
+        <field name="RawDataLength" required="N" />
         <field name="RawData" required="N" />
         <field name="DeribitLiquidationPrice" required="N" />
         <field name="DeribitSizeInCurrency" required="N" />

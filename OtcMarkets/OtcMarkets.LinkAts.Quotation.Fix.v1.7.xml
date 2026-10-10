@@ -32,17 +32,19 @@
   <header>
     <field name="BeginString" required="N" />
     <field name="BodyLength" required="N" />
-    <field name="MsgSeqNum" required="N" />
     <field name="MsgType" required="N" />
+    <field name="MsgSeqNum" required="N" />
     <field name="SenderCompID" required="N" />
     <field name="SendingTime" required="N" />
     <field name="TargetCompID" required="N" />
     <field name="OnBehalfOfCompID" required="N" />
-    <field name="OnBehaldOfSubID" required="N" />
+    <field name="OnBehalfOfSubID" required="N" />
     <field name="DeliverToCompID" required="N" />
     <field name="DeliverToSubID" required="N" />
   </header>
-  <trailer />
+  <trailer>
+    <field name="CheckSum" required="N" />
+  </trailer>
   <messages>
     <message name="Quote" msgtype="S" msgcat="app">
       <field name="MsgRefID" required="N" />
@@ -99,6 +101,7 @@
   <fields>
     <field number="8" name="BeginString" type="STRING" />
     <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
     <field number="22" name="IDSource" type="STRING">
       <value enum="1" description="CUSIP" />
     </field>
@@ -112,7 +115,7 @@
     <field number="58" name="Text" type="STRING" />
     <field number="65" name="SymbolSfx" type="STRING" />
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
-    <field number="116" name="OnBehaldOfSubID" type="STRING" />
+    <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="129" name="DeliverToSubID" type="STRING" />
     <field number="132" name="BidPx" type="STRING" />

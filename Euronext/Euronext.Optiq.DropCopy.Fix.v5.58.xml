@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 5.58
     Date: 2024-06-01
-    Specification: Optiq Drop Copy Service - Interface Specification - Euronext Cash and Derivatives Markets v5.58.0
+    Specification: Optiq Drop Copy Service - Interface Specification - Euronext Cash and Derivatives Markets v5.358.0
 
   Script:
     Generator: 1.0.0.0
@@ -172,7 +172,6 @@
       <field name="LegExecID" required="N" />
       <field name="ParentExecID" required="N" />
       <field name="ParentSecurityID" required="N" />
-      <field name="ExecRefID" required="N" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Text" required="N" />
       <field name="OrdRejReason" required="N" />
@@ -182,6 +181,7 @@
       <field name="NoContraBrokers" required="N" />
       <field name="TrdMatchID" required="N" />
       <field name="LastLiquidityInd" required="N" />
+      <field name="ExecRefID" required="N" />
     </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="ClientMessageSendingTime" required="N" />

@@ -32,8 +32,8 @@
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
-    <field name="MsgSeqNum" required="Y" />
     <field name="MsgType" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
     <field name="PossDupFlag" required="N" />
     <field name="SenderCompID" required="Y" />
     <field name="SenderSubID" required="Y" />

@@ -85,14 +85,17 @@
     <message name="SecurityDefinitionRequest" msgtype="c" msgcat="app">
       <field name="SecurityReqID" required="Y" />
       <field name="SecurityRequestType" required="Y" />
-      <group name="NoLegs" required="N">
+      <group name="NoLegs" required="Y">
         <field name="LegSymbol" required="Y" />
-        <field name="LegSide" required="N" />
+        <field name="LegSecurityID" required="N" />
+        <field name="LegSecurityIDSource" required="N" />
+        <field name="LegRatioQty" required="Y" />
+        <field name="LegSide" required="Y" />
       </group>
     </message>
     <message name="NewOrderSingle" msgtype="D" msgcat="app">
       <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="N">
+      <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
         <field name="PartyIDSource" required="N" />
         <field name="PartyRole" required="Y" />
@@ -126,7 +129,7 @@
       <field name="CrossingKey" required="N" />
     </message>
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
-      <group name="NoPartyIDs" required="N">
+      <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
         <field name="PartyIDSource" required="N" />
         <field name="PartyRole" required="Y" />
@@ -157,7 +160,7 @@
       <field name="OrigClOrdID" required="Y" />
       <field name="OrderID" required="N" />
       <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="N">
+      <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
         <field name="PartyIDSource" required="N" />
         <field name="PartyRole" required="Y" />
@@ -208,6 +211,14 @@
       <field name="OrderID" required="N" />
       <field name="AvgPx" required="N" />
       <field name="TradeDate" required="N" />
+      <group name="NoLegs" required="N">
+        <field name="LegSymbol" required="Y" />
+        <field name="LegSecurityID" required="N" />
+        <field name="LegSecurityIDSource" required="N" />
+        <field name="LegSide" required="Y" />
+        <field name="LegLastPx" required="Y" />
+        <field name="LegLastQty" required="Y" />
+      </group>
       <group name="NoSides" required="Y">
         <field name="Side" required="Y" />
         <group name="NoPartyIDs" required="N">
@@ -236,7 +247,7 @@
     <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="MassCancelRequestType" required="Y" />
-      <group name="NoPartyIDs" required="N">
+      <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
         <field name="PartyIDSource" required="N" />
         <field name="PartyRole" required="Y" />
@@ -325,6 +336,11 @@
       <field name="DisplayMethod" required="N" />
       <group name="NoLegs" required="N">
         <field name="LegSymbol" required="Y" />
+        <field name="LegSecurityID" required="N" />
+        <field name="LegSecurityIDSource" required="N" />
+        <field name="LegAliasName" required="N" />
+        <field name="LegLastPx" required="N" />
+        <field name="LegLastQty" required="N" />
         <field name="LegSide" required="N" />
       </group>
     </message>
@@ -346,7 +362,7 @@
         <field name="RootPartyIDSource" required="N" />
         <field name="RootPartyRole" required="N" />
       </group>
-      <group name="NoRelatedSym" required="N">
+      <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
         <field name="SecurityID" required="N" />
         <field name="SecurityIDSource" required="N" />
@@ -471,7 +487,11 @@
     <field number="560" name="SecurityRequestResult" type="INT" />
     <field number="571" name="TradeReportID" type="STRING" />
     <field number="600" name="LegSymbol" type="STRING" />
+    <field number="602" name="LegSecurityID" type="STRING" />
+    <field number="603" name="LegSecurityIDSource" type="STRING" />
+    <field number="623" name="LegRatioQty" type="FLOAT" />
     <field number="624" name="LegSide" type="CHAR" />
+    <field number="637" name="LegLastPx" type="PRICE" />
     <field number="658" name="QuoteRequestRejectReason" type="INT" />
     <field number="751" name="TradeReportRejectReason" type="INT" />
     <field number="835" name="PegMoveType" type="INT" />
@@ -492,6 +512,7 @@
     <field number="1172" name="RespondentType" type="INT" />
     <field number="1328" name="RejectText" type="STRING" />
     <field number="1408" name="DefaultCstmApplVerID" type="STRING" />
+    <field number="1418" name="LegLastQty" type="QTY" />
     <field number="1461" name="NoTargetPartyIDs" type="NUMINGROUP" />
     <field number="1462" name="TargetPartyID" type="STRING" />
     <field number="1463" name="TargetPartyIDSource" type="CHAR" />
@@ -512,5 +533,6 @@
     <field number="24111" name="CrossingKey" type="STRING" />
     <field number="24112" name="TradeCondition" type="MULTIPLEVALUESTRING" />
     <field number="24116" name="ASXInstrumentClass" type="STRING" />
+    <field number="24128" name="LegAliasName" type="STRING" />
   </fields>
 </fix>
