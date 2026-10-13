@@ -1312,6 +1312,7 @@
       <value enum="Q" description="RFQ expired" />
       <value enum="R" description="RFQ partially or fully matched with other counterparts" />
       <value enum="S" description="RFQ cancelled by the issuer © 2024, Euronext 208 of 318 Revision Number: 5.39.0 Optiq OEG FIX 5.0 – Interface Specification Field Description" />
+      <value enum="U" description="Order Cancelled by Market Operations" />
       <value enum="a" description="Cancelled by STP" />
       <value enum="b" description="Order Cancelled due to Cancel On Disconnect Mechanism" />
       <value enum="c" description="Conditional Order cancelled due to Potential Matching" />

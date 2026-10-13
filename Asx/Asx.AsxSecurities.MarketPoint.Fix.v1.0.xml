@@ -230,7 +230,10 @@
     <field number="553" name="Username" type="STRING" />
     <field number="554" name="Password" type="STRING" />
     <field number="923" name="UserRequestID" type="STRING" />
-    <field number="924" name="UserRequestType" type="INT" />
+    <field number="924" name="UserRequestType" type="INT">
+      <value enum="2" description="Log Off User" />
+      <value enum="3" description="Change Password For User" />
+    </field>
     <field number="925" name="NewPassword" type="STRING" />
     <field number="926" name="UserStatus" type="INT" />
     <field number="927" name="UserStatusText" type="STRING" />

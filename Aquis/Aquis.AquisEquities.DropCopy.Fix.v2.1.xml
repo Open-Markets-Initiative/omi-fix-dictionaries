@@ -233,7 +233,10 @@
     <field number="371" name="RefTagID" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
     <field number="375" name="ContraBroker" type="STRING" />
-    <field number="378" name="ExecRestatementReason" type="STRING" />
+    <field number="378" name="ExecRestatementReason" type="STRING">
+      <value enum="4" description="Broker option - indicates iceberg order has refreshed or MaC order has fully matched" />
+      <value enum="5" description="Partial reduction of order quantity (exchange initiated partial cancel) - indicates MaC order has partially matched" />
+    </field>
     <field number="382" name="NoContraBrokers" type="STRING" />
     <field number="571" name="TradeReportID" type="STRING" />
     <field number="828" name="TrdType" type="STRING" />

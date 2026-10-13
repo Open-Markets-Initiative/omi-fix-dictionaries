@@ -227,7 +227,20 @@
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="57" name="TargetSubID" type="STRING" />
-    <field number="58" name="Text" type="STRING" />
+    <field number="58" name="Text" type="STRING">
+      <value enum="C" description="NASDAQ OMX PSX is closed" />
+      <value enum="D" description="Invalid Display Type" />
+      <value enum="H" description="Halted" />
+      <value enum="L" description="Requested firm not authorized for requested clearing type on this account" />
+      <value enum="M" description="Outside of permitted times for requested clearing type" />
+      <value enum="N" description="Invalid Minimum Quantity" />
+      <value enum="R" description="This order is not allowed in this type of cross (stock or time restrictions)" />
+      <value enum="S" description="Invalid stock" />
+      <value enum="T" description="Test Mode, the Flite Account is configured for test mode and cannot accept orders in non-TEST securities" />
+      <value enum="W" description="Invalid Mid-point Post Only Price" />
+      <value enum="X" description="Invalid price" />
+      <value enum="Z" description="Shares exceeds configured safety threshold" />
+    </field>
     <field number="59" name="TimeInForce" type="STRING">
       <value enum="0" description="Day" />
       <value enum="1" description="Extended Hours Order (order is live until the end of the Nasdaq OMX PSX trading day)" />

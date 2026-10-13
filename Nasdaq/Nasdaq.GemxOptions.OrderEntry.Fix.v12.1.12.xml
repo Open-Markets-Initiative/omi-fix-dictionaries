@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 12.1.12
     Date: 2024-01-29
-    Specification: ISE FIX INET Specifications
+    Specification: ISE-GEMX-MRX-FIX-INET-Specs_0.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -572,6 +572,7 @@
       <value enum="5" description="Replace" />
       <value enum="6" description="Pending Cancel" />
       <value enum="8" description="Rejected" />
+      <value enum="D" description="Restated" />
       <value enum="E" description="Pending Replace" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />

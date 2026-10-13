@@ -1309,6 +1309,8 @@
       <value enum="G" description="Trade Creation by Market Operation" />
       <value enum="H" description="Cancel Trade" />
       <value enum="I" description="Order Status © 2025, Euronext 208 of 314 Revision Number: 5.353.1 Optiq OEG FIX 5.0 – Interface Specification Field Description" />
+      <value enum="L" description="Triggered or Activated by System" />
+      <value enum="U" description="Order Cancelled by Market Operations" />
       <value enum="a" description="Cancelled by STP" />
       <value enum="b" description="Order Cancelled due to Cancel On Disconnect Mechanism" />
       <value enum="c" description="Conditional Order cancelled due to Potential Matching" />

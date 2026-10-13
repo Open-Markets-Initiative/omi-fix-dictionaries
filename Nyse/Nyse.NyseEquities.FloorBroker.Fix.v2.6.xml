@@ -69,6 +69,7 @@
       <field name="ExpireTime" required="N" />
       <field name="EffectiveTime" required="N" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="OrderCapacity" required="Y" />
       <field name="ParticipationRate" required="N" />
       <field name="LocateBroker" required="N" />
@@ -113,6 +114,7 @@
       <field name="ExpireTime" required="N" />
       <field name="EffectiveTime" required="N" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="OrderCapacity" required="Y" />
       <field name="ParticipationRate" required="N" />
       <field name="LocateBroker" required="N" />
@@ -178,6 +180,7 @@
       <field name="LeavesQty" required="N" />
       <field name="EffectiveTime" required="N" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="OrderCapacity" required="Y" />
       <field name="ParticipationRate" required="N" />
       <field name="LocateBroker" required="N" />
@@ -202,6 +205,7 @@
       <field name="WorkingAwayFromDisplay" required="N" />
       <field name="UnsolicitedAckType" required="N" />
       <field name="ParticipantType" required="N" />
+      <field name="NanosecondSendingTime" required="Y" />
       <field name="NanosecondTransactTime" required="Y" />
       <field name="SubIDIndicator" required="N" />
       <field name="CATIMID" required="N" />
@@ -225,6 +229,7 @@
       <field name="Text" required="N" />
       <field name="TransactTime" required="N" />
       <field name="CxlRejResponseTo" required="Y" />
+      <field name="NanosecondSendingTime" required="Y" />
       <field name="NanosecondTransactTime" required="Y" />
     </message>
   </messages>
@@ -379,6 +384,14 @@
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="168" name="EffectiveTime" type="STRING" />
+    <field number="336" name="TradingSessionID" type="CHAR">
+      <value enum="1" description="Early Trading Session" />
+      <value enum="2" description="Core Trading Session" />
+      <value enum="3" description="Late Trading Session" />
+      <value enum="4" description="Early &amp; Core Trading Sessions" />
+      <value enum="5" description="Core &amp; Late Trading Sessions" />
+      <value enum="6" description="Early, Core, &amp; Late Trading Sessions" />
+    </field>
     <field number="386" name="NoTradingSessions" type="INT">
       <value enum="1" description="Early Trading Session" />
       <value enum="2" description="Core Trading Session" />
@@ -445,7 +458,11 @@
     </field>
     <field number="9483" name="DealID" type="STRING" />
     <field number="9565" name="DOrderAuctionPrice" type="PRICE" />
-    <field number="9730" name="LiquidityIndicator" type="STRING" />
+    <field number="9730" name="LiquidityIndicator" type="STRING">
+      <value enum="1" description="Candidate for setting a new displayed bid or offer on the local market" />
+      <value enum="4" description="Candidate for setting a new displayed bid or offer on the local market and joining the NBBO" />
+      <value enum="5" description="Candidate for setting a new displayed bid or offer on the local market and setting the NBBO" />
+    </field>
     <field number="20001" name="AttributedQuote" type="CHAR">
       <value enum="0" description="Not Attributed" />
       <value enum="1" description="Attributed for Market Data Feeds" />
@@ -471,7 +488,10 @@
       <value enum="0" description="Working Price is equal to Display Price" />
       <value enum="1" description="Working Price is different from Display Price" />
     </field>
-    <field number="20007" name="UnsolicitedAckType" type="CHAR" />
+    <field number="20007" name="UnsolicitedAckType" type="CHAR">
+      <value enum="2" description="Order Priority Update - New OrderID (reserve order replenishment)" />
+      <value enum="3" description="Order Priority Update - Same OrderID (working price update)" />
+    </field>
     <field number="20008" name="ParticipantType" type="CHAR">
       <value enum="1" description="Customer" />
       <value enum="2" description="Market Maker/LMM" />
@@ -479,6 +499,7 @@
       <value enum="4" description="SLP" />
       <value enum="5" description="NYSE Floor Broker/NYSE Texas IB" />
     </field>
+    <field number="20009" name="NanosecondSendingTime" type="STRING" />
     <field number="20010" name="NanosecondTransactTime" type="STRING" />
     <field number="20013" name="SubIDIndicator" type="CHAR" />
     <field number="20022" name="AllocationFirmMPID" type="STRING" />

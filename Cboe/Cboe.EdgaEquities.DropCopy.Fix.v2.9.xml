@@ -154,7 +154,11 @@
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="57" name="TargetSubID" type="STRING" />
-    <field number="58" name="Text" type="STRING" />
+    <field number="58" name="Text" type="STRING">
+      <value enum="A" description="Admin" />
+      <value enum="C" description="Capacity undefined" />
+      <value enum="D" description="Duplicate identifier (e.g., Cl Ord ID)" />
+    </field>
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="DAY (Default) (Early Trading Session until end of Regular Session)" />
       <value enum="1" description="GTC (Allowed, but treated same as Day)" />

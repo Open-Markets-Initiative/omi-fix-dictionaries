@@ -164,7 +164,6 @@
       <field name="NoContraBrokers" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="Text" required="N" />
-      <field name="OrdRejReason" required="N" />
     </message>
   </messages>
   <components />
@@ -231,7 +230,6 @@
     <field number="65" name="SymbolSfx" type="STRING" />
     <field number="76" name="ExecBroker" type="STRING" />
     <field number="97" name="PossResend" type="BOOLEAN" />
-    <field number="103" name="OrdRejReason" type="INT" />
     <field number="109" name="ClientID" type="STRING" />
     <field number="110" name="MinQty" type="QTY" />
     <field number="114" name="LocateReqd" type="STRING" />
@@ -242,8 +240,11 @@
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
+      <value enum="1" description="Partial Fill" />
       <value enum="2" description="Fill" />
+      <value enum="4" description="Cancelled" />
       <value enum="5" description="Replace" />
+      <value enum="C" description="Expired" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="168" name="EffectiveTime" type="UTCTIMESTAMP" />
@@ -281,12 +282,19 @@
       <value enum="SS" description="Significant Shareholder" />
     </field>
     <field number="6776" name="PrincipalTrade" type="STRING" />
-    <field number="6777" name="WashTradeIndicator" type="STRING" />
+    <field number="6777" name="WashTradeIndicator" type="STRING">
+      <value enum="39" description="1 /2)" />
+      <value enum="Y" description="wash trade Provided on Fill/Partial Fill (Ord Status tag" />
+    </field>
     <field number="6802" name="ClientCrossRef" type="STRING" />
     <field number="6803" name="ShortSellNakedQty" type="QTY" />
     <field number="6804" name="ShortSellCoveredQty" type="QTY" />
     <field number="6805" name="ShortSellLongQty" type="QTY" />
-    <field number="6807" name="TransactID" type="STRING" />
+    <field number="6807" name="TransactID" type="STRING">
+      <value enum="39" description="1 /2)" />
+      <value enum="X" description="the Serial Trade Qualifier and" />
+      <value enum="Y" description="the Trade Serial Number" />
+    </field>
     <field number="7003" name="ProgramTrade" type="STRING" />
     <field number="7012" name="Anonymous" type="STRING" />
     <field number="7013" name="RegulationID" type="STRING" />
@@ -332,7 +340,11 @@
     <field number="8182" name="OrderRestrictions" type="STRING">
       <value enum="I" description="Override broker preference default setting" />
     </field>
-    <field number="8183" name="CrossType" type="STRING" />
+    <field number="8183" name="CrossType" type="STRING">
+      <value enum="101" description="trade was the result of a broker preferenced crossing" />
+      <value enum="102" description="other" />
+      <value enum="39" description="1 /2)" />
+    </field>
     <field number="9730" name="LastLiquidityInd" type="STRING" />
     <field number="9882" name="FeeCode" type="STRING" />
     <field number="9883" name="PrintFeeCode" type="STRING" />

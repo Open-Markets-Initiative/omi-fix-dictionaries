@@ -7,7 +7,7 @@
     Encoding: 
     Version: 4.2.2020.016
     Date: 2020-04-06
-    Specification: SUMO FIX Programming Specification for FIX 4.2
+    Specification: fix_orders_sb.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -347,7 +347,10 @@
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="109" name="ClientID" type="STRING" />
     <field number="110" name="MinQty" type="QTY" />
-    <field number="111" name="MaxFloor" type="QTY" />
+    <field number="111" name="MaxFloor" type="QTY">
+      <value enum="1" description="New Order Entered with Max Floor: In FIX New Order Single Message OrdQty = 10000 and Max Floor = 1000" />
+      <value enum="2" description="New Order Entered without Max Floor: In F" />
+    </field>
     <field number="112" name="TestReqID" type="STRING" />
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
@@ -355,8 +358,14 @@
     <field number="123" name="GapFillFlag" type="BOOLEAN" />
     <field number="125" name="CxlType" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
+      <value enum="0" description="New" />
       <value enum="1" description="Partial Fill" />
       <value enum="2" description="Fill" />
+      <value enum="4" description="Cancel" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
+      <value enum="D" description="Restated" />
+      <value enum="E" description="Pending Replace" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="211" name="PegDifference" type="PRICEOFFSET" />

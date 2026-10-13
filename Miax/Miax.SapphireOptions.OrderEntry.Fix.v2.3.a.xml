@@ -389,7 +389,10 @@
     <field number="14" name="CumQty" type="QTY" />
     <field number="16" name="EndSeqNo" type="SEQNUM" />
     <field number="17" name="ExecID" type="STRING" />
-    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
+      <value enum="f" description="Inter-market Sweep Order (ISO)" />
+      <value enum="o" description="Auto Cancel on connection loss (ACOD for this order)" />
+    </field>
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="3" description="Status" />
@@ -581,17 +584,37 @@
     <field number="1090" name="MaxPriceLevels" type="INT" />
     <field number="9000" name="MPIDGroupID" type="STRING" />
     <field number="9001" name="MetricID" type="STRING" />
-    <field number="9002" name="MetricType" type="CHAR" />
-    <field number="9003" name="EventType" type="CHAR" />
+    <field number="9002" name="MetricType" type="CHAR">
+      <value enum="C" description="Rate of Executed Order Contracts" />
+      <value enum="O" description="Rate of New/Replace Orders Received" />
+    </field>
+    <field number="9003" name="EventType" type="CHAR">
+      <value enum="A" description="Metric Added" />
+      <value enum="D" description="Metric Deleted" />
+      <value enum="P" description="Metric Paused" />
+      <value enum="R" description="Reset Risk Metric" />
+      <value enum="S" description="Period Status/Pulse Notification" />
+      <value enum="T" description="Safeguard Trigger" />
+      <value enum="U" description="Metric Un-Paused" />
+      <value enum="W" description="Warning Only" />
+    </field>
     <field number="9004" name="MessageID" type="INT" />
     <field number="9005" name="ConfiguredCountingTimePeriod" type="INT" />
     <field number="9006" name="ConfiguredMaxQuantity" type="INT" />
     <field number="9007" name="CurrentQuantity" type="INT" />
     <field number="9008" name="MaxPeakQuantity" type="INT" />
     <field number="9009" name="PercentageLevel" type="INT" />
-    <field number="9010" name="ProtectionType" type="CHAR" />
+    <field number="9010" name="ProtectionType" type="CHAR">
+      <value enum="B" description="Block all MPIDs for this MPID Group ID" />
+      <value enum="M" description="Block all MPIDs and mass-cancel all day orders" />
+      <value enum="W" description="Warning only" />
+    </field>
     <field number="9011" name="RoutingID" type="STRING" />
-    <field number="9018" name="MIAXExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="9018" name="MIAXExecInst" type="MULTIPLEVALUESTRING">
+      <value enum="A" description="Auction on Arrival (AOA)" />
+      <value enum="O" description="Auction on Arrival Only (AOAO)" />
+      <value enum="P" description="ABBO Price Protection (APP)" />
+    </field>
     <field number="9207" name="StockExecutionDestination" type="STRING" />
     <field number="9300" name="RequestType" type="INT">
       <value enum="0" description="Single Simple or Complex order cancel" />
@@ -600,12 +623,22 @@
     </field>
     <field number="9372" name="StockClearingAccount" type="STRING" />
     <field number="9463" name="BillingTradeType" type="STRING" />
-    <field number="9564" name="ContraLegPositionEffect" type="CHAR" />
-    <field number="9565" name="ContraLegCoveredOrUncovered" type="INT" />
+    <field number="9564" name="ContraLegPositionEffect" type="CHAR">
+      <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
+    </field>
+    <field number="9565" name="ContraLegCoveredOrUncovered" type="INT">
+      <value enum="0" description="Covered" />
+      <value enum="1" description="Uncovered" />
+    </field>
     <field number="9566" name="DefinedComponentPrice" type="PRICE" />
     <field number="9567" name="DCPType" type="CHAR" />
     <field number="9568" name="DCPDesignation" type="CHAR" />
-    <field number="9624" name="ContraSideShortSell" type="CHAR" />
+    <field number="9624" name="ContraSideShortSell" type="CHAR">
+      <value enum="5" description="Sell Short" />
+      <value enum="6" description="Sell Short Exempt" />
+      <value enum="n" description="Not a short sell" />
+    </field>
     <field number="9730" name="AdditionalBillingParameters" type="STRING" />
     <field number="9811" name="PriceDelta" type="STRING" />
     <field number="9812" name="UnderlyingExecutionTime" type="STRING" />

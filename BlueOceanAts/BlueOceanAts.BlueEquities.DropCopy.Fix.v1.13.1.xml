@@ -168,7 +168,14 @@
     <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
-    <field number="39" name="OrdStatus" type="CHAR" />
+    <field number="39" name="OrdStatus" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="PartialFilled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="6" description="PendingCancel" />
+      <value enum="8" description="Rejected A - PendingNew C - Expired E - PendingReplace" />
+    </field>
     <field number="40" name="OrdType" type="CHAR" />
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="43" name="PossDupFlag" type="STRING" />
@@ -186,8 +193,37 @@
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
     <field number="97" name="PossResend" type="BOOLEAN" />
     <field number="98" name="EncryptMethod" type="INT" />
-    <field number="102" name="CxlRejReason" type="INT" />
-    <field number="103" name="RejectReason" type="INT" />
+    <field number="102" name="CxlRejReason" type="INT">
+      <value enum="1" description="UnknownOrder" />
+      <value enum="100" description="MissingSymbol" />
+      <value enum="101" description="MissingLocate" />
+      <value enum="102" description="MissingClOrdID" />
+      <value enum="103" description="InvalidOrderQuantity" />
+      <value enum="104" description="InvalidSymbol" />
+      <value enum="105" description="InvalidLimitPrice" />
+      <value enum="107" description="SymbolHaltedOrPaused" />
+      <value enum="108" description="OrderSizeExceedsLimit" />
+      <value enum="109" description="ExceededMaxOrderNotionalAmt" />
+      <value enum="18" description="InvalidPriceIncrement" />
+      <value enum="3" description="OrderAlreadyPendingCancelOrReplace" />
+      <value enum="6" description="DuplicateClOrdID" />
+      <value enum="99" description="Other BOATS Custom codes" />
+    </field>
+    <field number="103" name="RejectReason" type="INT">
+      <value enum="1" description="InvalidSymbol" />
+      <value enum="100" description="MissingSymbol" />
+      <value enum="101" description="MissingLocateReqd" />
+      <value enum="18" description="InvalidPriceIncrement" />
+      <value enum="19" description="NoNBBOAvailable" />
+      <value enum="2" description="ExchangeClosed" />
+      <value enum="20" description="NotionalValueExceedsThreshold" />
+      <value enum="22" description="BlockSellShortRiskRuleViolated" />
+      <value enum="23" description="HardToBorrowSecurityRiskRuleViolated" />
+      <value enum="27" description="MaxNotionalValuePerOrderRiskRuleViolated" />
+      <value enum="3" description="OrderExceedsLimit" />
+      <value enum="6" description="DuplicateOrder" />
+      <value enum="99" description="Other BOATS specific reject codes" />
+    </field>
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="110" name="MinQty" type="QTY" />
     <field number="112" name="TestReqID" type="STRING" />
@@ -202,8 +238,15 @@
     <field number="211" name="PegOffsetValue" type="PRICEOFFSET" />
     <field number="371" name="RefTagID" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
-    <field number="378" name="ExecRestatementReason" type="STRING" />
-    <field number="434" name="CxlRejResponseTo" type="CHAR" />
+    <field number="378" name="ExecRestatementReason" type="STRING">
+      <value enum="3" description="RepricingOrder" />
+      <value enum="5" description="Partial decline of OrderQty (38)" />
+      <value enum="99" description="Other (When value is 99 (Other) see the ExtendedRestatementReason for more information" />
+    </field>
+    <field number="434" name="CxlRejResponseTo" type="CHAR">
+      <value enum="1" description="OrderCancelRequest" />
+      <value enum="2" description="OrderCancelReplaceRequest" />
+    </field>
     <field number="447" name="PartyIDSource" type="CHAR" />
     <field number="448" name="PartyID" type="STRING" />
     <field number="452" name="PartyRole" type="INT" />
@@ -211,7 +254,17 @@
     <field number="528" name="OrderCapacity" type="CHAR" />
     <field number="582" name="CustOrderCapacity" type="STRING" />
     <field number="583" name="LnkID" type="STRING" />
-    <field number="851" name="LastLiquidityInd" type="INT" />
+    <field number="851" name="LastLiquidityInd" type="INT">
+      <value enum="1" description="AddDisplayedLiquidity" />
+      <value enum="2" description="RemovedLiquidity" />
+      <value enum="3" description="LiquidityRoutedOut*" />
+      <value enum="4" description="Cross*" />
+      <value enum="51" description="AddHidden" />
+      <value enum="52" description="AddMidpoint*" />
+      <value enum="53" description="AddNbboImprove" />
+      <value enum="54" description="AddNbboJoin*" />
+      <value enum="60" description="RemovedOnEntry* 61- ImmediateMidpointRemoveOnEntry*" />
+    </field>
     <field number="880" name="TrdMatchID" type="STRING" />
     <field number="1084" name="DisplayMethod" type="STRING" />
     <field number="1087" name="DisplayMinInc" type="STRING" />
@@ -224,11 +277,37 @@
     <field number="5700" name="LocateBroker" type="STRING" />
     <field number="9416" name="ExtendedExecInst" type="STRING" />
     <field number="21001" name="SelfTradePrevention" type="STRING" />
-    <field number="21004" name="CancelReason" type="STRING" />
+    <field number="21004" name="CancelReason" type="STRING">
+      <value enum="0" description="Other" />
+      <value enum="1" description="UserRequestedCancel" />
+      <value enum="10" description="SelfTradePrevention" />
+      <value enum="11" description="InsufficientQuotes" />
+      <value enum="12" description="NonCompliantPrice" />
+      <value enum="13" description="ParticipantDisconnect" />
+      <value enum="14" description="OrderNotBookable" />
+      <value enum="15" description="TradeProtectionLimits" />
+      <value enum="16" description="UnableToRoute" />
+      <value enum="17" description="FirmDisabled 18" />
+      <value enum="4" description="EndOfTrading" />
+      <value enum="5" description="LimitUpLimitDown" />
+      <value enum="6" description="Halted" />
+      <value enum="7" description="ExchangeSupervisory" />
+      <value enum="8" description="OrderExpired" />
+      <value enum="9" description="LockOrCrossBook" />
+    </field>
     <field number="21005" name="RiskGroupID" type="STRING" />
     <field number="21006" name="ReserveReplenishTimeType" type="STRING" />
     <field number="21020" name="RepriceFrequencyType" type="STRING" />
     <field number="21021" name="RepriceBehaviorType" type="STRING" />
-    <field number="21022" name="ExtendedRestatementReason" type="STRING" />
+    <field number="21022" name="ExtendedRestatementReason" type="STRING">
+      <value enum="0" description="None" />
+      <value enum="1" description="SetNBBO" />
+      <value enum="2" description="JoinedNBBO" />
+      <value enum="3" description="SelfTradeCancelNewest" />
+      <value enum="4" description="SelfTradeCancelOldest" />
+      <value enum="5" description="SelfTrade-DecrementAndCancel" />
+      <value enum="6" description="SelfTradeCancelBoth" />
+      <value enum="7" description="SelfTradeCancelSmallest" />
+    </field>
   </fields>
 </fix>

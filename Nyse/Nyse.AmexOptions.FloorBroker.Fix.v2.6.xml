@@ -61,6 +61,7 @@
       <field name="CustomerOrFirm" required="Y" />
       <field name="MaturityDay" required="Y" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="OptionalData" required="N" />
@@ -97,6 +98,7 @@
       <field name="CustomerOrFirm" required="Y" />
       <field name="MaturityDay" required="Y" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="SelfTradeType" required="N" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
@@ -125,6 +127,7 @@
       <field name="SecurityType" required="Y" />
       <field name="CustomerOrFirm" required="Y" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="OptionalData" required="N" />
@@ -146,6 +149,7 @@
       <field name="SecurityType" required="Y" />
       <field name="CustomerOrFirm" required="Y" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="OptionalData" required="N" />
@@ -192,7 +196,10 @@
       <field name="MaturityDay" required="Y" />
       <field name="TradeCondition" required="N" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="NoContraBrokers" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="ContraTrader" required="N" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="MultilegReportingType" required="Y" />
@@ -206,6 +213,7 @@
       <field name="DealID" required="N" />
       <field name="LiquidityIndicator" required="N" />
       <field name="FlowIndicator" required="Y" />
+      <field name="NanosecondSendingTime" required="Y" />
       <field name="NanosecondTransactTime" required="Y" />
       <field name="ContraCustomerOrFirm" required="N" />
       <field name="ContraClearingAccount" required="N" />
@@ -217,6 +225,8 @@
       <field name="PercentageStrike" required="N" />
       <field name="PercentagePrice" required="N" />
       <field name="TiedHedgeIndicator" required="N" />
+      <field name="BestOfferPrice" required="N" />
+      <field name="BestOfferQty" required="N" />
       <field name="TiedToStock" required="N" />
       <field name="RefDelta" required="N" />
       <field name="StockPrice" required="N" />
@@ -233,6 +243,7 @@
       <field name="Text" required="N" />
       <field name="TransactTime" required="N" />
       <field name="CxlRejResponseTo" required="Y" />
+      <field name="NanosecondSendingTime" required="Y" />
       <field name="NanosecondTransactTime" required="Y" />
     </message>
   </messages>
@@ -375,6 +386,16 @@
       <value enum="i" description="Complex Order to Complex Order Floor Trade" />
       <value enum="m" description="Complex Order to Single Leg Order Floor Trade" />
     </field>
+    <field number="336" name="TradingSessionID" type="CHAR">
+      <value enum="1" description="Early Trading Session" />
+      <value enum="2" description="Core Trading Session" />
+      <value enum="3" description="Late Trading Session" />
+      <value enum="4" description="Early &amp; Core Trading Sessions" />
+      <value enum="5" description="Core &amp; Late Trading Sessions" />
+      <value enum="6" description="Early, Core, &amp; Late Trading Sessions" />
+    </field>
+    <field number="337" name="ContraTrader" type="STRING" />
+    <field number="375" name="ContraBroker" type="STRING" />
     <field number="382" name="NoContraBrokers" type="CHAR" />
     <field number="386" name="NoTradingSessions" type="INT">
       <value enum="1" description="Early Trading Session" />
@@ -444,6 +465,7 @@
       <value enum="0" description="Inbound message was not throttled" />
       <value enum="1" description="Inbound message was throttled" />
     </field>
+    <field number="20009" name="NanosecondSendingTime" type="STRING" />
     <field number="20010" name="NanosecondTransactTime" type="STRING" />
     <field number="20016" name="ContraCustomerOrFirm" type="CHAR">
       <value enum="0" description="Customer" />
@@ -470,6 +492,8 @@
       <value enum="N" description="order is NOT a tied hedge" />
       <value enum="Y" description="order is a tied hedge" />
     </field>
+    <field number="20033" name="BestOfferQty" type="QTY" />
+    <field number="20034" name="BestOfferPrice" type="PRICE" />
     <field number="20035" name="TiedToStock" type="CHAR">
       <value enum="N" description="order is NOT tied to stock" />
       <value enum="Y" description="order is tied to stock" />

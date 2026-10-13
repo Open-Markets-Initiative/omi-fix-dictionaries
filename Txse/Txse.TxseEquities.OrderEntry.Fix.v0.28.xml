@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 0.28
     Date: 2026-07-14
-    Specification: TXSE FIX Order Entry Protocol (0.28 draft)
+    Specification: TXSE FIX Order Entry Protocol (0.28.draft).pdf
 
   Script:
     Generator: 1.0.0.0
@@ -389,11 +389,11 @@
       <value enum="P" description="Acting on behalf of Broker-Dealer." />
       <value enum="R" description="Order to offset client order." />
     </field>
-    <field number="530" name="MassCancelRequestType" type="CHAR">
+    <field number="530" name="MassCancelRequestType" type="STRING">
       <value enum="100" description="(customTXSEvalue)CancelacrossallSenderComps owned by this Member" />
       <value enum="101" description="(customTXSEvalue)CancelacrossallMPIDsowned by this Member" />
     </field>
-    <field number="531" name="MassCancelResponse" type="CHAR">
+    <field number="531" name="MassCancelResponse" type="STRING">
       <value enum="0" description="Rejected" />
       <value enum="100" description="(custom TXSE value) Request accepted; sweep in progress" />
       <value enum="101" description="(custom TXSE value) Sweep complete; see TotalAf- fectedOrders for count" />

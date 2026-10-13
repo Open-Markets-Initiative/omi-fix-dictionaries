@@ -231,7 +231,36 @@
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="57" name="TargetSubID" type="STRING" />
-    <field number="58" name="Text" type="STRING" />
+    <field number="58" name="Text" type="STRING">
+      <value enum="C" description="NASDAQ is closed" />
+      <value enum="D" description="Invalid Display Type" />
+      <value enum="H" description="Halted" />
+      <value enum="I" description="Rejected because ISO Order was sent (only when the port is configured to reject ISOs)" />
+      <value enum="K" description="Rejected due to Market Collars" />
+      <value enum="L" description="Requested firm not authorized for requested clearing type on this account" />
+      <value enum="M" description="Outside of permitted times for requested clearing type" />
+      <value enum="N" description="Invalid Minimum Quantity" />
+      <value enum="R" description="This order is not allowed in this type of cross (stock or time restrictions)" />
+      <value enum="S" description="Invalid stock" />
+      <value enum="T" description="Test Mode, the Flite Account is configured for test mode and cannot accept orders in non-TEST securities" />
+      <value enum="W" description="Invalid Mid-point Post Only Price" />
+      <value enum="X" description="Invalid price" />
+      <value enum="Z" description="Shares exceeds configured safety threshold" />
+      <value enum="a" description="Reject All enabled" />
+      <value enum="b" description="Easy to Borrow (ETB) reject" />
+      <value enum="c" description="Restricted symbol list reject" />
+      <value enum="d" description="ISO order restriction" />
+      <value enum="e" description="Odd lot order restriction" />
+      <value enum="f" description="Mid-Point order restriction" />
+      <value enum="g" description="Pre-Market order restriction" />
+      <value enum="h" description="Post market order restriction" />
+      <value enum="i" description="Short sale order restriction" />
+      <value enum="j" description="On Open order restriction" />
+      <value enum="k" description="On Close order restriction" />
+      <value enum="l" description="Two sided quote reject" />
+      <value enum="m" description="Exceeded shares limit" />
+      <value enum="n" description="Exceeded dollar value limit" />
+    </field>
     <field number="59" name="TimeInForce" type="STRING">
       <value enum="0" description="Day" />
       <value enum="1" description="Extended Hours Order (order is live until the end of the Nasdaq trading day)" />

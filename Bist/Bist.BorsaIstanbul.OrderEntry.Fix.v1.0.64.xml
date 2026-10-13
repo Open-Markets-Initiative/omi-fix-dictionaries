@@ -749,6 +749,13 @@
     <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
+      <value enum="4" description="Canceled" />
+      <value enum="8" description="Rejected" />
+      <value enum="9" description="Suspended" />
+      <value enum="C" description="Expired" />
+      <value enum="D" description="Restated" />
+      <value enum="F" description="Trade" />
+      <value enum="G" description="Trade Correct" />
       <value enum="L" description="Triggered or Activated by the system" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />

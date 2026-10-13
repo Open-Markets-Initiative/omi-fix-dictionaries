@@ -96,7 +96,21 @@
       <value enum="3" description="Status. Used to provide peg suspensions (" />
     </field>
     <field number="34" name="MsgSeqNum" type="SEQNUM" />
-    <field number="35" name="MsgType" type="STRING" />
+    <field number="35" name="MsgType" type="STRING">
+      <value enum="0" description="Heartbeat" />
+      <value enum="1" description="TestRequest" />
+      <value enum="2" description="ResendRequest" />
+      <value enum="3" description="Reject" />
+      <value enum="4" description="SequenceReset" />
+      <value enum="5" description="Logout" />
+      <value enum="8" description="ExecutionReport" />
+      <value enum="9" description="OrderCancelReject" />
+      <value enum="A" description="Logon" />
+      <value enum="D" description="NewOrderSingle" />
+      <value enum="F" description="OrderCancelRequest" />
+      <value enum="G" description="OrderCancelReplaceRequest" />
+      <value enum="h" description="TradingSessionStatus UCC = Trade Cancel/Correct" />
+    </field>
     <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">

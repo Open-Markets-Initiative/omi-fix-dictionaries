@@ -29,7 +29,7 @@ Odx: [website](https://www.odx.co.jp/en "Go to Osaka Digital Exchange")
 [Odx.OdxEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Protocols/OdxEquities/OrderEntry.md "Order Entry"
 [Odx.OdxSecurityToken.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Protocols/OdxSecurityToken/OrderEntry.md "Order Entry"
 
-[Odx.OdxEquities.DropCopy.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/Odx.OdxEquities.DropCopy.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"
-[Odx.OdxEquities.OrderEntry.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/Odx.OdxEquities.OrderEntry.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"
-[Odx.OdxSecurityToken.OrderEntry.Fix.v1.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/Odx.OdxSecurityToken.OrderEntry.Fix.v1.0.pdf "Osaka Digital Exchange 1.0 Pdf"
-[Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"
+[Odx.OdxEquities.DropCopy.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/OdxEquities/DropCopy/Odx.OdxEquities.DropCopy.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"
+[Odx.OdxEquities.OrderEntry.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/OdxEquities/OrderEntry/Odx.OdxEquities.OrderEntry.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"
+[Odx.OdxSecurityToken.OrderEntry.Fix.v1.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/SecurityToken/OrderEntry/Odx.OdxSecurityToken.OrderEntry.Fix.v1.0.pdf "Osaka Digital Exchange 1.0 Pdf"
+[Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Odx/Specifications/SecurityToken/OrderEntry/Odx.OdxSecurityToken.OrderEntry.Fix.v1.1.pdf "Osaka Digital Exchange 1.1 Pdf"

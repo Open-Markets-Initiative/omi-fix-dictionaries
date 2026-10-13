@@ -56,13 +56,21 @@
       <field name="SessionStatus" required="N" />
     </message>
     <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="SessionStatus" required="N" />
       <field name="Text" required="N" />
+      <field name="NextExpectedMsgSeqNum" required="Y" />
     </message>
     <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqID" required="N" />
+      <field name="TestReqID" required="Y" />
     </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin" />
-    <message name="SequenceReset" msgtype="4" msgcat="admin" />
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="Y" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
     <message name="Reject" msgtype="3" msgcat="admin">
       <field name="RefSeqNum" required="Y" />
       <field name="SessionRejectReason" required="N" />
@@ -80,9 +88,11 @@
   </messages>
   <components />
   <fields>
+    <field number="7" name="BeginSeqNo" type="INT" />
     <field number="8" name="BeginString" type="STRING" />
     <field number="9" name="BodyLength" type="INT" />
     <field number="10" name="CheckSum" type="STRING" />
+    <field number="16" name="EndSeqNo" type="INT" />
     <field number="27" name="IOIQty" type="QTY" />
     <field number="34" name="MsgSeqNum" type="INT" />
     <field number="35" name="MsgType" type="STRING">
@@ -95,6 +105,7 @@
       <value enum="6" description="Indication of Interest" />
       <value enum="A" description="Logon" />
     </field>
+    <field number="36" name="NewSeqNo" type="INT" />
     <field number="43" name="PossDupFlag" type="BOOLEAN">
       <value enum="N" description="No" />
       <value enum="Y" description="Yes" />
@@ -115,6 +126,7 @@
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="112" name="TestReqID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="STRING" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
     <field number="371" name="RefTagId" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />

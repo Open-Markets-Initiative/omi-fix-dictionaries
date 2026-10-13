@@ -175,7 +175,6 @@
       <field name="OrigClOrdID" required="Y" />
       <field name="Text" required="N" />
       <field name="OrdRejReason" required="N" />
-      <field name="ExecRestatementReason" required="N" />
       <field name="LastPx" required="Y" />
       <field name="ContraBroker" required="N" />
       <field name="NoContraBrokers" required="N" />
@@ -303,6 +302,25 @@
     <field number="137" name="MiscFeeAmt" type="AMT" />
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
+      <value enum="2" description="Cross Order Ack" />
+      <value enum="3" description="Done for Day" />
+      <value enum="4" description="Cancelled" />
+      <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
+      <value enum="C" description="Expired" />
+      <value enum="F" description="Trade" />
+      <value enum="H" description="Cancel Trade" />
+      <value enum="L" description="Triggered or Activated by System" />
+      <value enum="U" description="Order Cancelled by Market Operations" />
+      <value enum="a" description="Cancelled by STP" />
+      <value enum="b" description="Order Cancelled due to Cancel On Disconnect Mechanism" />
+      <value enum="d" description="Collar Confirmation Ack" />
+      <value enum="e" description="Refilled Iceberg Ack" />
+      <value enum="h" description="Iceberg Transformed to Limit due to Minimum size" />
+      <value enum="i" description="Order Creation By Market Operations" />
+      <value enum="j" description="RFQ Ack" />
+      <value enum="k" description="Ownership Request Ack" />
+      <value enum="n" description="Order Cancelled due to a potential trade outside FSP limits" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="211" name="PegOffsetValue" type="INT" />
@@ -314,7 +332,6 @@
     <field number="372" name="RefMsgType" type="STRING" />
     <field number="373" name="SessionRejectReason" type="INT" />
     <field number="375" name="ContraBroker" type="STRING" />
-    <field number="378" name="ExecRestatementReason" type="INT" />
     <field number="381" name="GrossTradeAmt" type="AMT" />
     <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
     <field number="432" name="ExpireDate" type="LOCALMKTDATE" />

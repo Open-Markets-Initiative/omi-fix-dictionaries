@@ -172,6 +172,7 @@
       <value enum="0" description="New" />
       <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
       <value enum="C" description="Expired" />
       <value enum="D" description="Restated" />
       <value enum="F" description="Trade" />

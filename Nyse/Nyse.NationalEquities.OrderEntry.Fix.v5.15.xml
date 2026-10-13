@@ -63,14 +63,22 @@
       <field name="SessionStatus" required="N" />
     </message>
     <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="SessionStatus" required="N" />
       <field name="Text" required="N" />
+      <field name="NextExpectedMsgSeqNum" required="Y" />
     </message>
     <message name="Heartbeat" msgtype="0" msgcat="admin" />
     <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqId" required="N" />
+      <field name="TestReqID" required="Y" />
     </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin" />
-    <message name="SequenceReset" msgtype="4" msgcat="admin" />
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="Y" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
     <message name="Reject" msgtype="3" msgcat="admin">
       <field name="RefSeqNum" required="Y" />
       <field name="SessionRejectReason" required="N" />
@@ -274,11 +282,13 @@
   <components />
   <fields>
     <field number="1" name="Account" type="STRING" />
+    <field number="7" name="BeginSeqNo" type="INT" />
     <field number="8" name="BeginString" type="STRING" />
     <field number="9" name="BodyLength" type="INT" />
     <field number="10" name="CheckSum" type="STRING" />
     <field number="11" name="ClOrdID" type="STRING" />
     <field number="14" name="CumQty" type="QTY" />
+    <field number="16" name="EndSeqNo" type="INT" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="CHAR">
       <value enum="B" description="OK to Cross" />
@@ -316,6 +326,7 @@
       <value enum="F" description="Order Cancel Request" />
       <value enum="G" description="Order Cancel/Replace Request" />
     </field>
+    <field number="36" name="NewSeqNo" type="INT" />
     <field number="37" name="OrderID" type="STRING">
       <value enum="10" description="Block all new order entry for the MPID" />
       <value enum="11" description="Unblock new order entry for the MPID" />
@@ -401,11 +412,12 @@
     <field number="109" name="ClientID" type="STRING" />
     <field number="110" name="MinQty" type="QTY" />
     <field number="111" name="MaxFloor" type="QTY" />
-    <field number="112" name="TestReqId" type="STRING" />
+    <field number="112" name="TestReqID" type="STRING" />
     <field number="114" name="LocateReqd" type="BOOLEAN" />
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="STRING" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
     <field number="126" name="ExpireTime" type="STRING" />
     <field number="128" name="DelivertoCompID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
@@ -518,7 +530,11 @@
     </field>
     <field number="9483" name="DealID" type="STRING" />
     <field number="9565" name="DOrderAuctionPrice" type="PRICE" />
-    <field number="9730" name="LiquidityIndicator" type="STRING" />
+    <field number="9730" name="LiquidityIndicator" type="STRING">
+      <value enum="1" description="Candidate for setting a new displayed bid or offer on the local market" />
+      <value enum="4" description="Candidate for setting a new displayed bid or offer on the local market and joining the NBBO" />
+      <value enum="5" description="Candidate for setting a new displayed bid or offer on the local market and setting the NBBO" />
+    </field>
     <field number="20001" name="AttributedQuote" type="CHAR">
       <value enum="0" description="Not Attributed" />
       <value enum="1" description="Attributed for Market Data Feeds" />
@@ -542,7 +558,10 @@
       <value enum="0" description="Working Price is equal to Display Price" />
       <value enum="1" description="Working Price is different from Display Price" />
     </field>
-    <field number="20007" name="UnsolicitedAckType" type="CHAR" />
+    <field number="20007" name="UnsolicitedAckType" type="CHAR">
+      <value enum="2" description="Order Priority Update - New OrderID (reserve order replenishment)" />
+      <value enum="3" description="Order Priority Update - Same OrderID (working price update)" />
+    </field>
     <field number="20008" name="ParticipantType" type="CHAR">
       <value enum="1" description="Customer" />
       <value enum="2" description="Market Maker/LMM" />

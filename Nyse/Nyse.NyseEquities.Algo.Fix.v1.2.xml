@@ -66,9 +66,12 @@
       <field name="NextExpectedMsgSeqNum" required="N" />
     </message>
     <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqID" required="N" />
+      <field name="TestReqID" required="Y" />
     </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin" />
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
     <message name="Reject" msgtype="3" msgcat="admin">
       <field name="RefSeqNum" required="Y" />
       <field name="Text" required="N" />
@@ -77,7 +80,10 @@
       <field name="SessionRejectReason" required="N" />
       <field name="NextExpectedMsgSeqNum" required="Y" />
     </message>
-    <message name="SequenceReset" msgtype="4" msgcat="admin" />
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="NewSeqNo" required="Y" />
+      <field name="GapFillFlag" required="Y" />
+    </message>
     <message name="NewOrderSingle" msgtype="D" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="OrderQty" required="Y" />
@@ -94,6 +100,7 @@
       <field name="ExpireTime" required="N" />
       <field name="EffectiveTime" required="N" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="OrderCapacity" required="Y" />
       <field name="ParticipationRate" required="N" />
       <field name="RoutingInst" required="N" />
@@ -137,6 +144,7 @@
       <field name="ExecType" required="Y" />
       <field name="LeavesQty" required="N" />
       <field name="NoTradingSessions" required="N" />
+      <field name="TradingSessionID" required="Y" />
       <field name="OrderCapacity" required="N" />
       <field name="RoutingInst" required="N" />
       <field name="IntroducingBadgeID" required="N" />
@@ -154,11 +162,13 @@
   </messages>
   <components />
   <fields>
+    <field number="7" name="BeginSeqNo" type="INT" />
     <field number="8" name="BeginString" type="STRING" />
     <field number="9" name="BodyLength" type="INT" />
     <field number="10" name="CheckSum" type="STRING" />
     <field number="11" name="ClOrdID" type="STRING" />
     <field number="14" name="CumQty" type="QTY" />
+    <field number="16" name="EndSeqNo" type="INT" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="1" description="Cancel (Trade Break Only)" />
@@ -180,6 +190,7 @@
       <value enum="D" description="New Order Single" />
       <value enum="F" description="Order Cancel Request" />
     </field>
+    <field number="36" name="NewSeqNo" type="INT" />
     <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
@@ -269,6 +280,7 @@
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="STRING" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
     <field number="126" name="ExpireTime" type="STRING" />
     <field number="128" name="DelivertoCompID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
@@ -288,6 +300,14 @@
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="168" name="EffectiveTime" type="STRING" />
+    <field number="336" name="TradingSessionID" type="CHAR">
+      <value enum="1" description="Early Trading Session" />
+      <value enum="2" description="Core Trading Session" />
+      <value enum="3" description="Late Trading Session" />
+      <value enum="4" description="Early &amp; Core Trading Sessions" />
+      <value enum="5" description="Core &amp; Late Trading Sessions" />
+      <value enum="6" description="Early, Core, &amp; Late Trading Sessions" />
+    </field>
     <field number="371" name="RefTagId" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
     <field number="373" name="SessionRejectReason" type="INT">

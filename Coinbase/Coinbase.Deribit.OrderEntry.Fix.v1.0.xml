@@ -646,7 +646,11 @@
     <field number="14" name="CumQty" type="QTY" />
     <field number="15" name="Currency" type="STRING" />
     <field number="16" name="EndSeqNo" type="INT" />
-    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
+      <value enum="6" description="&quot;Participate don't initiate&quot;" />
+      <value enum="A" description="&quot;No cross&quot; (only together with 6, &quot;6A&quot; -- REJECT POST ONLY when the order is put to the order book unmodified or the request is rejected and order is cancelled), REDUCE ONLY possible values:" />
+      <value enum="E" description="&quot; Do not increase - DNI&quot;" />
+    </field>
     <field number="22" name="SecurityIDSource" type="STRING">
       <value enum="101" description="Multi-cast identifier" />
       <value enum="102" description="Combo instrument identifier" />
@@ -740,7 +744,10 @@
     <field number="167" name="SecurityType" type="STRING" />
     <field number="192" name="OrderQty2" type="QTY" />
     <field number="198" name="SecondaryOrderId" type="STRING" />
-    <field number="201" name="PutOrCall" type="INT" />
+    <field number="201" name="PutOrCall" type="INT">
+      <value enum="0" description="put" />
+      <value enum="1" description="call" />
+    </field>
     <field number="202" name="StrikePrice" type="PRICE" />
     <field number="207" name="SecurityExchange" type="STRING" />
     <field number="211" name="PegOffsetValue" type="FLOAT" />
@@ -786,8 +793,18 @@
     </field>
     <field number="295" name="NoQuoteEntries" type="NUMINGROUP" />
     <field number="296" name="NoQuoteSets" type="NUMINGROUP" />
-    <field number="297" name="QuoteStatus" type="INT" />
-    <field number="298" name="QuoteCancelType" type="INT" />
+    <field number="297" name="QuoteStatus" type="INT">
+      <value enum="0" description="Accepted" />
+      <value enum="5" description="Rejected" />
+    </field>
+    <field number="298" name="QuoteCancelType" type="INT">
+      <value enum="1" description="Cancel for Symbol(55)" />
+      <value enum="2" description="Cancel for SecurityType (167)" />
+      <value enum="4" description="Cancel All Quotes" />
+      <value enum="5" description="for Currency (5)" />
+      <value enum="6" description="for QuoteSetID (302)" />
+      <value enum="7" description="for Delta range" />
+    </field>
     <field number="299" name="QuoteEntryID" type="STRING" />
     <field number="300" name="QuoteRejectReason" type="INT">
       <value enum="1" description="Unknown symbol (Security)" />
@@ -805,7 +822,10 @@
       <value enum="3" description="Request list of existing combo-instruments" />
     </field>
     <field number="322" name="SecurityResponseID" type="STRING" />
-    <field number="323" name="SecurityResponseType" type="INT" />
+    <field number="323" name="SecurityResponseType" type="INT">
+      <value enum="2" description="accept security proposal with possible revisions as indicated in the message" />
+      <value enum="5" description="reject proposal" />
+    </field>
     <field number="324" name="SecurityStatusReqID" type="STRING" />
     <field number="326" name="SecurityTradingStatus" type="INT">
       <value enum="20" description="Unknown or Invalid" />
@@ -831,7 +851,13 @@
     </field>
     <field number="479" name="CommCurrency" type="CURRENCY" />
     <field number="527" name="SecondaryExecID" type="STRING" />
-    <field number="530" name="MassCancelRequestType" type="INT" />
+    <field number="530" name="MassCancelRequestType" type="INT">
+      <value enum="1" description="orders by symbol" />
+      <value enum="10" description="orders by DeribitLabel" />
+      <value enum="11" description="quote cancel -- response to Quote Cancel (Z) request used in mass quoting" />
+      <value enum="5" description="orders by security type" />
+      <value enum="7" description="all orders" />
+    </field>
     <field number="531" name="MassCancelResponse" type="INT" />
     <field number="532" name="MassCancelRejectReason" type="STRING">
       <value enum="1" description="Unknown security" />
@@ -851,7 +877,10 @@
     <field number="568" name="TradeRequestID" type="STRING" />
     <field number="569" name="TradeRequestType" type="INT" />
     <field number="570" name="PreviouslyReported" type="BOOLEAN" />
-    <field number="571" name="TradeRequestResult" type="INT" />
+    <field number="571" name="TradeRequestResult" type="INT">
+      <value enum="0" description="Successful" />
+      <value enum="2" description="Invalid type of trade requested" />
+    </field>
     <field number="584" name="MassStatusReqID" type="STRING" />
     <field number="585" name="MassStatusReqType" type="STRING" />
     <field number="600" name="LegSymbol" type="STRING" />
@@ -873,13 +902,23 @@
     <field number="724" name="PosReqType" type="INT">
       <value enum="0" description="Positions (currently)" />
     </field>
-    <field number="728" name="PosReqResult" type="INT" />
+    <field number="728" name="PosReqResult" type="INT">
+      <value enum="0" description="success" />
+      <value enum="1" description="unsupported request for positions" />
+      <value enum="99" description="other" />
+    </field>
     <field number="730" name="SettlPrice" type="PRICE" />
     <field number="746" name="OpenInterest" type="FLOAT" />
-    <field number="750" name="TradeRequestStatus" type="INT" />
+    <field number="750" name="TradeRequestStatus" type="INT">
+      <value enum="0" description="Accepted" />
+      <value enum="2" description="Rejected" />
+    </field>
     <field number="810" name="UnderlyingPx" type="PRICE" />
     <field number="839" name="PeggedPrice" type="PRICE" />
-    <field number="854" name="QtyType" type="INT" />
+    <field number="854" name="QtyType" type="INT">
+      <value enum="0" description="Units" />
+      <value enum="1" description="Contracts Default is Contracts" />
+    </field>
     <field number="873" name="DatedDate" type="UTCTIMESTAMP" />
     <field number="880" name="TrdMatchID" type="STRING" />
     <field number="883" name="UnderlyingEndPrice" type="PRICE" />
@@ -949,11 +988,19 @@
     <field number="9011" name="DeribitSkipBlockTrades" type="BOOLEAN" />
     <field number="9012" name="DeribitShowBlockTradeId" type="BOOLEAN" />
     <field number="9013" name="DisplayMulticastInstrumentID" type="BOOLEAN" />
-    <field number="9014" name="MassStatusReqIDType" type="INT" />
+    <field number="9014" name="MassStatusReqIDType" type="INT">
+      <value enum="0" description="OrigClOrdID" />
+      <value enum="1" description="ClOrdId" />
+      <value enum="2" description="DeribitLabel" />
+    </field>
     <field number="9015" name="ReportFillsAsExecReports" type="BOOLEAN" />
     <field number="9018" name="DisplayIncrementSteps" type="BOOLEAN" />
     <field number="9019" name="MMPGroup" type="STRING" />
-    <field number="9020" name="QuoteEntryType" type="INT" />
+    <field number="9020" name="QuoteEntryType" type="INT">
+      <value enum="0" description="order" />
+      <value enum="1" description="trade" />
+      <value enum="2" description="error" />
+    </field>
     <field number="9031" name="FreezeQuotes" type="BOOLEAN" />
     <field number="9032" name="MinDelta" type="FLOAT" />
     <field number="9033" name="MaxDelta" type="FLOAT" />
@@ -965,7 +1012,10 @@
     <field number="20112" name="FrozenLimit" type="FLOAT" />
     <field number="20114" name="ProtectionRequestID" type="STRING" />
     <field number="20116" name="IntervalLength" type="INT" />
-    <field number="20117" name="ProtectionRequestResult" type="BOOLEAN" />
+    <field number="20117" name="ProtectionRequestResult" type="BOOLEAN">
+      <value enum="N" description="rejected" />
+      <value enum="Y" description="applied or succeeded" />
+    </field>
     <field number="20118" name="ProtectionVegaLimit" type="FLOAT" />
     <field number="20119" name="MaxQuoteQuantity" type="FLOAT" />
     <field number="100001" name="DeribitUserEquity" type="FLOAT" />
@@ -979,7 +1029,10 @@
     <field number="100009" name="DeribitTradeId" type="STRING" />
     <field number="100010" name="DeribitLabel" type="STRING" />
     <field number="100011" name="DeribitTotalPl" type="FLOAT" />
-    <field number="100012" name="DeribitAdvOrderType" type="INT" />
+    <field number="100012" name="DeribitAdvOrderType" type="INT">
+      <value enum="0" description="Implied Volatility Order (price defines fixed implied volatility in %)" />
+      <value enum="1" description="USD Order (price defines fixed USD price of the option, advanced USD orders are not supported for linear options)" />
+    </field>
     <field number="100013" name="DeribitMarginBalance" type="FLOAT" />
     <field number="100087" name="TradeVolume24h" type="QTY" />
     <field number="100088" name="DeribitLiquidationPrice" type="PRICE" />

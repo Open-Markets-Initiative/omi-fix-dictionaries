@@ -481,7 +481,10 @@
     <field number="1137" name="DefaultApplVerID" type="STRING" />
     <field number="1142" name="MatchAlgorithm" type="STRING" />
     <field number="1145" name="EventTime" type="UTCTIMESTAMP" />
-    <field number="1193" name="SettlMethod" type="CHAR" />
+    <field number="1193" name="SettlMethod" type="CHAR">
+      <value enum="C" description="Cash settlement required" />
+      <value enum="P" description="Physical settlement required" />
+    </field>
     <field number="1194" name="ExerciseStyle" type="INT" />
     <field number="1205" name="NoTickRules" type="NUMINGROUP" />
     <field number="1206" name="StartTickPriceRange" type="PRICE" />

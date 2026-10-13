@@ -366,14 +366,20 @@
     <field number="1116" name="NoRootPartyIDs" type="NUMINGROUP" />
     <field number="1117" name="RootPartyID" type="STRING" />
     <field number="1118" name="RootPartyIDSource" type="CHAR" />
-    <field number="1119" name="RootPartyRole" type="INT" />
+    <field number="1119" name="RootPartyRole" type="INT">
+      <value enum="36" description="Entering trader [64]" />
+      <value enum="7" description="Entering firm [64]" />
+    </field>
     <field number="1128" name="ApplVerID" type="STRING" />
     <field number="1137" name="DefaultApplVerID" type="STRING" />
     <field number="1366" name="LegAllocID" type="STRING" />
     <field number="1409" name="SessionStatus" type="INT" />
     <field number="1418" name="LegLastQty" type="QTY" />
     <field number="1529" name="NoRiskLimitTypes" type="NUMINGROUP" />
-    <field number="1530" name="RiskLimitType" type="INT" />
+    <field number="1530" name="RiskLimitType" type="INT">
+      <value enum="4" description="Long limit" />
+      <value enum="5" description="Short limit" />
+    </field>
     <field number="1534" name="NoRiskInstrumentScopes" type="NUMINGROUP" />
     <field number="1535" name="InstrumentScopeOperator" type="INT" />
     <field number="1545" name="InstrumentScopeSecurityGroup" type="STRING" />
@@ -390,7 +396,10 @@
     <field number="1677" name="NoPartyRiskLimits" type="NUMINGROUP" />
     <field number="1691" name="PartyDetailID" type="STRING" />
     <field number="1692" name="PartyDetailIDSource" type="CHAR" />
-    <field number="1693" name="PartyDetailRole" type="INT" />
+    <field number="1693" name="PartyDetailRole" type="INT">
+      <value enum="1" description="Executing firm" />
+      <value enum="24" description="Account (Account (1) value entered on the order when the risk applies to the account" />
+    </field>
     <field number="1765" name="RiskLimitUtilizationPercent" type="PERCENTAGE" />
     <field number="1767" name="RiskLimitAction" type="INT" />
     <field number="1769" name="RiskWarningLevelAction" type="INT" />
@@ -399,6 +408,9 @@
     <field number="2254" name="NoLegInstrumentParties" type="NUMINGROUP" />
     <field number="2255" name="LegInstrumentPartyID" type="STRING" />
     <field number="2256" name="LegInstrumentPartyIDSource" type="CHAR" />
-    <field number="2257" name="LegInstrumentPartyRole" type="INT" />
+    <field number="2257" name="LegInstrumentPartyRole" type="INT">
+      <value enum="1" description="Executing Firm" />
+      <value enum="17" description="Contra Firm" />
+    </field>
   </fields>
 </fix>

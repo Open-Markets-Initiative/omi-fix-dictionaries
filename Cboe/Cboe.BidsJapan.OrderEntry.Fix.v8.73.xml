@@ -331,10 +331,15 @@
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New" />
+      <value enum="1" description="Partial Fill" />
       <value enum="2" description="Fill" />
+      <value enum="3" description="Done For Day" />
       <value enum="4" description="Cancelled" />
+      <value enum="5" description="Replace" />
       <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
       <value enum="C" description="Expired" />
+      <value enum="E" description="Pending Replace" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="168" name="EffectiveTime" type="UTCTIMESTAMP" />

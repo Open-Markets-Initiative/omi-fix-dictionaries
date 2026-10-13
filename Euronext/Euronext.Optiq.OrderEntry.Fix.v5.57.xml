@@ -1350,6 +1350,13 @@
       <value enum="4" description="Cancelled" />
       <value enum="5" description="Replaced" />
       <value enum="8" description="Rejected" />
+      <value enum="C" description="Expired" />
+      <value enum="D" description="Restated" />
+      <value enum="F" description="Trade (Partial Fill or Fill)" />
+      <value enum="H" description="Cancel Trade" />
+      <value enum="I" description="Order Status" />
+      <value enum="L" description="Triggered or Activated by System" />
+      <value enum="U" description="Order Cancelled by Market Operations" />
       <value enum="a" description="Cancelled by STP" />
       <value enum="b" description="Order Cancelled due to Cancel On Disconnect Mechanism" />
       <value enum="c" description="Conditional Order cancelled due to Potential Matching" />

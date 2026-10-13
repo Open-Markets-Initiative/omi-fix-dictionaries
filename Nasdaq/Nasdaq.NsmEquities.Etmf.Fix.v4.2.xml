@@ -257,7 +257,17 @@
       <value enum="0" description="Too Late to Cancel" />
       <value enum="1" description="Unknown Order" />
     </field>
-    <field number="103" name="OrdRejReason" type="INT" />
+    <field number="103" name="OrdRejReason" type="INT">
+      <value enum="0" description="Broker option" />
+      <value enum="1" description="Unknown symbol" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="3" description="Order exceeds limit" />
+      <value enum="4" description="Too late to enter" />
+      <value enum="5" description="Unknown Order" />
+      <value enum="6" description="Duplicate Order (e.g" />
+      <value enum="7" description="Duplicate of a verbally communicated order" />
+      <value enum="8" description="Stale Order" />
+    </field>
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="109" name="ClientID" type="STRING" />
     <field number="110" name="MinQty" type="QTY" />
