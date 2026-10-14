@@ -45,6 +45,166 @@
     <field name="CheckSum" required="Y" />
   </trailer>
   <messages>
+    <message name="CrossRequest" msgtype="UDS" msgcat="app">
+      <component name="RootParties" required="Y" />
+      <component name="Instrument" required="N" />
+      <field name="Currency" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="CrossRequestID" required="Y" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="Password" required="N" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="FIXEngineName" required="N" />
+      <field name="FIXEngineVersion" required="N" />
+      <field name="FIXEngineVendor" required="N" />
+      <field name="ApplicationSystemName" required="N" />
+      <field name="ApplicationSystemVersion" required="N" />
+      <field name="ApplicationSystemVendor" required="N" />
+      <field name="DefaultCstmApplVerID" required="Y" />
+      <field name="DefaultCstmApplVerSubID" required="N" />
+      <field name="TradSesMode" required="N" />
+      <field name="ThrottleInst" required="Y" />
+      <field name="ThrottleMaxQueueTime" required="N" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+      <field name="SessionStatus" required="N" />
+    </message>
+    <message name="NewOrderSingle" msgtype="D" msgcat="app">
+      <component name="Parties" required="Y" />
+      <component name="Instrument" required="Y" />
+      <component name="TrdgSesGrp" required="N" />
+      <component name="PegInstructions" required="N" />
+      <component name="MtchgInst" required="N" />
+      <component name="DisplayInstruction" required="N" />
+      <component name="OrderAttributeGrp" required="N" />
+      <component name="ValueChecksGrp" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="Currency" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="MinQty" required="N" />
+      <field name="OrdType" required="Y" />
+      <field name="MidPointType" required="N" />
+      <field name="Price" required="N" />
+      <field name="Side" required="Y" />
+      <field name="FreeText1" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="StopPx" required="N" />
+      <field name="QuoteID" required="N" />
+      <field name="BrokerInternalizationID" required="N" />
+      <field name="ExpireDate" required="N" />
+      <field name="OrderOrigination" required="N" />
+      <field name="TradingCapacity" required="Y" />
+      <field name="CrossMatchInstruction" required="N" />
+      <field name="FreeText2" required="N" />
+      <field name="FreeText4" required="N" />
+      <field name="TradeAtCloseOptIn" required="N" />
+    </message>
+    <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
+      <component name="Parties" required="Y" />
+      <component name="Instrument" required="Y" />
+      <component name="TrdgSesGrp" required="N" />
+      <component name="PegInstructions" required="N" />
+      <component name="MtchgInst" required="N" />
+      <component name="DisplayInstruction" required="N" />
+      <component name="OrderAttributeGrp" required="N" />
+      <component name="ValueChecksGrp" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="Currency" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="MinQty" required="N" />
+      <field name="OrdType" required="Y" />
+      <field name="MidPointType" required="N" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="Price" required="N" />
+      <field name="Side" required="Y" />
+      <field name="FreeText1" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="StopPx" required="N" />
+      <field name="BrokerInternalizationID" required="N" />
+      <field name="ExpireDate" required="N" />
+      <field name="OrderOrigination" required="N" />
+      <field name="TradingCapacity" required="Y" />
+      <field name="CrossMatchInstruction" required="N" />
+      <field name="FreeText2" required="N" />
+      <field name="FreeText4" required="N" />
+    </message>
+    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
+      <component name="Parties" required="Y" />
+      <component name="Instrument" required="Y" />
+      <field name="Currency" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderID" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="OrderOrigination" required="N" />
+    </message>
+    <message name="QuoteRequest" msgtype="R" msgcat="app">
+      <component name="QuoteReqGrp" required="Y" />
+      <field name="QuoteReqID" required="Y" />
+      <field name="PrivateQuote" required="N" />
+      <field name="RFQRequesterDisclosureInstruction" required="N" />
+      <field name="RFQPublishIndicator" required="N" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="Text" required="N" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="Y" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="ReturnCode" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SecurityStatusDefinitionRequest" msgtype="U27" msgcat="app">
+      <component name="Parties" required="Y" />
+      <component name="Instrument" required="Y" />
+      <component name="EvntGrp" required="N" />
+      <field name="Currency" required="N" />
+      <field name="UTransactTime" required="N" />
+      <field name="SecurityReqID" required="Y" />
+      <field name="SecurityStatusIndicator" required="N" />
+      <field name="SoldOutIndicator" required="N" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="UserOrderMassActionRequest" msgtype="UCA" msgcat="app">
+      <component name="Parties" required="Y" />
+      <component name="TargetParties" required="N" />
+      <component name="Instrument" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="MassActionScope" required="Y" />
+      <field name="Currency" required="N" />
+      <field name="Price" required="N" />
+      <field name="Side" required="N" />
+      <field name="OrderOrigination" required="N" />
+    </message>
+    <message name="UserPartyRiskLimitsRequest" msgtype="UCL" msgcat="app">
+      <component name="Parties" required="Y" />
+      <field name="MarketSegmentID" required="Y" />
+      <field name="RiskLimitRequestID" required="Y" />
+      <field name="RiskLimitGroup" required="N" />
+    </message>
+    <message name="UserRequest" msgtype="BE" msgcat="app">
+      <field name="Username" required="Y" />
+      <field name="Password" required="N" />
+      <field name="UserRequestID" required="Y" />
+      <field name="UserRequestType" required="Y" />
+    </message>
     <message name="BusinessMessageAck" msgtype="U28" msgcat="app">
       <field name="RefSeqNum" required="Y" />
       <field name="RefMsgType" required="Y" />
@@ -106,30 +266,6 @@
       <field name="OrderIDSfx" required="N" />
       <field name="TradeAtCloseOptIn" required="N" />
     </message>
-    <message name="Heartbeat" msgtype="0" msgcat="admin">
-      <field name="TestReqID" required="N" />
-    </message>
-    <message name="Logon" msgtype="A" msgcat="admin">
-      <field name="EncryptMethod" required="Y" />
-      <field name="HeartBtInt" required="Y" />
-      <field name="Password" required="N" />
-      <field name="ResetSeqNumFlag" required="N" />
-      <field name="FIXEngineName" required="N" />
-      <field name="FIXEngineVersion" required="N" />
-      <field name="FIXEngineVendor" required="N" />
-      <field name="ApplicationSystemName" required="N" />
-      <field name="ApplicationSystemVersion" required="N" />
-      <field name="ApplicationSystemVendor" required="N" />
-      <field name="DefaultCstmApplVerID" required="Y" />
-      <field name="DefaultCstmApplVerSubID" required="N" />
-      <field name="TradSesMode" required="N" />
-      <field name="ThrottleInst" required="Y" />
-      <field name="ThrottleMaxQueueTime" required="N" />
-    </message>
-    <message name="Logout" msgtype="5" msgcat="admin">
-      <field name="Text" required="N" />
-      <field name="SessionStatus" required="N" />
-    </message>
     <message name="Quote" msgtype="S" msgcat="app">
       <component name="Instrument" required="Y" />
       <field name="Currency" required="N" />
@@ -140,32 +276,13 @@
       <field name="BidSize" required="N" />
       <field name="OfferSize" required="N" />
     </message>
-    <message name="Reject" msgtype="3" msgcat="admin">
-      <field name="RefSeqNum" required="Y" />
-      <field name="Text" required="N" />
-      <field name="RefTagID" required="N" />
-      <field name="RefMsgType" required="Y" />
-      <field name="SessionRejectReason" required="N" />
-      <field name="ReturnCode" required="N" />
-    </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin">
-      <field name="BeginSeqNo" required="Y" />
-      <field name="EndSeqNo" required="Y" />
-    </message>
     <message name="SecurityStatus" msgtype="f" msgcat="app">
       <field name="SecurityReqID" required="Y" />
       <field name="SecurityStatusReportID" required="N" />
     </message>
-    <message name="SequenceReset" msgtype="4" msgcat="admin">
-      <field name="GapFillFlag" required="N" />
-      <field name="NewSeqNo" required="Y" />
-    </message>
     <message name="SessionDetailsList" msgtype="U6" msgcat="app">
       <component name="SessionGrp" required="Y" />
       <field name="UTransactTime" required="Y" />
-    </message>
-    <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqID" required="Y" />
     </message>
     <message name="TradeCaptureReport" msgtype="AE" msgcat="app">
       <component name="Instrument" required="Y" />
@@ -263,134 +380,13 @@
       <field name="UserRequestID" required="Y" />
       <field name="UserStatus" required="Y" />
     </message>
-    <message name="CrossRequest" msgtype="UDS" msgcat="app">
-      <component name="RootParties" required="Y" />
-      <component name="Instrument" required="N" />
-      <field name="Currency" required="N" />
-      <field name="OrderQty" required="Y" />
-      <field name="CrossRequestID" required="Y" />
-    </message>
-    <message name="NewOrderSingle" msgtype="D" msgcat="app">
-      <component name="Parties" required="Y" />
-      <component name="Instrument" required="Y" />
-      <component name="TrdgSesGrp" required="N" />
-      <component name="PegInstructions" required="N" />
-      <component name="MtchgInst" required="N" />
-      <component name="DisplayInstruction" required="N" />
-      <component name="OrderAttributeGrp" required="N" />
-      <component name="ValueChecksGrp" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="Currency" required="N" />
-      <field name="ExecInst" required="N" />
-      <field name="OrderQty" required="Y" />
-      <field name="MinQty" required="N" />
-      <field name="OrdType" required="Y" />
-      <field name="MidPointType" required="N" />
-      <field name="Price" required="N" />
-      <field name="Side" required="Y" />
-      <field name="FreeText1" required="N" />
-      <field name="TimeInForce" required="N" />
-      <field name="StopPx" required="N" />
-      <field name="QuoteID" required="N" />
-      <field name="BrokerInternalizationID" required="N" />
-      <field name="ExpireDate" required="N" />
-      <field name="OrderOrigination" required="N" />
-      <field name="TradingCapacity" required="Y" />
-      <field name="CrossMatchInstruction" required="N" />
-      <field name="FreeText2" required="N" />
-      <field name="FreeText4" required="N" />
-      <field name="TradeAtCloseOptIn" required="N" />
-    </message>
-    <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
-      <component name="Parties" required="Y" />
-      <component name="Instrument" required="Y" />
-      <component name="TrdgSesGrp" required="N" />
-      <component name="PegInstructions" required="N" />
-      <component name="MtchgInst" required="N" />
-      <component name="DisplayInstruction" required="N" />
-      <component name="OrderAttributeGrp" required="N" />
-      <component name="ValueChecksGrp" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="Currency" required="N" />
-      <field name="ExecInst" required="N" />
-      <field name="OrderQty" required="Y" />
-      <field name="MinQty" required="N" />
-      <field name="OrdType" required="Y" />
-      <field name="MidPointType" required="N" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="Price" required="N" />
-      <field name="Side" required="Y" />
-      <field name="FreeText1" required="N" />
-      <field name="TimeInForce" required="N" />
-      <field name="StopPx" required="N" />
-      <field name="BrokerInternalizationID" required="N" />
-      <field name="ExpireDate" required="N" />
-      <field name="OrderOrigination" required="N" />
-      <field name="TradingCapacity" required="Y" />
-      <field name="CrossMatchInstruction" required="N" />
-      <field name="FreeText2" required="N" />
-      <field name="FreeText4" required="N" />
-    </message>
-    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
-      <component name="Parties" required="Y" />
-      <component name="Instrument" required="Y" />
-      <field name="Currency" required="N" />
-      <field name="ClOrdID" required="Y" />
-      <field name="OrderID" required="N" />
-      <field name="OrigClOrdID" required="N" />
-      <field name="OrderOrigination" required="N" />
-    </message>
-    <message name="QuoteRequest" msgtype="R" msgcat="app">
-      <component name="QuoteReqGrp" required="Y" />
-      <field name="QuoteReqID" required="Y" />
-      <field name="PrivateQuote" required="N" />
-      <field name="RFQRequesterDisclosureInstruction" required="N" />
-      <field name="RFQPublishIndicator" required="N" />
-    </message>
-    <message name="SecurityStatusDefinitionRequest" msgtype="U27" msgcat="app">
-      <component name="Parties" required="Y" />
-      <component name="Instrument" required="Y" />
-      <component name="EvntGrp" required="N" />
-      <field name="Currency" required="N" />
-      <field name="UTransactTime" required="N" />
-      <field name="SecurityReqID" required="Y" />
-      <field name="SecurityStatusIndicator" required="N" />
-      <field name="SoldOutIndicator" required="N" />
-    </message>
-    <message name="UserOrderMassActionRequest" msgtype="UCA" msgcat="app">
-      <component name="Parties" required="Y" />
-      <component name="TargetParties" required="N" />
-      <component name="Instrument" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="MassActionScope" required="Y" />
-      <field name="Currency" required="N" />
-      <field name="Price" required="N" />
-      <field name="Side" required="N" />
-      <field name="OrderOrigination" required="N" />
-    </message>
-    <message name="UserPartyRiskLimitsRequest" msgtype="UCL" msgcat="app">
-      <component name="Parties" required="Y" />
-      <field name="MarketSegmentID" required="Y" />
-      <field name="RiskLimitRequestID" required="Y" />
-      <field name="RiskLimitGroup" required="N" />
-    </message>
-    <message name="UserRequest" msgtype="BE" msgcat="app">
-      <field name="Username" required="Y" />
-      <field name="Password" required="N" />
-      <field name="UserRequestID" required="Y" />
-      <field name="UserRequestType" required="Y" />
-    </message>
   </messages>
   <components>
-    <component name="Parties">
-      <group name="NoPartyIDs" required="Y">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
-        <field name="PartyRoleQualifier" required="N" />
-        <field name="NoPartySubIDs" required="N" />
-        <field name="PartySubID" required="N" />
-        <field name="PartySubIDType" required="N" />
+    <component name="RootParties">
+      <group name="NoRootPartyIDs" required="Y">
+        <field name="RootPartyID" required="Y" />
+        <field name="RootPartyIDSource" required="Y" />
+        <field name="RootPartyRole" required="Y" />
       </group>
     </component>
     <component name="Instrument">
@@ -409,6 +405,23 @@
         <field name="SecurityAltIDSource" required="Y" />
       </group>
     </component>
+    <component name="Parties">
+      <group name="NoPartyIDs" required="Y">
+        <field name="PartyID" required="Y" />
+        <field name="PartyIDSource" required="Y" />
+        <field name="PartyRole" required="Y" />
+        <field name="PartyRoleQualifier" required="N" />
+        <field name="NoPartySubIDs" required="N" />
+        <field name="PartySubID" required="N" />
+        <field name="PartySubIDType" required="N" />
+      </group>
+    </component>
+    <component name="TrdgSesGrp">
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+        <field name="TradingSessionSubID" required="Y" />
+      </group>
+    </component>
     <component name="PegInstructions">
       <field name="PegOffsetValue" required="N" />
       <field name="PegOffsetType" required="N" />
@@ -424,6 +437,41 @@
       <field name="DisplayMethod" required="N" />
       <field name="DisplayLowQty" required="N" />
       <field name="DisplayHighQty" required="N" />
+    </component>
+    <component name="OrderAttributeGrp">
+      <group name="NoOrderAttributes" required="Y">
+        <field name="OrderAttributeType" required="N" />
+        <field name="OrderAttributeValue" required="N" />
+      </group>
+    </component>
+    <component name="ValueChecksGrp">
+      <group name="NoValueChecks" required="Y">
+        <field name="ValueCheckType" required="Y" />
+        <field name="ValueCheckAction" required="Y" />
+      </group>
+    </component>
+    <component name="QuoteReqGrp">
+      <group name="NoRelatedSym" required="Y">
+        <component name="Instrument" required="Y" />
+        <field name="Side" required="N" />
+        <field name="OrderQty" required="N" />
+        <field name="Currency" required="N" />
+        <component name="Parties" required="Y" />
+      </group>
+    </component>
+    <component name="EvntGrp">
+      <group name="NoEvents" required="Y">
+        <field name="EventType" required="Y" />
+        <field name="EventDate" required="N" />
+        <field name="EventPx" required="N" />
+      </group>
+    </component>
+    <component name="TargetParties">
+      <group name="NoTargetPartyIDs" required="Y">
+        <field name="TargetPartyID" required="Y" />
+        <field name="TargetPartyIDSource" required="Y" />
+        <field name="TargetPartyRole" required="Y" />
+      </group>
     </component>
     <component name="OrderEventGrp">
       <group name="NoOrderEvents" required="Y">
@@ -447,13 +495,6 @@
     <component name="SRQSRelatedTradeIDGrp">
       <group name="NoSRQSRelatedTradeIDs" required="Y">
         <field name="SRQSRelatedTradeID" required="N" />
-      </group>
-    </component>
-    <component name="RootParties">
-      <group name="NoRootPartyIDs" required="Y">
-        <field name="RootPartyID" required="Y" />
-        <field name="RootPartyIDSource" required="Y" />
-        <field name="RootPartyRole" required="Y" />
       </group>
     </component>
     <component name="TrdCapRptSideGrp">
@@ -489,12 +530,6 @@
     <component name="ClrInstGrp">
       <group name="NoClearingInstructions" required="Y">
         <field name="ClearingInstruction" required="N" />
-      </group>
-    </component>
-    <component name="OrderAttributeGrp">
-      <group name="NoOrderAttributes" required="Y">
-        <field name="OrderAttributeType" required="N" />
-        <field name="OrderAttributeValue" required="N" />
       </group>
     </component>
     <component name="UsernameGrp">
@@ -550,41 +585,6 @@
         <field name="ActivationDate" required="N" />
         <field name="RiskLimitOpenAmount" required="N" />
         <field name="RiskLimitNetPositionAmount" required="N" />
-      </group>
-    </component>
-    <component name="TrdgSesGrp">
-      <group name="NoTradingSessions" required="Y">
-        <field name="TradingSessionID" required="Y" />
-        <field name="TradingSessionSubID" required="Y" />
-      </group>
-    </component>
-    <component name="ValueChecksGrp">
-      <group name="NoValueChecks" required="Y">
-        <field name="ValueCheckType" required="Y" />
-        <field name="ValueCheckAction" required="Y" />
-      </group>
-    </component>
-    <component name="QuoteReqGrp">
-      <group name="NoRelatedSym" required="Y">
-        <component name="Instrument" required="Y" />
-        <field name="Side" required="N" />
-        <field name="OrderQty" required="N" />
-        <field name="Currency" required="N" />
-        <component name="Parties" required="Y" />
-      </group>
-    </component>
-    <component name="EvntGrp">
-      <group name="NoEvents" required="Y">
-        <field name="EventType" required="Y" />
-        <field name="EventDate" required="N" />
-        <field name="EventPx" required="N" />
-      </group>
-    </component>
-    <component name="TargetParties">
-      <group name="NoTargetPartyIDs" required="Y">
-        <field name="TargetPartyID" required="Y" />
-        <field name="TargetPartyIDSource" required="Y" />
-        <field name="TargetPartyRole" required="Y" />
       </group>
     </component>
   </components>

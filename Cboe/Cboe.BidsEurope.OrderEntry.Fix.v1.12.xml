@@ -36,106 +36,20 @@
     <field name="MsgSeqNum" required="Y" />
     <field name="PossDupFlag" required="N" />
     <field name="SenderCompID" required="Y" />
-    <field name="SenderSubID" required="Y" />
+    <field name="SenderSubID" required="N" />
     <field name="SendingTime" required="Y" />
     <field name="TargetCompID" required="Y" />
-    <field name="TargetSubID" required="Y" />
+    <field name="TargetSubID" required="N" />
     <field name="PossResend" required="N" />
+    <field name="OnBehalfOfCompID" required="N" />
+    <field name="OnBehalfOfSubID" required="N" />
     <field name="OrigSendingTime" required="N" />
     <field name="DeliverToCompID" required="N" />
-    <field name="DeliverToSubID" required="N" />
   </header>
   <trailer>
     <field name="CheckSum" required="Y" />
   </trailer>
   <messages>
-    <message name="ExecutionReport" msgtype="8" msgcat="app">
-      <field name="Account" required="N" />
-      <field name="AvgPx" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="CumQty" required="Y" />
-      <field name="Currency" required="N" />
-      <field name="ExecID" required="Y" />
-      <field name="ExecInst" required="N" />
-      <field name="ExecRefID" required="N" />
-      <field name="ExecTransType" required="Y" />
-      <field name="IDSource" required="N" />
-      <field name="LastCapacity" required="N" />
-      <field name="LastMkt" required="N" />
-      <field name="LastPx" required="Y" />
-      <field name="LastShares" required="Y" />
-      <field name="OrderID" required="Y" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdStatus" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="OrigClOrdID" required="N" />
-      <field name="Price" required="Y" />
-      <field name="SecurityID" required="N" />
-      <field name="Side" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="Text" required="N" />
-      <field name="TimeInForce" required="Y" />
-      <field name="TransactTime" required="Y" />
-      <field name="ExecBroker" required="N" />
-      <field name="OrdRejReason" required="N" />
-      <field name="MinQty" required="Y" />
-      <field name="ExpireTime" required="N" />
-      <field name="ExecType" required="Y" />
-      <field name="LeavesQty" required="Y" />
-      <field name="EffectiveTime" required="N" />
-      <field name="SecurityExchange" required="N" />
-      <field name="PegDifference" required="N" />
-      <field name="ClearingFirm" required="N" />
-      <group name="NoPartyIDs" required="N">
-        <field name="PartyID" required="N" />
-        <field name="PartyIDSource" required="N" />
-        <field name="PartyRole" required="N" />
-      </group>
-      <field name="OrderCapacity" required="Y" />
-      <field name="TrdRegTimestamp" required="N" />
-      <field name="BookingType" required="N" />
-      <field name="LastLiquidityInd" required="N" />
-      <field name="RegulatoryTradeID" required="N" />
-      <field name="RegulatoryTradeIDType" required="N" />
-      <field name="NoRegulatoryTradeIDs" required="N" />
-      <field name="TradeReportingIndicator" required="N" />
-      <field name="NoTrdRegPublications" required="N" />
-      <field name="TrdRegPublicationType" required="N" />
-      <field name="TrdRegPublicationReason" required="N" />
-      <field name="BIDSType" required="N" />
-      <field name="BIDSInvite" required="N" />
-      <field name="BIDSIOIState" required="Y" />
-      <field name="BIDSTradeDesk" required="N" />
-      <field name="BIDSFilterLevel" required="N" />
-      <field name="BIDSTradePriority" required="N" />
-      <field name="TrdRegPublicationReasons" required="N" />
-      <field name="TradingVenueRegulatoryTradeID" required="N" />
-      <field name="BIDSPriceProtection" required="N" />
-      <field name="BIDSEBBPrice" required="N" />
-      <field name="BIDSEBOPrice" required="N" />
-      <field name="BIDSEBBOTimestamp" required="N" />
-      <field name="BIDSLastAction" required="Y" />
-      <field name="BIDSLastActionTime" required="N" />
-      <field name="BIDSUpdateSeq" required="N" />
-      <field name="BIDSTradeId" required="N" />
-      <field name="BIDSTradeSource" required="N" />
-      <field name="BIDSAutomatchMinVol" required="N" />
-      <field name="BIDSFirmUpMode" required="N" />
-      <field name="PartyIDExecutingFirm" required="N" />
-      <field name="PartyIDOrderOriginationFirm" required="N" />
-    </message>
-    <message name="OrderCancelReject" msgtype="9" msgcat="app">
-      <field name="Account" required="N" />
-      <field name="ClOrdID" required="Y" />
-      <field name="OrderID" required="Y" />
-      <field name="OrdStatus" required="Y" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="SecurityID" required="N" />
-      <field name="Text" required="Y" />
-      <field name="ExecBroker" required="N" />
-      <field name="CxlRejReason" required="Y" />
-      <field name="CxlRejResponseTo" required="Y" />
-    </message>
     <message name="NewOrderSingle" msgtype="D" msgcat="app">
       <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
@@ -230,6 +144,93 @@
       <field name="SecurityExchange" required="N" />
       <field name="ClearingFirm" required="N" />
       <field name="BookingType" required="N" />
+    </message>
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="Account" required="N" />
+      <field name="AvgPx" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="CumQty" required="Y" />
+      <field name="Currency" required="N" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="ExecRefID" required="N" />
+      <field name="ExecTransType" required="Y" />
+      <field name="IDSource" required="N" />
+      <field name="LastCapacity" required="N" />
+      <field name="LastMkt" required="N" />
+      <field name="LastPx" required="Y" />
+      <field name="LastShares" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Price" required="Y" />
+      <field name="SecurityID" required="N" />
+      <field name="Side" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="Text" required="N" />
+      <field name="TimeInForce" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="ExecBroker" required="N" />
+      <field name="OrdRejReason" required="N" />
+      <field name="MinQty" required="Y" />
+      <field name="ExpireTime" required="N" />
+      <field name="ExecType" required="Y" />
+      <field name="LeavesQty" required="Y" />
+      <field name="EffectiveTime" required="N" />
+      <field name="SecurityExchange" required="N" />
+      <field name="PegDifference" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <group name="NoPartyIDs" required="N">
+        <field name="PartyID" required="N" />
+        <field name="PartyIDSource" required="N" />
+        <field name="PartyRole" required="N" />
+      </group>
+      <field name="OrderCapacity" required="Y" />
+      <field name="TrdRegTimestamp" required="N" />
+      <field name="BookingType" required="N" />
+      <field name="LastLiquidityInd" required="N" />
+      <field name="RegulatoryTradeID" required="N" />
+      <field name="RegulatoryTradeIDType" required="N" />
+      <field name="NoRegulatoryTradeIDs" required="N" />
+      <field name="TradeReportingIndicator" required="N" />
+      <field name="NoTrdRegPublications" required="N" />
+      <field name="TrdRegPublicationType" required="N" />
+      <field name="TrdRegPublicationReason" required="N" />
+      <field name="BIDSType" required="N" />
+      <field name="BIDSInvite" required="N" />
+      <field name="BIDSIOIState" required="Y" />
+      <field name="BIDSTradeDesk" required="N" />
+      <field name="BIDSFilterLevel" required="N" />
+      <field name="BIDSTradePriority" required="N" />
+      <field name="TrdRegPublicationReasons" required="N" />
+      <field name="TradingVenueRegulatoryTradeID" required="N" />
+      <field name="BIDSPriceProtection" required="N" />
+      <field name="BIDSEBBPrice" required="N" />
+      <field name="BIDSEBOPrice" required="N" />
+      <field name="BIDSEBBOTimestamp" required="N" />
+      <field name="BIDSLastAction" required="Y" />
+      <field name="BIDSLastActionTime" required="N" />
+      <field name="BIDSUpdateSeq" required="N" />
+      <field name="BIDSTradeId" required="N" />
+      <field name="BIDSTradeSource" required="N" />
+      <field name="BIDSAutomatchMinVol" required="N" />
+      <field name="BIDSFirmUpMode" required="N" />
+      <field name="PartyIDExecutingFirm" required="N" />
+      <field name="PartyIDOrderOriginationFirm" required="N" />
+    </message>
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
+      <field name="Account" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="SecurityID" required="N" />
+      <field name="Text" required="Y" />
+      <field name="ExecBroker" required="N" />
+      <field name="CxlRejReason" required="Y" />
+      <field name="CxlRejResponseTo" required="Y" />
     </message>
   </messages>
   <components />
