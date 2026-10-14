@@ -615,12 +615,13 @@
       <value enum="O" description="Auction on Arrival Only (AOAO)" />
       <value enum="P" description="ABBO Price Protection (APP)" />
     </field>
-    <field number="9207" name="StockExecutionDestination" type="STRING" />
-    <field number="9300" name="RequestType" type="INT">
-      <value enum="0" description="Single Simple or Complex order cancel" />
+    <field number="9100" name="RequestType" type="INT">
+      <value enum="0" description="Single order cancel" />
       <value enum="31" description="Mass cancel of all orders for this MPID on this Session only" />
-      <value enum="32" description="Mass cancel of GTC orders for this MPID" />
+      <value enum="34" description="Mass cancel of all orders for this MPID on this Session only and Security Symbol (class)" />
+      <value enum="37" description="Mass cancel of all orders for this Firm on this Session only" />
     </field>
+    <field number="9207" name="StockExecutionDestination" type="STRING" />
     <field number="9372" name="StockClearingAccount" type="STRING" />
     <field number="9463" name="BillingTradeType" type="STRING" />
     <field number="9564" name="ContraLegPositionEffect" type="CHAR">

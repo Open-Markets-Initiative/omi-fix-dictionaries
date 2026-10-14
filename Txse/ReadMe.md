@@ -5,7 +5,7 @@
 
 | Division | [Protocol][Omi.Txse.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Txse.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [TxseEquities][TxseEquities.Exchange] | [OrderEntry][Txse.TxseEquities.OrderEntry] | [v0.28](Txse.TxseEquities.OrderEntry.Fix.v0.28.xml) | 7/14/2026 | [Pending][Omi.Glossary.Deployment.Pending] | [url][Txse.TxseEquities.OrderEntry.Fix.v0.28.Url] - [pdf][Txse.TxseEquities.OrderEntry.Fix.v0.28.Pdf] - [pdf][Txse.TxseEquities.OrderEntry.Fix.v0.28.Pdf] |
+| [TxseEquities][TxseEquities.Exchange] | [OrderEntry][Txse.TxseEquities.OrderEntry] | [v0.28](Txse.TxseEquities.OrderEntry.Fix.v0.28.xml) | 7/14/2026 | [Pending][Omi.Glossary.Deployment.Pending] | [url][Txse.TxseEquities.OrderEntry.Fix.v0.28.Url] - [pdf][Txse.TxseEquities.OrderEntry.Fix.v0.28.Pdf] |
 
 
 Txse: [website](https://www.txse.com "Go to Texas Stock Exchange")
@@ -25,4 +25,3 @@ Txse: [website](https://www.txse.com "Go to Texas Stock Exchange")
 
 [Txse.TxseEquities.OrderEntry.Fix.v0.28.Url]: https://www.txse.com "Texas Stock Exchange 0.28 Url"
 [Txse.TxseEquities.OrderEntry.Fix.v0.28.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Txse/Specifications/TxseEquities/OrderEntry/Txse.TxseEquities.OrderEntry.Fix.v0.28.pdf "Texas Stock Exchange 0.28 Pdf"
-[Txse.TxseEquities.OrderEntry.Fix.v0.28.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Txse/Specifications/TxseEquities/OrderEntry/Txse.TxseEquities.OrderEntry.Session.Fix.v1.0.pdf "Texas Stock Exchange 0.28 Pdf"

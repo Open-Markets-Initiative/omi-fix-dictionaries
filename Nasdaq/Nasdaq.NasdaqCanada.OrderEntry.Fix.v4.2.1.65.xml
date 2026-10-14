@@ -49,30 +49,20 @@
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
     </message>
-    <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqID" required="Y" />
-    </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin">
-      <field name="BeginSeqNo" required="Y" />
-      <field name="EndSeqNo" required="Y" />
-    </message>
-    <message name="Reject" msgtype="3" msgcat="admin">
-      <field name="RefSeqNum" required="Y" />
-      <field name="RefTagID" required="N" />
-      <field name="RefMsgType" required="N" />
-      <field name="SessionRejectReason" required="N" />
-      <field name="Text" required="N" />
-    </message>
-    <message name="SequenceReset" msgtype="4" msgcat="admin">
-      <field name="GapFillFlag" required="N" />
-      <field name="NewSeqNo" required="Y" />
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
     </message>
     <message name="Logout" msgtype="5" msgcat="admin">
       <field name="Text" required="N" />
     </message>
-    <message name="Logon" msgtype="A" msgcat="admin">
-      <field name="EncryptMethod" required="Y" />
-      <field name="HeartBtInt" required="Y" />
+    <message name="MarketParticipantCommand" msgtype="MC" msgcat="app">
+      <field name="Side" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="ExDestination" required="N" />
+      <field name="UMIRUserID" required="Y" />
+      <field name="PartCommandID" required="Y" />
+      <field name="GEFCommitVolume" required="Y" />
     </message>
     <message name="NewOrderSingle" msgtype="D" msgcat="app">
       <field name="ClOrdID" required="Y" />
@@ -147,14 +137,6 @@
       <field name="MinRate" required="N" />
       <field name="MaxRate" required="N" />
     </message>
-    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
-      <field name="ClOrdID" required="Y" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="TransactTime" required="Y" />
-    </message>
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="ExecInst" required="N" />
@@ -187,13 +169,31 @@
       <field name="MinRate" required="N" />
       <field name="MaxRate" required="N" />
     </message>
-    <message name="MarketParticipantCommand" msgtype="MC" msgcat="app">
+    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
-      <field name="ExDestination" required="N" />
-      <field name="UMIRUserID" required="Y" />
-      <field name="PartCommandID" required="Y" />
-      <field name="GEFCommitVolume" required="Y" />
+      <field name="TransactTime" required="Y" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="Account" required="N" />
@@ -268,15 +268,6 @@
       <field name="MaxRate" required="N" />
       <field name="CumRate" required="N" />
     </message>
-    <message name="OrderCancelReject" msgtype="9" msgcat="app">
-      <field name="ClOrdID" required="Y" />
-      <field name="OrderID" required="Y" />
-      <field name="OrdStatus" required="Y" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="Text" required="N" />
-      <field name="ListID" required="N" />
-      <field name="CxlRejResponseTo" required="Y" />
-    </message>
     <message name="MarketParticipantCommandResponse" msgtype="MR" msgcat="app">
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
@@ -286,19 +277,28 @@
       <field name="PartCommandID" required="Y" />
       <field name="GEFCommitVolume" required="Y" />
     </message>
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderID" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="Text" required="N" />
+      <field name="ListID" required="N" />
+      <field name="CxlRejResponseTo" required="Y" />
+    </message>
   </messages>
   <components />
   <fields>
     <field number="1" name="Account" type="STRING" />
     <field number="6" name="AvgPx" type="PRICE" />
-    <field number="7" name="BeginSeqNo" type="INT" />
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
     <field number="8" name="BeginString" type="STRING" />
     <field number="9" name="BodyLength" type="INT" />
     <field number="10" name="CheckSum" type="STRING" />
     <field number="11" name="ClOrdID" type="STRING" />
     <field number="14" name="CumQty" type="QTY" />
     <field number="15" name="Currency" type="CURRENCY" />
-    <field number="16" name="EndSeqNo" type="INT" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
       <value enum="G" description="All or None (AON)" />
@@ -347,7 +347,7 @@
       <value enum="MC" description="Market Participant Command" />
       <value enum="MR" description="Market Participant Command Response" />
     </field>
-    <field number="36" name="NewSeqNo" type="INT" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">

@@ -34,154 +34,64 @@
     <field name="BodyLength" required="Y" />
     <field name="MsgType" required="Y" />
     <field name="MsgSeqNum" required="Y" />
+    <field name="SendingTime" required="Y" />
     <field name="SenderCompID" required="Y" />
     <field name="TargetCompID" required="Y" />
     <field name="SenderSubID" required="N" />
     <field name="PossDupFlag" required="N" />
-    <field name="SendingTime" required="Y" />
     <field name="OrigSendingTime" required="N" />
   </header>
   <trailer>
     <field name="CheckSum" required="Y" />
   </trailer>
   <messages>
+    <message name="Allocation" msgtype="J" msgcat="app">
+      <field name="SecurityID" required="N" />
+      <field name="Shares" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="AllocID" required="Y" />
+      <field name="AllocTransType" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="MaturityDate" required="N" />
+      <group name="NoExecs" required="Y">
+        <field name="ExecID" required="Y" />
+      </group>
+      <group name="NoAllocs" required="Y">
+        <field name="AllocShares" required="Y" />
+        <field name="Account" required="N" />
+        <field name="Text" required="N" />
+        <field name="ExecBroker" required="Y" />
+        <field name="OpenClose" required="N" />
+        <field name="CustomerOrFirm" required="N" />
+        <field name="ClearingFirm" required="N" />
+        <field name="ClearingAccount" required="N" />
+        <field name="StockLegGiveUp" required="N" />
+        <field name="Rule80A" required="N" />
+      </group>
+    </message>
     <message name="Heartbeat" msgtype="0" msgcat="admin">
       <field name="TestReqID" required="N" />
-    </message>
-    <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqID" required="Y" />
-    </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin">
-      <field name="BeginSeqNo" required="Y" />
-      <field name="EndSeqNo" required="Y" />
-    </message>
-    <message name="Reject" msgtype="3" msgcat="admin">
-      <field name="RefSeqNum" required="Y" />
-      <field name="RefTagID" required="N" />
-      <field name="RefMsgType" required="N" />
-      <field name="SessionRejectReason" required="N" />
-      <field name="Text" required="N" />
-    </message>
-    <message name="SequenceReset" msgtype="4" msgcat="admin">
-      <field name="GapFillFlag" required="N" />
-      <field name="NewSeqNo" required="Y" />
-    </message>
-    <message name="Logout" msgtype="5" msgcat="admin">
-      <field name="Text" required="N" />
     </message>
     <message name="Logon" msgtype="A" msgcat="admin">
       <field name="EncryptMethod" required="Y" />
       <field name="HeartBtInt" required="Y" />
     </message>
-    <message name="NewOrderSingle" msgtype="D" msgcat="app">
-      <field name="Account" required="N" />
-      <field name="ClOrdID" required="Y" />
-      <field name="ExecInst" required="N" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="Side" required="Y" />
-      <field name="Symbol" required="Y" />
+    <message name="Logout" msgtype="5" msgcat="admin">
       <field name="Text" required="N" />
-      <field name="TimeInForce" required="N" />
-      <field name="TransactTime" required="Y" />
-      <field name="ExecBroker" required="N" />
-      <field name="OpenClose" required="Y" />
-      <field name="AllocAccount" required="N" />
-      <field name="StopPx" required="N" />
-      <field name="MaxFloor" required="N" />
-      <field name="PutOrCall" required="Y" />
-      <field name="StrikePrice" required="Y" />
-      <field name="CustomerOrFirm" required="Y" />
-      <field name="SecurityExchange" required="N" />
-      <field name="ExpireDate" required="N" />
-      <field name="ClearingFirm" required="N" />
-      <field name="ClearingAccount" required="N" />
-      <field name="MaturityDate" required="Y" />
-      <field name="RoutingStrategy" required="N" />
-      <field name="DisplayWhen" required="N" />
-      <field name="DisplayRange" required="N" />
-      <field name="ExposureFlag" required="N" />
-      <field name="BrokerPCT" required="N" />
-      <field name="RFPID" required="N" />
-      <field name="RFPInstr" required="N" />
-      <field name="AuctionID" required="N" />
-      <field name="AuctionType" required="N" />
-      <field name="AuctionDuration" required="N" />
-      <field name="StepUpPriceType" required="N" />
-      <field name="StepUpPrice" required="N" />
     </message>
-    <message name="NewOrderCross" msgtype="s" msgcat="app">
-      <field name="ExecInst" required="N" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="TimeInForce" required="N" />
-      <field name="TransactTime" required="Y" />
-      <field name="PutOrCall" required="Y" />
-      <field name="StrikePrice" required="Y" />
-      <field name="MaturityDate" required="Y" />
-      <field name="CrossID" required="Y" />
-      <field name="AuctionType" required="Y" />
-      <field name="AuctionDuration" required="N" />
-      <field name="StepUpPriceType" required="N" />
-      <field name="StepUpPrice" required="N" />
-      <field name="BrokerPCT" required="N" />
-      <field name="PriceDelta" required="N" />
-      <group name="NoSides" required="Y">
-        <field name="ClOrdID" required="Y" />
-        <field name="Side" required="N" />
-        <field name="Account" required="N" />
-        <field name="Text" required="N" />
-        <field name="ExecBroker" required="N" />
-        <field name="OpenClose" required="N" />
-        <field name="CustomerOrFirm" required="Y" />
-        <field name="SecurityExchange" required="N" />
-        <field name="ClearingFirm" required="N" />
-        <field name="ClearingAccount" required="N" />
-        <field name="AllocAccount" required="N" />
-        <field name="Rule80A" required="N" />
-        <field name="StockLegGiveUp" required="N" />
-      </group>
-    </message>
-    <message name="NewOrderMultileg" msgtype="AB" msgcat="app">
-      <field name="Account" required="N" />
-      <field name="ClOrdID" required="Y" />
-      <field name="ExecInst" required="N" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="Rule80A" required="N" />
-      <field name="Text" required="N" />
-      <field name="TimeInForce" required="N" />
-      <field name="TransactTime" required="Y" />
-      <field name="ExecBroker" required="N" />
-      <field name="AllocAccount" required="N" />
-      <field name="CustomerOrFirm" required="Y" />
-      <field name="SecurityExchange" required="N" />
-      <field name="ExpireDate" required="N" />
-      <field name="ClearingFirm" required="N" />
-      <field name="ClearingAccount" required="N" />
-      <field name="PriceProtectionScope" required="N" />
-      <field name="StockLegGiveUp" required="N" />
-      <field name="SpecialOrdType" required="N" />
-      <field name="ExposureFlag" required="N" />
-      <field name="AuctionID" required="N" />
-      <field name="AuctionType" required="N" />
-      <field name="AuctionDuration" required="N" />
-      <group name="NoLegs" required="Y">
-        <field name="LegRefID" required="Y" />
-        <field name="LegPositionEffect" required="Y" />
-        <field name="LegPrice" required="N" />
-        <field name="LegSymbol" required="Y" />
-        <field name="LegCFICode" required="Y" />
-        <field name="LegMaturityDate" required="Y" />
-        <field name="LegStrikePrice" required="Y" />
-        <field name="LegRatioQty" required="Y" />
-        <field name="LegSide" required="Y" />
-        <field name="ContraLegPositionEffect" required="Y" />
-        <field name="ContraSideShortSell" required="Y" />
+    <message name="MemberKillSwitch" msgtype="UDA" msgcat="app">
+      <field name="EntitlementRequestID" required="Y" />
+      <group name="NoPartyEntitlements" required="Y">
+        <field name="ListUpdateAction" required="Y" />
+        <group name="NoPartyDetails" required="Y">
+          <field name="PartyDetailID" required="Y" />
+          <field name="PartyDetailRole" required="Y" />
+        </group>
+        <field name="EntitlementStatus" required="N" />
       </group>
     </message>
     <message name="MultilegOrderCancelReplace" msgtype="AC" msgcat="app">
@@ -217,6 +127,40 @@
         <field name="LegSide" required="Y" />
         <field name="ContraLegPositionEffect" required="Y" />
         <field name="ContraSideShortSell" required="Y" />
+      </group>
+    </message>
+    <message name="NewOrderCross" msgtype="s" msgcat="app">
+      <field name="ExecInst" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="TimeInForce" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="MaturityDate" required="Y" />
+      <field name="CrossID" required="Y" />
+      <field name="AuctionType" required="Y" />
+      <field name="AuctionDuration" required="N" />
+      <field name="StepUpPriceType" required="N" />
+      <field name="StepUpPrice" required="N" />
+      <field name="BrokerPCT" required="N" />
+      <field name="PriceDelta" required="N" />
+      <group name="NoSides" required="Y">
+        <field name="ClOrdID" required="Y" />
+        <field name="Side" required="N" />
+        <field name="Account" required="N" />
+        <field name="Text" required="N" />
+        <field name="ExecBroker" required="N" />
+        <field name="OpenClose" required="N" />
+        <field name="CustomerOrFirm" required="Y" />
+        <field name="SecurityExchange" required="N" />
+        <field name="ClearingFirm" required="N" />
+        <field name="ClearingAccount" required="N" />
+        <field name="AllocAccount" required="N" />
+        <field name="Rule80A" required="N" />
+        <field name="StockLegGiveUp" required="N" />
       </group>
     </message>
     <message name="NewOrderCrossMultileg" msgtype="As" msgcat="app">
@@ -263,17 +207,32 @@
         <field name="ContraSideShortSell" required="Y" />
       </group>
     </message>
-    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
+    <message name="NewOrderMultileg" msgtype="AB" msgcat="app">
+      <field name="Account" required="N" />
       <field name="ClOrdID" required="Y" />
-      <field name="OrderQty" required="N" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="Side" required="N" />
-      <field name="Symbol" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="Rule80A" required="N" />
+      <field name="Text" required="N" />
+      <field name="TimeInForce" required="N" />
       <field name="TransactTime" required="Y" />
-      <field name="PutOrCall" required="N" />
-      <field name="StrikePrice" required="N" />
-      <field name="MaturityDate" required="N" />
-      <group name="NoLegs" required="N">
+      <field name="ExecBroker" required="N" />
+      <field name="AllocAccount" required="N" />
+      <field name="CustomerOrFirm" required="Y" />
+      <field name="SecurityExchange" required="N" />
+      <field name="ExpireDate" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="ClearingAccount" required="N" />
+      <field name="PriceProtectionScope" required="N" />
+      <field name="StockLegGiveUp" required="N" />
+      <field name="SpecialOrdType" required="N" />
+      <field name="ExposureFlag" required="N" />
+      <field name="AuctionID" required="N" />
+      <field name="AuctionType" required="N" />
+      <field name="AuctionDuration" required="N" />
+      <group name="NoLegs" required="Y">
         <field name="LegRefID" required="Y" />
         <field name="LegPositionEffect" required="Y" />
         <field name="LegPrice" required="N" />
@@ -286,6 +245,44 @@
         <field name="ContraLegPositionEffect" required="Y" />
         <field name="ContraSideShortSell" required="Y" />
       </group>
+    </message>
+    <message name="NewOrderSingle" msgtype="D" msgcat="app">
+      <field name="Account" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="Side" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="Text" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="ExecBroker" required="N" />
+      <field name="OpenClose" required="Y" />
+      <field name="AllocAccount" required="N" />
+      <field name="StopPx" required="N" />
+      <field name="MaxFloor" required="N" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="CustomerOrFirm" required="Y" />
+      <field name="SecurityExchange" required="N" />
+      <field name="ExpireDate" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="ClearingAccount" required="N" />
+      <field name="MaturityDate" required="Y" />
+      <field name="RoutingStrategy" required="N" />
+      <field name="DisplayWhen" required="N" />
+      <field name="DisplayRange" required="N" />
+      <field name="ExposureFlag" required="N" />
+      <field name="BrokerPCT" required="N" />
+      <field name="RFPID" required="N" />
+      <field name="RFPInstr" required="N" />
+      <field name="AuctionID" required="N" />
+      <field name="AuctionType" required="N" />
+      <field name="AuctionDuration" required="N" />
+      <field name="StepUpPriceType" required="N" />
+      <field name="StepUpPrice" required="N" />
     </message>
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="Account" required="N" />
@@ -320,58 +317,61 @@
       <field name="StepUpPriceType" required="N" />
       <field name="StepUpPrice" required="N" />
     </message>
-    <message name="Allocation" msgtype="J" msgcat="app">
-      <field name="SecurityID" required="N" />
-      <field name="Shares" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="Symbol" required="Y" />
+    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="OrderQty" required="N" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="Side" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="TransactTime" required="Y" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
+      <field name="MaturityDate" required="N" />
+      <group name="NoLegs" required="N">
+        <field name="LegRefID" required="Y" />
+        <field name="LegPositionEffect" required="Y" />
+        <field name="LegPrice" required="N" />
+        <field name="LegSymbol" required="Y" />
+        <field name="LegCFICode" required="Y" />
+        <field name="LegMaturityDate" required="Y" />
+        <field name="LegStrikePrice" required="Y" />
+        <field name="LegRatioQty" required="Y" />
+        <field name="LegSide" required="Y" />
+        <field name="ContraLegPositionEffect" required="Y" />
+        <field name="ContraSideShortSell" required="Y" />
+      </group>
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="AllocationAck" msgtype="P" msgcat="app">
+      <field name="Text" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="AllocID" required="Y" />
-      <field name="AllocTransType" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="PutOrCall" required="Y" />
-      <field name="StrikePrice" required="Y" />
-      <field name="MaturityDate" required="N" />
-      <group name="NoExecs" required="Y">
-        <field name="ExecID" required="Y" />
-      </group>
-      <group name="NoAllocs" required="Y">
-        <field name="AllocShares" required="Y" />
-        <field name="Account" required="N" />
-        <field name="Text" required="N" />
-        <field name="ExecBroker" required="Y" />
-        <field name="OpenClose" required="N" />
-        <field name="CustomerOrFirm" required="N" />
-        <field name="ClearingFirm" required="N" />
-        <field name="ClearingAccount" required="N" />
-        <field name="StockLegGiveUp" required="N" />
-        <field name="Rule80A" required="N" />
-      </group>
+      <field name="AllocStatus" required="Y" />
+      <field name="AllocRejCode" required="N" />
     </message>
-    <message name="MemberKillSwitch" msgtype="UDA" msgcat="app">
-      <field name="EntitlementRequestID" required="Y" />
-      <group name="NoPartyEntitlements" required="Y">
-        <field name="ListUpdateAction" required="Y" />
-        <group name="NoPartyDetails" required="Y">
-          <field name="PartyDetailID" required="Y" />
-          <field name="PartyDetailRole" required="Y" />
-        </group>
-        <field name="EntitlementStatus" required="N" />
-      </group>
-    </message>
-    <message name="RequestForPrismNotification" msgtype="DSN" msgcat="app">
-      <field name="RFPID" required="Y" />
-      <field name="ExecInst" required="N" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="Side" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="SecurityType" required="Y" />
-      <field name="PutOrCall" required="Y" />
-      <field name="StrikePrice" required="Y" />
-      <field name="CustomerOrFirm" required="Y" />
-      <field name="MaturityDate" required="Y" />
+    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
+      <field name="RefSeqNum" required="Y" />
+      <field name="Text" required="N" />
+      <field name="RefMsgType" required="Y" />
+      <field name="BusinessRejectRefID" required="N" />
+      <field name="BusinessRejectReason" required="Y" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="Account" required="N" />
@@ -433,22 +433,6 @@
       <field name="DisplayWhen" required="N" />
       <field name="DisplayRange" required="N" />
     </message>
-    <message name="OrderCancelReject" msgtype="9" msgcat="app">
-      <field name="OrderID" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="OrdStatus" required="Y" />
-      <field name="CxlRejReason" required="N" />
-      <field name="Text" required="N" />
-      <field name="CxlRejResponseTo" required="Y" />
-    </message>
-    <message name="AllocationAck" msgtype="P" msgcat="app">
-      <field name="Text" required="N" />
-      <field name="TransactTime" required="Y" />
-      <field name="AllocID" required="Y" />
-      <field name="AllocStatus" required="Y" />
-      <field name="AllocRejCode" required="N" />
-    </message>
     <message name="MemberKillSwitchResponse" msgtype="UDB" msgcat="app">
       <field name="Text" required="N" />
       <field name="EntitlementRequestID" required="Y" />
@@ -474,12 +458,28 @@
         <field name="EntitlementStatus" required="N" />
       </group>
     </message>
-    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
-      <field name="RefSeqNum" required="Y" />
+    <message name="OrderCancelReject" msgtype="9" msgcat="app">
+      <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="CxlRejReason" required="N" />
       <field name="Text" required="N" />
-      <field name="RefMsgType" required="Y" />
-      <field name="BusinessRejectRefID" required="N" />
-      <field name="BusinessRejectReason" required="Y" />
+      <field name="CxlRejResponseTo" required="Y" />
+    </message>
+    <message name="RequestForPrismNotification" msgtype="DSN" msgcat="app">
+      <field name="RFPID" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="Side" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityType" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="CustomerOrFirm" required="Y" />
+      <field name="MaturityDate" required="Y" />
     </message>
   </messages>
   <components />

@@ -47,152 +47,6 @@
     <field name="CheckSum" required="Y" />
   </trailer>
   <messages>
-    <message name="Heartbeat" msgtype="0" msgcat="admin">
-      <field name="TestReqID" required="N" />
-    </message>
-    <message name="TestRequest" msgtype="1" msgcat="admin">
-      <field name="TestReqID" required="Y" />
-    </message>
-    <message name="ResendRequest" msgtype="2" msgcat="admin">
-      <field name="BeginSeqNo" required="Y" />
-      <field name="EndSeqNo" required="Y" />
-    </message>
-    <message name="Reject" msgtype="3" msgcat="admin">
-      <field name="RefSeqNum" required="Y" />
-      <field name="RefTagID" required="N" />
-      <field name="RefMsgType" required="N" />
-      <field name="SessionRejectReason" required="N" />
-      <field name="Text" required="N" />
-    </message>
-    <message name="SequenceReset" msgtype="4" msgcat="admin">
-      <field name="GapFillFlag" required="N" />
-      <field name="NewSeqNo" required="Y" />
-    </message>
-    <message name="Logout" msgtype="5" msgcat="admin">
-      <field name="Text" required="N" />
-    </message>
-    <message name="Logon" msgtype="A" msgcat="admin">
-      <field name="EncryptMethod" required="Y" />
-      <field name="HeartBtInt" required="Y" />
-    </message>
-    <message name="NewOrderSingle" msgtype="D" msgcat="app">
-      <field name="ClOrdID" required="Y" />
-      <field name="HandlInst" required="N" />
-      <field name="Symbol" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="ClientID" required="N" />
-      <field name="ExecBroker" required="N" />
-      <field name="Account" required="N" />
-      <field name="ExecInst" required="N" />
-      <field name="MinQty" required="N" />
-      <field name="MaxFloor" required="N" />
-      <field name="TimeInForce" required="N" />
-      <field name="Rule80A" required="N" />
-      <field name="Text" required="N" />
-      <field name="ExpireTime" required="N" />
-      <field name="OpenClose" required="Y" />
-      <field name="SecurityType" required="N" />
-      <field name="MaturityMonthYear" required="Y" />
-      <field name="MaturityDay" required="Y" />
-      <field name="MaturityDate" required="Y" />
-      <field name="PutOrCall" required="Y" />
-      <field name="StrikePrice" required="Y" />
-      <field name="ClearingAccount" required="N" />
-      <field name="SecurityExchange" required="N" />
-      <field name="ClearingFirm" required="N" />
-      <field name="AllocAccount" required="N" />
-      <field name="AuctionType" required="N" />
-      <field name="AuctionID" required="N" />
-      <field name="ExposureFlag" required="N" />
-      <field name="NWTOrdType" required="N" />
-      <field name="NWTPrice" required="N" />
-      <field name="BrokerPCT" required="N" />
-      <field name="RFPID" required="N" />
-      <field name="RFPInstr" required="N" />
-    </message>
-    <message name="NewOrderList" msgtype="E" msgcat="app">
-      <field name="AuctionType" required="Y" />
-      <field name="NWTOrdType" required="N" />
-      <field name="NWTPrice" required="N" />
-      <field name="BrokerPCT" required="N" />
-      <group name="NoOrders" required="Y">
-        <field name="ListSeqNo" required="Y" />
-        <field name="ClOrdID" required="Y" />
-        <field name="HandlInst" required="N" />
-        <field name="Symbol" required="Y" />
-        <field name="Side" required="Y" />
-        <field name="OrderQty" required="Y" />
-        <field name="OrdType" required="Y" />
-        <field name="Price" required="N" />
-        <field name="ClientID" required="N" />
-        <field name="Account" required="N" />
-        <field name="ExecInst" required="N" />
-        <field name="TimeInForce" required="Y" />
-        <field name="Rule80A" required="N" />
-        <field name="Text" required="N" />
-        <field name="OpenClose" required="Y" />
-        <field name="SecurityType" required="N" />
-        <field name="MaturityMonthYear" required="Y" />
-        <field name="MaturityDay" required="Y" />
-        <field name="MaturityDate" required="Y" />
-        <field name="PutOrCall" required="Y" />
-        <field name="StrikePrice" required="Y" />
-        <field name="ClearingAccount" required="N" />
-        <field name="SecurityExchange" required="N" />
-        <field name="ClearingFirm" required="N" />
-        <field name="AllocAccount" required="N" />
-      </group>
-    </message>
-    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
-      <field name="OrigClOrdID" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="Symbol" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrderID" required="N" />
-      <field name="ClientID" required="N" />
-      <field name="MaturityMonthYear" required="Y" />
-      <field name="MaturityDay" required="Y" />
-      <field name="MaturityDate" required="Y" />
-      <field name="PutOrCall" required="Y" />
-      <field name="StrikePrice" required="Y" />
-    </message>
-    <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
-      <field name="OrigClOrdID" required="Y" />
-      <field name="ClOrdID" required="Y" />
-      <field name="HandlInst" required="N" />
-      <field name="Symbol" required="Y" />
-      <field name="Side" required="Y" />
-      <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
-      <field name="Price" required="N" />
-      <field name="OrderID" required="N" />
-      <field name="ClientID" required="N" />
-      <field name="ExecInst" required="N" />
-      <field name="TimeInForce" required="N" />
-      <field name="Rule80A" required="N" />
-      <field name="Account" required="N" />
-      <field name="MinQty" required="N" />
-      <field name="MaxFloor" required="N" />
-      <field name="SecurityType" required="N" />
-      <field name="MaturityMonthYear" required="Y" />
-      <field name="MaturityDay" required="Y" />
-      <field name="MaturityDate" required="Y" />
-      <field name="PutOrCall" required="Y" />
-      <field name="StrikePrice" required="Y" />
-      <field name="AllocAccount" required="N" />
-      <field name="NWTOrdType" required="N" />
-      <field name="NWTPrice" required="N" />
-    </message>
-    <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
-      <field name="ClientID" required="N" />
-      <field name="ClOrdID" required="Y" />
-      <field name="UnderlyingSymbol" required="Y" />
-      <field name="RequestType" required="Y" />
-    </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="OrderID" required="Y" />
       <field name="ExecID" required="Y" />
@@ -235,6 +89,16 @@
       <field name="ClearingAccount" required="N" />
       <field name="RFPID" required="N" />
     </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="OrderID" required="Y" />
       <field name="ClOrdID" required="Y" />
@@ -254,6 +118,13 @@
       <field name="UnderlyingSymbol" required="Y" />
       <field name="Text" required="N" />
     </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
     <message name="RequestForPrismNotification" msgtype="DSN" msgcat="app">
       <field name="RFPID" required="Y" />
       <field name="ExecInst" required="N" />
@@ -267,6 +138,135 @@
       <field name="StrikePrice" required="Y" />
       <field name="Rule80A" required="Y" />
       <field name="MaturityDate" required="Y" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="NewOrderList" msgtype="E" msgcat="app">
+      <field name="AuctionType" required="Y" />
+      <field name="NWTOrdType" required="N" />
+      <field name="NWTPrice" required="N" />
+      <field name="BrokerPCT" required="N" />
+      <group name="NoOrders" required="Y">
+        <field name="ListSeqNo" required="Y" />
+        <field name="ClOrdID" required="Y" />
+        <field name="HandlInst" required="N" />
+        <field name="Symbol" required="Y" />
+        <field name="Side" required="Y" />
+        <field name="OrderQty" required="Y" />
+        <field name="OrdType" required="Y" />
+        <field name="Price" required="N" />
+        <field name="ClientID" required="N" />
+        <field name="Account" required="N" />
+        <field name="ExecInst" required="N" />
+        <field name="TimeInForce" required="Y" />
+        <field name="Rule80A" required="N" />
+        <field name="Text" required="N" />
+        <field name="OpenClose" required="Y" />
+        <field name="SecurityType" required="N" />
+        <field name="MaturityMonthYear" required="Y" />
+        <field name="MaturityDay" required="Y" />
+        <field name="MaturityDate" required="Y" />
+        <field name="PutOrCall" required="Y" />
+        <field name="StrikePrice" required="Y" />
+        <field name="ClearingAccount" required="N" />
+        <field name="SecurityExchange" required="N" />
+        <field name="ClearingFirm" required="N" />
+        <field name="AllocAccount" required="N" />
+      </group>
+    </message>
+    <message name="NewOrderSingle" msgtype="D" msgcat="app">
+      <field name="ClOrdID" required="Y" />
+      <field name="HandlInst" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="ClientID" required="N" />
+      <field name="ExecBroker" required="N" />
+      <field name="Account" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="MinQty" required="N" />
+      <field name="MaxFloor" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="Rule80A" required="N" />
+      <field name="Text" required="N" />
+      <field name="ExpireTime" required="N" />
+      <field name="OpenClose" required="Y" />
+      <field name="SecurityType" required="N" />
+      <field name="MaturityMonthYear" required="Y" />
+      <field name="MaturityDay" required="Y" />
+      <field name="MaturityDate" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="ClearingAccount" required="N" />
+      <field name="SecurityExchange" required="N" />
+      <field name="ClearingFirm" required="N" />
+      <field name="AllocAccount" required="N" />
+      <field name="AuctionType" required="N" />
+      <field name="AuctionID" required="N" />
+      <field name="ExposureFlag" required="N" />
+      <field name="NWTOrdType" required="N" />
+      <field name="NWTPrice" required="N" />
+      <field name="BrokerPCT" required="N" />
+      <field name="RFPID" required="N" />
+      <field name="RFPInstr" required="N" />
+    </message>
+    <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
+      <field name="OrigClOrdID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="HandlInst" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="Price" required="N" />
+      <field name="OrderID" required="N" />
+      <field name="ClientID" required="N" />
+      <field name="ExecInst" required="N" />
+      <field name="TimeInForce" required="N" />
+      <field name="Rule80A" required="N" />
+      <field name="Account" required="N" />
+      <field name="MinQty" required="N" />
+      <field name="MaxFloor" required="N" />
+      <field name="SecurityType" required="N" />
+      <field name="MaturityMonthYear" required="Y" />
+      <field name="MaturityDay" required="Y" />
+      <field name="MaturityDate" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="AllocAccount" required="N" />
+      <field name="NWTOrdType" required="N" />
+      <field name="NWTPrice" required="N" />
+    </message>
+    <message name="OrderCancelRequest" msgtype="F" msgcat="app">
+      <field name="OrigClOrdID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="OrderQty" required="Y" />
+      <field name="OrderID" required="N" />
+      <field name="ClientID" required="N" />
+      <field name="MaturityMonthYear" required="Y" />
+      <field name="MaturityDay" required="Y" />
+      <field name="MaturityDate" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+    </message>
+    <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
+      <field name="ClientID" required="N" />
+      <field name="ClOrdID" required="Y" />
+      <field name="UnderlyingSymbol" required="Y" />
+      <field name="RequestType" required="Y" />
     </message>
   </messages>
   <components />

@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 3.51
     Date: 2026-02-26
-    Specification: Cboe Titanium Europe FIX Specification Version 3.51
+    Specification: BATS_Europe_FIX_Specification.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -30,7 +30,7 @@
 -->
 <fix major="4" minor="4" servicepack="0" type="FIX">
   <header>
-    <field name="BeginString" required="Y" />
+    <field name="BeginString" required="N" />
     <field name="BodyLength" required="N" />
     <field name="MsgType" required="N" />
     <field name="MsgSeqNum" required="N" />
@@ -106,7 +106,6 @@
           <field name="PartyID" required="N" />
           <field name="PartyIDSource" required="N" />
           <field name="PartyRole" required="N" />
-          <field name="PartyRoleQualifier" required="N" />
           <group name="NoPartySubIDs" required="N">
             <field name="PartySubID" required="N" />
             <field name="PartySubIDType" required="N" />
@@ -180,7 +179,6 @@
           <field name="PartyID" required="N" />
           <field name="PartyIDSource" required="N" />
           <field name="PartyRole" required="N" />
-          <field name="PartyRoleQualifier" required="N" />
           <group name="NoPartySubIDs" required="N">
             <field name="PartySubID" required="N" />
             <field name="PartySubIDType" required="N" />
@@ -253,7 +251,10 @@
     <field number="207" name="SecurityExchange" type="EXCHANGE" />
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="381" name="GrossTradeAmt" type="STRING" />
-    <field number="447" name="PartyIDSource" type="STRING" />
+    <field number="447" name="PartyIDSource" type="STRING">
+      <value enum="D" description="Proprietary / Custom Code" />
+      <value enum="P" description="Short code identifier" />
+    </field>
     <field number="448" name="PartyID" type="STRING" />
     <field number="452" name="PartyRole" type="STRING">
       <value enum="1" description="Executing Firm" />
@@ -338,14 +339,20 @@
       <value enum="6" description="Introducing Firm" />
       <value enum="64" description="MultilateralTradingFacility (Drop only)" />
     </field>
-    <field number="1123" name="TradeHandlingInstr" type="STRING" />
+    <field number="1123" name="TradeHandlingInstr" type="STRING">
+      <value enum="0" description="Confirmed Trade" />
+      <value enum="1" description="Two-Party Report" />
+      <value enum="2" description="One Party Report for Matching" />
+    </field>
     <field number="1390" name="TradePublishIndicator" type="STRING">
       <value enum="0" description="Do Not Publish. Deprecated from 4th December 2017 in Certification and 2ndJanuary2018inProduction. Anyrequeststopublishatradeusingthis indicator will not be honoured and will instead be published immediately." />
       <value enum="1" description="Publish Trade Immediately" />
       <value enum="2" description="Deferred Publication" />
     </field>
     <field number="1427" name="SideExecID" type="STRING" />
-    <field number="1430" name="VenueType" type="STRING" />
+    <field number="1430" name="VenueType" type="STRING">
+      <value enum="O" description="OffBook" />
+    </field>
     <field number="1838" name="NoTradePriceConditions" type="NUMINGROUP" />
     <field number="1839" name="TradePriceCondition" type="INT">
       <value enum="13" description="Special Dividend (SDIV) ForMMTLevel3.8‘ContributiontoPriceFormationorthePriceDiscovery Process’, supported values are: For MMT Level 3.8 ‘Contribution to Price Formation or the Price Discovery Process’, supported values are:" />
@@ -355,12 +362,6 @@
     <field number="2373" name="IntraFirmTradeIndicator" type="STRING">
       <value enum="N" description="Not an intra-group transaction (default)" />
       <value enum="Y" description="Is an intra-group transaction" />
-    </field>
-    <field number="2376" name="PartyRoleQualifier" type="STRING">
-      <value enum="0" description="None (applicable only for the reserved Party IDs)" />
-      <value enum="22" description="Algorithm (applicable to PartyRole values 12 or 122)" />
-      <value enum="23" description="Firm or legal entity (LEI) (applicable to Party Role value 3)" />
-      <value enum="24" description="Naturalperson(applicabletoPartyRolevalues3,12and122)" />
     </field>
     <field number="2405" name="ExecMethod" type="STRING">
       <value enum="0" description="Unspecified (default)" />

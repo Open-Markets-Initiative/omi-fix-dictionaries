@@ -273,8 +273,8 @@
       <field name="SelfMatchPreventionId" required="N" />
       <field name="SelfMatchPreventionInstruction" required="N" />
       <field name="Text" required="N" />
-      <field name="ExecInst" required="N" />
       <field name="OrdRejReason" required="N" />
+      <field name="ExecInst" required="N" />
     </message>
     <message name="LastExecId" msgtype="F2" msgcat="app">
       <field name="RefSeqNum" required="Y" />

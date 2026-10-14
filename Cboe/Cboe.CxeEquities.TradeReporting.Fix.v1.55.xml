@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 1.55
     Date: 2026-03-13
-    Specification: Cboe Titanium Europe TRF FIX Specification Version 1.55
+    Specification: BATS_ChiX_Europe_TRF_FIX_Specification.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -30,7 +30,7 @@
 -->
 <fix major="4" minor="4" servicepack="0" type="FIX">
   <header>
-    <field name="BeginString" required="Y" />
+    <field name="BeginString" required="N" />
     <field name="BodyLength" required="N" />
     <field name="MsgType" required="N" />
     <field name="MsgSeqNum" required="N" />
@@ -76,7 +76,7 @@
       <field name="ExecMethod" required="N" />
       <field name="AlgorithmicTradeIndicator" required="N" />
       <field name="TertiaryTrdType" required="N" />
-      <field name="MultiJurisdictionReportingIndica" required="N" />
+      <field name="MultiJurisdictionReportingIndicator" required="N" />
       <field name="TrdRegPublicationReasons" required="N" />
       <group name="NoSides" required="N">
         <field name="Side" required="N" />
@@ -87,8 +87,15 @@
         <field name="PartyID" required="N" />
         <field name="OrderCapacity" required="N" />
         <field name="TradingSessionSubID" required="N" />
+        <field name="CentralCounterparty" required="N" />
+        <field name="FeeCode" required="N" />
       </group>
       <field name="TrdSubType" required="N" />
+      <field name="Text" required="N" />
+      <field name="ContraBroker" required="N" />
+      <field name="TradeReportRefID" required="N" />
+      <field name="MatchStatus" required="N" />
+      <field name="RptTime" required="N" />
     </message>
     <message name="Quote" msgtype="S" msgcat="app">
       <field name="QuoteID" required="N" />
@@ -145,9 +152,20 @@
       <field name="ExecMethod" required="N" />
       <field name="AlgorithmicTradeIndicator" required="N" />
       <field name="TertiaryTrdType" required="N" />
-      <field name="MultiJurisdictionReportingIndica" required="N" />
+      <field name="MultiJurisdictionReportingIndicator" required="N" />
       <field name="TrdRegPublicationReasons" required="N" />
-      <field name="NoSides" required="N" />
+      <group name="NoSides" required="N">
+        <field name="Side" required="N" />
+        <field name="Account" required="N" />
+        <field name="PartyIDSource" required="N" />
+        <field name="PartyRole" required="N" />
+        <field name="NoPartyIDs" required="N" />
+        <field name="PartyID" required="N" />
+        <field name="OrderCapacity" required="N" />
+        <field name="TradingSessionSubID" required="N" />
+        <field name="CentralCounterparty" required="N" />
+        <field name="FeeCode" required="N" />
+      </group>
       <field name="OrigCompID" required="N" />
       <field name="OrigSubID" required="N" />
     </message>
@@ -188,6 +206,7 @@
     <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
       <value enum="8" description="Cross" />
     </field>
     <field number="55" name="Symbol" type="STRING" />
@@ -214,8 +233,11 @@
       <value enum="1" description="Cancel for Symbol" />
       <value enum="4" description="Cancel for All Quotes" />
     </field>
+    <field number="375" name="ContraBroker" type="STRING" />
     <field number="381" name="GrossTradeAmt" type="STRING" />
-    <field number="447" name="PartyIDSource" type="STRING" />
+    <field number="447" name="PartyIDSource" type="STRING">
+      <value enum="D" description="Proprietary / Custom Code" />
+    </field>
     <field number="448" name="PartyID" type="STRING" />
     <field number="452" name="PartyRole" type="STRING" />
     <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
@@ -227,20 +249,29 @@
     </field>
     <field number="528" name="OrderCapacity" type="STRING">
       <value enum="A" description="Agency" />
+      <value enum="P" description="Principal (default)" />
       <value enum="R" description="Riskless" />
     </field>
     <field number="552" name="NoSides" type="NUMINGROUP" />
     <field number="571" name="TradeReportID" type="STRING" />
     <field number="572" name="TradeReportRefID" type="STRING" />
+    <field number="573" name="MatchStatus" type="CHAR">
+      <value enum="0" description="Matched" />
+      <value enum="1" description="Unmatched" />
+    </field>
     <field number="574" name="MatchType" type="STRING">
       <value enum="1" description="Trade Reporting (Off-Exchange)" />
       <value enum="3" description="Trade Reporting (On-Exchange)" />
       <value enum="9" description="Trade Reporting (Systematic Internalizer)" />
     </field>
     <field number="625" name="TradingSessionSubID" type="STRING">
+      <value enum="10" description="Out of Main Session Trading" />
       <value enum="2" description="Scheduled Opening Auction" />
+      <value enum="3" description="Continuous Trading" />
+      <value enum="4" description="Scheduled Closing Auction" />
       <value enum="5" description="Post Trading" />
       <value enum="6" description="Scheduled Intraday Auction" />
+      <value enum="8" description="Unspecified Auction" />
       <value enum="9" description="Unscheduled Auction" />
     </field>
     <field number="828" name="TrdType" type="STRING">
@@ -258,10 +289,19 @@
       <value enum="65" description="Contingent Transaction (RTS 1 equities only) (MMT Level 3.12 field ‘Contingent’, CONT)" />
       <value enum="67" description="Benchmark Transactions Executed At the Market Close Price (MMT Level 3.5 field ‘Benchmark At Market Close Price’, CLSE) (Supported in UK APA, RTS 1 equities only). This cannot be used in conjunction with TrdRegPublicationReasons (8013) = 3: Reference Price (Dark Book) (for MTF only) (RFPT)" />
     </field>
-    <field number="856" name="TradeReportType" type="STRING" />
-    <field number="939" name="TrdRptStatus" type="STRING" />
+    <field number="856" name="TradeReportType" type="STRING">
+      <value enum="0" description="Submit" />
+      <value enum="2" description="Accept" />
+      <value enum="3" description="Decline" />
+    </field>
+    <field number="939" name="TrdRptStatus" type="STRING">
+      <value enum="0" description="Accepted" />
+      <value enum="1" description="Rejected" />
+    </field>
     <field number="1003" name="TradeID" type="STRING" />
-    <field number="1123" name="TradeHandlingInstr" type="STRING" />
+    <field number="1123" name="TradeHandlingInstr" type="STRING">
+      <value enum="1" description="Two-Party Report" />
+    </field>
     <field number="1390" name="TradePublishIndicator" type="STRING">
       <value enum="0" description="Do Not Publish" />
       <value enum="1" description="Publish trade (immediately)" />
@@ -279,6 +319,9 @@
     </field>
     <field number="1838" name="NoTradePriceConditions" type="PRICE" />
     <field number="1839" name="TradePriceCondition" type="PRICE">
+      <value enum="13" description="Special Dividend (SDIV)" />
+      <value enum="14" description="Trade with Price Improvement (RPRI). TrdType (828) = 0 should be set." />
+      <value enum="16" description="Trade not Contributing to the Price Discovery Process (TNCP) (Invalid for EU APA)." />
       <value enum="17" description="Price is Pending (PNDG)" />
     </field>
     <field number="2373" name="IntraFirmTradeIndicator" type="STRING">
@@ -301,8 +344,13 @@
       <value enum="65" description="Contingent Transaction (RTS 1 equities only) (MMT Level 3.12 field ‘Contingent’, CONT)" />
       <value enum="67" description="Benchmark Transactions Executed At the Market Close Price (MMT Level 3.5 field ‘Benchmark At Market Close Price’, CLSE) (Supported in UK APA, for RTS 1 equities only). This cannot be used in conjunction with TrdRegPublicationReasons (8013) = 3: Reference Price (Dark Book) (for MTF only) (RFPT)" />
     </field>
-    <field number="2963" name="MultiJurisdictionReportingIndica" type="STRING">
+    <field number="2963" name="MultiJurisdictionReportingIndicator" type="STRING">
+      <value enum="0" description="This trade is not reported in more than one jurisdiction. (de- fault)" />
       <value enum="1" description="This trade is reported in multiple jurisdictions." />
+    </field>
+    <field number="7570" name="RptTime" type="STRING" />
+    <field number="7772" name="CentralCounterparty" type="STRING">
+      <value enum="NONE" description="No Clearing" />
     </field>
     <field number="8013" name="TrdRegPublicationReasons" type="STRING">
       <value enum="0" description="Negotiated Trade in Liquid Instrument (for MTF only) (NLIQ)" />
@@ -321,5 +369,6 @@
     </field>
     <field number="9688" name="OrigCompID" type="STRING" />
     <field number="9689" name="OrigSubID" type="STRING" />
+    <field number="9882" name="FeeCode" type="STRING" />
   </fields>
 </fix>

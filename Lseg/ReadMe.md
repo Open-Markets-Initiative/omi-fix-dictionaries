@@ -5,10 +5,10 @@
 
 | Division | [Protocol][Omi.Lseg.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Lseg.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [Idem][Idem.Exchange] | [OrderEntry][Lseg.Idem.OrderEntry] | [v3.2](Lseg.Idem.OrderEntry.Fix.v3.2.xml) | 12/1/2014 | [Active][Omi.Glossary.Deployment.Active] | [url][Lseg.Idem.OrderEntry.Fix.v3.2.Url] - [pdf][Lseg.Idem.OrderEntry.Fix.v3.2.Pdf] |
-| [Millennium][Millennium.Platform] | [DropCopy][Lseg.Millennium.DropCopy] | [v17.0](Lseg.Millennium.DropCopy.Fix.v17.0.xml) | 3/5/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Lseg.Millennium.DropCopy.Fix.v17.0.Url] - [url][Lseg.Millennium.DropCopy.Fix.v17.0.Url] - [pdf][Lseg.Millennium.DropCopy.Fix.v17.0.Pdf] |
-| [Millennium][Millennium.Platform] | [PostTrade][Lseg.Millennium.PostTrade] | [v19.0](Lseg.Millennium.PostTrade.Fix.v19.0.xml) | 3/5/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Lseg.Millennium.PostTrade.Fix.v19.0.Url] - [url][Lseg.Millennium.PostTrade.Fix.v19.0.Url] - [pdf][Lseg.Millennium.PostTrade.Fix.v19.0.Pdf] |
-| [Millennium][Millennium.Platform] | [Trading][Lseg.Millennium.Trading] | [v21.1](Lseg.Millennium.Trading.Fix.v21.1.xml) | 4/8/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Lseg.Millennium.Trading.Fix.v21.1.Url] - [url][Lseg.Millennium.Trading.Fix.v21.1.Url] - [pdf][Lseg.Millennium.Trading.Fix.v21.1.Pdf] |
+| [Idem][Idem.Exchange] | [OrderEntry][Lseg.Idem.OrderEntry] | [v3.2](Lseg.Idem.OrderEntry.Fix.v3.2.xml) | 12/1/2014 | [Active][Omi.Glossary.Deployment.Active] | [url][Lseg.Idem.OrderEntry.Fix.v3.2.Url] |
+| [Millennium][Millennium.Platform] | [DropCopy][Lseg.Millennium.DropCopy] | [v17.0](Lseg.Millennium.DropCopy.Fix.v17.0.xml) | 3/5/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Lseg.Millennium.DropCopy.Fix.v17.0.Url] - [url][Lseg.Millennium.DropCopy.Fix.v17.0.Pdf] |
+| [Millennium][Millennium.Platform] | [PostTrade][Lseg.Millennium.PostTrade] | [v19.0](Lseg.Millennium.PostTrade.Fix.v19.0.xml) | 3/5/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Lseg.Millennium.PostTrade.Fix.v19.0.Url] - [url][Lseg.Millennium.PostTrade.Fix.v19.0.Pdf] |
+| [Millennium][Millennium.Platform] | [Trading][Lseg.Millennium.Trading] | [v21.1](Lseg.Millennium.Trading.Fix.v21.1.xml) | 4/8/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Lseg.Millennium.Trading.Fix.v21.1.Url] - [url][Lseg.Millennium.Trading.Fix.v21.1.Pdf] |
 
 
 Lseg: [website](https://www.lseg.com "Go to London Stock Exchange")
@@ -31,13 +31,9 @@ Lseg: [website](https://www.lseg.com "Go to London Stock Exchange")
 [Lseg.Millennium.Trading]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Lseg/Protocols/Millennium/Trading.md ""
 
 [Lseg.Idem.OrderEntry.Fix.v3.2.Url]: https://www.borsaitaliana.it/borsaitaliana/gestione-mercati/migrazionesolaidem/migrazionesolaidem.en.htm "London Stock Exchange 3.2 Url"
-[Lseg.Idem.OrderEntry.Fix.v3.2.Pdf]: https://www.borsaitaliana.it/borsaitaliana/gestione-mercati/migrazionesolaidem/migrazionesolaidem.en.htm "London Stock Exchange 3.2 Pdf"
 [Lseg.Millennium.DropCopy.Fix.v17.0.Url]: https://docs.londonstockexchange.com/sites/default/files/documents/mit205-drop-copy-gateway-issue-17.0.pdf "London Stock Exchange 17.0 Url"
-[Lseg.Millennium.DropCopy.Fix.v17.0.Url]: https://www.londonstockexchange.com/resources/equities-trading-resources?tab=technical-library "London Stock Exchange 17.0 Url"
 [Lseg.Millennium.DropCopy.Fix.v17.0.Pdf]: https://www.londonstockexchange.com/resources/equities-trading-resources?tab=technical-library "London Stock Exchange 17.0 Pdf"
 [Lseg.Millennium.PostTrade.Fix.v19.0.Url]: https://docs.londonstockexchange.com/sites/default/files/documents/mit204-post-trade-gateway-issue-19.0.pdf "London Stock Exchange 19.0 Url"
-[Lseg.Millennium.PostTrade.Fix.v19.0.Url]: https://www.londonstockexchange.com/resources/equities-trading-resources?tab=technical-library "London Stock Exchange 19.0 Url"
 [Lseg.Millennium.PostTrade.Fix.v19.0.Pdf]: https://www.londonstockexchange.com/resources/equities-trading-resources?tab=technical-library "London Stock Exchange 19.0 Pdf"
 [Lseg.Millennium.Trading.Fix.v21.1.Url]: https://docs.londonstockexchange.com/sites/default/files/documents/mit202-fix-trading-gateway-fix-5-0-issue-21-1.pdf "London Stock Exchange 21.1 Url"
-[Lseg.Millennium.Trading.Fix.v21.1.Url]: https://www.londonstockexchange.com/resources/equities-trading-resources?tab=technical-library "London Stock Exchange 21.1 Url"
 [Lseg.Millennium.Trading.Fix.v21.1.Pdf]: https://www.londonstockexchange.com/resources/equities-trading-resources?tab=technical-library "London Stock Exchange 21.1 Pdf"

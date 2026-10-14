@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 3.51
     Date: 2026-02-26
-    Specification: Cboe Titanium Europe FIX Specification Version 3.51
+    Specification: BATS_Europe_FIX_Specification.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -30,7 +30,7 @@
 -->
 <fix major="4" minor="4" servicepack="0" type="FIX">
   <header>
-    <field name="BeginString" required="Y" />
+    <field name="BeginString" required="N" />
     <field name="BodyLength" required="N" />
     <field name="MsgType" required="N" />
     <field name="MsgSeqNum" required="N" />
@@ -59,8 +59,9 @@
       <field name="Symbol" required="N" />
       <field name="SecurityExchange" required="N" />
       <field name="Currency" required="N" />
-      <field name="CustomGroupIDCnt" required="N" />
-      <field name="CustomGroupID" required="N" />
+      <group name="CustomGroupIDCnt" required="N">
+        <field name="CustomGroupID" required="N" />
+      </group>
     </message>
     <message name="PurgeAcknowledgement" msgtype="8" msgcat="app">
       <field name="ExecTransType" required="N" />
@@ -85,18 +86,24 @@
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Cancel" />
+      <value enum="2" description="Correct" />
       <value enum="3" description="Status" />
     </field>
     <field number="22" name="IDSource" type="STRING">
       <value enum="4" description="ISIN" />
+      <value enum="5" description="RIC" />
     </field>
     <field number="34" name="MsgSeqNum" type="SEQNUM" />
     <field number="35" name="MsgType" type="STRING" />
     <field number="39" name="OrdStatus" type="CHAR">
       <value enum="0" description="New" />
+      <value enum="1" description="Partially Filled" />
       <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
+      <value enum="6" description="Pending Cancel" />
       <value enum="8" description="Rejected" />
+      <value enum="A" description="Pending Ack" />
       <value enum="E" description="Pending Replace" />
     </field>
     <field number="43" name="PossDupFlag" type="BOOLEAN" />
@@ -108,12 +115,20 @@
     <field number="57" name="TargetSubID" type="STRING" />
     <field number="58" name="Text" type="STRING">
       <value enum="A" description="Admin" />
+      <value enum="D" description="Duplicate ClOrdID" />
       <value enum="H" description="Halted" />
+      <value enum="K" description="Order Rate Threshold Exceeded" />
+      <value enum="L" description="Price Exceeds Cross Range" />
       <value enum="N" description="Ran Out of Liquidity to Execute Against" />
+      <value enum="O" description="ClOrdID Doesn’t Match a Known Order" />
       <value enum="P" description="Can’t Modify an Order That is Pending Fill" />
+      <value enum="Q" description="Waiting For First Trade" />
       <value enum="R" description="Routing Unavailable" />
+      <value enum="T" description="Routing order would trade through an away destination" />
       <value enum="U" description="User Requested" />
+      <value enum="V" description="Would Wash" />
       <value enum="W" description="Add Liquidity Only Order Would Remove" />
+      <value enum="X" description="Order Expired" />
       <value enum="Y" description="Symbol Not Supported" />
       <value enum="Z" description="Unforseen Reason" />
       <value enum="k" description="Pending periodic auction (BXE and DXE only)" />
@@ -121,12 +136,18 @@
       <value enum="m" description="Market Access Risk Limit Exceeded" />
       <value enum="o" description="Max Open Trade Count Exceeded" />
       <value enum="p" description="Static Collar Breach" />
+      <value enum="r" description="Reserve Reload" />
+      <value enum="s" description="Symbol Level Risk Management" />
       <value enum="v" description="Mi FID II Double Cap related" />
     </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
-    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="97" name="PossResend" type="BOOLEAN">
+      <value enum="N" description="indicates a new order (default)" />
+      <value enum="Y" description="indicates an application level resend and is not supported" />
+    </field>
     <field number="102" name="CxlRejReason" type="INT">
       <value enum="0" description="Too Late to Cancel" />
+      <value enum="1" description="Unknown Order" />
       <value enum="2" description="Broker Option" />
       <value enum="3" description="Already Pending Cancel or Pending Replace" />
     </field>
@@ -137,21 +158,32 @@
     <field number="129" name="DeliverToSubID" type="STRING" />
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="New (acknowledgement of new order)" />
+      <value enum="1" description="Partial Fill" />
       <value enum="2" description="Fill" />
+      <value enum="4" description="Canceled" />
       <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
+      <value enum="D" description="Restated" />
       <value enum="F" description="Trade" />
       <value enum="M" description="Mass Cancel Complete" />
     </field>
     <field number="207" name="SecurityExchange" type="EXCHANGE" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Cancel" />
+      <value enum="2" description="Cancel/Replace" />
     </field>
     <field number="7695" name="MassCancelID" type="STRING" />
     <field number="7696" name="CancelledOrderCount" type="STRING" />
-    <field number="7698" name="CustomGroupIDCnt" type="STRING" />
+    <field number="7698" name="CustomGroupIDCnt" type="NUMINGROUP" />
     <field number="7699" name="CustomGroupID" type="STRING" />
     <field number="7700" name="MassCancelInst" type="STRING">
       <value enum="A" description="No filtering by clearing firm is performed." />
+      <value enum="B" description="Both individual Execution Reports and single Purge Acknowledgement. Also requires MassCancelId (7695) to be specified or the Purge Re- quest will be rejected." />
+      <value enum="F" description="All orders that were sent under the clearing firm specified in OnBe- halfOfCompId (115) will be cancelled." />
+      <value enum="L" description="Lockout until corresponding Risk Reset received. Lockout can be used only with clearing firm Filter set to ”F”, otherwise the Purge Request will be rejected. Lockout will apply to all new orders and cancel/replace orders for the clearing firm (and symbol or Custom- GroupId (7699), if specified)." />
+      <value enum="M" description="(Default) Individual Execution Reports are sent for each cancelled order." />
+      <value enum="N" description="(Default) No lockout" />
+      <value enum="S" description="Single Purge Acknowledgement sent once all cancels have been pro- cessed. Single Purge Acknowledgement will contain MassCancelId (7695) and CancelledOrderCount (7696). MassCancelId (7695) must be specified or the Purge Request will be rejected." />
     </field>
   </fields>
 </fix>

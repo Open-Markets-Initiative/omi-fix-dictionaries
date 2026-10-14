@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 3.51
     Date: 2026-02-26
-    Specification: Cboe Titanium Europe FIX Specification Version 3.51
+    Specification: BATS_Europe_FIX_Specification.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -153,14 +153,16 @@
       <field name="ExecRestatementReason" required="N" />
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
+      <group name="NoPartyIDs" required="N">
+        <field name="PartyID" required="N" />
+        <field name="PartyIDSource" required="N" />
+        <field name="PartyRole" required="N" />
+        <field name="PartyRoleQualifier" required="N" />
+      </group>
       <field name="SettlPrice" required="N" />
       <field name="OrderOrigination" required="N" />
       <field name="CentralCounterparty" required="N" />
       <field name="TrdRegPublicationReasons" required="N" />
-      <field name="PartyID" required="N" />
-      <field name="PartyIDSource" required="N" />
-      <field name="PartyRole" required="N" />
-      <field name="PartyRoleQualifier" required="N" />
       <field name="OrderAttributeTypes" required="N" />
       <field name="TradingVenueRegTradeId" required="N" />
       <field name="ExtExecInst" required="N" />
@@ -224,6 +226,7 @@
     <field number="15" name="Currency" type="CURRENCY" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
+      <value enum="G" description="Guarded Midpoint (peg to Cboe EBBO midpoint but suspend order if primary market quote becomes one-sided or disappears)" />
       <value enum="L" description="Alternate Midpoint (less aggressive of midpoint and 1 tick inside PBBO)" />
       <value enum="M" description="Midpoint (peg to PBBO midpoint)" />
       <value enum="P" description="Market Peg (peg buy to PBBO offer, peg sell to PBBO bid)" />
@@ -360,7 +363,10 @@
     </field>
     <field number="439" name="ClearingFirm" type="STRING" />
     <field number="440" name="ClearingAccount" type="STRING" />
-    <field number="447" name="PartyIDSource" type="STRING" />
+    <field number="447" name="PartyIDSource" type="STRING">
+      <value enum="D" description="Proprietary / Custom Code" />
+      <value enum="P" description="Short code identifier" />
+    </field>
     <field number="448" name="PartyID" type="STRING" />
     <field number="452" name="PartyRole" type="STRING">
       <value enum="1" description="Executing Firm" />
