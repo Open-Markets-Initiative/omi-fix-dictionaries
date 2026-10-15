@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="1" minor="1" servicepack="0" type="FIXT">
+<fix major="5" minor="0" servicepack="2" type="FIX">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="N" />
@@ -342,7 +342,9 @@
       <value enum="2" description="Mid Price Peg" />
       <value enum="5" description="Primary Peg" />
     </field>
-    <field number="1137" name="DefaultApplVerID" type="STRING" />
+    <field number="1137" name="DefaultApplVerID" type="STRING">
+      <value enum="9" description="FIX50SP2" />
+    </field>
     <field number="1138" name="DisplayQty" type="QTY" />
     <field number="1151" name="SecurityGroup" type="STRING" />
     <field number="1408" name="DefaultCstmApplVerID" type="STRING" />

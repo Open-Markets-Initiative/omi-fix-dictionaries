@@ -1,0 +1,304 @@
+<!--
+  Fix dictionary for: Memx DropCopy Fix v1.9
+
+  Protocol:
+    Organization: The Members Exchange
+    Protocol: Drop Copy
+    Encoding: Financial Information eXchange
+    Version: 1.9
+    Date: 2024-09-27
+    Specification: FIX Drop for US Options-v1_9.pdf
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The protocol compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="5" minor="0" servicepack="2" type="FIX">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="SenderCompID" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="DefaultApplVerID" required="Y" />
+      <field name="DefaultCstmApplVerID" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="ExecutionReport" msgtype="8" msgcat="app">
+      <field name="OrderID" required="Y" />
+      <field name="ClOrdID" required="Y" />
+      <field name="ExecID" required="Y" />
+      <field name="ExecType" required="Y" />
+      <field name="OrdStatus" required="Y" />
+      <field name="OptionsSecurityID" required="Y" />
+      <field name="ListSeqNo" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="MaturityDate" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="Side" required="Y" />
+      <field name="LeavesQty" required="Y" />
+      <field name="CumQty" required="Y" />
+      <field name="Price" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="TrdMatchID" required="Y" />
+      <field name="LastQty" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="OrdType" required="Y" />
+      <field name="TradingCapacity" required="Y" />
+      <field name="PositionEffect" required="N" />
+      <field name="LastLiquidityInd" required="Y" />
+      <field name="LastMkt" required="Y" />
+      <field name="Account" required="Y" />
+      <field name="ContraTradingCapacity" required="Y" />
+      <field name="SecurityType" required="Y" />
+      <group name="NoPartyIDs" required="Y">
+        <field name="PartyID" required="Y" />
+        <field name="PartyIDSource" required="Y" />
+        <field name="PartyRole" required="Y" />
+      </group>
+      <field name="ExecRefID" required="Y" />
+      <field name="AvgPx" required="Y" />
+    </message>
+    <message name="AllocationInstructionAlert" msgtype="BM" msgcat="app">
+      <field name="AllocID" required="Y" />
+      <field name="AllocType" required="Y" />
+      <field name="AllocTransType" required="Y" />
+      <field name="RefAllocID" required="N" />
+      <field name="AllocCancReplaceReason" required="N" />
+      <field name="Side" required="Y" />
+      <field name="OptionsSecurityID" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="MaturityDate" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="TradeDate" required="Y" />
+      <field name="ListSeqNo" required="N" />
+      <group name="NoExecs" required="Y">
+        <field name="TradeId" required="Y" />
+        <field name="LastQty" required="Y" />
+        <field name="LastPx" required="Y" />
+      </group>
+      <group name="NoAllocs" required="Y">
+        <field name="AllocQty" required="Y" />
+        <field name="AllocPositionEffect" required="N" />
+        <field name="IndividualAllocID" required="Y" />
+        <field name="TradingCapacity" required="Y" />
+        <group name="NoNestedPartyIDs" required="Y">
+          <field name="NestedPartyID" required="Y" />
+          <field name="NestedPartyIDSource" required="Y" />
+          <field name="NestedPartyRole" required="Y" />
+        </group>
+      </group>
+    </message>
+    <message name="UserNotification" msgtype="CB" msgcat="app">
+      <field name="UserStatus" required="Y" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="1" name="Account" type="STRING" />
+    <field number="6" name="AvgPx" type="PRICE" />
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="11" name="ClOrdID" type="STRING" />
+    <field number="14" name="CumQty" type="QTY" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="17" name="ExecID" type="STRING" />
+    <field number="19" name="ExecRefID" type="STRING" />
+    <field number="30" name="LastMkt" type="STRING">
+      <value enum="AMXO" description="NYSE AMEX OPTIONS" />
+      <value enum="ARCO" description="NYSE ARCA OPTIONS" />
+      <value enum="BATO" description="CBOE BZX OPTIONS EXCHANGE" />
+      <value enum="C2OX" description="CBOE C2 OPTIONS EXCHANGE" />
+      <value enum="EDGO" description="CBOE EDGX OPTIONS EXCHANGE" />
+      <value enum="EMLD" description="MIAX EMERALD, LLC" />
+      <value enum="GMNI" description="ISE GEMINI EXCHANGE" />
+      <value enum="MCRY" description="ISE MERCURY, LLC" />
+      <value enum="MPRL" description="MIAX PEARL, LLC" />
+      <value enum="MXOP" description="MEMX OPTIONS EXCHANGE" />
+      <value enum="XBOX" description="BOX OPTIONS EXCHANGE" />
+      <value enum="XBXO" description="NASDAQ OMX BX OPTIONS" />
+      <value enum="XCBO" description="CBOE GLOBAL MARKETS INC." />
+      <value enum="XISX" description="INTERNATIONAL SECURITIES EXCHANGE, LLC" />
+      <value enum="XMIO" description="MIAMI INTERNATIONAL SECURITIES EXCHANGE" />
+      <value enum="XNDQ" description="NASDAQ OPTIONS MARKET" />
+      <value enum="XPHO" description="PHILADELPHIA OPTIONS EXCHANGE" />
+    </field>
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastQty" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="38" name="OrderQty" type="QTY" />
+    <field number="39" name="OrdStatus" type="CHAR">
+      <value enum="1" description="Partially filled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+    </field>
+    <field number="40" name="OrdType" type="CHAR">
+      <value enum="1" description="Market" />
+      <value enum="2" description="Limit" />
+    </field>
+    <field number="43" name="PossDupFlag" type="STRING" />
+    <field number="44" name="Price" type="PRICE" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+      <value enum="B" description="As Defined" />
+    </field>
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="67" name="ListSeqNo" type="STRING" />
+    <field number="70" name="AllocID" type="STRING" />
+    <field number="71" name="AllocTransType" type="INT">
+      <value enum="0" description="New" />
+      <value enum="1" description="Replace" />
+      <value enum="2" description="Cancel" />
+    </field>
+    <field number="72" name="RefAllocID" type="STRING" />
+    <field number="75" name="TradeDate" type="LOCALMKTDATE" />
+    <field number="77" name="PositionEffect" type="CHAR">
+      <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
+    </field>
+    <field number="78" name="NoAllocs" type="NUMINGROUP" />
+    <field number="80" name="AllocQty" type="QTY" />
+    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="98" name="EncryptMethod" type="INT" />
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="122" name="OrigSendingTime" type="STRING" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="124" name="NoExecs" type="NUMINGROUP" />
+    <field number="141" name="ResetSeqNumFlag" type="STRING" />
+    <field number="150" name="ExecType" type="CHAR">
+      <value enum="F" description="Trade (partial fill or fill)" />
+      <value enum="G" description="TradeCorrect" />
+      <value enum="H" description="TradeCancel" />
+    </field>
+    <field number="151" name="LeavesQty" type="QTY" />
+    <field number="167" name="SecurityType" type="STRING" />
+    <field number="201" name="PutOrCall" type="INT">
+      <value enum="0" description="Put" />
+      <value enum="1" description="Call" />
+    </field>
+    <field number="202" name="StrikePrice" type="PRICE" />
+    <field number="371" name="RefTagID" type="INT" />
+    <field number="372" name="RefMsgType" type="STRING" />
+    <field number="447" name="PartyIDSource" type="CHAR">
+      <value enum="D" description="Proprietary/Custom Code" />
+    </field>
+    <field number="448" name="PartyID" type="STRING" />
+    <field number="452" name="PartyRole" type="INT">
+      <value enum="1" description="Execution Firm" />
+      <value enum="14" description="GiveUp Clearing Firm" />
+      <value enum="17" description="Contra EFID" />
+      <value enum="18" description="Contra Clearing Firm" />
+      <value enum="24" description="OptionalOCCData" />
+      <value enum="3" description="Actionable Identifer" />
+      <value enum="37" description="Contra MM Sub Account" />
+      <value enum="4" description="Clearing Firm" />
+      <value enum="40" description="CMTA" />
+      <value enum="41" description="Contra CMTA" />
+      <value enum="66" description="Market Maker Sub Account" />
+    </field>
+    <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
+    <field number="467" name="IndividualAllocID" type="STRING" />
+    <field number="524" name="NestedPartyID" type="STRING" />
+    <field number="525" name="NestedPartyIDSource" type="CHAR" />
+    <field number="538" name="NestedPartyRole" type="INT" />
+    <field number="539" name="NoNestedPartyIDs" type="NUMINGROUP" />
+    <field number="541" name="MaturityDate" type="STRING" />
+    <field number="626" name="AllocType" type="INT">
+      <value enum="100" description="PostTradeEdit" />
+    </field>
+    <field number="796" name="AllocCancReplaceReason" type="STRING" />
+    <field number="851" name="LastLiquidityInd" type="INT">
+      <value enum="1" description="Added" />
+      <value enum="2" description="Removed" />
+    </field>
+    <field number="880" name="TrdMatchID" type="STRING" />
+    <field number="926" name="UserStatus" type="INT" />
+    <field number="1003" name="TradeId" type="STRING" />
+    <field number="1047" name="AllocPositionEffect" type="CHAR">
+      <value enum="C" description="Close" />
+      <value enum="O" description="Open" />
+    </field>
+    <field number="1137" name="DefaultApplVerID" type="STRING">
+      <value enum="9" description="FIX50SP2" />
+    </field>
+    <field number="1408" name="DefaultCstmApplVerID" type="STRING" />
+    <field number="1815" name="TradingCapacity" type="INT">
+      <value enum="1" description="Customer" />
+      <value enum="2" description="Professional Customer" />
+      <value enum="3" description="Broker Dealer" />
+      <value enum="4" description="Broker Dealer Customer" />
+      <value enum="5" description="Firm" />
+      <value enum="6" description="Market Maker" />
+      <value enum="7" description="Away Market Maker" />
+    </field>
+    <field number="21035" name="OptionsSecurityID" type="STRING" />
+    <field number="21036" name="ContraTradingCapacity" type="STRING" />
+  </fields>
+</fix>
