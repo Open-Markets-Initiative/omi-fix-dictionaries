@@ -24,4 +24,4 @@ Txse: [website](https://www.txse.com "Go to Texas Stock Exchange")
 [Txse.TxseEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Txse/Protocols/TxseEquities/OrderEntry.md "Order Entry"
 
 [Txse.TxseEquities.OrderEntry.Fix.v0.28.Url]: https://www.txse.com "Texas Stock Exchange 0.28 Url"
-[Txse.TxseEquities.OrderEntry.Fix.v0.28.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Txse/Specifications/TxseEquities/OrderEntry/Txse.TxseEquities.OrderEntry.Fix.v0.28.pdf "Texas Stock Exchange 0.28 Pdf"
+[Txse.TxseEquities.OrderEntry.Fix.v0.28.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Txse/Specifications/OrderEntry/Txse.TxseEquities.OrderEntry.Fix.v0.28.pdf "Texas Stock Exchange 0.28 Pdf"

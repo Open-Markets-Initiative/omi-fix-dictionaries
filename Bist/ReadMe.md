@@ -23,4 +23,4 @@ Bist: [website](https://www.borsaistanbul.com/en "Go to Borsa İstanbul A.Ş.")
 [BorsaIstanbul.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Bist/Protocols/BorsaIstanbul "Bist BorsaIstanbul"
 [Bist.BorsaIstanbul.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Bist/Protocols/BorsaIstanbul/OrderEntry.md ""
 
-[Bist.BorsaIstanbul.OrderEntry.Fix.v1.0.64.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Bist/Specifications/BorsaIstanbul/Bist.BorsaIstanbul.OrderEntry.Fix.v1.0.64.pdf "Borsa İstanbul A.Ş. 1.0.64 Pdf"
+[Bist.BorsaIstanbul.OrderEntry.Fix.v1.0.64.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Bist/Specifications/OrderEntry/Bist.BorsaIstanbul.OrderEntry.Fix.v1.0.64.pdf "Borsa İstanbul A.Ş. 1.0.64 Pdf"

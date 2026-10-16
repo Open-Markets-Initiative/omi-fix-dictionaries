@@ -25,5 +25,5 @@ Aquis: [website](https://www.aquis.eu "Go to Aquis Exchange")
 [Aquis.AquisEquities.DropCopy]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Aquis/Protocols/AquisEquities/DropCopy.md ""
 [Aquis.AquisEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Aquis/Protocols/AquisEquities/OrderEntry.md ""
 
-[Aquis.AquisEquities.DropCopy.Fix.v2.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Aquis/Specifications/AquisEquities/Aquis.AquisEquities.DropCopy.Fix.v2.1.pdf "Aquis Exchange 2.1 Pdf"
-[Aquis.AquisEquities.OrderEntry.Fix.v5.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Aquis/Specifications/AquisEquities/Aquis.AquisEquities.OrderEntry.Fix.v5.0.pdf "Aquis Exchange 5.0 Pdf"
+[Aquis.AquisEquities.DropCopy.Fix.v2.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Aquis/Specifications/DropCopy/Aquis.AquisEquities.DropCopy.Fix.v2.1.pdf "Aquis Exchange 2.1 Pdf"
+[Aquis.AquisEquities.OrderEntry.Fix.v5.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Aquis/Specifications/OrderEntry/Aquis.AquisEquities.OrderEntry.Fix.v5.0.pdf "Aquis Exchange 5.0 Pdf"

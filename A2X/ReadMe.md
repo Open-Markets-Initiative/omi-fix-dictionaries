@@ -24,4 +24,4 @@ A2X: [website](https://www.a2x.co.za "Go to A2X Markets")
 [A2X.A2XEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/A2X/Protocols/A2XEquities/OrderEntry.md "Order Entry"
 
 [A2X.A2XEquities.OrderEntry.Fix.v2.0.Url]: https://www.a2x.co.za/?page_id=531 "A2X Markets 2.0 Url"
-[A2X.A2XEquities.OrderEntry.Fix.v2.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/A2X/Specifications/Fix/A2X.A2XEquities.OrderEntry.Fix.v2.0.pdf "A2X Markets 2.0 Pdf"
+[A2X.A2XEquities.OrderEntry.Fix.v2.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/A2X/Specifications/OrderEntry/A2X.A2XEquities.OrderEntry.Fix.v2.0.pdf "A2X Markets 2.0 Pdf"

@@ -50,7 +50,9 @@
     <message name="Logon" msgtype="A" msgcat="admin">
       <field name="HeartBtInt" required="Y" />
     </message>
-    <message name="Heartbeat" msgtype="0" msgcat="admin" />
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
     <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="N" />
     </message>

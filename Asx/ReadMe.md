@@ -39,8 +39,8 @@ Asx: [website](https://www.asx.com.au "Go to Australian Securities Exchange")
 [Asx.AsxSecurities.SignalB]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Protocols/AsxSecurities/SignalB.md "Signal B"
 
 [Asx.AsxDerivatives.DropCopy.Fix.v2.05.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/AsxDerivatives/DropCopy/Asx.AsxDerivatives.DropCopy.Fix.v2.05.pdf "Australian Securities Exchange 2.05 Pdf"
-[Asx.AsxDerivatives.MarketData.Fix.v2.02.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/AsxDerivatives/MarketData/Asx.AsxDerivatives.MarketData.Fix.v2.02.pdf "Australian Securities Exchange 2.02 Pdf"
-[Asx.AsxDerivatives.OrderEntry.Fix.v2.05.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/AsxDerivatives/OrderEntry/Asx.AsxDerivatives.OrderEntry.Fix.v2.05.pdf "Australian Securities Exchange 2.05 Pdf"
+[Asx.AsxDerivatives.MarketData.Fix.v2.02.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/Ntp/MarketData/Asx.AsxDerivatives.MarketData.Fix.v2.02.pdf "Australian Securities Exchange 2.02 Pdf"
+[Asx.AsxDerivatives.OrderEntry.Fix.v2.05.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/Ntp/OrderEntry/Asx.AsxDerivatives.OrderEntry.Fix.v2.05.pdf "Australian Securities Exchange 2.05 Pdf"
 [Asx.AsxDerivatives.Trade24.Fix.v1.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/ "Australian Securities Exchange 1.0 Pdf"
 [Asx.AsxSecurities.DropCopy.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/ "Australian Securities Exchange 1.1 Pdf"
 [Asx.AsxSecurities.MarketPoint.Fix.v1.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/ "Australian Securities Exchange 1.0 Pdf"
