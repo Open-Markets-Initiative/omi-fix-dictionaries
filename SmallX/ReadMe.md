@@ -5,8 +5,8 @@
 
 | [Protocol][Omi.SmallX.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.SmallX.Specifications] |
 | --- | --- | ---: | --- | --- |
-| [DropCopy][SmallX.SmallFutures.DropCopy] | [v2.1](SmallX.SmallFutures.DropCopy.Fix.v2.1.xml) | 7/2/2021 | [Active][Omi.Glossary.Deployment.Active] | [url][SmallX.SmallFutures.DropCopy.Fix.v2.1.Url] - [pdf][SmallX.SmallFutures.DropCopy.Fix.v2.1.Pdf] |
-| [OrderEntry][SmallX.SmallFutures.OrderEntry] | [v2.7](SmallX.SmallFutures.OrderEntry.Fix.v2.7.xml) | 7/2/2021 | [Active][Omi.Glossary.Deployment.Active] | [url][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Url] - [pdf][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Pdf] |
+| [DropCopy][SmallX.SmallFutures.DropCopy] | [v2.1](SmallX.SmallFutures.DropCopy.Fix.v2.1.xml) | 7/2/2021 | [Active][Omi.Glossary.Deployment.Active] | [][SmallX.SmallFutures.DropCopy.Fix.v2.1.] - [pdf][SmallX.SmallFutures.DropCopy.Fix.v2.1.Pdf] |
+| [OrderEntry][SmallX.SmallFutures.OrderEntry] | [v2.7](SmallX.SmallFutures.OrderEntry.Fix.v2.7.xml) | 7/2/2021 | [Active][Omi.Glossary.Deployment.Active] | [][SmallX.SmallFutures.OrderEntry.Fix.v2.7.] - [pdf][SmallX.SmallFutures.OrderEntry.Fix.v2.7.Pdf] |
 
 
 SmallX: [website](https://smallexchange.com "Go to The Small Exchange")
@@ -25,7 +25,7 @@ SmallX: [website](https://smallexchange.com "Go to The Small Exchange")
 [SmallX.SmallFutures.DropCopy]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/SmallX/Protocols/SmallFutures/DropCopy.md "Drop Copy"
 [SmallX.SmallFutures.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/SmallX/Protocols/SmallFutures/OrderEntry.md "Order Entry"
 
-[SmallX.SmallFutures.DropCopy.Fix.v2.1.Url]: https://smallexchange.com/reference/info-hub "The Small Exchange 2.1 Url"
+[SmallX.SmallFutures.DropCopy.Fix.v2.1.]: https://smallexchange.com/reference/info-hub "The Small Exchange 2.1 "
 [SmallX.SmallFutures.DropCopy.Fix.v2.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/SmallX/Specifications/Fix/SmallX.SmallFutures.DropCopy.Fix.v2.1.pdf "The Small Exchange 2.1 Pdf"
-[SmallX.SmallFutures.OrderEntry.Fix.v2.7.Url]: https://smallexchange.com/reference/info-hub "The Small Exchange 2.7 Url"
+[SmallX.SmallFutures.OrderEntry.Fix.v2.7.]: https://smallexchange.com/reference/info-hub "The Small Exchange 2.7 "
 [SmallX.SmallFutures.OrderEntry.Fix.v2.7.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/SmallX/Specifications/Fix/SmallX.SmallFutures.OrderEntry.Fix.v2.7.pdf "The Small Exchange 2.7 Pdf"

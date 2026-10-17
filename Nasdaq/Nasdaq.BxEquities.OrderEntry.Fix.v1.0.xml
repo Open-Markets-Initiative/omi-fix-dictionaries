@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 1.0
     Date: 2012-12-03
-    Specification: Nasdaq BX FIX Interface Specification
+    Specification: NQBX_FIX.pdf
 
   Script:
     Generator: 1.0.0.0

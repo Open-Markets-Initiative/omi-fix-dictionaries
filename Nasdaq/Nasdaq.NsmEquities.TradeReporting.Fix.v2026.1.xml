@@ -7,7 +7,7 @@
     Encoding: 
     Version: 2026.1
     Date: 2026-02-01
-    Specification: Nasdaq FIX for Trade Reporting
+    Specification: fixactspec.pdf
 
   Script:
     Generator: 1.0.0.0

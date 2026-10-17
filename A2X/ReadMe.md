@@ -5,7 +5,7 @@
 
 | [Protocol][Omi.A2X.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.A2X.Specifications] |
 | --- | --- | ---: | --- | --- |
-| [OrderEntry][A2X.A2XEquities.OrderEntry] | [v2.0](A2X.A2XEquities.OrderEntry.Fix.v2.0.xml) | 5/24/2023 | [Active][Omi.Glossary.Deployment.Active] | [url][A2X.A2XEquities.OrderEntry.Fix.v2.0.Url] - [pdf][A2X.A2XEquities.OrderEntry.Fix.v2.0.Pdf] |
+| [OrderEntry][A2X.A2XEquities.OrderEntry] | [v2.0](A2X.A2XEquities.OrderEntry.Fix.v2.0.xml) | 5/24/2023 | [Active][Omi.Glossary.Deployment.Active] | [][A2X.A2XEquities.OrderEntry.Fix.v2.0.] - [pdf][A2X.A2XEquities.OrderEntry.Fix.v2.0.Pdf] |
 
 
 A2X: [website](https://www.a2x.co.za "Go to A2X Markets")
@@ -23,5 +23,5 @@ A2X: [website](https://www.a2x.co.za "Go to A2X Markets")
 [A2XEquities.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/A2X/Protocols/A2XEquities "A2X A2XEquities"
 [A2X.A2XEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/A2X/Protocols/A2XEquities/OrderEntry.md "Order Entry"
 
-[A2X.A2XEquities.OrderEntry.Fix.v2.0.Url]: https://www.a2x.co.za/?page_id=531 "A2X Markets 2.0 Url"
+[A2X.A2XEquities.OrderEntry.Fix.v2.0.]: https://www.a2x.co.za/?page_id=531 "A2X Markets 2.0 "
 [A2X.A2XEquities.OrderEntry.Fix.v2.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/A2X/Specifications/OrderEntry/A2X.A2XEquities.OrderEntry.Fix.v2.0.pdf "A2X Markets 2.0 Pdf"

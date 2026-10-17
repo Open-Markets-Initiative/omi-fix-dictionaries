@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 4.2
     Date: 2026-06-03
-    Specification: Nasdaq Texas INET FIX Interface Specification
+    Specification: NTX_fix_sb.pdf
 
   Script:
     Generator: 1.0.0.0
