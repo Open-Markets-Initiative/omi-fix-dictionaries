@@ -25,5 +25,5 @@ ElectronX: [website](https://www.electronx.com "Go to ElectronX Markets")
 [ElectronX.ElectricDerivatives.MarketData]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/ElectronX/Protocols/ElectricDerivatives/MarketData.md "Market Data"
 [ElectronX.ElectricDerivatives.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/ElectronX/Protocols/ElectricDerivatives/OrderEntry.md "Order Entry"
 
-[ElectronX.ElectricDerivatives.MarketData.Fix.v4.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/ElectronX/Specifications/ElectronX/Fix/NLS4.0_02132026.pdf "ElectronX Markets 4.0 Pdf"
-[ElectronX.ElectricDerivatives.OrderEntry.Fix.v4.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/ElectronX/Specifications/ElectronX/Fix/NLS4.0_02132026.pdf "ElectronX Markets 4.0 Pdf"
+[ElectronX.ElectricDerivatives.MarketData.Fix.v4.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/ElectronX/Specifications/ElectronX/Fix/ElectronX%20FIX%20Specification%20v.20260423.1.pdf "ElectronX Markets 4.0 Pdf"
+[ElectronX.ElectricDerivatives.OrderEntry.Fix.v4.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/ElectronX/Specifications/ElectronX/Fix/ElectronX%20FIX%20Specification%20v.20260423.1.pdf "ElectronX Markets 4.0 Pdf"
