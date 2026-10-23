@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 5.15
     Date: 2026-03-27
-    Specification: NYSE Pillar Gateway FIX Protocol Specification v5.15
+    Specification: NYSE_Pillar_Gateway_FIX_Protocol_Specification.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -99,9 +99,7 @@
       <field name="Text" required="N" />
       <field name="TimeInForce" required="Y" />
       <field name="TransactTime" required="N" />
-      <field name="SettlementType" required="N" />
       <field name="SymbolSfx" required="N" />
-      <field name="ClientID" required="N" />
       <field name="MinQty" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="LocateReqd" required="N" />
@@ -113,21 +111,15 @@
       <field name="ParticipationRate" required="N" />
       <field name="LocateBroker" required="N" />
       <field name="SelfTradeType" required="N" />
-      <field name="SpecialOrdType" required="N" />
       <field name="RoutingInst" required="N" />
       <field name="OffsetPrice" required="N" />
       <field name="ExtendedExecInst" required="N" />
-      <field name="IntroducingBadgeID" required="N" />
-      <field name="ParentFirmClOrdID" required="N" />
-      <field name="ParentFirmMPID" required="N" />
-      <field name="InterestType" required="N" />
       <field name="AttributedQuote" required="N" />
       <field name="ProactiveIfLocked" required="N" />
       <field name="CancelInsteadOfReprice" required="N" />
-      <field name="RouteToBroker" required="N" />
-      <field name="BrokerOMSID" required="N" />
       <field name="SubIDIndicator" required="N" />
       <field name="TargetStrategy" required="N" />
+      <field name="10b18" required="N" />
       <field name="AuctionEligible" required="N" />
       <field name="MinParticipationRate" required="N" />
       <field name="MaxParticipationRate" required="N" />
@@ -142,7 +134,6 @@
       <field name="Symbol" required="N" />
       <field name="TransactTime" required="N" />
       <field name="SymbolSfx" required="N" />
-      <field name="RouteToBroker" required="N" />
     </message>
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="Account" required="N" />
@@ -158,32 +149,26 @@
       <field name="TimeInForce" required="Y" />
       <field name="TransactTime" required="N" />
       <field name="SymbolSfx" required="N" />
-      <field name="ClientID" required="N" />
       <field name="MinQty" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="LocateReqd" required="N" />
       <field name="ExpireTime" required="N" />
       <field name="EffectiveTime" required="N" />
       <field name="NoTradingSessions" required="Y" />
+      <field name="TradingSessionID" required="Y" />
       <field name="OrderCapacity" required="Y" />
       <field name="ParticipationRate" required="N" />
       <field name="LocateBroker" required="N" />
       <field name="SelfTradeType" required="N" />
-      <field name="SpecialOrdType" required="N" />
       <field name="RoutingInst" required="N" />
       <field name="OffsetPrice" required="N" />
       <field name="ExtendedExecInst" required="N" />
-      <field name="IntroducingBadgeID" required="N" />
-      <field name="ParentFirmClOrdID" required="N" />
-      <field name="ParentFirmMPID" required="N" />
-      <field name="InterestType" required="N" />
       <field name="AttributedQuote" required="N" />
       <field name="ProactiveIfLocked" required="N" />
       <field name="CancelInsteadOfReprice" required="N" />
-      <field name="RouteToBroker" required="N" />
-      <field name="BrokerOMSID" required="N" />
       <field name="SubIDIndicator" required="N" />
       <field name="TargetStrategy" required="N" />
+      <field name="10b18" required="N" />
       <field name="AuctionEligible" required="N" />
       <field name="MinParticipationRate" required="N" />
       <field name="MaxParticipationRate" required="N" />
@@ -200,7 +185,6 @@
       <field name="CxlRejResponseTo" required="Y" />
       <field name="NanosecondSendingTime" required="Y" />
       <field name="NanosecondTransactTime" required="Y" />
-      <field name="RouteToBroker" required="N" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="Account" required="N" />
@@ -224,9 +208,7 @@
       <field name="Text" required="N" />
       <field name="TimeInForce" required="Y" />
       <field name="TransactTime" required="N" />
-      <field name="SettlementType" required="N" />
       <field name="SymbolSfx" required="N" />
-      <field name="ClientID" required="N" />
       <field name="MinQty" required="N" />
       <field name="MaxFloor" required="N" />
       <field name="LocateReqd" required="N" />
@@ -246,7 +228,6 @@
       <field name="ExtendedExecInst" required="N" />
       <field name="IntroducingBadgeID" required="N" />
       <field name="ParentFirmClOrdID" required="N" />
-      <field name="ParentFirmMPID" required="N" />
       <field name="InterestType" required="N" />
       <field name="DealID" required="N" />
       <field name="LiquidityIndicator" required="N" />
@@ -258,11 +239,11 @@
       <field name="WorkingAwayFromDisplay" required="N" />
       <field name="UnsolicitedAckType" required="N" />
       <field name="ParticipantType" required="N" />
+      <field name="NanosecondSendingTime" required="Y" />
       <field name="NanosecondTransactTime" required="Y" />
-      <field name="RouteToBroker" required="N" />
-      <field name="BrokerOMSID" required="N" />
       <field name="SubIDIndicator" required="N" />
       <field name="TargetStrategy" required="N" />
+      <field name="10b18" required="N" />
       <field name="AuctionEligible" required="N" />
       <field name="MinParticipationRate" required="N" />
       <field name="MaxParticipationRate" required="N" />
@@ -291,24 +272,27 @@
     <field number="16" name="EndSeqNo" type="INT" />
     <field number="17" name="ExecID" type="STRING" />
     <field number="18" name="ExecInst" type="CHAR">
-      <value enum="B" description="OK to Cross" />
-      <value enum="E" description="DNI" />
-      <value enum="F" description="DNR" />
-      <value enum="G" description="All or None" />
       <value enum="L" description="Last Sale Peg" />
       <value enum="M" description="MPL (Midpoint Liquidity)" />
-      <value enum="P" description="Market Peg" />
+      <value enum="N" description="Non-displayed (Retail Price Improvement and Limit-Non Displayed orders)" />
       <value enum="R" description="Primary Peg" />
-      <value enum="d" description="Tracking Order" />
       <value enum="f" description="ISO" />
       <value enum="y" description="Trade-at ISO" />
     </field>
     <field number="19" name="ExecRefID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
+      <value enum="0" description="New (ack, pending cancel, pending replace, partial fill, fill, order reject)" />
       <value enum="1" description="Cancel (Trade Break Only)" />
-      <value enum="2" description="Correct (Trade Correction Only)" />
     </field>
-    <field number="30" name="LastMkt" type="STRING" />
+    <field number="30" name="LastMkt" type="STRING">
+      <value enum="ARCX" description="NYSE Arca Equities" />
+      <value enum="NOTH" description="Manual Destination (NYSE Texas Equities via Brokerplex)" />
+      <value enum="TRFN" description="NYSE TRF (NYSE Texas Equities via Brokerplex)" />
+      <value enum="XASE" description="NYSE American Equities" />
+      <value enum="XCHI" description="NYSE Texas Equities" />
+      <value enum="XCIS" description="NYSE National Equities" />
+      <value enum="XNYS" description="NYSE Equities" />
+    </field>
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastQty" type="QTY" />
     <field number="34" name="MsgSeqNum" type="INT" />
@@ -328,14 +312,17 @@
     </field>
     <field number="36" name="NewSeqNo" type="INT" />
     <field number="37" name="OrderID" type="STRING">
+      <value enum="1" description="Cancel orders for the individual gateway session only" />
       <value enum="10" description="Block all new order entry for the MPID" />
       <value enum="11" description="Unblock new order entry for the MPID" />
       <value enum="12" description="Cancel orders for the MPID" />
+      <value enum="2" description="Cancel orders for the individual gateway session only" />
+      <value enum="3" description="Cancel orders for the individual gateway session only" />
       <value enum="4" description="Cancel orders for the MPID" />
       <value enum="5" description="Cancel orders for the MPID" />
-      <value enum="6" description="Cancel orders for the MPID" />
       <value enum="7" description="Cancel orders for the MPID" />
       <value enum="8" description="Cancel orders for the MPID" />
+      <value enum="9" description="Cancel orders for the MPID, and Block all new order entry for the MPID" />
     </field>
     <field number="38" name="OrderQty" type="QTY" />
     <field number="39" name="OrdStatus" type="CHAR">
@@ -349,13 +336,16 @@
       <value enum="8" description="Rejected" />
       <value enum="C" description="Billable Cancel (Self Trade Prevention)" />
       <value enum="E" description="Pending Replace" />
+      <value enum="G" description="Pillar OMS Allocation Pending" />
+      <value enum="H" description="Pillar OMS Allocation Reject" />
+      <value enum="J" description="Pillar OMS Trade Reject" />
+      <value enum="L" description="Eligible for NYSE Floor Broker Cross" />
       <value enum="M" description="Pending Modify" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
       <value enum="7" description="Inside Limit" />
-      <value enum="9" description="AutoMatch Limit" />
       <value enum="P" description="Pegged" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
@@ -383,37 +373,26 @@
     <field number="58" name="Text" type="STRING" />
     <field number="59" name="TimeInForce" type="CHAR">
       <value enum="0" description="Day" />
-      <value enum="1" description="GTC" />
       <value enum="2" description="At the Opening" />
       <value enum="3" description="IOC" />
-      <value enum="4" description="FOK" />
-      <value enum="5" description="GTX" />
-      <value enum="6" description="GTD" />
       <value enum="7" description="On Close" />
     </field>
     <field number="60" name="TransactTime" type="STRING" />
-    <field number="63" name="SettlementType" type="CHAR">
-      <value enum="0" description="Regular Way" />
-      <value enum="1" description="Cash* *Only supported on Cross Orders" />
-    </field>
     <field number="65" name="SymbolSfx" type="STRING" />
     <field number="95" name="RawDataLength" type="INT" />
-    <field number="96" name="RawData" type="STRING">
-      <value enum="0" description="Cancel on Disconnect Disabled" />
-      <value enum="2" description="Enable Cancel on Disconnect" />
-      <value enum="TIF" description="2-At the Opening and 7-On Close*)" />
-    </field>
+    <field number="96" name="RawData" type="STRING" />
     <field number="97" name="PossResend" type="BOOLEAN">
       <value enum="N" description="No" />
       <value enum="Y" description="Yes" />
     </field>
     <field number="98" name="EncryptMethod" type="INT" />
     <field number="108" name="HeartBtInt" type="INT" />
-    <field number="109" name="ClientID" type="STRING" />
     <field number="110" name="MinQty" type="QTY" />
     <field number="111" name="MaxFloor" type="QTY" />
     <field number="112" name="TestReqID" type="STRING" />
-    <field number="114" name="LocateReqd" type="BOOLEAN" />
+    <field number="114" name="LocateReqd" type="BOOLEAN">
+      <value enum="N" description="No" />
+    </field>
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="STRING" />
@@ -432,6 +411,10 @@
       <value enum="8" description="Rejected" />
       <value enum="C" description="Billable Cancel (Self Trade Prevention)" />
       <value enum="E" description="Pending Cancel/Replace" />
+      <value enum="G" description="Pillar OMS Allocation Pending" />
+      <value enum="H" description="Pillar OMS Allocation Reject" />
+      <value enum="J" description="Pillar OMS Trade Reject" />
+      <value enum="L" description="Eligible for Cross" />
       <value enum="M" description="Pending Modify" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
@@ -439,9 +422,9 @@
     <field number="336" name="TradingSessionID" type="CHAR">
       <value enum="1" description="Early Trading Session" />
       <value enum="2" description="Core Trading Session" />
-      <value enum="3" description="Late Trading Session" />
       <value enum="4" description="Early &amp; Core Trading Sessions" />
       <value enum="5" description="Core &amp; Late Trading Sessions" />
+      <value enum="6" description="Early, Core, &amp; Late Trading Sessions" />
     </field>
     <field number="371" name="RefTagId" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
@@ -450,6 +433,7 @@
       <value enum="1" description="Required Tag Missing" />
       <value enum="10" description="SendingTime accuracy problem" />
       <value enum="11" description="Invalid MsgType" />
+      <value enum="13" description="Tag Appears More than Once (non-repeating group tags only)" />
       <value enum="14" description="Tag specified out of required order" />
       <value enum="15" description="Repeating group fields out of order" />
       <value enum="2" description="Tag Not Defined For This Message Type" />
@@ -459,15 +443,10 @@
       <value enum="6" description="Incorrect data format for value" />
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
+      <value enum="9" description="CompID problem (SenderCompID, TargetCompID, or both)" />
       <value enum="99" description="Other" />
     </field>
-    <field number="386" name="NoTradingSessions" type="INT">
-      <value enum="1" description="Early Trading Session" />
-      <value enum="2" description="Core Trading Session" />
-      <value enum="3" description="Late Trading Session" />
-      <value enum="4" description="Early &amp; Core Trading Sessions" />
-      <value enum="5" description="Core &amp; Late Trading Sessions" />
-    </field>
+    <field number="386" name="NoTradingSessions" type="INT" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Order Cancel Request" />
       <value enum="2" description="Order Cancel/Replace Request" />
@@ -475,6 +454,7 @@
     <field number="528" name="OrderCapacity" type="CHAR">
       <value enum="A" description="Agency" />
       <value enum="P" description="Principal" />
+      <value enum="Q" description="Error Account" />
       <value enum="R" description="Riskless Principal" />
     </field>
     <field number="553" name="Username" type="STRING" />
@@ -484,36 +464,31 @@
     <field number="1409" name="SessionStatus" type="INT" />
     <field number="5700" name="LocateBroker" type="STRING" />
     <field number="7928" name="SelfTradeType" type="CHAR">
+      <value enum="0" description="Use current Session Configuration STP setting for the SenderCompID" />
       <value enum="C" description="Cancel Both" />
       <value enum="D" description="Cancel Decrement" />
-      <value enum="N" description="Cancel Newest O (letter O)= Cancel Oldest" />
+      <value enum="N" description="Cancel Newest" />
+      <value enum="O" description="Cancel Oldest" />
       <value enum="T" description="No Self Trade Prevention" />
     </field>
     <field number="9202" name="SpecialOrdType" type="CHAR">
-      <value enum="2" description="DMM Pre-auction - drop copy only" />
-      <value enum="3" description="DMM After-auction - drop copy only" />
       <value enum="8" description="No route to IOI for dOrders" />
     </field>
     <field number="9303" name="RoutingInst" type="CHAR">
-      <value enum="1" description="Primary Market until 9:45" />
-      <value enum="2" description="Primary Market after 3:55" />
+      <value enum="8" description="Minimum Fill (must be entered with MinQty tag populated with a non-zero value)" />
       <value enum="A" description="Route to ATS" />
-      <value enum="D" description="Directed (Primary Only)" />
       <value enum="E" description="Route to Algo" />
       <value enum="N" description="Non Routable" />
       <value enum="R" description="Routable" />
-      <value enum="S" description="Directed + Routable (PO+S)" />
     </field>
     <field number="9403" name="OffsetPrice" type="PRICE" />
     <field number="9416" name="ExtendedExecInst" type="CHAR">
       <value enum="2" description="No route to IOI" />
       <value enum="4" description="Retail Order Type 1" />
-      <value enum="5" description="Retail Order Type 2" />
       <value enum="7" description="Retail Provider" />
       <value enum="8" description="Imbalance Offset" />
       <value enum="9" description="Discretionary Peg" />
       <value enum="A" description="Add Liquidity Only (ALO)" />
-      <value enum="C" description="Complex Order Auction" />
       <value enum="D" description="Dark (Non-Displayed) Primary Peg" />
       <value enum="I" description="Issuer Direct Offering (IDO)" />
       <value enum="L" description="Limit dOrder" />
@@ -522,10 +497,8 @@
     <field number="9448" name="IntroducingBadgeID" type="STRING" />
     <field number="9449" name="BillTo" type="STRING" />
     <field number="9451" name="ParentFirmClOrdID" type="STRING" />
-    <field number="9453" name="ParentFirmMPID" type="STRING" />
     <field number="9478" name="InterestType" type="CHAR">
       <value enum="3" description="NYSE Floor Broker Cross - 72D" />
-      <value enum="Q" description="Q-Order" />
       <value enum="Y" description="Yield Order" />
     </field>
     <field number="9483" name="DealID" type="STRING" />
@@ -537,16 +510,14 @@
     </field>
     <field number="20001" name="AttributedQuote" type="CHAR">
       <value enum="0" description="Not Attributed" />
-      <value enum="1" description="Attributed for Market Data Feeds" />
-      <value enum="2" description="Include in Broker Volume" />
     </field>
     <field number="20002" name="ProactiveIfLocked" type="CHAR">
       <value enum="0" description="No locked functionality" />
       <value enum="1" description="Proactive if Locked for routable orders" />
+      <value enum="2" description="Proactive trade non-display (Non-display remove liquidity for non-displayed orders locked by contraside ALOs)" />
     </field>
     <field number="20003" name="CancelInsteadOfReprice" type="CHAR">
       <value enum="0" description="Not applicable (follow default order behavior)" />
-      <value enum="1" description="Cancel order instead of repricing - for LULD only" />
       <value enum="3" description="Cancel order instead of repricing for any reason" />
     </field>
     <field number="20004" name="WorkingPrice" type="PRICE" />
@@ -560,7 +531,6 @@
     </field>
     <field number="20007" name="UnsolicitedAckType" type="CHAR">
       <value enum="2" description="Order Priority Update - New OrderID (reserve order replenishment)" />
-      <value enum="3" description="Order Priority Update - Same OrderID (working price update)" />
     </field>
     <field number="20008" name="ParticipantType" type="CHAR">
       <value enum="1" description="Customer" />
@@ -571,30 +541,34 @@
     </field>
     <field number="20009" name="NanosecondSendingTime" type="STRING" />
     <field number="20010" name="NanosecondTransactTime" type="STRING" />
-    <field number="20011" name="RouteToBroker" type="CHAR">
-      <value enum="Y" description="Route to non- Matching Engine destination" />
+    <field number="20013" name="SubIDIndicator" type="CHAR">
+      <value enum="0" description="for this order, use OnBehalfOfSubID (within the MPID) for STP evaluation" />
+      <value enum="1" description="for this order, ignore the OnBehalfOfSubID for STP (conduct STP evaluation at MPID level only)" />
     </field>
-    <field number="20012" name="BrokerOMSID" type="STRING" />
-    <field number="20013" name="SubIDIndicator" type="CHAR" />
     <field number="20022" name="AllocationFirmMPID" type="STRING" />
     <field number="20024" name="AllocationFirmIntroducingBadgeID" type="STRING" />
     <field number="20042" name="CATIMID" type="STRING" />
     <field number="20046" name="TargetStrategy" type="STRING" />
+    <field number="20047" name="10b18" type="CHAR">
+      <value enum="0" description="Not eligible for 10b-18" />
+      <value enum="1" description="Eligible for 10b-18" />
+    </field>
     <field number="20048" name="AuctionEligible" type="CHAR">
       <value enum="0" description="Do not participate in any Auction" />
       <value enum="1" description="Participate in the Closing Auction" />
       <value enum="2" description="Participate in the Opening Auction" />
+      <value enum="3" description="Participate in both the Opening and Closing Auction" />
     </field>
     <field number="20049" name="MinParticipationRate" type="PRICE" />
     <field number="20050" name="MaxParticipationRate" type="PRICE" />
     <field number="20051" name="WouldPrice" type="PRICE" />
     <field number="20052" name="RoutingStrategy" type="INT">
       <value enum="1" description="Midpoint Ping" />
-      <value enum="2" description="Retail Price Improvement Seeking" />
-      <value enum="3" description="Retail Midpoint Ping" />
     </field>
     <field number="30002" name="RefDealID" type="STRING" />
-    <field number="30003" name="AllocationIndicator" type="CHAR" />
+    <field number="30003" name="AllocationIndicator" type="CHAR">
+      <value enum="Y" description="Allocation message" />
+    </field>
     <field number="30006" name="OriginalDealID" type="STRING" />
     <field number="30016" name="RefExecTimestamp" type="STRING" />
   </fields>

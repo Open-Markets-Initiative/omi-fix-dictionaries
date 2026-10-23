@@ -6,8 +6,8 @@
     Protocol: NYSE Pillar Options Floor Broker OMS Open Outcry
     Encoding: Financial Information eXchange
     Version: 2.6
-    Date: 2026-03-27
-    Specification: NYSE Pillar Options Floor Broker OMS Open Outcry FIX Specification v2.6
+    Date: 2026-03-09
+    Specification: NYSE_Pillar_Options_-_Floor_Broker_OMS_Open_Outcry_FIX_Spec (2.6).pdf
 
   Script:
     Generator: 1.0.0.0

@@ -6,8 +6,8 @@
     Protocol: NYSE Pillar Gateway
     Encoding: Financial Information eXchange
     Version: 1.0
-    Date: 2026-03-27
-    Specification: NYSE Pillar Gateway FIX IOI Protocol Specification v1.0
+    Date: 2025-07-10
+    Specification: NYSE_Pillar_IOI_FIX_Specification.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -144,6 +144,7 @@
       <value enum="6" description="Incorrect data format for value" />
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
+      <value enum="9" description="CompID problem (SenderCompID, TargetCompID, or both)" />
       <value enum="99" description="Other" />
     </field>
     <field number="553" name="Username" type="STRING" />

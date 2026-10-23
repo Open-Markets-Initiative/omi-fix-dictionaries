@@ -6,8 +6,8 @@
     Protocol: NYSE Pillar to Algo Providers
     Encoding: Financial Information eXchange
     Version: 1.2
-    Date: 2026-03-27
-    Specification: NYSE Pillar to Algo Providers FIX Protocol Specification v1.2
+    Date: 2025-07-30
+    Specification: NYSE_Pillar_To_Algo_FIX_Specification.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -106,6 +106,7 @@
       <field name="RoutingInst" required="N" />
       <field name="IntroducingBadgeID" required="N" />
       <field name="TargetStrategy" required="N" />
+      <field name="10b18" required="N" />
       <field name="AuctionEligible" required="N" />
       <field name="MinParticpationRate" required="N" />
       <field name="MaxParticipationRate" required="N" />
@@ -315,6 +316,7 @@
       <value enum="1" description="Required Tag Missing" />
       <value enum="10" description="SendingTime accuracy problem" />
       <value enum="11" description="Invalid MsgType" />
+      <value enum="13" description="Tag Appears More than Once (non-repeating group tags only)" />
       <value enum="14" description="Tag specified out of required order" />
       <value enum="15" description="Repeating group fields out of order" />
       <value enum="2" description="Tag Not Defined For This Message Type" />
@@ -324,6 +326,7 @@
       <value enum="6" description="Incorrect data format for value" />
       <value enum="7" description="Decryption problem" />
       <value enum="8" description="Signature problem" />
+      <value enum="9" description="CompID problem (SenderCompID, TargetCompID, or both)" />
       <value enum="99" description="Other" />
     </field>
     <field number="386" name="NoTradingSessions" type="INT">
@@ -360,6 +363,10 @@
     </field>
     <field number="9448" name="IntroducingBadgeID" type="STRING" />
     <field number="20046" name="TargetStrategy" type="STRING" />
+    <field number="20047" name="10b18" type="CHAR">
+      <value enum="0" description="Not eligible for 10b-18" />
+      <value enum="1" description="Eligible for 10b-18" />
+    </field>
     <field number="20048" name="AuctionEligible" type="CHAR">
       <value enum="0" description="Do not participate in any Auction" />
       <value enum="1" description="Participate in the Closing Auction" />
