@@ -6,7 +6,7 @@
 | Division | [Protocol][Omi.Iex.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Iex.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
 | [IexEquities][IexEquities.Exchange] | [OrderEntry][Iex.IexEquities.OrderEntry] | [v2.91](Iex.IexEquities.OrderEntry.Fix.v2.91.xml) | 11/18/2022 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf] |
-| [IexOptions][IexOptions.Exchange] | [OrderEntry][Iex.IexOptions.OrderEntry] | [v1.01](Iex.IexOptions.OrderEntry.Fix.v1.01.xml) | 3/23/2026 | [Pending][Omi.Glossary.Deployment.Pending] | [][Iex.IexOptions.OrderEntry.Fix.v1.01.] - [pdf][Iex.IexOptions.OrderEntry.Fix.v1.01.Pdf] |
+| [IexOptions][IexOptions.Exchange] | [OrderEntry][Iex.IexOptions.OrderEntry] | [v1.01](Iex.IexOptions.OrderEntry.Fix.v1.01.xml) | 3/23/2026 | [Pending][Omi.Glossary.Deployment.Pending] | [url][Iex.IexOptions.OrderEntry.Fix.v1.01.Url] - [pdf][Iex.IexOptions.OrderEntry.Fix.v1.01.Pdf] |
 
 
 Iex: [website](https://www.iex.io "Go to Investors Exchange")
@@ -27,5 +27,5 @@ Iex: [website](https://www.iex.io "Go to Investors Exchange")
 [Iex.IexOptions.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Iex/Protocols/IexOptions/OrderEntry.md "Order Entry"
 
 [Iex.IexEquities.OrderEntry.Fix.v2.91.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Iex/Specifications/IexEquities/OrderEntry/Iex.IexEquities.OrderEntry.Fix.v2.91.pdf "Investors Exchange 2.91 Pdf"
-[Iex.IexOptions.OrderEntry.Fix.v1.01.]: https://www.iexexchange.io/options "Investors Exchange 1.01 "
+[Iex.IexOptions.OrderEntry.Fix.v1.01.Url]: https://www.iexexchange.io/options "Investors Exchange 1.01 Url"
 [Iex.IexOptions.OrderEntry.Fix.v1.01.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Iex/Specifications/IexOptions/OrderEntry/Iex.IexOptions.OrderEntry.Fix.v1.01.pdf "Investors Exchange 1.01 Pdf"

@@ -209,7 +209,6 @@
       <field name="LastShares" required="Y" />
       <field name="LastPx" required="Y" />
       <field name="ContraBroker" required="N" />
-      <field name="NoContraBrokers" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="Text" required="N" />
       <field name="OrdRejReason" required="N" />
@@ -347,7 +346,6 @@
     <field number="211" name="PegDifference" type="STRING" />
     <field number="375" name="ContraBroker" type="STRING" />
     <field number="376" name="ComplianceID" type="STRING" />
-    <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
     <field number="388" name="DiscretionInst" type="STRING" />
     <field number="389" name="DiscretionOffset" type="STRING" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">

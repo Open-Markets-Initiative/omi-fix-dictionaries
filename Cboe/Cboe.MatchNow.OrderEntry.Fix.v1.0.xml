@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 1.0
     Date: 2025-11-18
-    Specification: Cboe Titanium Cboe Canada Equities FIX Specification Version 1.0.13
+    Specification: Cboe Canada Equities FIX Specification.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -506,7 +506,6 @@
       <value enum="1" description="Buy Cross SME" />
       <value enum="2" description="Sell Cross SME" />
       <value enum="3" description="Both Buy and Sell Cross SME" />
-      <value enum="Side" description="1 (Buy)and on cross entryShortMarkingExemptwas 1 or 3, or" />
     </field>
     <field number="7732" name="MatchingPriority" type="STRING">
       <value enum="1" description="Broker Preferencing" />

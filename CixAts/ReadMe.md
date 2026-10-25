@@ -5,7 +5,7 @@
 
 | [Protocol][Omi.CixAts.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.CixAts.Specifications] |
 | --- | --- | ---: | --- | --- |
-| [OrderEntry][CixAts.CixAspen.OrderEntry] | [v1.4](CixAts.CixAspen.OrderEntry.Fix.v1.4.xml) | 6/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [][CixAts.CixAspen.OrderEntry.Fix.v1.4.] - [pdf][CixAts.CixAspen.OrderEntry.Fix.v1.4.Pdf] |
+| [OrderEntry][CixAts.CixAspen.OrderEntry] | [v1.4](CixAts.CixAspen.OrderEntry.Fix.v1.4.xml) | 6/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][CixAts.CixAspen.OrderEntry.Fix.v1.4.Url] - [pdf][CixAts.CixAspen.OrderEntry.Fix.v1.4.Pdf] |
 
 
 CixAts: [website](https://www.thecix.ca "Go to CIX Trading Inc.")
@@ -23,5 +23,5 @@ CixAts: [website](https://www.thecix.ca "Go to CIX Trading Inc.")
 [CixAspen.Platform]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/CixAts/Protocols/CixAspen "CixAts CixAspen"
 [CixAts.CixAspen.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/CixAts/Protocols/CixAspen/OrderEntry.md "Order Entry"
 
-[CixAts.CixAspen.OrderEntry.Fix.v1.4.]: https://www.thecix.ca/company/resources "CIX Trading Inc. 1.4 "
+[CixAts.CixAspen.OrderEntry.Fix.v1.4.Url]: https://www.thecix.ca/company/resources "CIX Trading Inc. 1.4 Url"
 [CixAts.CixAspen.OrderEntry.Fix.v1.4.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/CixAts/Specifications/CixAspen/OrderEntry/CixAts.CixAspen.OrderEntry.Fix.v1.4.pdf "CIX Trading Inc. 1.4 Pdf"

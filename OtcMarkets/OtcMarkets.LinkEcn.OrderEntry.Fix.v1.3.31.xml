@@ -158,7 +158,6 @@
     <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
       <value enum="1" description="Not Held (accepted, but not processed)" />
       <value enum="40" description="P)" />
-      <value enum="59" description="7 and" />
       <value enum="6" description="Post Only on Order Entry" />
       <value enum="A" description="No Cross" />
       <value enum="M" description="Midpoint Peg (requires" />
@@ -168,7 +167,7 @@
       <value enum="c" description="Ignore Erroneous Price Check" />
       <value enum="f" description="ISO" />
       <value enum="h" description="External Routing Not Allowed" />
-      <value enum="i" description="Imbalance Only LOC order (requires" />
+      <value enum="i" description="Imbalance Only LOC order (requires 59 = 7 and 40 = 2)" />
       <value enum="n" description="Route Outside Normal Market Hours" />
       <value enum="o" description="Route ISO" />
       <value enum="p" description="Ping ISO" />
@@ -210,11 +209,9 @@
       <value enum="E" description="Pending Replace" />
     </field>
     <field number="40" name="OrdType" type="CHAR">
-      <value enum="1" description="Market (requires" />
-      <value enum="18" description="M or R)" />
+      <value enum="1" description="Market (requires 59 = 7)" />
       <value enum="2" description="Limit" />
-      <value enum="59" description="7)" />
-      <value enum="P" description="Pegged (requires" />
+      <value enum="P" description="Pegged (requires 18 = M or R)" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
     <field number="44" name="Price" type="PRICE" />

@@ -7,7 +7,7 @@
     Encoding: 
     Version: 4.2.2020.016
     Date: 2020-04-06
-    Specification: fix_orders_sb (2022-03-27).pdf
+    Specification: fix_orders_sb.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -282,9 +282,7 @@
       <value enum="N" description="Original transmission" />
       <value enum="Y" description="Possible duplicate" />
     </field>
-    <field number="44" name="Price" type="PRICE">
-      <value enum="40" description="2" />
-    </field>
+    <field number="44" name="Price" type="PRICE" />
     <field number="45" name="RefSeqNum" type="SEQNUM" />
     <field number="47" name="Rule80AOrderCapacity" type="CHAR" />
     <field number="48" name="SecurityID" type="STRING" />

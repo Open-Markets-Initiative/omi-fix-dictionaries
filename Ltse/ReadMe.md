@@ -5,10 +5,10 @@
 
 | Division | [Protocol][Omi.Ltse.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Ltse.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [LtseEquities][LtseEquities.Exchange] | [DropCopy][Ltse.LtseEquities.DropCopy] | [v1.12](Ltse.LtseEquities.DropCopy.Fix.v1.12.xml) | 8/1/2024 | [Active][Omi.Glossary.Deployment.Active] | [][Ltse.LtseEquities.DropCopy.Fix.v1.12.] - [pdf][Ltse.LtseEquities.DropCopy.Fix.v1.12.Pdf] |
-| [LtseEquities][LtseEquities.Exchange] | [DropCopy][Ltse.LtseEquities.DropCopy] | [v2.0](Ltse.LtseEquities.DropCopy.Fix.v2.0.xml) | 7/30/2026 | [Active][Omi.Glossary.Deployment.Active] | [][Ltse.LtseEquities.DropCopy.Fix.v2.0.] - [pdf][Ltse.LtseEquities.DropCopy.Fix.v2.0.Pdf] |
-| [LtseEquities][LtseEquities.Exchange] | [OrderEntry][Ltse.LtseEquities.OrderEntry] | [v1.12](Ltse.LtseEquities.OrderEntry.Fix.v1.12.xml) | 8/1/2024 | [Active][Omi.Glossary.Deployment.Active] | [][Ltse.LtseEquities.OrderEntry.Fix.v1.12.] - [pdf][Ltse.LtseEquities.OrderEntry.Fix.v1.12.Pdf] |
-| [LtseEquities][LtseEquities.Exchange] | [OrderEntry][Ltse.LtseEquities.OrderEntry] | [v2.0](Ltse.LtseEquities.OrderEntry.Fix.v2.0.xml) | 7/30/2026 | [Active][Omi.Glossary.Deployment.Active] | [][Ltse.LtseEquities.OrderEntry.Fix.v2.0.] - [pdf][Ltse.LtseEquities.OrderEntry.Fix.v2.0.Pdf] |
+| [LtseEquities][LtseEquities.Exchange] | [DropCopy][Ltse.LtseEquities.DropCopy] | [v1.12](Ltse.LtseEquities.DropCopy.Fix.v1.12.xml) | 8/1/2024 | [Active][Omi.Glossary.Deployment.Active] | [url][Ltse.LtseEquities.DropCopy.Fix.v1.12.Url] - [pdf][Ltse.LtseEquities.DropCopy.Fix.v1.12.Pdf] |
+| [LtseEquities][LtseEquities.Exchange] | [DropCopy][Ltse.LtseEquities.DropCopy] | [v2.0](Ltse.LtseEquities.DropCopy.Fix.v2.0.xml) | 7/30/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Ltse.LtseEquities.DropCopy.Fix.v2.0.Url] - [pdf][Ltse.LtseEquities.DropCopy.Fix.v2.0.Pdf] |
+| [LtseEquities][LtseEquities.Exchange] | [OrderEntry][Ltse.LtseEquities.OrderEntry] | [v1.12](Ltse.LtseEquities.OrderEntry.Fix.v1.12.xml) | 8/1/2024 | [Active][Omi.Glossary.Deployment.Active] | [url][Ltse.LtseEquities.OrderEntry.Fix.v1.12.Url] - [pdf][Ltse.LtseEquities.OrderEntry.Fix.v1.12.Pdf] |
+| [LtseEquities][LtseEquities.Exchange] | [OrderEntry][Ltse.LtseEquities.OrderEntry] | [v2.0](Ltse.LtseEquities.OrderEntry.Fix.v2.0.xml) | 7/30/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Ltse.LtseEquities.OrderEntry.Fix.v2.0.Url] - [pdf][Ltse.LtseEquities.OrderEntry.Fix.v2.0.Pdf] |
 
 
 Ltse: [website](https://ltse.com "Go to Long-Term Stock Exchange")
@@ -27,11 +27,11 @@ Ltse: [website](https://ltse.com "Go to Long-Term Stock Exchange")
 [Ltse.LtseEquities.DropCopy]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Ltse/Protocols/LtseEquities/DropCopy.md "Drop Copy"
 [Ltse.LtseEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Ltse/Protocols/LtseEquities/OrderEntry.md "Order Entry"
 
-[Ltse.LtseEquities.DropCopy.Fix.v1.12.]: https://ltse.com/membership/resources "Long-Term Stock Exchange 1.12 "
+[Ltse.LtseEquities.DropCopy.Fix.v1.12.Url]: https://ltse.com/membership/resources "Long-Term Stock Exchange 1.12 Url"
 [Ltse.LtseEquities.DropCopy.Fix.v1.12.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Ltse/Specifications/LtseEquities/DropCopy/Ltse.LtseEquities.DropCopy.Fix.v1.12.pdf "Long-Term Stock Exchange 1.12 Pdf"
-[Ltse.LtseEquities.DropCopy.Fix.v2.0.]: https://ltse.com/membership/resources "Long-Term Stock Exchange 2.0 "
+[Ltse.LtseEquities.DropCopy.Fix.v2.0.Url]: https://ltse.com/membership/resources "Long-Term Stock Exchange 2.0 Url"
 [Ltse.LtseEquities.DropCopy.Fix.v2.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Ltse/Specifications/LtseEquities/DropCopy/Ltse.LtseEquities.DropCopy.Fix.v2.0.pdf "Long-Term Stock Exchange 2.0 Pdf"
-[Ltse.LtseEquities.OrderEntry.Fix.v1.12.]: https://ltse.com/membership/resources "Long-Term Stock Exchange 1.12 "
+[Ltse.LtseEquities.OrderEntry.Fix.v1.12.Url]: https://ltse.com/membership/resources "Long-Term Stock Exchange 1.12 Url"
 [Ltse.LtseEquities.OrderEntry.Fix.v1.12.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Ltse/Specifications/LtseEquities/OrderEntry/Ltse.LtseEquities.OrderEntry.Fix.v1.12.pdf "Long-Term Stock Exchange 1.12 Pdf"
-[Ltse.LtseEquities.OrderEntry.Fix.v2.0.]: https://ltse.com/membership/resources "Long-Term Stock Exchange 2.0 "
+[Ltse.LtseEquities.OrderEntry.Fix.v2.0.Url]: https://ltse.com/membership/resources "Long-Term Stock Exchange 2.0 Url"
 [Ltse.LtseEquities.OrderEntry.Fix.v2.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Ltse/Specifications/LtseEquities/OrderEntry/Ltse.LtseEquities.OrderEntry.Fix.v2.0.pdf "Long-Term Stock Exchange 2.0 Pdf"
