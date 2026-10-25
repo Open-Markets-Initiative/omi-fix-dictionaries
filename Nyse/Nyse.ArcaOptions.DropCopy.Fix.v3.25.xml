@@ -67,7 +67,9 @@
       <field name="Text" required="N" />
       <field name="NextExpectedMsgSeqNum" required="Y" />
     </message>
-    <message name="Heartbeat" msgtype="0" msgcat="admin" />
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
     <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
     </message>
@@ -136,11 +138,13 @@
       <field name="MaturityDay" required="Y" />
       <field name="TradeCondition" required="N" />
       <field name="ExecRestatementReason" required="N" />
-      <field name="NoContraBrokers" required="N" />
-      <field name="ContraBroker" required="N" />
-      <field name="ContraTrader" required="N" />
-      <field name="NoTradingSessions" required="Y" />
-      <field name="TradingSessionID" required="Y" />
+      <group name="NoContraBrokers" required="N">
+        <field name="ContraBroker" required="N" />
+        <field name="ContraTrader" required="N" />
+      </group>
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+      </group>
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="MultilegReportingType" required="Y" />
@@ -278,7 +282,7 @@
       <value enum="3" description="IOC" />
       <value enum="5" description="GTX" />
     </field>
-    <field number="60" name="TransactTime" type="STRING" />
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="77" name="OpenClose" type="CHAR">
       <value enum="C" description="Close" />
       <value enum="O" description="Open" />
@@ -296,7 +300,10 @@
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
-    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN">
+      <value enum="N" description="Sequence Reset (MsgSeqNum[34] ignored)" />
+      <value enum="Y" description="Gap Fill Reset (MsgSeqNum[34] validated)" />
+    </field>
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
     <field number="150" name="ExecType" type="CHAR">
@@ -344,7 +351,7 @@
       <value enum="0" description="Customer" />
       <value enum="1" description="Firm" />
       <value enum="2" description="Broker" />
-      <value enum="3" description="Market maker" />
+      <value enum="3" description="Market Maker" />
       <value enum="4" description="Away Market Maker" />
       <value enum="8" description="Prof customer" />
     </field>
@@ -385,8 +392,8 @@
       <value enum="1" description="GTC renewal/restatement" />
       <value enum="3" description="Repricing" />
     </field>
-    <field number="382" name="NoContraBrokers" type="CHAR" />
-    <field number="386" name="NoTradingSessions" type="INT" />
+    <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
+    <field number="386" name="NoTradingSessions" type="NUMINGROUP" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Order Cancel Request" />
       <value enum="2" description="Order Cancel/Replace Request" />
@@ -404,7 +411,11 @@
     <field number="554" name="Password" type="STRING" />
     <field number="654" name="LegRefID" type="INT" />
     <field number="789" name="NextExpectedMsgSeqNum" type="INT" />
-    <field number="1409" name="SessionStatus" type="INT" />
+    <field number="1409" name="SessionStatus" type="INT">
+      <value enum="0" description="Session Active" />
+      <value enum="4" description="Session logout complete" />
+      <value enum="5" description="Invalid username or password" />
+    </field>
     <field number="7928" name="SelfTradeType" type="CHAR">
       <value enum="0" description="Use current Session Configuration STP setting for the SenderCompID" />
       <value enum="C" description="Cancel Both" />
@@ -458,7 +469,7 @@
       <value enum="1" description="Working Price is different from Display Price" />
     </field>
     <field number="20007" name="UnsolicitedAckType" type="CHAR">
-      <value enum="2" description="Order Priority Update - New OrderID (reserve order replenishment)" />
+      <value enum="2" description="Order Priority Update – New OrderID (reserve order replenishment)" />
     </field>
     <field number="20009" name="NanosecondSendingTime" type="STRING" />
     <field number="20010" name="NanosecondTransactTime" type="STRING" />
