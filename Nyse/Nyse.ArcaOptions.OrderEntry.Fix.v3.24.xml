@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 3.24
     Date: 2026-03-09
-    Specification: NYSE_Pillar_Options_Gateway_FIX_Protocol_Specification (3.24).pdf
+    Specification: NYSE_Pillar_Options_Gateway_FIX_Protocol_Specification.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -67,7 +67,9 @@
       <field name="Text" required="N" />
       <field name="NextExpectedMsgSeqNum" required="Y" />
     </message>
-    <message name="Heartbeat" msgtype="0" msgcat="admin" />
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
     <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
     </message>
@@ -107,19 +109,20 @@
       <field name="StrikePrice" required="Y" />
       <field name="CustomerOrFirm" required="Y" />
       <field name="MaturityDay" required="Y" />
-      <field name="NoTradingSessions" required="Y" />
-      <field name="SubIDIndicator" required="N" />
-      <field name="CancelInsteadOfReprice" required="N" />
-      <field name="ProactiveIfLocked" required="N" />
-      <field name="BillTo" required="N" />
-      <field name="IntroducingBadgeID" required="N" />
-      <field name="ExtendedExecInst" required="N" />
-      <field name="RoutingInst" required="N" />
-      <field name="SelfTradeType" required="N" />
-      <field name="OptionalData" required="N" />
-      <field name="ClearingAccount" required="N" />
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+      </group>
       <field name="ClearingFirm" required="N" />
-      <field name="TradingSessionID" required="Y" />
+      <field name="ClearingAccount" required="N" />
+      <field name="OptionalData" required="N" />
+      <field name="SelfTradeType" required="N" />
+      <field name="RoutingInst" required="N" />
+      <field name="ExtendedExecInst" required="N" />
+      <field name="IntroducingBadgeID" required="N" />
+      <field name="BillTo" required="N" />
+      <field name="ProactiveIfLocked" required="N" />
+      <field name="CancelInsteadOfReprice" required="N" />
+      <field name="SubIDIndicator" required="N" />
     </message>
     <message name="NewOrderCross" msgtype="s" msgcat="app">
       <field name="OrderQty" required="Y" />
@@ -131,9 +134,12 @@
       <field name="PutOrCall" required="Y" />
       <field name="StrikePrice" required="Y" />
       <field name="MaturityDay" required="Y" />
-      <field name="NoTradingSessions" required="Y" />
-      <field name="TradingSessionID" required="Y" />
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+      </group>
       <field name="CrossID" required="Y" />
+      <field name="SpecialOrdType" required="Y" />
+      <field name="IntroducingBadgeID" required="N" />
       <group name="NoSides" required="Y">
         <field name="Side" required="Y" />
         <field name="Account" required="N" />
@@ -149,20 +155,18 @@
         <field name="BillTo" required="N" />
         <field name="GiveUpMarketMaker" required="N" />
       </group>
-      <field name="IntroducingBadgeID" required="N" />
-      <field name="SpecialOrdType" required="Y" />
     </message>
     <message name="OrderCancelRequest" msgtype="F" msgcat="app">
+      <field name="BulkAction" required="Y" />
       <field name="ClOrdID" required="Y" />
-      <field name="OrigClOrdID" required="Y" />
+      <field name="OrderID" required="Y" />
       <field name="Side" required="N" />
       <field name="Symbol" required="N" />
       <field name="TransactTime" required="N" />
-      <field name="OrderID" required="Y" />
       <field name="SymbolSfx" required="N" />
       <field name="TargetCancelSenderCompID" required="N" />
       <field name="TargetCancelMPID" required="N" />
-      <field name="BulkAction" required="Y" />
+      <field name="OrigClOrdID" required="Y" />
     </message>
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="Account" required="N" />
@@ -185,19 +189,20 @@
       <field name="StrikePrice" required="Y" />
       <field name="CustomerOrFirm" required="Y" />
       <field name="MaturityDay" required="Y" />
-      <field name="NoTradingSessions" required="Y" />
-      <field name="SubIDIndicator" required="N" />
-      <field name="CancelInsteadOfReprice" required="N" />
-      <field name="ProactiveIfLocked" required="N" />
-      <field name="BillTo" required="N" />
-      <field name="IntroducingBadgeID" required="N" />
-      <field name="ExtendedExecInst" required="N" />
-      <field name="RoutingInst" required="N" />
-      <field name="SelfTradeType" required="N" />
-      <field name="OptionalData" required="N" />
-      <field name="ClearingAccount" required="N" />
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+      </group>
       <field name="ClearingFirm" required="N" />
-      <field name="TradingSessionID" required="Y" />
+      <field name="ClearingAccount" required="N" />
+      <field name="OptionalData" required="N" />
+      <field name="SelfTradeType" required="N" />
+      <field name="RoutingInst" required="N" />
+      <field name="ExtendedExecInst" required="N" />
+      <field name="IntroducingBadgeID" required="N" />
+      <field name="BillTo" required="N" />
+      <field name="ProactiveIfLocked" required="N" />
+      <field name="CancelInsteadOfReprice" required="N" />
+      <field name="SubIDIndicator" required="N" />
     </message>
     <message name="NewOrderMultileg" msgtype="AB" msgcat="app">
       <field name="Account" required="N" />
@@ -209,8 +214,9 @@
       <field name="TransactTime" required="N" />
       <field name="SecurityType" required="Y" />
       <field name="CustomerOrFirm" required="Y" />
-      <field name="NoTradingSessions" required="Y" />
-      <field name="TradingSessionID" required="Y" />
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+      </group>
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="OptionalData" required="N" />
@@ -237,8 +243,9 @@
       <field name="TimeInForce" required="Y" />
       <field name="TransactTime" required="N" />
       <field name="SecurityType" required="Y" />
-      <field name="NoTradingSessions" required="Y" />
-      <field name="TradingSessionID" required="Y" />
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+      </group>
       <field name="CrossID" required="Y" />
       <field name="SpecialOrdType" required="Y" />
       <field name="IntroducingBadgeID" required="N" />
@@ -277,8 +284,9 @@
       <field name="TransactTime" required="N" />
       <field name="SecurityType" required="Y" />
       <field name="CustomerOrFirm" required="Y" />
-      <field name="NoTradingSessions" required="Y" />
-      <field name="TradingSessionID" required="Y" />
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+      </group>
       <field name="ClearingFirm" required="N" />
       <field name="ClearingAccount" required="N" />
       <field name="OptionalData" required="N" />
@@ -340,52 +348,54 @@
       <field name="ExecType" required="Y" />
       <field name="LeavesQty" required="N" />
       <field name="SecurityType" required="Y" />
-      <field name="OriginalDealID" required="N" />
-      <field name="RefDealID" required="N" />
-      <field name="BulkAction" required="Y" />
-      <field name="TargetCancelMPID" required="N" />
-      <field name="TargetCancelSenderCompID" required="N" />
+      <field name="MaturityMonthYear" required="Y" />
+      <field name="PutOrCall" required="Y" />
+      <field name="StrikePrice" required="Y" />
+      <field name="CoveredOrUncovered" required="N" />
+      <field name="CustomerOrFirm" required="Y" />
+      <field name="MaturityDay" required="Y" />
+      <field name="ExecRestatementReason" required="N" />
+      <group name="NoContraBrokers" required="N">
+        <field name="ContraBroker" required="N" />
+        <field name="ContraTrader" required="N" />
+      </group>
+      <group name="NoTradingSessions" required="Y">
+        <field name="TradingSessionID" required="Y" />
+      </group>
+      <field name="ClearingFirm" required="N" />
+      <field name="ClearingAccount" required="N" />
+      <field name="MultilegReportingType" required="N" />
+      <field name="OptionalData" required="N" />
+      <field name="CrossID" required="N" />
+      <field name="LegRefID" required="N" />
+      <field name="SelfTradeType" required="N" />
+      <field name="SpecialOrdType" required="N" />
+      <field name="RoutingInst" required="N" />
+      <field name="ExtendedExecInst" required="N" />
+      <field name="IntroducingBadgeID" required="N" />
+      <field name="DealID" required="N" />
+      <field name="LiquidityIndicator" required="N" />
+      <field name="ProactiveIfLocked" required="N" />
+      <field name="CancelInsteadOfReprice" required="N" />
+      <field name="WorkingPrice" required="N" />
+      <field name="FlowIndicator" required="Y" />
+      <field name="WorkingAwayFromDisplay" required="N" />
+      <field name="UnsolicitedAckType" required="N" />
+      <field name="NanosecondSendingTime" required="Y" />
+      <field name="NanosecondTransactTime" required="Y" />
+      <field name="SubIDIndicator" required="N" />
+      <field name="GiveUpMarketMaker" required="N" />
+      <field name="ContraCustomerOrFirm" required="N" />
+      <field name="ContraClearingAccount" required="N" />
+      <field name="ContraOpenClose" required="N" />
       <field name="ContraMarketMaker" required="N" />
       <field name="ContraCrossType" required="N" />
       <field name="ContraCoveredOrUncovered" required="N" />
-      <field name="ContraOpenClose" required="N" />
-      <field name="ContraClearingAccount" required="N" />
-      <field name="ContraCustomerOrFirm" required="N" />
-      <field name="GiveUpMarketMaker" required="N" />
-      <field name="SubIDIndicator" required="N" />
-      <field name="NanosecondTransactTime" required="Y" />
-      <field name="NanosecondSendingTime" required="Y" />
-      <field name="UnsolicitedAckType" required="N" />
-      <field name="WorkingAwayFromDisplay" required="N" />
-      <field name="FlowIndicator" required="Y" />
-      <field name="WorkingPrice" required="N" />
-      <field name="CancelInsteadOfReprice" required="N" />
-      <field name="ProactiveIfLocked" required="N" />
-      <field name="LiquidityIndicator" required="N" />
-      <field name="DealID" required="N" />
-      <field name="IntroducingBadgeID" required="N" />
-      <field name="ExtendedExecInst" required="N" />
-      <field name="RoutingInst" required="N" />
-      <field name="SpecialOrdType" required="N" />
-      <field name="SelfTradeType" required="N" />
-      <field name="LegRefID" required="N" />
-      <field name="CrossID" required="N" />
-      <field name="OptionalData" required="N" />
-      <field name="MultilegReportingType" required="N" />
-      <field name="ClearingAccount" required="N" />
-      <field name="ClearingFirm" required="N" />
-      <field name="NoTradingSessions" required="Y" />
-      <field name="TradingSessionID" required="Y" />
-      <field name="ContraTrader" required="N" />
-      <field name="ContraBroker" required="N" />
-      <field name="NoContraBrokers" required="N" />
-      <field name="ExecRestatementReason" required="N" />
-      <field name="MaturityDay" required="Y" />
-      <field name="CustomerOrFirm" required="Y" />
-      <field name="CoveredOrUncovered" required="N" />
-      <field name="StrikePrice" required="Y" />
-      <field name="PutOrCall" required="Y" />
-      <field name="MaturityMonthYear" required="Y" />
+      <field name="TargetCancelSenderCompID" required="N" />
+      <field name="TargetCancelMPID" required="N" />
+      <field name="BulkAction" required="Y" />
+      <field name="RefDealID" required="N" />
+      <field name="OriginalDealID" required="N" />
     </message>
   </messages>
   <components />
@@ -460,7 +470,7 @@
       <value enum="3" description="IOC" />
       <value enum="5" description="GTX" />
     </field>
-    <field number="60" name="TransactTime" type="STRING" />
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="65" name="SymbolSfx" type="STRING" />
     <field number="77" name="OpenClose" type="CHAR">
       <value enum="C" description="Close" />
@@ -478,7 +488,10 @@
     <field number="115" name="OnBehalfOfCompID" type="STRING" />
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
-    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN">
+      <value enum="N" description="Sequence Reset (MsgSeqNum[34] ignored)" />
+      <value enum="Y" description="Gap Fill Reset (MsgSeqNum[34] validated)" />
+    </field>
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
     <field number="150" name="ExecType" type="CHAR">
@@ -496,7 +509,7 @@
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="167" name="SecurityType" type="STRING">
-      <value enum="MLEG" description="Complex Option" />
+      <value enum="MLEG" description="Complex Option (Multi-leg Option)" />
       <value enum="OPT" description="Single leg Option" />
     </field>
     <field number="200" name="MaturityMonthYear" type="STRING" />
@@ -547,8 +560,8 @@
       <value enum="1" description="GTC renewal/restatement" />
       <value enum="3" description="Repricing" />
     </field>
-    <field number="382" name="NoContraBrokers" type="CHAR" />
-    <field number="386" name="NoTradingSessions" type="INT" />
+    <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
+    <field number="386" name="NoTradingSessions" type="NUMINGROUP" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Order Cancel Request" />
       <value enum="2" description="Order Cancel/Replace Request" />
@@ -584,7 +597,11 @@
     </field>
     <field number="654" name="LegRefID" type="INT" />
     <field number="789" name="NextExpectedMsgSeqNum" type="INT" />
-    <field number="1409" name="SessionStatus" type="INT" />
+    <field number="1409" name="SessionStatus" type="INT">
+      <value enum="0" description="Session Active" />
+      <value enum="4" description="Session logout complete" />
+      <value enum="5" description="Invalid username or password" />
+    </field>
     <field number="7928" name="SelfTradeType" type="CHAR">
       <value enum="0" description="Use current Session Configuration STP setting for the SenderCompID" />
       <value enum="C" description="Cancel Both" />
@@ -633,7 +650,7 @@
       <value enum="1" description="Working Price is different from Display Price" />
     </field>
     <field number="20007" name="UnsolicitedAckType" type="CHAR">
-      <value enum="2" description="Order Priority Update - New OrderID (reserve order replenishment)" />
+      <value enum="2" description="Order Priority Update – New OrderID (reserve order replenishment)" />
     </field>
     <field number="20009" name="NanosecondSendingTime" type="STRING" />
     <field number="20010" name="NanosecondTransactTime" type="STRING" />

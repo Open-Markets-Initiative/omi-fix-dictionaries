@@ -8,7 +8,7 @@
 | [CoinbaseDerivatives][CoinbaseDerivatives.Exchange] | [DropCopy][Coinbase.CoinbaseDerivatives.DropCopy] | [v0.9](Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.xml) | 6/16/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Url] - [pdf][Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Pdf] |
 | [CoinbaseDerivatives][CoinbaseDerivatives.Exchange] | [MarketDataApi][Coinbase.CoinbaseDerivatives.MarketDataApi] | [v0.27](Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.xml) | 6/17/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Url] - [pdf][Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Pdf] |
 | [CoinbaseDerivatives][CoinbaseDerivatives.Exchange] | [OrdersApi][Coinbase.CoinbaseDerivatives.OrdersApi] | [v0.27](Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.xml) | 6/17/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Url] - [pdf][Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Pdf] |
-| [Deribit][Deribit] | [OrderEntry][Coinbase.Deribit.OrderEntry] | [v1.0](Coinbase.Deribit.OrderEntry.Fix.v1.0.xml) | 7/24/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Coinbase.Deribit.OrderEntry.Fix.v1.0.Url] - [xml][Coinbase.Deribit.OrderEntry.Fix.v1.0.Xml] |
+| [Deribit][Deribit] | [OrderEntry][Coinbase.Deribit.OrderEntry] | [v1.0](Coinbase.Deribit.OrderEntry.Fix.v1.0.xml) | 7/24/2026 | [Active][Omi.Glossary.Deployment.Active] | [url][Coinbase.Deribit.OrderEntry.Fix.v1.0.Url] - [md][Coinbase.Deribit.OrderEntry.Fix.v1.0.Md] |
 
 
 Coinbase: [website](https://www.coinbase.com/ "Go to Coinbase")
@@ -30,11 +30,11 @@ Coinbase: [website](https://www.coinbase.com/ "Go to Coinbase")
 [Coinbase.CoinbaseDerivatives.OrdersApi]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Protocols/CoinbaseDerivatives/OrdersApi.md ""
 [Coinbase.Deribit.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Protocols/Deribit/OrderEntry.md "Order Entry"
 
-[Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Url]: https://docs.cdp.coinbase.com/derivatives/docs/welcome "Coinbase 0.9 Url"
-[Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Specifications/Coinbase/Derivatives/DropCopy/Coinbase%20Derivatives%20Drop%20Copy%20API%20V0.09.pdf "Coinbase 0.9 Pdf"
-[Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Url]: https://docs.cdp.coinbase.com/derivatives/docs/welcome "Coinbase 0.27 Url"
-[Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Specifications/Coinbase/Derivatives/Fix/Coinbase%20Derivatives%20FIX%20API%20V0.27.pdf "Coinbase 0.27 Pdf"
-[Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Url]: https://docs.cdp.coinbase.com/derivatives/docs/welcome "Coinbase 0.27 Url"
-[Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Specifications/Coinbase/Derivatives/Fix/Coinbase%20Derivatives%20FIX%20API%20V0.27.pdf "Coinbase 0.27 Pdf"
+[Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Url]: https://docs.cdp.coinbase.com/derivatives/introduction/downloads "Coinbase 0.9 Url"
+[Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Specifications/CoinbaseDerivatives/DropCopy/Coinbase.CoinbaseDerivatives.DropCopy.Fix.v0.9.pdf "Coinbase 0.9 Pdf"
+[Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Url]: https://docs.cdp.coinbase.com/derivatives/introduction/downloads "Coinbase 0.27 Url"
+[Coinbase.CoinbaseDerivatives.MarketDataApi.Fix.v0.27.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Specifications/Documentation/Coinbase.CoinbaseDerivatives.Api.Fix.v0.27.pdf "Coinbase 0.27 Pdf"
+[Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Url]: https://docs.cdp.coinbase.com/derivatives/introduction/downloads "Coinbase 0.27 Url"
+[Coinbase.CoinbaseDerivatives.OrdersApi.Fix.v0.27.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Specifications/Documentation/Coinbase.CoinbaseDerivatives.Api.Fix.v0.27.pdf "Coinbase 0.27 Pdf"
 [Coinbase.Deribit.OrderEntry.Fix.v1.0.Url]: https://docs.deribit.com/fix-api/production/overview " 1.0 Url"
-[Coinbase.Deribit.OrderEntry.Fix.v1.0.Xml]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Specifications/Coinbase/Deribit/Fix/Pages " 1.0 Xml"
+[Coinbase.Deribit.OrderEntry.Fix.v1.0.Md]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Coinbase/Specifications/Deribit/Fix/Pages/changes-log.md " 1.0 Md"

@@ -161,7 +161,6 @@
       <field name="LastShares" required="Y" />
       <field name="LastPx" required="Y" />
       <field name="ContraBroker" required="N" />
-      <field name="NoContraBrokers" required="N" />
       <field name="OrigClOrdID" required="N" />
       <field name="Text" required="N" />
     </message>
@@ -251,7 +250,6 @@
     <field number="207" name="SecurityExchange" type="EXCHANGE" />
     <field number="211" name="PegDifference" type="STRING" />
     <field number="375" name="ContraBroker" type="STRING" />
-    <field number="382" name="NoContraBrokers" type="NUMINGROUP" />
     <field number="388" name="DiscretionInst" type="STRING" />
     <field number="389" name="DiscretionOffset" type="STRING" />
     <field number="439" name="ClearingFirm" type="STRING" />
@@ -283,8 +281,7 @@
     </field>
     <field number="6776" name="PrincipalTrade" type="STRING" />
     <field number="6777" name="WashTradeIndicator" type="STRING">
-      <value enum="39" description="1 /2)" />
-      <value enum="Y" description="wash trade Provided on Fill/Partial Fill (Ord Status tag" />
+      <value enum="Y" description="wash trade" />
     </field>
     <field number="6802" name="ClientCrossRef" type="STRING" />
     <field number="6803" name="ShortSellNakedQty" type="QTY" />
@@ -343,7 +340,6 @@
     <field number="8183" name="CrossType" type="STRING">
       <value enum="101" description="trade was the result of a broker preferenced crossing" />
       <value enum="102" description="other" />
-      <value enum="39" description="1 /2)" />
     </field>
     <field number="9730" name="LastLiquidityInd" type="STRING" />
     <field number="9882" name="FeeCode" type="STRING" />

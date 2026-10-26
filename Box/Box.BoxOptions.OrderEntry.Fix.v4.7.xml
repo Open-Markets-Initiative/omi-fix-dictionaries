@@ -6,8 +6,8 @@
     Protocol: Order Entry
     Encoding: Financial Information eXchange
     Version: 4.7
-    Date: 2018-06-08
-    Specification: SOLA FIX Specifications Guide for BOX v4.7
+    Date: 2018-06-12
+    Specification: FIX-BX-002E-BOX-FIX-Specifications-Guide-v4.7-1.pdf
 
   Script:
     Generator: 1.0.0.0

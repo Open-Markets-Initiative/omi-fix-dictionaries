@@ -464,7 +464,7 @@
       <value enum="6" description="1st Leg Close, 2nd Leg Open, 3rd Leg Open" />
       <value enum="7" description="1st Leg Close, 2nd Leg Open, 3rd Leg Close" />
       <value enum="8" description="1st Leg Close, 2nd Leg Close, 3rd Leg Open" />
-      <value enum="A" description="1st Leg Open, 2nd Leg Open, 3rd Leg Open, 4th Leg Close" />
+      <value enum="A" description="1st Leg Open, 2nd Leg Open, 3rd Leg Open 4th Leg Close" />
       <value enum="B" description="1st Leg Open, 2nd Leg Open, 3rd Leg Close, 4th Leg Open" />
       <value enum="C" description="All Legs are closed or single security" />
       <value enum="D" description="1st Leg Open, 2nd Leg Open, 3rd Leg Close, 4th Leg Close" />

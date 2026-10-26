@@ -298,9 +298,7 @@
       <value enum="1" description="Trade Through Exemption" />
     </field>
     <field number="852" name="PublishTrdIndicator" type="STRING">
-      <value enum="277" description="16, 17, or 18, then tag 852 must = N" />
-      <value enum="452" description="17) are required to have" />
-      <value enum="N" description="Do Not Report to Tape If tag" />
+      <value enum="N" description="Do Not Report to Tape" />
       <value enum="Y" description="Report to Tape (default)" />
     </field>
     <field number="853" name="ShortSaleReason" type="STRING">

@@ -504,7 +504,10 @@
     </field>
     <field number="20009" name="NanosecondSendingTime" type="STRING" />
     <field number="20010" name="NanosecondTransactTime" type="STRING" />
-    <field number="20013" name="SubIDIndicator" type="CHAR" />
+    <field number="20013" name="SubIDIndicator" type="CHAR">
+      <value enum="0" description="for this order, use OnBehalfOfSubID (within the MPID) for STP evaluation" />
+      <value enum="1" description="for this order, ignore the OnBehalfOfSubID for STP (conduct STP evaluation at MPID level only)" />
+    </field>
     <field number="20022" name="AllocationFirmMPID" type="STRING" />
     <field number="20024" name="AllocationFirmIntroducingBadgeID" type="STRING" />
     <field number="20042" name="CATIMID" type="STRING" />

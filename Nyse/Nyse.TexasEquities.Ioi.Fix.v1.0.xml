@@ -60,6 +60,9 @@
       <field name="Text" required="N" />
       <field name="NextExpectedMsgSeqNum" required="Y" />
     </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
     <message name="TestRequest" msgtype="1" msgcat="admin">
       <field name="TestReqID" required="Y" />
     </message>
@@ -113,7 +116,7 @@
     <field number="45" name="RefSeqNum" type="INT" />
     <field number="49" name="SenderCompID" type="STRING" />
     <field number="50" name="SenderSubID" type="STRING" />
-    <field number="52" name="SendingTime" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
@@ -125,8 +128,11 @@
     <field number="98" name="EncryptMethod" type="INT" />
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="112" name="TestReqID" type="STRING" />
-    <field number="122" name="OrigSendingTime" type="STRING" />
-    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN">
+      <value enum="N" description="Sequence Reset (MsgSeqNum [34] ignored)" />
+      <value enum="Y" description="Gap Fill Reset (MsgSeqNum [34] validated)" />
+    </field>
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
     <field number="371" name="RefTagId" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
@@ -150,6 +156,10 @@
     <field number="553" name="Username" type="STRING" />
     <field number="554" name="Password" type="STRING" />
     <field number="789" name="NextExpectedMsgSeqNum" type="INT" />
-    <field number="1409" name="SessionStatus" type="INT" />
+    <field number="1409" name="SessionStatus" type="INT">
+      <value enum="0" description="Session Active" />
+      <value enum="4" description="Session logout complete" />
+      <value enum="5" description="Invalid username or password" />
+    </field>
   </fields>
 </fix>

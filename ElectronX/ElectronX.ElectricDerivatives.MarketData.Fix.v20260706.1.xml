@@ -1,13 +1,13 @@
 <!--
-  Fix dictionary for: ElectronX MarketData Fix v4.0
+  Fix dictionary for: ElectronX MarketData Fix v20260706.1
 
   Protocol:
     Organization: ElectronX Markets
     Protocol: Market Data
     Encoding: Financial Information eXchange
-    Version: 4.0
-    Date: 2026-02-13
-    Specification: ElectronX NLS FIX Specification
+    Version: 20260706.1
+    Date: 2026-07-06
+    Specification: ElectronX FIX Specification v.20260706.1.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -48,7 +48,7 @@
     <message name="Logon" msgtype="A" msgcat="admin">
       <field name="EncryptMethod" required="Y" />
       <field name="HeartBtInt" required="Y" />
-      <field name="ResetSeqNumFlag" required="Y" />
+      <field name="ResetSeqNumFlag" required="N" />
       <field name="Password" required="N" />
       <field name="DefaultApplVerID" required="Y" />
     </message>
@@ -82,27 +82,9 @@
       <field name="MarketDepth" required="Y" />
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
-        <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
-        <field name="Product" required="N" />
-        <field name="SecurityType" required="N" />
-        <field name="ContractMultiplier" required="N" />
-        <group name="NoEvents" required="N">
-          <field name="EventType" required="Y" />
-          <field name="EventDate" required="Y" />
-          <field name="EventText" required="Y" />
-          <field name="EventTime" required="N" />
-        </group>
-        <field name="MinPriceIncrement" required="N" />
-        <field name="SecurityGroup" required="N" />
-        <field name="MinTradeVol" required="N" />
-        <field name="PriceLimitType" required="N" />
-        <field name="LowLimitPrice" required="N" />
-        <field name="HighLimitPrice" required="N" />
-        <field name="Currency" required="N" />
       </group>
       <group name="NoMDEntryTypes" required="N">
-        <field name="MDEntryType" required="Y" />
+        <field name="MDEntryType" required="N" />
       </group>
     </message>
     <message name="SecurityListRequest" msgtype="x" msgcat="app">
@@ -111,7 +93,7 @@
       <field name="SecurityListRequestType" required="Y" />
       <field name="Symbol" required="N" />
     </message>
-    <message name="BusinessMessageReject" msgtype="j" msgcat="admin">
+    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
       <field name="RefSeqNum" required="N" />
       <field name="Text" required="N" />
       <field name="RefMsgType" required="Y" />
@@ -125,70 +107,63 @@
       <field name="SecurityType" required="Y" />
       <field name="MDReqID" required="Y" />
       <group name="NoMDEntries" required="Y">
-        <field name="MDUpdateAction" required="N" />
         <field name="MDEntryType" required="Y" />
         <field name="MDEntryPx" required="Y" />
         <field name="MDEntrySize" required="N" />
         <field name="MDEntryDate" required="Y" />
         <field name="MDEntryTime" required="Y" />
-        <field name="MDEntryID" required="N" />
-        <field name="MDQuoteType" required="N" />
+        <field name="MDEntryID" required="Y" />
         <field name="TrdType" required="N" />
-        <field name="TradeID" required="N" />
-        <field name="AggressorSide" required="N" />
+        <field name="MDQuoteType" required="N" />
         <field name="TradingSessionID" required="N" />
-        <field name="Symbol" required="N" />
-        <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
-        <field name="SecurityType" required="N" />
-        <field name="SecurityGroup" required="N" />
+        <field name="OpenCloseSettlFlag" required="N" />
       </group>
-      <field name="TradingSessionID" required="N" />
       <field name="SecurityGroup" required="N" />
     </message>
     <message name="MarketDataIncrementalRefresh" msgtype="X" msgcat="app">
       <field name="MDReqID" required="Y" />
       <group name="NoMDEntries" required="Y">
-        <field name="MDUpdateAction" required="N" />
-        <field name="MDEntryType" required="Y" />
-        <field name="MDEntryPx" required="Y" />
-        <field name="MDEntrySize" required="N" />
-        <field name="MDEntryDate" required="Y" />
-        <field name="MDEntryTime" required="Y" />
+        <field name="MDUpdateAction" required="Y" />
+        <field name="MDEntryType" required="N" />
         <field name="MDEntryID" required="N" />
         <field name="MDQuoteType" required="N" />
+        <field name="Symbol" required="Y" />
+        <field name="SecurityID" required="Y" />
+        <field name="SecurityIDSource" required="Y" />
+        <field name="SecurityType" required="Y" />
+        <field name="SecurityGroup" required="N" />
+        <field name="MDEntryPx" required="N" />
+        <field name="MDEntrySize" required="N" />
+        <field name="MDEntryDate" required="N" />
+        <field name="MDEntryTime" required="N" />
         <field name="TrdType" required="N" />
         <field name="TradeID" required="N" />
         <field name="AggressorSide" required="N" />
         <field name="TradingSessionID" required="N" />
-        <field name="Symbol" required="N" />
-        <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
-        <field name="SecurityType" required="N" />
-        <field name="SecurityGroup" required="N" />
+        <field name="OpenCloseSettlFlag" required="N" />
       </group>
     </message>
     <message name="SecurityList" msgtype="y" msgcat="app">
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
-        <field name="SecurityID" required="N" />
-        <field name="SecurityIDSource" required="N" />
+        <field name="SecurityID" required="Y" />
+        <field name="SecurityIDSource" required="Y" />
         <field name="Product" required="N" />
-        <field name="SecurityType" required="N" />
+        <field name="SecurityType" required="Y" />
         <field name="ContractMultiplier" required="N" />
-        <group name="NoEvents" required="N">
+        <group name="NoEvents" required="Y">
           <field name="EventType" required="Y" />
           <field name="EventDate" required="Y" />
           <field name="EventText" required="Y" />
           <field name="EventTime" required="N" />
         </group>
-        <field name="MinPriceIncrement" required="N" />
-        <field name="SecurityGroup" required="N" />
+        <field name="MinPriceIncrement" required="Y" />
+        <field name="SecurityGroup" required="Y" />
         <field name="MinTradeVol" required="N" />
         <field name="PriceLimitType" required="N" />
         <field name="LowLimitPrice" required="N" />
         <field name="HighLimitPrice" required="N" />
-        <field name="Currency" required="N" />
+        <field name="Currency" required="Y" />
       </group>
       <field name="SecurityReqID" required="Y" />
       <field name="SecurityResponseID" required="Y" />
@@ -262,6 +237,14 @@
       <value enum="0" description="New" />
       <value enum="1" description="Change" />
       <value enum="2" description="Delete" />
+    </field>
+    <field number="286" name="OpenCloseSettlFlag" type="MULTIPLECHARVALUE">
+      <value enum="0" description="Daily Open / Close / Settlement" />
+      <value enum="1" description="Session Open / Close / Settlement" />
+      <value enum="2" description="Delivery Settlement Entry" />
+      <value enum="3" description="Expected Entry" />
+      <value enum="4" description="Entry from Previous Business Day" />
+      <value enum="5" description="Theoretical Price Value" />
     </field>
     <field number="320" name="SecurityReqID" type="STRING" />
     <field number="322" name="SecurityResponseID" type="STRING" />
