@@ -78,7 +78,7 @@
       <field name="EndExecId" required="N" />
     </message>
     <message name="Heartbeat" msgtype="0" msgcat="admin">
-      <field name="TestReqID" required="N" />
+      <field name="TestReqID" required="Y" />
     </message>
     <message name="Logon" msgtype="A" msgcat="admin">
       <field name="EncryptMethod" required="Y" />
@@ -93,8 +93,8 @@
         <field name="MsgDirection" required="N" />
       </group>
       <field name="TestMessageIndicator" required="N" />
-      <field name="Username" required="N" />
-      <field name="Password" required="N" />
+      <field name="Username" required="Y" />
+      <field name="Password" required="Y" />
     </message>
     <message name="Logout" msgtype="5" msgcat="admin">
       <field name="Text" required="N" />
@@ -105,10 +105,10 @@
       <field name="RefSeqNum" required="Y" />
       <field name="RefTagID" required="N" />
       <field name="RefMsgType" required="N" />
-      <field name="SessionRejectReason" required="N" />
-      <field name="Text" required="N" />
+      <field name="Text" required="Y" />
       <field name="EncodedTextLen" required="N" />
       <field name="EncodedText" required="N" />
+      <field name="SessionRejectReason" required="Y" />
     </message>
     <message name="ResendRequest" msgtype="2" msgcat="admin">
       <field name="BeginSeqNo" required="Y" />
@@ -149,44 +149,49 @@
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="Account" required="Y" />
-      <component name="Parties" required="Y" />
       <field name="ClOrdID" required="Y" />
       <field name="CumQty" required="Y" />
       <field name="ExecID" required="Y" />
-      <field name="ExecRefID" required="N" />
-      <field name="TrdMatchID" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="LastQty" required="N" />
       <field name="OrderID" required="Y" />
       <field name="OrderQty" required="N" />
       <field name="OrdStatus" required="Y" />
-      <field name="OrdType" required="N" />
+      <field name="OrdType" required="Y" />
       <field name="OrigClOrdID" required="N" />
       <field name="Price" required="N" />
       <field name="Side" required="Y" />
-      <component name="Instrument" required="Y" />
-      <field name="Text" required="N" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityType" required="N" />
+      <field name="PutOrCall" required="N" />
+      <field name="StrikePrice" required="N" />
       <field name="TimeInForce" required="N" />
-      <field name="TransactTime" required="N" />
-      <field name="TradeDate" required="N" />
-      <field name="StopPx" required="N" />
-      <field name="StopLimitPx" required="N" />
-      <field name="OrdRejReason" required="N" />
-      <field name="MinQty" required="N" />
+      <field name="TransactTime" required="Y" />
       <field name="ExecType" required="Y" />
       <field name="LeavesQty" required="N" />
-      <field name="MaxShow" required="N" />
-      <field name="ExecRestatementReason" required="N" />
-      <field name="ExpireDate" required="N" />
+      <field name="ManualOrderIndicator" required="Y" />
+      <field name="CustOrderHandlingInst" required="Y" />
+      <group name="NoPartyIDs" required="N">
+        <field name="PartyID" required="Y" />
+        <field name="PartyIDSource" required="Y" />
+        <field name="PartyRole" required="Y" />
+      </group>
+      <field name="TrdMatchID" required="N" />
+      <field name="LastPx" required="N" />
+      <field name="LastQty" required="N" />
+      <field name="TradeDate" required="N" />
       <field name="TotalNumSecurities" required="N" />
       <field name="MultiLegReporting" required="N" />
       <field name="SecondaryExecID" required="N" />
-      <field name="ManualOrderIndicator" required="Y" />
-      <field name="CustOrderHandlingInst" required="Y" />
       <field name="OrderCapacity" required="N" />
       <field name="CustOrderCapacity" required="N" />
       <field name="AggressorIndicator" required="N" />
       <field name="RequestTime" required="N" />
+      <field name="ExecRefID" required="N" />
+      <field name="StopPx" required="N" />
+      <field name="StopLimitPx" required="N" />
+      <field name="MinQty" required="N" />
+      <field name="MaxShow" required="N" />
+      <field name="ExecRestatementReason" required="N" />
+      <field name="ExpireDate" required="N" />
       <field name="SelfMatchPreventionId" required="N" />
       <field name="SelfMatchPreventionInstruction" required="N" />
       <field name="TrdType" required="N" />
@@ -194,23 +199,11 @@
       <field name="DifferentialPrice" required="N" />
       <field name="LegLastPx" required="N" />
       <field name="ExecInst" required="N" />
+      <field name="Text" required="N" />
+      <field name="OrdRejReason" required="N" />
     </message>
   </messages>
-  <components>
-    <component name="Parties">
-      <group name="NoPartyIDs" required="N">
-        <field name="PartyID" required="N" />
-        <field name="PartyIDSource" required="N" />
-        <field name="PartyRole" required="N" />
-      </group>
-    </component>
-    <component name="Instrument">
-      <field name="Symbol" required="Y" />
-      <field name="SecurityType" required="N" />
-      <field name="PutOrCall" required="N" />
-      <field name="StrikePrice" required="N" />
-    </component>
-  </components>
+  <components />
   <fields>
     <field number="1" name="Account" type="STRING" />
     <field number="7" name="BeginSeqNo" type="SEQNUM" />

@@ -288,7 +288,6 @@
     <field number="6804" name="ShortSellCoveredQty" type="QTY" />
     <field number="6805" name="ShortSellLongQty" type="QTY" />
     <field number="6807" name="TransactID" type="STRING">
-      <value enum="39" description="1 /2)" />
       <value enum="X" description="the Serial Trade Qualifier and" />
       <value enum="Y" description="the Trade Serial Number" />
     </field>

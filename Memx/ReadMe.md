@@ -8,11 +8,11 @@
 | [MemxEquities][MemxEquities.Exchange] | [DropCopy][Memx.MemxEquities.DropCopy] | [v1.12](Memx.MemxEquities.DropCopy.Fix.v1.12.xml) | 12/12/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Memx.MemxEquities.DropCopy.Fix.v1.12.Pdf] |
 | [MemxEquities][MemxEquities.Exchange] | [OrderEntry][Memx.MemxEquities.OrderEntry] | [v1.12](Memx.MemxEquities.OrderEntry.Fix.v1.12.xml) | 12/12/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Memx.MemxEquities.OrderEntry.Fix.v1.12.Pdf] |
 | [MemxOptions][MemxOptions.Exchange] | [DropCopy][Memx.MemxOptions.DropCopy] | [v1.10](Memx.MemxOptions.DropCopy.Fix.v1.10.xml) | 5/23/2025 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [pdf][Memx.MemxOptions.DropCopy.Fix.v1.10.Pdf] |
-| [MemxOptions][MemxOptions.Exchange] | [DropCopy][Memx.MemxOptions.DropCopy] | [v1.10.a](Memx.MemxOptions.DropCopy.Fix.v1.10.a.xml) | 2/25/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Memx.MemxOptions.DropCopy.Fix.v1.10.a.Pdf] |
+| [MemxOptions][MemxOptions.Exchange] | [DropCopy][Memx.MemxOptions.DropCopy] | [v1.10.a](Memx.MemxOptions.DropCopy.Fix.v1.10.a.xml) | 2/25/2026 | [Active][Omi.Glossary.Deployment.Active] | [zip][Memx.MemxOptions.DropCopy.Fix.v1.10.a.Zip] |
 | [MemxOptions][MemxOptions.Exchange] | [DropCopy][Memx.MemxOptions.DropCopy] | [v1.8](Memx.MemxOptions.DropCopy.Fix.v1.8.xml) | 1/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Memx.MemxOptions.DropCopy.Fix.v1.8.Pdf] |
 | [MemxOptions][MemxOptions.Exchange] | [DropCopy][Memx.MemxOptions.DropCopy] | [v1.9](Memx.MemxOptions.DropCopy.Fix.v1.9.xml) | 9/27/2024 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [pdf][Memx.MemxOptions.DropCopy.Fix.v1.9.Pdf] |
 | [MemxOptions][MemxOptions.Exchange] | [OrderEntry][Memx.MemxOptions.OrderEntry] | [v1.10](Memx.MemxOptions.OrderEntry.Fix.v1.10.xml) | 5/23/2025 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [pdf][Memx.MemxOptions.OrderEntry.Fix.v1.10.Pdf] |
-| [MemxOptions][MemxOptions.Exchange] | [OrderEntry][Memx.MemxOptions.OrderEntry] | [v1.10.a](Memx.MemxOptions.OrderEntry.Fix.v1.10.a.xml) | 2/25/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Memx.MemxOptions.OrderEntry.Fix.v1.10.a.Pdf] |
+| [MemxOptions][MemxOptions.Exchange] | [OrderEntry][Memx.MemxOptions.OrderEntry] | [v1.10.a](Memx.MemxOptions.OrderEntry.Fix.v1.10.a.xml) | 2/25/2026 | [Active][Omi.Glossary.Deployment.Active] | [zip][Memx.MemxOptions.OrderEntry.Fix.v1.10.a.Zip] |
 | [MemxOptions][MemxOptions.Exchange] | [OrderEntry][Memx.MemxOptions.OrderEntry] | [v1.8](Memx.MemxOptions.OrderEntry.Fix.v1.8.xml) | 1/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Memx.MemxOptions.OrderEntry.Fix.v1.8.Pdf] |
 | [MemxOptions][MemxOptions.Exchange] | [OrderEntry][Memx.MemxOptions.OrderEntry] | [v1.9](Memx.MemxOptions.OrderEntry.Fix.v1.9.xml) | 9/27/2024 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [pdf][Memx.MemxOptions.OrderEntry.Fix.v1.9.Pdf] |
 
@@ -39,10 +39,10 @@ Memx: [website](https://www.memx.com "Go to The Members Exchange")
 [Memx.MemxEquities.DropCopy.Fix.v1.12.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.12 Pdf"
 [Memx.MemxEquities.OrderEntry.Fix.v1.12.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.12 Pdf"
 [Memx.MemxOptions.DropCopy.Fix.v1.10.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.10 Pdf"
-[Memx.MemxOptions.DropCopy.Fix.v1.10.a.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.10.a Pdf"
+[Memx.MemxOptions.DropCopy.Fix.v1.10.a.Zip]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.10.a Zip"
 [Memx.MemxOptions.DropCopy.Fix.v1.8.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.8 Pdf"
 [Memx.MemxOptions.DropCopy.Fix.v1.9.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.9 Pdf"
 [Memx.MemxOptions.OrderEntry.Fix.v1.10.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.10 Pdf"
-[Memx.MemxOptions.OrderEntry.Fix.v1.10.a.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.10.a Pdf"
+[Memx.MemxOptions.OrderEntry.Fix.v1.10.a.Zip]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.10.a Zip"
 [Memx.MemxOptions.OrderEntry.Fix.v1.8.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.8 Pdf"
 [Memx.MemxOptions.OrderEntry.Fix.v1.9.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Memx/Specifications/ "The Members Exchange 1.9 Pdf"
