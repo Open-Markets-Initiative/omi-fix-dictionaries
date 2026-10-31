@@ -8,11 +8,11 @@
 | [AsxDerivatives][AsxDerivatives.Exchange] | [DropCopy][Asx.AsxDerivatives.DropCopy] | [v2.05](Asx.AsxDerivatives.DropCopy.Fix.v2.05.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [url][Asx.AsxDerivatives.DropCopy.Fix.v2.05.Url] - [pdf][Asx.AsxDerivatives.DropCopy.Fix.v2.05.Pdf] |
 | [AsxDerivatives][AsxDerivatives.Exchange] | [MarketData][Asx.AsxDerivatives.MarketData] | [v2.02](Asx.AsxDerivatives.MarketData.Fix.v2.02.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxDerivatives.MarketData.Fix.v2.02.Pdf] |
 | [AsxDerivatives][AsxDerivatives.Exchange] | [OrderEntry][Asx.AsxDerivatives.OrderEntry] | [v2.05](Asx.AsxDerivatives.OrderEntry.Fix.v2.05.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxDerivatives.OrderEntry.Fix.v2.05.Pdf] |
-| [AsxDerivatives][AsxDerivatives.Exchange] | [Trade24][Asx.AsxDerivatives.Trade24] | [v1.0](Asx.AsxDerivatives.Trade24.Fix.v1.0.xml) | 1/1/2023 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [pdf][Asx.AsxDerivatives.Trade24.Fix.v1.0.Pdf] |
-| [AsxSecurities][AsxSecurities.Exchange] | [DropCopy][Asx.AsxSecurities.DropCopy] | [v1.1](Asx.AsxSecurities.DropCopy.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxSecurities.DropCopy.Fix.v1.1.Pdf] |
-| [AsxSecurities][AsxSecurities.Exchange] | [MarketPoint][Asx.AsxSecurities.MarketPoint] | [v1.0](Asx.AsxSecurities.MarketPoint.Fix.v1.0.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxSecurities.MarketPoint.Fix.v1.0.Pdf] |
-| [AsxSecurities][AsxSecurities.Exchange] | [OrderEntry][Asx.AsxSecurities.OrderEntry] | [v1.1](Asx.AsxSecurities.OrderEntry.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxSecurities.OrderEntry.Fix.v1.1.Pdf] |
-| [AsxSecurities][AsxSecurities.Exchange] | [SignalB][Asx.AsxSecurities.SignalB] | [v1.0](Asx.AsxSecurities.SignalB.Fix.v1.0.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Asx.AsxSecurities.SignalB.Fix.v1.0.Pdf] |
+| [AsxDerivatives][AsxDerivatives.Exchange] | [Trade24][Asx.AsxDerivatives.Trade24] | [v1.0](Asx.AsxDerivatives.Trade24.Fix.v1.0.xml) | 1/1/2023 | [Deprecated][Omi.Glossary.Deployment.Deprecated] |  |
+| [AsxSecurities][AsxSecurities.Exchange] | [DropCopy][Asx.AsxSecurities.DropCopy] | [v1.1](Asx.AsxSecurities.DropCopy.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Deployment.Active] |  |
+| [AsxSecurities][AsxSecurities.Exchange] | [MarketPoint][Asx.AsxSecurities.MarketPoint] | [v1.0](Asx.AsxSecurities.MarketPoint.Fix.v1.0.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] |  |
+| [AsxSecurities][AsxSecurities.Exchange] | [OrderEntry][Asx.AsxSecurities.OrderEntry] | [v1.1](Asx.AsxSecurities.OrderEntry.Fix.v1.1.xml) | 5/1/2026 | [Active][Omi.Glossary.Deployment.Active] |  |
+| [AsxSecurities][AsxSecurities.Exchange] | [SignalB][Asx.AsxSecurities.SignalB] | [v1.0](Asx.AsxSecurities.SignalB.Fix.v1.0.xml) | 1/1/2023 | [Active][Omi.Glossary.Deployment.Active] |  |
 
 
 Asx: [website](https://www.asx.com.au "Go to Australian Securities Exchange")
@@ -42,8 +42,3 @@ Asx: [website](https://www.asx.com.au "Go to Australian Securities Exchange")
 [Asx.AsxDerivatives.DropCopy.Fix.v2.05.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/Ntp/DropCopy/Asx.AsxDerivatives.DropCopy.Fix.v2.05.pdf "Australian Securities Exchange 2.05 Pdf"
 [Asx.AsxDerivatives.MarketData.Fix.v2.02.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/Ntp/MarketData/Asx.AsxDerivatives.MarketData.Fix.v2.02.pdf "Australian Securities Exchange 2.02 Pdf"
 [Asx.AsxDerivatives.OrderEntry.Fix.v2.05.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/Ntp/OrderEntry/Asx.AsxDerivatives.OrderEntry.Fix.v2.05.pdf "Australian Securities Exchange 2.05 Pdf"
-[Asx.AsxDerivatives.Trade24.Fix.v1.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/ "Australian Securities Exchange 1.0 Pdf"
-[Asx.AsxSecurities.DropCopy.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/ "Australian Securities Exchange 1.1 Pdf"
-[Asx.AsxSecurities.MarketPoint.Fix.v1.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/ "Australian Securities Exchange 1.0 Pdf"
-[Asx.AsxSecurities.OrderEntry.Fix.v1.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/ "Australian Securities Exchange 1.1 Pdf"
-[Asx.AsxSecurities.SignalB.Fix.v1.0.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Asx/Specifications/ "Australian Securities Exchange 1.0 Pdf"

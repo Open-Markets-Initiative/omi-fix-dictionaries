@@ -5,11 +5,11 @@
 
 | [Protocol][Omi.BlueOceanAts.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.BlueOceanAts.Specifications] |
 | --- | --- | ---: | --- | --- |
-| [DropCopy][BlueOceanAts.BlueEquities.DropCopy] | [v1.13.1](BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.xml) | 5/7/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.Pdf] |
-| [OrderEntry][BlueOceanAts.BlueEquities.OrderEntry] | [v1.13](BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.xml) | 1/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.Pdf] |
-| [OrderEntry][BlueOceanAts.BlueEquities.OrderEntry] | [v1.13.2026](BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.2026.xml) | 8/18/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.2026.Pdf] |
-| [OrderEntry][BlueOceanAts.BlueEquities.OrderEntry] | [v1.14](BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.14.xml) | 10/24/2025 | [Deprecated][Omi.Glossary.Deployment.Deprecated] | [pdf][BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.14.Pdf] |
-| [TopOfBook][BlueOceanAts.BlueEquities.TopOfBook] | [v2.0.1](BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.xml) | 1/1/2026 | [Active][Omi.Glossary.Deployment.Active] | [pdf][BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.Pdf] |
+| [DropCopy][BlueOceanAts.BlueEquities.DropCopy] | [v1.13.1](BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.xml) | 5/7/2026 | [Active][Omi.Glossary.Deployment.Active] |  |
+| [OrderEntry][BlueOceanAts.BlueEquities.OrderEntry] | [v1.13](BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.xml) | 1/1/2026 | [Active][Omi.Glossary.Deployment.Active] |  |
+| [OrderEntry][BlueOceanAts.BlueEquities.OrderEntry] | [v1.13.2026](BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.2026.xml) | 8/18/2026 | [Active][Omi.Glossary.Deployment.Active] |  |
+| [OrderEntry][BlueOceanAts.BlueEquities.OrderEntry] | [v1.14](BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.14.xml) | 10/24/2025 | [Deprecated][Omi.Glossary.Deployment.Deprecated] |  |
+| [TopOfBook][BlueOceanAts.BlueEquities.TopOfBook] | [v2.0.1](BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.xml) | 1/1/2026 | [Active][Omi.Glossary.Deployment.Active] |  |
 
 
 BlueOceanAts: [website](https://blueocean-tech.io/ "Go to Blue Ocean Technologies")
@@ -29,8 +29,3 @@ BlueOceanAts: [website](https://blueocean-tech.io/ "Go to Blue Ocean Technologie
 [BlueOceanAts.BlueEquities.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/BlueOceanAts/Protocols/BlueEquities/OrderEntry.md "Order Entry"
 [BlueOceanAts.BlueEquities.TopOfBook]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/BlueOceanAts/Protocols/BlueEquities/TopOfBook.md "Top Of Book"
 
-[BlueOceanAts.BlueEquities.DropCopy.Fix.v1.13.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/BlueOceanAts/Specifications/ "Blue Ocean Technologies 1.13.1 Pdf"
-[BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/BlueOceanAts/Specifications/ "Blue Ocean Technologies 1.13 Pdf"
-[BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.13.2026.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/BlueOceanAts/Specifications/ "Blue Ocean Technologies 1.13.2026 Pdf"
-[BlueOceanAts.BlueEquities.OrderEntry.Fix.v1.14.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/BlueOceanAts/Specifications/ "Blue Ocean Technologies 1.14 Pdf"
-[BlueOceanAts.BlueEquities.TopOfBook.Fix.v2.0.1.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/BlueOceanAts/Specifications/ "Blue Ocean Technologies 2.0.1 Pdf"
