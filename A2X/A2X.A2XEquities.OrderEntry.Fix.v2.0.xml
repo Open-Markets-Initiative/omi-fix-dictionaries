@@ -138,7 +138,7 @@
       <field name="NoSides" required="N" />
       <field name="Side" required="N" />
       <field name="Account" required="N" />
-      <field name="OrderCapacity" required="N" />
+      <field name="SideOrderCapacity" required="N" />
       <field name="TradeDate" required="Y" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
@@ -203,7 +203,7 @@
       <field name="SecurityExchange" required="N" />
       <field name="NoSides" required="N" />
       <field name="Side" required="Y" />
-      <field name="OrderCapacity" required="N" />
+      <field name="SideOrderCapacity" required="N" />
       <field name="Account" required="N" />
       <field name="TradeReportID" required="Y" />
       <field name="TrdType" required="N" />
@@ -327,6 +327,10 @@
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Order Cancel Request" />
       <value enum="2" description="Order Cancel/Replace Request" />
+    </field>
+    <field number="528" name="SideOrderCapacity" type="CHAR">
+      <value enum="A" description="Agency" />
+      <value enum="P" description="Principal" />
     </field>
     <field number="552" name="NoSides" type="NUMINGROUP" />
     <field number="571" name="TradeReportID" type="STRING" />

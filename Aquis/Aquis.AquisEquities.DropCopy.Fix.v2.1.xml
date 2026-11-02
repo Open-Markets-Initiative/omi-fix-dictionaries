@@ -165,7 +165,16 @@
       <value enum="5" description="RIC" />
       <value enum="8" description="Exchange Code" />
     </field>
-    <field number="30" name="LastMkt" type="EXCHANGE" />
+    <field number="30" name="LastMkt" type="EXCHANGE">
+      <value enum="AQEA" description="Aquis Europe AoD trades" />
+      <value enum="AQED" description="Aquis Europe non-display (AMP) trades" />
+      <value enum="AQEU" description="Aquis Europe lit trades including MaC" />
+      <value enum="AQXA" description="Aquis PLC AoD trades" />
+      <value enum="AQXD" description="Aquis PLC non-display (AMP) trades" />
+      <value enum="AQXE" description="Aquis PLC lit trades including MaC" />
+      <value enum="AVEU" description="Aquis Europe VWAP Match (AVM) trades" />
+      <value enum="AVXE" description="Aquis PLC VWAP Match (AVM) trades" />
+    </field>
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastShares" type="QTY" />
     <field number="34" name="MsgSeqNum" type="SEQNUM" />
@@ -203,7 +212,13 @@
     <field number="55" name="Symbol" type="STRING" />
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="58" name="Text" type="STRING" />
-    <field number="59" name="TimeInForce" type="CHAR" />
+    <field number="59" name="TimeInForce" type="CHAR">
+      <value enum="0" description="Day" />
+      <value enum="3" description="Immediate or Cancel (IOC)" />
+      <value enum="4" description="Fill or Kill (FOK)" />
+      <value enum="6" description="Good Till Date" />
+      <value enum="8" description="Good For Auction (GFA)" />
+    </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
     <field number="98" name="EncryptMethod" type="INT" />
@@ -224,8 +239,10 @@
       <value enum="3" description="Done for Day" />
       <value enum="4" description="Cancelled" />
       <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
       <value enum="C" description="Expired" />
       <value enum="D" description="Restated" />
+      <value enum="F" description="Trade" />
     </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="207" name="SecurityExchange" type="EXCHANGE" />
@@ -239,8 +256,18 @@
     </field>
     <field number="382" name="NoContraBrokers" type="STRING" />
     <field number="571" name="TradeReportID" type="STRING" />
-    <field number="828" name="TrdType" type="STRING" />
-    <field number="829" name="TrdSubType" type="STRING" />
+    <field number="828" name="TrdType" type="STRING">
+      <value enum="1" description="Block Trade (default if not supplied, LIS_CROSS)" />
+      <value enum="6" description="Weighted Average Price Trade (defined in tag 829)" />
+    </field>
+    <field number="829" name="TrdSubType" type="STRING">
+      <value enum="0" description="Block Trade for clearing" />
+      <value enum="1" description="Block Trade not for clearing" />
+      <value enum="2" description="Volume Weighted Average Price Trade for clearing" />
+      <value enum="3" description="Volume Weighted Average Price Trade not for clearing" />
+      <value enum="4" description="Time Weighted Average Price Trade for clearing" />
+      <value enum="5" description="Time Weighted Average Price Trade not for clearing" />
+    </field>
     <field number="851" name="LastLiquidityInd" type="INT">
       <value enum="1" description="Added liquidity" />
       <value enum="2" description="Removed liquidity" />
@@ -263,6 +290,8 @@
       <value enum="2" description="Liquidity provision activity" />
       <value enum="4" description="Algorithmic order" />
     </field>
-    <field number="11006" name="CrossingDuration" type="STRING" />
+    <field number="11006" name="CrossingDuration" type="STRING">
+      <value enum="5" description="5 Minutes" />
+    </field>
   </fields>
 </fix>

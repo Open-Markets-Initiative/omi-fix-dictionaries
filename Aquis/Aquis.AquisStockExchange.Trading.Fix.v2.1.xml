@@ -1,0 +1,382 @@
+<!--
+  Fix dictionary for: Aquis Trading Fix v2.1
+
+  Protocol:
+    Organization: Aquis Exchange
+    Protocol: 
+    Encoding: 
+    Version: 2.1
+    Date: 2023-07-01
+    Specification: Aquis Stock Exchange FIX 4.4 Trading Specification v2.1.pdf
+
+  Script:
+    Generator: 1.0.0.0
+    License: Public/GPLv3
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The protocol compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="4" minor="4" servicepack="0" type="FIX">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="SenderCompID" required="Y" />
+    <field name="SendingTime" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="PossResend" required="N" />
+    <field name="OrigSendingTime" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="N" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="TradeCaptureReport" msgtype="AE" msgcat="app">
+      <field name="TradeReportID" required="Y" />
+      <field name="TradeReportTransType" required="Y" />
+      <field name="TrdType" required="N" />
+      <field name="TrdSubType" required="N" />
+      <field name="TrdTypeBenchRef" required="N" />
+      <group name="NoTradePriceConditions" required="N">
+        <field name="TradePriceCondition" required="N" />
+      </group>
+      <field name="ReportedPxDiff" required="N" />
+      <field name="SecondaryTradeReportRefID" required="N" />
+      <field name="Symbol" required="N" />
+      <field name="SecurityID" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
+      <field name="LastQty" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="TradeDate" required="Y" />
+      <field name="TransactTime" required="Y" />
+      <field name="SettlDate" required="N" />
+      <field name="TradePublishIndicator" required="N" />
+      <group name="NoSides" required="Y">
+        <field name="Side" required="Y" />
+        <field name="OrderID" required="Y" />
+        <group name="NoPartyIDs" required="Y">
+          <field name="PartyID" required="Y" />
+          <field name="PartyIDSource" required="Y" />
+          <field name="PartyRole" required="Y" />
+        </group>
+        <field name="OrderCapacity" required="N" />
+        <field name="TradingSessionID" required="Y" />
+      </group>
+    </message>
+    <message name="MassQuote" msgtype="i" msgcat="app">
+      <field name="QuoteID" required="Y" />
+      <field name="QuoteResponseLevel" required="N" />
+      <group name="NoQuoteSets" required="Y">
+        <field name="QuoteSetID" required="Y" />
+        <field name="TotNoQuoteEntries" required="N" />
+        <field name="LastFragment" required="N" />
+        <group name="NoQuoteEntries" required="Y">
+          <field name="QuoteEntryID" required="Y" />
+          <field name="Symbol" required="N" />
+          <field name="SecurityID" required="Y" />
+          <field name="SecurityIDSource" required="Y" />
+          <field name="BidPx" required="Y" />
+          <field name="OfferPx" required="Y" />
+          <field name="BidSize" required="Y" />
+          <field name="OfferSize" required="Y" />
+          <field name="TransactTime" required="N" />
+          <field name="TradingSessionID" required="Y" />
+          <field name="QuoteEntryStatus" required="N" />
+          <field name="QuoteEntryRejectReason" required="N" />
+        </group>
+      </group>
+    </message>
+    <message name="QuoteCancel" msgtype="Z" msgcat="app">
+      <field name="QuoteID" required="Y" />
+      <field name="QuoteCancelType" required="Y" />
+      <field name="TradingSessionID" required="Y" />
+      <group name="NoQuoteEntries" required="N">
+        <field name="QuoteEntryID" required="Y" />
+        <field name="Symbol" required="N" />
+        <field name="SecurityID" required="Y" />
+        <field name="SecurityIDSource" required="Y" />
+        <field name="BidPx" required="Y" />
+        <field name="OfferPx" required="Y" />
+        <field name="BidSize" required="Y" />
+        <field name="OfferSize" required="Y" />
+        <field name="TransactTime" required="N" />
+        <field name="TradingSessionID" required="Y" />
+        <field name="QuoteEntryStatus" required="N" />
+        <field name="QuoteEntryRejectReason" required="N" />
+      </group>
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="RefTagID" required="N" />
+      <field name="RefMsgType" required="N" />
+      <field name="SessionRejectReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="TradeCaptureReportAck" msgtype="AR" msgcat="app">
+      <field name="TradeReportID" required="Y" />
+      <field name="TradeReportTransType" required="N" />
+      <field name="TrdType" required="N" />
+      <field name="TrdSubType" required="N" />
+      <field name="TrdTypeBenchRef" required="N" />
+      <field name="TrdRptStatus" required="N" />
+      <field name="TradeReportRejectReason" required="N" />
+      <field name="SecondaryTradeReportID" required="N" />
+      <field name="SecurityID" required="Y" />
+      <field name="SecurityIDSource" required="Y" />
+      <field name="TransactTime" required="N" />
+      <field name="Text" required="N" />
+      <field name="TradingSessionID" required="Y" />
+    </message>
+    <message name="MassQuoteAcknowledgement" msgtype="b" msgcat="app">
+      <field name="QuoteID" required="Y" />
+      <field name="QuoteStatus" required="Y" />
+      <field name="QuoteRejectReason" required="N" />
+      <field name="QuoteResponseLevel" required="N" />
+      <field name="Text" required="N" />
+      <group name="NoQuoteSets" required="N">
+        <field name="QuoteSetID" required="Y" />
+        <field name="TotNoQuoteEntries" required="N" />
+        <field name="LastFragment" required="N" />
+        <group name="NoQuoteEntries" required="Y">
+          <field name="QuoteEntryID" required="Y" />
+          <field name="Symbol" required="N" />
+          <field name="SecurityID" required="Y" />
+          <field name="SecurityIDSource" required="Y" />
+          <field name="BidPx" required="Y" />
+          <field name="OfferPx" required="Y" />
+          <field name="BidSize" required="Y" />
+          <field name="OfferSize" required="Y" />
+          <field name="TransactTime" required="N" />
+          <field name="TradingSessionID" required="Y" />
+          <field name="QuoteEntryStatus" required="N" />
+          <field name="QuoteEntryRejectReason" required="N" />
+        </group>
+      </group>
+    </message>
+    <message name="QuoteStatusReport" msgtype="AI" msgcat="app">
+      <field name="QuoteID" required="Y" />
+      <field name="TradingSessionID" required="Y" />
+      <field name="Symbol" required="N" />
+      <field name="SecurityID" required="N" />
+      <field name="SecurityIDSource" required="N" />
+      <field name="Side" required="N" />
+      <field name="TransactTime" required="N" />
+      <field name="QuoteStatus" required="N" />
+      <field name="Text" required="N" />
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="LENGTH" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="22" name="SecurityIDSource" type="STRING">
+      <value enum="4" description="ISIN" />
+    </field>
+    <field number="31" name="LastPx" type="PRICE" />
+    <field number="32" name="LastQty" type="QTY" />
+    <field number="34" name="MsgSeqNum" type="SEQNUM" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="37" name="OrderID" type="STRING" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="48" name="SecurityID" type="STRING" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="54" name="Side" type="CHAR">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+    </field>
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="64" name="SettlDate" type="LOCALMKTDATE" />
+    <field number="75" name="TradeDate" type="LOCALMKTDATE" />
+    <field number="97" name="PossResend" type="BOOLEAN" />
+    <field number="98" name="EncryptMethod" type="INT">
+      <value enum="0" description="None" />
+    </field>
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="117" name="QuoteID" type="STRING" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN" />
+    <field number="132" name="BidPx" type="PRICE" />
+    <field number="133" name="OfferPx" type="PRICE" />
+    <field number="134" name="BidSize" type="QTY" />
+    <field number="135" name="OfferSize" type="QTY" />
+    <field number="295" name="NoQuoteEntries" type="NUMINGROUP" />
+    <field number="296" name="NoQuoteSets" type="NUMINGROUP" />
+    <field number="297" name="QuoteStatus" type="INT">
+      <value enum="0" description="Accepted" />
+      <value enum="100" description="Partially Accepted" />
+      <value enum="5" description="Rejected" />
+    </field>
+    <field number="298" name="QuoteCancelType" type="INT">
+      <value enum="1" description="Cancel for Symbol" />
+      <value enum="4" description="Cancel All Quotes" />
+    </field>
+    <field number="299" name="QuoteEntryID" type="STRING" />
+    <field number="300" name="QuoteRejectReason" type="INT">
+      <value enum="99" description="Other" />
+    </field>
+    <field number="301" name="QuoteResponseLevel" type="INT">
+      <value enum="1" description="Acknowledge rejected quotes only" />
+    </field>
+    <field number="302" name="QuoteSetID" type="STRING" />
+    <field number="304" name="TotNoQuoteEntries" type="INT" />
+    <field number="336" name="TradingSessionID" type="STRING">
+      <value enum="CHF/ISDX-exl" description="CHF/ISDX-exl" />
+      <value enum="EUR/ISDX-exl" description="EUR/ISDX-exl" />
+      <value enum="EUR/ISDX-exn" description="EUR/ISDX-exn" />
+      <value enum="GBP/ISDX-exl" description="GBP/ISDX-exl" />
+      <value enum="GBP/ISDX-exn" description="GBP/ISDX-exn" />
+      <value enum="GBX/ISDX-exl" description="GBX/ISDX-exl" />
+      <value enum="GBX/ISDX-exn" description="GBX/ISDX-exn" />
+      <value enum="NOK/ISDX-exl" description="NOK/ISDX-exl" />
+      <value enum="SEK/ISDX-exn" description="SEK/ISDX-exn" />
+      <value enum="USD/ISDX-exl" description="USD/ISDX-exl" />
+      <value enum="USD/ISDX-exn" description="USD/ISDX-exn" />
+    </field>
+    <field number="368" name="QuoteEntryRejectReason" type="INT">
+      <value enum="1" description="Unknown Security ID" />
+      <value enum="112" description="Invalid Quantity" />
+      <value enum="115" description="Invalid due to market maker protection" />
+      <value enum="116" description="Security Suspended" />
+      <value enum="117" description="Security Withdrawn" />
+      <value enum="2" description="Exchange Closed" />
+      <value enum="4" description="Too late to enter" />
+      <value enum="8" description="Invalid Price" />
+      <value enum="9" description="Not Authorised" />
+      <value enum="99" description="Other" />
+    </field>
+    <field number="371" name="RefTagID" type="INT" />
+    <field number="372" name="RefMsgType" type="STRING" />
+    <field number="373" name="SessionRejectReason" type="INT" />
+    <field number="447" name="PartyIDSource" type="CHAR">
+      <value enum="B" description="BIC" />
+      <value enum="G" description="MIC" />
+    </field>
+    <field number="448" name="PartyID" type="STRING" />
+    <field number="452" name="PartyRole" type="INT">
+      <value enum="17" description="Contra Firm" />
+      <value enum="63" description="Systematic Internaliser" />
+      <value enum="73" description="Executing Venue" />
+    </field>
+    <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
+    <field number="487" name="TradeReportTransType" type="INT">
+      <value enum="0" description="New" />
+      <value enum="1" description="Cancel" />
+      <value enum="2" description="Replace" />
+    </field>
+    <field number="528" name="OrderCapacity" type="CHAR">
+      <value enum="A" description="Agency" />
+      <value enum="P" description="Principal" />
+    </field>
+    <field number="552" name="NoSides" type="NUMINGROUP" />
+    <field number="571" name="TradeReportID" type="STRING" />
+    <field number="751" name="TradeReportRejectReason" type="INT">
+      <value enum="100" description="Duplicate TradeReportID (571)" />
+      <value enum="2" description="Unknown Instrument" />
+      <value enum="4" description="Invalid Trade Type" />
+      <value enum="99" description="Other" />
+    </field>
+    <field number="818" name="SecondaryTradeReportID" type="STRING" />
+    <field number="828" name="TrdType" type="INT">
+      <value enum="0" description="Regular Trade (O)" />
+      <value enum="101" description="Negotiated Trade in Liquid Financial Instruments" />
+      <value enum="102" description="Negotiated Trade in Illiquid Financial Instruments" />
+      <value enum="103" description="Negotiated Trade Subject to Conditions Other Than the Current Market Price" />
+      <value enum="38" description="Large in Scale (L)" />
+    </field>
+    <field number="829" name="TrdSubType" type="INT">
+      <value enum="15" description="B (Broker to broker trade)" />
+      <value enum="18" description="M (Market maker to market maker trade)" />
+      <value enum="22" description="P (Portfolio trade)" />
+      <value enum="26" description="R (Riskless principal trade)" />
+      <value enum="37" description="X (Cross trade)" />
+    </field>
+    <field number="830" name="TrdTypeBenchRef" type="INT">
+      <value enum="0" description="No Benchmark or Reference Price Trade" />
+      <value enum="1" description="Benchmark Trade" />
+      <value enum="2" description="Reference Price Trade" />
+    </field>
+    <field number="881" name="SecondaryTradeReportRefID" type="STRING" />
+    <field number="893" name="LastFragment" type="BOOLEAN">
+      <value enum="N" description="Message is continued" />
+      <value enum="Y" description="Last message" />
+    </field>
+    <field number="939" name="TrdRptStatus" type="INT">
+      <value enum="0" description="Accepted" />
+      <value enum="1" description="Rejected" />
+    </field>
+    <field number="1134" name="ReportedPxDiff" type="BOOLEAN">
+      <value enum="N" description="No" />
+      <value enum="Y" description="Yes" />
+    </field>
+    <field number="1167" name="QuoteEntryStatus" type="INT">
+      <value enum="0" description="Accepted" />
+      <value enum="100" description="Bid Rejected, Ask Accepted" />
+      <value enum="101" description="Ask Rejected, Bid Accepted" />
+      <value enum="5" description="Rejected" />
+    </field>
+    <field number="1390" name="TradePublishIndicator" type="INT">
+      <value enum="1" description="Publish immediately" />
+    </field>
+    <field number="5997" name="NoTradePriceConditions" type="NUMINGROUP" />
+    <field number="5998" name="TradePriceCondition" type="INT">
+      <value enum="0" description="CD - Special cum dividend" />
+      <value enum="1" description="CR - Special cum rights" />
+      <value enum="10" description="SP - Special price" />
+      <value enum="11" description="XB - Special excluding bonus" />
+      <value enum="12" description="GD - Special guaranteed delivery" />
+      <value enum="2" description="XD - Special ex dividend" />
+      <value enum="3" description="XR - Special ex rights" />
+      <value enum="4" description="CC - Special cum coupon" />
+      <value enum="5" description="CP - Special cum capital repayments" />
+      <value enum="6" description="XC - Special ex coupon" />
+      <value enum="7" description="XP - Special ex capital repayments" />
+      <value enum="8" description="CS - Cash settlement" />
+      <value enum="9" description="CB - Special cum bonus" />
+    </field>
+  </fields>
+</fix>
