@@ -49,13 +49,14 @@
     <message name="Logon" msgtype="A" msgcat="admin">
       <field name="EncryptMethod" required="Y" />
       <field name="HeartBtInt" required="Y" />
-      <field name="NextExpectedMsgSeqNum" required="N" />
+      <field name="NextExpectedMsgSeqNum" required="Y" />
       <field name="EncryptedPasswordMethod" required="N" />
       <field name="EncryptedPassword" required="N" />
       <field name="EncryptedNewPassword" required="N" />
       <field name="SessionStatus" required="N" />
       <field name="DefaultApplVerID" required="Y" />
       <field name="TestMessageIndicator" required="N" />
+      <field name="Text" required="N" />
     </message>
     <message name="Logout" msgtype="5" msgcat="admin">
       <field name="SessionStatus" required="N" />
@@ -79,74 +80,77 @@
       <field name="Text" required="N" />
     </message>
     <message name="SequenceReset" msgtype="4" msgcat="admin">
-      <field name="GapFillFlag" required="N" />
       <field name="NewSeqNo" required="Y" />
+      <field name="GapFillFlag" required="N" />
     </message>
     <message name="NewOrderSingle" msgtype="D" msgcat="app">
       <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="N">
+      <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="N" />
+        <field name="PartyIDSource" required="Y" />
         <field name="PartyRole" required="Y" />
       </group>
       <field name="SecurityID" required="Y" />
       <field name="SecurityIDSource" required="Y" />
-      <field name="SecurityExchange" required="Y" />
+      <field name="SecurityExchange" required="N" />
       <field name="OrdType" required="Y" />
       <field name="TimeInForce" required="N" />
       <field name="Side" required="Y" />
       <field name="OrderQty" required="Y" />
       <field name="Price" required="N" />
       <field name="Text" required="N" />
-      <field name="TransactTime" required="N" />
+      <field name="TransactTime" required="Y" />
       <field name="PositionEffect" required="N" />
       <field name="OrderCapacity" required="N" />
       <field name="MaxPriceLevels" required="N" />
-      <group name="NoDisclosureInstructions" required="N">
+      <group name="NoDisclosureInstructions" required="Y">
         <field name="DisclosureType" required="Y" />
-        <field name="DisclosureInstruction" required="N" />
+        <field name="DisclosureInstruction" required="Y" />
       </group>
     </message>
     <message name="OrderCancelRequest" msgtype="F" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="OrderID" required="N" />
       <field name="OrigClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="N">
+      <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="N" />
+        <field name="PartyIDSource" required="Y" />
         <field name="PartyRole" required="Y" />
       </group>
       <field name="SecurityID" required="Y" />
       <field name="SecurityIDSource" required="Y" />
-      <field name="SecurityExchange" required="Y" />
-      <field name="OrderQty" required="N" />
+      <field name="SecurityExchange" required="N" />
+      <field name="OrderQty" required="Y" />
       <field name="Side" required="Y" />
       <field name="Text" required="N" />
-      <field name="TransactTime" required="N" />
+      <field name="TransactTime" required="Y" />
     </message>
     <message name="UserRequest" msgtype="BE" msgcat="app">
       <field name="UserRequestID" required="Y" />
       <field name="UserRequestType" required="Y" />
       <field name="UserName" required="Y" />
     </message>
+    <message name="PartyEntitlementsRequest" msgtype="CU" msgcat="app">
+      <field name="EntitlementsRequestID" required="Y" />
+    </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="ClOrdID" required="N" />
       <field name="OrderID" required="Y" />
       <field name="ExecID" required="Y" />
-      <group name="NoPartyIDs" required="N">
+      <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="N" />
+        <field name="PartyIDSource" required="Y" />
         <field name="PartyRole" required="Y" />
       </group>
       <field name="SecurityID" required="Y" />
       <field name="SecurityIDSource" required="Y" />
-      <field name="SecurityExchange" required="Y" />
+      <field name="SecurityExchange" required="N" />
       <field name="OrdType" required="N" />
       <field name="TimeInForce" required="N" />
       <field name="Side" required="Y" />
       <field name="OrderQty" required="N" />
       <field name="Price" required="N" />
-      <field name="TransactTime" required="N" />
+      <field name="TransactTime" required="Y" />
       <field name="OrderCapacity" required="N" />
       <field name="MaxPriceLevels" required="N" />
       <field name="PositionEffect" required="N" />
@@ -168,14 +172,14 @@
     </message>
     <message name="CancelReject" msgtype="9" msgcat="app">
       <field name="ClOrdID" required="Y" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="OrderID" required="N" />
-      <group name="NoPartyIDs" required="N">
+      <field name="OrigClOrdID" required="N" />
+      <field name="OrderID" required="Y" />
+      <group name="NoPartyIDs" required="Y">
         <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="N" />
+        <field name="PartyIDSource" required="Y" />
         <field name="PartyRole" required="Y" />
       </group>
-      <field name="TransactTime" required="N" />
+      <field name="TransactTime" required="Y" />
       <field name="OrdStatus" required="Y" />
       <field name="CxlRejResponseTo" required="Y" />
       <field name="CxlRejReason" required="N" />
@@ -193,11 +197,33 @@
       <field name="UserRequestID" required="Y" />
       <field name="UserName" required="Y" />
       <group name="NoThrottles" required="N">
-        <field name="ThrottleAction" required="Y" />
+        <field name="ThrottleAction" required="N" />
         <field name="ThrottleType" required="N" />
         <field name="ThrottleNoMsgs" required="N" />
         <field name="ThrottleTimeInterval" required="N" />
         <field name="ThrottleTimeUnit" required="N" />
+      </group>
+    </message>
+    <message name="PartyEntitlementsReport" msgtype="CV" msgcat="app">
+      <field name="EntitlementsReportID" required="Y" />
+      <field name="EntitlementsRequestID" required="N" />
+      <field name="RequestResult" required="N" />
+      <field name="TotNoPartyList" required="N" />
+      <field name="LastFragment" required="N" />
+      <group name="NoPartyEntitlements" required="Y">
+        <group name="NoPartyDetails" required="Y">
+          <field name="PartyDetailID" required="Y" />
+          <field name="PartyDetailIDSource" required="Y" />
+          <field name="PartyDetailRole" required="Y" />
+        </group>
+        <group name="NoEntitlements" required="N">
+          <field name="EntitlementIndicator" required="N" />
+          <field name="EntitlementType" required="N" />
+          <group name="NoMarketSegments" required="N">
+            <field name="MarketID" required="N" />
+          </group>
+          <field name="EntitlementID" required="N" />
+        </group>
       </group>
     </message>
   </messages>
@@ -211,7 +237,9 @@
     <field number="14" name="CumQty" type="QTY" />
     <field number="16" name="EndSeqNo" type="SEQNUM" />
     <field number="17" name="ExecID" type="STRING" />
-    <field number="22" name="SecurityIDSource" type="STRING" />
+    <field number="22" name="SecurityIDSource" type="STRING">
+      <value enum="8" description="Exchange Symbol" />
+    </field>
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastQty" type="QTY" />
     <field number="34" name="MsgSeqNum" type="SEQNUM" />
@@ -219,9 +247,16 @@
     <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
-    <field number="39" name="OrdStatus" type="CHAR" />
+    <field number="39" name="OrdStatus" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partially filled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Cancelled" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
+      <value enum="A" description="Pending New" />
+    </field>
     <field number="40" name="OrdType" type="CHAR">
-      <value enum="1" description="Market" />
       <value enum="2" description="Limit" />
     </field>
     <field number="41" name="OrigClOrdID" type="STRING" />
@@ -234,65 +269,208 @@
     <field number="54" name="Side" type="CHAR">
       <value enum="1" description="Buy" />
       <value enum="2" description="Sell" />
+      <value enum="5" description="Sell short" />
     </field>
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="58" name="Text" type="STRING" />
-    <field number="59" name="TimeInForce" type="CHAR" />
+    <field number="59" name="TimeInForce" type="CHAR">
+      <value enum="0" description="Day" />
+    </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
-    <field number="77" name="PositionEffect" type="CHAR" />
+    <field number="77" name="PositionEffect" type="CHAR">
+      <value enum="C" description="Close" />
+    </field>
     <field number="97" name="PossResend" type="BOOLEAN" />
-    <field number="98" name="EncryptMethod" type="INT" />
-    <field number="102" name="CxlRejReason" type="INT" />
-    <field number="103" name="OrdRejReason" type="INT" />
+    <field number="98" name="EncryptMethod" type="INT">
+      <value enum="0" description="None/Other" />
+    </field>
+    <field number="102" name="CxlRejReason" type="INT">
+      <value enum="0" description="Too late to cancel" />
+      <value enum="1" description="Unknown Order" />
+      <value enum="3" description="Order already in Pending Cancel or Pending Replace status" />
+      <value enum="6" description="Duplicate ClOrdID (11) received" />
+      <value enum="99" description="Other" />
+    </field>
+    <field number="103" name="OrdRejReason" type="INT">
+      <value enum="101" description="Price exceeds current price band (override not allowed)" />
+      <value enum="13" description="Incorrect quantity" />
+      <value enum="22" description="Short sell not permitted" />
+      <value enum="3" description="Order exceed limit" />
+      <value enum="6" description="Duplicate order" />
+      <value enum="99" description="Other" />
+    </field>
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="112" name="TestReqID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="123" name="GapFillFlag" type="BOOLEAN" />
-    <field number="150" name="ExecType" type="CHAR" />
+    <field number="150" name="ExecType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="4" description="Cancelled" />
+      <value enum="6" description="Pending Cancel" />
+      <value enum="8" description="Rejected" />
+      <value enum="A" description="Pending New" />
+      <value enum="F" description="Trade" />
+    </field>
     <field number="151" name="LeavesQty" type="QTY" />
-    <field number="207" name="SecurityExchange" type="STRING" />
+    <field number="207" name="SecurityExchange" type="EXCHANGE">
+      <value enum="XSEC" description="Stocks listed in Shenzhen Stock Exchange under Shenzhen – Hong Kong Stock Connect" />
+      <value enum="XSSC" description="Stocks listed in Shanghai Stock Exchange under Shanghai – Hong Kong Stock Connect" />
+    </field>
     <field number="371" name="RefTagID" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
-    <field number="373" name="SessionRejectReason" type="INT" />
-    <field number="378" name="ExecRestatementReason" type="INT" />
+    <field number="373" name="SessionRejectReason" type="INT">
+      <value enum="0" description="Invalid Tag Number" />
+      <value enum="1" description="Required Tag Missing" />
+      <value enum="10" description="Sending Time Accuracy problem" />
+      <value enum="11" description="Invalid Msg Type" />
+      <value enum="13" description="Tag appears more than once" />
+      <value enum="15" description="Repeating group fields out of order" />
+      <value enum="16" description="Incorrect NumInGroup count for repeating group" />
+      <value enum="18" description="Invalid/Unsupported Application Version" />
+      <value enum="2" description="Tag not defined for this message" />
+      <value enum="3" description="Undefined tag" />
+      <value enum="4" description="Tag specified without a value" />
+      <value enum="5" description="Value is incorrect (out of range) for this tag" />
+      <value enum="6" description="Incorrect data format for value" />
+      <value enum="9" description="CompID problem" />
+      <value enum="99" description="Other" />
+    </field>
+    <field number="378" name="ExecRestatementReason" type="INT">
+      <value enum="105" description="Cancel due to Broker suspension" />
+      <value enum="106" description="Cancel due to Exchange Participant suspension" />
+      <value enum="107" description="System Cancel" />
+      <value enum="108" description="Cancelled by the home market" />
+      <value enum="8" description="Market (Exchange) Option" />
+      <value enum="99" description="Other" />
+    </field>
     <field number="379" name="BusinessRejectRefID" type="STRING" />
-    <field number="380" name="BusinessRejectReason" type="INT" />
+    <field number="380" name="BusinessRejectReason" type="INT">
+      <value enum="0" description="Other" />
+      <value enum="1" description="Unknown ID" />
+      <value enum="2" description="Unknown Security" />
+      <value enum="3" description="Unspecified Message Type" />
+      <value enum="4" description="Application not available" />
+      <value enum="5" description="Conditionally required field missing" />
+      <value enum="8" description="Throttle Limit exceeded" />
+    </field>
     <field number="434" name="CxlRejResponseTo" type="CHAR">
       <value enum="1" description="Order Cancel Request" />
-      <value enum="2" description="Order Cancel/Replace Request" />
     </field>
-    <field number="447" name="PartyIDSource" type="CHAR" />
+    <field number="447" name="PartyIDSource" type="CHAR">
+      <value enum="D" description="Proprietary/Custom Code" />
+      <value enum="P" description="Short code identifier (only applicable for PartyRole=3(=Client ID))" />
+    </field>
     <field number="448" name="PartyID" type="STRING" />
-    <field number="452" name="PartyRole" type="INT" />
+    <field number="452" name="PartyRole" type="INT">
+      <value enum="1" description="Executing Firm (Broker ID that is submitting this order)" />
+      <value enum="17" description="Contra Firm (Counterparty Broker ID for this trade)." />
+      <value enum="3" description="Client ID (Broker-to-Client Assigned Number); BCAN is enforced by the regulatory body and is mandatory to provide." />
+      <value enum="5" description="Investor ID (SPSA Investor ID)" />
+      <value enum="75" description="Location ID (BS User ID)" />
+    </field>
     <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
     <field number="464" name="TestMessageIndicator" type="BOOLEAN" />
-    <field number="528" name="OrderCapacity" type="CHAR" />
+    <field number="528" name="OrderCapacity" type="CHAR">
+      <value enum="A" description="Agency" />
+      <value enum="P" description="Principal" />
+    </field>
     <field number="553" name="UserName" type="STRING" />
-    <field number="574" name="MatchType" type="STRING" />
+    <field number="574" name="MatchType" type="STRING">
+      <value enum="4" description="Auto Match" />
+    </field>
     <field number="789" name="NextExpectedMsgSeqNum" type="SEQNUM" />
     <field number="880" name="TrdMatchID" type="STRING" />
+    <field number="893" name="LastFragment" type="BOOLEAN">
+      <value enum="N" description="No" />
+      <value enum="Y" description="Yes" />
+    </field>
     <field number="923" name="UserRequestID" type="STRING" />
-    <field number="924" name="UserRequestType" type="INT" />
+    <field number="924" name="UserRequestType" type="INT">
+      <value enum="5" description="Request Throttle Limit" />
+    </field>
     <field number="1090" name="MaxPriceLevels" type="INT" />
-    <field number="1093" name="LotType" type="CHAR" />
-    <field number="1128" name="ApplVerID" type="STRING" />
+    <field number="1093" name="LotType" type="CHAR">
+      <value enum="2" description="Round Lot" />
+    </field>
+    <field number="1128" name="ApplVerID" type="STRING">
+      <value enum="9" description="FIX50SP2" />
+    </field>
     <field number="1137" name="DefaultApplVerID" type="STRING">
       <value enum="9" description="FIX50SP2" />
     </field>
+    <field number="1301" name="MarketID" type="EXCHANGE">
+      <value enum="ASHR" description="Market Segment for stocks listed in Shanghai, under Shanghai – Hong Kong Stock Connect." />
+      <value enum="ASZR" description="Market Segment for stocks listed in Shenzhen, under Shenzhen– Hong Kong Stock Connect." />
+    </field>
+    <field number="1310" name="NoMarketSegments" type="NUMINGROUP" />
     <field number="1328" name="RejectText" type="STRING" />
-    <field number="1400" name="EncryptedPasswordMethod" type="INT" />
+    <field number="1400" name="EncryptedPasswordMethod" type="INT">
+      <value enum="101" description="RSA" />
+    </field>
     <field number="1402" name="EncryptedPassword" type="STRING" />
     <field number="1404" name="EncryptedNewPassword" type="STRING" />
-    <field number="1409" name="SessionStatus" type="INT" />
+    <field number="1409" name="SessionStatus" type="INT">
+      <value enum="0" description="Session active" />
+      <value enum="1" description="Session password changed" />
+      <value enum="100" description="Password change is required" />
+      <value enum="101" description="Other" />
+      <value enum="2" description="Session password due to expire" />
+      <value enum="3" description="New session password does not comply with the policy" />
+      <value enum="4" description="Session logout complete" />
+      <value enum="5" description="Invalid username or password" />
+      <value enum="6" description="Account locked" />
+      <value enum="7" description="Logons are not allowed at this time" />
+      <value enum="8" description="Password expired" />
+    </field>
+    <field number="1511" name="RequestResult" type="INT">
+      <value enum="0" description="Valid Request" />
+      <value enum="1" description="Invalid or unsupported request" />
+      <value enum="2" description="No data found that match selection criteria" />
+      <value enum="3" description="Not authorized to retrieve data" />
+      <value enum="4" description="Data temporarily unavailable" />
+      <value enum="5" description="Request for data not supported" />
+      <value enum="99" description="Other" />
+    </field>
+    <field number="1512" name="TotNoPartyList" type="INT" />
     <field number="1610" name="NoThrottles" type="NUMINGROUP" />
-    <field number="1611" name="ThrottleAction" type="INT" />
-    <field number="1612" name="ThrottleType" type="INT" />
+    <field number="1611" name="ThrottleAction" type="INT">
+      <value enum="2" description="Reject" />
+    </field>
+    <field number="1612" name="ThrottleType" type="INT">
+      <value enum="0" description="Inbound Rate" />
+    </field>
     <field number="1613" name="ThrottleNoMsgs" type="INT" />
     <field number="1614" name="ThrottleTimeInterval" type="INT" />
-    <field number="1615" name="ThrottleTimeUnit" type="INT" />
+    <field number="1615" name="ThrottleTimeUnit" type="INT">
+      <value enum="0" description="Seconds" />
+    </field>
+    <field number="1671" name="NoPartyDetails" type="NUMINGROUP" />
+    <field number="1691" name="PartyDetailID" type="STRING" />
+    <field number="1692" name="PartyDetailIDSource" type="CHAR">
+      <value enum="D" description="Proprietary/Custom Code" />
+    </field>
+    <field number="1693" name="PartyDetailRole" type="INT">
+      <value enum="1" description="Executing Firm" />
+    </field>
+    <field number="1770" name="EntitlementsRequestID" type="STRING" />
+    <field number="1771" name="EntitlementsReportID" type="STRING" />
+    <field number="1772" name="NoPartyEntitlements" type="NUMINGROUP" />
+    <field number="1773" name="NoEntitlements" type="NUMINGROUP" />
+    <field number="1774" name="EntitlementIndicator" type="BOOLEAN">
+      <value enum="N" description="Not Entitled" />
+      <value enum="Y" description="Entitled" />
+    </field>
+    <field number="1775" name="EntitlementType" type="INT">
+      <value enum="0" description="Trade" />
+    </field>
+    <field number="1776" name="EntitlementID" type="STRING" />
     <field number="1812" name="NoDisclosureInstructions" type="NUMINGROUP" />
-    <field number="1813" name="DisclosureType" type="INT" />
-    <field number="1814" name="DisclosureInstruction" type="INT" />
+    <field number="1813" name="DisclosureType" type="INT">
+      <value enum="100" description="None" />
+    </field>
+    <field number="1814" name="DisclosureInstruction" type="INT">
+      <value enum="1" description="Yes" />
+    </field>
   </fields>
 </fix>
