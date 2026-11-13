@@ -115,6 +115,8 @@
       <field name="ClOrdID" required="Y" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Symbol" required="Y" />
+      <field name="Side" required="N" />
+      <field name="Price" required="N" />
     </message>
     <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
       <field name="Account" required="N" />

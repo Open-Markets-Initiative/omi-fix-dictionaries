@@ -21,7 +21,7 @@ This entire repository is source generated — including the words you are readi
 
 | Protocol Count | Generated Lines |
 | --- | --- |
-| 368 | 206,498 |
+| 368 | 206,502 |
 
 ## Open Markets Initiative
 

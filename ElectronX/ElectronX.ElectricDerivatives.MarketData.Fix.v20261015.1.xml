@@ -165,6 +165,7 @@
         </group>
         <field name="MinPriceIncrement" required="Y" />
         <field name="SecurityGroup" required="Y" />
+        <field name="NoLegs" required="N" />
         <field name="MinTradeVol" required="N" />
         <field name="PriceLimitType" required="N" />
         <field name="LowLimitPrice" required="N" />
@@ -186,7 +187,7 @@
       <field name="ContractMultiplier" required="N" />
       <group name="NoEvents" required="Y">
         <field name="EventType" required="Y" />
-        <field name="EventDate" required="Y" />
+        <field name="EventDate" required="N" />
         <field name="EventText" required="Y" />
       </group>
       <field name="MinPriceIncrement" required="Y" />
@@ -312,6 +313,7 @@
       <value enum="14" description="Energy" />
     </field>
     <field number="554" name="Password" type="STRING" />
+    <field number="555" name="NoLegs" type="NUMINGROUP" />
     <field number="559" name="SecurityListRequestType" type="INT">
       <value enum="0" description="Individual Symbol" />
       <value enum="4" description="All Securities" />
