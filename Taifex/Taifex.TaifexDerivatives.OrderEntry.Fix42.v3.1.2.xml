@@ -1,10 +1,10 @@
 <!--
-  Fix dictionary for: Taifex OrderEntry Fix v3.1.2
+  Fix dictionary for: Taifex OrderEntry Fix42 v3.1.2
 
   Protocol:
     Organization: Taiwan Futures Exchange
     Protocol: Order Entry
-    Encoding: Financial Information eXchange
+    Encoding: Financial Information eXchange 4.2
     Version: 3.1.2
     Date: 2024-01-01
     Specification: Taifex_TCPIP_FIX_v3.1.2.pdf
@@ -28,7 +28,7 @@
   Open Markets Initiative website:
     https://openmarketsinitiative.com
 -->
-<fix major="4" minor="4" servicepack="0" type="FIX">
+<fix major="4" minor="2" servicepack="0" type="FIX">
   <header>
     <field name="BeginString" required="Y" />
     <field name="BodyLength" required="Y" />
@@ -51,8 +51,8 @@
       <field name="EncryptMethod" required="Y" />
       <field name="HeartBtInt" required="Y" />
       <field name="ResetSeqNumFlag" required="N" />
-      <field name="Username" required="N" />
-      <field name="Password" required="N" />
+      <field name="TaifexUsername" required="N" />
+      <field name="TaifexPassword" required="N" />
       <field name="RawDataLength" required="N" />
       <field name="RawData" required="N" />
       <field name="MaxMessageSize" required="N" />
@@ -83,10 +83,10 @@
     </message>
     <message name="NewOrderSingle" msgtype="D" msgcat="app">
       <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="Y">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
+      <group name="TaifexNoPartyIDs" required="Y">
+        <field name="TaifexPartyID" required="Y" />
+        <field name="TaifexPartyIDSource" required="Y" />
+        <field name="TaifexPartyRole" required="Y" />
       </group>
       <field name="Account" required="Y" />
       <field name="Symbol" required="Y" />
@@ -97,28 +97,28 @@
       <field name="Price" required="Y" />
       <field name="TimeInForce" required="Y" />
       <field name="PositionEffect" required="Y" />
-      <field name="CFICode" required="Y" />
+      <field name="TaifexCFICode" required="Y" />
       <field name="HandlInst" required="Y" />
       <field name="TaifexSymbolType" required="Y" />
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
     </message>
-    <message name="NewOrderMulti-leg" msgtype="AB" msgcat="app">
+    <message name="NewOrderMulti-leg" msgtype="UAB" msgcat="app">
       <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="Y">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
+      <group name="TaifexNoPartyIDs" required="Y">
+        <field name="TaifexPartyID" required="Y" />
+        <field name="TaifexPartyIDSource" required="Y" />
+        <field name="TaifexPartyRole" required="Y" />
       </group>
       <field name="Account" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
-      <group name="NoLegs" required="Y">
-        <field name="LegSymbol" required="Y" />
-        <field name="LegCFICode" required="Y" />
-        <field name="LegMaturityMonthYear" required="Y" />
-        <field name="LegSide" required="Y" />
-        <field name="LegQty" required="Y" />
+      <group name="TaifexNoLegs" required="Y">
+        <field name="TaifexLegSymbol" required="Y" />
+        <field name="TaifexLegCFICode" required="Y" />
+        <field name="TaifexLegMaturityMonthYear" required="Y" />
+        <field name="TaifexLegSide" required="Y" />
+        <field name="TaifexLegQty" required="Y" />
       </group>
       <field name="TransactTime" required="Y" />
       <field name="OrderQty" required="Y" />
@@ -133,15 +133,15 @@
     <message name="OrderCancelRequest" msgtype="F" msgcat="app">
       <field name="OrigClOrdID" required="Y" />
       <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="Y">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
+      <group name="TaifexNoPartyIDs" required="Y">
+        <field name="TaifexPartyID" required="Y" />
+        <field name="TaifexPartyIDSource" required="Y" />
+        <field name="TaifexPartyRole" required="Y" />
       </group>
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
       <field name="TransactTime" required="Y" />
-      <field name="CFICode" required="Y" />
+      <field name="TaifexCFICode" required="Y" />
       <field name="TaifexSymbolType" required="Y" />
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
@@ -149,10 +149,10 @@
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="OrigClOrdID" required="Y" />
       <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="Y">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
+      <group name="TaifexNoPartyIDs" required="Y">
+        <field name="TaifexPartyID" required="Y" />
+        <field name="TaifexPartyIDSource" required="Y" />
+        <field name="TaifexPartyRole" required="Y" />
       </group>
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
@@ -162,28 +162,28 @@
       <field name="Price" required="Y" />
       <field name="TimeInForce" required="Y" />
       <field name="HandlInst" required="Y" />
-      <field name="CFICode" required="Y" />
+      <field name="TaifexCFICode" required="Y" />
       <field name="TaifexSymbolType" required="Y" />
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
       <field name="TaifexExecType" required="Y" />
     </message>
-    <message name="Multi-legOrderCancelReplaceRequest" msgtype="AC" msgcat="app">
+    <message name="Multi-legOrderCancelReplaceRequest" msgtype="UAC" msgcat="app">
       <field name="OrigClOrdID" required="Y" />
       <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="Y">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
+      <group name="TaifexNoPartyIDs" required="Y">
+        <field name="TaifexPartyID" required="Y" />
+        <field name="TaifexPartyIDSource" required="Y" />
+        <field name="TaifexPartyRole" required="Y" />
       </group>
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
-      <group name="NoLegs" required="Y">
-        <field name="LegSymbol" required="Y" />
-        <field name="LegCFICode" required="Y" />
-        <field name="LegMaturityMonthYear" required="Y" />
-        <field name="LegSide" required="Y" />
-        <field name="LegQty" required="Y" />
+      <group name="TaifexNoLegs" required="Y">
+        <field name="TaifexLegSymbol" required="Y" />
+        <field name="TaifexLegCFICode" required="Y" />
+        <field name="TaifexLegMaturityMonthYear" required="Y" />
+        <field name="TaifexLegSide" required="Y" />
+        <field name="TaifexLegQty" required="Y" />
       </group>
       <field name="TransactTime" required="Y" />
       <field name="OrderQty" required="Y" />
@@ -199,7 +199,7 @@
       <field name="ClOrdID" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="Side" required="Y" />
-      <field name="CFICode" required="Y" />
+      <field name="TaifexCFICode" required="Y" />
       <field name="TaifexSymbolType" required="Y" />
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
@@ -208,7 +208,7 @@
       <field name="QuoteReqID" required="Y" />
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
-        <field name="CFICode" required="Y" />
+        <field name="TaifexCFICode" required="Y" />
         <field name="TaifexSymbolType" required="Y" />
       </group>
       <field name="TaifexOrderSource" required="Y" />
@@ -216,10 +216,10 @@
     </message>
     <message name="Quote" msgtype="S" msgcat="app">
       <field name="QuoteID" required="Y" />
-      <group name="NoPartyIDs" required="Y">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
+      <group name="TaifexNoPartyIDs" required="Y">
+        <field name="TaifexPartyID" required="Y" />
+        <field name="TaifexPartyIDSource" required="Y" />
+        <field name="TaifexPartyRole" required="Y" />
       </group>
       <field name="Account" required="Y" />
       <field name="Symbol" required="Y" />
@@ -230,7 +230,7 @@
       <field name="TransactTime" required="Y" />
       <field name="TimeInForce" required="Y" />
       <field name="PositionEffect" required="Y" />
-      <field name="CFICode" required="Y" />
+      <field name="TaifexCFICode" required="Y" />
       <field name="TaifexSymbolType" required="Y" />
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="Y" />
@@ -239,15 +239,15 @@
     <message name="QuoteCancel" msgtype="Z" msgcat="app">
       <field name="QuoteID" required="Y" />
       <field name="QuoteCancelType" required="Y" />
-      <group name="NoPartyIDs" required="Y">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
+      <group name="TaifexNoPartyIDs" required="Y">
+        <field name="TaifexPartyID" required="Y" />
+        <field name="TaifexPartyIDSource" required="Y" />
+        <field name="TaifexPartyRole" required="Y" />
       </group>
       <group name="NoQuoteEntries" required="Y">
         <group name="NoRelatedSym" required="Y">
           <field name="Symbol" required="Y" />
-          <field name="CFICode" required="Y" />
+          <field name="TaifexCFICode" required="Y" />
           <field name="TaifexSymbolType" required="Y" />
         </group>
       </group>
@@ -257,7 +257,7 @@
     <message name="QuoteStatusRequest" msgtype="a" msgcat="app">
       <field name="QuoteID" required="Y" />
       <field name="Symbol" required="Y" />
-      <field name="CFICode" required="Y" />
+      <field name="TaifexCFICode" required="Y" />
       <field name="TaifexSymbolType" required="Y" />
       <field name="TaifexOrderSource" required="Y" />
       <field name="TaifexInfoSource" required="N" />
@@ -281,9 +281,9 @@
       <field name="SecurityRequestType" required="Y" />
       <field name="Account" required="Y" />
       <group name="NoLegs" required="Y">
-        <field name="LegSymbol" required="Y" />
-        <field name="LegCFICode" required="Y" />
-        <field name="LegMaturityDate" required="Y" />
+        <field name="TaifexLegSymbol" required="Y" />
+        <field name="TaifexLegCFICode" required="Y" />
+        <field name="TaifexLegMaturityDate" required="Y" />
         <field name="LegStrikePrice" required="Y" />
       </group>
     </message>
@@ -296,10 +296,10 @@
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="OrderID" required="Y" />
       <field name="ClOrdID" required="Y" />
-      <group name="NoPartyIDs" required="N">
-        <field name="PartyID" required="Y" />
-        <field name="PartyIDSource" required="Y" />
-        <field name="PartyRole" required="Y" />
+      <group name="TaifexNoPartyIDs" required="N">
+        <field name="TaifexPartyID" required="Y" />
+        <field name="TaifexPartyIDSource" required="Y" />
+        <field name="TaifexPartyRole" required="Y" />
       </group>
       <field name="ExecID" required="Y" />
       <field name="ExecType" required="Y" />
@@ -321,15 +321,15 @@
       <field name="TransactTime" required="N" />
       <field name="TimeInForce" required="N" />
       <group name="NoLegs" required="N">
-        <field name="LegSymbol" required="Y" />
-        <field name="LegCFICode" required="Y" />
-        <field name="LegMaturityMonthYear" required="Y" />
-        <field name="LegSide" required="Y" />
-        <field name="LegLastPx" required="Y" />
-        <field name="LegQty" required="Y" />
+        <field name="TaifexLegSymbol" required="Y" />
+        <field name="TaifexLegCFICode" required="Y" />
+        <field name="TaifexLegMaturityMonthYear" required="Y" />
+        <field name="TaifexLegSide" required="Y" />
+        <field name="TaifexLegLastPx" required="Y" />
+        <field name="TaifexLegQty" required="Y" />
       </group>
       <field name="ExecTransType" required="Y" />
-      <field name="CFICode" required="N" />
+      <field name="TaifexCFICode" required="N" />
       <field name="TaifexSymbolType" required="Y" />
       <field name="TaifexPartID" required="N" />
     </message>
@@ -347,27 +347,27 @@
       <field name="QuoteReqID" required="Y" />
       <field name="TaifexPartID" required="N" />
     </message>
-    <message name="QuoteRequestReject" msgtype="AG" msgcat="app">
+    <message name="QuoteRequestReject" msgtype="UAG" msgcat="app">
       <field name="QuoteReqID" required="Y" />
-      <field name="QuoteRequestRejectReason" required="Y" />
+      <field name="TaifexQuoteRequestRejectReason" required="Y" />
       <group name="NoRelatedSym" required="Y">
         <field name="Symbol" required="Y" />
-        <field name="CFICode" required="Y" />
+        <field name="TaifexCFICode" required="Y" />
         <field name="TaifexSymbolType" required="Y" />
       </group>
       <field name="Text" required="N" />
       <field name="TaifexPartID" required="N" />
     </message>
-    <message name="QuoteStatusReport" msgtype="AI" msgcat="app">
+    <message name="QuoteStatusReport" msgtype="UAI" msgcat="app">
       <field name="QuoteID" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="BidPx" required="Y" />
       <field name="OfferPx" required="Y" />
       <field name="BidSize" required="Y" />
       <field name="OfferSize" required="Y" />
-      <field name="QuoteStatus" required="Y" />
+      <field name="QuoteAckStatus" required="Y" />
       <field name="Text" required="N" />
-      <field name="CFICode" required="Y" />
+      <field name="TaifexCFICode" required="Y" />
       <field name="TaifexSymbolType" required="Y" />
       <field name="TaifexPartID" required="N" />
     </message>
@@ -495,7 +495,7 @@
     <field number="164" name="EmailThreadID" type="STRING" />
     <field number="263" name="SubscriptionRequestType" type="CHAR" />
     <field number="295" name="NoQuoteEntries" type="NUMINGROUP" />
-    <field number="297" name="QuoteStatus" type="INT">
+    <field number="297" name="QuoteAckStatus" type="INT">
       <value enum="0" description="Quote accepted, new or quantity change" />
       <value enum="1" description="Quote cancelled" />
       <value enum="10" description="Pending" />
@@ -537,48 +537,7 @@
     <field number="380" name="BusinessRejectReason" type="INT" />
     <field number="383" name="MaxMessageSize" type="LENGTH" />
     <field number="434" name="CxlRejResponseTo" type="CHAR" />
-    <field number="447" name="PartyIDSource" type="CHAR">
-      <value enum="C" description="Generally accepted market participant identifier" />
-    </field>
-    <field number="448" name="PartyID" type="STRING" />
-    <field number="452" name="PartyRole" type="INT">
-      <value enum="4" description="Clearing firm" />
-    </field>
-    <field number="453" name="NoPartyIDs" type="NUMINGROUP" />
-    <field number="461" name="CFICode" type="STRING">
-      <value enum="FXXXNX" description="Flex trading future" />
-      <value enum="FXXXXX" description="Regular trading future" />
-      <value enum="OCXXXN" description="Flex trading call option" />
-      <value enum="OCXXXX" description="Regular trading call option" />
-      <value enum="OPXXXN" description="Flex trading put option" />
-      <value enum="OPXXXX" description="Regular trading put option" />
-    </field>
-    <field number="553" name="Username" type="STRING" />
-    <field number="554" name="Password" type="STRING" />
-    <field number="555" name="NoLegs" type="NUMINGROUP" />
-    <field number="600" name="LegSymbol" type="STRING" />
-    <field number="608" name="LegCFICode" type="STRING">
-      <value enum="FXXXNX" description="Flex trading future" />
-      <value enum="FXXXXX" description="Regular trading future" />
-      <value enum="OCXXXN" description="Flex trading call option" />
-      <value enum="OCXXXX" description="Regular trading call option" />
-      <value enum="OPXXXN" description="Flex trading put option" />
-      <value enum="OPXXXX" description="Regular trading put option" />
-    </field>
-    <field number="610" name="LegMaturityMonthYear" type="MONTHYEAR" />
-    <field number="611" name="LegMaturityDate" type="LOCALMKTDATE" />
     <field number="612" name="LegStrikePrice" type="PRICE" />
-    <field number="624" name="LegSide" type="CHAR">
-      <value enum="1" description="Buy" />
-      <value enum="2" description="Sell" />
-    </field>
-    <field number="637" name="LegLastPx" type="PRICE" />
-    <field number="658" name="QuoteRequestRejectReason" type="INT">
-      <value enum="1" description="Unknown symbol" />
-      <value enum="2" description="Exchange closed" />
-      <value enum="99" description="Other, with the error code carried in Text" />
-    </field>
-    <field number="687" name="LegQty" type="QTY" />
     <field number="10000" name="TaifexSymbolType" type="CHAR">
       <value enum="1" description="Flex trading product serial number, a numeric value" />
       <value enum="2" description="Regular trading old product identifier, or the Flex trading product symbol as a text value" />
@@ -598,5 +557,46 @@
     </field>
     <field number="10003" name="TaifexExecType" type="CHAR" />
     <field number="10004" name="TaifexPartID" type="INT" />
+    <field number="44447" name="TaifexPartyIDSource" type="CHAR">
+      <value enum="C" description="Generally accepted market participant identifier" />
+    </field>
+    <field number="44448" name="TaifexPartyID" type="STRING" />
+    <field number="44452" name="TaifexPartyRole" type="INT">
+      <value enum="4" description="Clearing firm" />
+    </field>
+    <field number="44453" name="TaifexNoPartyIDs" type="NUMINGROUP" />
+    <field number="44461" name="TaifexCFICode" type="STRING">
+      <value enum="FXXXNX" description="Flex trading future" />
+      <value enum="FXXXXX" description="Regular trading future" />
+      <value enum="OCXXXN" description="Flex trading call option" />
+      <value enum="OCXXXX" description="Regular trading call option" />
+      <value enum="OPXXXN" description="Flex trading put option" />
+      <value enum="OPXXXX" description="Regular trading put option" />
+    </field>
+    <field number="44553" name="TaifexUsername" type="STRING" />
+    <field number="44554" name="TaifexPassword" type="STRING" />
+    <field number="44555" name="TaifexNoLegs" type="NUMINGROUP" />
+    <field number="44600" name="TaifexLegSymbol" type="STRING" />
+    <field number="44608" name="TaifexLegCFICode" type="STRING">
+      <value enum="FXXXNX" description="Flex trading future" />
+      <value enum="FXXXXX" description="Regular trading future" />
+      <value enum="OCXXXN" description="Flex trading call option" />
+      <value enum="OCXXXX" description="Regular trading call option" />
+      <value enum="OPXXXN" description="Flex trading put option" />
+      <value enum="OPXXXX" description="Regular trading put option" />
+    </field>
+    <field number="44610" name="TaifexLegMaturityMonthYear" type="MONTHYEAR" />
+    <field number="44611" name="TaifexLegMaturityDate" type="LOCALMKTDATE" />
+    <field number="44624" name="TaifexLegSide" type="CHAR">
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+    </field>
+    <field number="44637" name="TaifexLegLastPx" type="PRICE" />
+    <field number="44658" name="TaifexQuoteRequestRejectReason" type="INT">
+      <value enum="1" description="Unknown symbol" />
+      <value enum="2" description="Exchange closed" />
+      <value enum="99" description="Other, with the error code carried in Text" />
+    </field>
+    <field number="44687" name="TaifexLegQty" type="QTY" />
   </fields>
 </fix>

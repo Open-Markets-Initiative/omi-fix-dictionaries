@@ -5,7 +5,8 @@
 
 | Division | [Protocol][Omi.Taifex.Protocol.Definitions] | Version | Date | [Deployment][Omi.Glossary.Deployment] | [Documentation][Omi.Taifex.Specifications] |
 | --- | --- | --- | ---: | --- | --- |
-| [TaifexDerivatives][TaifexDerivatives.Exchange] | [OrderEntry][Taifex.TaifexDerivatives.OrderEntry] | [v3.1.2](Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.xml) | 1/1/2024 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.Pdf] |
+| [TaifexDerivatives][TaifexDerivatives.Exchange] | [OrderEntry][Taifex.TaifexDerivatives.OrderEntry] | [v3.1.2](Taifex.TaifexDerivatives.OrderEntry.Fix42.v3.1.2.xml) | 1/1/2024 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Taifex.TaifexDerivatives.OrderEntry.Fix42.v3.1.2.Pdf] |
+| [TaifexDerivatives][TaifexDerivatives.Exchange] | [OrderEntry][Taifex.TaifexDerivatives.OrderEntry] | [v3.1.2](Taifex.TaifexDerivatives.OrderEntry.Fix44.v3.1.2.xml) | 1/1/2024 | [Active][Omi.Glossary.Deployment.Active] | [pdf][Taifex.TaifexDerivatives.OrderEntry.Fix44.v3.1.2.Pdf] |
 
 
 Taifex: [website](https://www.taifex.com.tw "Go to Taiwan Futures Exchange")
@@ -23,4 +24,5 @@ Taifex: [website](https://www.taifex.com.tw "Go to Taiwan Futures Exchange")
 [TaifexDerivatives.Exchange]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/tree/main/Organizations/Taifex/Protocols/TaifexDerivatives "Taifex TaifexDerivatives"
 [Taifex.TaifexDerivatives.OrderEntry]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Taifex/Protocols/TaifexDerivatives/OrderEntry.md "Order Entry"
 
-[Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Taifex/Specifications/OrderEntry/Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.pdf "Taiwan Futures Exchange 3.1.2 Pdf"
+[Taifex.TaifexDerivatives.OrderEntry.Fix42.v3.1.2.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Taifex/Specifications/OrderEntry/Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.pdf "Taiwan Futures Exchange 3.1.2 Pdf"
+[Taifex.TaifexDerivatives.OrderEntry.Fix44.v3.1.2.Pdf]: https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/blob/main/Organizations/Taifex/Specifications/OrderEntry/Taifex.TaifexDerivatives.OrderEntry.Fix.v3.1.2.pdf "Taiwan Futures Exchange 3.1.2 Pdf"
