@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 2.6.b
     Date: 2026-03-17
-    Specification: fix order interface and drop interface foi.pdf
+    Specification: fix_order_interface_and_drop_interface_foi.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -135,8 +135,8 @@
       <field name="MaxFloor" required="N" />
       <field name="LocateReqd" required="N" />
       <field name="ExpireTime" required="N" />
-      <field name="OrderCapacity" required="N" />
       <field name="LocateAccount" required="N" />
+      <field name="OrderCapacity" required="N" />
     </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="ClOrdID" required="Y" />
@@ -179,7 +179,7 @@
       <field name="SecondaryOrderID" required="N" />
       <field name="PegOffset" required="N" />
       <group name="NoContraBrokers" required="N">
-        <field name="ContraBroker" required="Y" />
+        <field name="ContraBroker" required="N" />
         <field name="ContraBrokerMPID" required="N" />
       </group>
       <field name="ExecRestatementReason" required="N" />

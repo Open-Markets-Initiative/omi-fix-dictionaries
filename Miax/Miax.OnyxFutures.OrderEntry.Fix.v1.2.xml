@@ -7,7 +7,7 @@
     Encoding: Financial Information eXchange
     Version: 1.2
     Date: 2025-11-07
-    Specification: ONYX FIX Order Interface FOI v1.2.pdf
+    Specification: ONYX_FIX Order_Interface_FOI_v1.2.pdf
 
   Script:
     Generator: 1.0.0.0
@@ -108,27 +108,29 @@
       <field name="ClOrdID" required="Y" />
       <field name="OrderID" required="N" />
       <field name="OrderQty" required="N" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="Side" required="Y" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Side" required="N" />
       <field name="Symbol" required="Y" />
-      <field name="TransactTime" required="N" />
+      <field name="TransactTime" required="Y" />
     </message>
     <message name="OrderCancelReplaceRequest" msgtype="G" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="OrderQty" required="Y" />
-      <field name="OrdType" required="Y" />
+      <field name="OrdType" required="N" />
       <field name="OrigClOrdID" required="Y" />
       <field name="Price" required="N" />
       <field name="Symbol" required="Y" />
-      <field name="TimeInForce" required="Y" />
+      <field name="TimeInForce" required="N" />
       <field name="TransactTime" required="Y" />
       <field name="OpenClose" required="N" />
       <field name="StopPx" required="N" />
-      <field name="CustomerOrFirm" required="Y" />
+      <field name="CustomerOrFirm" required="N" />
       <field name="ExpireDate" required="N" />
-      <field name="ManualOrderIndicator" required="Y" />
-      <field name="CustOrderHandlingInst" required="Y" />
+      <field name="ManualOrderIndicator" required="N" />
+      <field name="CustOrderHandlingInst" required="N" />
+      <field name="SideClearingTradePriceType" required="N" />
       <field name="PurgeGroup" required="N" />
+      <field name="SelfTradeProtectionGroup" required="N" />
     </message>
     <message name="SecurityDefinitionRequest" msgtype="c" msgcat="app">
       <field name="SecurityReqID" required="Y" />
@@ -142,9 +144,9 @@
     <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
       <field name="ClOrdID" required="Y" />
       <field name="MassCancelRequestType" required="Y" />
-      <field name="PurgeGroup" required="Y" />
+      <field name="PurgeGroup" required="N" />
       <field name="MassCancelScope" required="Y" />
-      <field name="MassCancelAction" required="N" />
+      <field name="MassCancelAction" required="Y" />
       <field name="ProductGroupCode" required="N" />
       <field name="ProductType" required="N" />
     </message>
@@ -152,8 +154,8 @@
       <field name="ClOrdID" required="Y" />
       <field name="OrderID" required="Y" />
       <field name="OrdStatus" required="Y" />
-      <field name="OrigClOrdID" required="Y" />
-      <field name="Text" required="N" />
+      <field name="OrigClOrdID" required="N" />
+      <field name="Text" required="Y" />
       <field name="CxlRejReason" required="Y" />
       <field name="CxlRejResponseTo" required="Y" />
       <field name="OrigSession" required="N" />
@@ -177,22 +179,23 @@
       <field name="Symbol" required="Y" />
       <field name="Text" required="N" />
       <field name="TimeInForce" required="N" />
-      <field name="TransactTime" required="N" />
+      <field name="TransactTime" required="Y" />
       <field name="TradeDate" required="N" />
       <field name="OpenClose" required="N" />
+      <field name="StopPx" required="N" />
       <field name="OrdRejReason" required="N" />
       <field name="MinQty" required="N" />
       <field name="ExecType" required="Y" />
       <field name="LeavesQty" required="Y" />
-      <field name="CustomerOrFirm" required="N" />
+      <field name="CustomerOrFirm" required="Y" />
       <field name="ExecRestatementReason" required="N" />
       <field name="TotalNumSecurities" required="N" />
       <field name="ExpireDate" required="N" />
       <field name="MultiLegReportingType" required="N" />
       <field name="TradeID" required="N" />
       <field name="ComplexTradeID" required="N" />
-      <field name="ManualOrderIndicator" required="N" />
-      <field name="CustOrderHandlingInst" required="N" />
+      <field name="ManualOrderIndicator" required="Y" />
+      <field name="CustOrderHandlingInst" required="Y" />
       <field name="SideClearingTradePriceType" required="N" />
       <field name="PurgeGroup" required="N" />
       <field name="SelfTradeProtection" required="N" />
@@ -235,13 +238,13 @@
       <field name="Symbol" required="Y" />
       <field name="Text" required="N" />
       <field name="TransactTime" required="Y" />
-      <field name="TradeDate" required="N" />
+      <field name="TradeDate" required="Y" />
       <field name="TradeID" required="Y" />
+      <field name="CtiCode" required="Y" />
       <field name="CorrectionNum" required="Y" />
+      <field name="TradeLiquidityIndicator" required="N" />
       <field name="OrigSession" required="N" />
       <field name="OrigCompID" required="N" />
-      <field name="CtiCode" required="N" />
-      <field name="TradeLiquidityIndicator" required="N" />
     </message>
     <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
       <field name="ClOrdID" required="Y" />
@@ -262,7 +265,8 @@
     <field number="17" name="ExecID" type="STRING" />
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
-      <value enum="3" description="Status" />
+      <value enum="1" description="Trade Cancel" />
+      <value enum="2" description="Trade Correct" />
     </field>
     <field number="31" name="LastPx" type="PRICE" />
     <field number="32" name="LastShares" type="QTY" />
@@ -271,7 +275,14 @@
     <field number="36" name="NewSeqNo" type="SEQNUM" />
     <field number="37" name="OrderID" type="STRING" />
     <field number="38" name="OrderQty" type="QTY" />
-    <field number="39" name="OrdStatus" type="CHAR" />
+    <field number="39" name="OrdStatus" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partially Filled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
+    </field>
     <field number="40" name="OrdType" type="CHAR">
       <value enum="1" description="Market Order" />
       <value enum="2" description="Limit Order" />
@@ -297,7 +308,13 @@
     <field number="56" name="TargetCompID" type="STRING" />
     <field number="57" name="TargetSubID" type="STRING" />
     <field number="58" name="Text" type="STRING" />
-    <field number="59" name="TimeInForce" type="CHAR" />
+    <field number="59" name="TimeInForce" type="CHAR">
+      <value enum="0" description="Day" />
+      <value enum="1" description="GTC (Good 'til Cancel)" />
+      <value enum="3" description="IOC (Immediate or Cancel)" />
+      <value enum="4" description="FOK (Fill or Kill)" />
+      <value enum="6" description="GTD (Good 'til Date), requires ExpireDate (432)" />
+    </field>
     <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
     <field number="75" name="TradeDate" type="LOCALMKTDATE" />
     <field number="77" name="OpenClose" type="CHAR">
@@ -307,8 +324,18 @@
     <field number="97" name="PossResend" type="BOOLEAN" />
     <field number="98" name="EncryptMethod" type="INT" />
     <field number="99" name="StopPx" type="PRICE" />
-    <field number="102" name="CxlRejReason" type="INT" />
-    <field number="103" name="OrdRejReason" type="INT" />
+    <field number="102" name="CxlRejReason" type="INT">
+      <value enum="0" description="Too late to cancel" />
+      <value enum="1" description="Unknown order" />
+      <value enum="2" description="Broker Option (details provided in Text tag, see Appendix B)" />
+      <value enum="3" description="Previous cancel or cancel/replace request is still pending" />
+    </field>
+    <field number="103" name="OrdRejReason" type="INT">
+      <value enum="0" description="Broker Option (details listed in Text 58; see Appendix B)" />
+      <value enum="1" description="Unknown Symbol" />
+      <value enum="2" description="Exchange Closed" />
+      <value enum="6" description="Duplicate Order (duplicate ClOrdID)" />
+    </field>
     <field number="108" name="HeartBtInt" type="INT" />
     <field number="110" name="MinQty" type="QTY" />
     <field number="112" name="TestReqID" type="STRING" />
@@ -319,22 +346,60 @@
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN" />
     <field number="142" name="SenderLocationID" type="STRING" />
     <field number="143" name="TargetLocationID" type="STRING" />
-    <field number="150" name="ExecType" type="CHAR" />
+    <field number="150" name="ExecType" type="CHAR">
+      <value enum="0" description="New" />
+      <value enum="1" description="Partially filled" />
+      <value enum="2" description="Filled" />
+      <value enum="4" description="Canceled" />
+      <value enum="5" description="Replaced" />
+      <value enum="8" description="Rejected" />
+      <value enum="D" description="Restated (see ExecRestatementReason 378)" />
+    </field>
     <field number="151" name="LeavesQty" type="QTY" />
     <field number="204" name="CustomerOrFirm" type="INT">
       <value enum="0" description="Customer" />
       <value enum="1" description="Firm" />
     </field>
     <field number="320" name="SecurityReqID" type="STRING" />
-    <field number="321" name="SecurityRequestType" type="INT" />
+    <field number="321" name="SecurityRequestType" type="INT">
+      <value enum="0" description="Request Security identity and specifications" />
+    </field>
     <field number="322" name="SecurityResponseID" type="STRING" />
-    <field number="323" name="SecurityResponseType" type="INT" />
+    <field number="323" name="SecurityResponseType" type="INT">
+      <value enum="1" description="Accept security proposal as is" />
+      <value enum="2" description="Accept security request but with changes to leg order" />
+      <value enum="5" description="Reject security proposal, invalid proposal" />
+      <value enum="6" description="Security already exists as requested, see SecurityResponseID (322) for assigned InstrumentID" />
+      <value enum="7" description="Security already exists, see SecurityResponseID (322) for assigned InstrumentID and repeating groups as leg order differs from request" />
+    </field>
     <field number="371" name="RefTagID" type="INT" />
     <field number="372" name="RefMsgType" type="STRING" />
-    <field number="373" name="SessionRejectReason" type="INT" />
-    <field number="378" name="ExecRestatementReason" type="INT" />
+    <field number="373" name="SessionRejectReason" type="INT">
+      <value enum="0" description="Invalid tag number" />
+      <value enum="1" description="Required tag missing" />
+      <value enum="10" description="SendingTime accuracy problem" />
+      <value enum="11" description="Invalid MsgType" />
+      <value enum="2" description="Tag not defined for this message type" />
+      <value enum="3" description="Undefined tag" />
+      <value enum="4" description="Tag specified without a value" />
+      <value enum="5" description="Value is incorrect (out of range) for this tag" />
+      <value enum="6" description="Incorrect data format for value" />
+      <value enum="9" description="Comp ID problem" />
+      <value enum="99" description="Other" />
+    </field>
+    <field number="378" name="ExecRestatementReason" type="INT">
+      <value enum="5" description="Reduction of OrderQty due to Self Trade Protection" />
+      <value enum="7" description="Stop Order triggered" />
+    </field>
     <field number="379" name="BusinessRejectRefID" type="STRING" />
-    <field number="380" name="BusinessRejectReason" type="INT" />
+    <field number="380" name="BusinessRejectReason" type="INT">
+      <value enum="0" description="Other" />
+      <value enum="1" description="Unknown ID" />
+      <value enum="2" description="Unknown Security" />
+      <value enum="3" description="Unsupported Message Type" />
+      <value enum="4" description="System not available" />
+      <value enum="5" description="Required or conditional tag missing" />
+    </field>
     <field number="393" name="TotalNumSecurities" type="INT" />
     <field number="432" name="ExpireDate" type="LOCALMKTDATE" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
@@ -342,11 +407,13 @@
       <value enum="2" description="Order Cancel/Replace Request" />
     </field>
     <field number="442" name="MultiLegReportingType" type="CHAR">
-      <value enum="1" description="Single Security" />
-      <value enum="2" description="Individual leg of a multileg security" />
-      <value enum="3" description="Multileg security" />
+      <value enum="1" description="Outright (Default)" />
+      <value enum="2" description="Individual Leg of a spread" />
+      <value enum="3" description="Spread" />
     </field>
-    <field number="530" name="MassCancelRequestType" type="CHAR" />
+    <field number="530" name="MassCancelRequestType" type="CHAR">
+      <value enum="8" description="User defined criteria" />
+    </field>
     <field number="531" name="MassCancelResponse" type="CHAR">
       <value enum="0" description="Order Mass Cancel Request rejected" />
       <value enum="1" description="Order Mass Cancel Request accepted" />
@@ -364,14 +431,34 @@
       <value enum="N" description="Automated" />
       <value enum="Y" description="Manual" />
     </field>
-    <field number="1031" name="CustOrderHandlingInst" type="STRING" />
-    <field number="1598" name="SideClearingTradePriceType" type="INT" />
+    <field number="1031" name="CustOrderHandlingInst" type="STRING">
+      <value enum="C" description="Vendor-provided Platform billed by Executing Broker" />
+      <value enum="D" description="Other, including Other-provided Screen" />
+      <value enum="G" description="Sponsored Access via Exchange API or FIX provided by Executing Broker" />
+      <value enum="H" description="Premium Algorithmic Trading Provider billed by Executing Broker" />
+      <value enum="W" description="Desk" />
+      <value enum="Y" description="Electronic" />
+    </field>
+    <field number="1598" name="SideClearingTradePriceType" type="INT">
+      <value enum="0" description="Trade Clears at Execution Price (default)" />
+      <value enum="1" description="Trade Clears at Alternate Price" />
+    </field>
     <field number="7699" name="PurgeGroup" type="STRING" />
     <field number="7928" name="SelfTradeProtection" type="STRING" />
     <field number="9021" name="CorrectionNum" type="INT" />
     <field number="9478" name="TradingCollarDollarValue" type="PRICE" />
-    <field number="9500" name="MassCancelScope" type="INT" />
-    <field number="9501" name="MassCancelAction" type="INT" />
+    <field number="9500" name="MassCancelScope" type="CHAR">
+      <value enum="M" description="MPID" />
+      <value enum="P" description="MPID and ProductGroupCode" />
+      <value enum="S" description="Session" />
+      <value enum="T" description="MPID and ProductGroupCode and ProductType" />
+    </field>
+    <field number="9501" name="MassCancelAction" type="CHAR">
+      <value enum="B" description="Block only. The system will reject all new orders" />
+      <value enum="M" description="Mass cancel only. The system will mass-cancel all open orders; new orders can be accepted" />
+      <value enum="R" description="Remove blocking for the specified scope" />
+      <value enum="X" description="Block and mass-cancel" />
+    </field>
     <field number="9687" name="OrigSession" type="STRING" />
     <field number="9688" name="OrigCompID" type="STRING" />
     <field number="9702" name="CtiCode" type="INT">
@@ -388,6 +475,11 @@
       <value enum="O" description="Outright" />
       <value enum="S" description="Standard Calendar Spread" />
     </field>
-    <field number="9751" name="SpreadType" type="STRING" />
+    <field number="9751" name="SpreadType" type="STRING">
+      <value enum="B" description="Butterfly Spread" />
+      <value enum="E" description="Equity Calendar Spread" />
+      <value enum="S" description="Standard Calendar Spread" />
+    </field>
+    <field number="9928" name="SelfTradeProtectionGroup" type="NONE" />
   </fields>
 </fix>

@@ -2,7 +2,7 @@
   Fix dictionary for: Coinbase OrderEntry Fix v1.0
 
   Protocol:
-    Organization: 
+    Organization: Coinbase
     Protocol: Order Entry
     Encoding: 
     Version: 1.0

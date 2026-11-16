@@ -6,7 +6,7 @@
     Protocol: 
     Encoding: 
     Version: 0.27
-    Date: 2026-06-17
+    Date: 2022-11-23
     Specification: Coinbase Derivatives FIX API V0.27.pdf
 
   Script:
@@ -229,11 +229,11 @@
     <message name="BusinessMessageReject" msgtype="j" msgcat="app">
       <field name="RefSeqNum" required="Y" />
       <field name="RefMsgType" required="Y" />
-      <field name="BusinessRejectRefID" required="N" />
-      <field name="BusinessRejectReason" required="Y" />
       <field name="Text" required="N" />
       <field name="EncodedTextLen" required="N" />
       <field name="EncodedText" required="N" />
+      <field name="BusinessRejectRefID" required="N" />
+      <field name="BusinessRejectReason" required="Y" />
     </message>
     <message name="EventResendComplete" msgtype="F4" msgcat="app">
       <field name="RefSeqNum" required="Y" />
@@ -251,12 +251,11 @@
       <field name="CumQty" required="Y" />
       <field name="ExecID" required="Y" />
       <field name="OrderID" required="Y" />
-      <field name="OrderQty" required="Y" />
       <field name="OrdStatus" required="Y" />
       <field name="OrdType" required="Y" />
+      <field name="StopLimitPx" required="N" />
       <field name="OrigClOrdID" required="N" />
       <component name="Parties" required="N" />
-      <field name="Price" required="N" />
       <field name="Side" required="Y" />
       <field name="Symbol" required="Y" />
       <field name="SecurityType" required="N" />
@@ -264,32 +263,33 @@
       <field name="PutOrCall" required="N" />
       <field name="StrikePrice" required="N" />
       <field name="TimeInForce" required="N" />
-      <field name="TransactTime" required="Y" />
+      <field name="OrderCapacity" required="N" />
       <field name="ExecType" required="Y" />
-      <field name="LeavesQty" required="Y" />
       <field name="ManualOrderIndicator" required="Y" />
       <field name="CustOrderHandlingInst" required="Y" />
+      <field name="ExecInst" required="N" />
+      <field name="OrderQty" required="Y" />
+      <field name="Price" required="N" />
+      <field name="TransactTime" required="Y" />
       <field name="StopPx" required="N" />
-      <field name="StopLimitPx" required="N" />
       <field name="MinQty" required="N" />
+      <field name="LeavesQty" required="Y" />
       <field name="MaxShow" required="N" />
       <field name="ExecRestatementReason" required="N" />
       <field name="ExpireDate" required="N" />
-      <field name="OrderCapacity" required="N" />
       <field name="RequestTime" required="N" />
       <field name="SelfMatchPreventionId" required="N" />
       <field name="SelfMatchPreventionInstruction" required="N" />
-      <field name="TrdMatchID" required="N" />
-      <field name="LastPx" required="N" />
-      <field name="LastQty" required="N" />
+      <field name="TrdMatchID" required="Y" />
+      <field name="LastPx" required="Y" />
+      <field name="LastQty" required="Y" />
       <field name="AvgPx" required="N" />
-      <field name="TradeDate" required="N" />
+      <field name="TradeDate" required="Y" />
       <field name="TotalNumSecurities" required="N" />
       <field name="MultiLegReporting" required="N" />
       <field name="SecondaryExecID" required="N" />
       <field name="AggressorIndicator" required="N" />
       <field name="Text" required="N" />
-      <field name="ExecInst" required="N" />
       <field name="OrdRejReason" required="N" />
     </message>
     <message name="LastExecId" msgtype="F2" msgcat="app">
@@ -550,7 +550,7 @@
       <value enum="Y" description="YES" />
     </field>
     <field number="98" name="EncryptMethod" type="INT">
-      <value enum="0" description="NONE" />
+      <value enum="0" description="None" />
       <value enum="1" description="PKCS" />
       <value enum="2" description="DES" />
       <value enum="3" description="PKCS_DES" />
@@ -565,7 +565,7 @@
     </field>
     <field number="103" name="OrdRejReason" type="INT">
       <value enum="1" description="Unknown symbol" />
-      <value enum="18" description="INVALID_PRICE_INCREMENT" />
+      <value enum="18" description="Invalid price increment (submitted price precision exceeds the one supported for the instrument)" />
       <value enum="2" description="Exchange closed" />
       <value enum="6" description="Duplicate order" />
       <value enum="99" description="Other" />
@@ -578,14 +578,14 @@
     <field number="116" name="OnBehalfOfSubID" type="STRING" />
     <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
     <field number="123" name="GapFillFlag" type="BOOLEAN">
-      <value enum="N" description="NO" />
-      <value enum="Y" description="YES" />
+      <value enum="N" description="sequence reset, the counterparty must adjust inbound sequence number" />
+      <value enum="Y" description="indicates the message is used instead of administrative or business messages which are not to be resent" />
     </field>
     <field number="128" name="DeliverToCompID" type="STRING" />
     <field number="129" name="DeliverToSubID" type="STRING" />
     <field number="141" name="ResetSeqNumFlag" type="BOOLEAN">
-      <value enum="N" description="NO" />
-      <value enum="Y" description="YES" />
+      <value enum="N" description="use previous sequences" />
+      <value enum="Y" description="reset sequences (start new session)" />
     </field>
     <field number="142" name="SenderLocationID" type="STRING" />
     <field number="143" name="TargetLocationID" type="STRING" />
@@ -691,14 +691,14 @@
     </field>
     <field number="379" name="BusinessRejectRefID" type="STRING" />
     <field number="380" name="BusinessRejectReason" type="INT">
-      <value enum="0" description="OTHER" />
-      <value enum="1" description="UNKOWN_ID" />
-      <value enum="2" description="UNKNOWN_SECURITY" />
-      <value enum="3" description="UNSUPPORTED_MESSAGE_TYPE" />
-      <value enum="4" description="APPLICATION_NOT_AVAILABLE" />
-      <value enum="5" description="CONDITIONALLY_REQUIRED_FIELD_MISSING" />
-      <value enum="6" description="NOT_AUTHORIZED" />
-      <value enum="7" description="DELIVERTO_FIRM_NOT_AVAILABLE_AT_THIS_TIME" />
+      <value enum="0" description="Other" />
+      <value enum="1" description="Unknown ID" />
+      <value enum="2" description="Unknown security" />
+      <value enum="3" description="Unsupported message type" />
+      <value enum="4" description="Application not available" />
+      <value enum="5" description="Conditionally required field missing" />
+      <value enum="6" description="Not authorized" />
+      <value enum="7" description="Delivery to firm not available at this time" />
     </field>
     <field number="383" name="MaxMessageSize" type="LENGTH" />
     <field number="384" name="NoMsgTypes" type="NUMINGROUP" />
@@ -710,8 +710,8 @@
     <field number="393" name="TotalNumSecurities" type="INT" />
     <field number="432" name="ExpireDate" type="LOCALMKTDATE" />
     <field number="434" name="CxlRejResponseTo" type="CHAR">
-      <value enum="1" description="ORDER_CANCEL_REQUEST" />
-      <value enum="2" description="ORDER_CANCEL_REPLACE_REQUEST" />
+      <value enum="1" description="Order Cancel Request" />
+      <value enum="2" description="Order Cancel/Replace Request" />
     </field>
     <field number="442" name="MultiLegReporting" type="CHAR">
       <value enum="1" description="Outright" />
@@ -826,10 +826,10 @@
       <value enum="99" description="OTHER" />
     </field>
     <field number="582" name="CustOrderCapacity" type="INT">
-      <value enum="1" description="MEMBER_TRADING_FOR_THEIR_OWN_ACCOUNT" />
-      <value enum="2" description="CLEARING_FIRM_TRADING_FOR_ITS_PROPRIETARY_ACCOUNT" />
-      <value enum="3" description="MEMBER_TRADING_FOR_ANOTHER_MEMBER" />
-      <value enum="4" description="ALL_OTHER" />
+      <value enum="1" description="CTI 1: Transactions initiated and executed by an individual member for his/her own account, for an account he/she controls, or for an account in which he/she has ownership or financial interest." />
+      <value enum="2" description="CTI 2: Transactions executed for the proprietary account of a clearing member or non-clearing member firm." />
+      <value enum="3" description="CTI 3: Transactions where an individual member or authorized trader executes for the personal account of another individual member, for an account the other individual member controls or for an account in which the other individual member has ownership or financial interest." />
+      <value enum="4" description="CTI 4: Any transaction not meeting the definition of CTI 1, 2 or 3. (These should be non-member customer transactions)." />
     </field>
     <field number="625" name="TradingSessionSubID" type="STRING" />
     <field number="627" name="NoHops" type="NUMINGROUP" />
@@ -865,8 +865,8 @@
     <field number="22000" name="PingId" type="INT" />
     <field number="22001" name="InternalRoundtripNanos" type="INT" />
     <field number="22002" name="InternalClusterProcessingNanos" type="INT" />
-    <field number="22003" name="BeginExecId" type="QTY" />
-    <field number="22004" name="EndExecId" type="QTY" />
+    <field number="22003" name="BeginExecId" type="STRING" />
+    <field number="22004" name="EndExecId" type="STRING" />
     <field number="22005" name="ResentEventCount" type="INT" />
     <field number="22006" name="EventResendRejectReason" type="INT">
       <value enum="1" description="BEGIN_EXEC_ID_TOO_SMALL" />

@@ -124,6 +124,7 @@
       <field name="SymbolSfx" required="N" />
       <field name="MinQty" required="N" />
       <field name="ExtendedExecInst" required="N" />
+      <field name="PegDifference" required="N" />
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
       <field name="AvgPrice" required="N" />

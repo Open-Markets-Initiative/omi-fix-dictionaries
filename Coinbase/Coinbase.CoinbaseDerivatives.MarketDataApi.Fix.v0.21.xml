@@ -1,0 +1,418 @@
+<!--
+  Fix dictionary for: Coinbase MarketDataApi Fix v0.21
+
+  Protocol:
+    Organization: Coinbase
+    Protocol: 
+    Encoding: 
+    Version: 0.21
+    Date: 2021-07-26
+    Specification: FairX-FIX-API-1.pdf
+
+  Script:
+    Generator: 1.0.0.0
+    License: MIT No Attribution
+    Authors: Omi Developers
+
+  Copyright (c) 2026 Scaled Sources LLC.  https://www.scaledsources.com
+
+  This fix dictionary is contributed to The Open Markets Initiative under
+  the license noted above.
+
+  The protocol compiler technologies used to produce this file
+  are the subject of patents owned by Scaled Sources LLC.  Those patent
+  rights are retained and are not transferred by this contribution:
+    https://patents.google.com/patent/US20240129382A1/en
+    https://patents.google.com/patent/US20240419416A1/en
+
+  Open Markets Initiative website:
+    https://openmarketsinitiative.com
+-->
+<fix major="4" minor="4" servicepack="0" type="FIX">
+  <header>
+    <field name="BeginString" required="Y" />
+    <field name="BodyLength" required="Y" />
+    <field name="MsgType" required="Y" />
+    <field name="MsgSeqNum" required="Y" />
+    <field name="PossDupFlag" required="N" />
+    <field name="SenderCompID" required="Y" />
+    <field name="SenderSubID" required="Y" />
+    <field name="OnBehalfOfSubID" required="N" />
+    <field name="SendingTime" required="Y" />
+    <field name="TargetCompID" required="Y" />
+    <field name="TargetSubID" required="Y" />
+    <field name="OrigSendingTime" required="N" />
+    <field name="LastMsgSeqNumProcessed" required="N" />
+  </header>
+  <trailer>
+    <field name="CheckSum" required="Y" />
+  </trailer>
+  <messages>
+    <message name="Logon" msgtype="A" msgcat="admin">
+      <field name="EncryptMethod" required="Y" />
+      <field name="HeartBtInt" required="Y" />
+      <field name="ResetSeqNumFlag" required="N" />
+      <field name="Username" required="Y" />
+      <field name="Password" required="Y" />
+    </message>
+    <message name="Logout" msgtype="5" msgcat="admin">
+      <field name="Text" required="N" />
+    </message>
+    <message name="ResendRequest" msgtype="2" msgcat="admin">
+      <field name="BeginSeqNo" required="Y" />
+      <field name="EndSeqNo" required="Y" />
+    </message>
+    <message name="SequenceReset" msgtype="4" msgcat="admin">
+      <field name="GapFillFlag" required="N" />
+      <field name="NewSeqNo" required="Y" />
+    </message>
+    <message name="TestRequest" msgtype="1" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="Heartbeat" msgtype="0" msgcat="admin">
+      <field name="TestReqID" required="Y" />
+    </message>
+    <message name="Reject" msgtype="3" msgcat="admin">
+      <field name="RefSeqNum" required="Y" />
+      <field name="Text" required="Y" />
+      <field name="SessionRejectReason" required="Y" />
+    </message>
+    <message name="SecurityListRequest" msgtype="x" msgcat="app">
+      <field name="SecurityReqID" required="Y" />
+      <field name="SecurityListRequestType" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityType" required="N" />
+    </message>
+    <message name="MarketDataRequest" msgtype="V" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <field name="SubscriptionRequestType" required="Y" />
+      <group name="NoRelatedSym" required="N">
+        <field name="Symbol" required="N" />
+        <field name="SecurityType" required="N" />
+      </group>
+    </message>
+    <message name="BusinessMessageReject" msgtype="j" msgcat="app">
+      <field name="RefSeqNum" required="Y" />
+      <field name="Text" required="N" />
+      <field name="BusinessRejectRefID" required="N" />
+      <field name="BusinessRejectReason" required="Y" />
+    </message>
+    <message name="SecurityDefinition" msgtype="d" msgcat="app">
+      <field name="SecurityUpdateAction" required="Y" />
+      <field name="LastUpdateTime" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityType" required="N" />
+      <field name="SecuritySubType" required="N" />
+      <field name="SecurityDesc" required="Y" />
+      <field name="MaturityMonthYear" required="N" />
+      <field name="Asset" required="Y" />
+      <field name="CFICode" required="Y" />
+      <field name="UnderlyingProduct" required="Y" />
+      <field name="MDSecurityTradingStatus" required="N" />
+      <field name="Currency" required="Y" />
+      <field name="SettlCurrency" required="N" />
+      <field name="MinTradeVol" required="Y" />
+      <field name="MaxTradeVol" required="Y" />
+      <field name="MinPriceIncrement" required="Y" />
+      <group name="NoEvents" required="Y">
+        <field name="EventType" required="Y" />
+        <field name="EventTime" required="Y" />
+      </group>
+      <field name="UnitOfMeasure" required="N" />
+      <field name="UnitOfMeasureQty" required="N" />
+      <field name="HighLimitPrice" required="N" />
+      <field name="LowLimitPrice" required="N" />
+      <field name="MaxPriceVariation" required="N" />
+      <field name="TradingReferenceDate" required="N" />
+      <field name="PriorSettlPrice" required="N" />
+      <field name="SettlPrice" required="N" />
+      <field name="SettlPriceType" required="N" />
+      <group name="NoLegs" required="N">
+        <field name="LegSymbol" required="N" />
+        <field name="LegSecurityDesc" required="N" />
+        <field name="LegSecurityType" required="N" />
+        <field name="LegSide" required="N" />
+        <field name="LegCFICode" required="N" />
+        <field name="LegCurrency" required="N" />
+      </group>
+    </message>
+    <message name="SecurityList" msgtype="y" msgcat="app">
+      <field name="SecurityReqID" required="Y" />
+      <field name="SecurityResponseID" required="Y" />
+      <field name="SecurityRequestResult" required="Y" />
+      <field name="TotNoRelatedSym" required="N" />
+      <field name="LastFragment" required="N" />
+      <group name="NoRelatedSym" required="Y">
+        <field name="Symbol" required="Y" />
+        <field name="SecurityType" required="Y" />
+        <field name="SecuritySubType" required="N" />
+        <field name="SecurityDesc" required="Y" />
+        <field name="MaturityMonthYear" required="N" />
+        <field name="Asset" required="Y" />
+        <field name="CFICode" required="Y" />
+        <field name="UnderlyingProduct" required="Y" />
+        <field name="MDSecurityTradingStatus" required="N" />
+        <field name="Currency" required="Y" />
+        <field name="SettlCurrency" required="N" />
+        <field name="MinTradeVol" required="Y" />
+        <field name="MaxTradeVol" required="Y" />
+        <field name="MinPriceIncrement" required="Y" />
+        <group name="NoEvents" required="Y">
+          <field name="EventType" required="Y" />
+          <field name="EventTime" required="Y" />
+        </group>
+        <field name="ContractMultiplier" required="N" />
+        <field name="UnitOfMeasure" required="N" />
+        <field name="UnitOfMeasureQty" required="N" />
+        <field name="HighLimitPrice" required="N" />
+        <field name="LowLimitPrice" required="N" />
+        <field name="MaxPriceVariation" required="N" />
+        <field name="TradingReferenceDate" required="N" />
+        <field name="PriorSettlPrice" required="N" />
+        <field name="SettlPrice" required="N" />
+        <field name="SettlPriceType" required="N" />
+        <group name="NoLegs" required="N">
+          <field name="LegSymbol" required="N" />
+          <field name="LegSecurityDesc" required="N" />
+          <field name="LegSecurityType" required="N" />
+          <field name="LegSide" required="N" />
+          <field name="LegCFICode" required="N" />
+          <field name="LegCurrency" required="N" />
+        </group>
+      </group>
+    </message>
+    <message name="MarketDataRequestReject" msgtype="Y" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <field name="MDReqRejReason" required="N" />
+      <field name="Text" required="N" />
+    </message>
+    <message name="MarketDataSnapshotFullRefresh" msgtype="W" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <field name="Symbol" required="Y" />
+      <field name="SecurityType" required="Y" />
+      <field name="SecuritySubType" required="N" />
+      <group name="NoMDEntries" required="Y">
+        <field name="MDEntryType" required="Y" />
+        <field name="MDEntryID" required="N" />
+        <field name="MDEntryPx" required="N" />
+        <field name="MDEntrySize" required="N" />
+        <field name="MinQty" required="N" />
+        <field name="TransactTime" required="Y" />
+        <field name="MDPriceLevel" required="N" />
+        <field name="OpenCloseSettlFlag" required="N" />
+        <field name="TradingReferenceDate" required="N" />
+      </group>
+    </message>
+    <message name="MarketDataIncrementalRefresh" msgtype="X" msgcat="app">
+      <field name="MDReqID" required="Y" />
+      <field name="AggregatedBook" required="Y" />
+      <group name="NoMDEntries" required="Y">
+        <field name="MDUpdateAction" required="Y" />
+        <field name="MDEntryType" required="Y" />
+        <field name="MDEntryID" required="Y" />
+        <field name="Symbol" required="Y" />
+        <field name="SecurityType" required="Y" />
+        <field name="SecuritySubType" required="N" />
+        <field name="MDEntryPx" required="N" />
+        <field name="MDEntrySize" required="N" />
+        <field name="MinQty" required="N" />
+        <field name="TransactTime" required="Y" />
+        <field name="MDPriceLevel" required="N" />
+        <field name="OpenCloseSettlFlag" required="N" />
+        <field name="TradingReferenceDate" required="N" />
+        <field name="AggressorSide" required="N" />
+      </group>
+    </message>
+  </messages>
+  <components />
+  <fields>
+    <field number="7" name="BeginSeqNo" type="SEQNUM" />
+    <field number="8" name="BeginString" type="STRING" />
+    <field number="9" name="BodyLength" type="INT" />
+    <field number="10" name="CheckSum" type="STRING" />
+    <field number="15" name="Currency" type="CURRENCY" />
+    <field number="16" name="EndSeqNo" type="SEQNUM" />
+    <field number="34" name="MsgSeqNum" type="INT" />
+    <field number="35" name="MsgType" type="STRING" />
+    <field number="36" name="NewSeqNo" type="SEQNUM" />
+    <field number="43" name="PossDupFlag" type="BOOLEAN" />
+    <field number="45" name="RefSeqNum" type="SEQNUM" />
+    <field number="49" name="SenderCompID" type="STRING" />
+    <field number="50" name="SenderSubID" type="STRING" />
+    <field number="52" name="SendingTime" type="UTCTIMESTAMP" />
+    <field number="55" name="Symbol" type="STRING" />
+    <field number="56" name="TargetCompID" type="STRING" />
+    <field number="57" name="TargetSubID" type="STRING" />
+    <field number="58" name="Text" type="STRING" />
+    <field number="60" name="TransactTime" type="UTCTIMESTAMP" />
+    <field number="98" name="EncryptMethod" type="INT">
+      <value enum="0" description="None" />
+    </field>
+    <field number="107" name="SecurityDesc" type="STRING" />
+    <field number="108" name="HeartBtInt" type="INT" />
+    <field number="110" name="MinQty" type="QTY" />
+    <field number="112" name="TestReqID" type="STRING" />
+    <field number="116" name="OnBehalfOfSubID" type="STRING" />
+    <field number="120" name="SettlCurrency" type="CURRENCY" />
+    <field number="122" name="OrigSendingTime" type="UTCTIMESTAMP" />
+    <field number="123" name="GapFillFlag" type="BOOLEAN">
+      <value enum="N" description="sequence reset, the counterparty must adjust inbound sequence number" />
+      <value enum="Y" description="indicates the message is used instead of administrative or business messages which are not to be resent" />
+    </field>
+    <field number="141" name="ResetSeqNumFlag" type="BOOLEAN">
+      <value enum="N" description="use previous sequences" />
+      <value enum="Y" description="reset sequences (start new session)" />
+    </field>
+    <field number="146" name="NoRelatedSym" type="NUMINGROUP" />
+    <field number="167" name="SecurityType" type="STRING">
+      <value enum="FUT" description="Future" />
+      <value enum="OPT" description="Option" />
+    </field>
+    <field number="200" name="MaturityMonthYear" type="MONTHYEAR" />
+    <field number="231" name="ContractMultiplier" type="INT" />
+    <field number="262" name="MDReqID" type="STRING" />
+    <field number="263" name="SubscriptionRequestType" type="INT">
+      <value enum="1" description="Subscribe for snapshots and updates" />
+      <value enum="2" description="Unsubscribe" />
+    </field>
+    <field number="266" name="AggregatedBook" type="CHAR">
+      <value enum="N" description="Non-aggregated market data" />
+    </field>
+    <field number="268" name="NoMDEntries" type="NUMINGROUP" />
+    <field number="269" name="MDEntryType" type="INT">
+      <value enum="0" description="Bid" />
+      <value enum="1" description="Offer" />
+      <value enum="2" description="Trade" />
+      <value enum="4" description="Opening Price" />
+      <value enum="5" description="Closing Price" />
+      <value enum="6" description="Settlement Price" />
+      <value enum="7" description="Trading Session High Price" />
+      <value enum="8" description="Trading Session Low Price" />
+      <value enum="9" description="Trading Session Vwap Price" />
+      <value enum="B" description="Trading Session Traded Volume" />
+      <value enum="C" description="Open Interest" />
+      <value enum="E" description="Implied Bid" />
+      <value enum="F" description="Implied Offer" />
+      <value enum="J" description="Empty Book" />
+    </field>
+    <field number="270" name="MDEntryPx" type="PRICE" />
+    <field number="271" name="MDEntrySize" type="QTY" />
+    <field number="278" name="MDEntryID" type="STRING" />
+    <field number="279" name="MDUpdateAction" type="INT">
+      <value enum="0" description="New" />
+      <value enum="1" description="Change" />
+      <value enum="2" description="Delete" />
+    </field>
+    <field number="281" name="MDReqRejReason" type="STRING" />
+    <field number="286" name="OpenCloseSettlFlag" type="INT">
+      <value enum="0" description="Daily Open Price" />
+      <value enum="5" description="Indicative Opening Price (IOP)" />
+    </field>
+    <field number="320" name="SecurityReqID" type="STRING" />
+    <field number="322" name="SecurityResponseID" type="STRING" />
+    <field number="369" name="LastMsgSeqNumProcessed" type="INT" />
+    <field number="373" name="SessionRejectReason" type="INT">
+      <value enum="0" description="Invalid tag number" />
+      <value enum="1" description="Required tag missing" />
+      <value enum="3" description="Undefined Tag" />
+      <value enum="4" description="Tag specified without a value" />
+      <value enum="5" description="Value is incorrect (out of range) for this tag" />
+      <value enum="6" description="Incorrect data format for value" />
+      <value enum="9" description="CompID problem" />
+      <value enum="99" description="Other" />
+    </field>
+    <field number="379" name="BusinessRejectRefID" type="STRING" />
+    <field number="380" name="BusinessRejectReason" type="INT">
+      <value enum="0" description="Other" />
+      <value enum="1" description="Unknown ID" />
+      <value enum="2" description="Unknown security" />
+      <value enum="3" description="Unsupported message type" />
+      <value enum="4" description="Application not available" />
+      <value enum="5" description="Conditionally required field missing" />
+      <value enum="6" description="Not authorized" />
+      <value enum="7" description="Delivery to firm not available at this time" />
+    </field>
+    <field number="393" name="TotNoRelatedSym" type="INT" />
+    <field number="461" name="CFICode" type="STRING" />
+    <field number="462" name="UnderlyingProduct" type="INT">
+      <value enum="12" description="Other" />
+      <value enum="14" description="Interest Rate" />
+      <value enum="15" description="FX Cash" />
+      <value enum="16" description="Energy" />
+      <value enum="17" description="Metals" />
+      <value enum="2" description="Commodity/Agriculture" />
+      <value enum="4" description="Currency" />
+      <value enum="5" description="Equity" />
+    </field>
+    <field number="553" name="Username" type="NONE" />
+    <field number="554" name="Password" type="NONE" />
+    <field number="555" name="NoLegs" type="NUMINGROUP" />
+    <field number="556" name="LegCurrency" type="CURRENCY" />
+    <field number="559" name="SecurityListRequestType" type="STRING">
+      <value enum="0" description="Symbol" />
+    </field>
+    <field number="560" name="SecurityRequestResult" type="STRING">
+      <value enum="0" description="ValidReq" />
+      <value enum="1" description="InvalidReq" />
+    </field>
+    <field number="562" name="MinTradeVol" type="QTY" />
+    <field number="600" name="LegSymbol" type="STRING" />
+    <field number="608" name="LegCFICode" type="STRING" />
+    <field number="609" name="LegSecurityType" type="STRING">
+      <value enum="FUT" description="Future" />
+      <value enum="OPT" description="Option" />
+    </field>
+    <field number="620" name="LegSecurityDesc" type="STRING" />
+    <field number="624" name="LegSide" type="CHAR">
+      <value enum="1" description="Buy Side" />
+      <value enum="2" description="Sell Side" />
+    </field>
+    <field number="730" name="SettlPrice" type="PRICE" />
+    <field number="731" name="SettlPriceType" type="INT" />
+    <field number="734" name="PriorSettlPrice" type="PRICE" />
+    <field number="762" name="SecuritySubType" type="STRING">
+      <value enum="SP" description="Standard Calendar Spreads" />
+    </field>
+    <field number="779" name="LastUpdateTime" type="UTCTIMESTAMP" />
+    <field number="864" name="NoEvents" type="NUMINGROUP" />
+    <field number="865" name="EventType" type="INT">
+      <value enum="5" description="Activation" />
+      <value enum="7" description="Last eligible trade date" />
+    </field>
+    <field number="893" name="LastFragment" type="STRING">
+      <value enum="N" description="Not Last message" />
+      <value enum="Y" description="Last Message for SecurityListRequest" />
+    </field>
+    <field number="969" name="MinPriceIncrement" type="FLOAT" />
+    <field number="980" name="SecurityUpdateAction" type="CHAR">
+      <value enum="A" description="Add" />
+      <value enum="D" description="Delete" />
+      <value enum="M" description="Modify" />
+    </field>
+    <field number="996" name="UnitOfMeasure" type="STRING" />
+    <field number="1023" name="MDPriceLevel" type="INT" />
+    <field number="1140" name="MaxTradeVol" type="QTY" />
+    <field number="1143" name="MaxPriceVariation" type="PRICE" />
+    <field number="1145" name="EventTime" type="STRING" />
+    <field number="1147" name="UnitOfMeasureQty" type="FLOAT" />
+    <field number="1148" name="LowLimitPrice" type="PRICE" />
+    <field number="1149" name="HighLimitPrice" type="PRICE" />
+    <field number="1682" name="MDSecurityTradingStatus" type="INT">
+      <value enum="17" description="Ready to Trade" />
+      <value enum="18" description="Expired" />
+      <value enum="2" description="Trading Halt" />
+      <value enum="21" description="Pre Open" />
+      <value enum="27" description="Pre Open (No Cancel)" />
+      <value enum="4" description="Close" />
+      <value enum="98" description="Forbidden" />
+      <value enum="99" description="Pause" />
+    </field>
+    <field number="5796" name="TradingReferenceDate" type="LOCALMKTDATE" />
+    <field number="5797" name="AggressorSide" type="INT">
+      <value enum="0" description="No Aggressor" />
+      <value enum="1" description="Buy" />
+      <value enum="2" description="Sell" />
+    </field>
+    <field number="6937" name="Asset" type="STRING" />
+  </fields>
+</fix>

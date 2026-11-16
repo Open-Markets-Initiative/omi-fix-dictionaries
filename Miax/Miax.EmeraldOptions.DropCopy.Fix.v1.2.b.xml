@@ -179,7 +179,11 @@
     <field number="14" name="CumQty" type="QTY" />
     <field number="16" name="EndSeqNo" type="SEQNUM" />
     <field number="17" name="ExecID" type="STRING" />
-    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING" />
+    <field number="18" name="ExecInst" type="MULTIPLEVALUESTRING">
+      <value enum="X" description="Last to Fill" />
+      <value enum="f" description="ISO" />
+      <value enum="o" description="Auto Cancel on connection loss (Firm requesting Auto Cancel on Disconnect (ACOD) for this Order)" />
+    </field>
     <field number="20" name="ExecTransType" type="CHAR">
       <value enum="0" description="New" />
       <value enum="1" description="Trade Cancel" />

@@ -624,6 +624,7 @@
     <field number="9011" name="RoutingID" type="STRING" />
     <field number="9018" name="MIAXExecInst" type="MULTIPLEVALUESTRING">
       <value enum="A" description="Auction on Arrival (AOA)" />
+      <value enum="C" description="Do Not Leg (DNL)" />
       <value enum="O" description="Auction on Arrival Only (AOAO)" />
       <value enum="P" description="ABBO Price Protection (APP)" />
     </field>
